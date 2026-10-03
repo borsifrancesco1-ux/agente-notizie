@@ -212,7 +212,39 @@
   "c36ef9c29b5de332": "2026-10-03T12:25:16+00:00",
   "d32ff86dc9f30c91": "2026-10-03T12:25:16+00:00",
   "beb60105b8975e4e": "2026-10-03T12:25:16+00:00",
-  "0d3614daaaa45437": "2026-10-03T12:25:16+00:00"
+  "0d3614daaaa45437": "2026-10-03T12:25:16+00:00",
+  "b261b9f8edb099f8": "2026-10-03T13:24:32+00:00",
+  "09e973f8ef62ce58": "2026-10-03T13:24:32+00:00",
+  "f7812f3ee12af6bc": "2026-10-03T13:24:32+00:00",
+  "f69b922540d8a4a2": "2026-10-03T13:24:32+00:00",
+  "e3c6a56cded2a4b3": "2026-10-03T13:24:32+00:00",
+  "c2c37f957d45032d": "2026-10-03T13:24:32+00:00",
+  "5cc149b501fc14d9": "2026-10-03T13:24:32+00:00",
+  "b8837ac962d84c6f": "2026-10-03T13:24:32+00:00",
+  "ee0cfdd10885212c": "2026-10-03T13:24:32+00:00",
+  "be657fe3e2ca396e": "2026-10-03T13:24:32+00:00",
+  "ab9b8de14abc6815": "2026-10-03T13:24:32+00:00",
+  "5f85d3635fdd116e": "2026-10-03T13:24:32+00:00",
+  "14b9b30a11ab8944": "2026-10-03T13:24:32+00:00",
+  "521d48f4837cfb6a": "2026-10-03T13:24:32+00:00",
+  "9843a1b71460de8f": "2026-10-03T13:24:32+00:00",
+  "072e771b2bdde644": "2026-10-03T13:24:32+00:00",
+  "2dd14905b6a9e019": "2026-10-03T13:24:32+00:00",
+  "5d3f5685bf51dcba": "2026-10-03T13:24:32+00:00",
+  "bad0c310a2313624": "2026-10-03T13:24:32+00:00",
+  "378a12519757f066": "2026-10-03T13:24:32+00:00",
+  "a228fae283f14bf4": "2026-10-03T13:24:32+00:00",
+  "1aec6fd2fdf9462c": "2026-10-03T13:24:32+00:00",
+  "c326f80e5d770267": "2026-10-03T13:24:32+00:00",
+  "e391cd74e2bd59e8": "2026-10-03T13:24:32+00:00",
+  "b8a6f8c9884c3c9e": "2026-10-03T13:24:32+00:00",
+  "51fdbe34090184d7": "2026-10-03T13:24:32+00:00",
+  "4230de595e14eac1": "2026-10-03T13:24:32+00:00",
+  "92b3bf507c26329e": "2026-10-03T13:24:32+00:00",
+  "fd6ed1d5847d8dc3": "2026-10-03T13:24:32+00:00",
+  "020b6837de5d026c": "2026-10-03T13:24:32+00:00",
+  "2ba7a1475be3511c": "2026-10-03T13:24:32+00:00",
+  "d1643c0c25cf878c": "2026-10-03T13:24:32+00:00"
  },
  "inviate": [
   {
@@ -452,7 +484,10 @@
     "warn"
    ],
    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcEhoSnpOWDAzbVZZSmFxYzlaT0FDTzYyeHVLWEJKbFlaYWlWRWo4NkpLaTdTdWZjYkwzeUFzRkEtd2UtUVRTX2pLdm1LMjBaZGZ6NGlfSENMUmw3bGpGTHlfU1R0WndEb3NxYUVzNmswNkdHVHJvRDJpVy02anpzNGh5NUUzR0tmZzh4XzdCcGxtRmFObWt3aktTT3R3d9IBowFBVV95cUxOZnpuZkdFZjYwSFZ5dGs1bHVJWlVaV1d0V1A0VWVpdnhwUkxVdGtxUlNtNDkwMDRMbElESFMtekZCN3FneWVPbVFSTHk4OTlFcnJibERwWWxOWkJvVFlhaFhZVXk1Z1Fmd1AtQ0x0YUFkWWFtSFZ5U1MwNG85YmItRm9JWWtaUHFaOWtIU19BdjJzd09Udl9RWjJmeEQxQ19wWklN?oc=5",
-   "quando": "2026-10-03T12:25:17+00:00"
+   "quando": "2026-10-03T12:25:17+00:00",
+   "voti": {
+    "a945f4701b6d": 1
+   }
   },
   {
    "id": "2eed2b7ce43eb7e9",
@@ -475,7 +510,10 @@
     "yields"
    ],
    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNVBRdUpMTUVwaklwMHRPcGpWZXBUMFFzcjNsNzV4azF1aXRQNFJyWUhQQkVwWDJkNFpOR2hIZGU1MUpLUXgzek1kbDh5MndJTWhJMlhHZEpBZS1SUnFab1hqTlVSWmNsNFJSbUFRemNfNEpFTElaTnJkendYQk1Id2hkc1NmZzNzVENmRmtjekRvVmx5X2k5UVI3Rk5TVmQxdkZBbGFYNVhRYWlaWUpzTm5rcGlKMFVOWUlMZHBxWk8zRWc?oc=5",
-   "quando": "2026-10-03T12:25:17+00:00"
+   "quando": "2026-10-03T12:25:17+00:00",
+   "voti": {
+    "a945f4701b6d": 1
+   }
   },
   {
    "id": "a99067dcb0ede476",
@@ -494,17 +532,90 @@
     "verso"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFByM0NRNzhvb21vajhzdGRpS2F0aXdzVUlKV05GUWNLUlJlNWQ0MU1SSHROSTd3a1NKc3VfVHBiR09JZlMta25Rbmt0STZqR3gycVBLeF81QWtUUjA?oc=5",
-   "quando": "2026-10-03T12:25:18+00:00"
+   "quando": "2026-10-03T12:25:18+00:00",
+   "voti": {
+    "a945f4701b6d": 1
+   }
+  },
+  {
+   "id": "b261b9f8edb099f8",
+   "titolo": "Eni–Plenitude, aumento da 1,56 miliardi: cosa cambia con Ares | borsamagazine.it | 03/10 06:45 UTC",
+   "tema": "Eni",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "ares",
+    "aumento",
+    "cambia",
+    "cosa",
+    "eni",
+    "miliardi",
+    "plenitude"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSXQwVjZWUElERm5BdU1ya3R0ZFdPbkxob1FzZ2pMbFVBQUpOU21UN3g4VVoyQ05uMEl1OW1PaWRKQTE1U3NuYjJLdjR6QlBla1A4SkhKSEh0dEwta2VfQTd2RTNuTjdCMWFLUHhrSzBoSkwtdlVGUkp4bUk5S09lSC1WNFhvX0Q5LXRFRmhn?oc=5",
+   "quando": "2026-10-03T13:24:32+00:00"
+  },
+  {
+   "id": "a228fae283f14bf4",
+   "titolo": "‘This Signal Means Danger’: The Scenario That Has Korean Investors in U.S. Stocks on Edge as 10-Year Treasury Yield Tops 5.3% | en.bloomingbit.io | 03/10 13:18 UTC",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "danger",
+    "edge",
+    "investors",
+    "korean",
+    "means",
+    "scenario",
+    "signal",
+    "stocks",
+    "tops",
+    "treasury",
+    "year",
+    "yield"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1MUzI2RGpLeFMtYzJYTlFpSHNmVlBwRzJWQ3ZhUzlQbjl1dXdxcFROMC1aSkxPYlJWTVZRS0pZb0pIeTBKRFNYc2tGdEV2TXJKdzZGUA?oc=5",
+   "quando": "2026-10-03T13:24:33+00:00"
+  },
+  {
+   "id": "d1643c0c25cf878c",
+   "titolo": "Opinion | The AI Boom Has Run Into A Big 'Debt' Trap Problem. Inside The 5% Danger Line | NDTV | 03/10 06:33 UTC",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "big",
+    "boom",
+    "danger",
+    "debt",
+    "inside",
+    "line",
+    "opinion",
+    "problem",
+    "run",
+    "trap"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUXlHTnZQdl9COVYyWkNBSmVaTTByZ0s2UHViVURiaXhSZndKZlpDTWpiTnRrNzFxV0FrUW5jakEzaC0zdzhwWkRPcWNVNlozNV9kZXl2R3l2cDJHcDFaMjdDUGdoLV9mY0NLZ1hIQWhMOW9vUUwtRDJpc1h4dzRnUlVaM3JNbkNlTEFuTTAxQUNsbm9MYU1McXUtOWlzZ01hZ0JYbWJibUVkM3lZbmVXMA?oc=5",
+   "quando": "2026-10-03T13:24:33+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 2
+  "2026-10-03": 3
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 14"
+  "ora_notizie": "2026-10-03 15"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
