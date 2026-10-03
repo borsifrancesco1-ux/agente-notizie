@@ -505,5 +505,65 @@
  "avviso_quota": "",
  "giornata": {
   "ora_notizie": "2026-10-03 14"
- }
+ },
+ "indicatori": {
+  "Inflazione USA (CPI, a/a)": {
+   "periodo": "2026-08-01",
+   "valore": 3.7129581058388483
+  },
+  "Inflazione di fondo USA (CPI core, a/a)": {
+   "periodo": "2026-08-01",
+   "valore": 2.7634613395318253
+  },
+  "Inflazione PCE di fondo USA (a/a)": {
+   "periodo": "2026-08-01",
+   "valore": 3.0075959761856064
+  },
+  "Nuovi occupati USA (non agricoli)": {
+   "periodo": "2026-09-01",
+   "valore": 29.0
+  },
+  "Disoccupazione USA": {
+   "periodo": "2026-09-01",
+   "valore": 4.2
+  },
+  "PIL USA (trimestre, annualizzato)": {
+   "periodo": "2026-04-01",
+   "valore": 2.2
+  },
+  "Tasso Fed (limite superiore)": {
+   "periodo": "2026-10-03",
+   "valore": 4.0
+  },
+  "Tasso BCE sui depositi": {
+   "periodo": "2026-10-03",
+   "valore": 2.5
+  },
+  "Inflazione area euro (HICP, a/a)": {
+   "periodo": "2026-09",
+   "valore": 3.8
+  },
+  "Inflazione Italia (IPCA, a/a)": {
+   "periodo": "2026-09",
+   "valore": 4.1
+  },
+  "Disoccupazione area euro": {
+   "periodo": "2026-08",
+   "valore": 6.4
+  },
+  "Disoccupazione Italia": {
+   "periodo": "2026-08",
+   "valore": 6.2
+  },
+  "PIL area euro (t/t)": {
+   "periodo": "2026-Q2",
+   "valore": 0.6
+  },
+  "PIL Italia (t/t)": {
+   "periodo": "2026-Q2",
+   "valore": 0.2
+  }
+ },
+ "proposta": {},
+ "dati_usciti": []
 }
