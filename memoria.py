@@ -40,6 +40,12 @@ class Memoria:
         self.avviso_quota: str = dati.get("avviso_quota", "")   # giorno dell'ultimo avviso di quota finita
         # cosa è già stato fatto nella giornata: {"apertura": data, "ora_notizie": "data ora", "chiusura": data}
         self.giornata: dict[str, str] = dati.get("giornata", {})
+        # ultimo valore visto di ogni indicatore ufficiale, per riconoscere i dati nuovi
+        self.indicatori: dict[str, dict] = dati.get("indicatori", {})
+        # proposta di modifica al profilo in attesa di risposta: {"id", "testo", "spiegazione", "quando"}
+        self.proposta: dict = dati.get("proposta", {})
+        # dati ufficiali usciti di recente, per il riepilogo settimanale: {"nome", "testo", "quando"}
+        self.dati_usciti: list[dict] = dati.get("dati_usciti", [])
 
     def gia_valutata(self, link: str) -> bool:
         return chiave(link) in self.valutate
@@ -117,7 +123,9 @@ class Memoria:
         self.percorso.parent.mkdir(parents=True, exist_ok=True)
         dati = {"valutate": self.valutate, "inviate": self.inviate, "feed_guasti": self.feed_guasti,
                 "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
-                "avviso_quota": self.avviso_quota, "giornata": self.giornata}
+                "avviso_quota": self.avviso_quota, "giornata": self.giornata,
+                "indicatori": self.indicatori, "proposta": self.proposta,
+                "dati_usciti": [d for d in self.dati_usciti if d["quando"] >= limite]}
         self.percorso.write_text(json.dumps(dati, ensure_ascii=False, indent=1), "utf-8")
 
 

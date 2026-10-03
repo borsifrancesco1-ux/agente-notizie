@@ -1,13 +1,18 @@
 # Fa girare l'agente sui server di GitHub, anche a computer spento.
-# GitHub parte ogni 30 minuti; è lo script a decidere cosa fare in base all'ora italiana
-# (buongiorno alle 7:30, notizie ogni ora dalle 8 alle 22, chiusura alle 22, silenzio la notte),
-# così il cambio dell'ora legale non richiede modifiche. Gli orari sono in config.yaml.
+# GitHub parte ogni 15 minuti; è lo script a decidere cosa fare in base all'ora italiana
+# (buongiorno alle 7:30, notizie ogni ora dalle 8 alle 22, dati appena escono, chiusura alle 22,
+# silenzio la notte), così il cambio dell'ora legale non richiede modifiche. Orari in config.yaml.
+#
+# Minuti 4, 19, 34, 49 e non 0 e 30: GitHub avverte che all'inizio dell'ora i giri programmati
+# possono partire in ritardo o essere saltati. Ogni 15 minuti un giro saltato si recupera subito.
 name: Agente notizie
 
 on:
   schedule:
-    - cron: "*/30 5-21 * * *"   # ogni 30 minuti dalle 5:00 alle 21:30 UTC (7:00-23:30 in Italia d'estate)
-  workflow_dispatch:            # pulsante "Run workflow" per avviarlo a mano
+    - cron: "4,19,34,49 5-21 * * *"   # dalle 5:04 alle 21:49 UTC (in Italia 7:04-23:49 d'estate, 6:04-22:49 d'inverno)
+  repository_dispatch:               # avvio immediato dal bot Telegram (Worker di Cloudflare), per i comandi
+    types: [comando]
+  workflow_dispatch:                 # pulsante "Run workflow" per avviarlo a mano
     inputs:
       azione:
         description: "Cosa fare"
@@ -28,7 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      # ref: main = l'ultima versione al momento della partenza, con la memoria salvata dal giro
+      # precedente (senza, un giro rimasto in coda partirebbe dalla memoria vecchia)
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - uses: actions/setup-python@v6
         with:
@@ -43,19 +52,31 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FRED_KEY: ${{ secrets.FRED_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_CANALE: ${{ secrets.TELEGRAM_CANALE }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          AGENTE_KEY: ${{ secrets.AGENTE_KEY }}
         run: |
           if [ "$AZIONE" = "notizie" ]; then python agente.py; else python agente.py "--$AZIONE"; fi
 
-      - name: Salva la memoria
+      # Salva la memoria e le modifiche fatte dai comandi del bot (config, profilo, riepiloghi)
+      - name: Salva memoria e modifiche
         run: |
           git config user.name "agente-notizie[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stato/memoria.json
+          git add stato config.yaml profilo.md
+          if [ -d riepiloghi ]; then git add riepiloghi; fi
           if ! git diff --cached --quiet; then
-            git commit -m "Memoria aggiornata"
+            if git diff --cached --name-only | grep -qE '^(config.yaml|profilo.md)$'; then
+              messaggio="Modifiche richieste dal bot Telegram"
+            elif git diff --cached --name-only | grep -q '^riepiloghi/'; then
+              messaggio="Riepilogo settimanale"
+            else
+              messaggio="Memoria aggiornata"
+            fi
+            git commit -m "$messaggio"
             git pull --rebase --autostash
             git push
           fi

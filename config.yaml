@@ -33,14 +33,32 @@ ia:
       modello: openai/gpt-4.1-mini
       chiave: GITHUB_TOKEN
       max_notizie: 30
+  # Per i testi della settimana (riepilogo PSP, proposta di profilo) si prova prima un modello più
+  # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
+  motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}
   soglia_rilevanza: 7    # da 1 a 10: sotto la soglia non ricevi nulla
 
 orari:
   fuso_orario: Europe/Rome
-  apertura: "07:30"        # buongiorno e riepilogo della notte, in un unico messaggio
+  apertura: "07:30"        # buongiorno con il calendario del giorno e il riepilogo della notte
   prima_notizia: "08:00"   # da qui un giro di notizie ogni ora...
   ultima_notizia: "22:00"  # ...fino a qui; poi il messaggio di chiusura e silenzio fino all'apertura
   max_riepilogo_notte: 6   # notizie al massimo nel riepilogo della notte
+  # Riepilogo settimanale per il PSP sul canale, e proposta di modifica al profilo nella tua chat
+  riepilogo_settimanale: {giorno: domenica, ora: "18:00"}
+
+# Calendario del giorno nel buongiorno: eventi economici (ForexFactory: orario, consensus e dato
+# precedente) e appuntamenti fissi. Le date di BCE e Fed sono verificate il 3/10/2026 sui siti
+# ufficiali: aggiornale se cambiano. L'ora è quella italiana.
+calendario:
+  valute: [USD, EUR]        # USD = Stati Uniti; EUR = area euro e i suoi paesi (Germania, Italia...)
+  impatto_minimo: Medium    # Low, Medium o High (🔴 alto, 🟠 medio)
+  appuntamenti:
+    - {data: "2026-10-28", ora: "19:00", descrizione: "Fed: decisione sui tassi (conferenza stampa alle 19:30)"}
+    - {data: "2026-10-29", ora: "14:15", descrizione: "BCE: decisione sui tassi (conferenza stampa alle 14:45)"}
+    - {data: "2026-12-02", ora: "", icona: "🎓", descrizione: "PSP: presentazione finale"}
+    - {data: "2026-12-09", ora: "20:00", descrizione: "Fed: decisione sui tassi e proiezioni economiche (conferenza alle 20:30)"}
+    - {data: "2026-12-17", ora: "14:15", descrizione: "BCE: decisione sui tassi e proiezioni (conferenza stampa alle 14:45)"}
 
 notifiche:
   max_per_giro: 5        # tetto di notifiche per ogni giro
@@ -249,3 +267,142 @@ feed_per_titolo:
 ricerca_google_news:
   it: "https://news.google.com/rss/search?q={query}+when:1d&hl=it&gl=IT&ceid=IT:it"
   en: "https://news.google.com/rss/search?q={query}+when:1d&hl=en-US&gl=US&ceid=US:en"
+
+# ------------------------------------------------------------
+# "Dato uscito": a ogni giro l'agente controlla queste serie ufficiali e, appena esce un valore
+# nuovo, lo pubblica con il precedente e il consensus (se il calendario lo riporta).
+#   fonte: fred (serie), bce (chiave), eurostat (dataset + filtri)
+#   trasformazione: livello (normale), variazione_annua (dall'indice dei prezzi alla variazione %
+#                   sull'anno prima), differenza (variazione sul periodo prima, es. nuovi occupati)
+#   avvisa: se_cambia = solo quando il valore cambia (tassi ufficiali, che sono serie giornaliere)
+#   calendario: evento del calendario da cui prendere il consensus
+# ------------------------------------------------------------
+indicatori:
+  # Stati Uniti (FRED)
+  - nome: "Inflazione USA (CPI, a/a)"
+    fonte: fred
+    serie: CPIAUCSL
+    trasformazione: variazione_annua
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+    calendario: {paese: USD, titoli: ["CPI y/y"]}
+    perche: "Guida le attese sui tassi della Fed e quindi i rendimenti dei Treasury"
+  - nome: "Inflazione di fondo USA (CPI core, a/a)"
+    fonte: fred
+    serie: CPILFESL
+    trasformazione: variazione_annua
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+    calendario: {paese: USD, titoli: ["Core CPI y/y"]}
+  - nome: "Inflazione PCE di fondo USA (a/a)"
+    fonte: fred
+    serie: PCEPILFE
+    trasformazione: variazione_annua
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+    perche: "È la misura di inflazione a cui guarda la Fed"
+  - nome: "Nuovi occupati USA (non agricoli)"
+    fonte: fred
+    serie: PAYEMS
+    trasformazione: differenza
+    formato: migliaia
+    reparti: [Macroeconomia]
+    calendario: {paese: USD, titoli: ["Non-Farm Employment Change"]}
+    perche: "Misura la forza del lavoro negli USA, decisiva per le prossime mosse della Fed"
+  - nome: "Disoccupazione USA"
+    fonte: fred
+    serie: UNRATE
+    unita: "%"
+    reparti: [Macroeconomia]
+    calendario: {paese: USD, titoli: ["Unemployment Rate"]}
+  - nome: "PIL USA (trimestre, annualizzato)"
+    fonte: fred
+    serie: A191RL1Q225SBEA
+    trimestrale: true
+    unita: "%"
+    reparti: [Macroeconomia, Azionario]
+    calendario: {paese: USD, titoli: ["Advance GDP q/q", "Prelim GDP q/q", "Final GDP q/q"]}
+  - nome: "Tasso Fed (limite superiore)"
+    fonte: fred
+    serie: DFEDTARU
+    avvisa: se_cambia
+    unita: "%"
+    decimali: 2
+    reparti: [Macroeconomia, Obbligazionario, Copertura]
+    calendario: {paese: USD, titoli: ["Federal Funds Rate"]}
+    perche: "Cambia il rendimento del monetario in dollari e il costo della copertura del cambio"
+  # Area euro e Italia (BCE, Eurostat)
+  - nome: "Tasso BCE sui depositi"
+    fonte: bce
+    chiave: "FM/D.U2.EUR.4F.KR.DFR.LEV"
+    avvisa: se_cambia
+    unita: "%"
+    decimali: 2
+    reparti: [Macroeconomia, Obbligazionario, Copertura]
+    calendario: {paese: EUR, titoli: ["Deposit Facility Rate"]}
+    perche: "Determina il rendimento del monetario in euro e muove tutta la curva dei tassi europea"
+  - nome: "Inflazione area euro (HICP, a/a)"
+    fonte: eurostat
+    dataset: prc_hicp_minr
+    filtri: {geo: EA, unit: RCH_A, coicop18: TOTAL}
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+    calendario: {paese: EUR, titoli: ["CPI Flash Estimate y/y", "Final CPI y/y"]}
+    perche: "È il riferimento della BCE: guida le attese sui tassi europei"
+  - nome: "Inflazione Italia (IPCA, a/a)"
+    fonte: eurostat
+    dataset: prc_hicp_minr
+    filtri: {geo: IT, unit: RCH_A, coicop18: TOTAL}
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+  - nome: "Disoccupazione area euro"
+    fonte: eurostat
+    dataset: une_rt_m
+    filtri: {geo: EA21, s_adj: SA, age: TOTAL, sex: T, unit: PC_ACT}
+    unita: "%"
+    reparti: [Macroeconomia]
+    calendario: {paese: EUR, titoli: ["Unemployment Rate"]}
+  - nome: "Disoccupazione Italia"
+    fonte: eurostat
+    dataset: une_rt_m
+    filtri: {geo: IT, s_adj: SA, age: TOTAL, sex: T, unit: PC_ACT}
+    unita: "%"
+    reparti: [Macroeconomia]
+    calendario: {paese: EUR, titoli: ["Italian Monthly Unemployment Rate"]}
+  - nome: "PIL area euro (t/t)"
+    fonte: eurostat
+    dataset: namq_10_gdp
+    filtri: {geo: EA21, unit: CLV_PCH_PRE, s_adj: SCA, na_item: B1GQ}
+    unita: "%"
+    reparti: [Macroeconomia, Azionario]
+    calendario: {paese: EUR, titoli: ["Prelim Flash GDP q/q", "Flash GDP q/q", "Revised GDP q/q"]}
+  - nome: "PIL Italia (t/t)"
+    fonte: eurostat
+    dataset: namq_10_gdp
+    filtri: {geo: IT, unit: CLV_PCH_PRE, s_adj: SCA, na_item: B1GQ}
+    unita: "%"
+    reparti: [Macroeconomia, Obbligazionario]
+    calendario: {paese: EUR, titoli: ["Italian Prelim GDP q/q"]}
+
+# Numeri della settimana nel riepilogo domenicale: valore e variazione sulla settimana.
+#   tipo: tasso = variazione in punti base (tassi e spread); altrimenti variazione percentuale
+mercati:
+  - {nome: "S&P 500", fonte: yahoo, simbolo: "^GSPC", decimali: 0}
+  - {nome: "STOXX Europe 600", fonte: yahoo, simbolo: "^STOXX", decimali: 1}
+  - {nome: "MSCI EM (ETF EEM, $)", fonte: yahoo, simbolo: "EEM", decimali: 2}
+  - {nome: "FTSE MIB", fonte: yahoo, simbolo: "FTSEMIB.MI", decimali: 0}
+  - {nome: "VIX", fonte: yahoo, simbolo: "^VIX", decimali: 1}
+  - {nome: "Treasury 10 anni", fonte: fred, serie: DGS10, tipo: tasso, unita: "%"}
+  - {nome: "Treasury 2 anni", fonte: fred, serie: DGS2, tipo: tasso, unita: "%"}
+  - {nome: "Curva euro AAA 10 anni", fonte: bce, chiave: "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y", tipo: tasso, unita: "%"}
+  - {nome: "Breakeven USA 10 anni", fonte: fred, serie: T10YIE, tipo: tasso, unita: "%"}
+  - {nome: "Spread IG USA", fonte: fred, serie: BAMLC0A0CM, tipo: tasso, unita: "%"}
+  - {nome: "Spread HY USA", fonte: fred, serie: BAMLH0A0HYM2, tipo: tasso, unita: "%"}
+  - {nome: "Spread corporate EM", fonte: fred, serie: BAMLEMCBPIOAS, tipo: tasso, unita: "%"}
+  - {nome: "EUR/USD", fonte: bce, chiave: "EXR/D.USD.EUR.SP00.A", decimali: 4}
+  - {nome: "Petrolio Brent ($)", fonte: fred, serie: DCOILBRENTEU, decimali: 1}
+  - {nome: "€STR", fonte: bce, chiave: "EST/B.EU000A2X2A25.WT", tipo: tasso, unita: "%", decimali: 3}
+  - {nome: "SOFR", fonte: fred, serie: SOFR, tipo: tasso, unita: "%"}
+
+# Costo stimato della copertura del cambio nel riepilogo: differenziale tra questi due tassi
+copertura: {tasso_usd: SOFR, tasso_eur: "€STR"}

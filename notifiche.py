@@ -27,32 +27,36 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
             reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "") -> str:
     """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, tema e voto."""
     righe = [" ".join(hashtag(r) for r in reparti)] if reparti else []
-    righe.append(f"{icona} <b>{_e(titolo)}</b>")
+    righe.append(f"{icona} <b>{esc(titolo)}</b>")
     if riassunto:
-        righe += ["", _e(riassunto)]
+        righe += ["", esc(riassunto)]
     if perche:
-        righe += ["", f"🎯 <i>{_e(etichetta_perche)}:</i> {_e(perche)}"]
-    info = [x for x in (f"🏷 {_e(tema)}" if tema else "", f"{voto}/10" if voto else "", _e(nota)) if x]
+        righe += ["", f"🎯 <i>{esc(etichetta_perche)}:</i> {esc(perche)}"]
+    info = [x for x in (f"🏷 {esc(tema)}" if tema else "", f"{voto}/10" if voto else "", esc(nota)) if x]
     if info:
         righe += ["", " · ".join(info)]
     return "\n".join(righe)
 
 
-def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str) -> str:
-    """Buongiorno con il riepilogo della notte, in un unico messaggio.
-    voci: dict con titolo, riassunto, icona, reparti, fonti."""
+def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str]) -> str:
+    """Buongiorno in un unico messaggio: il calendario del giorno e il riepilogo della notte.
+    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario: righe già pronte."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
     fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti ogni ora."
+    testo = f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>"
+    if calendario:
+        testo += "\n\n📅 <b>Oggi in calendario</b> (ora italiana)\n" + "\n".join(calendario[:15])
+    else:
+        testo += "\n\n📅 Nessun appuntamento importante in calendario oggi."
     if not voci:
-        return (f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>\n\n"
-                f"Notte tranquilla: nessuna notizia rilevante per il PSP.{fine}")
+        return testo + f"\n\n🌙 Notte tranquilla: nessuna notizia rilevante per il PSP.{fine}"
 
-    testo = f"☀️ <b>Buongiorno! Ecco cosa è successo nella notte</b>\n<i>{data}</i>"
+    testo += "\n\n🌙 <b>Cosa è successo nella notte</b>"
     for numero, v in enumerate(voci, 1):
         righe = [f"\n\n{numero}. " + " ".join(hashtag(r) for r in v["reparti"]),
-                 f"{v['icona']} <b>{_e(v['titolo'])}</b>"]
+                 f"{v['icona']} <b>{esc(v['titolo'])}</b>"]
         if v["riassunto"]:
-            righe.append(_e(v["riassunto"]))
+            righe.append(esc(v["riassunto"]))
         righe.append(link_testuali(v["fonti"], massimo=2).strip())
         blocco = "\n".join(righe)
         if _visibile(testo + blocco + fine) > LUNGHEZZA_MASSIMA:
@@ -73,6 +77,19 @@ def chiusura(inviate_oggi: list[dict], apertura: str) -> str:
     return testo + f"\n\nCi risentiamo domani alle {apertura.lstrip('0')} con il riepilogo della notte."
 
 
+def dividi(testo: str, massimo: int = LUNGHEZZA_MASSIMA) -> list[str]:
+    """Spezza un testo lungo in più messaggi, tra un paragrafo e l'altro."""
+    parti, attuale = [], ""
+    for paragrafo in testo.split("\n\n"):
+        candidato = f"{attuale}\n\n{paragrafo}" if attuale else paragrafo
+        if attuale and _visibile(candidato) > massimo:
+            parti.append(attuale)
+            attuale = paragrafo
+        else:
+            attuale = candidato
+    return [*parti, attuale] if attuale else parti
+
+
 def pulsanti(fonti: list[tuple[str, str]]) -> dict:
     """Un pulsante per testata, che apre l'articolo."""
     tasti = [{"text": f"🔗 {nome}", "url": url} for nome, url in fonti[:FONTI_MASSIME]]
@@ -81,7 +98,7 @@ def pulsanti(fonti: list[tuple[str, str]]) -> dict:
 
 def link_testuali(fonti: list[tuple[str, str]], massimo: int = FONTI_MASSIME) -> str:
     """I link come testo: nel riepilogo, o se Telegram rifiuta i pulsanti (es. un indirizzo non valido)."""
-    link = " · ".join(f'<a href="{html.escape(url, quote=True)}">{_e(nome)}</a>' for nome, url in fonti[:massimo])
+    link = " · ".join(f'<a href="{html.escape(url, quote=True)}">{esc(nome)}</a>' for nome, url in fonti[:massimo])
     return f"\n🔗 {link}"
 
 
@@ -110,8 +127,9 @@ def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
     return False
 
 
-def _e(testo: str) -> str:
-    return html.escape(testo, quote=False)
+def esc(testo: str, virgolette: bool = False) -> str:
+    """Testo sicuro dentro un messaggio HTML di Telegram (virgolette=True dentro un attributo)."""
+    return html.escape(str(testo), quote=virgolette)
 
 
 def _visibile(testo_html: str) -> int:

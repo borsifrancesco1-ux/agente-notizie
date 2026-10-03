@@ -109,15 +109,9 @@ def seleziona(gruppi: list[Gruppo], gia_inviate: list[str], profilo: str, config
     elenco = "\n".join(_riga(i, g) for i, g in enumerate(gruppi, 1))
     gia = "\n".join(f"- {t}" for t in gia_inviate) or "(nessuna)"
     testo = f"NOTIZIE GIÀ INVIATE (ultime 48 ore):\n{gia}\n\nNUOVE NOTIZIE:\n{elenco}"
-    if motore["tipo"] == "gemini":
-        risposta = _chiedi(chiave, motore["modello"], istruzioni, testo, _schema(temi, reparti))
-    else:
-        istruzioni += (f"\nRispondi solo con un oggetto JSON con questa struttura: "
-                       f"{json.dumps(ESEMPIO_RISPOSTA, ensure_ascii=False)}\n"
-                       f"Valori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
-                       f"Valori ammessi per \"reparti\": {', '.join(reparti)}.")
-        risposta = _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo,
-                                  motore.get("alternative") or [])
+    istruzioni += (f"\nValori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
+                   f"Valori ammessi per \"reparti\": {', '.join(reparti)}.")
+    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti), ESEMPIO_RISPOSTA)
 
     scelte, usati = [], set()
     for v in sorted(risposta.get("gruppi", []), key=lambda v: -v.get("voto", 0)):
@@ -133,6 +127,16 @@ def seleziona(gruppi: list[Gruppo], gia_inviate: list[str], profilo: str, config
         if len(scelte) == massimo:
             break
     return scelte
+
+
+def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict) -> dict:
+    """Una richiesta a un motore che risponde in JSON.
+    schema: struttura per Gemini; esempio: la stessa struttura mostrata agli altri servizi."""
+    if motore["tipo"] == "gemini":
+        return _chiedi(chiave, motore["modello"], istruzioni, testo, schema)
+    istruzioni += (f"\nRispondi solo con un oggetto JSON con questa struttura: "
+                   f"{json.dumps(esempio, ensure_ascii=False)}")
+    return _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo, motore.get("alternative") or [])
 
 
 def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict) -> dict:

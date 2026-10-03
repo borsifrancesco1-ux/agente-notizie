@@ -1,0 +1,13 @@
+# Worker di Cloudflare per il bot Telegram (codice in worker.js).
+# Pubblicazione, dalla cartella cloudflare:  npx wrangler deploy
+name = "agente-notizie-bot"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+REPO = "borsifrancesco1-ux/agente-notizie"
+
+# Archivio dei voti e della coda dei comandi (piano gratuito di Cloudflare)
+[[kv_namespaces]]
+binding = "STATO"
+id = "DA_IMPOSTARE"

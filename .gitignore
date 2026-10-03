@@ -11,3 +11,7 @@ __pycache__/
 
 # Windows / Google Drive
 desktop.ini
+
+# Cloudflare (file temporanei di wrangler)
+cloudflare/.wrangler/
+node_modules/
