@@ -1,0 +1,5 @@
+feedparser>=6.0
+PyYAML>=6.0
+requests>=2.31
+python-dotenv>=1.0
+tzdata  # fusi orari (Europe/Rome) anche su Windows

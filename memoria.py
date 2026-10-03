@@ -1,0 +1,130 @@
+"""Memoria tra un'esecuzione e l'altra, salvata in stato/memoria.json.
+
+Su GitHub Actions la macchina riparte da zero a ogni giro: il file viene
+salvato nel repository a fine esecuzione e ritrovato al giro successivo.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+from filtro import simili
+
+GIORNI_DA_RICORDARE = 14
+GIORNI_NOTIFICHE_VOTATE = 90   # le notizie votate servono più a lungo, come esempi per l'IA
+ERRORI_PRIMA_DI_AVVISARE = 5   # giri consecutivi senza risposta prima di segnalare un feed
+PARAMETRI_DI_TRACCIAMENTO = ("utm_", ".tsrc", "ncid", "cmpid", "mod")
+
+
+def chiave(link: str) -> str:
+    """Identificativo stabile di un articolo: il link senza parametri di tracciamento."""
+    p = urlsplit(link.strip())
+    query = urlencode([(k, v) for k, v in parse_qsl(p.query)
+                       if not k.lower().startswith(PARAMETRI_DI_TRACCIAMENTO)])
+    normale = urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/"), query, ""))
+    return hashlib.sha1(normale.encode()).hexdigest()[:16]
+
+
+class Memoria:
+    def __init__(self, percorso: Path):
+        self.percorso = percorso
+        dati = json.loads(percorso.read_text("utf-8")) if percorso.exists() else {}
+        self.valutate: dict[str, str] = dati.get("valutate", {})   # chiave link -> quando
+        self.inviate: list[dict] = dati.get("inviate", [])         # notifiche già mandate, con i voti
+        self.feed_guasti: dict[str, int] = dati.get("feed_guasti", {})
+        self.offset_telegram: int = dati.get("offset_telegram", 0)  # ultimo aggiornamento letto
+        self.richieste_ia: dict[str, int] = dati.get("richieste_ia", {})  # giorno di quota -> richieste
+        self.avviso_quota: str = dati.get("avviso_quota", "")   # giorno dell'ultimo avviso di quota finita
+        # cosa è già stato fatto nella giornata: {"apertura": data, "ora_notizie": "data ora", "chiusura": data}
+        self.giornata: dict[str, str] = dati.get("giornata", {})
+
+    def gia_valutata(self, link: str) -> bool:
+        return chiave(link) in self.valutate
+
+    def segna_valutate(self, links) -> None:
+        adesso = _adesso()
+        for link in links:
+            self.valutate[chiave(link)] = adesso
+
+    def gia_inviata(self, impronta: frozenset[str]) -> bool:
+        return any(simili(impronta, frozenset(i["impronta"])) for i in self.inviate)
+
+    def titoli_inviati(self, ore: int = 48) -> list[str]:
+        limite = datetime.now(timezone.utc) - timedelta(hours=ore)
+        return [i["titolo"] for i in self.inviate if datetime.fromisoformat(i["quando"]) >= limite]
+
+    def registra_invio(self, id_notifica: str, titolo: str, tema: str, reparti: list[str],
+                       impronta: frozenset[str], link: str) -> None:
+        self.inviate.append({"id": id_notifica, "titolo": titolo, "tema": tema, "reparti": reparti,
+                             "impronta": sorted(impronta), "link": link, "quando": _adesso()})
+
+    def inviate_dal(self, inizio: datetime) -> list[dict]:
+        """Le notifiche inviate da un certo momento in poi (es. dall'inizio della giornata)."""
+        limite = inizio.astimezone(timezone.utc).isoformat(timespec="seconds")
+        return [i for i in self.inviate if i["quando"] >= limite]
+
+    def vota(self, id_notifica: str, utente: str, voto: int) -> bool:
+        """Registra il voto (+1 o -1) di un utente; vale l'ultimo voto dato."""
+        for i in self.inviate:
+            if i.get("id") == id_notifica:
+                i.setdefault("voti", {})[utente] = voto
+                return True
+        return False
+
+    def conteggio(self, id_notifica: str) -> tuple[int, int]:
+        for i in self.inviate:
+            if i.get("id") == id_notifica:
+                voti = i.get("voti", {}).values()
+                return sum(v > 0 for v in voti), sum(v < 0 for v in voti)
+        return 0, 0
+
+    def notifiche_votate(self, quante: int) -> list[dict]:
+        """Le notifiche più recenti con un giudizio netto (più 👍 che 👎 o viceversa)."""
+        return [i for i in reversed(self.inviate) if sum(i.get("voti", {}).values()) != 0][:quante]
+
+    def conta_richieste(self, n: int) -> int:
+        """Somma le richieste a Gemini del giorno di quota corrente e restituisce il totale."""
+        giorno = giorno_quota()
+        self.richieste_ia[giorno] = self.richieste_ia.get(giorno, 0) + n
+        return self.richieste_ia[giorno]
+
+    def aggiorna_feed(self, nomi: list[str], errori: dict[str, str]) -> list[str]:
+        """Conta i giri consecutivi senza risposta. Restituisce i feed appena diventati guasti."""
+        appena_guasti = []
+        for nome in nomi:
+            if nome in errori:
+                self.feed_guasti[nome] = self.feed_guasti.get(nome, 0) + 1
+                if self.feed_guasti[nome] == ERRORI_PRIMA_DI_AVVISARE:
+                    appena_guasti.append(nome)
+            else:
+                self.feed_guasti.pop(nome, None)
+        for nome in list(self.feed_guasti):  # feed tolti da config.yaml
+            if nome not in nomi:
+                del self.feed_guasti[nome]
+        return appena_guasti
+
+    def salva(self) -> None:
+        adesso = datetime.now(timezone.utc)
+        limite = (adesso - timedelta(days=GIORNI_DA_RICORDARE)).isoformat()
+        limite_votate = (adesso - timedelta(days=GIORNI_NOTIFICHE_VOTATE)).isoformat()
+        self.valutate = {k: v for k, v in self.valutate.items() if v >= limite}
+        self.inviate = [i for i in self.inviate
+                        if i["quando"] >= (limite_votate if i.get("voti") else limite)]
+        self.richieste_ia = {g: n for g, n in self.richieste_ia.items() if g >= limite[:10]}
+        self.percorso.parent.mkdir(parents=True, exist_ok=True)
+        dati = {"valutate": self.valutate, "inviate": self.inviate, "feed_guasti": self.feed_guasti,
+                "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
+                "avviso_quota": self.avviso_quota, "giornata": self.giornata}
+        self.percorso.write_text(json.dumps(dati, ensure_ascii=False, indent=1), "utf-8")
+
+
+def giorno_quota() -> str:
+    """Le quote gratuite di Google si rinnovano a mezzanotte del Pacifico (circa le 9 in Italia)."""
+    return (datetime.now(timezone.utc) - timedelta(hours=8)).date().isoformat()
+
+
+def _adesso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")

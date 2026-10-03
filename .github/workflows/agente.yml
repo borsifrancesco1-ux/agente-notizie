@@ -1,0 +1,61 @@
+# Fa girare l'agente sui server di GitHub, anche a computer spento.
+# GitHub parte ogni 30 minuti; è lo script a decidere cosa fare in base all'ora italiana
+# (buongiorno alle 7:30, notizie ogni ora dalle 8 alle 22, chiusura alle 22, silenzio la notte),
+# così il cambio dell'ora legale non richiede modifiche. Gli orari sono in config.yaml.
+name: Agente notizie
+
+on:
+  schedule:
+    - cron: "*/30 5-21 * * *"   # ogni 30 minuti dalle 5:00 alle 21:30 UTC (7:00-23:30 in Italia d'estate)
+  workflow_dispatch:            # pulsante "Run workflow" per avviarlo a mano
+    inputs:
+      azione:
+        description: "Cosa fare"
+        type: choice
+        default: automatico
+        options: [automatico, notizie, apertura, chiusura]
+
+permissions:
+  contents: write   # per salvare stato/memoria.json nel repository
+  models: read      # per GitHub Models, ultimo motore di riserva
+
+concurrency:         # mai due giri insieme: si contenderebbero la memoria
+  group: agente-notizie
+  cancel-in-progress: false
+
+jobs:
+  giro:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Giro dell'agente
+        env:
+          AZIONE: ${{ inputs.azione || 'automatico' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CANALE: ${{ secrets.TELEGRAM_CANALE }}
+        run: |
+          if [ "$AZIONE" = "notizie" ]; then python agente.py; else python agente.py "--$AZIONE"; fi
+
+      - name: Salva la memoria
+        run: |
+          git config user.name "agente-notizie[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stato/memoria.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Memoria aggiornata"
+            git pull --rebase --autostash
+            git push
+          fi

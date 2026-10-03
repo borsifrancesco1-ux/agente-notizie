@@ -1,0 +1,251 @@
+# ============================================================
+#  Configurazione dell'agente notizie
+#  Si può modificare liberamente: lo script la rilegge a ogni esecuzione.
+#  Le istruzioni in italiano libero vanno invece in profilo.md.
+# ============================================================
+
+ia:
+  # Motori provati in ordine, una richiesta per giro (voti, reparti, raggruppamento e riassunti).
+  # Se uno non risponde o ha finito la quota si passa al successivo; se falliscono tutti
+  # si usa il filtro a parole chiave. Senza motori: solo parole chiave.
+  #   chiave: nome della variabile nel file .env (su GitHub: nome del Secret)
+  #   max_notizie (facoltativo): notizie al massimo per richiesta, per i servizi che
+  #   accettano solo richieste piccole
+  #   alternative (facoltativo, solo OpenRouter): modelli da usare se il primo è occupato
+  motori:
+    # Gli alias "-latest" seguono l'ultima versione, così un modello ritirato non blocca l'agente.
+    # Piano gratuito (3/10/2026): "gemini-flash-latest" concede solo 20 richieste al giorno;
+    # il "flash-lite" ne concede di più.
+    - tipo: gemini
+      modello: gemini-flash-lite-latest
+      chiave: GEMINI_API_KEY
+    # Prima riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno.
+    # I modelli gratuiti cambiano spesso: elenco su openrouter.ai/models?max_price=0
+    - tipo: openai
+      url: "https://openrouter.ai/api/v1/chat/completions"
+      modello: google/gemma-4-31b-it:free
+      alternative: ["nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-26b-a4b-it:free"]
+      chiave: OPENROUTER_API_KEY
+    # Ultima riserva: GitHub Models. Su GitHub Actions usa il token automatico del
+    # repository; accetta solo richieste piccole, da qui max_notizie.
+    - tipo: openai
+      url: "https://models.github.ai/inference/chat/completions"
+      modello: openai/gpt-4.1-mini
+      chiave: GITHUB_TOKEN
+      max_notizie: 30
+  soglia_rilevanza: 7    # da 1 a 10: sotto la soglia non ricevi nulla
+
+orari:
+  fuso_orario: Europe/Rome
+  apertura: "07:30"        # buongiorno e riepilogo della notte, in un unico messaggio
+  prima_notizia: "08:00"   # da qui un giro di notizie ogni ora...
+  ultima_notizia: "22:00"  # ...fino a qui; poi il messaggio di chiusura e silenzio fino all'apertura
+  max_riepilogo_notte: 6   # notizie al massimo nel riepilogo della notte
+
+notifiche:
+  max_per_giro: 5        # tetto di notifiche per ogni giro
+  con_suono_da: 8        # voto da cui la notifica suona; sotto arriva senza suono
+  finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore
+  etichetta_perche: "Perché conta per il PSP"   # riga sotto il riassunto
+
+# Testate da ignorare sempre (il nome come appare nelle notifiche, accanto al link)
+fonti_escluse: ["Criptovaluta.it", "Vietnam.vn"]
+
+# Reparti del team WhiteRock. Ogni notizia indica in testa quelli a cui è più utile, come
+# hashtag: toccandone uno su Telegram si vedono tutte le notizie di quel reparto.
+# La descrizione aiuta l'IA a scegliere.
+reparti:
+  - nome: Macroeconomia
+    descrizione: "crescita, lavoro, inflazione, banche centrali, politica fiscale, ciclo economico"
+  - nome: Geopolitica
+    descrizione: "conflitti, sanzioni, dazi e commercio internazionale, elezioni, energia, rischio Paese"
+  - nome: Azionario
+    descrizione: "borse, utili, valutazioni, settori, grandi titoli tecnologici, singoli titoli come Eni"
+  - nome: Obbligazionario
+    descrizione: "tassi, curve dei rendimenti, titoli di Stato, spread, obbligazioni societarie, debito emergente"
+  - nome: Copertura
+    descrizione: "cambi, EUR/USD, valute emergenti, costo della copertura, forward, swap e opzioni valutarie"
+  - nome: Risk management
+    descrizione: "volatilità, stress di mercato, concentrazione, rating, default, regole MiFID e fiscalità"
+
+# ------------------------------------------------------------
+# Regola delle parole chiave: se contengono maiuscole il confronto
+# rispetta maiuscole e minuscole ("Fed" non trova "fed up");
+# se sono tutte minuscole, no ("inflazione" trova anche "Inflazione").
+# ------------------------------------------------------------
+
+# Titoli seguiti: cercati per nome, ticker e sinonimi in tutti i feed,
+# più i feed dedicati (Yahoo, Seeking Alpha, Google News).
+titoli:
+  - nome: Eni
+    icona: "🛢️"
+    reparti: [Azionario, Risk management]
+    ticker: ENI.MI
+    ticker_usa: E          # ADR quotato a New York: serve per Seeking Alpha
+    sinonimi: ["ENI", "Eni SpA", "Descalzi", "Plenitude", "Enilive"]
+    perche: "La cliente del PSP lavora in Eni e ne ha le RSU: rischio di concentrazione"
+
+# Temi seguiti, nell'ordine della mappa del PSP.
+# icona: compare davanti al titolo della notifica (titoli e temi; senza icona: 📰).
+# reparti: quelli a cui il tema serve; si usano quando l'IA non risponde.
+# parole_chiave: servono a mettere in ordine le notizie e come riserva se l'IA non risponde.
+# ricerca_it / ricerca_en (facoltative): ricerche aggiunte su Google News in italiano / inglese.
+temi:
+  # 1. Tassi e politica monetaria
+  - nome: BCE
+    icona: "🇪🇺"
+    reparti: [Macroeconomia, Obbligazionario]
+    parole_chiave: ["BCE", "ECB", "Lagarde", "Eurotower", "€STR", "Euribor", "tassi BCE", "politica monetaria", "forward guidance"]
+    ricerca_it: "BCE tassi"
+  - nome: Fed
+    icona: "🇺🇸"
+    reparti: [Macroeconomia, Obbligazionario]
+    parole_chiave: ["Fed", "FOMC", "Federal Reserve", "Fed chair", "presidente della Fed", "fed funds", "dot plot"]
+    ricerca_en: "FOMC Fed rates"
+  - nome: Curva dei rendimenti
+    icona: "📈"
+    reparti: [Obbligazionario]
+    parole_chiave: ["curva dei rendimenti", "yield curve", "term premium", "premio a termine", "inversione della curva", "inverted curve", "steepening", "irripidimento", "Treasury", "Treasuries", "Bund", "bond yields", "rendimenti", "bond sell-off", "sell-off obbligazionario"]
+    ricerca_en: "Treasury yields term premium"
+  - nome: Inflazione e aspettative
+    icona: "🌡️"
+    reparti: [Macroeconomia, Obbligazionario]
+    parole_chiave: ["inflazione", "inflation", "CPI", "HICP", "IPCA", "PCE", "core inflation", "inflazione di fondo", "breakeven", "inflation expectations", "aspettative di inflazione", "TIPS", "inflation-linked"]
+    ricerca_en: "inflation expectations breakeven"
+  # 2. Credito
+  - nome: Obbligazioni societarie e default
+    icona: "🏢"
+    reparti: [Obbligazionario, Risk management]
+    parole_chiave: ["corporate bond", "corporate bonds", "obbligazioni societarie", "investment grade", "high yield", "credit spread", "credit spreads", "spread creditizi", "default rate", "tasso di default", "ICE BofA"]
+    ricerca_en: "investment grade credit spreads"
+  - nome: Debito emergente e rischio Paese
+    icona: "🌍"
+    reparti: [Obbligazionario, Geopolitica]
+    parole_chiave: ["emerging market debt", "emerging-market bonds", "debito emergente", "EMBI", "local currency bonds", "hard currency", "sovereign default", "default sovrano", "IMF", "FMI"]
+    ricerca_en: "emerging market sovereign bonds spreads"
+  - nome: Rating e merito di credito
+    icona: "⭐"
+    reparti: [Risk management, Obbligazionario]
+    parole_chiave: ["rating", "Moody's", "Fitch", "S&P Global Ratings", "DBRS", "Scope Ratings", "downgrade", "upgrade", "outlook negativo", "outlook positivo", "sovereign rating", "rating sovrano"]
+    ricerca_it: "rating Italia Moody's Fitch S&P"
+    ricerca_en: "sovereign credit rating downgrade"
+  # 3. Azionario
+  - nome: Borse, valutazioni e utili
+    icona: "📊"
+    reparti: [Azionario]
+    parole_chiave: ["S&P 500", "Stoxx 600", "STOXX 600", "Euro Stoxx", "MSCI Emerging", "Wall Street", "Piazza Affari", "FTSE MIB", "Ftse Mib", "P/E", "CAPE", "valutazioni", "valuations", "earnings season", "trimestrali", "stime sugli utili", "earnings estimates"]
+  - nome: Concentrazione dei grandi titoli tecnologici
+    icona: "💻"
+    reparti: [Azionario, Risk management]
+    parole_chiave: ["Magnificent Seven", "Magnifici Sette", "Magnifici 7", "big tech", "megacap", "mega-cap", "market concentration"]
+    ricerca_en: "S&P 500 concentration megacap tech"
+  - nome: Cina ed economie emergenti
+    icona: "🇨🇳"
+    reparti: [Azionario, Macroeconomia, Geopolitica]
+    parole_chiave: ["Cina", "China", "economia cinese", "Chinese economy", "PBOC", "yuan", "renminbi", "mercati emergenti", "emerging markets", "emerging economies"]
+    ricerca_en: "China economy stimulus"
+  # 4. Cambi e copertura
+  - nome: Cambi e costo della copertura
+    icona: "💱"
+    reparti: [Copertura]
+    parole_chiave: ["EUR/USD", "euro-dollaro", "cambio euro", "euro dollar", "dollar index", "DXY", "valute emergenti", "emerging market currencies", "punti forward", "forward points", "copertura valutaria", "currency hedging", "FX hedging", "hedging costs", "cross-currency basis", "carry trade"]
+    ricerca_it: "cambio euro dollaro"
+    ricerca_en: ["currency hedging costs euro dollar", "EUR/USD dollar euro outlook"]
+  # 5. Contesto macro e geopolitico
+  - nome: Crescita e lavoro
+    icona: "🏭"
+    reparti: [Macroeconomia]
+    parole_chiave: ["PIL", "GDP", "PMI", "ISM", "payrolls", "nonfarm", "disoccupazione", "unemployment rate", "jobless claims", "recessione", "recession", "Istat", "Eurostat", "Ifo", "ZEW"]
+    ricerca_it: "economia italiana PIL Istat"
+    ricerca_en: "eurozone economy PMI"
+  - nome: Geopolitica e commercio internazionale
+    icona: "🌐"
+    reparti: [Geopolitica]
+    parole_chiave: ["geopolitica", "geopolitical", "guerra", "war", "conflitto", "conflict", "sanzioni", "sanctions", "dazi", "tariffs", "guerra commerciale", "trade war", "elezioni", "election", "NATO", "Ucraina", "Ukraine", "Russia", "Israele", "Israel", "Iran", "Taiwan", "Medio Oriente", "Middle East"]
+    ricerca_it: "geopolitica mercati finanziari"
+    ricerca_en: ["geopolitical risk markets", "tariffs trade war"]
+  - nome: Energia e materie prime
+    icona: "⚡"
+    reparti: [Geopolitica, Macroeconomia]
+    parole_chiave: ["petrolio", "oil prices", "Brent", "WTI", "OPEC", "OPEC+", "TTF", "gas naturale", "natural gas", "LNG", "GNL", "materie prime", "commodities"]
+    ricerca_en: "oil prices OPEC"
+  - nome: Debito pubblico e spread BTP-Bund
+    icona: "🇮🇹"
+    reparti: [Obbligazionario, Macroeconomia]
+    parole_chiave: ["BTP", "spread", "debito pubblico", "public debt", "deficit", "legge di bilancio", "manovra", "Patto di stabilità", "aste BTP", "MEF", "OAT"]
+    ricerca_it: "spread BTP Bund"
+  # 6. Rischi, fiscalità e regolamentazione
+  - nome: Rischi di mercato e volatilità
+    icona: "🛡️"
+    reparti: [Risk management]
+    parole_chiave: ["volatilità", "volatility", "VIX", "MOVE index", "risk-off", "sell-off", "crollo", "crash", "stress", "liquidità", "liquidity", "contagio", "contagion", "margin call", "stabilità finanziaria", "financial stability", "stress test"]
+    ricerca_it: "volatilità mercati rischio"
+    ricerca_en: "market volatility VIX risk-off"
+  - nome: Fiscalità e regole per i risparmiatori
+    icona: "⚖️"
+    reparti: [Risk management]
+    parole_chiave: ["tassazione delle rendite", "rendite finanziarie", "capital gain", "Agenzia delle Entrate", "MiFID", "ESMA", "Consob", "adeguatezza", "appropriatezza", "PRIIPs", "Retail Investment Strategy"]
+    ricerca_it: ["tassazione rendite finanziarie", "Consob MiFID risparmiatori"]
+
+# Siti di notizie letti a ogni giro. Tutte le loro notizie nuove vanno all'IA,
+# che decide cosa conta in base al profilo.
+# ufficiale: true = comunicati istituzionali, sempre in cima e inviati anche senza IA.
+# filtra: true    = per siti non solo finanziari: passano solo le notizie con parole chiave seguite.
+feed_generali:
+  # Mercati USA e globali
+  - {nome: Bloomberg Markets, url: "https://feeds.bloomberg.com/markets/news.rss"}
+  - {nome: Bloomberg Economics, url: "https://feeds.bloomberg.com/economics/news.rss"}
+  - {nome: CNBC, url: "https://www.cnbc.com/id/100003114/device/rss/rss.html"}
+  - {nome: CNBC Finance, url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"}
+  - {nome: MarketWatch, url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"}
+  - {nome: WSJ Markets, url: "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"}
+  - {nome: Financial Times, url: "https://www.ft.com/markets?format=rss"}
+  - {nome: Investing.com, url: "https://www.investing.com/rss/news.rss"}
+  - {nome: Investing.com Indicatori, url: "https://www.investing.com/rss/news_95.rss"}
+  - {nome: Fortune, url: "https://fortune.com/feed/"}
+  - {nome: BBC Business, url: "https://feeds.bbci.co.uk/news/business/rss.xml"}
+  # Zacks: feed pubblicato da Barchart; quasi solo singoli titoli USA, quindi filtrato
+  - {nome: Zacks, url: "https://www.barchart.com/news/authors/457/Zacks.com/rss", filtra: true}
+  # Cambi
+  - {nome: Investing.com Forex, url: "https://www.investing.com/rss/news_1.rss"}
+  - {nome: Investing.com Italia Forex, url: "https://it.investing.com/rss/news_1.rss"}
+  - {nome: FXStreet, url: "https://www.fxstreet.com/rss/news", filtra: true}
+  # Geopolitica
+  - {nome: BBC World, url: "https://feeds.bbci.co.uk/news/world/rss.xml", filtra: true}
+  # Italia
+  - {nome: Il Sole 24 Ore Finanza, url: "https://www.ilsole24ore.com/rss/finanza.xml"}
+  - {nome: Il Sole 24 Ore Economia, url: "https://www.ilsole24ore.com/rss/economia.xml"}
+  # Milano Finanza non ha un feed RSS: lo leggo con una ricerca su Google News limitata al suo sito
+  - {nome: Milano Finanza, url: "https://news.google.com/rss/search?q=site:milanofinanza.it+when:1d&hl=it&gl=IT&ceid=IT:it"}
+  - {nome: ANSA Economia, url: "https://www.ansa.it/sito/notizie/economia/economia_rss.xml"}
+  - {nome: Investing.com Italia, url: "https://it.investing.com/rss/news.rss"}
+  # Istituzionali
+  - {nome: BCE, url: "https://www.ecb.europa.eu/rss/press.html", ufficiale: true}
+  - {nome: BCE statistiche, url: "https://www.ecb.europa.eu/rss/statpress.html", ufficiale: true}
+  - {nome: BCE blog, url: "https://www.ecb.europa.eu/rss/blog.html"}
+  - {nome: Fed, url: "https://www.federalreserve.gov/feeds/press_monetary.xml", ufficiale: true}
+  # Banca d'Italia: feed per sezione ("Media" = comunicati, notizie e interventi; "Pubblicazioni")
+  - {nome: Banca d'Italia, url: "https://www.bancaditalia.it/util/index.rss.html?sezione=/media&lingua=it"}
+  - {nome: Banca d'Italia pubblicazioni, url: "https://www.bancaditalia.it/util/index.rss.html?sezione=/pubblicazioni&lingua=it"}
+  # Consob e Agenzia delle Entrate non hanno feed RSS: ricerche su Google News limitate al loro sito
+  - {nome: Consob, url: "https://news.google.com/rss/search?q=site:consob.it+when:2d&hl=it&gl=IT&ceid=IT:it"}
+  - {nome: Agenzia delle Entrate, url: "https://news.google.com/rss/search?q=site:agenziaentrate.gov.it+when:2d&hl=it&gl=IT&ceid=IT:it"}
+  - {nome: ESMA, url: "https://www.esma.europa.eu/rss.xml"}
+  - {nome: BIS, url: "https://www.bis.org/doclist/all_pressrels.rss"}
+  # Scartati il 3/10/2026: Yahoo Finance generale (feed fermo al 23/09; la ricerca su Google News
+  # restituisce solo pagine di quotazioni), ISPI (feed fermo al 2023).
+
+# Feed dedicati a ogni titolo. Segnaposti: {ticker}, {ticker_usa}, {query}.
+# Un feed viene saltato se al titolo manca un valore richiesto (es. ticker_usa).
+feed_per_titolo:
+  - {nome: Yahoo Finance, url: "https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US"}
+  - {nome: Seeking Alpha, url: "https://seekingalpha.com/api/sa/combined/{ticker_usa}.xml"}
+  # Nasdaq: il suo feed per titolo blocca le richieste automatiche, quindi ricerca su Google News
+  - {nome: Nasdaq, url: "https://news.google.com/rss/search?q=site:nasdaq.com+{query}+when:1d&hl=en-US&gl=US&ceid=US:en"}
+  - {nome: Google News IT, url: "https://news.google.com/rss/search?q={query}+when:1d&hl=it&gl=IT&ceid=IT:it"}
+  - {nome: Google News EN, url: "https://news.google.com/rss/search?q={query}+when:1d&hl=en-US&gl=US&ceid=US:en"}
+
+# Indirizzi delle ricerche su Google News usate dai temi (ricerca_it / ricerca_en)
+ricerca_google_news:
+  it: "https://news.google.com/rss/search?q={query}+when:1d&hl=it&gl=IT&ceid=IT:it"
+  en: "https://news.google.com/rss/search?q={query}+when:1d&hl=en-US&gl=US&ceid=US:en"

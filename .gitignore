@@ -1,0 +1,13 @@
+# Chiavi e segreti: mai nel repository
+.env
+
+# Documento di progetto: contiene le chiavi API in chiaro
+Agente notizie finanziarie*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Windows / Google Drive
+desktop.ini
