@@ -6,6 +6,7 @@
  * - messaggi del proprietario: li mette in coda come comandi e fa partire subito l'agente su GitHub;
  * - pulsanti della proposta di profilo: diventano il comando /proposta applica|ignora <id>.
  * L'agente (agente.py) a ogni giro ritira da qui voti e comandi (/agente/voti, /agente/coda).
+ * Fa anche da orologio: ogni 15 minuti avvia l'agente su GitHub (vedi "scheduled").
  *
  * Segreti (npx wrangler secret put): TELEGRAM_TOKEN, WEBHOOK_SECRET, AGENTE_KEY, OWNER_ID, GITHUB_TOKEN.
  * Variabile in wrangler.toml: REPO. Archivio: KV con nome "STATO".
@@ -23,6 +24,12 @@ const AIUTO = `Comandi del bot (oppure scrivimi in italiano normale, es. "segui 
 /aiuto – questo elenco`;
 
 export default {
+  // Orologio: ogni 15 minuti fa partire l'agente su GitHub (orari in wrangler.toml, in UTC).
+  // È più puntuale degli orari di GitHub, che restano come riserva.
+  async scheduled(evento, env, ctx) {
+    ctx.waitUntil(avviaAgente(env, "orario"));
+  },
+
   async fetch(request, env) {
     const url = new URL(request.url);
 
@@ -158,7 +165,7 @@ async function accoda(env, testo) {
 }
 
 // Fa partire subito l'agente su GitHub; senza token il comando aspetta il giro programmato
-async function avviaAgente(env) {
+async function avviaAgente(env, motivo = "comando") {
   if (!env.GITHUB_TOKEN) return false;
   const risposta = await fetch(`https://api.github.com/repos/${env.REPO}/dispatches`, {
     method: "POST",
@@ -168,7 +175,7 @@ async function avviaAgente(env) {
       "X-GitHub-Api-Version": "2022-11-28",
       "User-Agent": "agente-notizie-bot",
     },
-    body: JSON.stringify({ event_type: "comando" }),
+    body: JSON.stringify({ event_type: motivo }),
   });
   return risposta.status === 204;
 }

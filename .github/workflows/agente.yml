@@ -10,8 +10,8 @@ name: Agente notizie
 on:
   schedule:
     - cron: "4,19,34,49 5-21 * * *"   # dalle 5:04 alle 21:49 UTC (in Italia 7:04-23:49 d'estate, 6:04-22:49 d'inverno)
-  repository_dispatch:               # avvio immediato dal bot Telegram (Worker di Cloudflare), per i comandi
-    types: [comando]
+  repository_dispatch:               # avvio dal Worker di Cloudflare: comandi del bot e orologio ogni 15 minuti
+    types: [comando, orario]
   workflow_dispatch:                 # pulsante "Run workflow" per avviarlo a mano
     inputs:
       azione:
