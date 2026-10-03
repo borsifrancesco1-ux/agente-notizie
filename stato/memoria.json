@@ -375,7 +375,23 @@
   "9c13adc7ea1e8112": "2026-10-03T18:01:30+00:00",
   "959b7b9b2b7f50e2": "2026-10-03T18:01:30+00:00",
   "904eda0e957bcae7": "2026-10-03T18:01:30+00:00",
-  "c29ba5a96caa050a": "2026-10-03T18:01:30+00:00"
+  "c29ba5a96caa050a": "2026-10-03T18:01:30+00:00",
+  "22885239bd50fb40": "2026-10-03T19:01:32+00:00",
+  "cc77ac69c3c1b979": "2026-10-03T19:01:32+00:00",
+  "cc3ecb3a0d07f2c3": "2026-10-03T19:01:32+00:00",
+  "5a7728b31a4a2589": "2026-10-03T19:01:32+00:00",
+  "f3efae0aa37f7de5": "2026-10-03T19:01:32+00:00",
+  "4167a89e2f0d76e9": "2026-10-03T19:01:32+00:00",
+  "120ce41757d745d2": "2026-10-03T19:01:32+00:00",
+  "f6698353a5a2a34c": "2026-10-03T19:01:32+00:00",
+  "8434a44884ef984d": "2026-10-03T19:01:32+00:00",
+  "49df8a17ab8fa327": "2026-10-03T19:01:32+00:00",
+  "194a25af2288976d": "2026-10-03T19:01:32+00:00",
+  "97eb48f853ef97d1": "2026-10-03T19:01:32+00:00",
+  "ca5da02b0952366b": "2026-10-03T19:01:32+00:00",
+  "8bb60433479572b5": "2026-10-03T19:01:32+00:00",
+  "8a7676217e300401": "2026-10-03T19:01:32+00:00",
+  "591ac57c93df64c2": "2026-10-03T19:01:32+00:00"
  },
  "inviate": [
   {
@@ -1388,7 +1404,10 @@
     "while"
    ],
    "link": "https://fortune.com/2026/10/03/us-debt-mercy-bond-market-interest-costs-treasury-yields-midterm-election-debt-ceiling/",
-   "quando": "2026-10-03T18:01:30+00:00"
+   "quando": "2026-10-03T18:01:30+00:00",
+   "voti": {
+    "a945f4701b6d": 1
+   }
   },
   {
    "id": "0a5f04cff0b1d506",
@@ -1524,16 +1543,92 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUF9FSDB5M3pqbW92WXpJS2xpNnV6cGJVdlhnNlViMjlrbnZXSmRRR0JaZGVKaGZodUp3R0E2UWJyYjdJYndUWG02YU85S2h5UnVsU1ZVOTl3WWlKYVZ2XzdQb0x4aWRtbWxkRW5QMzlDWGtoa0luVEJLcjFlLWRsNHZrM1p3SjFiaGw4c1BvbkFrSktGTWVFSW1lRm4ySEZsMndoTjRNMVM0RUHSAbABQVVfeXFMTm1xSFktQllISHppSndoRVIzRjJjQ1ZULXpzb0g0dUJteTd6UTlVNzlIRWVYTFF3d1pEdTN3dk92eHdVUXlnY1Rjb2UzeFV1Q1hzbldDcHcxaUpjd2RfdWVBNlI3ZW5nZ0I5TUpBXzhlbjVENlViblFzd1FpbEw0V2ZTNm01aDZmdjlCSlBXaDlGYzdpZmpaXzRXeDRrRE4zd0ZjU1FVcUx2bVl6SllkZUg?oc=5",
    "quando": "2026-10-03T18:01:37+00:00"
+  },
+  {
+   "id": "4167a89e2f0d76e9",
+   "titolo": "Intesa aumenta di 0,25 euro il corrispettivo cash dell'Opas su Mps",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "azione",
+    "banca",
+    "banco",
+    "bpm",
+    "cash",
+    "decadra",
+    "euro",
+    "generali",
+    "intesa",
+    "mps",
+    "opas",
+    "ops",
+    "rilancio",
+    "sanpaolo",
+    "soci",
+    "voteranno"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNd3NSTWM1TmJ6aU9XQ2s3dTJrZFNlZndjUEhuTWoybHU2cXNnWlFtSWl3UnlHN3ZXUnExZ0p2R2VyRUFOR1Z1V0t5emdWNzhUWUFYYmdQV2Y1SWtBcERxejVpR0JET1hFdm1NV0FyVVozUUMzWUkwX1RPRnFNOFZrOE1zMkR3S3BWUWd0cFAtNjRFeF91V2VSWWp2aTlVTmtIMURILUZJQmFyRHNFYURtNUY0aGxNUFNhMkF0dU1Fb09kODViOU1WdnIyMDhDeUhGY2VUUUtINmpoMkJ6NjdETkJ6STdMN1M0Zk9Ocg?oc=5",
+   "quando": "2026-10-03T19:01:33+00:00"
+  },
+  {
+   "id": "cc3ecb3a0d07f2c3",
+   "titolo": "These bond strategies can help you get a safe 5% return on your cash",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "can",
+    "cash",
+    "get",
+    "help",
+    "return",
+    "safe",
+    "strategies",
+    "these",
+    "you",
+    "your"
+   ],
+   "link": "https://www.marketwatch.com/story/these-bond-strategies-can-help-you-get-a-safe-5-return-on-your-cash-5fa45ccd?mod=mw_rss_topstories",
+   "quando": "2026-10-03T19:01:33+00:00"
+  },
+  {
+   "id": "8a7676217e300401",
+   "titolo": "Asian shares fall after wild swings in bonds, FX; US jobs data looms",
+   "tema": "Rischi di mercato e volatilità",
+   "reparti": [
+    "Risk management",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "asian",
+    "bonds",
+    "data",
+    "fall",
+    "jobs",
+    "looms",
+    "shares",
+    "swings",
+    "wild"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZmJtN1ZrZnlNM2s2QjJFTjhwazlVUDNWejN5SFJleGhEY3hSWS00S2NfVjdJQnhUaHBnUU9sYjI1MlJITTd3bmdMalBYbXJKRWRMQmtpQkZLSmpsV25wRXpYc3ROczlTZEppWTVXTHo4NjlNQ3U2azlCV1Y3TkwwNmpwdDM3MUNnOWRMbEh5aVluV0RVZzJR?oc=5",
+   "quando": "2026-10-03T19:01:34+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 9
+  "2026-10-03": 10
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 20"
+  "ora_notizie": "2026-10-03 21"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
