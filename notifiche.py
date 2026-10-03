@@ -56,13 +56,26 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
         righe = [f"\n\n{numero}. " + " ".join(hashtag(r) for r in v["reparti"]),
                  f"{v['icona']} <b>{esc(v['titolo'])}</b>"]
         if v["riassunto"]:
-            righe.append(esc(v["riassunto"]))
+            righe.append(esc(breve(v["riassunto"])))
         righe.append(link_testuali(v["fonti"], massimo=2).strip())
         blocco = "\n".join(righe)
         if _visibile(testo + blocco + fine) > LUNGHEZZA_MASSIMA:
             break
         testo += blocco
     return testo + fine
+
+
+def breve(testo: str, massimo: int = 280) -> str:
+    """Le prime frasi intere che stanno in 'massimo' caratteri (per il riepilogo della notte)."""
+    if len(testo) <= massimo:
+        return testo
+    frasi = re.split(r"(?<=[.!?])\s+", testo)
+    risultato = frasi[0]
+    for frase in frasi[1:]:
+        if len(risultato) + 1 + len(frase) > massimo:
+            break
+        risultato += " " + frase
+    return risultato if len(risultato) <= massimo else risultato[:massimo].rsplit(" ", 1)[0] + "…"
 
 
 def chiusura(inviate_oggi: list[dict], apertura: str) -> str:

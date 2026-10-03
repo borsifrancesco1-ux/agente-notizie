@@ -34,5 +34,5 @@ Per l'asset allocation strategica contano soprattutto i punti 1–4 nella loro v
 - Singole aziende che non seguo, salvo eventi che muovono l'intero mercato.
 
 ## Come voglio le notifiche
-- Poche e utili: meglio perdere una notizia minore che riceverne dieci inutili.
-- Titolo originale, poi due o tre righe in italiano: cosa è successo, i numeri chiave, perché conta per il portafoglio.
+- Voglio essere informato su tutto ciò che è utile ai reparti del team, comprese analisi e notizie di contesto; scarta solo quelle irrilevanti, ripetitive o acchiappaclic.
+- Titolo originale, poi un riassunto in italiano di tre o quattro frasi: cosa è successo, i numeri chiave, il contesto e perché conta per il portafoglio.

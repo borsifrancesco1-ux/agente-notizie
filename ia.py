@@ -38,9 +38,9 @@ Ricevi un elenco numerato di notizie (titolo, testata, data, breve descrizione).
 3. segnare gia_inviata = true se il fatto è già tra le notizie inviate (anche con parole diverse);
 4. solo per i gruppi con voto almeno {soglia} e non già inviati, scrivere la notifica:
    - "titolo": il titolo originale più informativo del gruppo, copiato senza modifiche e senza tradurlo;
-   - "riassunto": una o due frasi in italiano (massimo 250 caratteri): cosa è successo e i numeri
-     chiave se ci sono;
-   - "perche_conta": una frase in italiano (massimo 160 caratteri): perché il fatto conta per il
+   - "riassunto": tre o quattro frasi in italiano (massimo 500 caratteri): cosa è successo, i numeri
+     chiave se ci sono, il contesto (cause, precedenti, reazione dei mercati) quando le notizie lo riportano;
+   - "perche_conta": una o due frasi in italiano (massimo 220 caratteri): perché il fatto conta per il
      portafoglio o il progetto della persona, senza ripetere il riassunto;
    - "reparti": da 1 a 3 reparti del team (vedi REPARTI DEL TEAM) a cui il fatto è più utile,
      dal più al meno interessato.
@@ -51,7 +51,8 @@ Scala dei voti:
   dato macro chiave fuori dalle attese, risultati o guidance di un titolo seguito, operazioni
   straordinarie, cambi di rating, forti movimenti di prezzo);
 - 7-8: notizia nuova e specifica su un titolo o un tema seguito;
-- 4-6: notizia di contorno, commenti, anteprime;
+- 6: analisi, commento o notizia di contesto utile ad almeno uno dei reparti del team;
+- 4-5: notizia marginale, ripetitiva o anteprima senza contenuti;
 - 1-3: irrilevante, generica, promozionale o acchiappaclic.
 Dai voti bassi alle previsioni generiche senza fatti nuovi e ai fatti riportati solo da siti
 poco autorevoli. Ogni numero deve comparire in un solo gruppo. "tema": il tema o titolo seguito
