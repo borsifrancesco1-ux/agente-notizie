@@ -391,7 +391,28 @@
   "ca5da02b0952366b": "2026-10-03T19:01:32+00:00",
   "8bb60433479572b5": "2026-10-03T19:01:32+00:00",
   "8a7676217e300401": "2026-10-03T19:01:32+00:00",
-  "591ac57c93df64c2": "2026-10-03T19:01:32+00:00"
+  "591ac57c93df64c2": "2026-10-03T19:01:32+00:00",
+  "04eeddb5aaa084f2": "2026-10-03T20:01:06+00:00",
+  "9eb51ef86e6d4dd1": "2026-10-03T20:01:06+00:00",
+  "38276edf1df88248": "2026-10-03T20:01:06+00:00",
+  "52aa5a4d55770c9d": "2026-10-03T20:01:06+00:00",
+  "d0fb4310a4bf0bab": "2026-10-03T20:01:06+00:00",
+  "64f4d4d1a15c6b48": "2026-10-03T20:01:06+00:00",
+  "a3f0e47837e2aef6": "2026-10-03T20:01:06+00:00",
+  "41c874b3a689b627": "2026-10-03T20:01:06+00:00",
+  "46e048996de3b477": "2026-10-03T20:01:06+00:00",
+  "30df6222a4ca99fc": "2026-10-03T20:01:06+00:00",
+  "0553eebafbb3ed07": "2026-10-03T20:01:06+00:00",
+  "17b6ec178ab48192": "2026-10-03T20:01:06+00:00",
+  "1720e0ca37d2da91": "2026-10-03T20:01:06+00:00",
+  "44c6d16f2028a945": "2026-10-03T20:01:06+00:00",
+  "5903987a3f463c4c": "2026-10-03T20:01:06+00:00",
+  "b5632fde29a2a97f": "2026-10-03T20:01:06+00:00",
+  "2254d19ff4db9431": "2026-10-03T20:01:06+00:00",
+  "e7b2d0d52baa8efd": "2026-10-03T20:01:06+00:00",
+  "26971906a7ad937b": "2026-10-03T20:01:06+00:00",
+  "9907bf104118c019": "2026-10-03T20:01:06+00:00",
+  "bd93cf87a2069574": "2026-10-03T20:01:06+00:00"
  },
  "inviate": [
   {
@@ -1619,16 +1640,180 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZmJtN1ZrZnlNM2s2QjJFTjhwazlVUDNWejN5SFJleGhEY3hSWS00S2NfVjdJQnhUaHBnUU9sYjI1MlJITTd3bmdMalBYbXJKRWRMQmtpQkZLSmpsV25wRXpYc3ROczlTZEppWTVXTHo4NjlNQ3U2azlCV1Y3TkwwNmpwdDM3MUNnOWRMbEh5aVluV0RVZzJR?oc=5",
    "quando": "2026-10-03T19:01:34+00:00"
+  },
+  {
+   "id": "e7b2d0d52baa8efd",
+   "titolo": "Fed holds interest rates steady as inflation hits 3-year high",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "fed",
+    "high",
+    "hits",
+    "holds",
+    "inflation",
+    "interest",
+    "rates",
+    "steady",
+    "year"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObE9meWdub2FOS2dVY0pKYUxReEZrZGJhMnIyNG9JTEJpZlhISXFXMlZGZk1kSjRPWlRPejV6aTdXSHZnWWFkeHBvZVEydk9Sa1dLallzVGtIenB2OV9yR2daTDNrb2psQW5uZ2JSYnlOMUxmYzExZ1NBT1V3OGVlaERaZ1pPaVYwTDUyNVJCR1lJUkpoRFhhMzJha09TOVXSAaQBQVVfeXFMUGc0WHV5TzVaUnlTZjZ2Y1h3RHdSSnc0LWZoTzF3Uzk4WFkyQVByY1kxNkNoeDREX3Z6TDRSOUsyMmFvbHBGUWNlWUlXZGxJZFN6RFB5NWREWWtlRXUyMXJyUUlMTXo0cmh4NlpfT1pMUklyOGJLb1F5SDdteTItMzl5NVQybXk5U2ZQWkRGYmhnU0dJZ2hoTEFjb3FLaktRcjZNbDc?oc=5",
+   "quando": "2026-10-03T20:01:07+00:00"
+  },
+  {
+   "id": "bd93cf87a2069574",
+   "titolo": "OPEC+ Likely to Again Raise Oil Output Targets From September, Sources Say",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "again",
+    "likely",
+    "oil",
+    "opec",
+    "output",
+    "raise",
+    "say",
+    "september",
+    "sources",
+    "targets"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRXV0WU5ETGcyalNyUlRlUGM2bUl2TkJJbGxwLWo2eWczZEs5UG5MMTRySEw2eTVtVklvSFJWUTNfb0VLemFTb3ZuVS16cExWT3VxUFB5c3M5Nk5udGZJYzB0Y254a0NtalYxakRHbXh1V0JBWkxJRFdDNVpsXzYybE02U0YzaVBiNndwd2VMbHk0WGV3WFJjMloyWFZUTElGYm50Ymh3?oc=5",
+   "quando": "2026-10-03T20:01:07+00:00"
+  },
+  {
+   "id": "44c6d16f2028a945",
+   "titolo": "Inflazione al 3,8%, la Bce di fronte al rischio di una nuova stretta: serve un piano europeo per affrontare la crisi energetica",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "affrontare",
+    "bce",
+    "crisi",
+    "energetica",
+    "europeo",
+    "fronte",
+    "inflazione",
+    "nuova",
+    "piano",
+    "rischio",
+    "serve",
+    "stretta"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOODBMZUU2OUZpajFndGFLUnFiekprWlZQbk1ZWk15RFVOQmdmZlpBT3ZhT0VXd0VYQl9nRFZ4aEh4MlFSWGY5RFlWT29BUXRLUXhEejVQOTZ6cWdhNUdvT25mMVBGU1ZjUGpiWlVaRm05MWNfcUlTRllvWHR6WTRRdWJDT2Y5MDFpT01vLXNGeGtnMmxoeXdBbzZoRzlTYXRsZXAyc09qVTVILW5YYWxIQWczRi1Rd0JHNnAxSktOYklaQzFQSXo0V1lrTEp4bHNBUUd5a1JPNkhaWjN6U3I2LTlXS2U0YUNFNXJzMVp3?oc=5",
+   "quando": "2026-10-03T20:01:08+00:00"
+  },
+  {
+   "id": "b5632fde29a2a97f",
+   "titolo": "Btp, lo spread scende a 115 punti dopo un massimo a 132. Viene dagli Usa il (lieve) calo dei rendimenti",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "115",
+    "132",
+    "btp",
+    "calo",
+    "dagli",
+    "lieve",
+    "massimo",
+    "punti",
+    "rendimenti",
+    "scende",
+    "spread",
+    "usa",
+    "viene"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxNVWRyMU9MS1RRdE5ob2NnbkpUZ2RUUElmcHhEb0E2NWhxTDlPRnZlWTBGZ3JrZG8ybGI4LUxMcURoNEdrVDYzNTk2R3NLcWRYSzlJTk9DNXVyRUQzemNqenJFUFFOa29zb0hibW1VS25iX1FPUklvdUEtNzBTRVpZc3BGc2ZPckhSeFZmR1BsNU9kX2RHdWFvbzBZZWhva3h0QjBYOEhlSDlpV1NwajkwVGFvZnRnZ182eWVLLXIzZzkwNklfelM3VmE3SDk0Tnc3T2dNMC1JWEFqSk9paUxTaTRodDNsU0tlbDJmUWdTRVVfd0lKdDRkT3FaTkNRanEzbTg0TVYzVUxYeF9mdXo2MUZLWGVHLTg0R0VmWjJxY0tkWE3SAagCQVVfeXFMT3hheThNYmRCSktreFptaHQwTnRxZndjRTBYbEZNVkRwcm96Wk5HbzRFa3h3VE9QYXV4ejQ3X2YxNGVXVkUzT3IwUDJvZDdaR19yMjl4eWNYQlBtSERENWREd0E0SUpudzRsb1Yya1hPTTlQS0VLVU9BYnZ5T2tzUFpieG5XR29MejdGV1E1Q0NESTFweFZwOHRiZEZvbmFqUzMtM0UwNE5CU1NVOVhjeUFFUHpVaUhHUmV3SVVtQU42cC03OTJtN2V1MUlOeUJ0NW9qMkJSUWlUZzFHZDEyYUpUQ3h0N0JId29QLXl0dFNCb1BzdnRPcXhjV21QaDAwam9kN2U1NDlmeFhOekNhWnhwUmVGVmRuQWNWRWhWR0Q4OWcwdTNxRjk?oc=5",
+   "quando": "2026-10-03T20:01:08+00:00"
+  },
+  {
+   "id": "38276edf1df88248",
+   "titolo": "Yemen’s Houthis say they attacked Aramco facility in Riyadh with missiles, drones",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica"
+   ],
+   "impronta": [
+    "aramco",
+    "attacked",
+    "drones",
+    "facility",
+    "houthis",
+    "missiles",
+    "riyadh",
+    "say",
+    "they",
+    "yemen"
+   ],
+   "link": "https://www.investing.com/news/commodities-news/yemens-houthis-say-they-attacked-aramco-facility-in-riyadh-with-missiles-drones-4930877",
+   "quando": "2026-10-03T20:01:09+00:00"
+  },
+  {
+   "id": "46e048996de3b477",
+   "titolo": "Paramount Debt Drop Spells Trouble for Borrowers: Credit Weekly",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "borrowers",
+    "credit",
+    "debt",
+    "drop",
+    "paramount",
+    "spells",
+    "trouble",
+    "weekly"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-03/paramount-debt-drop-spells-trouble-for-borrowers-credit-weekly",
+   "quando": "2026-10-03T20:01:12+00:00"
+  },
+  {
+   "id": "9907bf104118c019",
+   "titolo": "Nasdaq 100 Forecast: NDX falls as oil jumps and Treasury yields rise",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Copertura",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "100",
+    "falls",
+    "forecast",
+    "jumps",
+    "nasdaq",
+    "ndx",
+    "oil",
+    "rise",
+    "treasury",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNzFaSGZXVjNNX05aSDR5dS01SUpKMGU0b1JkZi1SSENXN3NSdDhUazE0LXh6ekVVdmJ3cWx5UnllMzd4OUdiQWNPbFg0ZnQ3M3E5MWVXVFowQjZSMnFQUjQ3TTRaeWpFdjl5Ympld25CN3UtV2t3dW04TnF0V3Z5bU5yV3VlSExLS1p4RHVYS1VWSnFVM2pYWnhWVVJCMDFpRDJhSnNNUWFuQ21GTWM1Qjlsd1ZLdw?oc=5",
+   "quando": "2026-10-03T20:01:13+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 10
+  "2026-10-03": 11
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 21"
+  "ora_notizie": "2026-10-03 22",
+  "chiusura": "2026-10-03"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
