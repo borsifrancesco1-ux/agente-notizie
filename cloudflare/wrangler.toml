@@ -10,4 +10,4 @@ REPO = "borsifrancesco1-ux/agente-notizie"
 # Archivio dei voti e della coda dei comandi (piano gratuito di Cloudflare)
 [[kv_namespaces]]
 binding = "STATO"
-id = "DA_IMPOSTARE"
+id = "6267b942de514146a423176fb74be2c2"
