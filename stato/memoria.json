@@ -244,7 +244,30 @@
   "fd6ed1d5847d8dc3": "2026-10-03T13:24:32+00:00",
   "020b6837de5d026c": "2026-10-03T13:24:32+00:00",
   "2ba7a1475be3511c": "2026-10-03T13:24:32+00:00",
-  "d1643c0c25cf878c": "2026-10-03T13:24:32+00:00"
+  "d1643c0c25cf878c": "2026-10-03T13:24:32+00:00",
+  "5f6fbd8d536c6b73": "2026-10-03T14:01:13+00:00",
+  "23860bae99930de0": "2026-10-03T14:01:13+00:00",
+  "4d97d9294e45fad7": "2026-10-03T14:01:13+00:00",
+  "40f07497b3bd40f4": "2026-10-03T14:01:13+00:00",
+  "8f6b5db9bd47c08b": "2026-10-03T14:01:13+00:00",
+  "5f4b2d98025867a1": "2026-10-03T14:01:13+00:00",
+  "36d68e124a241fd5": "2026-10-03T14:01:13+00:00",
+  "e458da75ec2d4d6b": "2026-10-03T14:01:13+00:00",
+  "66a724d69e3dfa80": "2026-10-03T14:01:13+00:00",
+  "f346aa39209d2126": "2026-10-03T14:01:13+00:00",
+  "c89c35768c51ac23": "2026-10-03T14:01:13+00:00",
+  "8bf2a8bc7d2368d3": "2026-10-03T14:01:13+00:00",
+  "6ad44508ba4890e5": "2026-10-03T14:01:13+00:00",
+  "f174f7d86cd93495": "2026-10-03T14:01:13+00:00",
+  "271d5e954f25d046": "2026-10-03T14:01:13+00:00",
+  "b83c258fcea0ea44": "2026-10-03T14:01:13+00:00",
+  "2deb68b23bc96b4c": "2026-10-03T14:01:13+00:00",
+  "41c379e5126b3c30": "2026-10-03T14:01:13+00:00",
+  "8affc2b516cc886a": "2026-10-03T14:01:13+00:00",
+  "470fccfbfb119fae": "2026-10-03T14:01:13+00:00",
+  "6e27ede431f89e1c": "2026-10-03T14:01:13+00:00",
+  "7633bf07e366a121": "2026-10-03T14:01:13+00:00",
+  "8ede1012afd660ab": "2026-10-03T14:01:13+00:00"
  },
  "inviate": [
   {
@@ -606,16 +629,151 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUXlHTnZQdl9COVYyWkNBSmVaTTByZ0s2UHViVURiaXhSZndKZlpDTWpiTnRrNzFxV0FrUW5jakEzaC0zdzhwWkRPcWNVNlozNV9kZXl2R3l2cDJHcDFaMjdDUGdoLV9mY0NLZ1hIQWhMOW9vUUwtRDJpc1h4dzRnUlVaM3JNbkNlTEFuTTAxQUNsbm9MYU1McXUtOWlzZ01hZ0JYbWJibUVkM3lZbmVXMA?oc=5",
    "quando": "2026-10-03T13:24:33+00:00"
+  },
+  {
+   "id": "7633bf07e366a121",
+   "titolo": "US Treasuries suffer worst month in years as sell-off feeds on itself",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "feeds",
+    "itself",
+    "month",
+    "off",
+    "sell",
+    "suffer",
+    "treasuries",
+    "worst",
+    "years"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB5M1h4VWJnRHhzcGRMUzlZR3k2VXRRZ25ENmV3cmFQMjM4X0RBNjAxLUpCRTBoTDZQWFpIRFZ3cEV3QkI2eEFac0p2a1M1emo3RUlZMDM0OA?oc=5",
+   "quando": "2026-10-03T14:01:14+00:00"
+  },
+  {
+   "id": "f174f7d86cd93495",
+   "titolo": "Berkshire buys more Lennar shares, but pace of purchases slows",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "berkshire",
+    "but",
+    "buys",
+    "lennar",
+    "more",
+    "pace",
+    "purchases",
+    "shares",
+    "slows"
+   ],
+   "link": "https://www.cnbc.com/2026/10/03/berkshire-buys-more-lennar-shares-but-pace-of-purchases-slows.html",
+   "quando": "2026-10-03T14:01:14+00:00"
+  },
+  {
+   "id": "36d68e124a241fd5",
+   "titolo": "Gli Stati Uniti prevedono di prestare 4,2 miliardi a Vistra per espandere il nucleare",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Azionario"
+   ],
+   "impronta": [
+    "espandere",
+    "gli",
+    "miliardi",
+    "nucleare",
+    "prestare",
+    "prevedono",
+    "stati",
+    "uniti",
+    "vistra"
+   ],
+   "link": "https://it.investing.com/news/stock-market-news/gli-stati-uniti-prevedono-di-prestare-42-miliardi-a-vistra-per-espandere-il-nucleare-3573199",
+   "quando": "2026-10-03T14:01:15+00:00"
+  },
+  {
+   "id": "c89c35768c51ac23",
+   "titolo": "Google cofounder Sergey Brin has spent $102 million to fight California’s proposed billionaire tax—he could owe $13 billion if he loses",
+   "tema": "Fiscalità e regole per i risparmiatori",
+   "reparti": [
+    "Risk management",
+    "Azionario"
+   ],
+   "impronta": [
+    "102",
+    "billion",
+    "billionaire",
+    "brin",
+    "california",
+    "cofounder",
+    "could",
+    "fight",
+    "google",
+    "loses",
+    "million",
+    "owe",
+    "proposed",
+    "sergey",
+    "spent",
+    "tax"
+   ],
+   "link": "https://fortune.com/article/how-much-has-google-cofounder-sergey-brin-spent-to-oppose-california-billionaire-tax-102-million-owe-13-billion-if-loses/",
+   "quando": "2026-10-03T14:01:15+00:00"
+  },
+  {
+   "id": "271d5e954f25d046",
+   "titolo": "BFF_Am Call 1.2, Sep 2027",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "2027",
+    "bff",
+    "call",
+    "sep"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQVNZY1lsUEdDdmVuaW01Y0J4OGtsU3prbDc2Y3k2emYyWDdOLUxrT3pFNEdtWDBCMHJuNnFZVlJtVVdyX215TVliUDJCblg0cDRwQk9Ka09qYU9lVmlMOHBMUG5JNGNQenBXWVNBNWxrZHZhaWIyS29tZk8zUjdNdzZ2VUk1eGxvN3c?oc=5",
+   "quando": "2026-10-03T14:01:16+00:00"
+  },
+  {
+   "id": "41c379e5126b3c30",
+   "titolo": "RBI Governor Sanjay Malhotra warns against complacency over financial risks",
+   "tema": "Rischi di mercato e volatilità",
+   "reparti": [
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "against",
+    "complacency",
+    "financial",
+    "governor",
+    "malhotra",
+    "rbi",
+    "risks",
+    "sanjay",
+    "warns"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVDIyR0VFM2JfeS1fLS1DcTRuTGJRSzV3NU5rREpCZnRzaEVnWW1Zbko4Slp6OE15QTEzYUt4ZTJJV05CRkZfb05IYVBtTkphUWxaSnRVWGk0Z3VFTkVSblpBYkFra2ktM0VKTHRqQzY1U3ZVdTZVTDU5RGZvQ19UWTZYWC1fQWctSklJWkpaZlNwa0lGREtzZzNNMGQzSDZabVVVbmQ0R3Rzbmd4VWhVVEpmOHNZaVRlb3c?oc=5",
+   "quando": "2026-10-03T14:01:20+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 3
+  "2026-10-03": 4
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 15"
+  "ora_notizie": "2026-10-03 16"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
