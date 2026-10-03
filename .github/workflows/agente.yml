@@ -8,8 +8,10 @@
 name: Agente notizie
 
 on:
+  # Riserva dell'orologio di Cloudflare: ogni ora al minuto 4, più il buongiorno delle 7:30 (UTC)
   schedule:
-    - cron: "4,19,34,49 5-21 * * *"   # dalle 5:04 alle 21:49 UTC (in Italia 7:04-23:49 d'estate, 6:04-22:49 d'inverno)
+    - cron: "4 5-21 * * *"    # in Italia ogni ora dalle 7:04 alle 23:04 d'estate, dalle 6:04 alle 22:04 d'inverno
+    - cron: "34 5,6 * * *"    # buongiorno: 7:34 in Italia sia d'estate sia d'inverno
   repository_dispatch:               # avvio dal Worker di Cloudflare: comandi del bot e orologio ogni 15 minuti
     types: [comando, orario]
   workflow_dispatch:                 # pulsante "Run workflow" per avviarlo a mano

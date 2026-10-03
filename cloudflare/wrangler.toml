@@ -7,10 +7,11 @@ compatibility_date = "2026-09-01"
 [vars]
 REPO = "borsifrancesco1-ux/agente-notizie"
 
-# Orologio dell'agente (UTC): ogni 15 minuti dalle 5:00 alle 21:45, cioè in Italia dalle 7:00
-# alle 23:45 d'estate e dalle 6:00 alle 22:45 d'inverno. Cosa fare lo decide agente.py con l'ora italiana.
+# Orologio dell'agente (UTC): ogni ora dalle 5:00 alle 21:00 (in Italia 7-23 d'estate, 6-22 d'inverno)
+# più le 5:30 e le 6:30 per il buongiorno delle 7:30 (una delle due, a seconda dell'ora legale).
+# Cosa fare lo decide agente.py con l'ora italiana.
 [triggers]
-crons = ["0,15,30,45 5-21 * * *"]
+crons = ["0 5-21 * * *", "30 5,6 * * *"]
 
 # Archivio dei voti e della coda dei comandi (piano gratuito di Cloudflare)
 [[kv_namespaces]]
