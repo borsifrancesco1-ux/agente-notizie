@@ -292,7 +292,34 @@
   "d048bd1290a41c24": "2026-10-03T15:01:18+00:00",
   "05a8055ac2e0b48d": "2026-10-03T15:01:18+00:00",
   "9993609713fd9412": "2026-10-03T15:01:18+00:00",
-  "e36ec6fc7813c392": "2026-10-03T15:01:18+00:00"
+  "e36ec6fc7813c392": "2026-10-03T15:01:18+00:00",
+  "bbef519972187154": "2026-10-03T16:01:17+00:00",
+  "f008e4fb6e7f7277": "2026-10-03T16:01:17+00:00",
+  "94d0aae4ee5da40d": "2026-10-03T16:01:17+00:00",
+  "29403f492ae5f2fa": "2026-10-03T16:01:17+00:00",
+  "40f4bf87b81bc429": "2026-10-03T16:01:17+00:00",
+  "8f6e2da51971182c": "2026-10-03T16:01:17+00:00",
+  "c73baf581115f9e5": "2026-10-03T16:01:17+00:00",
+  "7962339e7e963d34": "2026-10-03T16:01:17+00:00",
+  "87aa96c7191dd1dc": "2026-10-03T16:01:17+00:00",
+  "44065aa3c06742b6": "2026-10-03T16:01:17+00:00",
+  "3627a651ba80c9fd": "2026-10-03T16:01:17+00:00",
+  "eb0ad3153d0d5126": "2026-10-03T16:01:17+00:00",
+  "32dd84484b2e7c1a": "2026-10-03T16:01:17+00:00",
+  "0d09c75671c076de": "2026-10-03T16:01:17+00:00",
+  "ea8e432784c0c791": "2026-10-03T16:01:17+00:00",
+  "c0f0642cde732ef8": "2026-10-03T16:01:17+00:00",
+  "afc8ab8327ae67ab": "2026-10-03T16:01:17+00:00",
+  "66c3047a31565622": "2026-10-03T16:01:17+00:00",
+  "b711195215b7f592": "2026-10-03T16:01:17+00:00",
+  "6bff8aca3141e3c1": "2026-10-03T16:01:17+00:00",
+  "918856e7229eab35": "2026-10-03T16:01:17+00:00",
+  "5a15c130953550bc": "2026-10-03T16:01:17+00:00",
+  "2a789fe10df3e1ac": "2026-10-03T16:01:17+00:00",
+  "8e03135ec142b3f2": "2026-10-03T16:01:17+00:00",
+  "71a927e7761bfac6": "2026-10-03T16:01:17+00:00",
+  "856474d707a9bcfb": "2026-10-03T16:01:17+00:00",
+  "5c7ac8d04b756344": "2026-10-03T16:01:17+00:00"
  },
  "inviate": [
   {
@@ -959,16 +986,174 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBZVlRxNWItemdJa21QX2xoejFuYmhjQzVOcGcxX0dZa0FrazV4dVlYSzdTZG83SUV1U0libndPOEZ6bUZCRHIwbUZFM0NCVU0?oc=5",
    "quando": "2026-10-03T15:01:24+00:00"
+  },
+  {
+   "id": "c0f0642cde732ef8",
+   "titolo": "Bessent Downplays Worries on Rising Yields, AI Bubble Concerns",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bessent",
+    "bubble",
+    "concerns",
+    "downplays",
+    "rising",
+    "worries",
+    "yields"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-03/bessent-downplays-worries-on-rising-yields-ai-bubble-concerns",
+   "quando": "2026-10-03T16:01:18+00:00"
+  },
+  {
+   "id": "bbef519972187154",
+   "titolo": "Eni and Repsol said to be weighing a partial sale of top Venezuela gas field",
+   "tema": "Eni",
+   "reparti": [
+    "Azionario",
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "eni",
+    "field",
+    "gas",
+    "partial",
+    "repsol",
+    "sale",
+    "top",
+    "venezuela",
+    "weighing"
+   ],
+   "link": "https://seekingalpha.com/symbol/E/news?source=feed_symbol_E",
+   "quando": "2026-10-03T16:01:18+00:00"
+  },
+  {
+   "id": "71a927e7761bfac6",
+   "titolo": "Vanguard All-World ETF Closes In on 52-Week Peak After Payroll Miss Revives Rate-Cut Bets",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Azionario",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "all",
+    "bets",
+    "closes",
+    "cut",
+    "etf",
+    "miss",
+    "payroll",
+    "peak",
+    "rate",
+    "revives",
+    "vanguard",
+    "week",
+    "world"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWl9NREh6Z251TkZ4VGxCbG1iRjhEUXVlWHBzcjFmT0E2SFFUdkE3YjlCa1VtQ0hpNG1lTTk3VVdNMW1vT01BVGFrWUQ3VDFVRldZS1ZadEJwby1ESnR2dUNRM2RTYWJWbmRyRkZvR0ZkbVBmVU5yQktveHk1Q1hCNmt1ckptSzFzRlFpS3ZaN0gtalFzY3RlMEM3Yl9PbHZpNDZtdXpqeW4teTNFTTExWmhPWFQ5eHNseEgtR0hCSmE4NGhqS2N6cFM3UEJLRU15RTRsbFln?oc=5",
+   "quando": "2026-10-03T16:01:19+00:00"
+  },
+  {
+   "id": "c73baf581115f9e5",
+   "titolo": "US Military Buildup Raises Iran Escalation Risk",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "buildup",
+    "escalation",
+    "iran",
+    "military",
+    "raises",
+    "risk"
+   ],
+   "link": "https://www.bloomberg.com/news/videos/2026-10-03/us-military-buildup-raises-iran-escalation-risk-video",
+   "quando": "2026-10-03T16:01:20+00:00"
+  },
+  {
+   "id": "3627a651ba80c9fd",
+   "titolo": "How Nvidia, Micron and a surprising jobs report drove last week's stock action",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "action",
+    "drove",
+    "jobs",
+    "last",
+    "micron",
+    "nvidia",
+    "report",
+    "stock",
+    "surprising",
+    "week"
+   ],
+   "link": "https://www.cnbc.com/2026/10/03/how-nvidia-micron-and-a-surprising-jobs-report-drove-last-weeks-stock-action.html",
+   "quando": "2026-10-03T16:01:20+00:00"
+  },
+  {
+   "id": "8e03135ec142b3f2",
+   "titolo": "What Is an Earnings Yield and How Does It Compare With Treasury Yields?",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "compare",
+    "does",
+    "earnings",
+    "treasury",
+    "yield",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOLThJdTlTUl91NXVVZlVPT2FKQkdvMklYR3EwcXcyb1FVamdhOVRKOW41aVdER0dKeFQ0M1NlcGt2R1pudVNtYzQzcUdtSEFQS0ZiU1c3S2trNXgwSkpQTzNEMXAyQ1BHVmE3RE42TGQwTlV0dHNzZ0tfWElVNjA5Rl93UUMzMS04dnZMWS1LU19GVXBEbXdzSldZU0trTzQ?oc=5",
+   "quando": "2026-10-03T16:01:24+00:00"
+  },
+  {
+   "id": "5c7ac8d04b756344",
+   "titolo": "L’inflazione cresce: la Bce alza i tassi, Draghi chiede ai governi una risposta comune - Eurofocus",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "alza",
+    "bce",
+    "chiede",
+    "comune",
+    "cresce",
+    "draghi",
+    "eurofocus",
+    "governi",
+    "inflazione",
+    "risposta",
+    "tassi"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY0w1ckRFVzBPVnF3VXhhUGVSakR2akN1N2h1aXNISUltVHRTbTRsZnFRVmNrakR3QmlXakNSdm9WYU9Qcl8yN1ZnajBoZGV4cjlLZE12RkFyRjJvdmdIbVRETHZkWUxZUzBiNzgyTjNBWFFVX3FGS2lDYlVBYmQzUDBQdXJLWGpTa3JQVnQtUGdibUxQSXppYW5rT21UMm5QdzFJZzloZUFpUldDRTI5aDlxX3BwNDFmY1Qta1NEVzBLNGhkMVI3YnhLMXhjUQ?oc=5",
+   "quando": "2026-10-03T16:01:24+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 6
+  "2026-10-03": 7
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 17"
+  "ora_notizie": "2026-10-03 18"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
