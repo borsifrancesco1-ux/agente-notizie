@@ -353,7 +353,29 @@
   "dbb077a362bcbb17": "2026-10-03T17:01:42+00:00",
   "a0709c2c4b3262ea": "2026-10-03T17:01:42+00:00",
   "34e61444503e7825": "2026-10-03T17:01:42+00:00",
-  "c66a77b0503d1044": "2026-10-03T17:01:42+00:00"
+  "c66a77b0503d1044": "2026-10-03T17:01:42+00:00",
+  "21c60eb73a566666": "2026-10-03T18:01:30+00:00",
+  "0ffe71c49baa1f0f": "2026-10-03T18:01:30+00:00",
+  "2a255a4c9bb5575d": "2026-10-03T18:01:30+00:00",
+  "0a8e4d16a40d6ff4": "2026-10-03T18:01:30+00:00",
+  "554acfd9e6057e83": "2026-10-03T18:01:30+00:00",
+  "bdb66a38e361d559": "2026-10-03T18:01:30+00:00",
+  "0a2e75b02f2676f8": "2026-10-03T18:01:30+00:00",
+  "adc3a26faeeb1d71": "2026-10-03T18:01:30+00:00",
+  "0a5f04cff0b1d506": "2026-10-03T18:01:30+00:00",
+  "f226a047e21e7402": "2026-10-03T18:01:30+00:00",
+  "6a6c4c26203d0eb3": "2026-10-03T18:01:30+00:00",
+  "71e6c7862ed340ff": "2026-10-03T18:01:30+00:00",
+  "a482b678626198b9": "2026-10-03T18:01:30+00:00",
+  "8556840174049e40": "2026-10-03T18:01:30+00:00",
+  "97db95c05538a414": "2026-10-03T18:01:30+00:00",
+  "99d4a8953784d84d": "2026-10-03T18:01:30+00:00",
+  "e068659e5c95c82c": "2026-10-03T18:01:30+00:00",
+  "70a9f501498e9a5a": "2026-10-03T18:01:30+00:00",
+  "9c13adc7ea1e8112": "2026-10-03T18:01:30+00:00",
+  "959b7b9b2b7f50e2": "2026-10-03T18:01:30+00:00",
+  "904eda0e957bcae7": "2026-10-03T18:01:30+00:00",
+  "c29ba5a96caa050a": "2026-10-03T18:01:30+00:00"
  },
  "inviate": [
   {
@@ -1309,7 +1331,10 @@
     "warns"
    ],
    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRVBRSkswNXg3amsxRkxnQUxGcmZ6aFQ4VDVzc3BMUWh3M1NrT3FLZkJockFFU2ZQR05oZ2Y3NDhjbVVPM25yTFJ0VjBNV3dnSnJ6Ym5GdGxlMEFva3AxellER0g2bU1VRjJmaE03aWx3VGx2clZVOENKSGhVTlQ2eGtUQVNzZ1JnX0IzRkZDUkphY1hSZ2FWX05LSUVra1c5UUV2dm8xOTZQcGtUbU9tNW5lNNIBuAFBVV95cUxNdGhHV0FuejMyd0NnNUdWYnFwWlloYWVURmxqSWhrUXNhRFNCOWFwVUYyYlN1cjdlZ2c4TVBEbzJqSm1LVVAzWHZWckl3S2RvcTNlOEhDV2J3M2JFYnlfa0xHT0QxWWxEZ19tR2dHUHZfU3JURUdVWWxCVzctN3doMkU2bzBZWm9GWUVVLTB1eVVyUWJuVGc0S1lXSl9EaHM3Zk5wWnh4ZGdoOUd4ZDBtaFoyRmRnU0lf?oc=5",
-   "quando": "2026-10-03T17:01:47+00:00"
+   "quando": "2026-10-03T17:01:47+00:00",
+   "voti": {
+    "aa41df448206": 1
+   }
   },
   {
    "id": "327bde3466ca35b5",
@@ -1334,16 +1359,181 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVBOOVc4QVBYVGlhX1RvcWd3Wkt5d3B1cFp3OG9yUThCRmVwY3RGakhLZEJ0NkxWTzJVTFNuNU1mQ1hlNmJTT3dpcDNYS3V0bDl4M01aX0xjM0k4V2FKNDMwNXJyazdMSmh0U2pxXzZMcmFrTjA2Wkg2dlFPNUlYa0lkNUYzc0o4QmxhTE9VbmRZRlV3NkpXN3lWOGVzU3BUemFpTDcxaWlqalVSeVQwdWRvS3J1VUIxN0xvQnNTVy0?oc=5",
    "quando": "2026-10-03T17:01:48+00:00"
+  },
+  {
+   "id": "554acfd9e6057e83",
+   "titolo": "U.S. debt is increasingly at the mercy of the market as interest costs surge while elections add more risk to the debt ceiling, ratings agency warns",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "add",
+    "agency",
+    "ceiling",
+    "costs",
+    "debt",
+    "elections",
+    "increasingly",
+    "interest",
+    "market",
+    "mercy",
+    "more",
+    "ratings",
+    "risk",
+    "surge",
+    "warns",
+    "while"
+   ],
+   "link": "https://fortune.com/2026/10/03/us-debt-mercy-bond-market-interest-costs-treasury-yields-midterm-election-debt-ceiling/",
+   "quando": "2026-10-03T18:01:30+00:00"
+  },
+  {
+   "id": "0a5f04cff0b1d506",
+   "titolo": "Rates Surge Following Hot September Jobs Report",
+   "tema": "Crescita e lavoro",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "following",
+    "hot",
+    "jobs",
+    "rates",
+    "report",
+    "september",
+    "surge"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMVRzYTZwanVVZHg4cnRLWWhKMDIxQkUzMlJSZjd3Q3BPbF9TOEFmSlhNanZVTGxLeVN5TEJoZmo4WFhjdW5ibnRWenFmUDNYYU5ndEhLUE1PTXYwbzVaVUlPQnZ3c2tOdFg0YnI2T0s0dmVSY0syUUJ3OVBONVFxejc5OGxLaXBsemc?oc=5",
+   "quando": "2026-10-03T18:01:31+00:00"
+  },
+  {
+   "id": "71e6c7862ed340ff",
+   "titolo": "Goldman Sachs Flags Upside Risks to Oil Prices in Near Term and Into 2027",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "again",
+    "analysts",
+    "energy",
+    "face",
+    "flows",
+    "forecasts",
+    "hike",
+    "oil",
+    "recovery",
+    "slow"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPTk1YUGdyTFdkYlBVNTM4VlhCOF9lT3FUUDhzSDlMZXU5cURLd2d2V3BINWxBcEk2cWs4SjlySzRNZDk0QWU1SGF0Q2dtdU9wRHNzUUlQS2ZkZ3hNZHJhRFRpSTdCblVsbFhGOG9KV1lRWlZpS1RtU2wyT0NSaTRaWG9xRU5ZQmtRRE0yZVg1U2RKOVllSDdsS0lGd25rZGMy?oc=5",
+   "quando": "2026-10-03T18:01:32+00:00"
+  },
+  {
+   "id": "97db95c05538a414",
+   "titolo": "EU retools Trump trade war tripwire into China shipments surge alarm",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia",
+    "Azionario"
+   ],
+   "impronta": [
+    "alarm",
+    "china",
+    "retools",
+    "shipments",
+    "surge",
+    "trade",
+    "tripwire",
+    "trump",
+    "war"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNUHNZaWpDZ3hFU19aSDJCZjU3QW5rNDdzSUYyZUVzbk1FVGxBdUtTSHBkUUtfZ00xQjZqNkZKblpjTmlzVlgtbmhsMEpVLWNvRjU0Z2xqSWJlYnp4V3QtelEzVjVmQXBUR2tUcUd4YjZmS2E2cVJUSUcyWWw5X2MwQjdFd3dOLWEwLXJaR0NsNG1UMWJzYXpfUDFrNGQ0SnhRejNJcmxPeTBCTzZoRWlTVmZSaWVaN1ZhdGJGNk03SVNXRXJfYVNFRmN1SQ?oc=5",
+   "quando": "2026-10-03T18:01:32+00:00"
+  },
+  {
+   "id": "70a9f501498e9a5a",
+   "titolo": "Auto in Europa, il bilancio 2026 è pesante: -21% da inizio anno",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "2026",
+    "anno",
+    "auto",
+    "bilancio",
+    "europa",
+    "inizio",
+    "pesante"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWTVYdVQzU2s5bVlOSWFKZVlmbjBZMVFpQTRYbXRCVm9hU3ZxdXY3ejV4aTg2TFFEMzBYVnBXOU5hTW9hc3BkRDNCX1ZpSDR6N1BhLXNBbzQwYVI1SWQ2MHlVYWwxSnlnbzZyUXlqbTlCWVY3V2dST001QlRmdHJkNVVQT1NuYWlTWHg1VS00SHN6QzZwSXgxc0JYemdPMVpWb25URUtldGEwYmhOWGc?oc=5",
+   "quando": "2026-10-03T18:01:33+00:00"
+  },
+  {
+   "id": "959b7b9b2b7f50e2",
+   "titolo": "Jim Cramer Warns Q3 ‘Earnings Deluge’ May Not Be As Strong As Previous Quarter — ‘Much More Difficult Backdrop’",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "backdrop",
+    "cramer",
+    "deluge",
+    "difficult",
+    "earnings",
+    "jim",
+    "may",
+    "more",
+    "much",
+    "not",
+    "previous",
+    "quarter",
+    "strong",
+    "warns"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPcGttUTVpS3NCaEwwNzlNQW1XdnVfQUh0MFhKbktCT0JQX2dXeTJKb2NocnpRajBXNGNKRE9udHR4eWZnODc3blNiZWdzckU1dzdvaF9WcUdXTjVfaWdHQTdoenMyYXBHLWNpYkFucHlJZ2xBd0lTOG5pcjF4NmtBQmJ5NThoOUVJUnU1R1Z5dHRIZjY4MEJBZVBqTU5CSjN1XzUzZ0Q2LV91encyU3hWUkxmaXJVQnpGblNZZ1hWR0pacHdDZmtsclA5c0J3dXJTUlhmQ3JCblpTZ1RETXJLRUV6Ry1HMGJtNkxPOUNjZVB2cGpQWGpOaGd3?oc=5",
+   "quando": "2026-10-03T18:01:36+00:00"
+  },
+  {
+   "id": "904eda0e957bcae7",
+   "titolo": "S&P Keeps Romania at BBB- Investment Grade, Warns on Deficit",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bbb",
+    "deficit",
+    "grade",
+    "investment",
+    "keeps",
+    "romania",
+    "warns"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUF9FSDB5M3pqbW92WXpJS2xpNnV6cGJVdlhnNlViMjlrbnZXSmRRR0JaZGVKaGZodUp3R0E2UWJyYjdJYndUWG02YU85S2h5UnVsU1ZVOTl3WWlKYVZ2XzdQb0x4aWRtbWxkRW5QMzlDWGtoa0luVEJLcjFlLWRsNHZrM1p3SjFiaGw4c1BvbkFrSktGTWVFSW1lRm4ySEZsMndoTjRNMVM0RUHSAbABQVVfeXFMTm1xSFktQllISHppSndoRVIzRjJjQ1ZULXpzb0g0dUJteTd6UTlVNzlIRWVYTFF3d1pEdTN3dk92eHdVUXlnY1Rjb2UzeFV1Q1hzbldDcHcxaUpjd2RfdWVBNlI3ZW5nZ0I5TUpBXzhlbjVENlViblFzd1FpbEw0V2ZTNm01aDZmdjlCSlBXaDlGYzdpZmpaXzRXeDRrRE4zd0ZjU1FVcUx2bVl6SllkZUg?oc=5",
+   "quando": "2026-10-03T18:01:37+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 8
+  "2026-10-03": 9
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 19"
+  "ora_notizie": "2026-10-03 20"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
