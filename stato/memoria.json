@@ -319,7 +319,41 @@
   "8e03135ec142b3f2": "2026-10-03T16:01:17+00:00",
   "71a927e7761bfac6": "2026-10-03T16:01:17+00:00",
   "856474d707a9bcfb": "2026-10-03T16:01:17+00:00",
-  "5c7ac8d04b756344": "2026-10-03T16:01:17+00:00"
+  "5c7ac8d04b756344": "2026-10-03T16:01:17+00:00",
+  "d5459d10d1fed1db": "2026-10-03T17:01:42+00:00",
+  "88b8c169f88e9967": "2026-10-03T17:01:42+00:00",
+  "d011c088f94aa5b7": "2026-10-03T17:01:42+00:00",
+  "770a44e6f85e082f": "2026-10-03T17:01:42+00:00",
+  "f1fc8b3113a9963c": "2026-10-03T17:01:42+00:00",
+  "4e0772ace143daee": "2026-10-03T17:01:42+00:00",
+  "feb3f82e85386923": "2026-10-03T17:01:42+00:00",
+  "5e980b896ab51a72": "2026-10-03T17:01:42+00:00",
+  "487595b9c94e314c": "2026-10-03T17:01:42+00:00",
+  "632b5fca73355e0f": "2026-10-03T17:01:42+00:00",
+  "c3428e46bea38589": "2026-10-03T17:01:42+00:00",
+  "779ca7bf06625328": "2026-10-03T17:01:42+00:00",
+  "5be309b6f2e4f72f": "2026-10-03T17:01:42+00:00",
+  "327bde3466ca35b5": "2026-10-03T17:01:42+00:00",
+  "07f283c4101e049f": "2026-10-03T17:01:42+00:00",
+  "902b9bfd338e70b6": "2026-10-03T17:01:42+00:00",
+  "df39c7f5319543be": "2026-10-03T17:01:42+00:00",
+  "4eed005ef974bf69": "2026-10-03T17:01:42+00:00",
+  "25defc31ad8e23f0": "2026-10-03T17:01:42+00:00",
+  "4bb3a22076c5374c": "2026-10-03T17:01:42+00:00",
+  "6410c6618bf097ab": "2026-10-03T17:01:42+00:00",
+  "d8648751ec527a65": "2026-10-03T17:01:42+00:00",
+  "192daf0f1d3bbb0d": "2026-10-03T17:01:42+00:00",
+  "b015967a8b5abac2": "2026-10-03T17:01:42+00:00",
+  "6827b5c482472145": "2026-10-03T17:01:42+00:00",
+  "788f72090b984a13": "2026-10-03T17:01:42+00:00",
+  "1a3b9a4bade0f624": "2026-10-03T17:01:42+00:00",
+  "82e7bbe892ebda1d": "2026-10-03T17:01:42+00:00",
+  "23c2c146a700c208": "2026-10-03T17:01:42+00:00",
+  "b1d799aaf9542fec": "2026-10-03T17:01:42+00:00",
+  "dbb077a362bcbb17": "2026-10-03T17:01:42+00:00",
+  "a0709c2c4b3262ea": "2026-10-03T17:01:42+00:00",
+  "34e61444503e7825": "2026-10-03T17:01:42+00:00",
+  "c66a77b0503d1044": "2026-10-03T17:01:42+00:00"
  },
  "inviate": [
   {
@@ -1119,7 +1153,10 @@
     "yields"
    ],
    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOLThJdTlTUl91NXVVZlVPT2FKQkdvMklYR3EwcXcyb1FVamdhOVRKOW41aVdER0dKeFQ0M1NlcGt2R1pudVNtYzQzcUdtSEFQS0ZiU1c3S2trNXgwSkpQTzNEMXAyQ1BHVmE3RE42TGQwTlV0dHNzZ0tfWElVNjA5Rl93UUMzMS04dnZMWS1LU19GVXBEbXdzSldZU0trTzQ?oc=5",
-   "quando": "2026-10-03T16:01:24+00:00"
+   "quando": "2026-10-03T16:01:24+00:00",
+   "voti": {
+    "a945f4701b6d": 1
+   }
   },
   {
    "id": "5c7ac8d04b756344",
@@ -1143,17 +1180,170 @@
     "tassi"
    ],
    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY0w1ckRFVzBPVnF3VXhhUGVSakR2akN1N2h1aXNISUltVHRTbTRsZnFRVmNrakR3QmlXakNSdm9WYU9Qcl8yN1ZnajBoZGV4cjlLZE12RkFyRjJvdmdIbVRETHZkWUxZUzBiNzgyTjNBWFFVX3FGS2lDYlVBYmQzUDBQdXJLWGpTa3JQVnQtUGdibUxQSXppYW5rT21UMm5QdzFJZzloZUFpUldDRTI5aDlxX3BwNDFmY1Qta1NEVzBLNGhkMVI3YnhLMXhjUQ?oc=5",
-   "quando": "2026-10-03T16:01:24+00:00"
+   "quando": "2026-10-03T16:01:24+00:00",
+   "voti": {
+    "a945f4701b6d": 1,
+    "a8dfe03fd20a": 1
+   }
+  },
+  {
+   "id": "df39c7f5319543be",
+   "titolo": "G7 agrees 100m-barrel release as diesel squeeze grips markets",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "100m",
+    "agrees",
+    "barrel",
+    "diesel",
+    "grips",
+    "markets",
+    "release",
+    "squeeze"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPVWpETm50YlkxUEhFRzFaU05iZmFBMm9IUXZEb1NUZTU0VjQxVnowZElFWWdrRExWTFJuX3UxdTg3aFA4U1B4cUVnaldkaV9HTzBMRUwtbFV2UFpyRDZoeVdtLU1NOFVyMm05YlFwZnphQng0dlI0T3pWVVE4cWEzazBGSU1ReFpGNWxjWE56YjQ?oc=5",
+   "quando": "2026-10-03T17:01:42+00:00"
+  },
+  {
+   "id": "4bb3a22076c5374c",
+   "titolo": "High Government Debt Is Adding Fuel to the Global Bond-Market Selloff",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "adding",
+    "bond",
+    "debt",
+    "fuel",
+    "global",
+    "government",
+    "high",
+    "market",
+    "selloff"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQS1ktT2R4bUFqMXpIRDJWbGxpQ1hqLTFpUmFlMkpJNWRndWNraTZTXzZIT052MDFtTEctaXF6Tk9MYW1iTU54U0xqLXA2V3V0M3A1S3FrXzZpaHBBUEQxa1k1azNRRm5lazJUNTVqMzBfUWxWXzA3c2xuZ1BJcWgxbDVxNWJhaThKWnpXREpJd1NzQjN1R2NPYl9Db0FwbVVDdjU3V0lXZm5ndlFRc2dTTldyN1plRDQ?oc=5",
+   "quando": "2026-10-03T17:01:43+00:00"
+  },
+  {
+   "id": "34e61444503e7825",
+   "titolo": "Quando il Giappone alza i tassi: l’effetto domino da Tokyo a Milano",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Copertura"
+   ],
+   "impronta": [
+    "alza",
+    "domino",
+    "effetto",
+    "giappone",
+    "milano",
+    "quando",
+    "tassi",
+    "tokyo"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTjBCeEN6NGtBX1lpVzN4TTk3NHRVZGJoNGVHWmp3d1E3MnU0cDFHSjQxODB3d0lTRTNrdVpHSGVkMzNZbFF1VURQU2xzTFhtS1lJTGRmZ0R2YXVTSkhRWGtURzM1dXZVeWRtZzFyQ3dmbTY1NjRPWW5VSWVXVUV4ZFF0MExsQzRWc1EtX3BlZWJKbnhhLTluXzhhOUpZVWw1S0lTUFBNa0VIMkNQZmRPRA?oc=5",
+   "quando": "2026-10-03T17:01:43+00:00"
+  },
+  {
+   "id": "d8648751ec527a65",
+   "titolo": "Inflazione nell'Eurozona e Pressioni sulla BCE",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "bce",
+    "eurozona",
+    "inflazione",
+    "nell",
+    "pressioni"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMXprY1VDZWo2N04yVXpRNVN5ajkzNGhxVzF2c0dqQ3JUMThvR1VqejlBeFd2dEVfQlh0Y2hrOXNraDM2S1dlUnowMmhQdDZBNTRqS0ZrLWFzV0xKbTF1c0Vfcl9ha1dvTFRBbHFjenpJQVZsdnRwcjVUQk9vbjFCNnhzRDQyeE43a0dtWW5Yc0RXNUFlajdyeVRkUFc5STlwQTFGNUpJcURRWkxFa3NwSnZR?oc=5",
+   "quando": "2026-10-03T17:01:44+00:00"
+  },
+  {
+   "id": "1a3b9a4bade0f624",
+   "titolo": "Trump’s tariffs face a fresh legal test in federal court",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "against",
+    "canada",
+    "trade",
+    "trump",
+    "war"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NbzMxRmRsM2Nac2Q2UE5Od2UxeHNUMHF2dkNtX1dPc182bzBfSWR5MU16Z29SdmFaR2FvWVRHR2tQSV9oYWFoVHZMVVQ1YXpNVXRidjktOEhzcDc0YW9ERXd5TUFjV28yQ21xRTdQbGdUZkFIaFYw0gF3QVVfeXFMT01vMzFGZGwzY1pzZDZQTk53ZTF4c1QwcXZ2Q21fV09zXzZvMF9JZHkxTXpnb1J2YVpHYW9ZVEdHa1BJX2hhYWhUdkxVVDVhek1VdGJ2OS04SHNwNzRhb0RFd3lNQWNXbzJDbXFFN1BsZ1RmQUhoVjA?oc=5",
+   "quando": "2026-10-03T17:01:44+00:00"
+  },
+  {
+   "id": "23c2c146a700c208",
+   "titolo": "Scope Ratings warns US debt path is unsustainable, keeps rating at AA-",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Risk management",
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "debt",
+    "keeps",
+    "path",
+    "rating",
+    "ratings",
+    "scope",
+    "unsustainable",
+    "warns"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRVBRSkswNXg3amsxRkxnQUxGcmZ6aFQ4VDVzc3BMUWh3M1NrT3FLZkJockFFU2ZQR05oZ2Y3NDhjbVVPM25yTFJ0VjBNV3dnSnJ6Ym5GdGxlMEFva3AxellER0g2bU1VRjJmaE03aWx3VGx2clZVOENKSGhVTlQ2eGtUQVNzZ1JnX0IzRkZDUkphY1hSZ2FWX05LSUVra1c5UUV2dm8xOTZQcGtUbU9tNW5lNNIBuAFBVV95cUxNdGhHV0FuejMyd0NnNUdWYnFwWlloYWVURmxqSWhrUXNhRFNCOWFwVUYyYlN1cjdlZ2c4TVBEbzJqSm1LVVAzWHZWckl3S2RvcTNlOEhDV2J3M2JFYnlfa0xHT0QxWWxEZ19tR2dHUHZfU3JURUdVWWxCVzctN3doMkU2bzBZWm9GWUVVLTB1eVVyUWJuVGc0S1lXSl9EaHM3Zk5wWnh4ZGdoOUd4ZDBtaFoyRmRnU0lf?oc=5",
+   "quando": "2026-10-03T17:01:47+00:00"
+  },
+  {
+   "id": "327bde3466ca35b5",
+   "titolo": "India Relatively Insulated from Rising US Yields, Focus Must Be on Sustaining Growth: Economists",
+   "tema": "Cina ed economie emergenti",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "economists",
+    "focus",
+    "growth",
+    "india",
+    "insulated",
+    "must",
+    "relatively",
+    "rising",
+    "sustaining",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVBOOVc4QVBYVGlhX1RvcWd3Wkt5d3B1cFp3OG9yUThCRmVwY3RGakhLZEJ0NkxWTzJVTFNuNU1mQ1hlNmJTT3dpcDNYS3V0bDl4M01aX0xjM0k4V2FKNDMwNXJyazdMSmh0U2pxXzZMcmFrTjA2Wkg2dlFPNUlYa0lkNUYzc0o4QmxhTE9VbmRZRlV3NkpXN3lWOGVzU3BUemFpTDcxaWlqalVSeVQwdWRvS3J1VUIxN0xvQnNTVy0?oc=5",
+   "quando": "2026-10-03T17:01:48+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 7
+  "2026-10-03": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-03 18"
+  "ora_notizie": "2026-10-03 19"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
