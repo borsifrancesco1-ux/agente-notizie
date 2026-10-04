@@ -869,7 +869,36 @@
   "5d92f174d67af64b": "2026-10-04T16:01:38+00:00",
   "d7e3a9a4330d17ec": "2026-10-04T16:01:38+00:00",
   "d032d81866d17667": "2026-10-04T16:01:38+00:00",
-  "813ddb1bfb7ae71a": "2026-10-04T16:01:38+00:00"
+  "813ddb1bfb7ae71a": "2026-10-04T16:01:38+00:00",
+  "fc6209bfcfff50f5": "2026-10-04T17:01:02+00:00",
+  "c50a5332a608b849": "2026-10-04T17:01:02+00:00",
+  "c71773b96d5e4df3": "2026-10-04T17:01:02+00:00",
+  "d314eb72c38f37f7": "2026-10-04T17:01:02+00:00",
+  "60a29e5777452d8a": "2026-10-04T17:01:02+00:00",
+  "14ee792cb75a8d13": "2026-10-04T17:01:02+00:00",
+  "804e1bc3fcf6b1ac": "2026-10-04T17:01:02+00:00",
+  "deaccbed3c407f9f": "2026-10-04T17:01:02+00:00",
+  "35e00daea01ae41d": "2026-10-04T17:01:02+00:00",
+  "2be4d25f7d4de59b": "2026-10-04T17:01:02+00:00",
+  "5f520cc01b134bd7": "2026-10-04T17:01:02+00:00",
+  "da34b3d69fd223f3": "2026-10-04T17:01:02+00:00",
+  "c5ecaa7e1957560e": "2026-10-04T17:01:02+00:00",
+  "0d351c87b99b6e14": "2026-10-04T17:01:02+00:00",
+  "886fff729004c8cd": "2026-10-04T17:01:02+00:00",
+  "9c1916bdbb4b410c": "2026-10-04T17:01:02+00:00",
+  "f0c531beefc9a898": "2026-10-04T17:01:02+00:00",
+  "6cb4b189ec309a81": "2026-10-04T17:01:02+00:00",
+  "5a7c9b5010dafe65": "2026-10-04T17:01:02+00:00",
+  "2bc564f890ab85fa": "2026-10-04T17:01:02+00:00",
+  "8c8252a11906e89e": "2026-10-04T17:01:02+00:00",
+  "64083bb1da26f2d9": "2026-10-04T17:01:02+00:00",
+  "4f8f06ccca8941b3": "2026-10-04T17:01:02+00:00",
+  "98c968468f34632d": "2026-10-04T17:01:02+00:00",
+  "d414e7feddf90644": "2026-10-04T17:01:02+00:00",
+  "46239499dd38b65d": "2026-10-04T17:01:02+00:00",
+  "285a2b29e9ef2dd8": "2026-10-04T17:01:02+00:00",
+  "eb945200b1e0bc63": "2026-10-04T17:01:02+00:00",
+  "b3b42b17b5c81529": "2026-10-04T17:01:02+00:00"
  },
  "inviate": [
   {
@@ -3683,17 +3712,91 @@
    "quando": "2026-10-04T16:01:39+00:00",
    "messaggio": 122,
    "riassunto": "L'autorità monetaria argentina ha modificato le normative sui cambi in risposta all'aumento dei costi per il trasferimento e il prelievo di dollari dal Paese. La misura cerca di stabilizzare i flussi di valuta estera in un contesto di accresciuta pressione valutaria."
+  },
+  {
+   "id": "14ee792cb75a8d13",
+   "titolo": "Trump Aide Hassett Says Powell Should ‘Move On’ From Fed Board",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "adviser",
+    "board",
+    "fed",
+    "hassett",
+    "leave",
+    "powell",
+    "renovation",
+    "report",
+    "trump",
+    "urges"
+   ],
+   "link": "https://www.investing.com/news/economy-news/trump-adviser-hassett-urges-powell-to-leave-fed-board-after-renovation-report-4930943",
+   "quando": "2026-10-04T17:01:03+00:00",
+   "messaggio": 125,
+   "riassunto": "Il principale consigliere economico di Donald Trump, Kevin Hassett, ha chiesto pubblicamente all'ex presidente della Fed Jerome Powell di lasciare il board della banca centrale. La richiesta arriva a seguito di un rapporto interno che ha evidenziato gravi fallimenti gestionali nella ristrutturazione"
+  },
+  {
+   "id": "6cb4b189ec309a81",
+   "titolo": "Rising global bond yields pose huge challenge to emerging markets: DEA secy",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "challenge",
+    "dea",
+    "emerging",
+    "global",
+    "huge",
+    "markets",
+    "pose",
+    "rising",
+    "secy",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQl9Ycm1rcWdocnRWY0EwdVE3YXE5NWpVam5Pa05yeDhudXN6SjBmYUJEanlmaDVIUEdISWRSX2VFY2dNZVBhekhQLVZzV2xmM3ZvamV1TWFNYUxJMXdKWVFOanJscnFFR29IdURuSll5RE1NdHpKZFNpSDhTRmtVQkx6c0VxZm1WdHBQTmNpZTkzVHhlT29BeUo3ZE5KOVItdWxfM01NWEI2M1VLYThuSHZTM084dERnNXRZV0RkNm1yWUE1dFBXZXZVc1pwMjZHTUpfVzFQSTDSAd4BQVVfeXFMTlE4Zkc4X08xMEpGS0IyNWExeTFqTVZXVFJRaUxoeE4yWmRPdW9ReXJhVGNjSDdwZl92c2FfUkQ5YVVtS0R1SEFqTkxvdGhfOXZuWXZwOVpuYUJlMmdOQTJ6UVJISGtoNGVCSW04Z1VIcW9ZV29vZmVPNFl0RTZLa2JvMUlrZm90VmRnbURZaFN4M05iV29jbVU2TGdCb0lEbmVnMkp3X1Bqb1BXQklNbGctbFBweU9pUXk1VS15aUVxY2NhRE4yRURGTi12RmpqTG9xdzBpRGNYYlNuQXhR?oc=5",
+   "quando": "2026-10-04T17:01:04+00:00",
+   "messaggio": 126,
+   "riassunto": "Il forte incremento dei rendimenti obbligazionari globali e dei Treasury statunitensi sta ponendo una sfida enorme per i mercati emergenti, aumentando i costi di rifinanziamento e il deflusso di capitali. Le autorità economiche sottolineano la necessità di mantenere la stabilità macroeconomica di fr"
+  },
+  {
+   "id": "d314eb72c38f37f7",
+   "titolo": "Rebus risorse per la manovra dopo il Dpfp, le misure in bilico",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bilico",
+    "dpfp",
+    "manovra",
+    "misure",
+    "rebus",
+    "risorse"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/04/rebus-risorse-per-la-manovra-dopo-il-dpfp-le-misure-in-bilico_3a89ec48-7a66-499a-bd0c-572c7d7c4336.html",
+   "quando": "2026-10-04T17:01:05+00:00",
+   "messaggio": 127,
+   "riassunto": "Con lo scostamento del deficit fissato al 3,4%, i margini finanziari per la prossima legge di bilancio in Italia risultano ridotti all'osso, alimentando tensioni all'interno della maggioranza di governo. Le risorse per coprire le priorità su energia e sicurezza restano in bilico, complicando il quad"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 13
+  "2026-10-04": 14
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 18",
+  "ora_notizie": "2026-10-04 19",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04",
   "settimanale": "2026-W40"
