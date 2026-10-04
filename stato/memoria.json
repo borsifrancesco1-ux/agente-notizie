@@ -551,7 +551,28 @@
   "be2d3be7544faf47": "2026-10-04T07:01:05+00:00",
   "f3e9a0a7dd901822": "2026-10-04T07:01:05+00:00",
   "4976f3ce3d752619": "2026-10-04T07:01:05+00:00",
-  "279a02c7d13f6c25": "2026-10-04T07:01:05+00:00"
+  "279a02c7d13f6c25": "2026-10-04T07:01:05+00:00",
+  "914341baadac1f7c": "2026-10-04T08:01:39+00:00",
+  "5949434d31c4da8c": "2026-10-04T08:01:39+00:00",
+  "714a27a5957fa744": "2026-10-04T08:01:39+00:00",
+  "d9a9636f1ae3b9c3": "2026-10-04T08:01:39+00:00",
+  "5edef4b18ce9c0cd": "2026-10-04T08:01:39+00:00",
+  "d6f68c2158b210c8": "2026-10-04T08:01:39+00:00",
+  "e0e225bf9d7038d7": "2026-10-04T08:01:39+00:00",
+  "9effe25be8de9af6": "2026-10-04T08:01:39+00:00",
+  "d0d8d15527380663": "2026-10-04T08:01:39+00:00",
+  "cd24214852e2bcaf": "2026-10-04T08:01:39+00:00",
+  "15c56d69c8bd8658": "2026-10-04T08:01:39+00:00",
+  "df8482390474fea6": "2026-10-04T08:01:39+00:00",
+  "6fde91beaf1ede96": "2026-10-04T08:01:39+00:00",
+  "6ad663c3b58aab0f": "2026-10-04T08:01:39+00:00",
+  "20ffb7ef5e099858": "2026-10-04T08:01:39+00:00",
+  "19cf8a966d58da3c": "2026-10-04T08:01:39+00:00",
+  "581fa9dcd8c30f8f": "2026-10-04T08:01:39+00:00",
+  "2215c2177f9b03af": "2026-10-04T08:01:39+00:00",
+  "7d84c9fabe37d672": "2026-10-04T08:01:39+00:00",
+  "baf8d19c956eb47e": "2026-10-04T08:01:39+00:00",
+  "d377a6c3af4f95fe": "2026-10-04T08:01:39+00:00"
  },
  "inviate": [
   {
@@ -2263,16 +2284,118 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOZVBXS0ZyeUJXZ0txNTd5RElnR09PRW84Q1NPcU82cVZBa3BnVjZJY284MlBTSTU3cFlMak5KLS1jQnRDbGk0UDJDV2hpa3RGcFl0TWk4QnhXM2hVNUpIMTB2Q2NWeV9IeVh4Z1Nxa2Q2M1BDTWlkZVFrZjB3Y2FqWjNseExQUTRTVzRkWFhwU2tFQVhkU0lGU3l4UWc0UVBtTkNlbkNYQllSeWVCaENUcXp5VkR0M1YzUGF5R2hBTGg0U2dneVlnVUZLaFpzaEtfeldZbjVuVdIB1gFBVV95cUxPQ2M4UHlGRVlwXzhUWEJuQ1VqRUhWXzljTFpqNGZ3REpOcVlXRGpNUXFzMXZxeFBzNHJVY0dzZU5iTjhCVk1teFFmMDROdEFlN3RZX3Roa2ZYQmRIdU9mTTlvcGZIekY3cWp6S2FFLV9iamRjazlGSGliYWl5SWR4QUlVRzd1V01POWVoaUNnZkF0U3E5bGE4eGlOOEFPTnp4cVh0N05iTGVMZzlQMTFRZlJMeVBCMUJ3eVJYbWk2aVJfWkd3U0pueEZEdGhQZ2NmOWNhU3hB?oc=5",
    "quando": "2026-10-04T07:01:13+00:00"
+  },
+  {
+   "id": "20ffb7ef5e099858",
+   "titolo": "OPEC+ Set to Keep November Oil Output Targets Steady, Sources Say",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "keep",
+    "november",
+    "oil",
+    "opec",
+    "output",
+    "say",
+    "set",
+    "sources",
+    "steady",
+    "targets"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdGR4cEt2X0poX3lkd1UyWUpMSmtZRFB5ZE9yeDM1eEtlVmo3MkpHa3JhZFhsLVh3a0dpLU0yMVVISXF0TzQ2ZTF2d3dkTkdkbVBYaV80OEJyenptb0hDUlEzZHBaNWx0UjdBWVpXTU5ZOWU1cHZnRUpIVjN6SjVrcjBDS1NqN081XzhZcDc0bjN5SXJNTnhJME9FWkpqUkUzSDJwdDhUV0t5NVIwNEtIelBR?oc=5",
+   "quando": "2026-10-04T08:01:40+00:00"
+  },
+  {
+   "id": "7d84c9fabe37d672",
+   "titolo": "Schroders Sees Bond Sell-Off Creating Attractive Entry Points As Yields Hit Multi-Decade Highs",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "attractive",
+    "bond",
+    "creating",
+    "decade",
+    "entry",
+    "highs",
+    "hit",
+    "multi",
+    "off",
+    "points",
+    "schroders",
+    "sees",
+    "sell",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQREF3X19kTlVRcHVNbFhGZzhvbWJTcFpvYUotQi1vUGtpWDIyLU9BVlptWWFIMUxuVUJKdVEybnoxUWc3ZmdtSHRGMDNUREIwbVpmVXdCdllNN251ZC1VYWFLQ28zQXZ1NktYclpURlZmZDYxR21McUVnRDlmTU0wU29jMDdSSDFrcTd3dE5MM0Z1X0U5c1poRnNxSk5veGg3bHk0YnBUM0xBZkFXdER3WmpEZDlTTnV0TFFydExfN0gtcVNJbFhXLVRITm9xNGhpT1J2V0tR?oc=5",
+   "quando": "2026-10-04T08:01:40+00:00"
+  },
+  {
+   "id": "581fa9dcd8c30f8f",
+   "titolo": "Rate cut cycle near turning point. What lies ahead for Indian bonds?",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "ahead",
+    "bonds",
+    "cut",
+    "cycle",
+    "indian",
+    "lies",
+    "near",
+    "point",
+    "rate",
+    "turning"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQbHRXcGM1TXdWZ1FsWDZvOEpfNTUydnFoaFdFT1hKM2txMEkzRlRqRW4ySVVJSEZBQTd1R3pBd1B0dXhrZ1VlWUF3YXl3MUdpTzkwcXlLeHZYQjAyUW9tYWxhYzhQOUNVUHh3NWt3QzNrXzdUV0NLQ3A5NWFOa3JZTEJPQklvaElsaG1SdWszRnlLVGdfamRTeFg2WnFEZnBTQUVqa05VSmVndFVlREZhekZXV3JhZ0F0cElYZlNEWE1tdE1vU29IaEUwMldXLVhUWEJ0enhGd9IB3AFBVV95cUxQbmtPbmU5LXdYdktEWHRvZnJuZW9HUFlveTJYNEdWVGtSODJzbllwNHJPSUJmRHU0eWloMHVLVks1NHBuX0JOa2tPaG1YZkY1ZGZudFk2MS1pbUZ2LXMzWVhjNWRDU0Z1MUQxeTdpZEpGUF9iZTRxQmlqZUhUcUtSX3lwM2VkNFVfb0J5el8tSkFjNUtBNVZybFFCb2ttSkVkNFFVU1Bnd3lwSnhSZ20yQkdwMmFhNHozMENBZkVPTHBNMS1rUnpXZGRjRTh0YUt3Rm44NWlRUXhfNjlB?oc=5",
+   "quando": "2026-10-04T08:01:41+00:00"
+  },
+  {
+   "id": "d377a6c3af4f95fe",
+   "titolo": "Romania's rating affirmed at recommended investment category is a breath of fresh air, not a moment to overjoy (consultant) - AGERPRES",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "affirmed",
+    "agerpres",
+    "air",
+    "breath",
+    "category",
+    "consultant",
+    "fresh",
+    "investment",
+    "moment",
+    "not",
+    "overjoy",
+    "rating",
+    "recommended",
+    "romania"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSWRMTEE1SVBJYzJyRUhvRzN6cnI1ZWpxdHkwaVBuRGtqYlBkcUFZYUx1a0ZGc1cySXNvaHBoUHFOV05kNjI3Wi1SVUd5ZW04R0hYMjlHdEljbG5lVjdDb1NvSDBiUDZ0TGU1QmtWTUZQZGFTc2dqY1BIZVBZR0FQTDZHRXZMNWIzeHdNal9iMGViU3BVUE9PZjFLdHdDS0t4c2dLUjJmV1VfUjR4UFpYX2NuU0Q4WlNUeWtUVVQ0eVlpVXlKZHJLc1FMYXJmdjdCM014UTBFMnZHemRuTFBGUmdR?oc=5",
+   "quando": "2026-10-04T08:01:41+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 14
+  "2026-10-03": 14,
+  "2026-10-04": 1
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 09",
+  "ora_notizie": "2026-10-04 10",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
