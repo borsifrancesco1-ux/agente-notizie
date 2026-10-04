@@ -651,7 +651,45 @@
   "67efc4c4a164d50d": "2026-10-04T10:01:38+00:00",
   "446f8c4f7e13ab34": "2026-10-04T10:01:38+00:00",
   "1d809269348147bd": "2026-10-04T10:01:38+00:00",
-  "1ffa03a6034f8e26": "2026-10-04T10:01:38+00:00"
+  "1ffa03a6034f8e26": "2026-10-04T10:01:38+00:00",
+  "c4d375dd12b37a28": "2026-10-04T11:01:38+00:00",
+  "26488809f8b3c765": "2026-10-04T11:01:38+00:00",
+  "7b0dabf365589c5c": "2026-10-04T11:01:38+00:00",
+  "8752c86a35ca1ba1": "2026-10-04T11:01:38+00:00",
+  "8ad17239c937a3e0": "2026-10-04T11:01:38+00:00",
+  "93788372fb8f0b87": "2026-10-04T11:01:38+00:00",
+  "4a0010b36e836681": "2026-10-04T11:01:38+00:00",
+  "847fdcdc7fd4fc40": "2026-10-04T11:01:38+00:00",
+  "a195ec9d4fd46ecd": "2026-10-04T11:01:38+00:00",
+  "c64a92dda3424290": "2026-10-04T11:01:38+00:00",
+  "f7b3a2c1c830e693": "2026-10-04T11:01:38+00:00",
+  "0f4bd1ef71165f60": "2026-10-04T11:01:38+00:00",
+  "dcddff9399f8aa1e": "2026-10-04T11:01:38+00:00",
+  "73ba1369c947d622": "2026-10-04T11:01:38+00:00",
+  "64717c6b7f7f5af8": "2026-10-04T11:01:38+00:00",
+  "a82d84a8492de798": "2026-10-04T11:01:38+00:00",
+  "600b19ac780b3ccf": "2026-10-04T11:01:38+00:00",
+  "1db729ae733341df": "2026-10-04T11:01:38+00:00",
+  "3a5cb025ebe08b0d": "2026-10-04T11:01:38+00:00",
+  "ffe633cbd63d9ce3": "2026-10-04T11:01:38+00:00",
+  "fec584e4c3122879": "2026-10-04T11:01:38+00:00",
+  "894fe0385529b2a3": "2026-10-04T11:01:38+00:00",
+  "b7ffe00afed817a4": "2026-10-04T11:01:38+00:00",
+  "b9c46b86e6faf8a2": "2026-10-04T11:01:38+00:00",
+  "b72c7f453793cbfa": "2026-10-04T11:01:38+00:00",
+  "e55212105b6676c7": "2026-10-04T11:01:38+00:00",
+  "8b6a17e510313ce7": "2026-10-04T11:01:38+00:00",
+  "c0aac8091887621c": "2026-10-04T11:01:38+00:00",
+  "bc92b794d4e0917e": "2026-10-04T11:01:38+00:00",
+  "a64082ad52ea5aac": "2026-10-04T11:01:38+00:00",
+  "5188f81c66277f5e": "2026-10-04T11:01:38+00:00",
+  "708dd5eee3cf9ee0": "2026-10-04T11:01:38+00:00",
+  "6c98794b0c8c33df": "2026-10-04T11:01:38+00:00",
+  "9d7cc3d8c8e54978": "2026-10-04T11:01:38+00:00",
+  "30f08e0a98bda579": "2026-10-04T11:01:38+00:00",
+  "f7e57a3991a6435e": "2026-10-04T11:01:38+00:00",
+  "e00ac66c94efc631": "2026-10-04T11:01:38+00:00",
+  "323487a055f5e26c": "2026-10-04T11:01:38+00:00"
  },
  "inviate": [
   {
@@ -2746,17 +2784,64 @@
    "quando": "2026-10-04T10:01:46+00:00",
    "messaggio": 92,
    "riassunto": "Washington ha iniziato ad allentare le sanzioni contro Minsk in cambio della liberazione di alcuni prigionieri politici. L'accordo consente agli Stati Uniti di ricevere un carico di potassio dalla Bielorussia, segnando una parziale distensione diplomatica. La mossa potrebbe aprire a nuovi flussi com"
+  },
+  {
+   "id": "f7b3a2c1c830e693",
+   "titolo": "Iraq Shifts Oil Strategy by Arranging Tanker to Move Past Hormuz",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "arranging",
+    "hormuz",
+    "iraq",
+    "move",
+    "oil",
+    "past",
+    "shifts",
+    "strategy",
+    "tanker"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/iraq-shifts-oil-strategy-by-arranging-tanker-to-move-past-hormuz",
+   "quando": "2026-10-04T11:01:38+00:00",
+   "messaggio": 93,
+   "riassunto": "La compagnia petrolifera statale irachena ha organizzato il trasporto di due milioni di barili di greggio oltre lo Stretto di Hormuz. Questa mossa strategica punta a offrire petrolio fuori dal Golfo Persico per mitigare i rischi logistici derivanti dalle tensioni nell'area. L'iniziativa rappresenta "
+  },
+  {
+   "id": "dcddff9399f8aa1e",
+   "titolo": "Brazilians head to polls in high-stakes, polarized election",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Geopolitica",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "brazilians",
+    "election",
+    "head",
+    "high",
+    "polarized",
+    "polls",
+    "stakes"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTzYxcENTQ3M0VnFWR3h0cVF2TkRtc2Rlci13bDE5dnZXMENGLWVPTzdKX3RpRXBvZGJFcEo3d2tmelg2QmN4Q1lkNGhnN1luQ3FCdnRMeUxlTHlTeGswVzNjWVBzdVI2ZWttdm5HR3REQ3lSd3JqSUltVTRuTTY2dWdVTFVsRUNyZGVTVDBkY2E1M3poNG8tNktZMjNtNWliR2dlRkxR?oc=5",
+   "quando": "2026-10-04T11:01:39+00:00",
+   "messaggio": 94,
+   "riassunto": "I cittadini brasiliani sono chiamati alle urne per elezioni generali altamente polarizzate e cruciali per il futuro economico del Paese. La consultazione si inserisce in un contesto di tensioni sui mercati emergenti e sulle valute locali dell'area latinoamericana. Gli investitori monitorano l'esito "
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 3
+  "2026-10-04": 4
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 12",
+  "ora_notizie": "2026-10-04 13",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
