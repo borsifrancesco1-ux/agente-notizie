@@ -794,7 +794,46 @@
   "e7c13c05fca7e73d": "2026-10-04T14:02:15+00:00",
   "c5e26b2abb631662": "2026-10-04T14:02:15+00:00",
   "a950bd8b9b0b51a4": "2026-10-04T14:02:15+00:00",
-  "c820c37c5f0a079d": "2026-10-04T14:02:15+00:00"
+  "c820c37c5f0a079d": "2026-10-04T14:02:15+00:00",
+  "f7cd746804f16728": "2026-10-04T15:01:07+00:00",
+  "bec3d575b8e4196c": "2026-10-04T15:01:07+00:00",
+  "46fab20f99307913": "2026-10-04T15:01:07+00:00",
+  "6afc3e80e0c9cc99": "2026-10-04T15:01:07+00:00",
+  "c464349ff4b29982": "2026-10-04T15:01:07+00:00",
+  "f7f8f71be9abd072": "2026-10-04T15:01:07+00:00",
+  "c663564d4ef5530f": "2026-10-04T15:01:07+00:00",
+  "6ca1ef3cff81753e": "2026-10-04T15:01:07+00:00",
+  "b7babd4187e1f5bb": "2026-10-04T15:01:07+00:00",
+  "fd9847dfaf608ea4": "2026-10-04T15:01:07+00:00",
+  "dab00a37f659eb2f": "2026-10-04T15:01:07+00:00",
+  "d6894974bca921e4": "2026-10-04T15:01:07+00:00",
+  "5f6d6cfa3f66f8ff": "2026-10-04T15:01:07+00:00",
+  "eb32fd3a130e6ca9": "2026-10-04T15:01:07+00:00",
+  "b87a77fad0828acd": "2026-10-04T15:01:07+00:00",
+  "10bb5526b5278746": "2026-10-04T15:01:07+00:00",
+  "ff345bf54607ccd8": "2026-10-04T15:01:07+00:00",
+  "d1de2d2b37d5446f": "2026-10-04T15:01:07+00:00",
+  "0d53813ca676c47e": "2026-10-04T15:01:07+00:00",
+  "b19da799a7cb4056": "2026-10-04T15:01:07+00:00",
+  "c4a46fcea14fed99": "2026-10-04T15:01:07+00:00",
+  "e1ea1e8cc575fe2f": "2026-10-04T15:01:07+00:00",
+  "eb9d7b03e5c89322": "2026-10-04T15:01:07+00:00",
+  "ef50805124f141f9": "2026-10-04T15:01:07+00:00",
+  "5a05f016bf7e1c79": "2026-10-04T15:01:07+00:00",
+  "3c1510662e104f2a": "2026-10-04T15:01:07+00:00",
+  "556ffae2954a3126": "2026-10-04T15:01:07+00:00",
+  "1c22927238b0b22b": "2026-10-04T15:01:07+00:00",
+  "1177e17e180762f1": "2026-10-04T15:01:07+00:00",
+  "8cc80df040eafd46": "2026-10-04T15:01:07+00:00",
+  "3409e923542dfb1e": "2026-10-04T15:01:07+00:00",
+  "f5796bc76da662a5": "2026-10-04T15:01:07+00:00",
+  "702a651c8f4e2e41": "2026-10-04T15:01:07+00:00",
+  "3c044cb615a0a5c4": "2026-10-04T15:01:07+00:00",
+  "668704e1a8f2d42b": "2026-10-04T15:01:07+00:00",
+  "b7a6cebed8ad45cd": "2026-10-04T15:01:07+00:00",
+  "2053121362a39b5b": "2026-10-04T15:01:07+00:00",
+  "5f07e48e111eb1e7": "2026-10-04T15:01:07+00:00",
+  "8eedc00d9efd67fc": "2026-10-04T15:01:07+00:00"
  },
  "inviate": [
   {
@@ -3417,17 +3456,161 @@
    "quando": "2026-10-04T14:02:24+00:00",
    "messaggio": 114,
    "riassunto": "Il governo italiano ha dato il via libera al Documento programmatico di finanza pubblica, stanziando maggiori fondi per i settori dell'energia e della sicurezza. Il ministro dell'Economia Giancarlo Giorgetti ha tuttavia frenato sulla portata della manovra complessiva, richiamando alla prudenza sui c"
+  },
+  {
+   "id": "d6894974bca921e4",
+   "titolo": "Wall Street Strategists Steer Investors to Cross-Asset Hedges",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "asset",
+    "cross",
+    "hedges",
+    "investors",
+    "steer",
+    "strategists",
+    "street",
+    "wall"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/wall-street-strategists-steer-investors-to-cross-asset-hedges",
+   "quando": "2026-10-04T15:01:07+00:00",
+   "messaggio": 115,
+   "riassunto": "Mentre i rendimenti dei Treasury continuano a salire e asset come azioni, oro e petrolio faticano a segnare nuovi massimi, i principali strateghi di Wall Street invitano gli investitori a puntare su coperture cross-asset. Nonostante i dati deboli sull'occupazione e il rallentamento dei salari negli "
+  },
+  {
+   "id": "ef50805124f141f9",
+   "titolo": "AI spending to drive another strong S&P 500 earnings season, Goldman Sachs says",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "500",
+    "another",
+    "drive",
+    "earnings",
+    "goldman",
+    "sachs",
+    "season",
+    "spending",
+    "strong"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSmJlQ2VTNk15U1o2MS1QRzE5eHM0WERNdGVVQmN3bFRRM0tmRkxqVmlZOWIwazZCdWM4NHNMaGwxSE14T213V3hRU0F3dGJFM2xZQ1RNb3ltS2pWYTBvWGNXV3pUT3lHYkkyeHN3ZEgwNkhCZ21GQTY3dkhFQmJhUlAtcXlNcGQ4MldQbHdFSEIyOG1yUkdZdnFab2ExRVl2R2Rib2dhbjh4WnFDTEdxUzlHUmtuZTVsYXFsSkRHRUNqb1FnbDBjdEk4VWNzUFVzc3FCMURDOGo?oc=5",
+   "quando": "2026-10-04T15:01:07+00:00",
+   "messaggio": 116,
+   "riassunto": "Secondo le analisi di Goldman Sachs, i forti investimenti focalizzati sull'intelligenza artificiale guideranno una nuova stagione di utili robusti per l'indice S&P 500. La spesa in conto capitale delle grandi aziende tecnologiche continua a sostenere le aspettative di profitto nonostante il contesto"
+  },
+  {
+   "id": "3c1510662e104f2a",
+   "titolo": "Cooler PCE Cut October Hike Odds, Not Fed Inflation Risk",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "cooler",
+    "cut",
+    "fed",
+    "hike",
+    "inflation",
+    "not",
+    "october",
+    "odds",
+    "pce",
+    "risk"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNLXVfMzR4eUdfWkNESVFqOE1fLVVtSDNxZ0d3c1BCMVNzWWNHeDIxZmE4SW1aUUZSaGZQc3VuZGV3YktlQWhUbnAxUGljS095LXRRQkV6VllNVGZHYjZ1U1ZHUUZtWE01NS1sbWExNTIwdVg1cWxYMTc5NUpqbnc0ZmdxVnNPTEpyU0ZKTE1keG15SUUwYW1xbExCLTRsMzB1dTZ0ZHNB?oc=5",
+   "quando": "2026-10-04T15:01:10+00:00",
+   "messaggio": 117,
+   "riassunto": "I dati recenti sull'inflazione PCE più moderati hanno ridimensionato le probabilità di un imminente rialzo dei tassi da parte della Federal Reserve nella riunione del 28 ottobre, pur mantenendo alta l'allerta sui rischi di prezzo. Gli analisti continuano a monitorare le probabilità di un taglio o di"
+  },
+  {
+   "id": "6afc3e80e0c9cc99",
+   "titolo": "Russia says it hit Kyiv bridge, two vessels in Black Sea",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "black",
+    "bridge",
+    "hit",
+    "kyiv",
+    "russia",
+    "sea",
+    "two",
+    "vessels"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPS0FteGJ5SGhOWXdPRHNXTERRb21LeFBwVEV5b1ZiLUk3ZzUxa3dTd3ZmbHZzWmZpT1BxVkN5SnNEb3N6Q0hlbHRXd1FWVWxuaFlkbUZmcjJKUlRhYjAtbFhOZ0ZRcVRKc0FUNGE3N1BWM2twRHRlOGVyYmY3eUtlVk5ZNU1tWl90dXdTcWdDY29GajdDa3BHdUc5ODRpMHJlZTJtZ01XbFRVSEk?oc=5",
+   "quando": "2026-10-04T15:01:11+00:00",
+   "messaggio": 118,
+   "riassunto": "Le forze russe hanno colpito un ponte a Kyiv per il secondo giorno consecutivo e due imbarcazioni nel Mar Nero. L'attacco infrastrutturale in Ucraina alimenta i timori di una prolungata escalation bellica nell'area. Gli sviluppi geopolitici continuano a esercitare pressioni sulle catene di fornitura"
+  },
+  {
+   "id": "fd9847dfaf608ea4",
+   "titolo": "Trump names national intelligence director Jay Clayton to lead new ‘Super Intelligence Force’ on AI",
+   "tema": "Concentrazione dei grandi titoli tecnologici",
+   "reparti": [
+    "Azionario",
+    "Risk management",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "clayton",
+    "director",
+    "force",
+    "intelligence",
+    "jay",
+    "lead",
+    "names",
+    "national",
+    "super",
+    "trump"
+   ],
+   "link": "https://fortune.com/2026/10/04/trump-national-intelligence-director-jay-clayton-super-intelligence-force-ai-agency/",
+   "quando": "2026-10-04T15:01:11+00:00",
+   "messaggio": 119,
+   "riassunto": "Il presidente Donald Trump ha incaricato il direttore dell'intelligence nazionale Jay Clayton di guidare una nuova task force sull'intelligenza artificiale denominata 'Super Intelligence Force'. L'iniziativa coinvolgerà consumatori, gruppi di interesse pubblico e aziende tecnologiche per supervision"
+  },
+  {
+   "id": "e1ea1e8cc575fe2f",
+   "titolo": "Yen and USD strengthen globally amid rising rat...",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "globally",
+    "rat",
+    "rising",
+    "strengthen",
+    "usd",
+    "yen"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRlFwUGVMVmEwX0N6cXQ4ckJ3UlhadFY5MDRzNEUtclEwWVlhTmtNbklUQ0daaXZhWEdwSnJDeUFMQUQ0VHZ5aGMxSDZhUGJNMUk2TXcwakJRZnJ1cl9VWVVFUlRPRkZ6aFJ5cHpuUGJIYWhKMUVBTXZSMk5wamhORmVGdmQwTkU1QXc?oc=5",
+   "quando": "2026-10-04T15:01:15+00:00",
+   "messaggio": 120,
+   "riassunto": "Le valute rifugio come il dollaro e lo yen registrano un rafforzamento sui mercati globali in concomitanza con la crescita dei tassi di interesse e la volatilità dei bond. Tale dinamica riflette la ricerca di protezione da parte degli investitori di fronte alle tensioni sul mercato obbligazionario. "
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 7
+  "2026-10-04": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 16",
+  "ora_notizie": "2026-10-04 17",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
