@@ -12,6 +12,9 @@ from __future__ import annotations
 import csv
 import io
 import os
+import re
+import statistics
+import time
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 
@@ -23,6 +26,7 @@ UA = {"User-Agent": "agente-notizie/0.1 (lettore personale; github.com/borsifran
 CALENDARIO = ["https://nfs.faireconomy.media/ff_calendar_thisweek.json",
               "https://nfs.faireconomy.media/ff_calendar_nextweek.json"]
 IMPATTO = {"Low": 1, "Medium": 2, "High": 3}
+STORICO = 14   # osservazioni lette per ogni indicatore: servono a capire se una variazione è insolita
 SIMBOLO_IMPATTO = {3: "🔴", 2: "🟠", 1: "⚪"}
 BANDIERE = {"USD": "🇺🇸", "EUR": "🇪🇺", "GBP": "🇬🇧", "JPY": "🇯🇵", "CNY": "🇨🇳", "CHF": "🇨🇭"}
 FRED_API = "https://api.stlouisfed.org/fred/series/observations"
@@ -126,7 +130,7 @@ def nuovi_dati(config: dict, memoria) -> list[dict]:
     for indicatore in config.get("indicatori") or []:
         nome = indicatore["nome"]
         try:
-            osservazioni = ultime_osservazioni(indicatore)
+            osservazioni = ultime_osservazioni(indicatore, STORICO)
         except Exception as e:  # noqa: BLE001 — una fonte guasta non deve fermare le altre
             print(f"  ✗ {nome}: {type(e).__name__}")
             continue
@@ -139,18 +143,51 @@ def nuovi_dati(config: dict, memoria) -> list[dict]:
             continue
         if indicatore.get("avvisa") == "se_cambia":  # tassi ufficiali: serie giornaliere, conta solo il cambio
             if round(ultima.valore, 4) != round(prima["valore"], 4):
-                nuovi.append({"indicatore": indicatore, "ultima": ultima,
+                nuovi.append({"indicatore": indicatore, "ultima": ultima, "storico": osservazioni,
                               "precedente": Osservazione(prima["periodo"], prima["valore"])})
         elif ultima.periodo != prima["periodo"]:
-            nuovi.append({"indicatore": indicatore, "ultima": ultima,
+            nuovi.append({"indicatore": indicatore, "ultima": ultima, "storico": osservazioni,
                           "precedente": osservazioni[-2] if len(osservazioni) > 1 else None})
     return nuovi
 
 
-def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str) -> str:
+def anomalia(nuovo: dict, atteso: str, sigma: float) -> str:
+    """Perché un dato è anomalo, oppure "" se non lo è. Due prove:
+    - sorpresa: distanza dal consensus oltre la soglia dell'indicatore (soglia_sorpresa in config);
+    - variazione insolita: variazione sul periodo prima oltre 'sigma' volte la sua variabilità tipica."""
+    ind, ultima = nuovo["indicatore"], nuovo["ultima"]
+    unita, decimali = ind.get("unita", ""), ind.get("decimali", 1)
+    motivi = []
+    valore_atteso = _numero_da_testo(atteso)
+    soglia = ind.get("soglia_sorpresa", 0.3 if unita == "%" else 75 if ind.get("formato") == "migliaia" else None)
+    if valore_atteso is not None and soglia is not None and abs(ultima.valore - valore_atteso) >= soglia:
+        distanza = ultima.valore - valore_atteso
+        misura = "punti" if unita == "%" else "mila" if ind.get("formato") == "migliaia" else ""
+        motivi.append(f"{_numero(distanza, 0 if misura == 'mila' else decimali, segno=True)} {misura} "
+                      f"{'sopra' if distanza > 0 else 'sotto'} le attese".replace("  ", " "))
+    storico = [o.valore for o in nuovo.get("storico") or []]
+    if ind.get("trasformazione") == "differenza":
+        # la serie è già una variazione (es. nuovi occupati): conta quanto si allontana dalla sua media
+        passate, ultimo = storico[:-1], storico[-1] if storico else 0.0
+        scarto = ultimo - statistics.fmean(passate) if len(passate) >= 6 else 0.0
+    else:
+        # livelli e tassi (es. inflazione, disoccupazione): conta la variazione sul periodo prima
+        variazioni = [b - a for a, b in zip(storico, storico[1:])]
+        passate, scarto = variazioni[:-1], variazioni[-1] if variazioni else 0.0
+    if len(passate) >= 6 and ind.get("avvisa") != "se_cambia":
+        tipica = statistics.pstdev(passate)
+        if tipica > 0 and abs(scarto) >= sigma * tipica:
+            motivi.append(f"movimento {abs(scarto) / tipica:.1f} volte più ampio del solito "
+                          f"rispetto agli ultimi {len(passate)} periodi".replace(".", ","))
+    return "; ".join(motivi)
+
+
+def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anomalia: str = "") -> str:
     ind, ultima, precedente = nuovo["indicatore"], nuovo["ultima"], nuovo["precedente"]
     unita, decimali = ind.get("unita", ""), ind.get("decimali", 1)
     righe = []
+    if motivo_anomalia:
+        righe.append(f"🚨 <b>Dato anomalo</b>: {notifiche.esc(motivo_anomalia)}")
     if ind.get("reparti"):
         righe.append(" ".join(notifiche.hashtag(r) for r in ind["reparti"]))
     righe.append(f"📊 <b>Dato uscito · {notifiche.esc(ind['nome'])}: {_valore(ultima.valore, unita, decimali, ind)}</b>")
@@ -168,7 +205,7 @@ def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str) -> str:
     return "\n".join(righe)
 
 
-def riassunto_dato(nuovo: dict, atteso: str) -> str:
+def riassunto_dato(nuovo: dict, atteso: str, motivo_anomalia: str = "") -> str:
     """Il dato in una riga di testo semplice, per il riepilogo settimanale."""
     ind, ultima, precedente = nuovo["indicatore"], nuovo["ultima"], nuovo["precedente"]
     unita, decimali = ind.get("unita", ""), ind.get("decimali", 1)
@@ -177,7 +214,37 @@ def riassunto_dato(nuovo: dict, atteso: str) -> str:
         parti.append(f"precedente {_valore(precedente.valore, unita, decimali, ind)}")
     if atteso:
         parti.append(f"atteso {atteso}")
+    if motivo_anomalia:
+        parti.append(f"DATO ANOMALO: {motivo_anomalia}")
     return f"{_valore(ultima.valore, unita, decimali, ind)} ({'; '.join(parti)})"
+
+
+def cambio_del_giorno(config: dict) -> str:
+    """Una riga per il buongiorno: EUR/USD di riferimento BCE e costo stimato della copertura."""
+    opzioni = config.get("copertura") or {}
+    voci = {v["nome"]: v for v in config.get("mercati") or []}
+    try:
+        cambio = _storico(voci[opzioni.get("cambio", "EUR/USD")])
+    except Exception as e:  # noqa: BLE001 — il buongiorno parte comunque, senza questa riga
+        print(f"  ✗ cambio del giorno: {type(e).__name__}")
+        return ""
+    if len(cambio) < 2:
+        return ""
+    ultima, prima = cambio[-1], cambio[-2]
+    testo = (f"<b>EUR/USD</b> {_numero(ultima.valore, 4)} "
+             f"({_numero((ultima.valore / prima.valore - 1) * 100, 2, segno=True)}% sul giorno prima, "
+             f"riferimento BCE del {_periodo(ultima.periodo)})")
+    righe_tassi = []
+    for nome in (opzioni.get("tasso_usd"), opzioni.get("tasso_eur")):
+        if nome in voci:
+            try:
+                righe_tassi.append({"voce": voci[nome], "ultima": _storico(voci[nome])[-1]})
+            except Exception:  # noqa: BLE001
+                pass
+    copertura = costo_copertura(righe_tassi, config)
+    if copertura:
+        testo += f"\n{notifiche.esc(copertura)}"
+    return testo + " " + notifiche.hashtag("Copertura")
 
 
 def ultime_osservazioni(voce: dict, quante: int = 2) -> list[Osservazione]:
@@ -280,26 +347,39 @@ def _storico(voce: dict) -> list[Osservazione]:
 
 # ---------------- accesso alle fonti ----------------
 
-def _fred(serie: str, quante: int) -> list[Osservazione]:
-    r = requests.get(FRED_API, timeout=30, params={"series_id": serie, "api_key": os.environ.get("FRED_KEY", ""),
-                                                   "file_type": "json", "sort_order": "desc", "limit": quante + 10})
+def _scarica(url: str, params: dict, timeout: int = 60, headers: dict | None = None) -> requests.Response:
+    """GET con un secondo tentativo: le API pubbliche (BCE in particolare) a volte rispondono
+    "504" o vanno in timeout per pochi secondi."""
+    for tentativo in range(2):
+        try:
+            r = requests.get(url, params=params, headers=headers or UA, timeout=timeout)
+            if r.status_code < 500:
+                r.raise_for_status()
+                return r
+        except (requests.Timeout, requests.ConnectionError):
+            if tentativo:
+                raise
+        time.sleep(5)
     r.raise_for_status()
+    return r
+
+
+def _fred(serie: str, quante: int) -> list[Osservazione]:
+    r = _scarica(FRED_API, {"series_id": serie, "api_key": os.environ.get("FRED_KEY", ""),
+                            "file_type": "json", "sort_order": "desc", "limit": quante + 10}, timeout=30)
     oss = [Osservazione(o["date"], float(o["value"])) for o in r.json()["observations"] if o["value"] != "."]
     return list(reversed(oss))[-quante:]
 
 
 def _bce(chiave: str, quante: int) -> list[Osservazione]:
-    r = requests.get(BCE_API.format(chiave=chiave), headers=UA, timeout=60,
-                     params={"lastNObservations": quante, "format": "csvdata"})
-    r.raise_for_status()
+    r = _scarica(BCE_API.format(chiave=chiave), {"lastNObservations": quante, "format": "csvdata"})
     righe = csv.DictReader(io.StringIO(r.text))
     return [Osservazione(x["TIME_PERIOD"], float(x["OBS_VALUE"])) for x in righe if x.get("OBS_VALUE")]
 
 
 def _eurostat(dataset: str, filtri: dict, quante: int) -> list[Osservazione]:
-    r = requests.get(EUROSTAT_API.format(dataset=dataset), timeout=60,
-                     params={**filtri, "lastTimePeriod": quante, "format": "JSON", "lang": "EN"})
-    r.raise_for_status()
+    r = _scarica(EUROSTAT_API.format(dataset=dataset),
+                 {**filtri, "lastTimePeriod": quante, "format": "JSON", "lang": "EN"})
     dati = r.json()
     periodi = dati["dimension"]["time"]["category"]["index"]
     valori = dati.get("value", {})
@@ -320,6 +400,15 @@ def _yahoo(simbolo: str) -> list[Osservazione]:
 # ---------------- formattazione all'italiana ----------------
 
 MESI = notifiche.MESI
+
+
+def _numero_da_testo(testo: str) -> float | None:
+    """'3,7%' -> 3.7, '89 mila' -> 89 (le serie degli occupati sono in migliaia), '' -> None."""
+    trovato = re.search(r"-?\d+(?:[.,]\d+)?", testo or "")
+    if not trovato:
+        return None
+    valore = float(trovato.group().replace(",", "."))
+    return valore * 1000 if "mln" in testo else valore
 
 
 def _numero(x: float, decimali: int, segno: bool = False) -> str:

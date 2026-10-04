@@ -56,16 +56,25 @@ class Memoria:
             self.valutate[chiave(link)] = adesso
 
     def gia_inviata(self, impronta: frozenset[str]) -> bool:
-        return any(simili(impronta, frozenset(i["impronta"])) for i in self.inviate)
+        """Solo i doppioni quasi identici: i casi incerti (forse un aggiornamento) li valuta l'IA."""
+        return any(simili(impronta, frozenset(i["impronta"]), contenimento=False) for i in self.inviate)
 
-    def titoli_inviati(self, ore: int = 48) -> list[str]:
+    def recenti(self, ore: int = 48) -> list[dict]:
+        """Le notifiche inviate nelle ultime ore (per riconoscere doppioni e aggiornamenti)."""
         limite = datetime.now(timezone.utc) - timedelta(hours=ore)
-        return [i["titolo"] for i in self.inviate if datetime.fromisoformat(i["quando"]) >= limite]
+        return [i for i in self.inviate if datetime.fromisoformat(i["quando"]) >= limite]
 
     def registra_invio(self, id_notifica: str, titolo: str, tema: str, reparti: list[str],
-                       impronta: frozenset[str], link: str) -> None:
-        self.inviate.append({"id": id_notifica, "titolo": titolo, "tema": tema, "reparti": reparti,
-                             "impronta": sorted(impronta), "link": link, "quando": _adesso()})
+                       impronta: frozenset[str], link: str, messaggio: int | None = None,
+                       riassunto: str = "") -> None:
+        """messaggio: numero del messaggio Telegram, per rispondergli con gli aggiornamenti."""
+        voce = {"id": id_notifica, "titolo": titolo, "tema": tema, "reparti": reparti,
+                "impronta": sorted(impronta), "link": link, "quando": _adesso()}
+        if messaggio:
+            voce["messaggio"] = messaggio
+        if riassunto:
+            voce["riassunto"] = riassunto[:300]
+        self.inviate.append(voce)
 
     def inviate_dal(self, inizio: datetime) -> list[dict]:
         """Le notifiche inviate da un certo momento in poi (es. dall'inizio della giornata)."""

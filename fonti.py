@@ -14,7 +14,8 @@ import requests
 
 USER_AGENT = "agente-notizie/0.1 (lettore RSS personale; github.com/borsifrancesco1-ux)"
 TIMEOUT = 20
-MASSIMO_PER_RICERCA = 15   # risultati più recenti tenuti per ogni ricerca su Google News
+MASSIMO_PER_RICERCA = 10   # risultati più recenti tenuti per ogni ricerca su Google News
+                           # (pochi: altrimenti i siti minori trovati con le ricerche prevalgono)
 
 
 @dataclass

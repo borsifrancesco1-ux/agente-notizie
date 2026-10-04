@@ -59,18 +59,37 @@ def impronta(titolo: str) -> frozenset[str]:
     return frozenset(p for p in re.findall(r"[a-z0-9]+", t) if len(p) > 2 and p not in PAROLE_VUOTE)
 
 
-def simili(a: frozenset[str], b: frozenset[str], soglia: float = 0.6) -> bool:
-    return bool(a and b) and len(a & b) / len(a | b) >= soglia
+def simili(a: frozenset[str], b: frozenset[str], soglia: float = 0.6, contenimento: bool = True) -> bool:
+    """Titoli sullo stesso fatto: molte parole in comune oppure, con contenimento, uno quasi contenuto
+    nell'altro (es. "AMAS - ANSA - Eni announces fuel cut" e "Eni announces fuel cut")."""
+    if not (a and b):
+        return False
+    comuni = len(a & b)
+    if comuni / len(a | b) >= soglia:
+        return True
+    return contenimento and min(len(a), len(b)) >= 4 and comuni / min(len(a), len(b)) >= 0.75
+
+
+def autorevolezza(n: Notizia) -> int:
+    """0 = istituzione, 1 = testata principale, 2 = feed dedicato a un titolo, 3 = ricerca sul web."""
+    if n.feed and n.feed.ufficiale:
+        return 0
+    if n.feed and n.feed.principale:
+        return 1
+    if n.feed and "news.google.com" not in n.feed.url:
+        return 2
+    return 3
 
 
 @dataclass
 class Gruppo:
-    """Notizie che riportano lo stesso fatto; la prima è la principale."""
+    """Notizie che riportano lo stesso fatto. La principale (titolo e primo link) è quella della
+    fonte più autorevole e, a parità, la più recente."""
     notizie: list[Notizia]
 
     @property
     def principale(self) -> Notizia:
-        return self.notizie[0]
+        return min(self.notizie, key=lambda n: (autorevolezza(n), -(n.pubblicata.timestamp() if n.pubblicata else 0.0)))
 
     @property
     def impronta(self) -> frozenset[str]:
@@ -89,9 +108,9 @@ class Gruppo:
         return any(n.feed and n.feed.ufficiale for n in self.notizie)
 
     def fonti(self) -> list[tuple[str, str]]:
-        """(testata, link) senza testate ripetute, prima i siti principali."""
+        """(testata, link) senza testate ripetute, dalla più autorevole."""
         viste, elenco = set(), []
-        for n in sorted(self.notizie, key=lambda n: not (n.feed and n.feed.principale)):
+        for n in sorted(self.notizie, key=autorevolezza):
             if n.fonte not in viste:
                 viste.add(n.fonte)
                 elenco.append((n.fonte, n.link))
@@ -117,7 +136,7 @@ def raggruppa(notizie: list[Notizia]) -> list[Gruppo]:
     for n in recenti_prima:
         imp = impronta(n.titolo)
         for gruppo, imp_gruppo in gruppi:
-            if n.link == gruppo.principale.link or simili(imp, imp_gruppo):
+            if any(n.link == altra.link for altra in gruppo.notizie) or simili(imp, imp_gruppo):
                 gruppo.notizie.append(n)
                 break
         else:

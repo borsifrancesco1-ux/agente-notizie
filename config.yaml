@@ -37,6 +37,9 @@ ia:
   # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
   motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}
   soglia_rilevanza: 6    # da 1 a 10: sotto la soglia non ricevi nulla (6 = anche analisi e contesto utili)
+  # Soglie più basse per alcuni reparti (una notizia passa se supera quella di almeno uno dei suoi reparti)
+  soglie_reparti: {Copertura: 5}
+  soglia_ufficiali: 5    # comunicati e discorsi di istituzioni (BCE, Fed, Banca d'Italia...)
 
 orari:
   fuso_orario: Europe/Rome
@@ -64,7 +67,15 @@ notifiche:
   max_per_giro: 7        # tetto di notifiche per ogni giro
   con_suono_da: 8        # voto da cui la notifica suona; sotto arriva senza suono
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore
+  finestra_ore_ufficiali: 72   # per le istituzioni, che pubblicano di rado e mai nel weekend
   etichetta_perche: "Perché conta per il PSP"   # riga sotto il riassunto
+  etichetta_impatto: "Impatto atteso"           # riga sotto il "perché conta"
+  # Le attività che l'impatto atteso può nominare (aggiornatele quando il portafoglio è definitivo)
+  attivita_impatto: [Treasury, BTP, Bund, obbligazioni societarie, debito emergente, azioni USA,
+                     azioni europee, azioni emergenti, Eni, dollaro, euro, valute emergenti, petrolio, oro]
+  # Dato anomalo: avviso se un dato si scosta dal consensus più della soglia_sorpresa
+  # dell'indicatore, oppure se si muove più di queste volte la sua variabilità abituale
+  anomalia_sigma: 2.5
 
 # Testate da ignorare sempre (il nome come appare nelle notifiche, accanto al link)
 fonti_escluse: ["Criptovaluta.it", "Vietnam.vn"]
@@ -167,8 +178,8 @@ temi:
     icona: "💱"
     reparti: [Copertura]
     parole_chiave: ["EUR/USD", "euro-dollaro", "cambio euro", "euro dollar", "dollar index", "DXY", "valute emergenti", "emerging market currencies", "punti forward", "forward points", "copertura valutaria", "currency hedging", "FX hedging", "hedging costs", "cross-currency basis", "carry trade"]
-    ricerca_it: "cambio euro dollaro"
-    ricerca_en: ["currency hedging costs euro dollar", "EUR/USD dollar euro outlook"]
+    ricerca_it: ["cambio euro dollaro", "valute emergenti"]
+    ricerca_en: ["currency hedging costs euro dollar", "EUR/USD dollar euro outlook", "emerging market currencies", "dollar index Fed ECB rate differential"]
   # 5. Contesto macro e geopolitico
   - nome: Crescita e lavoro
     icona: "🏭"
@@ -211,6 +222,8 @@ temi:
 # filtra: true    = per siti non solo finanziari: passano solo le notizie con parole chiave seguite.
 feed_generali:
   # Mercati USA e globali
+  # Reuters non ha più feed RSS: lo leggo con una ricerca su Google News limitata al suo sito
+  - {nome: Reuters, url: "https://news.google.com/rss/search?q=site:reuters.com+when:1d&hl=en-US&gl=US&ceid=US:en"}
   - {nome: Bloomberg Markets, url: "https://feeds.bloomberg.com/markets/news.rss"}
   - {nome: Bloomberg Economics, url: "https://feeds.bloomberg.com/economics/news.rss"}
   - {nome: CNBC, url: "https://www.cnbc.com/id/100003114/device/rss/rss.html"}
@@ -242,6 +255,7 @@ feed_generali:
   - {nome: BCE statistiche, url: "https://www.ecb.europa.eu/rss/statpress.html", ufficiale: true}
   - {nome: BCE blog, url: "https://www.ecb.europa.eu/rss/blog.html"}
   - {nome: Fed, url: "https://www.federalreserve.gov/feeds/press_monetary.xml", ufficiale: true}
+  - {nome: Fed discorsi, url: "https://www.federalreserve.gov/feeds/speeches_and_testimony.xml", ufficiale: true}
   # Banca d'Italia: feed per sezione ("Media" = comunicati, notizie e interventi; "Pubblicazioni")
   - {nome: Banca d'Italia, url: "https://www.bancaditalia.it/util/index.rss.html?sezione=/media&lingua=it"}
   - {nome: Banca d'Italia pubblicazioni, url: "https://www.bancaditalia.it/util/index.rss.html?sezione=/pubblicazioni&lingua=it"}
@@ -284,6 +298,7 @@ indicatori:
     serie: CPIAUCSL
     trasformazione: variazione_annua
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Obbligazionario]
     calendario: {paese: USD, titoli: ["CPI y/y"]}
     perche: "Guida le attese sui tassi della Fed e quindi i rendimenti dei Treasury"
@@ -292,6 +307,7 @@ indicatori:
     serie: CPILFESL
     trasformazione: variazione_annua
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Obbligazionario]
     calendario: {paese: USD, titoli: ["Core CPI y/y"]}
   - nome: "Inflazione PCE di fondo USA (a/a)"
@@ -299,6 +315,7 @@ indicatori:
     serie: PCEPILFE
     trasformazione: variazione_annua
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Obbligazionario]
     perche: "È la misura di inflazione a cui guarda la Fed"
   - nome: "Nuovi occupati USA (non agricoli)"
@@ -306,6 +323,7 @@ indicatori:
     serie: PAYEMS
     trasformazione: differenza
     formato: migliaia
+    soglia_sorpresa: 75
     reparti: [Macroeconomia]
     calendario: {paese: USD, titoli: ["Non-Farm Employment Change"]}
     perche: "Misura la forza del lavoro negli USA, decisiva per le prossime mosse della Fed"
@@ -313,6 +331,7 @@ indicatori:
     fonte: fred
     serie: UNRATE
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia]
     calendario: {paese: USD, titoli: ["Unemployment Rate"]}
   - nome: "PIL USA (trimestre, annualizzato)"
@@ -320,6 +339,7 @@ indicatori:
     serie: A191RL1Q225SBEA
     trimestrale: true
     unita: "%"
+    soglia_sorpresa: 0.5
     reparti: [Macroeconomia, Azionario]
     calendario: {paese: USD, titoli: ["Advance GDP q/q", "Prelim GDP q/q", "Final GDP q/q"]}
   - nome: "Tasso Fed (limite superiore)"
@@ -328,6 +348,7 @@ indicatori:
     avvisa: se_cambia
     unita: "%"
     decimali: 2
+    soglia_sorpresa: 0.1
     reparti: [Macroeconomia, Obbligazionario, Copertura]
     calendario: {paese: USD, titoli: ["Federal Funds Rate"]}
     perche: "Cambia il rendimento del monetario in dollari e il costo della copertura del cambio"
@@ -338,6 +359,7 @@ indicatori:
     avvisa: se_cambia
     unita: "%"
     decimali: 2
+    soglia_sorpresa: 0.1
     reparti: [Macroeconomia, Obbligazionario, Copertura]
     calendario: {paese: EUR, titoli: ["Deposit Facility Rate"]}
     perche: "Determina il rendimento del monetario in euro e muove tutta la curva dei tassi europea"
@@ -346,6 +368,7 @@ indicatori:
     dataset: prc_hicp_minr
     filtri: {geo: EA, unit: RCH_A, coicop18: TOTAL}
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Obbligazionario]
     calendario: {paese: EUR, titoli: ["CPI Flash Estimate y/y", "Final CPI y/y"]}
     perche: "È il riferimento della BCE: guida le attese sui tassi europei"
@@ -354,12 +377,14 @@ indicatori:
     dataset: prc_hicp_minr
     filtri: {geo: IT, unit: RCH_A, coicop18: TOTAL}
     unita: "%"
+    soglia_sorpresa: 0.3
     reparti: [Macroeconomia, Obbligazionario]
   - nome: "Disoccupazione area euro"
     fonte: eurostat
     dataset: une_rt_m
     filtri: {geo: EA21, s_adj: SA, age: TOTAL, sex: T, unit: PC_ACT}
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia]
     calendario: {paese: EUR, titoli: ["Unemployment Rate"]}
   - nome: "Disoccupazione Italia"
@@ -367,6 +392,7 @@ indicatori:
     dataset: une_rt_m
     filtri: {geo: IT, s_adj: SA, age: TOTAL, sex: T, unit: PC_ACT}
     unita: "%"
+    soglia_sorpresa: 0.3
     reparti: [Macroeconomia]
     calendario: {paese: EUR, titoli: ["Italian Monthly Unemployment Rate"]}
   - nome: "PIL area euro (t/t)"
@@ -374,6 +400,7 @@ indicatori:
     dataset: namq_10_gdp
     filtri: {geo: EA21, unit: CLV_PCH_PRE, s_adj: SCA, na_item: B1GQ}
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Azionario]
     calendario: {paese: EUR, titoli: ["Prelim Flash GDP q/q", "Flash GDP q/q", "Revised GDP q/q"]}
   - nome: "PIL Italia (t/t)"
@@ -381,6 +408,7 @@ indicatori:
     dataset: namq_10_gdp
     filtri: {geo: IT, unit: CLV_PCH_PRE, s_adj: SCA, na_item: B1GQ}
     unita: "%"
+    soglia_sorpresa: 0.2
     reparti: [Macroeconomia, Obbligazionario]
     calendario: {paese: EUR, titoli: ["Italian Prelim GDP q/q"]}
 
@@ -404,5 +432,6 @@ mercati:
   - {nome: "€STR", fonte: bce, chiave: "EST/B.EU000A2X2A25.WT", tipo: tasso, unita: "%", decimali: 3}
   - {nome: "SOFR", fonte: fred, serie: SOFR, tipo: tasso, unita: "%"}
 
-# Costo stimato della copertura del cambio nel riepilogo: differenziale tra questi due tassi
-copertura: {tasso_usd: SOFR, tasso_eur: "€STR"}
+# Copertura del cambio: il cambio mostrato nel buongiorno e i due tassi il cui differenziale
+# stima il costo annuo della copertura USD→EUR (nomi delle voci di "mercati")
+copertura: {cambio: "EUR/USD", tasso_usd: SOFR, tasso_eur: "€STR"}

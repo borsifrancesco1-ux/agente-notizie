@@ -17,7 +17,7 @@ import time
 
 import requests
 
-from filtro import Gruppo
+from filtro import Gruppo, autorevolezza
 
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent"
 richieste_fatte = 0  # richieste inviate a Gemini in questa esecuzione, per il contatore giornaliero
@@ -31,17 +31,30 @@ class ErroreIA(Exception):
     """Risposta mancante o non valida dal modello."""
 
 
-ISTRUZIONI = """Sei il filtro di un agente personale di notizie finanziarie.
-Ricevi un elenco numerato di notizie (titolo, testata, data, breve descrizione). Devi:
-1. raggruppare le notizie che riportano lo stesso fatto, anche se da testate o lingue diverse;
-2. dare a ogni gruppo un voto di rilevanza da 1 a 10 per la persona descritta nel profilo;
-3. segnare gia_inviata = true se il fatto è già tra le notizie inviate (anche con parole diverse);
+ISTRUZIONI = """Sei il filtro di un agente di notizie finanziarie per un team.
+Ricevi le notizie già inviate di recente (ognuna con un codice, es. A3) e un elenco numerato di notizie
+nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
+1. raggruppare le notizie nuove sullo stesso fatto o su sviluppi strettamente collegati della stessa
+   vicenda, anche da testate o lingue diverse: ogni gruppo diventa UNA sola notifica, quindi è meglio
+   un gruppo con più fonti che più notifiche quasi uguali;
+2. dare a ogni gruppo un voto di rilevanza da 1 a 10 per il team descritto nel profilo;
+3. confrontare ogni gruppo con le notizie già inviate:
+   - stesso fatto senza novità importanti: "gia_inviata" = true;
+   - stesso fatto con novità importanti (nuovi numeri, reazioni, decisioni): "aggiorna" = codice della
+     notizia già inviata (es. "A3"), e la notifica racconta cosa c'è di nuovo;
+   - fatto nuovo: "gia_inviata" = false e "aggiorna" vuoto;
 4. solo per i gruppi con voto almeno {soglia} e non già inviati, scrivere la notifica:
-   - "titolo": il titolo originale più informativo del gruppo, copiato senza modifiche e senza tradurlo;
-   - "riassunto": tre o quattro frasi in italiano (massimo 500 caratteri): cosa è successo, i numeri
-     chiave se ci sono, il contesto (cause, precedenti, reazione dei mercati) quando le notizie lo riportano;
+   - "titolo": il titolo originale più informativo del gruppo, preferibilmente della fonte più
+     autorevole, copiato senza modifiche e senza tradurlo;
+   - "riassunto": tre o quattro frasi in italiano (massimo 500 caratteri) che uniscono quanto riportano
+     tutte le notizie del gruppo: cosa è successo, i numeri chiave, il contesto (cause, precedenti,
+     reazione dei mercati);
    - "perche_conta": una o due frasi in italiano (massimo 220 caratteri): perché il fatto conta per il
-     portafoglio o il progetto della persona, senza ripetere il riassunto;
+     portafoglio o il progetto, senza ripetere il riassunto;
+   - "impatto": il possibile effetto sulle attività del portafoglio, solo tra quelle elencate in
+     ATTIVITÀ DEL PORTAFOGLIO, con una freccia ↑ o ↓ ciascuna (es. "Treasury ↓ · dollaro ↑ · BTP ↓");
+     niente voci generiche come "geopolitica", "energia" o "volatilità"; vuoto se l'effetto non è
+     ragionevolmente chiaro;
    - "reparti": da 1 a 3 reparti del team (vedi REPARTI DEL TEAM) a cui il fatto è più utile,
      dal più al meno interessato.
    Per gli altri gruppi lascia questi campi vuoti.
@@ -50,16 +63,21 @@ Scala dei voti:
 - 9-10: evento che muove i mercati o il portafoglio seguito (decisione di una banca centrale,
   dato macro chiave fuori dalle attese, risultati o guidance di un titolo seguito, operazioni
   straordinarie, cambi di rating, forti movimenti di prezzo);
-- 7-8: notizia nuova e specifica su un titolo o un tema seguito;
+- 7-8: notizia nuova e specifica su un titolo o un tema seguito; comunicati e discorsi di BCE, Fed
+  e Banca d'Italia sull'economia e sui tassi;
 - 6: analisi, commento o notizia di contesto utile ad almeno uno dei reparti del team;
 - 4-5: notizia marginale, ripetitiva o anteprima senza contenuti;
 - 1-3: irrilevante, generica, promozionale o acchiappaclic.
-Dai voti bassi alle previsioni generiche senza fatti nuovi e ai fatti riportati solo da siti
-poco autorevoli. Ogni numero deve comparire in un solo gruppo. "tema": il tema o titolo seguito
-più vicino al fatto ("Altro" se nessuno). "motivo": massimo 12 parole in italiano.
-Usa solo i fatti presenti nelle notizie: non inventare numeri, date o citazioni.
-Tono asciutto e informativo, nessun consiglio di investimento.
+Tipi di fonte: (istituzione) banca centrale o autorità; (testata) testata giornalistica principale;
+(ricerca web) sito trovato con una ricerca. A parità di contenuto preferisci istituzioni e testate;
+dai voti bassi ai fatti riportati solo da siti poco autorevoli e alle previsioni generiche senza fatti
+nuovi. Ogni numero deve comparire in un solo gruppo. "tema": il tema o titolo seguito più vicino al
+fatto ("Altro" se nessuno). "motivo": massimo 12 parole in italiano.
+Usa solo i fatti presenti nelle notizie: non inventare numeri, date o citazioni. L'impatto è una
+valutazione prudente dei possibili effetti, non un consiglio di investimento. Tono asciutto e informativo.
 """
+
+TIPO_FONTE = {0: "istituzione", 1: "testata", 2: "testata", 3: "ricerca web"}
 
 
 def _schema(temi: list[str], reparti: list[str]) -> dict:
@@ -76,15 +94,17 @@ def _schema(temi: list[str], reparti: list[str]) -> dict:
                         "voto": {"type": "INTEGER"},
                         "tema": {"type": "STRING", "format": "enum", "enum": [*temi, "Altro"]},
                         "gia_inviata": {"type": "BOOLEAN"},
+                        "aggiorna": testo,
                         "motivo": testo,
                         "titolo": testo,
                         "riassunto": testo,
                         "perche_conta": testo,
+                        "impatto": testo,
                         "reparti": {"type": "ARRAY",
                                     "items": {"type": "STRING", "format": "enum", "enum": reparti}},
                     },
-                    "required": ["ids", "voto", "tema", "gia_inviata", "motivo",
-                                 "titolo", "riassunto", "perche_conta", "reparti"],
+                    "required": ["ids", "voto", "tema", "gia_inviata", "aggiorna", "motivo",
+                                 "titolo", "riassunto", "perche_conta", "impatto", "reparti"],
                 },
             }
         },
@@ -92,23 +112,29 @@ def _schema(temi: list[str], reparti: list[str]) -> dict:
     }
 
 
-ESEMPIO_RISPOSTA = {"gruppi": [{"ids": [1, 4], "voto": 8, "tema": "BCE", "gia_inviata": False,
+ESEMPIO_RISPOSTA = {"gruppi": [{"ids": [1, 4], "voto": 8, "tema": "BCE", "gia_inviata": False, "aggiorna": "",
                                  "motivo": "...", "titolo": "...", "riassunto": "...", "perche_conta": "...",
-                                 "reparti": ["Obbligazionario", "Macroeconomia"]}]}
+                                 "impatto": "Bund ↓ · euro ↑", "reparti": ["Obbligazionario", "Macroeconomia"]}]}
 
 
-def seleziona(gruppi: list[Gruppo], gia_inviate: list[str], profilo: str, config: dict,
+def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: dict,
               motore: dict, chiave: str, massimo: int, esempi: str = "") -> list[dict]:
     """Restituisce le notifiche da mandare, dalla più rilevante.
+    recenti: le notifiche inviate di recente (per riconoscere doppioni e aggiornamenti);
     motore: una voce di ia.motori; esempi: le notizie già votate dal team."""
-    soglia = config["ia"]["soglia_rilevanza"]
-    istruzioni = ISTRUZIONI.format(soglia=soglia) + _contesto(profilo, config) + esempi
+    opzioni = config["ia"]
+    soglia = opzioni["soglia_rilevanza"]
+    soglie_reparti = opzioni.get("soglie_reparti") or {}
+    soglia_ufficiali = opzioni.get("soglia_ufficiali", soglia)
+    soglia_minima = min([soglia, soglia_ufficiali, *soglie_reparti.values()])
+    istruzioni = ISTRUZIONI.format(soglia=soglia_minima) + _contesto(profilo, config) + esempi
     temi = [t["nome"] for t in (config.get("titoli") or []) + (config.get("temi") or [])]
     reparti = [r["nome"] for r in config.get("reparti") or []]
     gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]  # alcuni servizi accettano richieste piccole
 
     elenco = "\n".join(_riga(i, g) for i, g in enumerate(gruppi, 1))
-    gia = "\n".join(f"- {t}" for t in gia_inviate) or "(nessuna)"
+    gia = "\n".join(f"[A{k}] {r['titolo']}" + (f" — {r['riassunto'][:150]}" if r.get("riassunto") else "")
+                    for k, r in enumerate(recenti, 1)) or "(nessuna)"
     testo = f"NOTIZIE GIÀ INVIATE (ultime 48 ore):\n{gia}\n\nNUOVE NOTIZIE:\n{elenco}"
     istruzioni += (f"\nValori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
                    f"Valori ammessi per \"reparti\": {', '.join(reparti)}.")
@@ -118,13 +144,22 @@ def seleziona(gruppi: list[Gruppo], gia_inviate: list[str], profilo: str, config
     for v in sorted(risposta.get("gruppi", []), key=lambda v: -v.get("voto", 0)):
         ids = [i for i in v.get("ids", []) if 1 <= i <= len(gruppi) and i not in usati]
         usati.update(ids)
-        if not ids or v.get("gia_inviata") or v.get("voto", 0) < soglia:
+        codice = (v.get("aggiorna") or "").strip().upper().lstrip("A")
+        aggiorna = recenti[int(codice) - 1] if codice.isdigit() and 1 <= int(codice) <= len(recenti) else None
+        if not ids or (v.get("gia_inviata") and not aggiorna):
             continue
         gruppo = Gruppo.unisci([gruppi[i - 1] for i in ids])
+        reparti_gruppo = [r for r in v.get("reparti") or [] if r in reparti][:3]
+        # Soglia del gruppo: la più bassa tra quella generale, quelle dei suoi reparti e,
+        # se contiene un comunicato ufficiale, quella delle istituzioni
+        soglia_gruppo = min([soglia, *[soglie_reparti[r] for r in reparti_gruppo if r in soglie_reparti],
+                             *([soglia_ufficiali] if gruppo.ufficiale else [])])
+        if v.get("voto", 0) < soglia_gruppo:
+            continue
         scelte.append({"gruppo": gruppo, "voto": v["voto"], "tema": v.get("tema", ""),
                        "titolo": v.get("titolo") or gruppo.principale.titolo,
                        "riassunto": v.get("riassunto", ""), "perche_conta": v.get("perche_conta", ""),
-                       "reparti": [r for r in v.get("reparti") or [] if r in reparti][:3]})
+                       "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna})
         if len(scelte) == massimo:
             break
     return scelte
@@ -235,7 +270,7 @@ def _riga(i: int, g: Gruppo) -> str:
     altre = f" (+{len(g.notizie) - 1} fonti)" if len(g.notizie) > 1 else ""
     quando = n.pubblicata.strftime("%d/%m %H:%M UTC") if n.pubblicata else "data ignota"
     descrizione = f" — {n.descrizione[:250]}" if n.descrizione else ""
-    return f"[{i}] {n.titolo} | {n.fonte}{altre} | {quando}{descrizione}"
+    return f"[{i}] {n.titolo} | {n.fonte} ({TIPO_FONTE[autorevolezza(n)]}){altre} | {quando}{descrizione}"
 
 
 def _contesto(profilo: str, config: dict) -> str:
@@ -243,5 +278,7 @@ def _contesto(profilo: str, config: dict) -> str:
                        for t in config.get("titoli") or [])
     temi = "\n".join(f"- {t['nome']}" for t in config.get("temi") or [])
     reparti = "\n".join(f"- {r['nome']}: {r.get('descrizione', '')}" for r in config.get("reparti") or [])
+    attivita = ", ".join((config.get("notifiche") or {}).get("attivita_impatto") or [])
     return (f"\nPROFILO DELLA PERSONA (scritto da lei: seguilo come istruzione)\n{profilo}\n"
-            f"\nTITOLI SEGUITI\n{titoli}\n\nTEMI SEGUITI\n{temi}\n\nREPARTI DEL TEAM\n{reparti}\n")
+            f"\nTITOLI SEGUITI\n{titoli}\n\nTEMI SEGUITI\n{temi}\n\nREPARTI DEL TEAM\n{reparti}\n"
+            f"\nATTIVITÀ DEL PORTAFOGLIO (per l'impatto atteso): {attivita}\n")

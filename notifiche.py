@@ -24,26 +24,35 @@ def hashtag(reparto: str) -> str:
 
 
 def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, voto: int | None,
-            reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "") -> str:
-    """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, tema e voto."""
-    righe = [" ".join(hashtag(r) for r in reparti)] if reparti else []
+            reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "",
+            impatto: str = "", etichetta_impatto: str = "Impatto atteso", aggiornamento: bool = False) -> str:
+    """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, impatto atteso, tema e voto.
+    aggiornamento: la notizia aggiunge novità a una già inviata (va in risposta a quella)."""
+    righe = ["🔄 <b>Aggiornamento</b>"] if aggiornamento else []
+    if reparti:
+        righe.append(" ".join(hashtag(r) for r in reparti))
     righe.append(f"{icona} <b>{esc(titolo)}</b>")
     if riassunto:
         righe += ["", esc(riassunto)]
     if perche:
         righe += ["", f"🎯 <i>{esc(etichetta_perche)}:</i> {esc(perche)}"]
+    if impatto:
+        righe.append(f"🧭 <i>{esc(etichetta_impatto)}:</i> {esc(impatto)}")
     info = [x for x in (f"🏷 {esc(tema)}" if tema else "", f"{voto}/10" if voto else "", esc(nota)) if x]
     if info:
         righe += ["", " · ".join(info)]
     return "\n".join(righe)
 
 
-def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str]) -> str:
-    """Buongiorno in un unico messaggio: il calendario del giorno e il riepilogo della notte.
-    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario: righe già pronte."""
+def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
+                    cambio: str = "") -> str:
+    """Buongiorno in un unico messaggio: cambio del giorno, calendario e riepilogo della notte.
+    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
     fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti ogni ora."
     testo = f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>"
+    if cambio:
+        testo += f"\n\n💱 {cambio}"
     if calendario:
         testo += "\n\n📅 <b>Oggi in calendario</b> (ora italiana)\n" + "\n".join(calendario[:15])
     else:
@@ -116,11 +125,15 @@ def link_testuali(fonti: list[tuple[str, str]], massimo: int = FONTI_MASSIME) ->
 
 
 def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
-          tastiera: dict | None = None) -> bool:
+          tastiera: dict | None = None, rispondi_a: int | None = None) -> int:
+    """Manda il messaggio. Restituisce il suo numero (0 se non è partito).
+    rispondi_a: numero di un messaggio a cui rispondere (es. aggiornamento di una notizia)."""
     corpo = {"chat_id": chat_id, "text": testo, "parse_mode": "HTML",
              "disable_web_page_preview": True, "disable_notification": silenzioso}
     if tastiera:
         corpo["reply_markup"] = tastiera
+    if rispondi_a:
+        corpo["reply_parameters"] = {"message_id": rispondi_a, "allow_sending_without_reply": True}
     for _ in range(3):
         try:
             r = requests.post(API.format(token=token), json=corpo, timeout=30)
@@ -131,13 +144,13 @@ def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
             time.sleep(5)
             continue
         if dati.get("ok"):
-            return True
+            return dati["result"]["message_id"]
         if r.status_code == 429:
             time.sleep(dati.get("parameters", {}).get("retry_after", 5))
             continue
         print(f"  ✗ Telegram ha rifiutato il messaggio: {dati.get('description')}")
-        return False
-    return False
+        return 0
+    return 0
 
 
 def esc(testo: str, virgolette: bool = False) -> str:

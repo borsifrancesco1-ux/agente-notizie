@@ -153,26 +153,30 @@ class Giro:
         self.reparti_dei_temi = {t["nome"]: t.get("reparti") or [] for t in temi}
         self.nomi_reparti = [r["nome"] for r in self.config.get("reparti") or []]
         self.etichetta_perche = self.opzioni.get("etichetta_perche", "Perché conta")
+        self.etichetta_impatto = self.opzioni.get("etichetta_impatto", "Impatto atteso")
 
     # ---------- azioni ----------
 
     def notizie(self) -> None:
-        """Un giro di notizie: una notifica per ogni fatto scelto, con i pulsanti di voto."""
+        """Un giro di notizie: una notifica per ogni fatto scelto, con i pulsanti di voto.
+        Le novità su un fatto già inviato arrivano come aggiornamento, in risposta al messaggio originale."""
         scelte = self.scegli(self.opzioni.get("max_per_giro", 5))
         print(f"Notifiche da inviare: {len(scelte)}")
         for s in scelte:
-            g = s["gruppo"]
+            g, originale = s["gruppo"], s.get("aggiorna")
             testo = notifiche.componi(s["titolo"], s["riassunto"], s["perche_conta"],
                                       self.icone.get(s["tema"], ICONA_PREDEFINITA), s["tema"], s["voto"],
-                                      s["reparti"], self.etichetta_perche, s.get("nota", ""))
+                                      s["reparti"], self.etichetta_perche, s.get("nota", ""),
+                                      s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale))
             silenzioso = not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 8)
             id_notifica = chiave(g.principale.link)
-            inviata = self.invia(testo, silenzioso, feedback.tastiera(id_notifica, g.fonti()))
-            if not inviata:  # es. un link rifiutato come pulsante: riprovo con i link nel testo
-                inviata = self.invia(testo + notifiche.link_testuali(g.fonti()), silenzioso,
-                                     feedback.tastiera(id_notifica, g.fonti(), con_link=False))
-            if inviata:
-                self.registra(s, id_notifica)
+            rispondi_a = (originale or {}).get("messaggio")
+            messaggio = self.invia(testo, silenzioso, feedback.tastiera(id_notifica, g.fonti()), rispondi_a=rispondi_a)
+            if not messaggio:  # es. un link rifiutato come pulsante: riprovo con i link nel testo
+                messaggio = self.invia(testo + notifiche.link_testuali(g.fonti()), silenzioso,
+                                       feedback.tastiera(id_notifica, g.fonti(), con_link=False), rispondi_a=rispondi_a)
+            if messaggio:
+                self.registra(s, id_notifica, messaggio)
         self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"
 
     def apertura(self) -> None:
@@ -182,7 +186,8 @@ class Giro:
         voci = [{"titolo": s["titolo"], "riassunto": s["riassunto"], "reparti": s["reparti"],
                  "icona": self.icone.get(s["tema"], ICONA_PREDEFINITA), "fonti": s["gruppo"].fonti()}
                 for s in scelte]
-        testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario)
+        testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario,
+                                          dati.cambio_del_giorno(self.config))
         if self.invia(testo):
             for s in scelte:
                 self.registra(s, chiave(s["gruppo"].principale.link))
@@ -192,9 +197,12 @@ class Giro:
         """Dato uscito: pubblica i valori ufficiali appena usciti, con precedente e consensus."""
         for nuovo in dati.nuovi_dati(self.config, self.memoria):
             atteso = dati.consensus(nuovo["indicatore"], self.adesso)
-            if self.invia(dati.messaggio_dato(nuovo, atteso, self.etichetta_perche)):
+            motivo = dati.anomalia(nuovo, atteso, self.opzioni.get("anomalia_sigma", 2.5))
+            if motivo:
+                print(f"Dato anomalo: {nuovo['indicatore']['nome']} ({motivo})")
+            if self.invia(dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo)):
                 self.memoria.dati_usciti.append({"nome": nuovo["indicatore"]["nome"],
-                                                 "testo": dati.riassunto_dato(nuovo, atteso),
+                                                 "testo": dati.riassunto_dato(nuovo, atteso, motivo),
                                                  "quando": datetime.now(timezone.utc).isoformat(timespec="seconds")})
 
     def settimanale(self) -> None:
@@ -287,13 +295,14 @@ class Giro:
         if not candidati:
             return []
         scelte = self.con_motori(
-            lambda m, k: ia.seleziona(candidati, self.memoria.titoli_inviati(48), self.profilo, self.config,
+            lambda m, k: ia.seleziona(candidati, self.memoria.recenti(48), self.profilo, self.config,
                                       m, k, massimo, feedback.esempi_per_ia(self.memoria)), self.motori())
         if scelte is None:
             print("Nessun motore disponibile: uso il filtro a parole chiave")
             scelte = [{"gruppo": g, "voto": None, "tema": min(g.titoli or g.temi or {""}), "reparti": [],
-                       "titolo": g.principale.titolo, "riassunto": "", "perche_conta": "",
-                       "nota": "filtro a parole chiave"} for g in scelta_senza_ia(candidati, massimo)]
+                       "titolo": g.principale.titolo, "riassunto": "", "perche_conta": "", "impatto": "",
+                       "aggiorna": None, "nota": "filtro a parole chiave"}
+                      for g in scelta_senza_ia(candidati, massimo)]
         for s in scelte:
             g = s["gruppo"]
             if s["tema"] not in self.icone:  # tema inventato dal modello: uso quello delle parole chiave
@@ -319,9 +328,13 @@ class Giro:
             escluse = {f.lower() for f in self.config.get("fonti_escluse") or []}
             self._scaricate = [n for n in notizie if n.fonte.lower() not in escluse]
 
-        limite = datetime.now(timezone.utc) - timedelta(hours=self.opzioni.get("finestra_ore", 12))
+        adesso = datetime.now(timezone.utc)
+        limite = adesso - timedelta(hours=self.opzioni.get("finestra_ore", 12))
+        # Le istituzioni pubblicano di rado (e mai nel weekend): per loro la finestra è più lunga
+        limite_ufficiali = adesso - timedelta(hours=self.opzioni.get("finestra_ore_ufficiali", 72))
         nuove = [n for n in self._scaricate
-                 if (n.pubblicata is None or n.pubblicata >= limite) and not self.memoria.gia_valutata(n.link)]
+                 if (n.pubblicata is None or n.pubblicata >= (limite_ufficiali if n.feed and n.feed.ufficiale else limite))
+                 and not self.memoria.gia_valutata(n.link)]
         pertinenti = Filtro(self.config).pertinenti(nuove)
         gruppi = sorted((g for g in raggruppa(pertinenti) if not self.memoria.gia_inviata(g.impronta)),
                         key=Gruppo.priorita)
@@ -374,19 +387,24 @@ class Giro:
             reparti += [r for r in self.reparti_dei_temi.get(nome, []) if r not in reparti]
         return reparti[:3]
 
-    def registra(self, s: dict, id_notifica: str) -> None:
+    def registra(self, s: dict, id_notifica: str, messaggio: int | None = None) -> None:
         g = s["gruppo"]
-        self.memoria.registra_invio(id_notifica, s["titolo"], s["tema"], s["reparti"], g.impronta, g.principale.link)
+        self.memoria.registra_invio(id_notifica, s["titolo"], s["tema"], s["reparti"], g.impronta, g.principale.link,
+                                    messaggio, s.get("riassunto", ""))
 
     def invia(self, testo: str, silenzioso: bool = False, tastiera: dict | None = None,
-              privato: bool = False) -> bool:
-        """Al canale del team (o, se privato, alla chat dell'utente). In prova stampa e basta."""
+              privato: bool = False, rispondi_a: int | None = None) -> int:
+        """Al canale del team (o, se privato, alla chat dell'utente). Restituisce il numero del messaggio
+        (0 se non è partito). In prova stampa e basta."""
         if self.prova:
             tasti = [t["text"] for riga in (tastiera or {}).get("inline_keyboard", []) for t in riga]
-            print(f"\n----- {'chat privata' if privato else 'canale'}, {'senza suono' if silenzioso else 'con suono'} -----"
+            dove = "chat privata" if privato else "canale"
+            print(f"\n----- {dove}, {'senza suono' if silenzioso else 'con suono'}"
+                  f"{f', in risposta al messaggio {rispondi_a}' if rispondi_a else ''} -----"
                   f"\n{testo}" + (f"\n[{']  ['.join(tasti)}]" if tasti else ""))
-            return True
-        return notifiche.invia(testo, self.token, self.chat_id if privato else self.canale, silenzioso, tastiera)
+            return 1
+        return notifiche.invia(testo, self.token, self.chat_id if privato else self.canale, silenzioso, tastiera,
+                               rispondi_a)
 
 
 def controlla_feed(config: dict) -> None:
