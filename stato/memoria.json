@@ -757,7 +757,44 @@
   "af23a7817ed9e0db": "2026-10-04T13:01:43+00:00",
   "86edb779ac5887ef": "2026-10-04T13:01:43+00:00",
   "c38906c12fe6a1c7": "2026-10-04T13:01:43+00:00",
-  "f92f576337b31d43": "2026-10-04T13:01:43+00:00"
+  "f92f576337b31d43": "2026-10-04T13:01:43+00:00",
+  "1e52f93f7913c117": "2026-10-04T14:02:15+00:00",
+  "1df9a3bc54defa0c": "2026-10-04T14:02:15+00:00",
+  "0235c830843fa449": "2026-10-04T14:02:15+00:00",
+  "f9393542621561aa": "2026-10-04T14:02:15+00:00",
+  "62a946c3cd4e3172": "2026-10-04T14:02:15+00:00",
+  "22070e78eaf84aa3": "2026-10-04T14:02:15+00:00",
+  "041fa0c2245d72e7": "2026-10-04T14:02:15+00:00",
+  "e4b917045a5b5311": "2026-10-04T14:02:15+00:00",
+  "0b6457882582b70f": "2026-10-04T14:02:15+00:00",
+  "43426f0342d771d2": "2026-10-04T14:02:15+00:00",
+  "f93464a0341515f4": "2026-10-04T14:02:15+00:00",
+  "6de2c43ff10fc38e": "2026-10-04T14:02:15+00:00",
+  "3e3b76af9b2c8ea0": "2026-10-04T14:02:15+00:00",
+  "e420d8f83466bb93": "2026-10-04T14:02:15+00:00",
+  "5493c83244a9e9c3": "2026-10-04T14:02:15+00:00",
+  "e2d7531572ab8b1a": "2026-10-04T14:02:15+00:00",
+  "2018ee088405dbd8": "2026-10-04T14:02:15+00:00",
+  "e60c796267ac78ed": "2026-10-04T14:02:15+00:00",
+  "461914f51c134c35": "2026-10-04T14:02:15+00:00",
+  "04b4d4f6501a9e43": "2026-10-04T14:02:15+00:00",
+  "082ce0686fb40557": "2026-10-04T14:02:15+00:00",
+  "3d600165d0acf1e9": "2026-10-04T14:02:15+00:00",
+  "0745fe36e3f27a40": "2026-10-04T14:02:15+00:00",
+  "1deed9a0ccbdf525": "2026-10-04T14:02:15+00:00",
+  "5c1a4a3c46862ea0": "2026-10-04T14:02:15+00:00",
+  "47bebed4ed19f7f2": "2026-10-04T14:02:15+00:00",
+  "ccf109c8b5b31fac": "2026-10-04T14:02:15+00:00",
+  "46f4de01c5e0d022": "2026-10-04T14:02:15+00:00",
+  "c5076db12d3b4b69": "2026-10-04T14:02:15+00:00",
+  "ad9a6c574cf293b9": "2026-10-04T14:02:15+00:00",
+  "4de3f5a64abd0963": "2026-10-04T14:02:15+00:00",
+  "c77abc56dfc7233d": "2026-10-04T14:02:15+00:00",
+  "8156f579ce8b7f72": "2026-10-04T14:02:15+00:00",
+  "e7c13c05fca7e73d": "2026-10-04T14:02:15+00:00",
+  "c5e26b2abb631662": "2026-10-04T14:02:15+00:00",
+  "a950bd8b9b0b51a4": "2026-10-04T14:02:15+00:00",
+  "c820c37c5f0a079d": "2026-10-04T14:02:15+00:00"
  },
  "inviate": [
   {
@@ -3211,17 +3248,186 @@
    "quando": "2026-10-04T13:01:49+00:00",
    "messaggio": 107,
    "riassunto": "L'alleanza OPEC+ ha deciso di mantenere invariati i target di produzione di petrolio per il mese di novembre a fronte delle continue interruzioni delle catene di fornitura. La scelta riflette la prudenza del cartello nel gestire l'offerta in un contesto di tensioni geopolitiche in Medio Oriente. I m"
+  },
+  {
+   "id": "e60c796267ac78ed",
+   "titolo": "Wall Street’s AI Party Is on Edge as Soaring Yields Raise Risks",
+   "tema": "Concentrazione dei grandi titoli tecnologici",
+   "reparti": [
+    "Azionario",
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "edge",
+    "party",
+    "raise",
+    "risks",
+    "soaring",
+    "street",
+    "wall",
+    "yields"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/wall-street-s-ai-party-is-on-edge-as-soaring-yields-raise-risks",
+   "quando": "2026-10-04T14:02:17+00:00",
+   "messaggio": 108,
+   "riassunto": "La forte focalizzazione di Wall Street sui titoli legati all'intelligenza artificiale continua a sostenere i listini verso nuovi record, ignorando temporaneamente l'impennata dei rendimenti obbligazionari. I tassi sui Treasury decennali si attestano sui massimi pluriennali dal 2002, aumentando la pr"
+  },
+  {
+   "id": "1df9a3bc54defa0c",
+   "titolo": "Corporate America has never been this upbeat about future profits",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "about",
+    "america",
+    "been",
+    "corporate",
+    "future",
+    "never",
+    "profits",
+    "upbeat"
+   ],
+   "link": "https://www.marketwatch.com/story/corporate-america-has-never-been-this-upbeat-about-future-profits-fbaf8cd9?mod=mw_rss_topstories",
+   "quando": "2026-10-04T14:02:17+00:00",
+   "messaggio": 109,
+   "riassunto": "Mentre prendono il via le trimestrali del terzo trimestre, le aziende americane mostrano livelli record di ottimismo sui propri profitti futuri. Questo sentiment positivo si scontra tuttavia con l'impennata dei rendimenti obbligazionari e le incertezze politiche. Gli investitori monitorano attentame"
+  },
+  {
+   "id": "e2d7531572ab8b1a",
+   "titolo": "Jobs Slow but Inflation Keeps Fed on Alert",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "alert",
+    "but",
+    "fed",
+    "inflation",
+    "jobs",
+    "keeps",
+    "slow"
+   ],
+   "link": "https://www.bloomberg.com/news/videos/2026-10-04/jobs-slow-but-inflation-keeps-fed-on-alert-video",
+   "quando": "2026-10-04T14:02:18+00:00",
+   "messaggio": 110,
+   "riassunto": "I dati sull'occupazione statunitense più deboli del previsto offrono alla Federal Reserve lo spazio per mantenere i tassi di interesse stabili nella prossima riunione di ottobre. Tuttavia, le pressioni inflazionistiche persistenti continuano a tenere in allerta i banchieri centrali. Gli strategist e"
+  },
+  {
+   "id": "082ce0686fb40557",
+   "titolo": "EM Investors Shrug Off Quarter’s Pullback, Double Down on Carry Trades",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Copertura",
+    "Risk management"
+   ],
+   "impronta": [
+    "carry",
+    "double",
+    "down",
+    "investors",
+    "off",
+    "pullback",
+    "quarter",
+    "shrug",
+    "trades"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/em-investors-shrug-off-quarter-s-pullback-double-down-on-carry-trades",
+   "quando": "2026-10-04T14:02:18+00:00",
+   "messaggio": 111,
+   "riassunto": "Gli investitori nei mercati emergenti mantengono le posizioni sui carry trade, scommettendo sulla capacità della strategia di assorbire l'impatto dei rendimenti dei Treasury vicini ai massimi pluriennali. Nonostante un trimestre difficile, i flussi dimostrano resilienza grazie ai differenziali di ta"
+  },
+  {
+   "id": "62a946c3cd4e3172",
+   "titolo": "Yemen leader announces major military operations against Iran-backed Houthis",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "allies",
+    "explainer",
+    "houthis",
+    "iran",
+    "who",
+    "yemen"
+   ],
+   "link": "https://www.investing.com/news/commodities-news/explainerwho-are-the-houthis-irans-allies-in-yemen-4930937",
+   "quando": "2026-10-04T14:02:19+00:00",
+   "messaggio": 112,
+   "riassunto": "Le autorità yemenite hanno annunciato l'avvio di importanti operazioni militari per riconquistare i territori controllati dai ribelli Houthi. Questa mossa intensifica ulteriormente le tensioni geopolitiche nella regione del Mar Rosso e del Golfo. I mercati monitorano le possibili ripercussioni sulla"
+  },
+  {
+   "id": "c5e26b2abb631662",
+   "titolo": "OPEC+ freezes output targets again as Iran war disrupts Gulf exports",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "again",
+    "disrupts",
+    "exports",
+    "freezes",
+    "gulf",
+    "iran",
+    "opec",
+    "output",
+    "targets",
+    "war"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQTnNVRG5wNVA5MENCNWM2YXJ3RFlLTV9xTy1ydGRicUFJODdzSG1TQ1AzSmRlazcyblV1T0pGZXNxWjQ1V2k0ak5rU1lkWXlMQjhTMExSTWcyZDJPZS1jVDZ6Y0MzS1JiMmVfR0tscUFYSGNTQm5ScjRfM3VNc3pnYmNRTHh4WlRodTlUZlVPZXMwMTF1?oc=5",
+   "quando": "2026-10-04T14:02:23+00:00",
+   "messaggio": 113,
+   "riassunto": "L'alleanza OPEC+ ha deciso di mantenere congelati i target di produzione petrolifera anche per il prossimo periodo, confermando la linea di prudenza. La decisione arriva mentre il conflitto in corso e gli attacchi nel Golfo continuano a ostacolare le esportazioni di greggio. Gli analisti stimano che"
+  },
+  {
+   "id": "a950bd8b9b0b51a4",
+   "titolo": "Via libera al Documento programmatico di finanza pubblica: più soldi per energia e sicurezza. Giorgetti frena sulla manovra",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "documento",
+    "energia",
+    "finanza",
+    "frena",
+    "giorgetti",
+    "libera",
+    "manovra",
+    "programmatico",
+    "pubblica",
+    "sicurezza",
+    "soldi",
+    "via"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBLb1FyUDBQeGliZDdnbzJ2WWQ3R1BfVVFOQk85QjZCa19GR19EeDkwWlNjaUdEbHJZdW1SUm5LdXZNemFpTFp5dEZEVFRXQTBpS3FnT3JFTmkwQURnQ0YyV3VaQzlIVlFxU2lIRmFxeV_SAXBBVV95cUxQWmh3NmlTTFlYWnpQQXRFWEFhekhHXzY0Z1puOGo2eTNNZFVHSktyWkNPMUVjd1lPWGhWTXBtcGJmUFVpRWV5ZjdTTW5ZcVIzMHpSTHhDNGM0bWZibTRmSFBWM0lhaGtfOThvTXM0TmF0?oc=5",
+   "quando": "2026-10-04T14:02:24+00:00",
+   "messaggio": 114,
+   "riassunto": "Il governo italiano ha dato il via libera al Documento programmatico di finanza pubblica, stanziando maggiori fondi per i settori dell'energia e della sicurezza. Il ministro dell'Economia Giancarlo Giorgetti ha tuttavia frenato sulla portata della manovra complessiva, richiamando alla prudenza sui c"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 6
+  "2026-10-04": 7
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 15",
+  "ora_notizie": "2026-10-04 16",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
