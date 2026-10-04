@@ -833,7 +833,43 @@
   "b7a6cebed8ad45cd": "2026-10-04T15:01:07+00:00",
   "2053121362a39b5b": "2026-10-04T15:01:07+00:00",
   "5f07e48e111eb1e7": "2026-10-04T15:01:07+00:00",
-  "8eedc00d9efd67fc": "2026-10-04T15:01:07+00:00"
+  "8eedc00d9efd67fc": "2026-10-04T15:01:07+00:00",
+  "0fa168598debe9e6": "2026-10-04T16:01:38+00:00",
+  "642987eda1bf615e": "2026-10-04T16:01:38+00:00",
+  "850e6149163c00cc": "2026-10-04T16:01:38+00:00",
+  "a2b5db5eb65c97a2": "2026-10-04T16:01:38+00:00",
+  "a29f9f5a63b881a0": "2026-10-04T16:01:38+00:00",
+  "7d526c214986c7f9": "2026-10-04T16:01:38+00:00",
+  "fc364fbd08612919": "2026-10-04T16:01:38+00:00",
+  "8745c4a3ffdbe3c2": "2026-10-04T16:01:38+00:00",
+  "db9b3471bdfc1c47": "2026-10-04T16:01:38+00:00",
+  "7077db2c6274d741": "2026-10-04T16:01:38+00:00",
+  "e54fb808f9f5e29b": "2026-10-04T16:01:38+00:00",
+  "2c78126110f0b495": "2026-10-04T16:01:38+00:00",
+  "4fca482311d19fa3": "2026-10-04T16:01:38+00:00",
+  "c8d9468053d96082": "2026-10-04T16:01:38+00:00",
+  "9fceb56e01c5923e": "2026-10-04T16:01:38+00:00",
+  "e520175a8ad9417c": "2026-10-04T16:01:38+00:00",
+  "7c40781a8c539e5d": "2026-10-04T16:01:38+00:00",
+  "11ce7af844816804": "2026-10-04T16:01:38+00:00",
+  "c950583b5dd69d86": "2026-10-04T16:01:38+00:00",
+  "fc7713bb46b306d2": "2026-10-04T16:01:38+00:00",
+  "77164b1233f1b705": "2026-10-04T16:01:38+00:00",
+  "aa344060bacff687": "2026-10-04T16:01:38+00:00",
+  "9b8a727b5055a0e8": "2026-10-04T16:01:38+00:00",
+  "6cf7975aada085ac": "2026-10-04T16:01:38+00:00",
+  "f9f04bd6cdcca0ee": "2026-10-04T16:01:38+00:00",
+  "e213f024b42a514c": "2026-10-04T16:01:38+00:00",
+  "6d04c7cf8222fb76": "2026-10-04T16:01:38+00:00",
+  "9b21b6b7ab589e2e": "2026-10-04T16:01:38+00:00",
+  "ef45ceaf66c4b630": "2026-10-04T16:01:38+00:00",
+  "854664ace5b3ceb6": "2026-10-04T16:01:38+00:00",
+  "4d4f044a76be34d1": "2026-10-04T16:01:38+00:00",
+  "f5220fec0d7a81b3": "2026-10-04T16:01:38+00:00",
+  "5d92f174d67af64b": "2026-10-04T16:01:38+00:00",
+  "d7e3a9a4330d17ec": "2026-10-04T16:01:38+00:00",
+  "d032d81866d17667": "2026-10-04T16:01:38+00:00",
+  "813ddb1bfb7ae71a": "2026-10-04T16:01:38+00:00"
  },
  "inviate": [
   {
@@ -3600,19 +3636,67 @@
    "quando": "2026-10-04T15:01:15+00:00",
    "messaggio": 120,
    "riassunto": "Le valute rifugio come il dollaro e lo yen registrano un rafforzamento sui mercati globali in concomitanza con la crescita dei tassi di interesse e la volatilità dei bond. Tale dinamica riflette la ricerca di protezione da parte degli investitori di fronte alle tensioni sul mercato obbligazionario. "
+  },
+  {
+   "id": "813ddb1bfb7ae71a",
+   "titolo": "La caduta del BTp 2041: quando il ribasso del prezzo costruisce la cassaforte del risparmiatore",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "2041",
+    "btp",
+    "caduta",
+    "cassaforte",
+    "costruisce",
+    "prezzo",
+    "quando",
+    "ribasso",
+    "risparmiatore"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNX3Y5NWFRV2RqbW1IQjg1eHN6SzBXd3N6VGZmcnNZNEZKUWFuejdoSmdjNURhbW90Wm5EUUhVcld4cWJpMXRIZWhyZ0NQZG03bFRyRFZIbGpLLXlkRVI3SW9jNEhZNTMzeklzOW4zV01FVDI2QnB4Mlk0MV83VUdhUVJEMHpnR3hz?oc=5",
+   "quando": "2026-10-04T16:01:39+00:00",
+   "messaggio": 121,
+   "riassunto": "Il recente calo dei prezzi dei titoli di Stato di lungo periodo, come il BTp 2041, apre nuove opportunità di rendimento per gli investitori orientati al reddito. Il ribasso delle quotazioni riflette le tensioni sui mercati obbligazionari globali, incrementando lo yield a scadenza."
+  },
+  {
+   "id": "f5220fec0d7a81b3",
+   "titolo": "Argentina tweaks FX rules after cost of getting dollars out surges",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Copertura",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "argentina",
+    "cost",
+    "dollars",
+    "getting",
+    "out",
+    "rules",
+    "surges",
+    "tweaks"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUXIwUnEtZ0t4RTVzT2lOYldreFQ0Vko0UWFtZW8wRUxQczdEZEFRbjluVTNDN05jU0xIUEQxTkFaTmgyaXBTcHRiYmsxX3Y1TS1XWnNxR3g3QmZFMHB1dkVySHFqX19pNC1KVGpVS0pPNk1EREpGODhybmpsSTVuNXdmQU8yb1c0OGRlbnNDeGk3clZwYzl0ZFhBbnp3QnN4SEdnSkd1OFZZbjVlcGc3SDdR0gG3AUFVX3lxTFBvVnh2dkxPNXkwYWdOdkRoSElWdjd4VmdaNlk2UFBlVmRkUHJWVU5TV19BVWQ3ODBZV09aZXdzM2YyUEg1SUJwM1dTdUJ0OXZRSFlzX3RqeXB0MERydU5TSGNGcUVjSzlEUTFMMDFEdnFMY0RROGt0WjUtX2hoZ3dtLWhVeDJyZTlfYXhXWFk0Vk1ld2MzMkFkaENSTXZoSW1JbTlJaGc2X1B1RHBubUtOOUxEcXNZaw?oc=5",
+   "quando": "2026-10-04T16:01:39+00:00",
+   "messaggio": 122,
+   "riassunto": "L'autorità monetaria argentina ha modificato le normative sui cambi in risposta all'aumento dei costi per il trasferimento e il prelievo di dollari dal Paese. La misura cerca di stabilizzare i flussi di valuta estera in un contesto di accresciuta pressione valutaria."
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 8
+  "2026-10-04": 13
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 17",
+  "ora_notizie": "2026-10-04 18",
   "chiusura": "2026-10-03",
-  "apertura": "2026-10-04"
+  "apertura": "2026-10-04",
+  "settimanale": "2026-W40"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
