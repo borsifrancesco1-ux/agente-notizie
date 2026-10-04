@@ -527,7 +527,31 @@
   "a6813e7883c57cff": "2026-10-04T06:02:07+00:00",
   "db741359ee124b31": "2026-10-04T06:02:07+00:00",
   "6ea7811ba634cf3e": "2026-10-04T06:02:07+00:00",
-  "0ab2c2074e40a68b": "2026-10-04T06:02:07+00:00"
+  "0ab2c2074e40a68b": "2026-10-04T06:02:07+00:00",
+  "7f6d1ba241bb971b": "2026-10-04T07:01:05+00:00",
+  "9477d17701508129": "2026-10-04T07:01:05+00:00",
+  "07b5d0091564fbe6": "2026-10-04T07:01:05+00:00",
+  "af7ff6552bbc60cf": "2026-10-04T07:01:05+00:00",
+  "66ccec8bda58858b": "2026-10-04T07:01:05+00:00",
+  "d1b9ca0187b0dbdb": "2026-10-04T07:01:05+00:00",
+  "88cda8e76d0de96e": "2026-10-04T07:01:05+00:00",
+  "0307229832d92ac0": "2026-10-04T07:01:05+00:00",
+  "6aae2e97253fa999": "2026-10-04T07:01:05+00:00",
+  "627b6ee6c6ed004f": "2026-10-04T07:01:05+00:00",
+  "fff82d030aab5ea0": "2026-10-04T07:01:05+00:00",
+  "559322319fa83879": "2026-10-04T07:01:05+00:00",
+  "24d531a80580875d": "2026-10-04T07:01:05+00:00",
+  "763661f08a986379": "2026-10-04T07:01:05+00:00",
+  "2f9fc33ef2016db0": "2026-10-04T07:01:05+00:00",
+  "40ec22ce60b79b2f": "2026-10-04T07:01:05+00:00",
+  "2ca300462393a395": "2026-10-04T07:01:05+00:00",
+  "cf8f390baf3618c8": "2026-10-04T07:01:05+00:00",
+  "de6f411d6b768e15": "2026-10-04T07:01:05+00:00",
+  "bbc0e5dcadf0e07e": "2026-10-04T07:01:05+00:00",
+  "be2d3be7544faf47": "2026-10-04T07:01:05+00:00",
+  "f3e9a0a7dd901822": "2026-10-04T07:01:05+00:00",
+  "4976f3ce3d752619": "2026-10-04T07:01:05+00:00",
+  "279a02c7d13f6c25": "2026-10-04T07:01:05+00:00"
  },
  "inviate": [
   {
@@ -2098,16 +2122,157 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPNzY4NzltNi02SjA2YTlGdzFjR1dsS1U1N3RPVkNraG4xR0VDQnhTemZnVm9kOFpmRU40YzdUU0xGN3ctLTZVWVNhajg1STBBd01yU2piUkRvSUE3c09pZ3BXVzlOa3BYOFRWUDZJZG5rQ2x6aUQ2R3VSNlphN2hSa0hGMG1zdFR3a0l3VUthVTRyOTVUMEZHV05ud2lablBKaDZRXzBUdW82RlZ6R2JkZjhLT2dMbW91X0NrTkdnNFdLVF85VnBNWmk2MDB5QU9B0gHPAUFVX3lxTE9HLXpyYVZvLURyMTZxZndwcEpBZGZyb3VkOVVZbVFsYVp4QzlfakJQSFctU2hCSlVTZFdTVUxlY0pkdnpZTWFJZlo2U2RkY0o1eGdMNDVSMzdncFlidV9QRHNLVzlaWk5EaVdLY25aOW13cVFOWG9pWlFuckhoeDY3dzdKeTVwSHEzNTdBLXYxRHh3TWF4RWZLR2ZubmtlQm9PUG15Y0h6dVVLMmpzNl9UeE5LaGVqVXNVT2pVdExwUTB4cThoTENUMm1TWVRzSQ?oc=5",
    "quando": "2026-10-04T06:02:08+00:00"
+  },
+  {
+   "id": "be2d3be7544faf47",
+   "titolo": "Treasury Yields Push To Fresh Highs",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "fresh",
+    "highs",
+    "push",
+    "treasury",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPT05aOHdJS2k3TXNtTkY4MGUxRFFBZjV6bGNHM21EbjRCaHhSR0dYbjVqTmx2azdNVXRoRkh5b3RxbS1pVXNUYmJ0R25UWkxvTV8zUHhfSEQtMTdpUHZWTFVtZHJESDdqb0FkRWRoWDRTTWlPTm5mbmc3UWpzbVJpSDBOMmtDWmZGb1FfVkJjek1wVWdnVDhmXzB6MEhPdFJlMFVSRA?oc=5",
+   "quando": "2026-10-04T07:01:05+00:00"
+  },
+  {
+   "id": "2ca300462393a395",
+   "titolo": "Inflazione, cosa succede in Giappone e perché pesa sulla finanza mondiale: le conseguenze sullo spread francese e il rischio contagio sui bond",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "conseguenze",
+    "contagio",
+    "cosa",
+    "finanza",
+    "francese",
+    "giappone",
+    "inflazione",
+    "mondiale",
+    "perche",
+    "pesa",
+    "rischio",
+    "spread",
+    "succede",
+    "sullo"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOUGZvWE9TR25qOFZXT3hSRUtGWjRJdWZVcEdBbVY4TThWbzB5N3A5S0tYLVd3aUZMdTRoZUtld0hqbDNVTHBiWGtZeHhSaDNoQV80cGlTZnF1UVpMUmVxa01GdHVRSk9XSnNKYUNOM0ZxeDdSQkM2R0czWWRXM3AxSDdrZk5OQVpxLXRnWnB0Y2w0ZzNfdG9WTGotY1ZDZ1dINmIzUmVmV1BnZmRDUDV2Z195OEVjNnM3Mm1CZVJnSzhuUmc3WDdPUG9WcFBlazJ6bGpIREtiT2g5MDRxWFVmeWEtQlNrYXllRC1sVjAxZElJSDRoV0JnWHBCTVZuRjRBOEFUc1R2OFZmVEJKeDRzVFROUzhrZlo3dS1EV01xSnptUXVKTmpVWXpja2pOVmg4OVF4NXNEUkpLNWpCNkRPUzVR0gHHAkFVX3lxTE94V05zeHkzQUl3VHJ6S3RBdkdZYWdILWUxT0VJT3dULUxpUDdYcVJqNUJtOUdULXlMYUxyUzlsUllyU3N4czg3Rk1Lb2FCUTh6UUV3eXlhNzFpN1V2R09jMDNxSFZuMktBQkd3VEVpUXBQalNVV19WUFNKZXpPMUEySGJsLVpNRGJiSnBmSGNuOUR2VGN2X0E2WFo0ajVDV1FGZ09wQ0EyeGhVQzFLVy0ycWVkS3FWdlJKbUl5OW5LdTU4ZHd1RFUwaUY1cjdQQ2ZsZnU5dXB6NEhuQ1ZibWZLNThobUFuM0haaFB5WWVkR09pN2RRY2pRQWhid3JMNWlyZnFpTEFHQkdhLXZWRmpkdHpuV1pHSTdIMVZFaWZPRmo3N0t2M2YzT1FWd1dvQ1d4LUNnLUxFazFSaTNJUXdMWlhTd1hBMA?oc=5",
+   "quando": "2026-10-04T07:01:06+00:00"
+  },
+  {
+   "id": "fff82d030aab5ea0",
+   "titolo": "Global Factory Activity Gains Momentum as AI Spending Drives Stronger Semiconductor, Capital Equipment and Manufacturing Demand Across Europe and Asia",
+   "tema": "Crescita e lavoro",
+   "reparti": [
+    "Macroeconomia",
+    "Azionario"
+   ],
+   "impronta": [
+    "across",
+    "activity",
+    "asia",
+    "capital",
+    "demand",
+    "drives",
+    "equipment",
+    "europe",
+    "factory",
+    "gains",
+    "global",
+    "manufacturing",
+    "momentum",
+    "semiconductor",
+    "spending",
+    "stronger"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOWE8tYjVBRGJhdWV6N0ItZW1BVk1FQUxzQUhvQ2pDWFE1OVpieGp4UW1rLWFrZEdRUDNWZ2Y4VTFfNkhiS0g4aFo5Mll1Q19ubEFBOXpfY0NWNGhwb3htaUhub04tX2RpcjhnZU01MGtkWEFWQ3k2ZmJQUjhaXzdXZWZJU2wtSl9VZUNhMGNjY2xLZ1J1QUZwbFBQbzJEN1FMMVkzTXFIV2tQd1FMd0VQT3JSZVJpelQ5YW9lWGR0WmlpTTdWTll4a1ZLRDZZWF9jYld3R3hGNW5RM1poQWpyX2RWbE9WenF6MWROeU5qczFES19kaTYtaC1lZG9ocmF4UVU2Mk8ybWxLUnJxdnBqdjhZRnZxTV9Q?oc=5",
+   "quando": "2026-10-04T07:01:06+00:00"
+  },
+  {
+   "id": "559322319fa83879",
+   "titolo": "Iraq transports oil beyond the Strait of Hormuz for the first time in decades — The National",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "beyond",
+    "decades",
+    "first",
+    "hormuz",
+    "iraq",
+    "national",
+    "oil",
+    "strait",
+    "time",
+    "transports"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMl9VY00zMVJERzJiTFhSczE4T0VwNzVXLUJ2MzRqcEhQLUNxLWdaZHU1VGI0dDRSdEhTa0NTd1lhWFhBc0psSjN4WFduRTZrSnd2QVBWVGhYNHNKOGNiOFNfeElRNnpYS2ZlQXhKX0I2TGlhQVc0S2wzX2U1RWRBcEpXLV9jZXJELTU4QjNJSnhXNU9UVzhtOWd0c3FvaTlfRno1WGkwTTF2Zw?oc=5",
+   "quando": "2026-10-04T07:01:06+00:00"
+  },
+  {
+   "id": "763661f08a986379",
+   "titolo": "The Week Ahead: Fed September Minutes, PepsiCo and Delta Earnings in Focus",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "ahead",
+    "delta",
+    "earnings",
+    "fed",
+    "focus",
+    "minutes",
+    "pepsico",
+    "september",
+    "week"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ1VvRzhOMmt0VVZjUHF4WHFhdl92Nm1ENTFDQXNIZGczQXhjQVMwOWY5Tm1CclVRdU5aejFKX05Ga1dxNjhTODhsYXhCUVgzNzBYMFdySDZLc3EyLUs4VEp1V3hBOG9Sc01zVFFpWVF0ZDdROHFzRm1vdXNoa3dnZXYycjFEcHNiNUR5aVNiSzlia0s1a25xcnVRbTF1N1o2dEEzWGxJR016ZExVTnA1cFJRNVV1RDRTTlEyeDlpSE0wZUhmU2hoVjc2bw?oc=5",
+   "quando": "2026-10-04T07:01:07+00:00"
+  },
+  {
+   "id": "de6f411d6b768e15",
+   "titolo": "Borsa: l'Europa si consolida, tempesta su bond si spegne, cala il petrolio",
+   "tema": "Rischi di mercato e volatilità",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "borsa",
+    "cala",
+    "consolida",
+    "europa",
+    "petrolio",
+    "spegne",
+    "tempesta"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOZVBXS0ZyeUJXZ0txNTd5RElnR09PRW84Q1NPcU82cVZBa3BnVjZJY284MlBTSTU3cFlMak5KLS1jQnRDbGk0UDJDV2hpa3RGcFl0TWk4QnhXM2hVNUpIMTB2Q2NWeV9IeVh4Z1Nxa2Q2M1BDTWlkZVFrZjB3Y2FqWjNseExQUTRTVzRkWFhwU2tFQVhkU0lGU3l4UWc0UVBtTkNlbkNYQllSeWVCaENUcXp5VkR0M1YzUGF5R2hBTGg0U2dneVlnVUZLaFpzaEtfeldZbjVuVdIB1gFBVV95cUxPQ2M4UHlGRVlwXzhUWEJuQ1VqRUhWXzljTFpqNGZ3REpOcVlXRGpNUXFzMXZxeFBzNHJVY0dzZU5iTjhCVk1teFFmMDROdEFlN3RZX3Roa2ZYQmRIdU9mTTlvcGZIekY3cWp6S2FFLV9iamRjazlGSGliYWl5SWR4QUlVRzd1V01POWVoaUNnZkF0U3E5bGE4eGlOOEFPTnp4cVh0N05iTGVMZzlQMTFRZlJMeVBCMUJ3eVJYbWk2aVJfWkd3U0pueEZEdGhQZ2NmOWNhU3hB?oc=5",
+   "quando": "2026-10-04T07:01:13+00:00"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
-  "2026-10-03": 13
+  "2026-10-03": 14
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 08",
+  "ora_notizie": "2026-10-04 09",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
@@ -2141,7 +2306,7 @@
    "valore": 4.0
   },
   "Tasso BCE sui depositi": {
-   "periodo": "2026-10-03",
+   "periodo": "2026-10-04",
    "valore": 2.5
   },
   "Inflazione area euro (HICP, a/a)": {
