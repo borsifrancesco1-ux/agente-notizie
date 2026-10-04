@@ -12,6 +12,7 @@ Motori supportati (sezione ia.motori di config.yaml):
 """
 from __future__ import annotations
 
+import difflib
 import json
 import time
 
@@ -174,7 +175,7 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         if v.get("voto", 0) < soglia_gruppo:
             continue
         scelte.append({"gruppo": gruppo, "voto": v["voto"], "tema": v.get("tema", ""),
-                       "titolo": v.get("titolo") or gruppo.principale.titolo,
+                       "titolo": titolo_originale(v.get("titolo") or "", gruppo),
                        "riassunto": v.get("riassunto", ""), "perche_conta": v.get("perche_conta", ""),
                        "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna,
                        "aziende": [a for a in v.get("aziende") or [] if isinstance(a, dict) and a.get("simbolo")][:3],
@@ -182,6 +183,23 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         if len(scelte) == massimo:
             break
     return scelte
+
+
+def titolo_originale(proposto: str, gruppo: Gruppo) -> str:
+    """Il titolo vero di una delle fonti del gruppo. Il modello a volte cambia una parola mentre lo copia
+    (es. "Delegates Say" diventato "Delegates Stay"): si prende il titolo originale più simile a quello
+    scelto; se non ne somiglia nessuno (titolo tradotto o riscritto), quello della fonte più autorevole."""
+    def normale(titolo: str) -> str:
+        return " ".join(titolo.lower().split())
+
+    def somiglianza(titolo: str) -> float:
+        return difflib.SequenceMatcher(None, normale(titolo), normale(proposto)).ratio()
+
+    originali = [n.titolo for n in gruppo.notizie if n.titolo]
+    if not proposto.strip() or not originali:
+        return gruppo.principale.titolo
+    migliore = max(originali, key=somiglianza)
+    return migliore if somiglianza(migliore) >= 0.6 else gruppo.principale.titolo
 
 
 def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict) -> dict:
