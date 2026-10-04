@@ -689,7 +689,42 @@
   "30f08e0a98bda579": "2026-10-04T11:01:38+00:00",
   "f7e57a3991a6435e": "2026-10-04T11:01:38+00:00",
   "e00ac66c94efc631": "2026-10-04T11:01:38+00:00",
-  "323487a055f5e26c": "2026-10-04T11:01:38+00:00"
+  "323487a055f5e26c": "2026-10-04T11:01:38+00:00",
+  "44ec7c74c2a823d0": "2026-10-04T12:01:11+00:00",
+  "e8f89fa5a214227c": "2026-10-04T12:01:11+00:00",
+  "80e7e99c3e6701ff": "2026-10-04T12:01:11+00:00",
+  "faa62ceb00731a4b": "2026-10-04T12:01:11+00:00",
+  "6e1bf65bba73c0ec": "2026-10-04T12:01:11+00:00",
+  "7ec0a1fea5ed2825": "2026-10-04T12:01:11+00:00",
+  "12eff5b92d24fa8a": "2026-10-04T12:01:11+00:00",
+  "41fc9fb572f1222c": "2026-10-04T12:01:11+00:00",
+  "2a3e3616fedd181a": "2026-10-04T12:01:11+00:00",
+  "31ada0f787e492eb": "2026-10-04T12:01:11+00:00",
+  "ab58c9312aa3aa6e": "2026-10-04T12:01:11+00:00",
+  "8efbb360da09d415": "2026-10-04T12:01:11+00:00",
+  "46e3fb518e737ffc": "2026-10-04T12:01:11+00:00",
+  "cb9b78fedd98c4a5": "2026-10-04T12:01:11+00:00",
+  "b49ac5fbc6c5c363": "2026-10-04T12:01:11+00:00",
+  "924f48cf929272de": "2026-10-04T12:01:11+00:00",
+  "2280b887c836c03f": "2026-10-04T12:01:11+00:00",
+  "f077fa352a3d9842": "2026-10-04T12:01:11+00:00",
+  "04105cad996d9fd0": "2026-10-04T12:01:11+00:00",
+  "7dcd7da70c2ef7a3": "2026-10-04T12:01:11+00:00",
+  "fa5c3cc77ac35999": "2026-10-04T12:01:11+00:00",
+  "6f45e642ef91c7c3": "2026-10-04T12:01:11+00:00",
+  "f4180e97bd99fbc5": "2026-10-04T12:01:11+00:00",
+  "952b8f752aa83a79": "2026-10-04T12:01:11+00:00",
+  "187adac1fc9e6c8f": "2026-10-04T12:01:11+00:00",
+  "0471f8c922223377": "2026-10-04T12:01:11+00:00",
+  "e756ac9717bb9a1b": "2026-10-04T12:01:11+00:00",
+  "76e81f3df668172d": "2026-10-04T12:01:11+00:00",
+  "84d0bd778842adb0": "2026-10-04T12:01:11+00:00",
+  "111a8965ee31a688": "2026-10-04T12:01:11+00:00",
+  "84166aed87dc16d9": "2026-10-04T12:01:11+00:00",
+  "0c38f76178ccbc00": "2026-10-04T12:01:11+00:00",
+  "57ed63dda6daca29": "2026-10-04T12:01:11+00:00",
+  "1178c2d16266638c": "2026-10-04T12:01:11+00:00",
+  "9ff13447b8c85d37": "2026-10-04T12:01:11+00:00"
  },
  "inviate": [
   {
@@ -2831,17 +2866,181 @@
    "quando": "2026-10-04T11:01:39+00:00",
    "messaggio": 94,
    "riassunto": "I cittadini brasiliani sono chiamati alle urne per elezioni generali altamente polarizzate e cruciali per il futuro economico del Paese. La consultazione si inserisce in un contesto di tensioni sui mercati emergenti e sulle valute locali dell'area latinoamericana. Gli investitori monitorano l'esito "
+  },
+  {
+   "id": "ab58c9312aa3aa6e",
+   "titolo": "Whispers of Contagion Risk Are Returning to Europe’s Bond Market",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "contagion",
+    "europe",
+    "market",
+    "returning",
+    "risk",
+    "whispers"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/whispers-of-contagion-risk-are-returning-to-europe-s-bond-market",
+   "quando": "2026-10-04T12:01:12+00:00",
+   "messaggio": 95,
+   "riassunto": "Gli operatori dei mercati obbligazionari europei sono in allerta per segnali di contagio dopo il recente e violento sell-off dei titoli di Stato. La situazione attuale riporta alla memoria le tensioni vissute durante la crisi del debito sovrano della regione avvenuta quindici anni fa. La pressione s"
+  },
+  {
+   "id": "0471f8c922223377",
+   "titolo": "OPEC, Allies Hold Oil Output Steady Amid Middle East Tensions",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "allies",
+    "east",
+    "hold",
+    "middle",
+    "oil",
+    "opec",
+    "output",
+    "steady",
+    "tensions"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOYmFlX3pxTllubHhKWkgycEVOdlZ3c2F3TzA5OUU4RmFmWmQ2dWlaY3B1TlFfek85dHhZakt3aFJHZjlEUEJ2Zk9MVldfeTdUVkxoUzN1MU9wUWlUdGhFd3M4T3dNamMxbGprT1A3R3g4UGI0Q2RyU3hrczI0WExYWlpNa3N4RjlNRzFGN0U5d1NPN3p4VlN2R2MzRkc4WXlyV3Z4Z21ZZHVtY3FzYmc?oc=5",
+   "quando": "2026-10-04T12:01:13+00:00",
+   "messaggio": 96,
+   "riassunto": "L'alleanza OPEC+ ha deciso di mantenere stabili le quote di produzione di petrolio anche per il mese di novembre. La scelta riflette la volontà del cartel di gestire con prudenza l'offerta in un contesto segnato dalle persistenti tensioni in Medio Oriente che continuano a impattare la produzione glo"
+  },
+  {
+   "id": "44ec7c74c2a823d0",
+   "titolo": "Depositi Eni a Vibo Marina, Romeo annuncia un primo incontro con l’azienda il 15 ottobre: «Finalmente» · ilvibonese.it",
+   "tema": "Eni",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "annuncia",
+    "azienda",
+    "comune",
+    "dell",
+    "delocalizzazione",
+    "depositi",
+    "eni",
+    "incontro",
+    "magica",
+    "parolina",
+    "tavolo",
+    "vertici"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPNi15MFdURlpyQWNEVEJTd0U2RDhjVFVUN3hhUkxQMXVVdmw0Rk1ZU3hJNmw3dzJyb190U1FySF9XakE0YnRLZC1teE1IWjhtRHRaQTAxODM0Y0xJMGlhQmlxVjBoZDdwQ2s2VE5Zdi1LdC15Y1VwVHJLZVZ3Q0pKamJkampnTEczbzdrZC1Yb3ZpckhHMTB3cFFqblpJNk1OVFl5V2Q2NEhnLWNLWUJkNmo4bmpNZUZFenVSejgySFBGcFJQNm9qWkYwM0RuRk9XUm5qMmJvaw?oc=5",
+   "quando": "2026-10-04T12:01:13+00:00",
+   "messaggio": 97,
+   "riassunto": "Il Comune di Vibo Marina ha annunciato un primo incontro ufficiale con i vertici di Eni fissato per il 15 ottobre. Al centro del tavolo vi è la richiesta di delocalizzazione dei depositi costieri della società presenti sul territorio. La notizia è di rilievo per il monitoraggio del rischio di concen"
+  },
+  {
+   "id": "7ec0a1fea5ed2825",
+   "titolo": "Il prezzo del gas sale ancora, da inizio anno +38% ad Amsterdam",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "amsterdam",
+    "ancora",
+    "anno",
+    "gas",
+    "inizio",
+    "prezzo",
+    "sale"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/04/il-prezzo-del-gas-sale-ancora-da-inizio-anno-38-ad-amsterdam_d4603b6a-1fea-4610-b0d8-45a00a15d37e.html",
+   "quando": "2026-10-04T12:01:14+00:00",
+   "messaggio": 98,
+   "riassunto": "Il prezzo del gas naturale ad Amsterdam registra un incremento del 38% dall'inizio dell'anno, spinto principalmente dai ritardi accumulati dalla Germania nel riempire i siti di stoccaggio. Nonostante le tensioni sui prezzi europei, le autorità confermano che l'Italia risulta al sicuro per la stagion"
+  },
+  {
+   "id": "84d0bd778842adb0",
+   "titolo": "Le accise fanno rumore, le tasse sul risparmio sono subdole e silenziose",
+   "tema": "Fiscalità e regole per i risparmiatori",
+   "reparti": [
+    "Risk management"
+   ],
+   "impronta": [
+    "accise",
+    "fanno",
+    "risparmio",
+    "rumore",
+    "silenziose",
+    "subdole",
+    "tasse"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTHo4NXdRdklSUE0yNldBRzhKdWY2UTV5ZTR1TmFHczg3LUJ0Z0NSZmwzTmxkT212N2RMWG85aG15Z2wybTdsLUk1QVQ3SHphZXJwMmNFcDJ6bTdsd294LWtQLVJfRk9PRlZUVnVYVVVSRkV2Wld4dzN1LXVhZnBITG9DUFZTOVpnN0VndXNJN21xRnVqUG9OZElsS2VmUGYxTjdpd1NvRFA?oc=5",
+   "quando": "2026-10-04T12:01:14+00:00",
+   "messaggio": 99,
+   "riassunto": "Il dibattito sulla fiscalità italiana evidenzia come le imposte che colpiscono i rendimenti del risparmio operino in modo silenzioso ma continuo sui patrimoni delle famiglie. Vengono analizzati gli effetti delle aliquote applicate alle diverse classi di attività finanziarie rispetto alla tassazione "
+  },
+  {
+   "id": "0c38f76178ccbc00",
+   "titolo": "Bond, la sorpresa dei mercati: gli emergenti resistono al sell-off globale",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "emergenti",
+    "gli",
+    "globale",
+    "mercati",
+    "off",
+    "resistono",
+    "sell",
+    "sorpresa"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMlhkREJUbXRRbmpSVmdSQnRyUmZlWU9kc21tRGFmdXlTOVU3RFZWQzgwaUV5MHE3cG9qbjM2bWF0LVZ2OXhBOGJhQXBCUTN3TmpDZTZqYndRUzgySEd2TmZLZXJ4OV9MaWkxejN3aVZhT1h4Q1pSSWhibl91ZV9PcElaNUZmYk00aXc?oc=5",
+   "quando": "2026-10-04T12:01:18+00:00",
+   "messaggio": 100,
+   "riassunto": "Nonostante la forte ondata di vendite che ha colpito i mercati obbligazionari globali e i Treasury, il debito dei paesi emergenti sta mostrando una resilienza superiore alle attese. Gli investitori continuano a selezionare le emissioni locali e in valuta forte grazie a fondamentali macroeconomici mi"
+  },
+  {
+   "id": "cb9b78fedd98c4a5",
+   "titolo": "Euro-dollaro: il cambio prova un rimbalzo tecnico",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "cambio",
+    "dollaro",
+    "euro",
+    "prova",
+    "rimbalzo",
+    "tecnico"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTE1JS2FjTHJ1Qm9EWk10RVh4RFZldm05WUNWSk9yVjRzUERqUFJITXlNMkFrbjdCMW9vOFdWUktmSGJEbXlSNmFVdThPZDA1TXlkMUhxVGtjRTR4c2NRbTVNeWlUeHdScHlHME5VejRfeFZkTkNMbEpLLTBCVG9yYVdoTEd5WE5OMWItU2RTLWxOc1hVUDdrNGVrM2dqNm1RSWhScTVYUnFpaHhtbjBNcFJOWF9SekJO?oc=5",
+   "quando": "2026-10-04T12:01:18+00:00",
+   "messaggio": 101,
+   "riassunto": "Il tasso di cambio EUR/USD mostra segnali di stabilizzazione e tenta un rimbalzo tecnico dopo le recenti forti pressioni al ribasso. Gli analisti monitorano i livelli chiave per comprendere se il movimento possa consolidarsi in un'inversione di breve periodo o se persista la forza del dollaro."
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 4
+  "2026-10-04": 5
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 13",
+  "ora_notizie": "2026-10-04 14",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
