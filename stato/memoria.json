@@ -943,7 +943,37 @@
   "e6dcf37dc87aacbf": "2026-10-04T19:00:58+00:00",
   "68972dbc5773e08a": "2026-10-04T19:00:58+00:00",
   "72fafeaecc76a59e": "2026-10-04T19:00:58+00:00",
-  "768a7a614bca2904": "2026-10-04T19:00:58+00:00"
+  "768a7a614bca2904": "2026-10-04T19:00:58+00:00",
+  "768e6c00dba3a397": "2026-10-04T20:01:05+00:00",
+  "832150a3ba97f38c": "2026-10-04T20:01:05+00:00",
+  "dc00105630c3f36c": "2026-10-04T20:01:05+00:00",
+  "ea8eeb96553dec62": "2026-10-04T20:01:05+00:00",
+  "8b1151b8e35faed6": "2026-10-04T20:01:05+00:00",
+  "528c3627f83067f9": "2026-10-04T20:01:05+00:00",
+  "fba5a7a493146486": "2026-10-04T20:01:05+00:00",
+  "db0d4c4161baacbf": "2026-10-04T20:01:05+00:00",
+  "f41c8e4e13f21f15": "2026-10-04T20:01:05+00:00",
+  "01189de8aad6e049": "2026-10-04T20:01:05+00:00",
+  "3ef77ff7a05eb46a": "2026-10-04T20:01:05+00:00",
+  "289bae8fb70ef8d8": "2026-10-04T20:01:05+00:00",
+  "4f81cababcdc03aa": "2026-10-04T20:01:05+00:00",
+  "9193f0ef15c6f6a9": "2026-10-04T20:01:05+00:00",
+  "8bbf2f5ad7389ef9": "2026-10-04T20:01:05+00:00",
+  "f2ff39dc2e76a476": "2026-10-04T20:01:05+00:00",
+  "ec74d44c7fe4b2ca": "2026-10-04T20:01:05+00:00",
+  "17e8f9b21575c731": "2026-10-04T20:01:05+00:00",
+  "7d57db0db6040441": "2026-10-04T20:01:05+00:00",
+  "27f2cb9287ccaac0": "2026-10-04T20:01:05+00:00",
+  "a69c9dc9b4c69c7b": "2026-10-04T20:01:05+00:00",
+  "df1692593f0024e6": "2026-10-04T20:01:05+00:00",
+  "e8a9da706be9c864": "2026-10-04T20:01:05+00:00",
+  "66f07593c5f51386": "2026-10-04T20:01:05+00:00",
+  "86eb6f9a2ae4e14e": "2026-10-04T20:01:05+00:00",
+  "f30b3e1c066abcc7": "2026-10-04T20:01:05+00:00",
+  "b3fab242ed018bae": "2026-10-04T20:01:05+00:00",
+  "548a95165f60dfbd": "2026-10-04T20:01:05+00:00",
+  "f0d3adbe54143451": "2026-10-04T20:01:05+00:00",
+  "3ac0ba459c9a42e8": "2026-10-04T20:01:05+00:00"
  },
  "inviate": [
   {
@@ -4117,18 +4147,190 @@
    "quando": "2026-10-04T19:01:06+00:00",
    "messaggio": 138,
    "riassunto": "La nuova settimana finanziaria si apre con l'attesa per la pubblicazione dei verbali della Federal Reserve, i dati sulla situazione economica in Francia e l'avvio della stagione delle prime trimestrali societarie negli Stati Uniti. Gli operatori monitorano gli indicatori alla ricerca di indicazioni "
+  },
+  {
+   "id": "27f2cb9287ccaac0",
+   "titolo": "UTEN: Bear Steepening Curve Opens A Bearish Thesis On Treasury (NASDAQ:UTEN)",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "bear",
+    "bearish",
+    "curve",
+    "nasdaq",
+    "opens",
+    "steepening",
+    "thesis",
+    "treasury",
+    "uten"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS3lVY2JfUG83MkdIeHVyR3BGaDdtS2hLSUtFTVhQQmVPXy10c01rSzZOQTc1X1pQWmxhSFJHY3JuT0xxN21kYldrWGN5OU5YT0g4Q1dEN0FOdHhreDB0UFlaTkdoOVo4Yll5S0phSnBiUkRqU0R4aEx0OUdfNWI0T05OdTZxaG1JbEI3d2xRalBhdHl0SG56Qzh0eHF2T0lTN29ZTQ?oc=5",
+   "quando": "2026-10-04T20:01:05+00:00",
+   "messaggio": 139,
+   "riassunto": "Le analisi sul mercato obbligazionario evidenziano come la configurazione di 'bear steepening' della curva dei rendimenti apra a prospettive ribassiste per i titoli di Stato statunitensi. Il movimento riflette crescenti pressioni sul premio a termine e sulle scadenze lunghe della curva dei tassi. Gl"
+  },
+  {
+   "id": "a69c9dc9b4c69c7b",
+   "titolo": "BlackRock and Amundi Warn on Rising AI Concentration Risk",
+   "tema": "Concentrazione dei grandi titoli tecnologici",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "amundi",
+    "blackrock",
+    "concentration",
+    "rising",
+    "risk",
+    "warn"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPY09ha0ppc2liVnUzR2xUWVFrcFZpM2dmeF9IS2RvbTZ6NlFnVy1HYml3Rm9VbVF2ZXp0ci0xTXBRTzFhbHBGYzU5WlpmTmdvUVVnYzVzYmVjWFZNZlAyWVNxR182Vm5kajVKbkZfeGt0UmtRWXV0dFJIYjlKNW5XbzNNT3Z0am95TFRQY1dwX21YNjNr?oc=5",
+   "quando": "2026-10-04T20:01:06+00:00",
+   "messaggio": 140,
+   "riassunto": "I gestori patrimoniali BlackRock e Amundi hanno espresso preoccupazione per l'eccessiva concentrazione di mercato legata agli investimenti e ai titoli del settore intelligenza artificiale. La forte focalizzazione degli indici su pochi giganti tecnologici aumenta la vulnerabilità dei portafogli a eve"
+  },
+  {
+   "id": "768e6c00dba3a397",
+   "titolo": "ENI PER L’ITALIA: AL VIA LO SCONTO DEL 20% SUI CARBURANTI PER AGRICOLTURA E PESCA",
+   "tema": "Eni",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "agricoltura",
+    "carburanti",
+    "eni",
+    "italia",
+    "pesca",
+    "sconto",
+    "via"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMnZJbHlCVlNDRG9zSjlnT29FTG5VcFJ6TnY2TWIxWFA5a3Y5NXBrSjYyVml3RFlvRGNOTEVxQVkxeTFzM2RPaWFONmRaZTVCcnU5Q2c3UnlZZS1xNHJLTjc5aktlUWl0dmF3WmFfYm5hVmstVEt3SlBBb2U0Z1FjLTRIRW95SVRHel9HZTBnQzgtMzlQdklMclVldFQ2THcyMkhzbWVkb0FWVnJHRGgw?oc=5",
+   "quando": "2026-10-04T20:01:06+00:00",
+   "messaggio": 141,
+   "riassunto": "Eni ha annunciato il lancio di uno sconto del 20% dedicato ai settori dell'agricoltura e della pesca in Italia. L'iniziativa mira a sostenere le categorie colpite dai rincari dei costi energetici e operativi. La misura incide sulle dinamiche commerciali della società e sul contesto energetico domest"
+  },
+  {
+   "id": "e8a9da706be9c864",
+   "titolo": "Diesel, finisce il taglio accise. Lo sconto diventerà “mobile”",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "accise",
+    "automobilisti",
+    "carburanti",
+    "caro",
+    "costato",
+    "gasolio",
+    "mesi",
+    "miliardi",
+    "scade",
+    "sconto",
+    "sulle"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZkdxdHpFUThCOVY5NEY0SVc2aUZNMGZNaFo4dHlIU2d1V2FINzliS0IzSFZLbTRoT1duZjdqU1BLUFhCMndyTDdQY0cwTkRELUVjNkJtajVPMGpSUEtXSFJzdjk0VXFMWklMTFRmQ0NoMGM1bjd4bEJYUlJDaF91UXlYMA?oc=5",
+   "quando": "2026-10-04T20:01:07+00:00",
+   "messaggio": 142,
+   "riassunto": "Si conclude ufficialmente il regime di taglio delle accise sul gasolio in Italia, dopo un aggravio stimato in 4,7 miliardi di euro per gli automobilisti in sei mesi. Lo sconto statale si trasformerà in un meccanismo di tipo mobile per rispondere alle fluttuazioni dei corsi energetici. La misura si i"
+  },
+  {
+   "id": "8b1151b8e35faed6",
+   "titolo": "France’s Schneider Electric nears $20 billion deal to buy US software group PTC, FT reports",
+   "tema": "Altro",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "billion",
+    "buy",
+    "deal",
+    "electric",
+    "france",
+    "group",
+    "nears",
+    "ptc",
+    "reports",
+    "schneider",
+    "software"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/frances-schneider-electric-nears-20-billion-deal-to-buy-us-software-group-ptc-ft-reports-4930950",
+   "quando": "2026-10-04T20:01:07+00:00",
+   "messaggio": 143,
+   "riassunto": "Schneider Electric è vicina a concludere un accordo da 20 miliardi di dollari per l'acquisizione del gruppo software statunitense PTC. Contemporaneamente, AkzoNobel procede verso la cessione della propria divisione vernici nel Sud-Est asiatico a Nippon Paint per oltre un miliardo di dollari. Le oper"
+  },
+  {
+   "id": "66f07593c5f51386",
+   "titolo": "AI Spending and Rising Bond Yields Could Squeeze Emerging Markets, DEA Says",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "bond",
+    "could",
+    "dea",
+    "emerging",
+    "markets",
+    "rising",
+    "spending",
+    "squeeze",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQYnV3T2dOODVLanVvaUZWUjh0YXhwdWNCNjNZSVhmUERXQTZsN0s1el9zYlpwY2tWdmEwTnBKNWliTGRndmdJTmxNcVNGUnZ4VkRIRmpfZzdoSXpYdHh2bFBrUVpSSGs5NzZWZ2RsTXB0Y0RBQlkyWEl2SFVycGZsd2w4anVNWVd0blVvYQ?oc=5",
+   "quando": "2026-10-04T20:01:11+00:00",
+   "messaggio": 144,
+   "riassunto": "Le autorità economiche segnalano che la combinazione tra i massicci investimenti globali nell'intelligenza artificiale e la risalita dei rendimenti obbligazionari rischia di stringere i margini finanziari dei paesi emergenti. I costi di finanziamento più elevati nei mercati sviluppati drenano capita"
+  },
+  {
+   "id": "86eb6f9a2ae4e14e",
+   "titolo": "BYD Slips 2.4% in Hong Kong Rout as JPMorgan Cuts Rating and Export Boom Masks Home-Market Weakness",
+   "tema": "Cina ed economie emergenti",
+   "reparti": [
+    "Azionario",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "boom",
+    "byd",
+    "cuts",
+    "export",
+    "home",
+    "hong",
+    "jpmorgan",
+    "kong",
+    "market",
+    "masks",
+    "rating",
+    "rout",
+    "slips",
+    "weakness"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeVhuS0FBWGlaamJyUlJSN1h0WHZoaXJVREpBYlBUYW1FblNBZWZPOEpNaE9vQ01GOC1tX1pOaHVYV1hqOG1NUnJ3YTdILTh3aGZEWHM4bHhiME53WFNUT29Jak14cTltX2VMTUFzQkE0TTZXQmxwd09lUzFGZDhyVF92dHdHN2h5dFk5TXVUSU9peHdNdk5wampCV0V5R3R6SU5SbFlSWjZ0QlJvWGYwZGpwYy10T0Z0WGF6bU12YVY4Sl9lUUtSMkd5dDVxYXl5NVNNcnBB?oc=5",
+   "quando": "2026-10-04T20:01:11+00:00",
+   "messaggio": 145,
+   "riassunto": "Il titolo BYD ha registrato un calo del 2,4% alla borsa di Hong Kong in seguito al taglio del rating operato da JPMorgan. Gli analisti evidenziano come il forte boom delle esportazioni stia di fatto mascherando la persistente debolezza della domanda sul mercato domestico cinese. La situazione riflet"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 16
+  "2026-10-04": 17
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 21",
-  "chiusura": "2026-10-03",
+  "ora_notizie": "2026-10-04 22",
+  "chiusura": "2026-10-04",
   "apertura": "2026-10-04",
   "settimanale": "2026-W40"
  },
