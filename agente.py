@@ -83,19 +83,22 @@ def main() -> None:
 
     orari = config.get("orari") or {}
     adesso = datetime.now(ZoneInfo(orari.get("fuso_orario", "Europe/Rome")))
+    giro = Giro(config, profilo, memoria, args.prova, adesso)
+    giro.carica_iscrizioni()
+    # prima i comandi, poi il programma: un /pausa o un /riprendi vale già per questo giro
+    if args.comando:
+        giro.esegui_comandi([{"id": None, "testo": args.comando}])
+    elif not args.prova:
+        giro.esegui_comandi(giro.leggi_telegram())
+
     if args.automatico:
         azioni = piano_della_giornata(adesso, orari, memoria)
     elif args.comando:
         azioni = []
     else:
         azioni = [a for a in ("apertura", "dati", "settimanale", "chiusura") if getattr(args, a)] or ["notizie"]
-    print(f"{adesso:%d/%m %H:%M} · azioni: {', '.join(azioni) or 'nessuna (silenzio notturno)'}")
-
-    giro = Giro(config, profilo, memoria, args.prova, adesso)
-    if args.comando:
-        giro.esegui_comandi([{"id": None, "testo": args.comando}])
-    elif not args.prova:
-        giro.esegui_comandi(giro.leggi_telegram())
+    if not args.comando:
+        print(f"{adesso:%d/%m %H:%M} · azioni: {', '.join(azioni) or 'nessuna'}")
     for nome in [*azioni, *[a for a in giro.azioni_extra if a not in azioni]]:
         getattr(giro, nome)()
     if not args.prova:
@@ -110,12 +113,18 @@ def piano_della_giornata(adesso: datetime, orari: dict, memoria: Memoria) -> lis
     prima, ultima = orari.get("prima_notizia", "08:00"), orari.get("ultima_notizia", "22:00")
     fatto = memoria.giornata
     if ora < apertura or fatto.get("chiusura") == oggi:
-        return []  # silenzio notturno
+        print("Silenzio notturno")
+        return []
+    if memoria.in_pausa():
+        print(f"In pausa fino a {memoria.pausa_fino} (comando /pausa)")
+        return []
     azioni = []
     if fatto.get("apertura") != oggi and ora < APERTURA_ENTRO:
         azioni.append("apertura")
     azioni.append("dati")  # i dati ufficiali si controllano a ogni giro della giornata
-    if ora >= prima and fatto.get("ora_notizie") != f"{oggi} {adesso.hour:02d}":
+    # notizie una volta per ora, dall'ora della prima fino all'ora dell'ultima compresa
+    # (un giro in ritardo dopo le 23, es. alla fine di una pausa, fa solo la chiusura)
+    if prima <= ora and ora[:2] <= ultima[:2] and fatto.get("ora_notizie") != f"{oggi} {adesso.hour:02d}":
         azioni.append("notizie")
     settimanale = orari.get("riepilogo_settimanale") or {}
     if (settimanale and adesso.weekday() == notifiche.GIORNI.index(settimanale.get("giorno", "domenica"))
@@ -141,6 +150,7 @@ class Giro:
         self.worker_url = (os.environ.get("WORKER_URL") or "").rstrip("/")
         self.worker_chiave = os.environ.get("AGENTE_KEY", "")
         self.azioni_extra: list[str] = []  # azioni chieste dai comandi (es. /notizie)
+        self.iscrizioni: dict[str, dict] = {}  # /iscrivimi: chi riceve le notizie in privato (dal Worker)
         self._scaricate: list[Notizia] | None = None
         self.aggiorna_da_config()
 
@@ -164,19 +174,27 @@ class Giro:
         print(f"Notifiche da inviare: {len(scelte)}")
         for s in scelte:
             g, originale = s["gruppo"], s.get("aggiorna")
+            rispondi_a = (originale or {}).get("messaggio")
+            mercati = ""
+            if (s["voto"] or 0) >= (self.config.get("reazione_mercati") or {}).get("voto_minimo_notizie", 9):
+                mercati = dati.reazione(self.config, "notizie", datetime.now(timezone.utc) - timedelta(hours=1))
             testo = notifiche.componi(s["titolo"], s["riassunto"], s["perche_conta"],
                                       self.icone.get(s["tema"], ICONA_PREDEFINITA), s["tema"], s["voto"],
                                       s["reparti"], self.etichetta_perche, s.get("nota", ""),
-                                      s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale))
+                                      s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale),
+                                      mercati=mercati,
+                                      aggiorna_titolo="" if rispondi_a else (originale or {}).get("titolo", ""))
             silenzioso = not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 8)
             id_notifica = chiave(g.principale.link)
-            rispondi_a = (originale or {}).get("messaggio")
-            messaggio = self.invia(testo, silenzioso, feedback.tastiera(id_notifica, g.fonti()), rispondi_a=rispondi_a)
+            tastiera = feedback.tastiera(id_notifica, g.fonti())
+            messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
             if not messaggio:  # es. un link rifiutato come pulsante: riprovo con i link nel testo
-                messaggio = self.invia(testo + notifiche.link_testuali(g.fonti()), silenzioso,
-                                       feedback.tastiera(id_notifica, g.fonti(), con_link=False), rispondi_a=rispondi_a)
+                testo += notifiche.link_testuali(g.fonti())
+                tastiera = feedback.tastiera(id_notifica, g.fonti(), con_link=False)
+                messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
             if messaggio:
                 self.registra(s, id_notifica, messaggio)
+                self.invia_iscritti(testo, s["reparti"], silenzioso, tastiera)
         self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"
 
     def apertura(self) -> None:
@@ -196,14 +214,22 @@ class Giro:
     def dati(self) -> None:
         """Dato uscito: pubblica i valori ufficiali appena usciti, con precedente e consensus."""
         for nuovo in dati.nuovi_dati(self.config, self.memoria):
-            atteso = dati.consensus(nuovo["indicatore"], self.adesso)
+            ind = nuovo["indicatore"]
+            atteso = dati.consensus(ind, self.adesso)
             motivo = dati.anomalia(nuovo, atteso, self.opzioni.get("anomalia_sigma", 2.5))
             if motivo:
-                print(f"Dato anomalo: {nuovo['indicatore']['nome']} ({motivo})")
-            if self.invia(dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo)):
-                self.memoria.dati_usciti.append({"nome": nuovo["indicatore"]["nome"],
-                                                 "testo": dati.riassunto_dato(nuovo, atteso, motivo),
-                                                 "quando": datetime.now(timezone.utc).isoformat(timespec="seconds")})
+                print(f"Dato anomalo: {ind['nome']} ({motivo})")
+            # reazione dei mercati dall'ora di uscita (dal calendario), altrimenti nell'ultima ora
+            uscita = dati.evento(ind, self.adesso)
+            dal = uscita.quando if uscita else datetime.now(timezone.utc) - timedelta(hours=1)
+            area = ind.get("area") or ("usa" if ind["fonte"] == "fred" else "euro")
+            mercati = dati.reazione(self.config, area, dal)
+            if mercati:
+                mercati = (f"dalle {dal.astimezone(self.fuso):%H:%M}: " if uscita else "nell'ultima ora: ") + mercati
+            testo = dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo, mercati)
+            if self.invia(testo):
+                self.memoria.registra_dato(ind["nome"], dati.riassunto_dato(nuovo, atteso, motivo), ind.get("reparti") or [])
+                self.invia_iscritti(testo, ind.get("reparti") or [], silenzioso=False)
 
     def settimanale(self) -> None:
         """Riepilogo della settimana sul canale e proposta di modifica al profilo in privato."""
@@ -214,8 +240,15 @@ class Giro:
     def chiusura(self) -> None:
         """Fine delle comunicazioni, con il conto delle notizie del giorno per reparto."""
         inizio_giornata = self.adesso.replace(hour=0, minute=0, second=0, microsecond=0)
-        testo = notifiche.chiusura(self.memoria.inviate_dal(inizio_giornata), self.orari.get("apertura", "07:30"))
+        inviate_oggi = self.memoria.inviate_dal(inizio_giornata)
+        testo = notifiche.chiusura(inviate_oggi, self.orari.get("apertura", "07:30"))
         self.invia(testo, silenzioso=True)
+        # chi è iscritto in modalità "sera" riceve in privato le notizie del giorno dei suoi reparti
+        for iscritto in self.iscrizioni.values():
+            if iscritto.get("modo") == "sera" and iscritto.get("chat"):
+                mie = [n for n in inviate_oggi if set(n.get("reparti") or []) & set(iscritto.get("reparti") or [])]
+                self.invia(notifiche.riepilogo_serale(mie, iscritto.get("reparti") or []), silenzioso=True,
+                           chat=iscritto["chat"])
         self.memoria.giornata["chiusura"] = self.oggi
 
     # ---------- settimana ----------
@@ -273,6 +306,13 @@ class Giro:
             return feedback.leggi_worker(self.memoria, self.worker_url, self.worker_chiave)
         return feedback.leggi_telegram(self.memoria, self.token, self.chat_id)
 
+    def carica_iscrizioni(self) -> None:
+        """Chi ha chiesto con /iscrivimi le notizie di alcuni reparti in privato (le gestisce il Worker)."""
+        if self.worker_url:
+            self.iscrizioni = feedback.iscrizioni_worker(self.worker_url, self.worker_chiave)
+            if self.iscrizioni:
+                print(f"Iscritti in privato: {len(self.iscrizioni)}")
+
     def esegui_comandi(self, coda: list[dict]) -> None:
         eseguiti = []
         for voce in coda:
@@ -281,7 +321,8 @@ class Giro:
                 risposta = comandi.esegui(self, voce["testo"])
             except Exception as e:  # noqa: BLE001 — un comando sbagliato non deve fermare il giro
                 risposta = f"⚠️ Non sono riuscito a eseguire «{voce['testo']}» ({type(e).__name__})."
-            self.invia(notifiche.esc(risposta), privato=True)
+            # le risposte con link (/chiedi, /oggi, /cerca) sono già in HTML
+            self.invia(risposta if isinstance(risposta, comandi.Html) else notifiche.esc(risposta), privato=True)
             if voce.get("id"):
                 eseguiti.append(voce["id"])
         if self.worker_url and not self.prova:
@@ -390,21 +431,31 @@ class Giro:
     def registra(self, s: dict, id_notifica: str, messaggio: int | None = None) -> None:
         g = s["gruppo"]
         self.memoria.registra_invio(id_notifica, s["titolo"], s["tema"], s["reparti"], g.impronta, g.principale.link,
-                                    messaggio, s.get("riassunto", ""))
+                                    messaggio, s.get("riassunto", ""),
+                                    {"perche": s.get("perche_conta", ""), "impatto": s.get("impatto", ""),
+                                     "voto": s.get("voto"), "fonti": g.fonti()[:6]})
+
+    def invia_iscritti(self, testo: str, reparti: list[str], silenzioso: bool, tastiera: dict | None = None) -> None:
+        """Copia in privato a chi è iscritto in modalità "subito" ad almeno uno dei reparti."""
+        for iscritto in self.iscrizioni.values():
+            chat = iscritto.get("chat")
+            if (iscritto.get("modo", "subito") == "subito" and chat and str(chat) != str(self.canale)
+                    and set(iscritto.get("reparti") or []) & set(reparti)):
+                self.invia(testo, silenzioso, tastiera, chat=chat)
 
     def invia(self, testo: str, silenzioso: bool = False, tastiera: dict | None = None,
-              privato: bool = False, rispondi_a: int | None = None) -> int:
-        """Al canale del team (o, se privato, alla chat dell'utente). Restituisce il numero del messaggio
-        (0 se non è partito). In prova stampa e basta."""
+              privato: bool = False, rispondi_a: int | None = None, chat: str | int | None = None) -> int:
+        """Al canale del team; se privato, alla chat dell'utente; se chat, a quella chat (iscritti).
+        Restituisce il numero del messaggio (0 se non è partito). In prova stampa e basta."""
+        destinazione = chat or (self.chat_id if privato else self.canale)
         if self.prova:
             tasti = [t["text"] for riga in (tastiera or {}).get("inline_keyboard", []) for t in riga]
-            dove = "chat privata" if privato else "canale"
+            dove = "iscritto in privato" if chat else "chat privata" if privato else "canale"
             print(f"\n----- {dove}, {'senza suono' if silenzioso else 'con suono'}"
                   f"{f', in risposta al messaggio {rispondi_a}' if rispondi_a else ''} -----"
                   f"\n{testo}" + (f"\n[{']  ['.join(tasti)}]" if tasti else ""))
             return 1
-        return notifiche.invia(testo, self.token, self.chat_id if privato else self.canale, silenzioso, tastiera,
-                               rispondi_a)
+        return notifiche.invia(testo, self.token, destinazione, silenzioso, tastiera, rispondi_a)
 
 
 def controlla_feed(config: dict) -> None:

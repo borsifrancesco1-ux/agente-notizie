@@ -39,11 +39,12 @@ nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
    un gruppo con più fonti che più notifiche quasi uguali;
 2. dare a ogni gruppo un voto di rilevanza da 1 a 10 per il team descritto nel profilo;
 3. confrontare ogni gruppo con le notizie già inviate:
-   - stesso fatto senza novità importanti: "gia_inviata" = true;
-   - stesso fatto con novità importanti (nuovi numeri, reazioni, decisioni): "aggiorna" = codice della
-     notizia già inviata (es. "A3"), e la notifica racconta cosa c'è di nuovo;
+   - stesso fatto senza novità importanti: "gia_inviata" = true e "aggiorna" vuoto;
+   - stesso fatto con novità importanti (nuovi numeri, reazioni, decisioni): "gia_inviata" = false e
+     "aggiorna" = codice della notizia già inviata (es. "A3"); la notifica racconta cosa c'è di nuovo;
    - fatto nuovo: "gia_inviata" = false e "aggiorna" vuoto;
-4. solo per i gruppi con voto almeno {soglia} e non già inviati, scrivere la notifica:
+4. per i gruppi con voto almeno {soglia} e "gia_inviata" = false (fatti nuovi e aggiornamenti),
+   scrivere la notifica completa:
    - "titolo": il titolo originale più informativo del gruppo, preferibilmente della fonte più
      autorevole, copiato senza modifiche e senza tradurlo;
    - "riassunto": tre o quattro frasi in italiano (massimo 500 caratteri) che uniscono quanto riportano
@@ -148,6 +149,8 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         aggiorna = recenti[int(codice) - 1] if codice.isdigit() and 1 <= int(codice) <= len(recenti) else None
         if not ids or (v.get("gia_inviata") and not aggiorna):
             continue
+        if aggiorna and not (v.get("riassunto") or "").strip():
+            continue  # un aggiornamento senza testo non dice cosa c'è di nuovo
         gruppo = Gruppo.unisci([gruppi[i - 1] for i in ids])
         reparti_gruppo = [r for r in v.get("reparti") or [] if r in reparti][:3]
         # Soglia del gruppo: la più bassa tra quella generale, quelle dei suoi reparti e,

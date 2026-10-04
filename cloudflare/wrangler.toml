@@ -6,6 +6,9 @@ compatibility_date = "2026-09-01"
 
 [vars]
 REPO = "borsifrancesco1-ux/agente-notizie"
+# Chi può usare il bot in privato: "proprietario" (solo chi lo gestisce) oppure "tutti"
+# (con "tutti" gli altri possono solo iscriversi; modifiche e domande restano del proprietario)
+ACCESSO = "proprietario"
 
 # Orologio dell'agente (UTC): ogni ora dalle 5:00 alle 21:00 (in Italia 7-23 d'estate, 6-22 d'inverno)
 # più le 5:30 e le 6:30 per il buongiorno delle 7:30 (una delle due, a seconda dell'ora legale).

@@ -435,3 +435,23 @@ mercati:
 # Copertura del cambio: il cambio mostrato nel buongiorno e i due tassi il cui differenziale
 # stima il costo annuo della copertura USD→EUR (nomi delle voci di "mercati")
 copertura: {cambio: "EUR/USD", tasso_usd: SOFR, tasso_eur: "€STR"}
+
+# Reazione dei mercati: per un dato uscito, come si sono mosse queste quotazioni dall'ora di uscita
+# (usa = dati FRED, euro = dati BCE ed Eurostat); per le notizie da 9-10, nell'ultima ora.
+reazione_mercati:
+  usa: [EUR/USD, Treasury 10a, S&P 500 fut.]
+  euro: [EUR/USD, Euro Stoxx 50, FTSE MIB]
+  notizie: [EUR/USD, Treasury 10a, S&P 500 fut., Euro Stoxx 50, Brent]
+  voto_minimo_notizie: 9
+
+# Quotazioni infragiornaliere (Yahoo Finance) usate per la reazione dei mercati.
+#   tipo: tasso = variazione in punti base; altrimenti variazione percentuale
+quotazioni:
+  EUR/USD: {simbolo: "EURUSD=X"}
+  Treasury 10a: {simbolo: "^TNX", tipo: tasso}
+  S&P 500 fut.: {simbolo: "ES=F"}
+  Euro Stoxx 50: {simbolo: "^STOXX50E"}
+  FTSE MIB: {simbolo: "FTSEMIB.MI"}
+  Brent: {simbolo: "BZ=F"}
+  Dollar index: {simbolo: "DX-Y.NYB"}
+  Oro: {simbolo: "GC=F"}

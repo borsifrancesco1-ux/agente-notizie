@@ -11,6 +11,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
+import archivio
 from filtro import simili
 
 GIORNI_DA_RICORDARE = 14
@@ -46,6 +47,9 @@ class Memoria:
         self.proposta: dict = dati.get("proposta", {})
         # dati ufficiali usciti di recente, per il riepilogo settimanale: {"nome", "testo", "quando"}
         self.dati_usciti: list[dict] = dati.get("dati_usciti", [])
+        self.pausa_fino: str = dati.get("pausa_fino", "")            # /pausa: niente invii fino a quest'ora
+        self.ultima_modifica: dict = dati.get("ultima_modifica", {})  # /annulla: versione precedente
+        self.da_archiviare: list[dict] = []                          # voci nuove per l'archivio mensile
 
     def gia_valutata(self, link: str) -> bool:
         return chiave(link) in self.valutate
@@ -66,8 +70,9 @@ class Memoria:
 
     def registra_invio(self, id_notifica: str, titolo: str, tema: str, reparti: list[str],
                        impronta: frozenset[str], link: str, messaggio: int | None = None,
-                       riassunto: str = "") -> None:
-        """messaggio: numero del messaggio Telegram, per rispondergli con gli aggiornamenti."""
+                       riassunto: str = "", per_archivio: dict | None = None) -> None:
+        """messaggio: numero del messaggio Telegram, per rispondergli con gli aggiornamenti;
+        per_archivio: campi in più da salvare nell'archivio (fonti, perché conta, impatto)."""
         voce = {"id": id_notifica, "titolo": titolo, "tema": tema, "reparti": reparti,
                 "impronta": sorted(impronta), "link": link, "quando": _adesso()}
         if messaggio:
@@ -75,6 +80,18 @@ class Memoria:
         if riassunto:
             voce["riassunto"] = riassunto[:300]
         self.inviate.append(voce)
+        self.da_archiviare.append({"tipo": "notizia", "quando": voce["quando"], "titolo": titolo,
+                                   "riassunto": riassunto, "tema": tema, "reparti": reparti, "link": link,
+                                   **(per_archivio or {})})
+
+    def registra_dato(self, nome: str, testo: str, reparti: list[str]) -> None:
+        voce = {"nome": nome, "testo": testo, "quando": _adesso()}
+        self.dati_usciti.append(voce)
+        self.da_archiviare.append({"tipo": "dato", "quando": voce["quando"], "titolo": f"{nome}: {testo}",
+                                   "riassunto": testo, "tema": nome, "reparti": reparti})
+
+    def in_pausa(self) -> bool:
+        return bool(self.pausa_fino) and self.pausa_fino > _adesso()
 
     def inviate_dal(self, inizio: datetime) -> list[dict]:
         """Le notifiche inviate da un certo momento in poi (es. dall'inizio della giornata)."""
@@ -134,8 +151,12 @@ class Memoria:
                 "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
                 "avviso_quota": self.avviso_quota, "giornata": self.giornata,
                 "indicatori": self.indicatori, "proposta": self.proposta,
-                "dati_usciti": [d for d in self.dati_usciti if d["quando"] >= limite]}
+                "dati_usciti": [d for d in self.dati_usciti if d["quando"] >= limite],
+                "pausa_fino": self.pausa_fino, "ultima_modifica": self.ultima_modifica}
         self.percorso.write_text(json.dumps(dati, ensure_ascii=False, indent=1), "utf-8")
+        # l'archivio sta accanto alla cartella della memoria: archivio/AAAA-MM.jsonl
+        archivio.aggiungi(self.percorso.parent.parent / "archivio", self.da_archiviare)
+        self.da_archiviare = []
 
 
 def giorno_quota() -> str:

@@ -25,10 +25,15 @@ def hashtag(reparto: str) -> str:
 
 def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, voto: int | None,
             reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "",
-            impatto: str = "", etichetta_impatto: str = "Impatto atteso", aggiornamento: bool = False) -> str:
-    """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, impatto atteso, tema e voto.
-    aggiornamento: la notizia aggiunge novità a una già inviata (va in risposta a quella)."""
-    righe = ["🔄 <b>Aggiornamento</b>"] if aggiornamento else []
+            impatto: str = "", etichetta_impatto: str = "Impatto atteso", aggiornamento: bool = False,
+            mercati: str = "", aggiorna_titolo: str = "") -> str:
+    """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, impatto atteso, mercati,
+    tema e voto. aggiornamento: la notizia aggiunge novità a una già inviata (va in risposta a quella);
+    aggiorna_titolo: il titolo di quella notizia, se non si può rispondere al suo messaggio
+    (es. era nel riepilogo della notte); mercati: come si sono mosse le quotazioni nell'ultima ora."""
+    righe = []
+    if aggiornamento:
+        righe.append("🔄 <b>Aggiornamento</b>" + (f" di «{esc(aggiorna_titolo[:90])}»" if aggiorna_titolo else ""))
     if reparti:
         righe.append(" ".join(hashtag(r) for r in reparti))
     righe.append(f"{icona} <b>{esc(titolo)}</b>")
@@ -38,6 +43,8 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
         righe += ["", f"🎯 <i>{esc(etichetta_perche)}:</i> {esc(perche)}"]
     if impatto:
         righe.append(f"🧭 <i>{esc(etichetta_impatto)}:</i> {esc(impatto)}")
+    if mercati:
+        righe.append(f"📈 <i>Mercati nell'ultima ora:</i> {esc(mercati)}")
     info = [x for x in (f"🏷 {esc(tema)}" if tema else "", f"{voto}/10" if voto else "", esc(nota)) if x]
     if info:
         righe += ["", " · ".join(info)]
@@ -68,7 +75,7 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
             righe.append(esc(breve(v["riassunto"])))
         righe.append(link_testuali(v["fonti"], massimo=2).strip())
         blocco = "\n".join(righe)
-        if _visibile(testo + blocco + fine) > LUNGHEZZA_MASSIMA:
+        if visibile(testo + blocco + fine) > LUNGHEZZA_MASSIMA:
             break
         testo += blocco
     return testo + fine
@@ -99,12 +106,26 @@ def chiusura(inviate_oggi: list[dict], apertura: str) -> str:
     return testo + f"\n\nCi risentiamo domani alle {apertura.lstrip('0')} con il riepilogo della notte."
 
 
+def riepilogo_serale(notizie: list[dict], reparti: list[str]) -> str:
+    """Per chi è iscritto in modalità "sera": le notizie del giorno dei suoi reparti, in un messaggio."""
+    etichette = " ".join(hashtag(r) for r in reparti)
+    if not notizie:
+        return f"🌙 Oggi nessuna notizia per i tuoi reparti ({etichette})."
+    testo = f"🌙 <b>Le notizie di oggi per i tuoi reparti</b> ({etichette})"
+    for n in notizie:
+        riga = f"\n• <a href=\"{esc(n['link'], virgolette=True)}\">{esc(n['titolo'][:110])}</a>"
+        if visibile(testo + riga) > LUNGHEZZA_MASSIMA:
+            break
+        testo += riga
+    return testo
+
+
 def dividi(testo: str, massimo: int = LUNGHEZZA_MASSIMA) -> list[str]:
     """Spezza un testo lungo in più messaggi, tra un paragrafo e l'altro."""
     parti, attuale = [], ""
     for paragrafo in testo.split("\n\n"):
         candidato = f"{attuale}\n\n{paragrafo}" if attuale else paragrafo
-        if attuale and _visibile(candidato) > massimo:
+        if attuale and visibile(candidato) > massimo:
             parti.append(attuale)
             attuale = paragrafo
         else:
@@ -158,6 +179,6 @@ def esc(testo: str, virgolette: bool = False) -> str:
     return html.escape(str(testo), quote=virgolette)
 
 
-def _visibile(testo_html: str) -> int:
+def visibile(testo_html: str) -> int:
     """Lunghezza del testo come la conta Telegram: senza i tag HTML."""
     return len(html.unescape(re.sub(r"<[^>]+>", "", testo_html)))

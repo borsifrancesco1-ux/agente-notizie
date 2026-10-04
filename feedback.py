@@ -102,6 +102,16 @@ def leggi_worker(memoria: Memoria, url: str, chiave: str) -> list[dict]:
     return coda
 
 
+def iscrizioni_worker(url: str, chiave: str) -> dict[str, dict]:
+    """Chi ha scelto con /iscrivimi di ricevere in privato le notizie di alcuni reparti.
+    Le iscrizioni stanno sul Worker (non nel repository pubblico): {utente: {reparti, modo, chat}}."""
+    try:
+        r = requests.get(f"{url}/agente/iscrizioni", headers={"Authorization": f"Bearer {chiave}"}, timeout=30)
+        return r.json() if r.ok else {}
+    except (requests.RequestException, ValueError):
+        return {}
+
+
 def conferma_worker(url: str, chiave: str, ids: list[str]) -> None:
     """Toglie dalla coda del Worker i comandi eseguiti."""
     if not ids:

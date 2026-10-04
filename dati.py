@@ -101,14 +101,65 @@ def calendario(config: dict, dal: date, al: date, fuso, impatto_minimo: str | No
     return [testo for _, testo in sorted(voci)]
 
 
-def consensus(indicatore: dict, adesso: datetime) -> str:
-    """Il valore atteso dal mercato per un indicatore uscito da poco, se il calendario lo riporta."""
+def evento(indicatore: dict, adesso: datetime) -> Evento | None:
+    """L'evento del calendario corrispondente a un indicatore uscito da poco (con orario e consensus)."""
     voce = indicatore.get("calendario") or {}
     titoli = set(voce.get("titoli") or [])
     for e in eventi_calendario():
         if e.paese == voce.get("paese") and e.titolo in titoli and timedelta(0) <= adesso - e.quando <= timedelta(days=3):
-            return all_italiana(e.atteso)
-    return ""
+            return e
+    return None
+
+
+def consensus(indicatore: dict, adesso: datetime) -> str:
+    """Il valore atteso dal mercato per un indicatore uscito da poco, se il calendario lo riporta."""
+    e = evento(indicatore, adesso)
+    return all_italiana(e.atteso) if e else ""
+
+
+# ---------------- reazione dei mercati ----------------
+
+_barre: dict[str, list[tuple[datetime, float]]] = {}
+BARRA = timedelta(minutes=15)   # ogni quotazione infragiornaliera è la chiusura di 15 minuti di scambi
+
+
+def reazione(config: dict, gruppo: str, dal: datetime) -> str:
+    """Come si sono mosse le quotazioni del gruppo indicato (sezione reazione_mercati di config)
+    da 'dal' a adesso. Vuoto se i mercati sono chiusi o mancano le quotazioni."""
+    quotazioni = config.get("quotazioni") or {}
+    adesso = datetime.now(timezone.utc)
+    parti = []
+    for nome in (config.get("reazione_mercati") or {}).get(gruppo) or []:
+        voce = quotazioni.get(nome)
+        if not voce:
+            continue
+        try:
+            barre = _infragiornaliere(voce["simbolo"])
+        except Exception:  # noqa: BLE001 — senza quella quotazione la riga resta più corta
+            continue
+        # il prezzo di partenza è quello di una barra chiusa entro 'dal' (Yahoo data le barre dall'inizio)
+        prima = next((b for b in reversed(barre) if b[0] + BARRA <= dal), None)
+        ultima = barre[-1] if barre else None
+        if not prima or not ultima or ultima[0] <= prima[0] or adesso - ultima[0] > timedelta(hours=2):
+            continue  # mercato chiuso, o nessuna quotazione dopo l'uscita
+        if voce.get("tipo") == "tasso":
+            parti.append(f"{nome} {_numero((ultima[1] - prima[1]) * 100, 0, segno=True)} pb")
+        else:
+            parti.append(f"{nome} {_numero((ultima[1] / prima[1] - 1) * 100, 2, segno=True)}%")
+    return " · ".join(parti)
+
+
+def _infragiornaliere(simbolo: str) -> list[tuple[datetime, float]]:
+    """Quotazioni a 15 minuti degli ultimi giorni (Yahoo Finance), lette una volta per esecuzione."""
+    if simbolo not in _barre:
+        r = requests.get(YAHOO_API.format(simbolo=simbolo), params={"range": "5d", "interval": "15m"},
+                         headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+        r.raise_for_status()
+        risultato = r.json()["chart"]["result"][0]
+        chiusure = risultato["indicators"]["quote"][0]["close"]
+        _barre[simbolo] = [(datetime.fromtimestamp(t, timezone.utc), c)
+                           for t, c in zip(risultato["timestamp"], chiusure) if c is not None]
+    return _barre[simbolo]
 
 
 def all_italiana(valore: str) -> str:
@@ -182,7 +233,8 @@ def anomalia(nuovo: dict, atteso: str, sigma: float) -> str:
     return "; ".join(motivi)
 
 
-def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anomalia: str = "") -> str:
+def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anomalia: str = "",
+                   mercati: str = "") -> str:
     ind, ultima, precedente = nuovo["indicatore"], nuovo["ultima"], nuovo["precedente"]
     unita, decimali = ind.get("unita", ""), ind.get("decimali", 1)
     righe = []
@@ -201,6 +253,8 @@ def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anoma
     righe += ["", " · ".join(dettagli)]
     if ind.get("perche"):
         righe += ["", f"🎯 <i>{notifiche.esc(etichetta_perche)}:</i> {notifiche.esc(ind['perche'])}"]
+    if mercati:
+        righe.append(f"📈 <i>Reazione dei mercati:</i> {notifiche.esc(mercati)}")
     righe += ["", f"🔗 <a href=\"{notifiche.esc(link_fonte(ind), virgolette=True)}\">{_nome_fonte(ind)}</a>"]
     return "\n".join(righe)
 

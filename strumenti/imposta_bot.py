@@ -17,12 +17,21 @@ import requests
 from dotenv import load_dotenv
 
 COMANDI = [
+    ("chiedi", "Fai una domanda sulle notizie"),
+    ("oggi", "Le notizie inviate oggi"),
+    ("cerca", "Cerca nell'archivio delle notizie"),
+    ("notizie", "Fai subito un giro di notizie"),
+    ("iscrivimi", "Ricevi in privato le notizie dei tuoi reparti"),
+    ("disiscrivimi", "Smetti di ricevere le notizie in privato"),
+    ("iscrizioni", "A cosa sei iscritto"),
+    ("pausa", "Sospendi gli invii (es. 3h, 2g)"),
+    ("riprendi", "Riprendi gli invii"),
     ("segui", "Aggiungi un titolo da seguire"),
     ("tema", "Aggiungi un tema da seguire"),
     ("smetti", "Smetti di seguire un titolo o un tema"),
     ("soglia", "Cambia la soglia di rilevanza (1-10)"),
     ("profilo", "Aggiungi un'indicazione al profilo"),
-    ("notizie", "Fai subito un giro di notizie"),
+    ("annulla", "Annulla l'ultima modifica"),
     ("stato", "Com'è andata oggi"),
     ("aiuto", "Elenco dei comandi"),
 ]

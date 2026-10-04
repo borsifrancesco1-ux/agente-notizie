@@ -10,6 +10,7 @@ import difflib
 import io
 import os
 import re
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -17,28 +18,45 @@ import yaml as pyyaml
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+import archivio
 import dati
 import ia
+import notifiche
 
 if TYPE_CHECKING:
     from agente import Giro
 
 AIUTO = """Comandi del bot (oppure scrivimi in italiano normale, es. "segui anche Mediobanca"):
 
+Cosa seguire
 /segui <società> – aggiungo un titolo da seguire
 /tema <argomento> – aggiungo un tema da seguire
 /smetti <nome> – smetto di seguire un titolo o un tema
 /soglia <1-10> – cambio la soglia di rilevanza (più bassa = più notizie)
 /profilo <frase> – aggiungo un'indicazione al profilo
+/annulla – annullo l'ultima modifica fatta con questi comandi
+
+Notizie e domande
+/chiedi <domanda> – rispondo usando l'archivio delle notizie, con le fonti
+/oggi – le notizie inviate oggi, per reparto
+/cerca <parole> – cerco nell'archivio delle notizie
 /notizie – faccio subito un giro di notizie
 /stato – com'è andata oggi
+
+Invii
+/pausa <durata> – sospendo gli invii (es. /pausa 3h, /pausa 2g)
+/riprendi – riprendo gli invii
+/iscrivimi <reparti> [subito|sera] – notizie dei tuoi reparti in privato
+/disiscrivimi – smetto di mandarti le notizie in privato
+/iscrizioni – a cosa sei iscritto
 /aiuto – questo elenco"""
 
 COMANDI = {"/segui": "segui", "/tema": "tema", "/smetti": "smetti", "/soglia": "soglia",
-           "/profilo": "profilo", "/notizie": "notizie", "/stato": "stato"}
+           "/profilo": "profilo", "/notizie": "notizie", "/stato": "stato", "/chiedi": "chiedi",
+           "/oggi": "oggi", "/cerca": "cerca", "/pausa": "pausa", "/riprendi": "riprendi", "/annulla": "annulla"}
 
 ISTRUZIONI_INTERPRETA = """Sei l'assistente di un agente di notizie finanziarie. L'utente ti scrive in italiano
-per cambiare cosa segue l'agente. Traduci il messaggio in un'azione:
+per cambiare cosa segue l'agente o per chiedere qualcosa. Traduci il messaggio in un'azione:
 - "segui": seguire una società o un titolo quotato (argomento: il nome della società);
 - "tema": seguire un argomento (argomento: l'argomento);
 - "smetti": smettere di seguire un titolo o un tema (argomento: il nome);
@@ -46,11 +64,32 @@ per cambiare cosa segue l'agente. Traduci il messaggio in un'azione:
   attuale meno 1, "meno notizie" = la soglia attuale più 1);
 - "profilo": un'indicazione su cosa interessa o non interessa (argomento: la frase da aggiungere al
   profilo, riscritta in modo chiaro e in prima persona);
+- "chiedi": una domanda sui fatti, i mercati o le notizie (argomento: la domanda);
+- "oggi": sapere quali notizie sono uscite oggi;
+- "cerca": cercare notizie su un argomento preciso (argomento: le parole da cercare);
+- "pausa": sospendere gli invii (argomento: la durata, es. "3h" o "2g");
+- "riprendi": riprendere gli invii;
+- "annulla": annullare l'ultima modifica;
 - "notizie": fare subito un giro di notizie;
-- "stato": sapere com'è andata oggi;
+- "stato": sapere com'è andata oggi l'agente;
 - "nessuna": il messaggio non chiede nessuna di queste cose ("risposta": breve risposta cortese in italiano).
 """
-AZIONI = ["segui", "tema", "smetti", "soglia", "profilo", "notizie", "stato", "nessuna"]
+AZIONI = ["segui", "tema", "smetti", "soglia", "profilo", "chiedi", "oggi", "cerca", "pausa", "riprendi",
+          "annulla", "notizie", "stato", "nessuna"]
+
+ISTRUZIONI_CHIEDI = """Rispondi in italiano alla domanda del team usando SOLO le notizie e i dati elencati
+(dall'archivio dell'agente). Risposta chiara e concreta, da 3 a 6 frasi, con i numeri quando ci sono.
+Se l'archivio non basta per rispondere, dillo apertamente invece di inventare.
+- "risposta": il testo della risposta;
+- "fonti": i numeri delle voci usate, al massimo 5, dalla più importante.
+"""
+SCHEMA_CHIEDI = {
+    "type": "OBJECT",
+    "properties": {"risposta": {"type": "STRING"}, "fonti": {"type": "ARRAY", "items": {"type": "INTEGER"}}},
+    "required": ["risposta", "fonti"],
+}
+ESEMPIO_CHIEDI = {"risposta": "...", "fonti": [3, 1]}
+
 SCHEMA_INTERPRETA = {
     "type": "OBJECT",
     "properties": {"azione": {"type": "STRING", "format": "enum", "enum": AZIONI},
@@ -101,6 +140,10 @@ ESEMPIO_TEMA = {"nome": "Banche italiane", "icona": "🏦", "reparti": ["Azionar
 SEZIONE_PROFILO = "## Indicazioni aggiunte dal bot"
 
 
+class Html(str):
+    """Risposta già in HTML (con link): non va ripulita prima dell'invio."""
+
+
 def esegui(giro: Giro, testo: str) -> str:
     """Esegue un comando (o una frase in italiano) e restituisce la risposta da mandare."""
     testo = testo.strip()
@@ -125,10 +168,124 @@ def esegui(giro: Giro, testo: str) -> str:
         azione, argomento = risposta.get("azione", "nessuna"), (risposta.get("argomento") or "").strip()
         if azione == "nessuna":
             return risposta.get("risposta") or f"Non ho capito cosa vuoi che faccia.\n\n{AIUTO}"
-    if azione in ("segui", "tema", "smetti", "soglia", "profilo") and not argomento:
-        return f"Manca l'argomento: per esempio /{azione} {'Mediobanca' if azione == 'segui' else '...'}"
+    esempi = {"segui": "Mediobanca", "tema": "banche italiane", "smetti": "Eni", "soglia": "6",
+              "profilo": "più notizie sul credito", "chiedi": "cosa è successo ai BTP questa settimana?",
+              "cerca": "BTP", "pausa": "3h"}
+    if azione in esempi and not argomento:
+        return f"Manca l'argomento: per esempio /{azione} {esempi[azione]}"
     return {"segui": segui, "tema": tema, "smetti": smetti, "soglia": soglia_, "profilo": profilo,
-            "notizie": notizie, "stato": stato}[azione](giro, argomento)
+            "notizie": notizie, "stato": stato, "chiedi": chiedi, "oggi": oggi, "cerca": cerca,
+            "pausa": pausa, "riprendi": riprendi, "annulla": annulla}[azione](giro, argomento)
+
+
+# ---------------- domande e archivio ----------------
+
+def chiedi(giro: Giro, domanda: str) -> str:
+    """Risponde a una domanda usando l'archivio: notizie e dati più pertinenti, poi l'IA."""
+    voci = archivio.cerca(_archivio(giro), domanda, 30)
+    if not voci:
+        return "Nell'archivio non trovo notizie su questo argomento. Prova con altre parole, oppure /cerca."
+    elenco = "\n".join(f"[{k}] {v['quando'][:10]} · {v.get('titolo', '')} — {v.get('riassunto', '')[:400]}"
+                       for k, v in enumerate(voci, 1))
+    risposta = giro.con_motori(
+        lambda m, k: ia.genera(m, k, ISTRUZIONI_CHIEDI, f"DOMANDA: {domanda}\n\nARCHIVIO:\n{elenco}",
+                               SCHEMA_CHIEDI, ESEMPIO_CHIEDI), giro.motori())
+    if not risposta:
+        return "Non riesco a rispondere adesso (IA non disponibile): intanto prova /cerca."
+    fonti = []
+    for numero in risposta.get("fonti") or []:
+        if isinstance(numero, int) and 1 <= numero <= len(voci) and voci[numero - 1].get("link"):
+            v = voci[numero - 1]
+            fonti.append(f"• <a href=\"{notifiche.esc(v['link'], virgolette=True)}\">{notifiche.esc(v['titolo'][:90])}</a>")
+    return Html(f"💬 <b>{notifiche.esc(domanda)}</b>\n\n{notifiche.esc(risposta.get('risposta', ''))}"
+                + ("\n\n<i>Fonti:</i>\n" + "\n".join(fonti[:5]) if fonti else ""))
+
+
+def oggi(giro: Giro, _argomento: str) -> str:
+    inizio = giro.adesso.replace(hour=0, minute=0, second=0, microsecond=0)
+    inviate = giro.memoria.inviate_dal(inizio)
+    if not inviate:
+        return "Oggi non è ancora uscita nessuna notizia."
+    per_reparto: dict[str, list[dict]] = {}
+    for n in inviate:
+        per_reparto.setdefault((n.get("reparti") or ["Altro"])[0], []).append(n)
+    righe = [f"🗞️ <b>Le notizie di oggi</b> ({len(inviate)})"]
+    for reparto, notizie_ in per_reparto.items():
+        righe.append(f"\n{notifiche.hashtag(reparto)}")
+        righe += [f"• <a href=\"{notifiche.esc(n['link'], virgolette=True)}\">{notifiche.esc(n['titolo'][:110])}</a>"
+                  for n in notizie_]
+    return Html(_taglia("\n".join(righe)))
+
+
+def cerca(giro: Giro, parole: str) -> str:
+    voci = archivio.cerca(_archivio(giro), parole, 10)
+    if not voci:
+        return f"Nessuna notizia trovata per «{parole}»."
+    righe = [f"🔎 <b>{notifiche.esc(parole)}</b>: {len(voci)} risultati"]
+    for v in voci:
+        titolo = notifiche.esc(v.get("titolo", "")[:110])
+        link = f"<a href=\"{notifiche.esc(v['link'], virgolette=True)}\">{titolo}</a>" if v.get("link") else titolo
+        righe.append(f"• {v['quando'][8:10]}/{v['quando'][5:7]} · {link}")
+    return Html(_taglia("\n".join(righe)))
+
+
+def _archivio(giro: Giro) -> list[dict]:
+    """Archivio mensile più le notizie in memoria (anche quelle inviate prima che l'archivio esistesse)."""
+    voci = archivio.leggi(giro.cartella / "archivio")
+    visti = {v.get("link") for v in voci}
+    voci += [{**n, "tipo": "notizia"} for n in giro.memoria.inviate if n.get("link") not in visti]
+    return voci
+
+
+def _taglia(testo: str, massimo: int = notifiche.LUNGHEZZA_MASSIMA) -> str:
+    """Un messaggio Telegram non può superare i 4096 caratteri visibili (i link non contano): taglio alla riga."""
+    if notifiche.visibile(testo) <= massimo:
+        return testo
+    righe: list[str] = []
+    for riga in testo.split("\n"):
+        if notifiche.visibile("\n".join([*righe, riga, "…"])) > massimo:
+            break
+        righe.append(riga)
+    return "\n".join([*righe, "…"])
+
+
+# ---------------- pausa e annulla ----------------
+
+def pausa(giro: Giro, durata: str) -> str:
+    trovato = re.search(r"(\d+)\s*(h|ore|ora|g|giorni|giorno|m|min|minuti)?", durata.lower())
+    if not trovato:
+        return "Indica la durata, per esempio /pausa 3h oppure /pausa 2g."
+    quanto, unita = int(trovato.group(1)), (trovato.group(2) or "h")[0]
+    delta = timedelta(days=quanto) if unita == "g" else timedelta(minutes=quanto) if unita == "m" else timedelta(hours=quanto)
+    fino = datetime.now(timezone.utc) + delta
+    giro.memoria.pausa_fino = fino.isoformat(timespec="seconds")
+    return (f"⏸️ Invii sospesi fino a {fino.astimezone(giro.fuso):%d/%m alle %H:%M}. "
+            f"Scrivi /riprendi per ricominciare prima.")
+
+
+def riprendi(giro: Giro, _argomento: str) -> str:
+    era_in_pausa = giro.memoria.in_pausa()
+    giro.memoria.pausa_fino = ""
+    return "▶️ Invii ripresi: le notizie tornano ad arrivare ogni ora." if era_in_pausa else "Gli invii non erano in pausa."
+
+
+def annulla(giro: Giro, _argomento: str) -> str:
+    """Rimette la versione precedente del file cambiato dall'ultimo comando."""
+    ultima = giro.memoria.ultima_modifica
+    if not ultima:
+        return "Non c'è nessuna modifica da annullare."
+    percorso = giro.cartella / ultima["file"]
+    if giro.prova:
+        print(f"(prova) {ultima['file']} non ripristinato")
+    else:
+        percorso.write_text(ultima["contenuto"], "utf-8")
+    giro.memoria.ultima_modifica = {}
+    if ultima["file"] == "config.yaml":
+        giro.config = pyyaml.safe_load(ultima["contenuto"])
+        giro.aggiorna_da_config()
+    else:
+        giro.profilo = ultima["contenuto"]
+    return f"↩️ Annullata l'ultima modifica a {ultima['file']} (del {ultima['quando'][8:10]}/{ultima['quando'][5:7]})."
 
 
 # ---------------- azioni ----------------
@@ -281,12 +438,15 @@ def _salva_config(giro: Giro, config) -> None:
 
 
 def _scrivi(giro: Giro, percorso: Path, testo: str) -> None:
+    prima = percorso.read_text("utf-8")
     if giro.prova:
-        prima = percorso.read_text("utf-8").splitlines()
-        modifiche = [r for r in difflib.unified_diff(prima, testo.splitlines(), lineterm="", n=0)
+        modifiche = [r for r in difflib.unified_diff(prima.splitlines(), testo.splitlines(), lineterm="", n=0)
                      if r.startswith(("+", "-")) and not r.startswith(("+++", "---"))]
         print(f"(prova) {percorso.name} non modificato. Righe che cambierebbero:\n" + "\n".join(modifiche))
         return
+    # la versione precedente resta in memoria per /annulla
+    giro.memoria.ultima_modifica = {"file": percorso.name, "contenuto": prima,
+                                    "quando": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     percorso.write_text(testo, "utf-8")
 
 

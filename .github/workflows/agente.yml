@@ -1,10 +1,11 @@
 # Fa girare l'agente sui server di GitHub, anche a computer spento.
-# GitHub parte ogni 15 minuti; è lo script a decidere cosa fare in base all'ora italiana
-# (buongiorno alle 7:30, notizie ogni ora dalle 8 alle 22, dati appena escono, chiusura alle 22,
-# silenzio la notte), così il cambio dell'ora legale non richiede modifiche. Orari in config.yaml.
+# L'orologio principale è il Worker di Cloudflare (ogni ora); gli orari qui sotto sono la riserva.
+# È lo script a decidere cosa fare in base all'ora italiana (buongiorno alle 7:30, notizie ogni ora
+# dalle 8 alle 22, dati appena escono, chiusura alle 22, silenzio la notte), così il cambio dell'ora
+# legale non richiede modifiche. Orari in config.yaml.
 #
-# Minuti 4, 19, 34, 49 e non 0 e 30: GitHub avverte che all'inizio dell'ora i giri programmati
-# possono partire in ritardo o essere saltati. Ogni 15 minuti un giro saltato si recupera subito.
+# Minuti 4 e 34 e non 0 e 30: GitHub avverte che all'inizio dell'ora i giri programmati
+# possono partire in ritardo o essere saltati.
 name: Agente notizie
 
 on:
@@ -12,7 +13,7 @@ on:
   schedule:
     - cron: "4 5-21 * * *"    # in Italia ogni ora dalle 7:04 alle 23:04 d'estate, dalle 6:04 alle 22:04 d'inverno
     - cron: "34 5,6 * * *"    # buongiorno: 7:34 in Italia sia d'estate sia d'inverno
-  repository_dispatch:               # avvio dal Worker di Cloudflare: comandi del bot e orologio ogni 15 minuti
+  repository_dispatch:               # avvio dal Worker di Cloudflare: comandi del bot e orologio ogni ora
     types: [comando, orario]
   workflow_dispatch:                 # pulsante "Run workflow" per avviarlo a mano
     inputs:
@@ -63,13 +64,14 @@ jobs:
         run: |
           if [ "$AZIONE" = "notizie" ]; then python agente.py; else python agente.py "--$AZIONE"; fi
 
-      # Salva la memoria e le modifiche fatte dai comandi del bot (config, profilo, riepiloghi)
+      # Salva la memoria, l'archivio delle notizie e le modifiche fatte dai comandi del bot
       - name: Salva memoria e modifiche
         run: |
           git config user.name "agente-notizie[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add stato config.yaml profilo.md
           if [ -d riepiloghi ]; then git add riepiloghi; fi
+          if [ -d archivio ]; then git add archivio; fi
           if ! git diff --cached --quiet; then
             if git diff --cached --name-only | grep -qE '^(config.yaml|profilo.md)$'; then
               messaggio="Modifiche richieste dal bot Telegram"
