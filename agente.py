@@ -178,11 +178,15 @@ class Giro:
             mercati = ""
             if (s["voto"] or 0) >= (self.config.get("reazione_mercati") or {}).get("voto_minimo_notizie", 9):
                 mercati = dati.reazione(self.config, "notizie", datetime.now(timezone.utc) - timedelta(hours=1))
+            # prezzo attuale delle società citate e livello di tassi, cambi o materie prime toccati
+            valori = dati.valori_notizia(self.config, s.get("aziende") or [], s.get("valori") or [], self.fuso)
+            if s.get("aziende") or s.get("valori"):
+                print(f"  valori per «{s['titolo'][:50]}»: {s.get('aziende')} {s.get('valori')}")
             testo = notifiche.componi(s["titolo"], s["riassunto"], s["perche_conta"],
                                       self.icone.get(s["tema"], ICONA_PREDEFINITA), s["tema"], s["voto"],
                                       s["reparti"], self.etichetta_perche, s.get("nota", ""),
                                       s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale),
-                                      mercati=mercati,
+                                      mercati=mercati, valori=valori,
                                       aggiorna_titolo="" if rispondi_a else (originale or {}).get("titolo", ""))
             silenzioso = not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 8)
             id_notifica = chiave(g.principale.link)
@@ -321,8 +325,10 @@ class Giro:
                 risposta = comandi.esegui(self, voce["testo"])
             except Exception as e:  # noqa: BLE001 — un comando sbagliato non deve fermare il giro
                 risposta = f"⚠️ Non sono riuscito a eseguire «{voce['testo']}» ({type(e).__name__})."
-            # le risposte con link (/chiedi, /oggi, /cerca) sono già in HTML
+            # le risposte con link (/chiedi, /oggi, /cerca, /azienda) sono già in HTML
             self.invia(risposta if isinstance(risposta, comandi.Html) else notifiche.esc(risposta), privato=True)
+            for percorso, didascalia in getattr(risposta, "allegati", []):  # es. il foglio Excel del DCF
+                self.invia_file(percorso, didascalia, privato=True)
             if voce.get("id"):
                 eseguiti.append(voce["id"])
         if self.worker_url and not self.prova:
@@ -456,6 +462,15 @@ class Giro:
                   f"\n{testo}" + (f"\n[{']  ['.join(tasti)}]" if tasti else ""))
             return 1
         return notifiche.invia(testo, self.token, destinazione, silenzioso, tastiera, rispondi_a)
+
+    def invia_file(self, percorso: Path, didascalia: str = "", privato: bool = False) -> bool:
+        """Un file come documento Telegram (es. il foglio Excel del DCF). In prova stampa e basta."""
+        if self.prova:
+            print(f"\n----- file in {'chat privata' if privato else 'canale'}: {percorso} "
+                  f"({percorso.stat().st_size / 1000:.0f} KB) · {didascalia}")
+            return True
+        return notifiche.invia_file(percorso, self.token, self.chat_id if privato else self.canale,
+                                    notifiche.esc(didascalia))
 
 
 def controlla_feed(config: dict) -> None:

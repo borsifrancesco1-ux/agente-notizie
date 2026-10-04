@@ -4,3 +4,4 @@ requests>=2.31
 python-dotenv>=1.0
 tzdata  # fusi orari (Europe/Rome) anche su Windows
 ruamel.yaml>=0.18  # modifica config.yaml dai comandi del bot mantenendo commenti e formattazione
+defeatbeta-api==0.0.61  # dati delle società quotate negli USA per /azienda e le notizie (aziende.py)

@@ -26,6 +26,9 @@ Cosa seguire
 
 Notizie e domande
 /chiedi <domanda> – rispondo usando l'archivio delle notizie, con le fonti
+/azienda <società> [domanda] – dati e risposte su una società quotata negli USA
+   (bilanci, multipli, crescita, dividendi, rischio, conference call, DCF in Excel, report),
+   es. /azienda Apple com'è andato l'ultimo trimestre?
 /oggi – le notizie inviate oggi, per reparto
 /cerca <parole> – cerco nell'archivio delle notizie
 /notizie – faccio subito un giro di notizie

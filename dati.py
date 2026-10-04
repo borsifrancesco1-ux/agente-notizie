@@ -131,7 +131,7 @@ def reazione(config: dict, gruppo: str, dal: datetime) -> str:
     parti = []
     for nome in (config.get("reazione_mercati") or {}).get(gruppo) or []:
         voce = quotazioni.get(nome)
-        if not voce:
+        if not voce or not voce.get("simbolo"):  # solo le quotazioni di Yahoo hanno l'andamento nella giornata
             continue
         try:
             barre = _infragiornaliere(voce["simbolo"])
@@ -143,9 +143,9 @@ def reazione(config: dict, gruppo: str, dal: datetime) -> str:
         if not prima or not ultima or ultima[0] <= prima[0] or adesso - ultima[0] > timedelta(hours=2):
             continue  # mercato chiuso, o nessuna quotazione dopo l'uscita
         if voce.get("tipo") == "tasso":
-            parti.append(f"{nome} {_numero((ultima[1] - prima[1]) * 100, 0, segno=True)} pb")
+            parti.append(f"{nome} {numero((ultima[1] - prima[1]) * 100, 0, segno=True)} pb")
         else:
-            parti.append(f"{nome} {_numero((ultima[1] / prima[1] - 1) * 100, 2, segno=True)}%")
+            parti.append(f"{nome} {numero((ultima[1] / prima[1] - 1) * 100, 2, segno=True)}%")
     return " · ".join(parti)
 
 
@@ -160,6 +160,131 @@ def _infragiornaliere(simbolo: str) -> list[tuple[datetime, float]]:
         _barre[simbolo] = [(datetime.fromtimestamp(t, timezone.utc), c)
                            for t, c in zip(risultato["timestamp"], chiusure) if c is not None]
     return _barre[simbolo]
+
+
+# ---------------- valori per le notizie ----------------
+
+SIMBOLO_VALIDO = re.compile(r"^[A-Z0-9^][A-Z0-9.\-=^]{0,14}$")   # es. AAPL, ENI.MI, BRK-B, ^GSPC
+SUFFISSI_SOCIETARI = re.compile(r",?\s+(inc\.?|corp\.?|corporation|co\.?|company|s\.?p\.?a\.?|plc|n\.?v\.?|se|ag|"
+                                r"sa|ltd\.?|limited|holdings?|group)$", re.IGNORECASE)
+_quotazioni: dict[str, dict | None] = {}
+
+
+def nome_breve(nome: str) -> str:
+    """'JPMORGAN CHASE & CO.' -> 'Jpmorgan Chase', 'Apple Inc.' -> 'Apple': senza la forma societaria."""
+    nome = nome.title() if nome.isupper() else nome
+    return re.sub(r"[\s,&]+$", "", SUFFISSI_SOCIETARI.sub("", nome.strip())) or nome
+
+
+def quotazione(simbolo: str) -> dict | None:
+    """Prezzo attuale (o dell'ultima chiusura, a mercato chiuso) da Yahoo Finance:
+    {"prezzo", "variazione" (% sulla chiusura precedente), "valuta", "nome", "quando"}. None se non c'è."""
+    if simbolo not in _quotazioni:
+        try:
+            r = requests.get(YAHOO_API.format(simbolo=simbolo), params={"range": "1d", "interval": "1d"},
+                             headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+            meta = r.json()["chart"]["result"][0]["meta"]
+            prezzo, prima = meta["regularMarketPrice"], meta.get("chartPreviousClose") or meta.get("previousClose")
+            nome = meta.get("shortName") or meta.get("longName") or simbolo
+            _quotazioni[simbolo] = {
+                "prezzo": prezzo, "precedente": prima, "valuta": meta.get("currency") or "",
+                "variazione": (prezzo / prima - 1) * 100 if prima else None,
+                "nome": nome_breve(nome),
+                "quando": datetime.fromtimestamp(meta["regularMarketTime"], timezone.utc),
+            }
+        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
+            _quotazioni[simbolo] = None
+    return _quotazioni[simbolo]
+
+
+def valore(voce: dict, fuso) -> str:
+    """Livello attuale di una voce di "quotazioni" (config.yaml), con la variazione:
+    '1,1257 (+0,11%)', '5,28% (+4 pb)'; per i dati ufficiali giornalieri anche la data: '3,88% (1/10)'."""
+    tasso = voce.get("tipo") == "tasso"
+    if voce.get("fonte", "yahoo") == "yahoo":
+        q = quotazione(voce["simbolo"])
+        if not q:
+            return ""
+        livello, prima, quando = q["prezzo"], q["precedente"], q["quando"]
+    else:
+        oss = ultime_osservazioni(voce, 2)
+        if not oss:
+            return ""
+        livello, prima = oss[-1].valore, (oss[-2].valore if len(oss) > 1 else None)
+        quando = datetime.fromisoformat(oss[-1].periodo).replace(tzinfo=timezone.utc)
+    decimali = voce.get("decimali", 2 if tasso or livello < 1000 else 0)
+    testo = f"{numero(livello, decimali)}{'%' if tasso else voce.get('unita', '')}"
+    dettagli = []
+    variazione = ((livello - prima) * 100 if tasso else (livello / prima - 1) * 100) if prima else 0
+    if round(variazione, 0 if tasso else 2):  # una variazione nulla non si scrive
+        dettagli.append(f"{numero(variazione, 0, segno=True)} pb" if tasso else f"{numero(variazione, 2, segno=True)}%")
+    if quando.astimezone(fuso).date() != datetime.now(fuso).date():  # mercato chiuso o dato del giorno prima
+        dettagli.append(giorno(quando.astimezone(fuso)))
+    return f"{testo} ({', '.join(dettagli)})" if dettagli else testo
+
+
+def giorno(d: date | datetime) -> str:
+    """'2/10': la data breve all'italiana."""
+    return f"{d.day}/{d.month}"
+
+
+PAROLE_GENERICHE = {"the", "and", "inc", "corp", "company", "group", "holding", "holdings", "international",
+                    "spa", "plc", "ltd", "global", "industries", "technologies", "energy", "financial", "bank",
+                    "general", "american", "national", "first", "united", "new", "capital", "systems",
+                    "resources", "partners"}
+
+
+def stessa_societa(nome: str, altro: str) -> bool:
+    """Se due nomi indicano la stessa società ('JPMorgan' e 'JP Morgan Chase & Co.'): una parola
+    significativa dell'uno compare nell'altro. Serve perché i ticker passano ad altre società
+    (es. PARA, che era di Paramount)."""
+    def parole(testo: str) -> list[str]:
+        return [p for p in re.findall(r"[a-z0-9]+", testo.lower()) if len(p) >= 3 and p not in PAROLE_GENERICHE]
+
+    def unito(testo: str) -> str:
+        return re.sub(r"[^a-z0-9]", "", testo.lower())
+
+    return any(p in unito(altro) for p in parole(nome)) or any(p in unito(nome) for p in parole(altro))
+
+
+def valori_notizia(config: dict, aziende: list[dict], valori: list[str], fuso) -> str:
+    """La riga dei valori sotto una notizia: prezzo attuale delle società citate (per quelle USA anche
+    capitalizzazione e P/E, da defeatbeta) e livello dei tassi, cambi o materie prime indicati dall'IA.
+    aziende: [{"nome", "simbolo"}]; il prezzo si scrive solo se il nome del titolo corrisponde."""
+    import aziende as piattaforma  # importato qui: la libreria defeatbeta serve solo se ci sono società USA
+
+    parti = []
+    for societa in aziende[:3]:
+        simbolo = (societa.get("simbolo") or "").strip().upper()
+        q = quotazione(simbolo) if SIMBOLO_VALIDO.match(simbolo) else None
+        if not q:
+            continue
+        if not stessa_societa(societa.get("nome") or "", q["nome"]):
+            print(f"  {simbolo} è {q['nome']}, non {societa.get('nome')}: prezzo non scritto")
+            continue
+        valuta = {"USD": " $", "EUR": " €", "GBP": " £", "GBp": " p", "JPY": " ¥"}.get(q["valuta"], f" {q['valuta']}")
+        dettagli = [f"{numero(q['variazione'], 1, segno=True)}%"] if q["variazione"] is not None else []
+        if q["quando"].astimezone(fuso).date() != datetime.now(fuso).date():
+            dettagli.append(f"chiusura {giorno(q['quando'].astimezone(fuso))}")
+        try:
+            fondamentali = piattaforma.capitalizzazione_e_pe(simbolo, q["prezzo"]) if q["valuta"] == "USD" else ""
+        except Exception as e:  # noqa: BLE001 — senza la piattaforma resta il prezzo
+            print(f"  defeatbeta non disponibile per {simbolo} ({type(e).__name__})")
+            fondamentali = ""
+        if fondamentali:
+            dettagli.append(fondamentali)
+        parti.append(f"{q['nome']} {numero(q['prezzo'], 2)}{valuta}" + (f" ({'; '.join(dettagli)})" if dettagli else ""))
+    quotazioni = config.get("quotazioni") or {}
+    for nome in valori[:3]:
+        if nome in quotazioni:
+            try:
+                testo = valore(quotazioni[nome], fuso)
+            except Exception as e:  # noqa: BLE001 — una fonte che non risponde toglie solo quel valore
+                print(f"  valore di {nome} non disponibile ({type(e).__name__})")
+                testo = ""
+            if testo:
+                parti.append(f"{nome} {testo}")
+    return " · ".join(parti)
 
 
 def all_italiana(valore: str) -> str:
@@ -214,7 +339,7 @@ def anomalia(nuovo: dict, atteso: str, sigma: float) -> str:
     if valore_atteso is not None and soglia is not None and abs(ultima.valore - valore_atteso) >= soglia:
         distanza = ultima.valore - valore_atteso
         misura = "punti" if unita == "%" else "mila" if ind.get("formato") == "migliaia" else ""
-        motivi.append(f"{_numero(distanza, 0 if misura == 'mila' else decimali, segno=True)} {misura} "
+        motivi.append(f"{numero(distanza, 0 if misura == 'mila' else decimali, segno=True)} {misura} "
                       f"{'sopra' if distanza > 0 else 'sotto'} le attese".replace("  ", " "))
     storico = [o.valore for o in nuovo.get("storico") or []]
     if ind.get("trasformazione") == "differenza":
@@ -247,7 +372,7 @@ def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anoma
     if precedente is not None:
         variazione = ultima.valore - precedente.valore
         dettagli.append(f"precedente {_valore(precedente.valore, unita, decimali, ind)}"
-                        + (f" ({_numero(variazione, decimali, segno=True)} punti)" if unita == "%" else ""))
+                        + (f" ({numero(variazione, decimali, segno=True)} punti)" if unita == "%" else ""))
     if atteso:
         dettagli.append(f"atteso {notifiche.esc(atteso)}")
     righe += ["", " · ".join(dettagli)]
@@ -285,8 +410,8 @@ def cambio_del_giorno(config: dict) -> str:
     if len(cambio) < 2:
         return ""
     ultima, prima = cambio[-1], cambio[-2]
-    testo = (f"<b>EUR/USD</b> {_numero(ultima.valore, 4)} "
-             f"({_numero((ultima.valore / prima.valore - 1) * 100, 2, segno=True)}% sul giorno prima, "
+    testo = (f"<b>EUR/USD</b> {numero(ultima.valore, 4)} "
+             f"({numero((ultima.valore / prima.valore - 1) * 100, 2, segno=True)}% sul giorno prima, "
              f"riferimento BCE del {_periodo(ultima.periodo)})")
     righe_tassi = []
     for nome in (opzioni.get("tasso_usd"), opzioni.get("tasso_eur")):
@@ -370,9 +495,9 @@ def tabella_mercati(righe: list[dict]) -> str:
         if prima is None:
             variazione = "n.d."
         elif voce.get("tipo") == "tasso":  # tassi e spread: variazione in punti base
-            variazione = f"{_numero((ultima.valore - prima.valore) * 100, 0, segno=True)} pb"
+            variazione = f"{numero((ultima.valore - prima.valore) * 100, 0, segno=True)} pb"
         else:
-            variazione = f"{_numero((ultima.valore / prima.valore - 1) * 100, 1, segno=True)}%"
+            variazione = f"{numero((ultima.valore / prima.valore - 1) * 100, 1, segno=True)}%"
         testo.append(f"{voce['nome'][:24]:<24} {valore:>10} {variazione:>8}" + (" *" if r["vecchia"] else ""))
     return "\n".join(testo)
 
@@ -386,7 +511,7 @@ def costo_copertura(righe: list[dict], config: dict) -> str:
     if usd is None or eur is None:
         return ""
     return (f"Costo annuo stimato della copertura USD→EUR con forward (differenziale {opzioni['tasso_usd']} − "
-            f"{opzioni['tasso_eur']}): {_numero(usd - eur, 2)}%")
+            f"{opzioni['tasso_eur']}): {numero(usd - eur, 2)}%")
 
 
 def _storico(voce: dict) -> list[Osservazione]:
@@ -465,15 +590,15 @@ def _numero_da_testo(testo: str) -> float | None:
     return valore * 1000 if "mln" in testo else valore
 
 
-def _numero(x: float, decimali: int, segno: bool = False) -> str:
+def numero(x: float, decimali: int, segno: bool = False) -> str:
     testo = f"{x:{'+' if segno else ''},.{decimali}f}"
     return testo.replace(",", "§").replace(".", ",").replace("§", ".").replace("-", "−")
 
 
 def _valore(x: float, unita: str, decimali: int, voce: dict) -> str:
     if voce.get("formato") == "migliaia":  # es. occupati: la serie è in migliaia di persone
-        return f"{_numero(x, 0, segno=voce.get('trasformazione') == 'differenza')} mila"
-    return f"{_numero(x, decimali)}{unita}"
+        return f"{numero(x, 0, segno=voce.get('trasformazione') == 'differenza')} mila"
+    return f"{numero(x, decimali)}{unita}"
 
 
 def _periodo(periodo: str, trimestrale: bool = False) -> str:

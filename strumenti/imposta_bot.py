@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 
 COMANDI = [
     ("chiedi", "Fai una domanda sulle notizie"),
+    ("azienda", "Dati e domande su una società quotata"),
     ("oggi", "Le notizie inviate oggi"),
     ("cerca", "Cerca nell'archivio delle notizie"),
     ("notizie", "Fai subito un giro di notizie"),

@@ -10,6 +10,7 @@ from datetime import datetime
 import requests
 
 API = "https://api.telegram.org/bot{token}/sendMessage"
+API_DOCUMENTO = "https://api.telegram.org/bot{token}/sendDocument"
 FONTI_MASSIME = 6
 PULSANTI_PER_RIGA = 2
 LUNGHEZZA_MASSIMA = 3800   # Telegram accetta 4096 caratteri visibili per messaggio
@@ -26,11 +27,12 @@ def hashtag(reparto: str) -> str:
 def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, voto: int | None,
             reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "",
             impatto: str = "", etichetta_impatto: str = "Impatto atteso", aggiornamento: bool = False,
-            mercati: str = "", aggiorna_titolo: str = "") -> str:
+            mercati: str = "", aggiorna_titolo: str = "", valori: str = "") -> str:
     """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, impatto atteso, mercati,
     tema e voto. aggiornamento: la notizia aggiunge novità a una già inviata (va in risposta a quella);
     aggiorna_titolo: il titolo di quella notizia, se non si può rispondere al suo messaggio
-    (es. era nel riepilogo della notte); mercati: come si sono mosse le quotazioni nell'ultima ora."""
+    (es. era nel riepilogo della notte); mercati: come si sono mosse le quotazioni nell'ultima ora;
+    valori: prezzo attuale delle società citate e livello di tassi, cambi o materie prime toccati."""
     righe = []
     if aggiornamento:
         righe.append("🔄 <b>Aggiornamento</b>" + (f" di «{esc(aggiorna_titolo[:90])}»" if aggiorna_titolo else ""))
@@ -43,6 +45,8 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
         righe += ["", f"🎯 <i>{esc(etichetta_perche)}:</i> {esc(perche)}"]
     if impatto:
         righe.append(f"🧭 <i>{esc(etichetta_impatto)}:</i> {esc(impatto)}")
+    if valori:
+        righe.append(f"💹 <i>Valori:</i> {esc(valori)}")
     if mercati:
         righe.append(f"📈 <i>Mercati nell'ultima ora:</i> {esc(mercati)}")
     info = [x for x in (f"🏷 {esc(tema)}" if tema else "", f"{voto}/10" if voto else "", esc(nota)) if x]
@@ -172,6 +176,22 @@ def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
         print(f"  ✗ Telegram ha rifiutato il messaggio: {dati.get('description')}")
         return 0
     return 0
+
+
+def invia_file(percorso, token: str, chat_id: str, didascalia: str = "") -> bool:
+    """Manda un file come documento (Telegram accetta fino a 50 MB); didascalia in HTML, max 1024 caratteri."""
+    try:
+        with open(percorso, "rb") as f:
+            r = requests.post(API_DOCUMENTO.format(token=token), timeout=120,
+                              data={"chat_id": chat_id, "caption": didascalia[:1000], "parse_mode": "HTML"},
+                              files={"document": (percorso.name, f)})
+        dati = r.json()
+    except (OSError, requests.RequestException, ValueError) as e:
+        print(f"  ✗ file non inviato ({type(e).__name__})")  # mai l'eccezione intera: contiene il token
+        return False
+    if not dati.get("ok"):
+        print(f"  ✗ Telegram ha rifiutato il file: {dati.get('description')}")
+    return bool(dati.get("ok"))
 
 
 def esc(testo: str, virgolette: bool = False) -> str:

@@ -444,14 +444,44 @@ reazione_mercati:
   notizie: [EUR/USD, Treasury 10a, S&P 500 fut., Euro Stoxx 50, Brent]
   voto_minimo_notizie: 9
 
-# Quotazioni infragiornaliere (Yahoo Finance) usate per la reazione dei mercati.
-#   tipo: tasso = variazione in punti base; altrimenti variazione percentuale
+# Quotazioni: i valori scritti sotto le notizie (l'IA sceglie quelli toccati da ciascuna: tassi, cambi,
+# materie prime, indici) e la reazione dei mercati. Yahoo Finance (simbolo): prezzo del momento, o
+# l'ultima chiusura a borsa chiusa; fred e bce: ultimo dato ufficiale giornaliero.
+#   tipo: tasso = livello in % e variazione in punti base; altrimenti variazione percentuale
+#   decimali: cifre dopo la virgola (altrimenti 2, e 0 sopra 1000); unita: scritta dopo il numero
 quotazioni:
-  EUR/USD: {simbolo: "EURUSD=X"}
+  EUR/USD: {simbolo: "EURUSD=X", decimali: 4}
+  USD/JPY: {simbolo: "JPY=X"}
+  EUR/GBP: {simbolo: "EURGBP=X", decimali: 4}
+  EUR/CHF: {simbolo: "EURCHF=X", decimali: 4}
+  USD/CNY: {simbolo: "CNY=X", decimali: 4}
+  Dollar index: {simbolo: "DX-Y.NYB"}
+  Tasso BCE sui depositi: {fonte: bce, chiave: "FM/D.U2.EUR.4F.KR.DFR.LEV", tipo: tasso}
+  €STR: {fonte: bce, chiave: "EST/B.EU000A2X2A25.WT", tipo: tasso, decimali: 3}
+  Fed funds: {fonte: fred, serie: EFFR, tipo: tasso}
+  SOFR: {fonte: fred, serie: SOFR, tipo: tasso}
+  Treasury 3 mesi: {simbolo: "^IRX", tipo: tasso}
+  Treasury 2a: {fonte: fred, serie: DGS2, tipo: tasso}
+  Treasury 5a: {simbolo: "^FVX", tipo: tasso}
   Treasury 10a: {simbolo: "^TNX", tipo: tasso}
+  Treasury 30a: {simbolo: "^TYX", tipo: tasso}
+  Titoli euro AAA 10a: {fonte: bce, chiave: "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y", tipo: tasso}
+  Spread IG USA: {fonte: fred, serie: BAMLC0A0CM, tipo: tasso}
+  Spread HY USA: {fonte: fred, serie: BAMLH0A0HYM2, tipo: tasso}
+  Spread corporate EM: {fonte: fred, serie: BAMLEMCBPIOAS, tipo: tasso}
+  S&P 500: {simbolo: "^GSPC"}
   S&P 500 fut.: {simbolo: "ES=F"}
+  Nasdaq: {simbolo: "^IXIC"}
   Euro Stoxx 50: {simbolo: "^STOXX50E"}
   FTSE MIB: {simbolo: "FTSEMIB.MI"}
-  Brent: {simbolo: "BZ=F"}
-  Dollar index: {simbolo: "DX-Y.NYB"}
-  Oro: {simbolo: "GC=F"}
+  DAX: {simbolo: "^GDAXI"}
+  Nikkei: {simbolo: "^N225"}
+  Hang Seng: {simbolo: "^HSI"}
+  MSCI EM (ETF): {simbolo: "EEM", unita: " $"}
+  VIX: {simbolo: "^VIX"}
+  Brent: {simbolo: "BZ=F", unita: " $"}
+  WTI: {simbolo: "CL=F", unita: " $"}
+  Gas TTF: {simbolo: "TTF=F", unita: " €/MWh"}
+  Oro: {simbolo: "GC=F", unita: " $"}
+  Rame: {simbolo: "HG=F", unita: " $/lb"}
+  Bitcoin: {simbolo: "BTC-USD", unita: " $"}

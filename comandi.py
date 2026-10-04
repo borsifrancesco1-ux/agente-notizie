@@ -38,6 +38,9 @@ Cosa seguire
 
 Notizie e domande
 /chiedi <domanda> – rispondo usando l'archivio delle notizie, con le fonti
+/azienda <società> [domanda] – dati e risposte su una società quotata negli USA
+   (bilanci, multipli, crescita, dividendi, rischio, conference call, DCF in Excel, report),
+   es. /azienda Apple com'è andato l'ultimo trimestre?
 /oggi – le notizie inviate oggi, per reparto
 /cerca <parole> – cerco nell'archivio delle notizie
 /notizie – faccio subito un giro di notizie
@@ -53,7 +56,8 @@ Invii
 
 COMANDI = {"/segui": "segui", "/tema": "tema", "/smetti": "smetti", "/soglia": "soglia",
            "/profilo": "profilo", "/notizie": "notizie", "/stato": "stato", "/chiedi": "chiedi",
-           "/oggi": "oggi", "/cerca": "cerca", "/pausa": "pausa", "/riprendi": "riprendi", "/annulla": "annulla"}
+           "/oggi": "oggi", "/cerca": "cerca", "/pausa": "pausa", "/riprendi": "riprendi", "/annulla": "annulla",
+           "/azienda": "azienda"}
 
 ISTRUZIONI_INTERPRETA = """Sei l'assistente di un agente di notizie finanziarie. L'utente ti scrive in italiano
 per cambiare cosa segue l'agente o per chiedere qualcosa. Traduci il messaggio in un'azione:
@@ -65,6 +69,8 @@ per cambiare cosa segue l'agente o per chiedere qualcosa. Traduci il messaggio i
 - "profilo": un'indicazione su cosa interessa o non interessa (argomento: la frase da aggiungere al
   profilo, riscritta in modo chiaro e in prima persona);
 - "chiedi": una domanda sui fatti, i mercati o le notizie (argomento: la domanda);
+- "azienda": informazioni su una società quotata: prezzo, bilanci, risultati, multipli, dividendi, rischio,
+  conference call, valutazione DCF o report (argomento: tutta la richiesta, con il nome della società);
 - "oggi": sapere quali notizie sono uscite oggi;
 - "cerca": cercare notizie su un argomento preciso (argomento: le parole da cercare);
 - "pausa": sospendere gli invii (argomento: la durata, es. "3h" o "2g");
@@ -74,7 +80,7 @@ per cambiare cosa segue l'agente o per chiedere qualcosa. Traduci il messaggio i
 - "stato": sapere com'è andata oggi l'agente;
 - "nessuna": il messaggio non chiede nessuna di queste cose ("risposta": breve risposta cortese in italiano).
 """
-AZIONI = ["segui", "tema", "smetti", "soglia", "profilo", "chiedi", "oggi", "cerca", "pausa", "riprendi",
+AZIONI = ["segui", "tema", "smetti", "soglia", "profilo", "chiedi", "azienda", "oggi", "cerca", "pausa", "riprendi",
           "annulla", "notizie", "stato", "nessuna"]
 
 ISTRUZIONI_CHIEDI = """Rispondi in italiano alla domanda del team usando SOLO le notizie e i dati elencati
@@ -141,7 +147,13 @@ SEZIONE_PROFILO = "## Indicazioni aggiunte dal bot"
 
 
 class Html(str):
-    """Risposta già in HTML (con link): non va ripulita prima dell'invio."""
+    """Risposta già in HTML (con link): non va ripulita prima dell'invio.
+    allegati: file da mandare dopo il messaggio, come [(percorso, didascalia)] (es. il foglio del DCF)."""
+
+    def __new__(cls, testo: str, allegati: list | None = None):
+        risposta = super().__new__(cls, testo)
+        risposta.allegati = allegati or []
+        return risposta
 
 
 def esegui(giro: Giro, testo: str) -> str:
@@ -170,12 +182,12 @@ def esegui(giro: Giro, testo: str) -> str:
             return risposta.get("risposta") or f"Non ho capito cosa vuoi che faccia.\n\n{AIUTO}"
     esempi = {"segui": "Mediobanca", "tema": "banche italiane", "smetti": "Eni", "soglia": "6",
               "profilo": "più notizie sul credito", "chiedi": "cosa è successo ai BTP questa settimana?",
-              "cerca": "BTP", "pausa": "3h"}
+              "cerca": "BTP", "pausa": "3h", "azienda": "Apple com'è andato l'ultimo trimestre?"}
     if azione in esempi and not argomento:
         return f"Manca l'argomento: per esempio /{azione} {esempi[azione]}"
     return {"segui": segui, "tema": tema, "smetti": smetti, "soglia": soglia_, "profilo": profilo,
             "notizie": notizie, "stato": stato, "chiedi": chiedi, "oggi": oggi, "cerca": cerca,
-            "pausa": pausa, "riprendi": riprendi, "annulla": annulla}[azione](giro, argomento)
+            "pausa": pausa, "riprendi": riprendi, "annulla": annulla, "azienda": azienda}[azione](giro, argomento)
 
 
 # ---------------- domande e archivio ----------------
@@ -199,6 +211,14 @@ def chiedi(giro: Giro, domanda: str) -> str:
             fonti.append(f"• <a href=\"{notifiche.esc(v['link'], virgolette=True)}\">{notifiche.esc(v['titolo'][:90])}</a>")
     return Html(f"💬 <b>{notifiche.esc(domanda)}</b>\n\n{notifiche.esc(risposta.get('risposta', ''))}"
                 + ("\n\n<i>Fonti:</i>\n" + "\n".join(fonti[:5]) if fonti else ""))
+
+
+def azienda(giro: Giro, richiesta: str) -> str:
+    """Dati della piattaforma defeatbeta su una società: l'IA sceglie quali servono e risponde (aziende.py)."""
+    import aziende  # la libreria defeatbeta è pesante: si carica solo per questo comando
+
+    testo, allegati = aziende.domanda(giro, richiesta)
+    return Html(_taglia(testo), allegati)
 
 
 def oggi(giro: Giro, _argomento: str) -> str:

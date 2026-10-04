@@ -22,6 +22,10 @@ on:
         type: choice
         default: automatico
         options: [automatico, notizie, apertura, chiusura]
+      comando:
+        description: "Oppure prova un comando del bot senza inviare nulla (es. /azienda Apple): la risposta è nel registro"
+        type: string
+        default: ""
 
 permissions:
   contents: write   # per salvare stato/memoria.json nel repository
@@ -52,6 +56,7 @@ jobs:
       - name: Giro dell'agente
         env:
           AZIONE: ${{ inputs.azione || 'automatico' }}
+          COMANDO: ${{ inputs.comando }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,7 +67,9 @@ jobs:
           WORKER_URL: ${{ secrets.WORKER_URL }}
           AGENTE_KEY: ${{ secrets.AGENTE_KEY }}
         run: |
-          if [ "$AZIONE" = "notizie" ]; then python agente.py; else python agente.py "--$AZIONE"; fi
+          if [ -n "$COMANDO" ]; then python agente.py --prova --comando "$COMANDO"
+          elif [ "$AZIONE" = "notizie" ]; then python agente.py
+          else python agente.py "--$AZIONE"; fi
 
       # Salva la memoria, l'archivio delle notizie e le modifiche fatte dai comandi del bot
       - name: Salva memoria e modifiche

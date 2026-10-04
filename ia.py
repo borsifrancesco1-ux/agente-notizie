@@ -57,7 +57,13 @@ nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
      niente voci generiche come "geopolitica", "energia" o "volatilità"; vuoto se l'effetto non è
      ragionevolmente chiaro;
    - "reparti": da 1 a 3 reparti del team (vedi REPARTI DEL TEAM) a cui il fatto è più utile,
-     dal più al meno interessato.
+     dal più al meno interessato;
+   - "aziende": le società quotate al centro del fatto, al massimo 3, ognuna con "nome" e "simbolo" su
+     Yahoo Finance (es. Apple "AAPL", Eni "ENI.MI", LVMH "MC.PA", SAP "SAP.DE"); vuoto se il fatto non
+     riguarda società precise;
+   - "valori": da 0 a 3 valori di mercato toccati dal fatto, scelti tra VALORI DI MERCATO: un tasso per
+     le notizie su banche centrali e titoli di Stato, un cambio per quelle sulle valute, una materia prima
+     per quelle su petrolio, gas o metalli, un indice per quelle sulle borse; vuoto se nessuno è pertinente.
    Per gli altri gruppi lascia questi campi vuoti.
 
 Scala dei voti:
@@ -81,8 +87,9 @@ valutazione prudente dei possibili effetti, non un consiglio di investimento. To
 TIPO_FONTE = {0: "istituzione", 1: "testata", 2: "testata", 3: "ricerca web"}
 
 
-def _schema(temi: list[str], reparti: list[str]) -> dict:
+def _schema(temi: list[str], reparti: list[str], valori: list[str]) -> dict:
     testo = {"type": "STRING"}
+    valore = {"type": "STRING", "format": "enum", "enum": valori} if valori else testo
     return {
         "type": "OBJECT",
         "properties": {
@@ -103,9 +110,13 @@ def _schema(temi: list[str], reparti: list[str]) -> dict:
                         "impatto": testo,
                         "reparti": {"type": "ARRAY",
                                     "items": {"type": "STRING", "format": "enum", "enum": reparti}},
+                        "aziende": {"type": "ARRAY", "items": {
+                            "type": "OBJECT", "properties": {"nome": testo, "simbolo": testo},
+                            "required": ["nome", "simbolo"]}},
+                        "valori": {"type": "ARRAY", "items": valore},
                     },
                     "required": ["ids", "voto", "tema", "gia_inviata", "aggiorna", "motivo",
-                                 "titolo", "riassunto", "perche_conta", "impatto", "reparti"],
+                                 "titolo", "riassunto", "perche_conta", "impatto", "reparti", "aziende", "valori"],
                 },
             }
         },
@@ -115,7 +126,8 @@ def _schema(temi: list[str], reparti: list[str]) -> dict:
 
 ESEMPIO_RISPOSTA = {"gruppi": [{"ids": [1, 4], "voto": 8, "tema": "BCE", "gia_inviata": False, "aggiorna": "",
                                  "motivo": "...", "titolo": "...", "riassunto": "...", "perche_conta": "...",
-                                 "impatto": "Bund ↓ · euro ↑", "reparti": ["Obbligazionario", "Macroeconomia"]}]}
+                                 "impatto": "Bund ↓ · euro ↑", "reparti": ["Obbligazionario", "Macroeconomia"],
+                                 "aziende": [], "valori": ["Tasso BCE sui depositi", "EUR/USD"]}]}
 
 
 def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: dict,
@@ -131,6 +143,7 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
     istruzioni = ISTRUZIONI.format(soglia=soglia_minima) + _contesto(profilo, config) + esempi
     temi = [t["nome"] for t in (config.get("titoli") or []) + (config.get("temi") or [])]
     reparti = [r["nome"] for r in config.get("reparti") or []]
+    valori = list(config.get("quotazioni") or {})
     gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]  # alcuni servizi accettano richieste piccole
 
     elenco = "\n".join(_riga(i, g) for i, g in enumerate(gruppi, 1))
@@ -138,8 +151,9 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
                     for k, r in enumerate(recenti, 1)) or "(nessuna)"
     testo = f"NOTIZIE GIÀ INVIATE (ultime 48 ore):\n{gia}\n\nNUOVE NOTIZIE:\n{elenco}"
     istruzioni += (f"\nValori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
-                   f"Valori ammessi per \"reparti\": {', '.join(reparti)}.")
-    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti), ESEMPIO_RISPOSTA)
+                   f"Valori ammessi per \"reparti\": {', '.join(reparti)}.\n"
+                   f"VALORI DI MERCATO (valori ammessi per \"valori\"): {', '.join(valori)}.")
+    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti, valori), ESEMPIO_RISPOSTA)
 
     scelte, usati = [], set()
     for v in sorted(risposta.get("gruppi", []), key=lambda v: -v.get("voto", 0)):
@@ -162,7 +176,9 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         scelte.append({"gruppo": gruppo, "voto": v["voto"], "tema": v.get("tema", ""),
                        "titolo": v.get("titolo") or gruppo.principale.titolo,
                        "riassunto": v.get("riassunto", ""), "perche_conta": v.get("perche_conta", ""),
-                       "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna})
+                       "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna,
+                       "aziende": [a for a in v.get("aziende") or [] if isinstance(a, dict) and a.get("simbolo")][:3],
+                       "valori": [x for x in v.get("valori") or [] if x in valori][:3]})
         if len(scelte) == massimo:
             break
     return scelte
