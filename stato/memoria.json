@@ -898,7 +898,27 @@
   "46239499dd38b65d": "2026-10-04T17:01:02+00:00",
   "285a2b29e9ef2dd8": "2026-10-04T17:01:02+00:00",
   "eb945200b1e0bc63": "2026-10-04T17:01:02+00:00",
-  "b3b42b17b5c81529": "2026-10-04T17:01:02+00:00"
+  "b3b42b17b5c81529": "2026-10-04T17:01:02+00:00",
+  "fa036a9615d8704c": "2026-10-04T18:01:29+00:00",
+  "2c24e98057b8f7ad": "2026-10-04T18:01:29+00:00",
+  "64f9d054365416d3": "2026-10-04T18:01:29+00:00",
+  "f68ab780dc1e0f55": "2026-10-04T18:01:29+00:00",
+  "0dbd6296934e3f6c": "2026-10-04T18:01:29+00:00",
+  "a02a67a7d402e22b": "2026-10-04T18:01:29+00:00",
+  "c3f46c37f6b11de0": "2026-10-04T18:01:29+00:00",
+  "36798a5f2b6fabd2": "2026-10-04T18:01:29+00:00",
+  "60e4497cec104a9e": "2026-10-04T18:01:29+00:00",
+  "9a8b3f5bd21ec65b": "2026-10-04T18:01:29+00:00",
+  "ad10f9029c49ac2f": "2026-10-04T18:01:29+00:00",
+  "2ea17b601a1672ef": "2026-10-04T18:01:29+00:00",
+  "4b2a9e7035ff4406": "2026-10-04T18:01:29+00:00",
+  "f80472a5f3bcffa2": "2026-10-04T18:01:29+00:00",
+  "4db30d7a240458fc": "2026-10-04T18:01:29+00:00",
+  "7ac1a44e78772d15": "2026-10-04T18:01:29+00:00",
+  "b823a4c486cbd361": "2026-10-04T18:01:29+00:00",
+  "eae60bbb5a55b7b1": "2026-10-04T18:01:29+00:00",
+  "d2aca8932e3c1236": "2026-10-04T18:01:29+00:00",
+  "8bc7182a214dba85": "2026-10-04T18:01:29+00:00"
  },
  "inviate": [
   {
@@ -3786,17 +3806,121 @@
    "quando": "2026-10-04T17:01:05+00:00",
    "messaggio": 127,
    "riassunto": "Con lo scostamento del deficit fissato al 3,4%, i margini finanziari per la prossima legge di bilancio in Italia risultano ridotti all'osso, alimentando tensioni all'interno della maggioranza di governo. Le risorse per coprire le priorità su energia e sicurezza restano in bilico, complicando il quad"
+  },
+  {
+   "id": "9a8b3f5bd21ec65b",
+   "titolo": "Iran says Strait of Hormuz will stay closed until U.S. meets 7 conditions",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Risk management",
+    "Azionario"
+   ],
+   "impronta": [
+    "closed",
+    "conditions",
+    "hormuz",
+    "iran",
+    "meets",
+    "stay",
+    "strait",
+    "until"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMVBKMVdXb3ZPZ3RvYzR0VGV4NkNNejc4blFna0JCRzQwOHh6Q01BbGRjV1AxaTd5cE5EekRWRzBZS3RCVWRVYU9kOV90ODUwWEctWmxQZWJ3NE9zWEpPZ1NlQkxxTGUxTm5LVVlzZ0xfSEVrNkhFNm9Ddm53N0dHVVlRdTF1MVFacEhROVBnNDQ0azdUX0FtdG0tRUl2dURYaUxhT2hLWlVLdWtrNU9B?oc=5",
+   "quando": "2026-10-04T18:01:30+00:00",
+   "messaggio": 128,
+   "riassunto": "Le autorità iraniane hanno ribadito che lo Stretto di Hormuz rimarrà chiuso fino a quando gli Stati Uniti non avranno soddisfatto sette specifiche condizioni. Questa mossa geopolitica drastica mantiene alta la tensione sulle rotte marittime globali e sulle forniture energetiche strategiche. I mercat"
+  },
+  {
+   "id": "64f9d054365416d3",
+   "titolo": "Even ‘Bond King’ Bill Gross warns ‘don’t own bonds’ as long-term debt enters a new ear of volatility",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "bill",
+    "bond",
+    "bonds",
+    "debt",
+    "don",
+    "ear",
+    "enters",
+    "even",
+    "gross",
+    "king",
+    "long",
+    "own",
+    "term",
+    "volatility",
+    "warns"
+   ],
+   "link": "https://fortune.com/2026/10/04/bond-king-bill-gross-long-term-debt-volatility-treasury-yields/",
+   "quando": "2026-10-04T18:01:30+00:00",
+   "messaggio": 129,
+   "riassunto": "Il noto investitore Bill Gross ha avvertito gli investitori di evitare i titoli obbligazionari a lungo termine. L'esperto segnala l'ingresso in una nuova era caratterizzata da una maggiore volatilità e da rendimenti elevati sul benchmark decennale. Il monito sottolinea la fine della stabilità tradiz"
+  },
+  {
+   "id": "ad10f9029c49ac2f",
+   "titolo": "US Treasury Yields Hit Multi-Decade Highs Amid Federal Reserve Shift",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "decade",
+    "federal",
+    "highs",
+    "hit",
+    "multi",
+    "reserve",
+    "shift",
+    "treasury",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5vN0c1MlRzcUY0M3d0VVZhVWEzc2hHbzc2MzVFZmpJQVBEaWtJZWVkRDljX0xWWlI3dnhWOHM2RURRNmhCY2JDUG80Mzl5U3M4Qmk1VlpCV2pQbWswVlRSektVY2t2bTF2eFV6bDRlLTZSbU9I?oc=5",
+   "quando": "2026-10-04T18:01:31+00:00",
+   "messaggio": 130,
+   "riassunto": "L'aumento dei rendimenti dei Treasury statunitensi ai massimi pluridecennali e i maggiori costi del capitale globale stanno mettendo alla prova le economie emergenti. Funzionari e analisti segnalano che, nonostante le forti pressioni esterne, mercati come quello indiano mantengono una certa resilien"
+  },
+  {
+   "id": "4db30d7a240458fc",
+   "titolo": "FOMC Minutes, Interest Rates and Other Key Things to Watch this Week",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "fomc",
+    "interest",
+    "key",
+    "minutes",
+    "other",
+    "rates",
+    "things",
+    "watch",
+    "week"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNV3ZjdlhpWEhyb2FQUW9kRkhhRGNyY2N1VklKWnVtdVhOUjBic0c0TEhsb3dIcUFwUEY5VHFuWFV4RWRXejg5LWdDVG8zclpqblFhamg3NVZIRE0tcFBpVm1IVW5veE85MDNkak5wamtpVEtPLWFpRF9XVU5GaHZjdTA5bGVJd2JqU3NLWVZ0aGZiZDhZeVJSU3pOQWZDVnVsMUVLSEVuOFJtWUFMS25JQQ?oc=5",
+   "quando": "2026-10-04T18:01:33+00:00",
+   "messaggio": 131,
+   "riassunto": "Gli operatori si preparano a una settimana densa di appuntamenti macroeconomici chiave, guidati dalla pubblicazione dei verbali dell'ultima riunione FOMC della Federal Reserve. Al centro dell'attenzione vi sono la traiettoria futura dei tassi di interesse, le decisioni di politica monetaria in India"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 14
+  "2026-10-04": 15
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 19",
+  "ora_notizie": "2026-10-04 20",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04",
   "settimanale": "2026-W40"
