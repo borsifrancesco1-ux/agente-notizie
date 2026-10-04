@@ -724,7 +724,40 @@
   "0c38f76178ccbc00": "2026-10-04T12:01:11+00:00",
   "57ed63dda6daca29": "2026-10-04T12:01:11+00:00",
   "1178c2d16266638c": "2026-10-04T12:01:11+00:00",
-  "9ff13447b8c85d37": "2026-10-04T12:01:11+00:00"
+  "9ff13447b8c85d37": "2026-10-04T12:01:11+00:00",
+  "0a58cd723e757e82": "2026-10-04T13:01:43+00:00",
+  "508c73f88c06b728": "2026-10-04T13:01:43+00:00",
+  "454c20c9f169cfda": "2026-10-04T13:01:43+00:00",
+  "00e3109a6dbd6464": "2026-10-04T13:01:43+00:00",
+  "c61e50b053411557": "2026-10-04T13:01:43+00:00",
+  "bfcb51914d456732": "2026-10-04T13:01:43+00:00",
+  "6c7424c22b177dee": "2026-10-04T13:01:43+00:00",
+  "abc5c2f709d73a9e": "2026-10-04T13:01:43+00:00",
+  "fc9001170efd6dc7": "2026-10-04T13:01:43+00:00",
+  "ddbed837dd17a4f4": "2026-10-04T13:01:43+00:00",
+  "d32ddbc5ff76a85b": "2026-10-04T13:01:43+00:00",
+  "1968b7aac0cab313": "2026-10-04T13:01:43+00:00",
+  "a332eebd77b2bcb5": "2026-10-04T13:01:43+00:00",
+  "4054f428ef5ef0ee": "2026-10-04T13:01:43+00:00",
+  "a55a5e74e97497b3": "2026-10-04T13:01:43+00:00",
+  "44acea6d4cba317f": "2026-10-04T13:01:43+00:00",
+  "faaa7f0fdebcade6": "2026-10-04T13:01:43+00:00",
+  "ea093a096c501131": "2026-10-04T13:01:43+00:00",
+  "1da945a7294fdeb8": "2026-10-04T13:01:43+00:00",
+  "4167f0ba752cc5c7": "2026-10-04T13:01:43+00:00",
+  "ab9e7da964c75159": "2026-10-04T13:01:43+00:00",
+  "4db7b47aab6a4898": "2026-10-04T13:01:43+00:00",
+  "15d4dcaa49bafb6d": "2026-10-04T13:01:43+00:00",
+  "295892464f18c4b0": "2026-10-04T13:01:43+00:00",
+  "26b88593bf0b7e84": "2026-10-04T13:01:43+00:00",
+  "37c072813ade06e3": "2026-10-04T13:01:43+00:00",
+  "448b2725c4ba0d5d": "2026-10-04T13:01:43+00:00",
+  "4684f9fb4a588ea5": "2026-10-04T13:01:43+00:00",
+  "f49a573041102d0e": "2026-10-04T13:01:43+00:00",
+  "af23a7817ed9e0db": "2026-10-04T13:01:43+00:00",
+  "86edb779ac5887ef": "2026-10-04T13:01:43+00:00",
+  "c38906c12fe6a1c7": "2026-10-04T13:01:43+00:00",
+  "f92f576337b31d43": "2026-10-04T13:01:43+00:00"
  },
  "inviate": [
   {
@@ -3030,17 +3063,165 @@
    "quando": "2026-10-04T12:01:18+00:00",
    "messaggio": 101,
    "riassunto": "Il tasso di cambio EUR/USD mostra segnali di stabilizzazione e tenta un rimbalzo tecnico dopo le recenti forti pressioni al ribasso. Gli analisti monitorano i livelli chiave per comprendere se il movimento possa consolidarsi in un'inversione di breve periodo o se persista la forza del dollaro."
+  },
+  {
+   "id": "bfcb51914d456732",
+   "titolo": "More tankers struck in the Middle East as Iran reiterates conditions for reopening the Strait of Hormuz",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "conditions",
+    "east",
+    "hormuz",
+    "iran",
+    "middle",
+    "more",
+    "reiterates",
+    "reopening",
+    "strait",
+    "struck",
+    "tankers"
+   ],
+   "link": "https://www.cnbc.com/2026/10/04/more-tankers-struck-in-gulf-waters-as-iran-reiterates-conditions.html",
+   "quando": "2026-10-04T13:01:43+00:00",
+   "messaggio": 102,
+   "riassunto": "Nuovi attacchi a petroliere nel Golfo alimentano i timori sulle forniture globali di greggio mentre l'Iran ha ribadito le proprie condizioni per la riapertura dello Stretto di Hormuz. Teheran richiede lo stop alle azioni ostili statunitensi, la fine del blocco navale e lo sblocco dei beni congelati."
+  },
+  {
+   "id": "0a58cd723e757e82",
+   "titolo": "Eni stock gained 0.67 percent on October 2 as Plenitude deal reshaped ownership",
+   "tema": "Eni",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "deal",
+    "eni",
+    "gained",
+    "october",
+    "ownership",
+    "percent",
+    "plenitude",
+    "reshaped",
+    "stock"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNOGdUWm1Od0lwNU9YWVJzcmI4bXN1SzNMVzR4ZHd0QU4wMkFuT0U1TjlkanNseDJ3bXlZX0ZEMU1iVHBoQWVGRXhpYXZ3OWxPbGV6dTRUeVJVSlVQQmhITG95cGxDZ3AtSWNxY2gwdWE1Qy14a2FpQU1tNnk4dEd0OHpCd0lfSWJIYWJxRzUtalIyekhBUUQwQmprSjJFWmRXV0hnVzZYSkNUYnJCYzNJRi1oU0dGeTNVNHF3VXpOQjQ3U1MzN25JR3JtOUE?oc=5",
+   "quando": "2026-10-04T13:01:44+00:00",
+   "messaggio": 103,
+   "riassunto": "Il titolo Eni ha registrato un rialzo dello 0,67% in seguito alla recente operazione di riorganizzazione societaria legata a Plenitude che ne ha ridisegnato gli assetti proprietari. L'evento conferma l'interesse del mercato per la valorizzazione delle attività green del gruppo energetico. La dinamic"
+  },
+  {
+   "id": "abc5c2f709d73a9e",
+   "titolo": "Markets Brace for Sharp Swings No Matter Result of Brazil Vote",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Geopolitica",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "brace",
+    "brazil",
+    "markets",
+    "matter",
+    "result",
+    "sharp",
+    "swings",
+    "vote"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-04/markets-brace-for-sharp-swings-no-matter-result-of-brazil-vote",
+   "quando": "2026-10-04T13:01:44+00:00",
+   "messaggio": 104,
+   "riassunto": "Gli investitori si preparano a marcate fluttuazioni sugli asset brasiliani in seguito alle elezioni presidenziali caratterizzate da un testa a testa. La forte polarizzazione ha impedito agli operatori di assumere posizioni direzionali forti in vista del voto. I mercati locali sono pronti a reagire r"
+  },
+  {
+   "id": "a55a5e74e97497b3",
+   "titolo": "Fed minutes coming this week could give markets important clues about future rate hikes",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "about",
+    "clues",
+    "coming",
+    "could",
+    "fed",
+    "future",
+    "give",
+    "hikes",
+    "important",
+    "markets",
+    "minutes",
+    "rate",
+    "week"
+   ],
+   "link": "https://www.marketwatch.com/story/fed-minutes-coming-this-week-could-give-markets-important-clues-about-future-rate-hikes-31bfba5b?mod=mw_rss_topstories",
+   "quando": "2026-10-04T13:01:45+00:00",
+   "messaggio": 105,
+   "riassunto": "I verbali della riunione di settembre della Federal Reserve attesi per la settimana forniranno ulteriori chiarimenti sulla traiettoria futura della politica monetaria. L'attenzione degli operatori è focalizzata sul livello attuale dei tassi effettivi, giudicati sorprendentemente bassi rispetto al co"
+  },
+  {
+   "id": "d32ddbc5ff76a85b",
+   "titolo": "G7 Fuel Release Offers Temporary Price Relief",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "fuel",
+    "offers",
+    "price",
+    "release",
+    "relief",
+    "temporary"
+   ],
+   "link": "https://www.bloomberg.com/news/videos/2026-10-04/g7-fuel-release-offers-temporary-price-relief-video",
+   "quando": "2026-10-04T13:01:46+00:00",
+   "messaggio": 106,
+   "riassunto": "Il rilascio di emergenza di 100 milioni di barili deciso dal G7 sta spingendo al ribasso i prezzi dei carburanti sui mercati internazionali. Gli analisti avvertono tuttavia che l'effetto sarà probabilmente di breve durata a causa dei persistenti limiti di raffinazione e delle tensioni geopolitiche. "
+  },
+  {
+   "id": "26b88593bf0b7e84",
+   "titolo": "OPEC+ keeps November oil output targets unchanged as supply remains disrupted",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "disrupted",
+    "keeps",
+    "november",
+    "oil",
+    "opec",
+    "output",
+    "remains",
+    "supply",
+    "targets",
+    "unchanged"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWV9FZ29TdUNDQUNUR0phbHI3SUtZQ3hzcTc5VV9UUXpRdnJZbnJpcUl0TkZneF9RS1oxMkVpN3FJNlhCYi16NmpzZTBTNnVqM2lXRWdUbWVyVFdhZjhPN3pVVHNSaER2UHppTjBYUVRnaWpzak5aV2VRVzBibUotZjI1ckRLVUtTNU93TU5STjlNM3FVajg1QlUzRE50UTlzenRmT0NZNl8xRDNaMENoUi1zRzJOOURTTGpZeHZuUjVMbFnSAdYBQVVfeXFMTlFtNjJkcG9PWk4xTFN2N1JGSXN6dndsM1ZMZjV4M3pHMm04NGtMWTlQZExmbFYtVDlWYTI3Z3RENXh5ODJjRVdZTGxkSnhEd1owTk5ZOU8wNWtiOWJHNTBIT043Qm5zQVI2MnV1d3BRUkQ0NnlSQk56TFlmS1VNaXQxbGdVT1BPSmc5Q28yVUowVHNwS0VVOTZvLVY3cjhQbGxMN3hUYm9fUXdQeWFmQVk0SlNJWG45Y0d1OHdyVmlaNlM2d2pZMndObEFLeDN0WUctTjNydw?oc=5",
+   "quando": "2026-10-04T13:01:49+00:00",
+   "messaggio": 107,
+   "riassunto": "L'alleanza OPEC+ ha deciso di mantenere invariati i target di produzione di petrolio per il mese di novembre a fronte delle continue interruzioni delle catene di fornitura. La scelta riflette la prudenza del cartello nel gestire l'offerta in un contesto di tensioni geopolitiche in Medio Oriente. I m"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 5
+  "2026-10-04": 6
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 14",
+  "ora_notizie": "2026-10-04 15",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
@@ -3070,7 +3251,7 @@
    "valore": 2.2
   },
   "Tasso Fed (limite superiore)": {
-   "periodo": "2026-10-03",
+   "periodo": "2026-10-04",
    "valore": 4.0
   },
   "Tasso BCE sui depositi": {
