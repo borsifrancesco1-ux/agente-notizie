@@ -618,7 +618,40 @@
   "84d83d9634ef5769": "2026-10-04T09:01:08+00:00",
   "941523d8d4cf5aeb": "2026-10-04T09:01:08+00:00",
   "b9ee167f4753cbb2": "2026-10-04T09:01:08+00:00",
-  "e27c1eb0cc79df8b": "2026-10-04T09:01:08+00:00"
+  "e27c1eb0cc79df8b": "2026-10-04T09:01:08+00:00",
+  "4d4820dedd4aac2f": "2026-10-04T10:01:38+00:00",
+  "41d8f7c6449a4504": "2026-10-04T10:01:38+00:00",
+  "92b2c895c64dfd35": "2026-10-04T10:01:38+00:00",
+  "99e9216504d87092": "2026-10-04T10:01:38+00:00",
+  "00e1473ae54b039f": "2026-10-04T10:01:38+00:00",
+  "18f3dae8c0d8908e": "2026-10-04T10:01:38+00:00",
+  "30ed2e34706d49bf": "2026-10-04T10:01:38+00:00",
+  "ad229e2edde3d0ef": "2026-10-04T10:01:38+00:00",
+  "96ad10c7f4502b2b": "2026-10-04T10:01:38+00:00",
+  "31005b64a22eb0fd": "2026-10-04T10:01:38+00:00",
+  "b604eeebaacadcdc": "2026-10-04T10:01:38+00:00",
+  "96e0b490ceb0db94": "2026-10-04T10:01:38+00:00",
+  "a694a156ccc173e5": "2026-10-04T10:01:38+00:00",
+  "d939bec7e71b006e": "2026-10-04T10:01:38+00:00",
+  "4b5ece91e30a4225": "2026-10-04T10:01:38+00:00",
+  "3677d9f0fda15dda": "2026-10-04T10:01:38+00:00",
+  "edba01bcfbfbcb6a": "2026-10-04T10:01:38+00:00",
+  "d67ca28bcc7ff6c6": "2026-10-04T10:01:38+00:00",
+  "f09568cd18b588c6": "2026-10-04T10:01:38+00:00",
+  "8f91d5790780c4d7": "2026-10-04T10:01:38+00:00",
+  "4fd50a447a875369": "2026-10-04T10:01:38+00:00",
+  "c9b1cd148c9d23cf": "2026-10-04T10:01:38+00:00",
+  "1090de444f4114ae": "2026-10-04T10:01:38+00:00",
+  "3b4978747a0b4339": "2026-10-04T10:01:38+00:00",
+  "c07674a0a6fef715": "2026-10-04T10:01:38+00:00",
+  "cfbd5bc0eb9588fd": "2026-10-04T10:01:38+00:00",
+  "8674f319056baaa0": "2026-10-04T10:01:38+00:00",
+  "05e7896c19ae5f56": "2026-10-04T10:01:38+00:00",
+  "d7a2f2e680c1368e": "2026-10-04T10:01:38+00:00",
+  "67efc4c4a164d50d": "2026-10-04T10:01:38+00:00",
+  "446f8c4f7e13ab34": "2026-10-04T10:01:38+00:00",
+  "1d809269348147bd": "2026-10-04T10:01:38+00:00",
+  "1ffa03a6034f8e26": "2026-10-04T10:01:38+00:00"
  },
  "inviate": [
   {
@@ -2504,7 +2537,10 @@
    "link": "https://www.ansa.it/sito/notizie/economia/2026/10/04/intesa-le-due-offerte-di-mps-complesse-e-di-difficile-valutazione-per-i-soci_c0310536-0bf0-4203-8ec0-f9e921bb8ee5.html",
    "quando": "2026-10-04T09:01:09+00:00",
    "messaggio": 84,
-   "riassunto": "La presentazione simultanea di due Ops a sconto su Mps viene definita inusuale e di difficile valutazione per i soci. Il contesto societario e bancario resta al centro dell'attenzione per la gestione del credito e delle operazioni straordinarie."
+   "riassunto": "La presentazione simultanea di due Ops a sconto su Mps viene definita inusuale e di difficile valutazione per i soci. Il contesto societario e bancario resta al centro dell'attenzione per la gestione del credito e delle operazioni straordinarie.",
+   "voti": {
+    "a945f4701b6d": 1
+   }
   },
   {
    "id": "61f39d3636a77f68",
@@ -2529,18 +2565,198 @@
    "link": "https://news.google.com/rss/articles/CBMikgpBVV95cUxObU9NU2VFcjhrdXlyd1E2T3dwQlI3Wm0zSEJTbGQyeXh2Vm1oMk1wVjlmd0xFNUhpdWUxZnk4ZW9peTdlYkUzWVZBcDJKMm4xUFYwLXhZTVc0YWg1Tm1mUlA5a0k3NmdmVDhjamxELWZEbmQ1UWdnVFNSNFFicEE0LTc0WWJ2MFFUZEFCUzF5cFJLekV1RFJBM3k4Z19rejJIejZyYldZR2JGam9MYUlxQ0tISGdlT05IRHV0bVZXcTJSQzFYWHpDX1BPenNJbHR6MWNLLWpBRjYzcGhsb19Nd0JyRlFZMk1OLTAxTEhfeHZZSHlvUHNpLWV2QUNLdVF3Vks2VllDQTNmUEJtbnZuQm9TWnk0d0Rjb0ZpNDZHQXZpUnczaWpjQzM1TUZoYlRZVklXbTh0QlBkT0NPdXJDdUI2LXlBYnZzQU5ZU2RTSlFLQTUyQjVDaWROcWw1QVZjbXNuYWhUUnQwcmVXcWEycjZzeEhFWnJYd0tTOEtMbEo3UmU1TUZyRTRMX3ZOQVFRY210SWpDWHhwc0VVNFNMOGd0aVhxazVraGRXQncyTkFfV3ctbmxPRXZWakJjSkQ0djVtQ0c0UWM1Z0VCTWFhcFNoOHFtYUVWcVdYT1ZfVG1nZ0lVLTM0WjJES1M2VC1qUDljQ3JNNm4zdjAyMTltYktGQ2RmUGZ3MUNESzlSTjFlQkZxWUtfdlFDQnVMN05rbnY2ZmIzdnlqUVctUkhELXVaeFljNDczWkVyLWdiZlhFOVRpX2xsSVFfVHdZRFVIN3Utc3ZkVlZUcGlEUGUtRTIwY2RNQlRKUTltblQ3SkJlUFVpbDd4SVM2WnlsRlMydFczZGpqMV83MmprZzVIWDRKb0JQX0hjVE5BMWc4QU1LMVlFN19Ja3ZIVVctbVd5cDVOcndWcGowVS04S0x1aS1hb3VMTy1kcnM1M2cxVHJUVnRNQVFIcWM3ZHJoQ21KME9LdlA0RzQtNFBrZTFaY1NkR2ZDOHdfYmZiUzN5TnA2NGRxdDVHempjVDBJZkNrM3JSazk1UHF0cldwNWU1WjNOZlRFVjRxZ3Zpb0M5WHpmbHhJMWJZMzBGRDlGSHlrQjNpR1lDVHFzOXhJUER3SjVGcEg0WE9RSjZTUWsycUp4MGRsVGpjdDB2Q01ZWnRwTzdRSjJHek93Vk56clFrYnFWTnIwVThuY0RibGpxS3dBRW55V3ZBcnNkcTdWME5VYjBiUjc1WUdNZTF6YmdqclZHRC1YcUYzSDNrR3ZxRUhkRVpoR2I2VFRMQ0ZRUHdKMml4MGtYTlhRakVhMDBFNFRuVnJLa2pMSnJPVm1qby16dXdUQkdsWTliYVNSZ3dubkVVYzdVWkg1VlVyRlFsVy1yMzJqYndQTjBuRHRRajZyeGV1WnB3R1ktSmpvZ1hqQ04tRWNzaGpEN1ZjWWJ5SUJfOEs3Wk5ST21laERMbVhhREU0aU1wWkNPRXdnd0g3LW5nQmZrcm5LU3hwTVZQMzVIVHhabXRITXFhenlKR2FyYnk2WUhwTkdVXzU5STFZZEhZRG04WmNOZ0FNR3g5UlVkdUtCeUdrdFdvdXA3cmhmYV9TSUxfOTFQcUJKZ0JBeVdpT0tlTkgtQXNSQk5qdWJ6ektHTEswcndEQmZmZGh3Z2NYSml3Tnozb1ljdi1zWHFOQUlqd2VvVmZPai1JNENGYWhLWDRIQVpGR241Q2ZlUQ?oc=5",
    "quando": "2026-10-04T09:01:09+00:00",
    "messaggio": 85,
-   "riassunto": "L'ex presidente statunitense Donald Trump ha imposto dazi del 100% su alcuni prodotti farmaceutici tramite un ordine esecutivo. La misura inasprisce le tensioni commerciali globali e solleva interrogativi sulla catena di fornitura internazionale."
+   "riassunto": "L'ex presidente statunitense Donald Trump ha imposto dazi del 100% su alcuni prodotti farmaceutici tramite un ordine esecutivo. La misura inasprisce le tensioni commerciali globali e solleva interrogativi sulla catena di fornitura internazionale.",
+   "voti": {
+    "a945f4701b6d": 1
+   }
+  },
+  {
+   "id": "96e0b490ceb0db94",
+   "titolo": "America’s budget, the bond market and the national debt at 250: Gradually, then suddenly",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "250",
+    "america",
+    "bond",
+    "budget",
+    "debt",
+    "gradually",
+    "market",
+    "national",
+    "suddenly",
+    "then"
+   ],
+   "link": "https://fortune.com/2026/10/04/us-debt-crisis-bond-market-congress/",
+   "quando": "2026-10-04T10:01:39+00:00",
+   "messaggio": 86,
+   "riassunto": "Il debito nazionale degli Stati Uniti sta crescendo a ritmi vertiginosi, aumentando di mille miliardi in tempi record mentre il Congresso continua a rinviare la gestione del bilancio. Gli investitori sul mercato dei titoli di Stato guardano con crescente preoccupazione alla sostenibilità fiscale di "
+  },
+  {
+   "id": "1090de444f4114ae",
+   "titolo": "Gli effetti e conseguenze per Btp, obbligazioni e risparmiatori e scenari futuri con i Treasury Bond al 5%",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bond",
+    "btp",
+    "conseguenze",
+    "effetti",
+    "futuri",
+    "gli",
+    "obbligazioni",
+    "risparmiatori",
+    "scenari",
+    "treasury"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOdk41WC1lc0s0UUhuY2I1NDgyeThDZ1JUWmJQWGZERVVWZkQ3aURlOFN0MXRrSkJQMV9EcVBwblJnODh0R25zNndqYnYwX2lGY2VBWDdOSnF5LS1uejdaTU81d3pyVGNSOUswaXV1WVRYcUV4ZjBFTGMtSGdOWmpGTFBBR2l0TWpRNVQxRUZjVEtkOXJBZ29pNS1sTjFQRk5mYWlFWjhqcV94RkpIa2hlM1ZzRzk0cVVReDBaS3NCMFVDQlphaThYeGgzUUM0RzNhZnJlanh6RHN0YW51TUtWRjFnRjhkaXpjTjlFaFY2NDV5Xy03bXdZS3NIM0sxMFZH?oc=5",
+   "quando": "2026-10-04T10:01:39+00:00",
+   "messaggio": 87,
+   "riassunto": "Il persistente sell-off sul mercato obbligazionario globale e i rendimenti dei Treasury statunitensi stabilmente oltre la soglia del 5% stanno ridefinendo i portafogli dei risparmiatori. Gli analisti esaminano le pesanti ripercussioni sui titoli di Stato europei, inclusi i BTP italiani, e sui fondi "
+  },
+  {
+   "id": "99e9216504d87092",
+   "titolo": "Paramount’s $52 Billion Debt Sale Shows How Higher Rates Are Biting Corporate America",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "america",
+    "billion",
+    "biting",
+    "corporate",
+    "debt",
+    "higher",
+    "paramount",
+    "rates",
+    "sale",
+    "shows"
+   ],
+   "link": "https://www.wsj.com/finance/investing/paramounts-52-billion-debt-sale-shows-how-higher-rates-are-biting-corporate-america-aed59897?mod=rss_markets_main",
+   "quando": "2026-10-04T10:01:41+00:00",
+   "messaggio": 88,
+   "riassunto": "La società media Paramount ha emesso un maxi prestito obbligazionario da 52 miliardi di dollari accettando tassi molto elevati pur di finanziarsi. L'operazione dimostra come il contesto di alti tassi di interesse stia pesando sulle aziende statunitensi. Gli analisti segnalano che anche altri emitten"
+  },
+  {
+   "id": "d939bec7e71b006e",
+   "titolo": "OPEC+ set to keep quotas steady in November, delegates say",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Geopolitica",
+    "Azionario"
+   ],
+   "impronta": [
+    "conflitto",
+    "manterra",
+    "medio",
+    "mentre",
+    "novembre",
+    "opec",
+    "oriente",
+    "pesa",
+    "petrolifere",
+    "produzione",
+    "quote"
+   ],
+   "link": "https://it.investing.com/news/commodities-news/lopec-manterra-le-quote-petrolifere-di-novembre-mentre-il-conflitto-in-medio-oriente-pesa-sulla-produzione-3573247",
+   "quando": "2026-10-04T10:01:42+00:00",
+   "messaggio": 89,
+   "riassunto": "I delegati dell'OPEC+ hanno confermato che l'alleanza manterrà stabili le quote di produzione petrolifera per il mese di novembre. La decisione arriva nonostante le tensioni in Medio Oriente continuino a pesare sulla produzione e sulla stabilità dell'offerta globale. I mercati energetici monitorano "
+  },
+  {
+   "id": "8f91d5790780c4d7",
+   "titolo": "RBI may hike repo rate by 25 bps as inflation and oil risks mount: Sunil Sanghai",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "bps",
+    "hike",
+    "inflation",
+    "may",
+    "mount",
+    "oil",
+    "rate",
+    "rbi",
+    "repo",
+    "risks",
+    "sanghai",
+    "sunil"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNMEtPR2dickZiV01xdzhtd05nc0dBMUZ6SFJMVGNLUWVnLVlQcHlVWk1rc082ZkljWUpZcnVXTjNiVU5rSlBFaGxNTDJ6R2k0enFNajNDOE4yd1dRNGk1aE1yUXFxMlJaMUk1ZDEtUmY0UEtMRmYzQU5GcXV4WFdsSzJ3alJJMEdKWEgtSkZYNmh2UWEwU0gtZUp1Q0FBQUNrV2JzMjZKamdYZy1ENjRuRkZCX3lQQWUwRWpHU3VCX2U4OWRSeXNUY2xUMnBXeGVmSEE1Y25vOHNYNzloaFdMODNDQkptaXhv0gHuAUFVX3lxTE4zc2wtWWpEQUxwbmtRTjhDN09acjZ3VDFEU0N0cEY5cHdrUHY3cVEzOXBiWUVWaERveXAxQnBVQ25YLW9MZFBjTVFxQ05qNi03cExhNTNnd2RuRGQxLUl4amFjQVRRSjlaOVl1dEtPMjc2Nk5XaEhaRzFBT3BFM1oxemtpRHNfdUVGU2szcTh3MVJzVHB5MHIzOWpMVzl6MG14NHgxVU1rV1RlV2xRSkVockJDak8xWkxzek9qZUk2M1A4QjlqMFhTbGhNTU9nUWw2bF9HWjMxRWpHWXVkcmowWkN1OXdKSDZEM3BWT2c?oc=5",
+   "quando": "2026-10-04T10:01:42+00:00",
+   "messaggio": 90,
+   "riassunto": "Gli analisti e gli esperti di mercato segnalano che la Reserve Bank of India potrebbe alzare il tasso repo di 25 punti base a causa dell'aumento dei rischi legati all'inflazione e ai prezzi del petrolio. Le decisioni di politica monetaria indiana si inseriscono in un contesto globale caratterizzato "
+  },
+  {
+   "id": "f09568cd18b588c6",
+   "titolo": "British Pound Forecast: Crowded Bets Against GBP Leave Room For A Rebound",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "against",
+    "bets",
+    "british",
+    "crowded",
+    "forecast",
+    "gbp",
+    "leave",
+    "pound",
+    "rebound",
+    "room"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZ0hQaWNwYjBWZVJqT0VwaWlWang3aDBmTjBLa0NhR0tKREo1Uk4talQ2NG01QlJ4eVN4clpKZ2JuTDFNT3Q1RkZLUV9tUTdVNWdOOWExMkRjLWd4YVg0Y1hTNUhEU0c4OHpDODJkcnRmRHh3WXF0YjZieEV4U2JiazdVMG9kdjdjbEpYb1ROemR3SGNjcGgzdDl6OXBzNHZDeC1PaHhxd3Y0TzVtd216ZC1LUjVfSnhmenZycEd3Z3pzR241MHhVUkYwNEU?oc=5",
+   "quando": "2026-10-04T10:01:46+00:00",
+   "messaggio": 91,
+   "riassunto": "Gli operatori valutari evidenziano come i posizionamenti ribassisti sulla sterlina e sul dollaro stiano creando le condizioni per possibili rimbalzi tecnici. Le previsioni settimanali sul Forex focalizzano l'attenzione sui livelli chiave di EUR/USD e delle principali valute globali. I differenziali "
+  },
+  {
+   "id": "b604eeebaacadcdc",
+   "titolo": "US to receive potash shipment from Belarus as relations thaw",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "belarus",
+    "potash",
+    "receive",
+    "relations",
+    "shipment",
+    "thaw"
+   ],
+   "link": "https://www.ft.com/content/9cbc0aea-259a-41eb-bbf4-ad8a674ca8b7?syn-25a6b1a6=1",
+   "quando": "2026-10-04T10:01:46+00:00",
+   "messaggio": 92,
+   "riassunto": "Washington ha iniziato ad allentare le sanzioni contro Minsk in cambio della liberazione di alcuni prigionieri politici. L'accordo consente agli Stati Uniti di ricevere un carico di potassio dalla Bielorussia, segnando una parziale distensione diplomatica. La mossa potrebbe aprire a nuovi flussi com"
   }
  ],
  "feed_guasti": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-10-03": 14,
-  "2026-10-04": 2
+  "2026-10-04": 3
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-04 11",
+  "ora_notizie": "2026-10-04 12",
   "chiusura": "2026-10-03",
   "apertura": "2026-10-04"
  },
@@ -2603,5 +2819,7 @@
   }
  },
  "proposta": {},
- "dati_usciti": []
+ "dati_usciti": [],
+ "pausa_fino": "",
+ "ultima_modifica": {}
 }
