@@ -4,7 +4,9 @@
  * Telegram consegna qui ogni aggiornamento del bot (webhook), così il bot risponde subito:
  * - voti 👍/👎 sotto le notizie: li registra in forma anonima e aggiorna il conteggio sui pulsanti;
  * - messaggi del proprietario: li mette in coda come comandi e fa partire subito l'agente su GitHub;
- * - /iscrivimi, /disiscrivimi, /iscrizioni: li gestisce qui, con risposta immediata;
+ * - /iscrivimi, /disiscrivimi, /iscrizioni: li gestisce qui, con risposta immediata, per chiunque;
+ * - /iscrivi, /disiscrivi, /link (solo il proprietario): iscrive d'ufficio un membro del team, che riceve
+ *   le notizie appena avvia il bot (Telegram non lascia scrivere a chi non l'ha mai avviato);
  * - pulsanti della proposta di profilo: diventano il comando /proposta applica|ignora <id>.
  * L'agente (agente.py) a ogni giro ritira da qui voti, comandi e iscrizioni
  * (/agente/voti, /agente/coda, /agente/iscrizioni).
@@ -39,8 +41,21 @@ Invii
 /riprendi – riprendo gli invii
 /iscrivimi <reparti> [subito|sera] – notizie dei tuoi reparti in privato
 /disiscrivimi – smetto di mandarti le notizie in privato
-/iscrizioni – a cosa sei iscritto
+/iscrizioni – a cosa sei iscritto (per chi gestisce il bot: tutti gli iscritti)
+
+Iscrivere il team (solo chi gestisce il bot)
+/iscrivi @utente <reparti> [sera] – iscrivo un membro del team; riceve le notizie appena avvia il bot
+/disiscrivi @utente – tolgo l'iscrizione di un membro
+/link <reparti> – un link da mandare al team: chi lo apre e preme Avvia è già iscritto
 /aiuto – questo elenco`;
+
+const AIUTO_MEMBRI = `Ciao! Questo bot pubblica le notizie del canale del team WhiteRock.
+Puoi riceverle anche in privato, solo quelle dei tuoi reparti:
+/iscrivimi <reparti> [sera] – es. /iscrivimi Obbligazionario Copertura
+   (reparti: ${["Macroeconomia", "Geopolitica", "Azionario", "Obbligazionario", "Copertura", "Risk management"].join(", ")}, oppure "tutti";
+   con "sera" ricevi un solo riepilogo alle 22)
+/iscrizioni – a cosa sei iscritto
+/disiscrivimi – smetto di mandartele`;
 
 const REPARTI = ["Macroeconomia", "Geopolitica", "Azionario", "Obbligazionario", "Copertura", "Risk management"];
 // parole accettate dopo /iscrivimi, oltre ai nomi dei reparti
@@ -97,26 +112,32 @@ async function gestisciAggiornamento(aggiornamento, env) {
   const messaggio = aggiornamento.message;
   if (!messaggio || messaggio.chat.type !== "private" || !messaggio.text) return;
   const chat = messaggio.chat.id;
-  // ACCESSO (wrangler.toml): "proprietario" = solo chi gestisce il bot; "tutti" = chiunque lo avvii
-  const autorizzato = String(messaggio.from.id) === String(env.OWNER_ID) || env.ACCESSO === "tutti";
-  if (!autorizzato) {
-    return telegram(env, "sendMessage", {
-      chat_id: chat,
-      text: "Ciao! Questo bot pubblica le notizie del canale del team WhiteRock. I comandi sono riservati a chi lo gestisce.",
-    });
-  }
-
+  const proprietario = String(messaggio.from.id) === String(env.OWNER_ID);
   const testo = messaggio.text.trim();
   const comando = testo.split(/[\s@]/)[0].toLowerCase();
-  if (["/start", "/aiuto", "/help"].includes(comando)) {
-    return telegram(env, "sendMessage", { chat_id: chat, text: AIUTO });
+
+  // Chi era stato iscritto d'ufficio (/iscrivi) lo diventa davvero al primo messaggio: ora il bot può scrivergli
+  const attivata = await attivaPreiscrizione(messaggio, env);
+  if (comando === "/start") {
+    const reparti = testo.split(/\s+/)[1];  // dal link di /link: /start Obbligazionario_Copertura
+    if (reparti) return gestisciIscrizione("/iscrivimi", `/iscrivimi ${reparti.replace(/_/g, " ")}`, messaggio, env);
+    if (attivata) return;
   }
+  if (["/start", "/aiuto", "/help"].includes(comando)) {
+    return telegram(env, "sendMessage", { chat_id: chat, text: proprietario ? AIUTO : AIUTO_MEMBRI });
+  }
+  // iscriversi è sempre permesso a tutti, anche con ACCESSO = "proprietario"
   if (["/iscrivimi", "/disiscrivimi", "/iscrizioni"].includes(comando)) {
     return gestisciIscrizione(comando, testo, messaggio, env);
   }
-  // le modifiche e le domande all'archivio restano del proprietario anche con ACCESSO = "tutti"
-  if (String(messaggio.from.id) !== String(env.OWNER_ID)) {
-    return telegram(env, "sendMessage", { chat_id: chat, text: "Questo comando è riservato a chi gestisce il bot." });
+  if (attivata) return;
+  // ACCESSO (wrangler.toml): "proprietario" = solo chi gestisce il bot; "tutti" = chiunque lo avvii.
+  // Le modifiche e le domande all'archivio restano comunque del proprietario.
+  if (!proprietario) {
+    return telegram(env, "sendMessage", { chat_id: chat, text: AIUTO_MEMBRI });
+  }
+  if (["/iscrivi", "/disiscrivi", "/link"].includes(comando)) {
+    return gestisciIscrizioneTeam(comando, testo, env, chat);
   }
   await accoda(env, testo);
   const partito = await avviaAgente(env);
@@ -194,6 +215,9 @@ async function gestisciIscrizione(comando, testo, messaggio, env) {
     await env.STATO.put("iscrizioni", JSON.stringify(iscrizioni));
     return rispondi("Fatto: non ti mando più le notizie in privato. Restano tutte sul canale.");
   }
+  if (comando === "/iscrizioni" && utente === String(env.OWNER_ID)) {
+    return rispondi(await elencoIscritti(env));
+  }
   if (comando === "/iscrizioni") {
     const mia = iscrizioni[utente];
     return rispondi(mia
@@ -201,22 +225,117 @@ async function gestisciIscrizione(comando, testo, messaggio, env) {
       : "Non sei iscritto a nessun reparto. Esempio: /iscrivimi Obbligazionario Copertura");
   }
 
-  const parole = testo.split(/[\s,]+/).slice(1).map((p) => p.toLowerCase().replace(/[#_-]/g, ""));
+  const { reparti, modo } = leggiReparti(testo.split(/[\s,]+/).slice(1));
+  if (reparti.size === 0) {
+    return rispondi(`Indica uno o più reparti: ${REPARTI.join(", ")} (oppure "tutti"), e aggiungi "sera" se preferisci un solo riepilogo serale.\nEsempio: /iscrivimi Obbligazionario Copertura sera`);
+  }
+  iscrizioni[utente] = {
+    reparti: [...reparti], modo, chat, nome: messaggio.from.first_name || "", username: (messaggio.from.username || "").toLowerCase(),
+  };
+  await env.STATO.put("iscrizioni", JSON.stringify(iscrizioni));
+  return rispondi(`✅ Iscritto a: ${[...reparti].join(", ")}.\n${modo === "sera"
+    ? "Ogni sera alle 22 ti mando in privato le notizie del giorno di questi reparti."
+    : "Ti mando in privato ogni notizia di questi reparti, appena esce."}\nPer cambiare: /iscrivimi di nuovo · per smettere: /disiscrivimi`);
+}
+
+// Reparti e modo dalle parole dopo il comando: "Obbligazionario", "#RiskManagement", "fx", "tutti", "sera"
+function leggiReparti(parole) {
+  parole = parole.map((p) => p.toLowerCase().replace(/[#_-]/g, ""));
   const reparti = new Set();
   for (const parola of parole) {
     if (parola === "tutti" || parola === "tutto") REPARTI.forEach((r) => reparti.add(r));
     const reparto = REPARTI.find((r) => r.toLowerCase().replace(/\s/g, "") === parola) || SINONIMI[parola];
     if (reparto) reparti.add(reparto);
   }
-  if (reparti.size === 0) {
-    return rispondi(`Indica uno o più reparti: ${REPARTI.join(", ")} (oppure "tutti"), e aggiungi "sera" se preferisci un solo riepilogo serale.\nEsempio: /iscrivimi Obbligazionario Copertura sera`);
+  // "risk management" scritto in due parole
+  if (parole.includes("risk") || parole.includes("management")) reparti.add("Risk management");
+  return { reparti, modo: parole.includes("sera") ? "sera" : "subito" };
+}
+
+// Solo il proprietario: /iscrivi @utente <reparti> [sera] · /disiscrivi @utente · /link <reparti>
+// L'utente si indica con lo username (@mario) o con il numero di utente Telegram.
+async function gestisciIscrizioneTeam(comando, testo, env, chat) {
+  const rispondi = (text) => telegram(env, "sendMessage", { chat_id: chat, text });
+  const [, chi, ...resto] = testo.split(/[\s,]+/);
+
+  if (comando === "/link") {
+    const { reparti } = leggiReparti([chi, ...resto].filter(Boolean));
+    if (reparti.size === 0) return rispondi(`Esempio: /link Obbligazionario Copertura\nReparti: ${REPARTI.join(", ")}`);
+    const bot = await (await telegram(env, "getMe", {})).json();
+    const parametro = [...reparti].map((r) => r.replace(/\s/g, "")).join("_");
+    return rispondi(`Manda questo link al team (o a chi serve): chi lo apre e preme Avvia riceve in privato `
+      + `le notizie di ${[...reparti].join(", ")}.\n\nhttps://t.me/${bot.result.username}?start=${parametro}`);
   }
-  const modo = parole.includes("sera") ? "sera" : "subito";
-  iscrizioni[utente] = { reparti: [...reparti], modo, chat, nome: messaggio.from.first_name || "" };
+
+  const chiave = (chi || "").replace(/^@/, "").toLowerCase();
+  if (!chiave) {
+    return rispondi(comando === "/iscrivi"
+      ? "Esempio: /iscrivi @mario Obbligazionario Copertura (aggiungi \"sera\" per il solo riepilogo serale)"
+      : "Esempio: /disiscrivi @mario");
+  }
+  const iscrizioni = await leggi(env, "iscrizioni", {});
+  const preiscrizioni = await leggi(env, "preiscrizioni", {});
+  const attiva = Object.keys(iscrizioni).find((id) => id === chiave || (iscrizioni[id].username || "") === chiave);
+
+  if (comando === "/disiscrivi") {
+    if (attiva) delete iscrizioni[attiva];
+    const inAttesa = chiave in preiscrizioni;
+    delete preiscrizioni[chiave];
+    await env.STATO.put("iscrizioni", JSON.stringify(iscrizioni));
+    await env.STATO.put("preiscrizioni", JSON.stringify(preiscrizioni));
+    return rispondi(attiva || inAttesa ? `Fatto: ${chi} non riceve più le notizie in privato.` : `${chi} non era iscritto.`);
+  }
+
+  const { reparti, modo } = leggiReparti(resto);
+  if (reparti.size === 0) return rispondi(`Indica i reparti: ${REPARTI.join(", ")} (oppure "tutti").`);
+  if (attiva) {  // ha già avviato il bot: l'iscrizione vale subito
+    iscrizioni[attiva] = { ...iscrizioni[attiva], reparti: [...reparti], modo };
+    await env.STATO.put("iscrizioni", JSON.stringify(iscrizioni));
+    await telegram(env, "sendMessage", { chat_id: iscrizioni[attiva].chat, text: avvisoIscrizione(reparti, modo) });
+    return rispondi(`✅ ${chi} iscritto a: ${[...reparti].join(", ")}. Gliel'ho comunicato in privato.`);
+  }
+  preiscrizioni[chiave] = { reparti: [...reparti], modo, quando: new Date().toISOString() };
+  await env.STATO.put("preiscrizioni", JSON.stringify(preiscrizioni));
+  const bot = await (await telegram(env, "getMe", {})).json();
+  return rispondi(`✅ ${chi} iscritto a: ${[...reparti].join(", ")}.\n`
+    + `Telegram non permette al bot di scrivere a chi non l'ha mai avviato: le notizie gli arrivano appena `
+    + `apre @${bot.result.username} e preme Avvia (anche dal link https://t.me/${bot.result.username}).`);
+}
+
+// Al primo messaggio di un membro iscritto d'ufficio: l'iscrizione diventa attiva con la sua chat
+async function attivaPreiscrizione(messaggio, env) {
+  const preiscrizioni = await leggi(env, "preiscrizioni", {});
+  const username = (messaggio.from.username || "").toLowerCase();
+  const chiave = [String(messaggio.from.id), username].find((k) => k && k in preiscrizioni);
+  if (!chiave) return false;
+  const { reparti, modo } = preiscrizioni[chiave];
+  const iscrizioni = await leggi(env, "iscrizioni", {});
+  iscrizioni[String(messaggio.from.id)] = {
+    reparti, modo, chat: messaggio.chat.id, nome: messaggio.from.first_name || "", username,
+  };
+  delete preiscrizioni[chiave];
   await env.STATO.put("iscrizioni", JSON.stringify(iscrizioni));
-  return rispondi(`✅ Iscritto a: ${[...reparti].join(", ")}.\n${modo === "sera"
+  await env.STATO.put("preiscrizioni", JSON.stringify(preiscrizioni));
+  await telegram(env, "sendMessage", { chat_id: messaggio.chat.id, text: avvisoIscrizione(new Set(reparti), modo) });
+  return true;
+}
+
+function avvisoIscrizione(reparti, modo) {
+  return `✅ Sei stato iscritto alle notizie di: ${[...reparti].join(", ")}.\n${modo === "sera"
     ? "Ogni sera alle 22 ti mando in privato le notizie del giorno di questi reparti."
-    : "Ti mando in privato ogni notizia di questi reparti, appena esce."}\nPer cambiare: /iscrivimi di nuovo · per smettere: /disiscrivimi`);
+    : "Ti mando in privato ogni notizia di questi reparti, appena esce."}\n`
+    + "Per cambiare: /iscrivimi <reparti> · per smettere: /disiscrivimi";
+}
+
+async function elencoIscritti(env) {
+  const iscrizioni = Object.values(await leggi(env, "iscrizioni", {}));
+  const preiscrizioni = Object.entries(await leggi(env, "preiscrizioni", {}));
+  const righe = iscrizioni.map((i) => `• ${i.nome || ""}${i.username ? ` @${i.username}` : ""}: `
+    + `${i.reparti.join(", ")}${i.modo === "sera" ? " (sera)" : ""}`);
+  const attesa = preiscrizioni.map(([chi, i]) => `• @${chi}: ${i.reparti.join(", ")} – non ha ancora avviato il bot`);
+  if (!righe.length && !attesa.length) return "Nessun iscritto. Per iscrivere qualcuno: /iscrivi @utente <reparti>";
+  return [righe.length ? `Iscritti (${righe.length}):\n${righe.join("\n")}` : "",
+          attesa.length ? `In attesa (${attesa.length}):\n${attesa.join("\n")}` : ""].filter(Boolean).join("\n\n");
 }
 
 function rigaVoti(id, su, giu) {
