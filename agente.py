@@ -172,6 +172,7 @@ class Giro:
         Le novità su un fatto già inviato arrivano come aggiornamento, in risposta al messaggio originale."""
         scelte = self.scegli(self.opzioni.get("max_per_giro", 5))
         print(f"Notifiche da inviare: {len(scelte)}")
+        suonato = False  # il telefono suona al massimo una volta per giro, solo per le notizie sopra la soglia
         for s in scelte:
             g, originale = s["gruppo"], s.get("aggiorna")
             rispondi_a = (originale or {}).get("messaggio")
@@ -188,7 +189,7 @@ class Giro:
                                       s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale),
                                       mercati=mercati, valori=valori,
                                       aggiorna_titolo="" if rispondi_a else (originale or {}).get("titolo", ""))
-            silenzioso = not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 8)
+            silenzioso = suonato or not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 9)
             id_notifica = chiave(g.principale.link)
             tastiera = feedback.tastiera(id_notifica, g.fonti())
             messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
@@ -197,6 +198,7 @@ class Giro:
                 tastiera = feedback.tastiera(id_notifica, g.fonti(), con_link=False)
                 messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
             if messaggio:
+                suonato = suonato or not silenzioso
                 self.registra(s, id_notifica, messaggio)
                 self.invia_iscritti(testo, s["reparti"], silenzioso, tastiera)
         self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"

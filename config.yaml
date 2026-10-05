@@ -36,17 +36,17 @@ ia:
   # Per i testi della settimana (riepilogo PSP, proposta di profilo) si prova prima un modello più
   # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
   motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}
-  soglia_rilevanza: 6    # da 1 a 10: sotto la soglia non ricevi nulla (6 = anche analisi e contesto utili)
+  soglia_rilevanza: 7    # da 1 a 10: sotto la soglia non ricevi nulla (7 = solo notizie nuove e specifiche)
   # Soglie più basse per alcuni reparti (una notizia passa se supera quella di almeno uno dei suoi reparti)
-  soglie_reparti: {Copertura: 5}
-  soglia_ufficiali: 5    # comunicati e discorsi di istituzioni (BCE, Fed, Banca d'Italia...)
+  soglie_reparti: {Copertura: 6}
+  soglia_ufficiali: 6    # comunicati e discorsi di istituzioni (BCE, Fed, Banca d'Italia...)
 
 orari:
   fuso_orario: Europe/Rome
   apertura: "07:30"        # buongiorno con il calendario del giorno e il riepilogo della notte
   prima_notizia: "08:00"   # da qui un giro di notizie ogni ora...
   ultima_notizia: "22:00"  # ...fino a qui; poi il messaggio di chiusura e silenzio fino all'apertura
-  max_riepilogo_notte: 6   # notizie al massimo nel riepilogo della notte
+  max_riepilogo_notte: 5   # notizie al massimo nel riepilogo della notte
   # Riepilogo settimanale per il PSP sul canale, e proposta di modifica al profilo nella tua chat
   riepilogo_settimanale: {giorno: domenica, ora: "18:00"}
 
@@ -64,15 +64,16 @@ calendario:
     - {data: "2026-12-17", ora: "14:15", descrizione: "BCE: decisione sui tassi e proiezioni (conferenza stampa alle 14:45)"}
 
 notifiche:
-  max_per_giro: 7        # tetto di notifiche per ogni giro
-  con_suono_da: 8        # voto da cui la notifica suona; sotto arriva senza suono
+  max_per_giro: 5        # tetto di notifiche per ogni giro
+  con_suono_da: 9        # soglia di rilevanza per il suono: solo da questo voto il telefono suona
+                         # (al massimo una volta per giro); sotto arriva in silenzio, ma resta nel canale
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore
   finestra_ore_ufficiali: 72   # per le istituzioni, che pubblicano di rado e mai nel weekend
   etichetta_perche: "Perché conta per il PSP"   # riga sotto il riassunto
   etichetta_impatto: "Impatto atteso"           # riga sotto il "perché conta"
   # Le attività che l'impatto atteso può nominare (aggiornatele quando il portafoglio è definitivo)
   attivita_impatto: [Treasury, BTP, Bund, obbligazioni societarie, debito emergente, azioni USA,
-                     azioni europee, azioni emergenti, Eni, dollaro, euro, valute emergenti, petrolio, oro]
+                     azioni europee, azioni emergenti, dollaro, euro, valute emergenti, petrolio, oro]
   # Dato anomalo: avviso se un dato si scosta dal consensus più della soglia_sorpresa
   # dell'indicatore, oppure se si muove più di queste volte la sua variabilità abituale
   anomalia_sigma: 2.5
@@ -89,7 +90,7 @@ reparti:
   - nome: Geopolitica
     descrizione: "conflitti, sanzioni, dazi e commercio internazionale, elezioni, energia, rischio Paese"
   - nome: Azionario
-    descrizione: "borse, utili, valutazioni, settori, grandi titoli tecnologici, singoli titoli come Eni"
+    descrizione: "borse, utili, valutazioni, settori, grandi titoli tecnologici"
   - nome: Obbligazionario
     descrizione: "tassi, curve dei rendimenti, titoli di Stato, spread, obbligazioni societarie, debito emergente"
   - nome: Copertura
@@ -112,7 +113,8 @@ titoli:
     ticker: ENI.MI
     ticker_usa: E          # ADR quotato a New York: serve per Seeking Alpha
     sinonimi: ["ENI", "Eni SpA", "Descalzi", "Plenitude", "Enilive"]
-    perche: "La cliente del PSP lavora in Eni e ne ha le RSU: rischio di concentrazione"
+    perche: "La cliente del PSP lavora in Eni e ne ha le RSU, ma Eni è fuori dal portafoglio gestito: solo eventi straordinari"
+    soglia: 9              # voto minimo per le notizie su questo titolo (più alto della soglia generale)
 
 # Temi seguiti, nell'ordine della mappa del PSP.
 # icona: compare davanti al titolo della notifica (titoli e temi; senza icona: 📰).

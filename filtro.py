@@ -117,10 +117,10 @@ class Gruppo:
         return elenco
 
     def priorita(self) -> tuple:
-        """Prima i titoli seguiti, poi i comunicati ufficiali, poi i siti principali,
+        """Prima i comunicati ufficiali, poi i siti principali e i titoli seguiti,
         poi le ricerche su Google News; a parità, i più recenti."""
         dal_sito = any(n.feed and n.feed.principale for n in self.notizie)
-        tipo = 0 if self.titoli else 1 if self.ufficiale else 2 if dal_sito else 3
+        tipo = 1 if self.ufficiale else 2 if dal_sito or self.titoli else 3
         quando = self.principale.pubblicata
         return tipo, -(quando.timestamp() if quando else 0.0)
 

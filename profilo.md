@@ -14,7 +14,7 @@ Le notizie arrivano a tutto il team WhiteRock su un canale Telegram. Il team è 
 - Asset class: titoli di Stato, obbligazioni societarie, debito dei paesi emergenti, monetario, azioni (S&P 500, STOXX 600, MSCI Emerging Markets). I pesi sono in fase di ricalibrazione sulle linee guida di BNP Paribas.
 - La parte obbligazionaria è la più grande: tassi, curve e spread contano più di tutto il resto.
 - Il rischio di cambio va coperto con derivati: mi serve capire quanto costa la copertura e perché.
-- La cliente lavora in ENI e ne ha le RSU: notizie su Eni ed energia contano per il rischio di concentrazione.
+- La cliente lavora in ENI e ne ha le RSU, ma Eni resta fuori dalla gestione del portafoglio. Segnala Eni solo per eventi straordinari (risultati molto sorprendenti, operazioni societarie, crolli del titolo): niente notizie di routine su Eni, Plenitude o Enilive.
 
 ## Cosa mi interessa, in ordine di importanza
 1. **Tassi e politica monetaria.** Decisioni e comunicazione di BCE e Fed (traiettoria dei tassi, guidance). Curva dei rendimenti in euro e in dollari: pendenza, inversione, premio a termine sulle scadenze lunghe. Inflazione, sia i dati sia le aspettative (breakeven), perché determina il rendimento reale.
@@ -34,5 +34,5 @@ Per l'asset allocation strategica contano soprattutto i punti 1–4 nella loro v
 - Singole aziende che non seguo, salvo eventi che muovono l'intero mercato.
 
 ## Come voglio le notifiche
-- Voglio essere informato su tutto ciò che è utile ai reparti del team, comprese analisi e notizie di contesto; scarta solo quelle irrilevanti, ripetitive o acchiappaclic.
+- Meglio poche notizie davvero utili che molte: al massimo cinque per giro. Scarta quelle marginali, ripetitive, generiche o acchiappaclic.
 - Titolo originale, poi un riassunto in italiano di tre o quattro frasi: cosa è successo, i numeri chiave, il contesto e perché conta per il portafoglio.

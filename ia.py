@@ -69,11 +69,14 @@ nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
 
 Scala dei voti:
 - 9-10: evento che muove i mercati o il portafoglio seguito (decisione di una banca centrale,
-  dato macro chiave fuori dalle attese, risultati o guidance di un titolo seguito, operazioni
-  straordinarie, cambi di rating, forti movimenti di prezzo);
-- 7-8: notizia nuova e specifica su un titolo o un tema seguito; comunicati e discorsi di BCE, Fed
+  dato macro chiave fuori dalle attese, cambi di rating sovrani, forti movimenti di tassi, spread,
+  cambi o borse); il 9-10 fa suonare il telefono, quindi usalo solo per fatti davvero importanti;
+- 7-8: notizia nuova e specifica su un tema seguito; comunicati e discorsi di BCE, Fed
   e Banca d'Italia sull'economia e sui tassi;
 - 6: analisi, commento o notizia di contesto utile ad almeno uno dei reparti del team;
+I TITOLI SEGUITI (es. Eni) sono fuori dal portafoglio gestito: notizie di routine su di loro (contratti,
+scoperte, dichiarazioni, prezzi dei carburanti, controllate) valgono al massimo 5; solo eventi
+straordinari sul titolo (risultati molto sorprendenti, operazioni societarie, crolli) arrivano a 9.
 - 4-5: notizia marginale, ripetitiva o anteprima senza contenuti;
 - 1-3: irrilevante, generica, promozionale o acchiappaclic.
 Tipi di fonte: (istituzione) banca centrale o autorità; (testata) testata giornalistica principale;
@@ -141,6 +144,7 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
     soglie_reparti = opzioni.get("soglie_reparti") or {}
     soglia_ufficiali = opzioni.get("soglia_ufficiali", soglia)
     soglia_minima = min([soglia, soglia_ufficiali, *soglie_reparti.values()])
+    soglie_titoli = {t["nome"]: t["soglia"] for t in config.get("titoli") or [] if t.get("soglia")}
     istruzioni = ISTRUZIONI.format(soglia=soglia_minima) + _contesto(profilo, config) + esempi
     temi = [t["nome"] for t in (config.get("titoli") or []) + (config.get("temi") or [])]
     reparti = [r["nome"] for r in config.get("reparti") or []]
@@ -172,6 +176,11 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         # se contiene un comunicato ufficiale, quella delle istituzioni
         soglia_gruppo = min([soglia, *[soglie_reparti[r] for r in reparti_gruppo if r in soglie_reparti],
                              *([soglia_ufficiali] if gruppo.ufficiale else [])])
+        # I titoli seguiti con una soglia propria (es. Eni, fuori dal portafoglio) passano solo sopra quella
+        solo_titoli = gruppo.titoli and gruppo.titoli <= soglie_titoli.keys() and not gruppo.temi
+        if v.get("tema") in soglie_titoli or solo_titoli:
+            soglia_gruppo = max(soglia_gruppo, *[soglie_titoli[t] for t in {v.get("tema"), *gruppo.titoli}
+                                                 if t in soglie_titoli])
         if v.get("voto", 0) < soglia_gruppo:
             continue
         scelte.append({"gruppo": gruppo, "voto": v["voto"], "tema": v.get("tema", ""),

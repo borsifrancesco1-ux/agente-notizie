@@ -38,21 +38,33 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
         righe.append("🔄 <b>Aggiornamento</b>" + (f" di «{esc(aggiorna_titolo[:90])}»" if aggiorna_titolo else ""))
     if reparti:
         righe.append(" ".join(hashtag(r) for r in reparti))
-    righe.append(f"{icona} <b>{esc(titolo)}</b>")
+    righe.append(titolo_notizia(icona, titolo))
     if riassunto:
         righe += ["", esc(riassunto)]
-    if perche:
-        righe += ["", f"🎯 <i>{esc(etichetta_perche)}:</i> {esc(perche)}"]
-    if impatto:
-        righe.append(f"🧭 <i>{esc(etichetta_impatto)}:</i> {esc(impatto)}")
+    # ogni sezione separata da una riga vuota, con l'etichetta in grassetto
     if valori:
-        righe.append(f"💹 <i>Valori:</i> {esc(valori)}")
+        righe += ["", f"💹 <b>Valori</b>\n{esc(valori)}"]
     if mercati:
-        righe.append(f"📈 <i>Mercati nell'ultima ora:</i> {esc(mercati)}")
+        righe += ["", f"📊 <b>Mercati nell'ultima ora</b>\n{esc(mercati)}"]
+    if impatto:
+        righe += ["", f"🧭 <b>{esc(etichetta_impatto)}</b>\n{frecce(esc(impatto))}"]
+    if perche:
+        righe += ["", f"🎯 <b>{esc(etichetta_perche)}</b>\n{esc(perche)}"]
     info = [x for x in (f"🏷 {esc(tema)}" if tema else "", f"{voto}/10" if voto else "", esc(nota)) if x]
     if info:
         righe += ["", " · ".join(info)]
     return "\n".join(righe)
+
+
+def titolo_notizia(icona: str, titolo: str) -> str:
+    """Il titolo ben distinto dal resto: icona, grassetto e sottolineato."""
+    return f"{icona} <b><u>{esc(titolo)}</u></b>"
+
+
+def frecce(impatto: str) -> str:
+    """'Bund ↓ · euro ↑' -> una voce per riga con 🟢⬆️ / 🔴⬇️, più leggibili delle frecce semplici."""
+    impatto = impatto.replace("↑", "🟢⬆️").replace("↓", "🔴⬇️").replace("→", "⚪️➡️")
+    return "\n".join(voce.strip() for voce in impatto.split("·") if voce.strip())
 
 
 def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
@@ -74,7 +86,7 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
     testo += "\n\n🌙 <b>Cosa è successo nella notte</b>"
     for numero, v in enumerate(voci, 1):
         righe = [f"\n\n{numero}. " + " ".join(hashtag(r) for r in v["reparti"]),
-                 f"{v['icona']} <b>{esc(v['titolo'])}</b>"]
+                 titolo_notizia(v["icona"], v["titolo"])]
         if v["riassunto"]:
             righe.append(esc(breve(v["riassunto"])))
         righe.append(link_testuali(v["fonti"], massimo=2).strip())
