@@ -221,7 +221,8 @@ class Giro:
                  "icona": self.icone.get(s["tema"], ICONA_PREDEFINITA), "fonti": s["gruppo"].fonti()}
                 for s in scelte]
         testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario,
-                                          dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1))
+                                          dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1),
+                                          dati.quadro_mercati(self.config, "apertura", self.fuso))
         if self.invia(testo):
             for s in scelte:
                 self.registra(s, chiave(s["gruppo"].principale.link))
@@ -257,7 +258,8 @@ class Giro:
         """Fine delle comunicazioni, con il conto delle notizie del giorno per reparto."""
         inizio_giornata = self.adesso.replace(hour=0, minute=0, second=0, microsecond=0)
         inviate_oggi = self.memoria.inviate_dal(inizio_giornata)
-        testo = notifiche.chiusura(inviate_oggi, self.orari.get("apertura", "07:30"))
+        testo = notifiche.chiusura(inviate_oggi, self.orari.get("apertura", "07:30"),
+                                   dati.quadro_mercati(self.config, "chiusura", self.fuso))
         self.invia(testo, silenzioso=True)
         # chi è iscritto in modalità "sera" riceve in privato le notizie del giorno dei suoi reparti
         for iscritto in self.iscrizioni.values():

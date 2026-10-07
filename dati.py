@@ -135,7 +135,8 @@ def reazione(config: dict, gruppo: str, dal: datetime) -> str:
             continue
         try:
             barre = _infragiornaliere(voce["simbolo"])
-        except Exception:  # noqa: BLE001 — senza quella quotazione la riga resta più corta
+        except Exception as e:  # noqa: BLE001 — senza quella quotazione la riga resta più corta
+            print(f"  ✗ andamento di {nome} da Yahoo non disponibile ({type(e).__name__})")
             continue
         # il prezzo di partenza è quello di una barra chiusa entro 'dal' (Yahoo data le barre dall'inizio)
         prima = next((b for b in reversed(barre) if b[0] + BARRA <= dal), None)
@@ -180,6 +181,7 @@ def quotazione(simbolo: str) -> dict | None:
     """Prezzo attuale (o dell'ultima chiusura, a mercato chiuso) da Yahoo Finance:
     {"prezzo", "variazione" (% sulla chiusura precedente), "valuta", "nome", "quando"}. None se non c'è."""
     if simbolo not in _quotazioni:
+        r = None
         try:
             r = requests.get(YAHOO_API.format(simbolo=simbolo), params={"range": "1d", "interval": "1d"},
                              headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -192,7 +194,10 @@ def quotazione(simbolo: str) -> dict | None:
                 "nome": nome_breve(nome),
                 "quando": datetime.fromtimestamp(meta["regularMarketTime"], timezone.utc),
             }
-        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
+        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError) as e:
+            # nel registro, così si vede se Yahoo blocca le richieste (es. HTTP 429)
+            stato = f", HTTP {r.status_code}" if r is not None else ""
+            print(f"  ✗ quotazione {simbolo} da Yahoo non disponibile ({type(e).__name__}{stato})")
             _quotazioni[simbolo] = None
     return _quotazioni[simbolo]
 
@@ -221,6 +226,26 @@ def valore(voce: dict, fuso) -> str:
     if quando.astimezone(fuso).date() != datetime.now(fuso).date():  # mercato chiuso o dato del giorno prima
         dettagli.append(giorno(quando.astimezone(fuso)))
     return f"{testo} ({', '.join(dettagli)})" if dettagli else testo
+
+
+def quadro_mercati(config: dict, momento: str, fuso) -> list[str]:
+    """Le righe dei mercati per il buongiorno (momento "apertura") o per la chiusura ("chiusura"):
+    livello e variazione delle voci di riepilogo_mercati (config.yaml), con la data se il valore
+    non è di oggi (es. la chiusura di ieri delle borse europee nel buongiorno)."""
+    quotazioni = config.get("quotazioni") or {}
+    righe = []
+    for nome in (config.get("riepilogo_mercati") or {}).get(momento) or []:
+        if nome not in quotazioni:
+            print(f"  ✗ {nome}: manca nella sezione quotazioni di config.yaml")
+            continue
+        try:
+            testo = valore(quotazioni[nome], fuso)
+        except Exception as e:  # noqa: BLE001 — una fonte che non risponde toglie solo quella riga
+            print(f"  ✗ {nome} non disponibile ({type(e).__name__})")
+            continue
+        if testo:
+            righe.append(f"<b>{notifiche.esc(nome)}</b> {notifiche.esc(testo)}")
+    return righe
 
 
 def giorno(d: date | datetime) -> str:

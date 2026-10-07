@@ -447,6 +447,12 @@ reazione_mercati:
   notizie: [EUR/USD, Treasury 10a, S&P 500 fut., Euro Stoxx 50, Brent]
   voto_minimo_notizie: 9
 
+# Mercati nel buongiorno (futures, Asia e chiusure di ieri) e nel messaggio di chiusura (valori di fine
+# giornata): nomi delle voci di "quotazioni" qui sotto. Lista vuota = nessun riquadro.
+riepilogo_mercati:
+  apertura: [S&P 500 fut., Nikkei, Euro Stoxx 50, FTSE MIB, Treasury 10a, Brent, Oro]
+  chiusura: [S&P 500, Nasdaq, Euro Stoxx 50, FTSE MIB, Treasury 10a, Titoli euro AAA 10a, EUR/USD, Brent, Oro, VIX]
+
 # Quotazioni: i valori scritti sotto le notizie (l'IA sceglie quelli toccati da ciascuna: tassi, cambi,
 # materie prime, indici) e la reazione dei mercati. Yahoo Finance (simbolo): prezzo del momento, o
 # l'ultima chiusura a borsa chiusa; fred e bce: ultimo dato ufficiale giornaliero.

@@ -68,15 +68,17 @@ def frecce(impatto: str) -> str:
 
 
 def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
-                    cambio: str = "", ogni_ore: int = 1) -> str:
-    """Buongiorno in un unico messaggio: cambio del giorno, calendario e riepilogo della notte.
-    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto;
+                    cambio: str = "", ogni_ore: int = 1, mercati: list[str] | None = None) -> str:
+    """Buongiorno in un unico messaggio: cambio del giorno, mercati, calendario e riepilogo della notte.
+    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario, cambio e mercati: testo già pronto;
     ogni_ore: ogni quante ore arriva un giro di notizie."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
     fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti {cadenza(ogni_ore)}."
     testo = f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>"
     if cambio:
         testo += f"\n\n💱 {cambio}"
+    if mercati:
+        testo += "\n\n📈 <b>Mercati</b> <i>(con la data: chiusura di un giorno precedente)</i>\n" + "\n".join(mercati)
     if calendario:
         testo += "\n\n📅 <b>Oggi in calendario</b> (ora italiana)\n" + "\n".join(calendario[:15])
     else:
@@ -116,8 +118,9 @@ def breve(testo: str, massimo: int = 280) -> str:
     return risultato if len(risultato) <= massimo else risultato[:massimo].rsplit(" ", 1)[0] + "…"
 
 
-def chiusura(inviate_oggi: list[dict], apertura: str) -> str:
-    """Fine delle comunicazioni, con il conto delle notizie del giorno per reparto."""
+def chiusura(inviate_oggi: list[dict], apertura: str, mercati: list[str] | None = None) -> str:
+    """Fine delle comunicazioni, con i mercati a fine giornata e il conto delle notizie del giorno per reparto.
+    mercati: righe già pronte (dati.quadro_mercati)."""
     testo = "🌙 <b>Fine delle comunicazioni per oggi</b>\n"
     if inviate_oggi:
         per_reparto = Counter(r for i in inviate_oggi for r in i.get("reparti", []))
@@ -125,6 +128,8 @@ def chiusura(inviate_oggi: list[dict], apertura: str) -> str:
         testo += f"Oggi {len(inviate_oggi)} notizie" + (f": {dettaglio}" if dettaglio else "") + "."
     else:
         testo += "Oggi nessuna notizia ha superato la soglia di rilevanza."
+    if mercati:
+        testo += "\n\n📈 <b>Mercati a fine giornata</b> <i>(variazione sulla chiusura precedente)</i>\n" + "\n".join(mercati)
     return testo + f"\n\nCi risentiamo domani alle {apertura.lstrip('0')} con il riepilogo della notte."
 
 
