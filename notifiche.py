@@ -188,6 +188,9 @@ def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
         if r.status_code == 429:
             time.sleep(dati.get("parameters", {}).get("retry_after", 5))
             continue
+        if dati.get("parameters", {}).get("migrate_to_chat_id"):  # gruppo diventato supergruppo: nuovo numero
+            corpo["chat_id"] = dati["parameters"]["migrate_to_chat_id"]
+            continue
         print(f"  ✗ Telegram ha rifiutato il messaggio: {dati.get('description')}")
         return 0
     return 0

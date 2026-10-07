@@ -9,9 +9,11 @@
  *   le notizie appena avvia il bot (Telegram non lascia scrivere a chi non l'ha mai avviato);
  * - /argomenti scritto dal proprietario nel gruppo del team: crea un argomento per reparto, così l'agente
  *   pubblica ogni notizia nell'argomento dei suoi reparti invece che nel canale;
+ * - /reparto <reparti> scritto dal proprietario in un gruppo: quel gruppo riceve le notizie di quei reparti
+ *   (un gruppo per reparto, in più del canale);
  * - pulsanti della proposta di profilo: diventano il comando /proposta applica|ignora <id>.
- * L'agente (agente.py) a ogni giro ritira da qui voti, comandi, iscrizioni e argomenti
- * (/agente/voti, /agente/coda, /agente/iscrizioni, /agente/gruppo).
+ * L'agente (agente.py) a ogni giro ritira da qui voti, comandi, iscrizioni, argomenti e gruppi dei reparti
+ * (/agente/voti, /agente/coda, /agente/iscrizioni, /agente/gruppo, /agente/reparti).
  * Fa anche da orologio: ogni ora avvia l'agente su GitHub (vedi "scheduled").
  *
  * Segreti (npx wrangler secret put): TELEGRAM_TOKEN, WEBHOOK_SECRET, AGENTE_KEY, OWNER_ID, GITHUB_TOKEN.
@@ -50,6 +52,7 @@ Iscrivere il team (solo chi gestisce il bot)
 /disiscrivi @utente – tolgo l'iscrizione di un membro
 /link <reparti> – un link da mandare al team: chi lo apre e preme Avvia è già iscritto
 /argomenti – scritto nel gruppo del team: creo un argomento per reparto e pubblico lì le notizie
+/reparto <reparti> – scritto in un gruppo: gli mando le notizie di quei reparti (/reparto nessuno per smettere)
 /aiuto – questo elenco`;
 
 const AIUTO_MEMBRI = `Ciao! Questo bot pubblica le notizie del canale del team WhiteRock.
@@ -99,6 +102,7 @@ export default {
       if (url.pathname === "/agente/voti") return json(await leggi(env, "voti", {}));
       if (url.pathname === "/agente/iscrizioni") return json(await leggi(env, "iscrizioni", {}));
       if (url.pathname === "/agente/gruppo") return json(await leggi(env, "gruppo", {}));
+      if (url.pathname === "/agente/reparti") return json(await leggi(env, "gruppi_reparti", {}));
       if (url.pathname === "/agente/coda" && request.method === "GET") return json(await leggi(env, "coda", []));
       if (url.pathname === "/agente/coda" && request.method === "DELETE") {
         const { ids = [] } = await request.json();
@@ -122,9 +126,10 @@ async function gestisciAggiornamento(aggiornamento, env) {
   const testo = messaggio.text.trim();
   const comando = testo.split(/[\s@]/)[0].toLowerCase();
 
-  // Nei gruppi il bot ascolta solo /argomenti; tutto il resto si fa in privato
+  // Nei gruppi il bot ascolta solo /argomenti e /reparto; tutto il resto si fa in privato
   if (messaggio.chat.type === "group" || messaggio.chat.type === "supergroup") {
     if (comando === "/argomenti") return creaArgomenti(messaggio, proprietario, env);
+    if (comando === "/reparto") return assegnaReparto(messaggio, proprietario, testo, env);
     return;
   }
   if (messaggio.chat.type !== "private") return;
@@ -351,6 +356,37 @@ async function creaArgomenti(messaggio, proprietario, env) {
     + "Ognuno può silenziare gli argomenti che non segue: entra nell'argomento → nome in alto → Disattiva notifiche.");
 }
 
+// /reparto Macroeconomia (o più reparti) in un gruppo, solo il proprietario: l'agente manda a quel gruppo
+// le notizie e i dati di quei reparti. Ogni reparto ha un solo gruppo; /reparto nessuno lo scollega.
+async function assegnaReparto(messaggio, proprietario, testo, env) {
+  const chat = messaggio.chat.id;
+  const rispondi = (text) => telegram(env, "sendMessage", {
+    chat_id: chat, text, ...(messaggio.is_topic_message ? { message_thread_id: messaggio.message_thread_id } : {}),
+  });
+  if (!proprietario) {
+    return rispondi("Solo chi gestisce il bot può collegare un gruppo a un reparto. Se scrivi come amministratore "
+      + "anonimo, disattiva «Resta anonimo» nei tuoi permessi di amministratore e riprova.");
+  }
+  const parole = testo.split(/[\s,]+/).slice(1);
+  const gruppi = await leggi(env, "gruppi_reparti", {});
+  for (const reparto of Object.keys(gruppi)) {
+    if (gruppi[reparto].chat === chat) delete gruppi[reparto];  // il gruppo riceve solo i reparti indicati ora
+  }
+  if (parole.some((p) => p.toLowerCase() === "nessuno")) {
+    await env.STATO.put("gruppi_reparti", JSON.stringify(gruppi));
+    return rispondi("Fatto: questo gruppo non riceve più le notizie dei reparti.");
+  }
+  const { reparti } = leggiReparti(parole);
+  if (reparti.size === 0) {
+    return rispondi(`Scrivi il reparto di questo gruppo, es. /reparto Macroeconomia\nReparti: ${REPARTI.join(", ")}`);
+  }
+  for (const reparto of reparti) gruppi[reparto] = { chat, nome: messaggio.chat.title || "" };
+  await env.STATO.put("gruppi_reparti", JSON.stringify(gruppi));
+  return rispondi(`✅ Questo gruppo riceve le notizie di: ${[...reparti].join(", ")}.\n`
+    + "Le mando qui dal prossimo giro, insieme ai dati economici di questi reparti. Il canale resta com'è, "
+    + "con tutte le notizie, il buongiorno e i riepiloghi.");
+}
+
 // Al primo messaggio di un membro iscritto d'ufficio: l'iscrizione diventa attiva con la sua chat
 async function attivaPreiscrizione(messaggio, env) {
   const preiscrizioni = await leggi(env, "preiscrizioni", {});
@@ -382,9 +418,14 @@ async function elencoIscritti(env) {
   const righe = iscrizioni.map((i) => `• ${i.nome || ""}${i.username ? ` @${i.username}` : ""}: `
     + `${i.reparti.join(", ")}${i.modo === "sera" ? " (sera)" : ""}`);
   const attesa = preiscrizioni.map(([chi, i]) => `• @${chi}: ${i.reparti.join(", ")} – non ha ancora avviato il bot`);
-  if (!righe.length && !attesa.length) return "Nessun iscritto. Per iscrivere qualcuno: /iscrivi @utente <reparti>";
+  const gruppi = Object.entries(await leggi(env, "gruppi_reparti", {}))
+    .map(([reparto, g]) => `• ${reparto}: ${g.nome || g.chat}`);
+  if (!righe.length && !attesa.length && !gruppi.length) {
+    return "Nessun iscritto. Per iscrivere qualcuno: /iscrivi @utente <reparti>";
+  }
   return [righe.length ? `Iscritti (${righe.length}):\n${righe.join("\n")}` : "",
-          attesa.length ? `In attesa (${attesa.length}):\n${attesa.join("\n")}` : ""].filter(Boolean).join("\n\n");
+          attesa.length ? `In attesa (${attesa.length}):\n${attesa.join("\n")}` : "",
+          gruppi.length ? `Gruppi dei reparti:\n${gruppi.join("\n")}` : ""].filter(Boolean).join("\n\n");
 }
 
 function rigaVoti(id, su, giu) {
