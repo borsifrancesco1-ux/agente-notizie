@@ -152,7 +152,6 @@ class Giro:
         self.azioni_extra: list[str] = []  # azioni chieste dai comandi (es. /notizie)
         self.iscrizioni: dict[str, dict] = {}  # /iscrivimi: chi riceve le notizie in privato (dal Worker)
         self.argomenti: dict[str, int] = {}    # /argomenti: reparto -> argomento del gruppo del team (dal Worker)
-        self.gruppi_reparti: dict[str, dict] = {}  # /reparto: reparto -> gruppo che ne riceve le notizie (dal Worker)
         self._scaricate: list[Notizia] | None = None
         self.aggiorna_da_config()
 
@@ -206,7 +205,7 @@ class Giro:
             if messaggi:
                 suonato = suonato or not silenzioso
                 self.registra(s, id_notifica, messaggi)
-                self.invia_copie(testo, s["reparti"], silenzioso, tastiera)
+                self.invia_iscritti(testo, s["reparti"], silenzioso, tastiera)
         self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"
 
     def apertura(self) -> None:
@@ -242,7 +241,7 @@ class Giro:
             inviati = [self.invia(testo, argomento=a) for a in self.argomenti_per(ind.get("reparti") or [])]
             if any(inviati):
                 self.memoria.registra_dato(ind["nome"], dati.riassunto_dato(nuovo, atteso, motivo), ind.get("reparti") or [])
-                self.invia_copie(testo, ind.get("reparti") or [], silenzioso=False)
+                self.invia_iscritti(testo, ind.get("reparti") or [], silenzioso=False)
 
     def settimanale(self) -> None:
         """Riepilogo della settimana sul canale e proposta di modifica al profilo in privato."""
@@ -330,9 +329,6 @@ class Giro:
             if gruppo.get("chat") and gruppo.get("argomenti"):
                 self.canale, self.argomenti = gruppo["chat"], gruppo["argomenti"]
                 print(f"Gruppo con argomenti: {', '.join(self.argomenti)}")
-            self.gruppi_reparti = feedback.gruppi_reparti_worker(self.worker_url, self.worker_chiave)
-            if self.gruppi_reparti:
-                print(f"Gruppi dei reparti: {', '.join(self.gruppi_reparti)}")
 
     def esegui_comandi(self, coda: list[dict]) -> None:
         eseguiti = []
@@ -476,12 +472,8 @@ class Giro:
                                     {"perche": s.get("perche_conta", ""), "impatto": s.get("impatto", ""),
                                      "voto": s.get("voto"), "fonti": g.fonti()[:6]}, nel_gruppo)
 
-    def invia_copie(self, testo: str, reparti: list[str], silenzioso: bool, tastiera: dict | None = None) -> None:
-        """Copia ai gruppi dei reparti (/reparto) e in privato a chi è iscritto in modalità "subito"
-        ad almeno uno dei reparti; una sola per gruppo, anche se ne segue più d'uno."""
-        gruppi = {str(self.gruppi_reparti[r]["chat"]) for r in reparti if (self.gruppi_reparti.get(r) or {}).get("chat")}
-        for chat in sorted(gruppi - {str(self.canale)}):
-            self.invia(testo, silenzioso, tastiera, chat=chat)
+    def invia_iscritti(self, testo: str, reparti: list[str], silenzioso: bool, tastiera: dict | None = None) -> None:
+        """Copia in privato a chi è iscritto in modalità "subito" ad almeno uno dei reparti."""
         for iscritto in self.iscrizioni.values():
             chat = iscritto.get("chat")
             if (iscritto.get("modo", "subito") == "subito" and chat and str(chat) != str(self.canale)
@@ -499,8 +491,7 @@ class Giro:
         if self.prova:
             tasti = [t["text"] for riga in (tastiera or {}).get("inline_keyboard", []) for t in riga]
             reparto = next((r for r, a in self.argomenti.items() if a == argomento), "Generale")
-            gruppo = next((g.get("nome") or r for r, g in self.gruppi_reparti.items() if str(g.get("chat")) == str(chat)), "")
-            dove = (f"gruppo {gruppo}" if gruppo else "iscritto in privato" if chat else "chat privata" if privato
+            dove = ("iscritto in privato" if chat else "chat privata" if privato
                     else f"gruppo, argomento {reparto}" if self.argomenti else "canale")
             print(f"\n----- {dove}, {'senza suono' if silenzioso else 'con suono'}"
                   f"{f', in risposta al messaggio {rispondi_a}' if rispondi_a else ''} -----"
