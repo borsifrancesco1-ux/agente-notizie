@@ -112,16 +112,6 @@ def iscrizioni_worker(url: str, chiave: str) -> dict[str, dict]:
         return {}
 
 
-def gruppo_worker(url: str, chiave: str) -> dict:
-    """Il gruppo del team con un argomento per reparto, se è stato creato con /argomenti:
-    {"chat": id del gruppo, "argomenti": {reparto: numero dell'argomento}}."""
-    try:
-        r = requests.get(f"{url}/agente/gruppo", headers={"Authorization": f"Bearer {chiave}"}, timeout=30)
-        return r.json() if r.ok else {}
-    except (requests.RequestException, ValueError):
-        return {}
-
-
 def conferma_worker(url: str, chiave: str, ids: list[str]) -> None:
     """Toglie dalla coda del Worker i comandi eseguiti."""
     if not ids:

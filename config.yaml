@@ -65,10 +65,6 @@ calendario:
 
 notifiche:
   max_per_giro: 5        # tetto di notifiche per ogni giro
-  # Nel gruppo con gli argomenti (creati con /argomenti): "tutti" = la notizia va nell'argomento di
-  # ciascun suo reparto; "principale" = solo in quello del primo (niente doppioni, ma chi segue
-  # solo gli altri reparti della notizia non la vede)
-  argomenti: tutti
   con_suono_da: 9        # soglia di rilevanza per il suono: solo da questo voto il telefono suona
                          # (al massimo una volta per giro); sotto arriva in silenzio, ma resta nel canale
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore

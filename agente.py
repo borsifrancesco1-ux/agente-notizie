@@ -151,7 +151,6 @@ class Giro:
         self.worker_chiave = os.environ.get("AGENTE_KEY", "")
         self.azioni_extra: list[str] = []  # azioni chieste dai comandi (es. /notizie)
         self.iscrizioni: dict[str, dict] = {}  # /iscrivimi: chi riceve le notizie in privato (dal Worker)
-        self.argomenti: dict[str, int] = {}    # /argomenti: reparto -> argomento del gruppo del team (dal Worker)
         self._scaricate: list[Notizia] | None = None
         self.aggiorna_da_config()
 
@@ -176,6 +175,7 @@ class Giro:
         suonato = False  # il telefono suona al massimo una volta per giro, solo per le notizie sopra la soglia
         for s in scelte:
             g, originale = s["gruppo"], s.get("aggiorna")
+            rispondi_a = (originale or {}).get("messaggio")
             mercati = ""
             if (s["voto"] or 0) >= (self.config.get("reazione_mercati") or {}).get("voto_minimo_notizie", 9):
                 mercati = dati.reazione(self.config, "notizie", datetime.now(timezone.utc) - timedelta(hours=1))
@@ -183,28 +183,23 @@ class Giro:
             valori = dati.valori_notizia(self.config, s.get("aziende") or [], s.get("valori") or [], self.fuso)
             if s.get("aziende") or s.get("valori"):
                 print(f"  valori per «{s['titolo'][:50]}»: {s.get('aziende')} {s.get('valori')}")
+            testo = notifiche.componi(s["titolo"], s["riassunto"], s["perche_conta"],
+                                      self.icone.get(s["tema"], ICONA_PREDEFINITA), s["tema"], s["voto"],
+                                      s["reparti"], self.etichetta_perche, s.get("nota", ""),
+                                      s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale),
+                                      mercati=mercati, valori=valori,
+                                      aggiorna_titolo="" if rispondi_a else (originale or {}).get("titolo", ""))
             silenzioso = suonato or not s["voto"] or s["voto"] < self.opzioni.get("con_suono_da", 9)
             id_notifica = chiave(g.principale.link)
-            messaggi = {}  # argomento del gruppo (None = canale) -> numero del messaggio
-            for argomento in self.argomenti_per(s["reparti"]):
-                rispondi_a = self.da_aggiornare(originale, argomento)
-                testo = notifiche.componi(s["titolo"], s["riassunto"], s["perche_conta"],
-                                          self.icone.get(s["tema"], ICONA_PREDEFINITA), s["tema"], s["voto"],
-                                          s["reparti"], self.etichetta_perche, s.get("nota", ""),
-                                          s.get("impatto", ""), self.etichetta_impatto, aggiornamento=bool(originale),
-                                          mercati=mercati, valori=valori,
-                                          aggiorna_titolo="" if rispondi_a else (originale or {}).get("titolo", ""))
-                tastiera = feedback.tastiera(id_notifica, g.fonti())
-                messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a, argomento=argomento)
-                if not messaggio:  # es. un link rifiutato come pulsante: riprovo con i link nel testo
-                    testo += notifiche.link_testuali(g.fonti())
-                    tastiera = feedback.tastiera(id_notifica, g.fonti(), con_link=False)
-                    messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a, argomento=argomento)
-                if messaggio:
-                    messaggi[argomento] = messaggio
-            if messaggi:
+            tastiera = feedback.tastiera(id_notifica, g.fonti())
+            messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
+            if not messaggio:  # es. un link rifiutato come pulsante: riprovo con i link nel testo
+                testo += notifiche.link_testuali(g.fonti())
+                tastiera = feedback.tastiera(id_notifica, g.fonti(), con_link=False)
+                messaggio = self.invia(testo, silenzioso, tastiera, rispondi_a=rispondi_a)
+            if messaggio:
                 suonato = suonato or not silenzioso
-                self.registra(s, id_notifica, messaggi)
+                self.registra(s, id_notifica, messaggio)
                 self.invia_iscritti(testo, s["reparti"], silenzioso, tastiera)
         self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"
 
@@ -238,8 +233,7 @@ class Giro:
             if mercati:
                 mercati = (f"dalle {dal.astimezone(self.fuso):%H:%M}: " if uscita else "nell'ultima ora: ") + mercati
             testo = dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo, mercati)
-            inviati = [self.invia(testo, argomento=a) for a in self.argomenti_per(ind.get("reparti") or [])]
-            if any(inviati):
+            if self.invia(testo):
                 self.memoria.registra_dato(ind["nome"], dati.riassunto_dato(nuovo, atteso, motivo), ind.get("reparti") or [])
                 self.invia_iscritti(testo, ind.get("reparti") or [], silenzioso=False)
 
@@ -324,11 +318,6 @@ class Giro:
             self.iscrizioni = feedback.iscrizioni_worker(self.worker_url, self.worker_chiave)
             if self.iscrizioni:
                 print(f"Iscritti in privato: {len(self.iscrizioni)}")
-            # creato il gruppo con /argomenti, le notizie vanno lì al posto del canale
-            gruppo = feedback.gruppo_worker(self.worker_url, self.worker_chiave)
-            if gruppo.get("chat") and gruppo.get("argomenti"):
-                self.canale, self.argomenti = gruppo["chat"], gruppo["argomenti"]
-                print(f"Gruppo con argomenti: {', '.join(self.argomenti)}")
 
     def esegui_comandi(self, coda: list[dict]) -> None:
         eseguiti = []
@@ -447,30 +436,12 @@ class Giro:
             reparti += [r for r in self.reparti_dei_temi.get(nome, []) if r not in reparti]
         return reparti[:3]
 
-    def argomenti_per(self, reparti: list[str]) -> list[int | None]:
-        """Dove pubblicare: nel gruppo, l'argomento di ciascun reparto (solo del primo con
-        argomenti: principale); [None] senza gruppo (canale) o senza reparti (Generale)."""
-        argomenti = [self.argomenti[r] for r in reparti if r in self.argomenti]
-        if self.opzioni.get("argomenti") == "principale":
-            argomenti = argomenti[:1]
-        return argomenti or [None]
-
-    def da_aggiornare(self, originale: dict | None, argomento: int | None) -> int | None:
-        """Il messaggio della notizia originale a cui rispondere, se è nello stesso posto (canale o argomento)."""
-        if not originale:
-            return None
-        if self.argomenti:
-            return (originale.get("messaggi") or {}).get(f"{self.canale}/{argomento or ''}")
-        return originale.get("messaggio")
-
-    def registra(self, s: dict, id_notifica: str, messaggi: dict[int | None, int] | None = None) -> None:
-        """messaggi: argomento del gruppo (None = canale o Generale) -> numero del messaggio inviato."""
-        g, messaggi = s["gruppo"], messaggi or {}
-        nel_gruppo = {f"{self.canale}/{a or ''}": m for a, m in messaggi.items()} if self.argomenti else None
+    def registra(self, s: dict, id_notifica: str, messaggio: int | None = None) -> None:
+        g = s["gruppo"]
         self.memoria.registra_invio(id_notifica, s["titolo"], s["tema"], s["reparti"], g.impronta, g.principale.link,
-                                    None if self.argomenti else messaggi.get(None), s.get("riassunto", ""),
+                                    messaggio, s.get("riassunto", ""),
                                     {"perche": s.get("perche_conta", ""), "impatto": s.get("impatto", ""),
-                                     "voto": s.get("voto"), "fonti": g.fonti()[:6]}, nel_gruppo)
+                                     "voto": s.get("voto"), "fonti": g.fonti()[:6]})
 
     def invia_iscritti(self, testo: str, reparti: list[str], silenzioso: bool, tastiera: dict | None = None) -> None:
         """Copia in privato a chi è iscritto in modalità "subito" ad almeno uno dei reparti."""
@@ -481,23 +452,18 @@ class Giro:
                 self.invia(testo, silenzioso, tastiera, chat=chat)
 
     def invia(self, testo: str, silenzioso: bool = False, tastiera: dict | None = None,
-              privato: bool = False, rispondi_a: int | None = None, chat: str | int | None = None,
-              argomento: int | None = None) -> int:
-        """Al canale (o gruppo) del team, nell'argomento indicato; se privato, alla chat dell'utente;
-        se chat, a quella chat (iscritti). Restituisce il numero del messaggio (0 se non è partito).
-        In prova stampa e basta."""
+              privato: bool = False, rispondi_a: int | None = None, chat: str | int | None = None) -> int:
+        """Al canale del team; se privato, alla chat dell'utente; se chat, a quella chat (iscritti).
+        Restituisce il numero del messaggio (0 se non è partito). In prova stampa e basta."""
         destinazione = chat or (self.chat_id if privato else self.canale)
-        argomento = None if chat or privato else argomento
         if self.prova:
             tasti = [t["text"] for riga in (tastiera or {}).get("inline_keyboard", []) for t in riga]
-            reparto = next((r for r, a in self.argomenti.items() if a == argomento), "Generale")
-            dove = ("iscritto in privato" if chat else "chat privata" if privato
-                    else f"gruppo, argomento {reparto}" if self.argomenti else "canale")
+            dove = "iscritto in privato" if chat else "chat privata" if privato else "canale"
             print(f"\n----- {dove}, {'senza suono' if silenzioso else 'con suono'}"
                   f"{f', in risposta al messaggio {rispondi_a}' if rispondi_a else ''} -----"
                   f"\n{testo}" + (f"\n[{']  ['.join(tasti)}]" if tasti else ""))
             return 1
-        return notifiche.invia(testo, self.token, destinazione, silenzioso, tastiera, rispondi_a, argomento)
+        return notifiche.invia(testo, self.token, destinazione, silenzioso, tastiera, rispondi_a)
 
     def invia_file(self, percorso: Path, didascalia: str = "", privato: bool = False) -> bool:
         """Un file come documento Telegram (es. il foglio Excel del DCF). In prova stampa e basta."""

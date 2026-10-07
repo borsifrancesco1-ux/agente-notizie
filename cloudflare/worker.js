@@ -7,11 +7,9 @@
  * - /iscrivimi, /disiscrivimi, /iscrizioni: li gestisce qui, con risposta immediata, per chiunque;
  * - /iscrivi, /disiscrivi, /link (solo il proprietario): iscrive d'ufficio un membro del team, che riceve
  *   le notizie appena avvia il bot (Telegram non lascia scrivere a chi non l'ha mai avviato);
- * - /argomenti scritto dal proprietario nel gruppo del team: crea un argomento per reparto, così l'agente
- *   pubblica ogni notizia nell'argomento dei suoi reparti invece che nel canale;
  * - pulsanti della proposta di profilo: diventano il comando /proposta applica|ignora <id>.
- * L'agente (agente.py) a ogni giro ritira da qui voti, comandi, iscrizioni e argomenti
- * (/agente/voti, /agente/coda, /agente/iscrizioni, /agente/gruppo).
+ * L'agente (agente.py) a ogni giro ritira da qui voti, comandi e iscrizioni
+ * (/agente/voti, /agente/coda, /agente/iscrizioni).
  * Fa anche da orologio: ogni ora avvia l'agente su GitHub (vedi "scheduled").
  *
  * Segreti (npx wrangler secret put): TELEGRAM_TOKEN, WEBHOOK_SECRET, AGENTE_KEY, OWNER_ID, GITHUB_TOKEN.
@@ -49,7 +47,6 @@ Iscrivere il team (solo chi gestisce il bot)
 /iscrivi @utente <reparti> [sera] – iscrivo un membro del team; riceve le notizie appena avvia il bot
 /disiscrivi @utente – tolgo l'iscrizione di un membro
 /link <reparti> – un link da mandare al team: chi lo apre e preme Avvia è già iscritto
-/argomenti – scritto nel gruppo del team: creo un argomento per reparto e pubblico lì le notizie
 /aiuto – questo elenco`;
 
 const AIUTO_MEMBRI = `Ciao! Questo bot pubblica le notizie del canale del team WhiteRock.
@@ -61,8 +58,6 @@ Puoi riceverle anche in privato, solo quelle dei tuoi reparti:
 /disiscrivimi – smetto di mandartele`;
 
 const REPARTI = ["Macroeconomia", "Geopolitica", "Azionario", "Obbligazionario", "Copertura", "Risk management"];
-// colori ammessi da Telegram per l'icona degli argomenti, uno per reparto
-const COLORI_ARGOMENTI = [0x6FB9F0, 0xFFD67E, 0xCB86DB, 0x8EEE98, 0xFF93B2, 0xFB6F5F];
 // parole accettate dopo /iscrivimi, oltre ai nomi dei reparti
 const SINONIMI = {
   macro: "Macroeconomia", geo: "Geopolitica", azioni: "Azionario", obbligazioni: "Obbligazionario",
@@ -98,7 +93,6 @@ export default {
       }
       if (url.pathname === "/agente/voti") return json(await leggi(env, "voti", {}));
       if (url.pathname === "/agente/iscrizioni") return json(await leggi(env, "iscrizioni", {}));
-      if (url.pathname === "/agente/gruppo") return json(await leggi(env, "gruppo", {}));
       if (url.pathname === "/agente/coda" && request.method === "GET") return json(await leggi(env, "coda", []));
       if (url.pathname === "/agente/coda" && request.method === "DELETE") {
         const { ids = [] } = await request.json();
@@ -116,18 +110,11 @@ async function gestisciAggiornamento(aggiornamento, env) {
   if (aggiornamento.callback_query) return gestisciPulsante(aggiornamento.callback_query, env);
 
   const messaggio = aggiornamento.message;
-  if (!messaggio || !messaggio.text) return;
+  if (!messaggio || messaggio.chat.type !== "private" || !messaggio.text) return;
   const chat = messaggio.chat.id;
   const proprietario = String(messaggio.from.id) === String(env.OWNER_ID);
   const testo = messaggio.text.trim();
   const comando = testo.split(/[\s@]/)[0].toLowerCase();
-
-  // Nei gruppi il bot ascolta solo /argomenti; tutto il resto si fa in privato
-  if (messaggio.chat.type === "group" || messaggio.chat.type === "supergroup") {
-    if (comando === "/argomenti") return creaArgomenti(messaggio, proprietario, env);
-    return;
-  }
-  if (messaggio.chat.type !== "private") return;
 
   // Chi era stato iscritto d'ufficio (/iscrivi) lo diventa davvero al primo messaggio: ora il bot può scrivergli
   const attivata = await attivaPreiscrizione(messaggio, env);
@@ -313,42 +300,6 @@ async function gestisciIscrizioneTeam(comando, testo, env, chat) {
   return rispondi(`✅ ${chi} iscritto a: ${[...reparti].join(", ")}.\n`
     + `Telegram non permette al bot di scrivere a chi non l'ha mai avviato: le notizie gli arrivano appena `
     + `apre @${bot.result.username} e preme Avvia (anche dal link https://t.me/${bot.result.username}).`);
-}
-
-// /argomenti nel gruppo del team (solo il proprietario): un argomento per reparto, ricordato nel KV.
-// Ripeterlo crea solo quelli che mancano. Gli altri messaggi (buongiorno, chiusura...) restano in Generale.
-async function creaArgomenti(messaggio, proprietario, env) {
-  const chat = messaggio.chat.id;
-  const rispondi = (text) => telegram(env, "sendMessage", {
-    chat_id: chat, text, ...(messaggio.is_topic_message ? { message_thread_id: messaggio.message_thread_id } : {}),
-  });
-  if (!proprietario) {
-    return rispondi("Solo chi gestisce il bot può creare gli argomenti. Se scrivi come amministratore anonimo, "
-      + "disattiva «Resta anonimo» nei tuoi permessi di amministratore e riprova.");
-  }
-  if (!messaggio.chat.is_forum) {
-    return rispondi("Prima attiva gli argomenti: info del gruppo → Modifica → Argomenti. Poi riscrivi /argomenti.");
-  }
-  const salvato = await leggi(env, "gruppo", {});
-  const argomenti = salvato.chat === chat ? { ...salvato.argomenti } : {};
-  const errori = [];
-  for (const [i, reparto] of REPARTI.entries()) {
-    if (argomenti[reparto]) continue;
-    const r = await (await telegram(env, "createForumTopic", {
-      chat_id: chat, name: reparto, icon_color: COLORI_ARGOMENTI[i % COLORI_ARGOMENTI.length],
-    })).json();
-    if (r.ok) argomenti[reparto] = r.result.message_thread_id;
-    else errori.push(r.description);
-  }
-  await env.STATO.put("gruppo", JSON.stringify({ chat, argomenti }));
-  if (errori.length) {
-    return rispondi(`Non sono riuscito a creare ${errori.length} argomenti (${errori[0]}).\n`
-      + "Controlla che io sia amministratore del gruppo con il permesso «Gestisci argomenti», poi riscrivi /argomenti.");
-  }
-  return rispondi(`✅ Argomenti pronti: ${REPARTI.join(", ")}.\n`
-    + "Dal prossimo giro pubblico qui ogni notizia nell'argomento dei suoi reparti, non più nel canale. "
-    + "Buongiorno, chiusura e riepilogo della settimana arrivano in Generale.\n"
-    + "Ognuno può silenziare gli argomenti che non segue: entra nell'argomento → nome in alto → Disattiva notifiche.");
 }
 
 // Al primo messaggio di un membro iscritto d'ufficio: l'iscrizione diventa attiva con la sua chat
