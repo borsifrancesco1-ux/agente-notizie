@@ -168,8 +168,6 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
         aggiorna = recenti[int(codice) - 1] if codice.isdigit() and 1 <= int(codice) <= len(recenti) else None
         if not ids or (v.get("gia_inviata") and not aggiorna):
             continue
-        if aggiorna and not (v.get("riassunto") or "").strip():
-            continue  # un aggiornamento senza testo non dice cosa c'è di nuovo
         gruppo = Gruppo.unisci([gruppi[i - 1] for i in ids])
         reparti_gruppo = [r for r in v.get("reparti") or [] if r in reparti][:3]
         # Soglia del gruppo: la più bassa tra quella generale, quelle dei suoi reparti e,
@@ -182,6 +180,10 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
             soglia_gruppo = max(soglia_gruppo, *[soglie_titoli[t] for t in {v.get("tema"), *gruppo.titoli}
                                                  if t in soglie_titoli])
         if v.get("voto", 0) < soglia_gruppo:
+            continue
+        if not (v.get("riassunto") or "").strip():
+            # il modello a volte lascia vuoto il riassunto: una notifica senza testo non dice cosa è successo
+            print(f"  scartata perché il modello non ha scritto il riassunto: {gruppo.principale.titolo[:70]}")
             continue
         scelte.append({"gruppo": gruppo, "voto": v["voto"], "tema": v.get("tema", ""),
                        "titolo": titolo_originale(v.get("titolo") or "", gruppo),

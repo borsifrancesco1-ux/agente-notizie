@@ -14,6 +14,7 @@ API_DOCUMENTO = "https://api.telegram.org/bot{token}/sendDocument"
 FONTI_MASSIME = 6
 PULSANTI_PER_RIGA = 2
 LUNGHEZZA_MASSIMA = 3800   # Telegram accetta 4096 caratteri visibili per messaggio
+NOME_MASSIMO = 22          # caratteri del nome in una tabella di valori, per stare nello schermo del telefono
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
         "settembre", "ottobre", "novembre", "dicembre"]
@@ -27,12 +28,13 @@ def hashtag(reparto: str) -> str:
 def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, voto: int | None,
             reparti: list[str], etichetta_perche: str = "Perché conta", nota: str = "",
             impatto: str = "", etichetta_impatto: str = "Impatto atteso", aggiornamento: bool = False,
-            mercati: str = "", aggiorna_titolo: str = "", valori: str = "") -> str:
+            mercati: list | None = None, aggiorna_titolo: str = "", valori: list | None = None) -> str:
     """Notizia in HTML: reparti, icona e titolo, riassunto, perché conta, impatto atteso, mercati,
     tema e voto. aggiornamento: la notizia aggiunge novità a una già inviata (va in risposta a quella);
     aggiorna_titolo: il titolo di quella notizia, se non si può rispondere al suo messaggio
     (es. era nel riepilogo della notte); mercati: come si sono mosse le quotazioni nell'ultima ora;
-    valori: prezzo attuale delle società citate e livello di tassi, cambi o materie prime toccati."""
+    valori: prezzo attuale delle società citate e livello di tassi, cambi o materie prime toccati
+    (mercati e valori: righe per tabella)."""
     righe = []
     if aggiornamento:
         righe.append("🔄 <b>Aggiornamento</b>" + (f" di «{esc(aggiorna_titolo[:90])}»" if aggiorna_titolo else ""))
@@ -43,9 +45,9 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
         righe += ["", esc(riassunto)]
     # ogni sezione separata da una riga vuota, con l'etichetta in grassetto
     if valori:
-        righe += ["", f"💹 <b>Valori</b>\n{esc(valori)}"]
+        righe += ["", f"💹 <b>Valori</b>\n{tabella(valori)}"]
     if mercati:
-        righe += ["", f"📊 <b>Mercati nell'ultima ora</b>\n{esc(mercati)}"]
+        righe += ["", f"📊 <b>Mercati nell'ultima ora</b>\n{tabella(mercati)}"]
     if impatto:
         righe += ["", f"🧭 <b>{esc(etichetta_impatto)}</b>\n{frecce(esc(impatto))}"]
     if perche:
@@ -54,6 +56,27 @@ def componi(titolo: str, riassunto: str, perche: str, icona: str, tema: str, vot
     if info:
         righe += ["", " · ".join(info)]
     return "\n".join(righe)
+
+
+def tabella(righe: list) -> str:
+    """Valori in un blocco a larghezza fissa, come i numeri della settimana: nome a sinistra, poi
+    livello, variazione e data allineati a destra. righe: tuple di testi, es. ("EUR/USD", "1,1257",
+    "+0,11%", ""); un testo semplice è una nota sotto la riga prima (es. capitalizzazione e P/E)."""
+    tabellari = [r for r in righe if not isinstance(r, str)]
+    if not tabellari:
+        return ""
+    colonne = max(len(r) for r in tabellari)
+    larghezze = [max((len(r[i]) for r in tabellari if i < len(r)), default=0) for i in range(colonne)]
+    larghezze[0] = min(larghezze[0], NOME_MASSIMO)
+    testo = []
+    for r in righe:
+        if isinstance(r, str):
+            testo.append(f"  {r}")
+            continue
+        celle = [r[0][:NOME_MASSIMO].ljust(larghezze[0])]
+        celle += [(r[i] if i < len(r) else "").rjust(larghezze[i]) for i in range(1, colonne) if larghezze[i]]
+        testo.append(" ".join(celle).rstrip())
+    return f"<pre>{esc(chr(10).join(testo))}</pre>"
 
 
 def titolo_notizia(icona: str, titolo: str) -> str:
@@ -68,9 +91,10 @@ def frecce(impatto: str) -> str:
 
 
 def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
-                    cambio: str = "", ogni_ore: int = 1, mercati: list[str] | None = None) -> str:
+                    cambio: str = "", ogni_ore: int = 1, mercati: list | None = None) -> str:
     """Buongiorno in un unico messaggio: cambio del giorno, mercati, calendario e riepilogo della notte.
-    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario, cambio e mercati: testo già pronto;
+    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto;
+    mercati: righe per tabella;
     ogni_ore: ogni quante ore arriva un giro di notizie."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
     fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti {cadenza(ogni_ore)}."
@@ -78,7 +102,7 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
     if cambio:
         testo += f"\n\n💱 {cambio}"
     if mercati:
-        testo += "\n\n📈 <b>Mercati</b> <i>(con la data: chiusura di un giorno precedente)</i>\n" + "\n".join(mercati)
+        testo += f"\n\n📈 <b>Mercati</b> <i>(con la data: chiusura di un giorno precedente)</i>\n{tabella(mercati)}"
     if calendario:
         testo += "\n\n📅 <b>Oggi in calendario</b> (ora italiana)\n" + "\n".join(calendario[:15])
     else:
@@ -118,9 +142,9 @@ def breve(testo: str, massimo: int = 280) -> str:
     return risultato if len(risultato) <= massimo else risultato[:massimo].rsplit(" ", 1)[0] + "…"
 
 
-def chiusura(inviate_oggi: list[dict], apertura: str, mercati: list[str] | None = None) -> str:
+def chiusura(inviate_oggi: list[dict], apertura: str, mercati: list | None = None) -> str:
     """Fine delle comunicazioni, con i mercati a fine giornata e il conto delle notizie del giorno per reparto.
-    mercati: righe già pronte (dati.quadro_mercati)."""
+    mercati: righe per tabella (dati.quadro_mercati)."""
     testo = "🌙 <b>Fine delle comunicazioni per oggi</b>\n"
     if inviate_oggi:
         per_reparto = Counter(r for i in inviate_oggi for r in i.get("reparti", []))
@@ -129,7 +153,7 @@ def chiusura(inviate_oggi: list[dict], apertura: str, mercati: list[str] | None 
     else:
         testo += "Oggi nessuna notizia ha superato la soglia di rilevanza."
     if mercati:
-        testo += "\n\n📈 <b>Mercati a fine giornata</b> <i>(variazione sulla chiusura precedente)</i>\n" + "\n".join(mercati)
+        testo += f"\n\n📈 <b>Mercati a fine giornata</b> <i>(variazione sulla chiusura precedente)</i>\n{tabella(mercati)}"
     return testo + f"\n\nCi risentiamo domani alle {apertura.lstrip('0')} con il riepilogo della notte."
 
 
