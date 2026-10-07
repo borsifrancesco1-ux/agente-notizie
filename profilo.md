@@ -34,5 +34,5 @@ Per l'asset allocation strategica contano soprattutto i punti 1–4 nella loro v
 - Singole aziende che non seguo, salvo eventi che muovono l'intero mercato.
 
 ## Come voglio le notifiche
-- Meglio poche notizie davvero utili che molte: al massimo cinque per giro. Scarta quelle marginali, ripetitive, generiche o acchiappaclic.
+- Meglio poche notizie davvero utili che molte: al massimo quattro per giro, un giro ogni due ore. Scarta quelle marginali, ripetitive, generiche o acchiappaclic.
 - Titolo originale, poi un riassunto in italiano di tre o quattro frasi: cosa è successo, i numeri chiave, il contesto e perché conta per il portafoglio.

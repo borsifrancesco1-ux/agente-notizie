@@ -4,7 +4,7 @@ Uso:
   python agente.py                  un giro di notizie, subito
   python agente.py --automatico     fa quello che prevede l'orario (sezione "orari" di config.yaml):
                                     buongiorno con calendario e riepilogo della notte, dati appena escono,
-                                    notizie ogni ora, riepilogo della domenica, chiusura, silenzio la notte.
+                                    notizie ogni due ore, riepilogo della domenica, chiusura, silenzio la notte.
                                     È il comando di GitHub Actions
   python agente.py --apertura       buongiorno con il calendario del giorno e il riepilogo della notte
   python agente.py --dati           controlla subito se sono usciti dati ufficiali nuovi
@@ -121,10 +121,10 @@ def piano_della_giornata(adesso: datetime, orari: dict, memoria: Memoria) -> lis
     azioni = []
     if fatto.get("apertura") != oggi and ora < APERTURA_ENTRO:
         azioni.append("apertura")
-    azioni.append("dati")  # i dati ufficiali si controllano a ogni giro della giornata
-    # notizie una volta per ora, dall'ora della prima fino all'ora dell'ultima compresa
+    azioni.append("dati")  # i dati ufficiali si controllano a ogni giro della giornata, cioè ogni ora
+    # notizie una volta per fascia di "ogni_ore" ore, dall'ora della prima fino all'ora dell'ultima compresa
     # (un giro in ritardo dopo le 23, es. alla fine di una pausa, fa solo la chiusura)
-    if prima <= ora and ora[:2] <= ultima[:2] and fatto.get("ora_notizie") != f"{oggi} {adesso.hour:02d}":
+    if prima <= ora and ora[:2] <= ultima[:2] and fatto.get("ora_notizie") != fascia_notizie(adesso, orari):
         azioni.append("notizie")
     settimanale = orari.get("riepilogo_settimanale") or {}
     if (settimanale and adesso.weekday() == notifiche.GIORNI.index(settimanale.get("giorno", "domenica"))
@@ -134,6 +134,16 @@ def piano_della_giornata(adesso: datetime, orari: dict, memoria: Memoria) -> lis
     if ora >= ultima:
         azioni.append("chiusura")
     return azioni
+
+
+def fascia_notizie(adesso: datetime, orari: dict) -> str:
+    """La fascia del giro di notizie a cui appartiene quest'ora: con ogni_ore 2 e la prima notizia alle 8,
+    le fasce iniziano alle 8, 10, 12... e un giro delle 9 rientra in quella delle 8 (niente notizie,
+    o recupera quella delle 8 se quel giro è saltato)."""
+    ogni = max(1, int(orari.get("ogni_ore", 1)))
+    prima = int(orari.get("prima_notizia", "08:00")[:2])
+    inizio = prima + (adesso.hour - prima) // ogni * ogni
+    return f"{adesso.date().isoformat()} {inizio:02d}"
 
 
 class Giro:
@@ -201,7 +211,7 @@ class Giro:
                 suonato = suonato or not silenzioso
                 self.registra(s, id_notifica, messaggio)
                 self.invia_iscritti(testo, s["reparti"], silenzioso, tastiera)
-        self.memoria.giornata["ora_notizie"] = f"{self.oggi} {self.adesso.hour:02d}"
+        self.memoria.giornata["ora_notizie"] = fascia_notizie(self.adesso, self.orari)
 
     def apertura(self) -> None:
         """Buongiorno in un unico messaggio: calendario del giorno e riepilogo della notte."""
@@ -211,7 +221,7 @@ class Giro:
                  "icona": self.icone.get(s["tema"], ICONA_PREDEFINITA), "fonti": s["gruppo"].fonti()}
                 for s in scelte]
         testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario,
-                                          dati.cambio_del_giorno(self.config))
+                                          dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1))
         if self.invia(testo):
             for s in scelte:
                 self.registra(s, chiave(s["gruppo"].principale.link))

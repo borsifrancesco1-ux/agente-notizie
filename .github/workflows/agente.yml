@@ -1,8 +1,8 @@
 # Fa girare l'agente sui server di GitHub, anche a computer spento.
 # L'orologio principale è il Worker di Cloudflare (ogni ora); gli orari qui sotto sono la riserva.
-# È lo script a decidere cosa fare in base all'ora italiana (buongiorno alle 7:30, notizie ogni ora
+# È lo script a decidere cosa fare in base all'ora italiana (buongiorno alle 7:30, notizie ogni due ore
 # dalle 8 alle 22, dati appena escono, chiusura alle 22, silenzio la notte), così il cambio dell'ora
-# legale non richiede modifiche. Orari in config.yaml.
+# legale non richiede modifiche. Il giro resta ogni ora per controllare i dati ufficiali. Orari in config.yaml.
 #
 # Minuti 4 e 34 e non 0 e 30: GitHub avverte che all'inizio dell'ora i giri programmati
 # possono partire in ritardo o essere saltati.
