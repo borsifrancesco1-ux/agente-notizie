@@ -44,8 +44,9 @@ ia:
 orari:
   fuso_orario: Europe/Rome
   apertura: "07:30"        # buongiorno con il calendario del giorno e il riepilogo della notte
-  prima_notizia: "08:00"   # da qui un giro di notizie ogni ora...
+  prima_notizia: "08:00"   # da qui un giro di notizie ogni "ogni_ore" ore (8, 10, 12... 22)...
   ultima_notizia: "22:00"  # ...fino a qui; poi il messaggio di chiusura e silenzio fino all'apertura
+  ogni_ore: 2              # 1 = un giro di notizie ogni ora; i dati ufficiali si controllano comunque ogni ora
   max_riepilogo_notte: 5   # notizie al massimo nel riepilogo della notte
   # Riepilogo settimanale per il PSP sul canale, e proposta di modifica al profilo nella tua chat
   riepilogo_settimanale: {giorno: domenica, ora: "18:00"}
@@ -64,7 +65,7 @@ calendario:
     - {data: "2026-12-17", ora: "14:15", descrizione: "BCE: decisione sui tassi e proiezioni (conferenza stampa alle 14:45)"}
 
 notifiche:
-  max_per_giro: 5        # tetto di notifiche per ogni giro
+  max_per_giro: 4        # tetto di notifiche per ogni giro (con un giro ogni 2 ore: al massimo 32 al giorno)
   con_suono_da: 9        # soglia di rilevanza per il suono: solo da questo voto il telefono suona
                          # (al massimo una volta per giro); sotto arriva in silenzio, ma resta nel canale
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore

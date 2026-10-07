@@ -68,11 +68,12 @@ def frecce(impatto: str) -> str:
 
 
 def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
-                    cambio: str = "") -> str:
+                    cambio: str = "", ogni_ore: int = 1) -> str:
     """Buongiorno in un unico messaggio: cambio del giorno, calendario e riepilogo della notte.
-    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto."""
+    voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto;
+    ogni_ore: ogni quante ore arriva un giro di notizie."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
-    fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti ogni ora."
+    fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti {cadenza(ogni_ore)}."
     testo = f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>"
     if cambio:
         testo += f"\n\n💱 {cambio}"
@@ -95,6 +96,11 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
             break
         testo += blocco
     return testo + fine
+
+
+def cadenza(ogni_ore: int) -> str:
+    """2 -> 'ogni 2 ore'; 1 -> 'ogni ora'."""
+    return "ogni ora" if int(ogni_ore) <= 1 else f"ogni {ogni_ore} ore"
 
 
 def breve(testo: str, massimo: int = 280) -> str:

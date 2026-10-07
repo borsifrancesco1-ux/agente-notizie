@@ -286,7 +286,9 @@ def pausa(giro: Giro, durata: str) -> str:
 def riprendi(giro: Giro, _argomento: str) -> str:
     era_in_pausa = giro.memoria.in_pausa()
     giro.memoria.pausa_fino = ""
-    return "▶️ Invii ripresi: le notizie tornano ad arrivare ogni ora." if era_in_pausa else "Gli invii non erano in pausa."
+    if not era_in_pausa:
+        return "Gli invii non erano in pausa."
+    return f"▶️ Invii ripresi: le notizie tornano ad arrivare {notifiche.cadenza(giro.orari.get('ogni_ore', 1))}."
 
 
 def annulla(giro: Giro, _argomento: str) -> str:
