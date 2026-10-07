@@ -162,11 +162,14 @@ def link_testuali(fonti: list[tuple[str, str]], massimo: int = FONTI_MASSIME) ->
 
 
 def invia(testo: str, token: str, chat_id: str, silenzioso: bool = False,
-          tastiera: dict | None = None, rispondi_a: int | None = None) -> int:
+          tastiera: dict | None = None, rispondi_a: int | None = None, argomento: int | None = None) -> int:
     """Manda il messaggio. Restituisce il suo numero (0 se non è partito).
-    rispondi_a: numero di un messaggio a cui rispondere (es. aggiornamento di una notizia)."""
+    rispondi_a: numero di un messaggio a cui rispondere (es. aggiornamento di una notizia);
+    argomento: in un gruppo con gli argomenti, quello in cui pubblicare (senza: in Generale)."""
     corpo = {"chat_id": chat_id, "text": testo, "parse_mode": "HTML",
              "disable_web_page_preview": True, "disable_notification": silenzioso}
+    if argomento:
+        corpo["message_thread_id"] = argomento
     if tastiera:
         corpo["reply_markup"] = tastiera
     if rispondi_a:

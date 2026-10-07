@@ -70,13 +70,17 @@ class Memoria:
 
     def registra_invio(self, id_notifica: str, titolo: str, tema: str, reparti: list[str],
                        impronta: frozenset[str], link: str, messaggio: int | None = None,
-                       riassunto: str = "", per_archivio: dict | None = None) -> None:
-        """messaggio: numero del messaggio Telegram, per rispondergli con gli aggiornamenti;
+                       riassunto: str = "", per_archivio: dict | None = None,
+                       messaggi: dict[str, int] | None = None) -> None:
+        """messaggio: numero del messaggio Telegram nel canale, per rispondergli con gli aggiornamenti;
+        messaggi: lo stesso nel gruppo con gli argomenti, {"gruppo/argomento": numero};
         per_archivio: campi in più da salvare nell'archivio (fonti, perché conta, impatto)."""
         voce = {"id": id_notifica, "titolo": titolo, "tema": tema, "reparti": reparti,
                 "impronta": sorted(impronta), "link": link, "quando": _adesso()}
         if messaggio:
             voce["messaggio"] = messaggio
+        if messaggi:
+            voce["messaggi"] = messaggi
         if riassunto:
             voce["riassunto"] = riassunto[:300]
         self.inviate.append(voce)
