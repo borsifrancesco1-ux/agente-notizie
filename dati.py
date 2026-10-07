@@ -123,19 +123,21 @@ _barre: dict[str, list[tuple[datetime, float]]] = {}
 BARRA = timedelta(minutes=15)   # ogni quotazione infragiornaliera è la chiusura di 15 minuti di scambi
 
 
-def reazione(config: dict, gruppo: str, dal: datetime) -> str:
+def reazione(config: dict, gruppo: str, dal: datetime) -> list[tuple[str, str]]:
     """Come si sono mosse le quotazioni del gruppo indicato (sezione reazione_mercati di config)
-    da 'dal' a adesso. Vuoto se i mercati sono chiusi o mancano le quotazioni."""
+    da 'dal' a adesso, come righe (nome, variazione) per notifiche.tabella.
+    Vuoto se i mercati sono chiusi o mancano le quotazioni."""
     quotazioni = config.get("quotazioni") or {}
     adesso = datetime.now(timezone.utc)
-    parti = []
+    righe = []
     for nome in (config.get("reazione_mercati") or {}).get(gruppo) or []:
         voce = quotazioni.get(nome)
         if not voce or not voce.get("simbolo"):  # solo le quotazioni di Yahoo hanno l'andamento nella giornata
             continue
         try:
             barre = _infragiornaliere(voce["simbolo"])
-        except Exception:  # noqa: BLE001 — senza quella quotazione la riga resta più corta
+        except Exception as e:  # noqa: BLE001 — senza quella quotazione la riga resta più corta
+            print(f"  ✗ andamento di {nome} da Yahoo non disponibile ({type(e).__name__})")
             continue
         # il prezzo di partenza è quello di una barra chiusa entro 'dal' (Yahoo data le barre dall'inizio)
         prima = next((b for b in reversed(barre) if b[0] + BARRA <= dal), None)
@@ -143,10 +145,10 @@ def reazione(config: dict, gruppo: str, dal: datetime) -> str:
         if not prima or not ultima or ultima[0] <= prima[0] or adesso - ultima[0] > timedelta(hours=2):
             continue  # mercato chiuso, o nessuna quotazione dopo l'uscita
         if voce.get("tipo") == "tasso":
-            parti.append(f"{nome} {numero((ultima[1] - prima[1]) * 100, 0, segno=True)} pb")
+            righe.append((nome, f"{numero((ultima[1] - prima[1]) * 100, 0, segno=True)} pb"))
         else:
-            parti.append(f"{nome} {numero((ultima[1] / prima[1] - 1) * 100, 2, segno=True)}%")
-    return " · ".join(parti)
+            righe.append((nome, f"{numero((ultima[1] / prima[1] - 1) * 100, 2, segno=True)}%"))
+    return righe
 
 
 def _infragiornaliere(simbolo: str) -> list[tuple[datetime, float]]:
@@ -180,6 +182,7 @@ def quotazione(simbolo: str) -> dict | None:
     """Prezzo attuale (o dell'ultima chiusura, a mercato chiuso) da Yahoo Finance:
     {"prezzo", "variazione" (% sulla chiusura precedente), "valuta", "nome", "quando"}. None se non c'è."""
     if simbolo not in _quotazioni:
+        r = None
         try:
             r = requests.get(YAHOO_API.format(simbolo=simbolo), params={"range": "1d", "interval": "1d"},
                              headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -192,35 +195,66 @@ def quotazione(simbolo: str) -> dict | None:
                 "nome": nome_breve(nome),
                 "quando": datetime.fromtimestamp(meta["regularMarketTime"], timezone.utc),
             }
-        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
+        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError) as e:
+            # nel registro, così si vede se Yahoo blocca le richieste (es. HTTP 429)
+            stato = f", HTTP {r.status_code}" if r is not None else ""
+            print(f"  ✗ quotazione {simbolo} da Yahoo non disponibile ({type(e).__name__}{stato})")
             _quotazioni[simbolo] = None
     return _quotazioni[simbolo]
 
 
-def valore(voce: dict, fuso) -> str:
-    """Livello attuale di una voce di "quotazioni" (config.yaml), con la variazione:
-    '1,1257 (+0,11%)', '5,28% (+4 pb)'; per i dati ufficiali giornalieri anche la data: '3,88% (1/10)'."""
+def misura(voce: dict, fuso) -> tuple[str, str, str] | None:
+    """Livello attuale di una voce di "quotazioni" (config.yaml) come riga di tabella:
+    (livello, variazione, data), es. ('1,1257', '+0,11%', ''), ('5,28%', '+4 pb', '');
+    la data solo se il valore non è di oggi (mercato chiuso o dato ufficiale del giorno prima).
+    None se la fonte non ha il valore."""
     tasso = voce.get("tipo") == "tasso"
     if voce.get("fonte", "yahoo") == "yahoo":
         q = quotazione(voce["simbolo"])
         if not q:
-            return ""
+            return None
         livello, prima, quando = q["prezzo"], q["precedente"], q["quando"]
     else:
         oss = ultime_osservazioni(voce, 2)
         if not oss:
-            return ""
+            return None
         livello, prima = oss[-1].valore, (oss[-2].valore if len(oss) > 1 else None)
         quando = datetime.fromisoformat(oss[-1].periodo).replace(tzinfo=timezone.utc)
     decimali = voce.get("decimali", 2 if tasso or livello < 1000 else 0)
     testo = f"{numero(livello, decimali)}{'%' if tasso else voce.get('unita', '')}"
-    dettagli = []
     variazione = ((livello - prima) * 100 if tasso else (livello / prima - 1) * 100) if prima else 0
-    if round(variazione, 0 if tasso else 2):  # una variazione nulla non si scrive
-        dettagli.append(f"{numero(variazione, 0, segno=True)} pb" if tasso else f"{numero(variazione, 2, segno=True)}%")
-    if quando.astimezone(fuso).date() != datetime.now(fuso).date():  # mercato chiuso o dato del giorno prima
-        dettagli.append(giorno(quando.astimezone(fuso)))
-    return f"{testo} ({', '.join(dettagli)})" if dettagli else testo
+    if not round(variazione, 0 if tasso else 2):  # una variazione nulla non si scrive
+        cambio = ""
+    else:
+        cambio = f"{numero(variazione, 0, segno=True)} pb" if tasso else f"{numero(variazione, 2, segno=True)}%"
+    data = giorno(quando.astimezone(fuso)) if quando.astimezone(fuso).date() != datetime.now(fuso).date() else ""
+    return testo, cambio, data
+
+
+def righe_quotazioni(config: dict, nomi: list[str], fuso) -> list[tuple[str, ...]]:
+    """Una riga di tabella (nome, livello, variazione, data) per ogni voce di "quotazioni" indicata;
+    una voce che manca in config.yaml o la cui fonte non risponde viene saltata (e scritta nel registro)."""
+    quotazioni = config.get("quotazioni") or {}
+    righe = []
+    for nome in nomi:
+        if nome not in quotazioni:
+            print(f"  ✗ {nome}: manca nella sezione quotazioni di config.yaml")
+            continue
+        try:
+            valori = misura(quotazioni[nome], fuso)
+        except Exception as e:  # noqa: BLE001 — una fonte che non risponde toglie solo quella riga
+            print(f"  ✗ {nome} non disponibile ({type(e).__name__})")
+            continue
+        if valori:
+            righe.append((nome, *valori))
+    return righe
+
+
+def quadro_mercati(config: dict, momento: str, fuso) -> list[tuple[str, ...]]:
+    """Le righe dei mercati per il buongiorno (momento "apertura") o per la chiusura ("chiusura"):
+    le voci di riepilogo_mercati in config.yaml, con la data se il valore non è di oggi
+    (es. la chiusura di ieri delle borse europee nel buongiorno)."""
+    return righe_quotazioni(config, (config.get("riepilogo_mercati") or {}).get(momento) or [], fuso)
 
 
 def giorno(d: date | datetime) -> str:
@@ -247,13 +281,14 @@ def stessa_societa(nome: str, altro: str) -> bool:
     return any(p in unito(altro) for p in parole(nome)) or any(p in unito(nome) for p in parole(altro))
 
 
-def valori_notizia(config: dict, aziende: list[dict], valori: list[str], fuso) -> str:
-    """La riga dei valori sotto una notizia: prezzo attuale delle società citate (per quelle USA anche
-    capitalizzazione e P/E, da defeatbeta) e livello dei tassi, cambi o materie prime indicati dall'IA.
-    aziende: [{"nome", "simbolo"}]; il prezzo si scrive solo se il nome del titolo corrisponde."""
+def valori_notizia(config: dict, aziende: list[dict], valori: list[str], fuso) -> list[tuple[str, ...] | str]:
+    """I valori sotto una notizia, come righe per notifiche.tabella: prezzo attuale delle società citate
+    (per quelle USA, sulla riga sotto, capitalizzazione e P/E da defeatbeta) e livello dei tassi, cambi
+    o materie prime indicati dall'IA. aziende: [{"nome", "simbolo"}]; il prezzo si scrive solo se il
+    nome del titolo corrisponde."""
     import aziende as piattaforma  # importato qui: la libreria defeatbeta serve solo se ci sono società USA
 
-    parti = []
+    righe: list[tuple[str, ...] | str] = []
     for societa in aziende[:3]:
         simbolo = (societa.get("simbolo") or "").strip().upper()
         q = quotazione(simbolo) if SIMBOLO_VALIDO.match(simbolo) else None
@@ -263,28 +298,18 @@ def valori_notizia(config: dict, aziende: list[dict], valori: list[str], fuso) -
             print(f"  {simbolo} è {q['nome']}, non {societa.get('nome')}: prezzo non scritto")
             continue
         valuta = {"USD": " $", "EUR": " €", "GBP": " £", "GBp": " p", "JPY": " ¥"}.get(q["valuta"], f" {q['valuta']}")
-        dettagli = [f"{numero(q['variazione'], 1, segno=True)}%"] if q["variazione"] is not None else []
-        if q["quando"].astimezone(fuso).date() != datetime.now(fuso).date():
-            dettagli.append(f"chiusura {giorno(q['quando'].astimezone(fuso))}")
+        cambio = f"{numero(q['variazione'], 2, segno=True)}%" if q["variazione"] else ""
+        quando = q["quando"].astimezone(fuso)
+        righe.append((q["nome"], f"{numero(q['prezzo'], 2)}{valuta}", cambio,
+                      giorno(quando) if quando.date() != datetime.now(fuso).date() else ""))
         try:
             fondamentali = piattaforma.capitalizzazione_e_pe(simbolo, q["prezzo"]) if q["valuta"] == "USD" else ""
         except Exception as e:  # noqa: BLE001 — senza la piattaforma resta il prezzo
             print(f"  defeatbeta non disponibile per {simbolo} ({type(e).__name__})")
             fondamentali = ""
         if fondamentali:
-            dettagli.append(fondamentali)
-        parti.append(f"{q['nome']} {numero(q['prezzo'], 2)}{valuta}" + (f" ({'; '.join(dettagli)})" if dettagli else ""))
-    quotazioni = config.get("quotazioni") or {}
-    for nome in valori[:3]:
-        if nome in quotazioni:
-            try:
-                testo = valore(quotazioni[nome], fuso)
-            except Exception as e:  # noqa: BLE001 — una fonte che non risponde toglie solo quel valore
-                print(f"  valore di {nome} non disponibile ({type(e).__name__})")
-                testo = ""
-            if testo:
-                parti.append(f"{nome} {testo}")
-    return " · ".join(parti)
+            righe.append(fondamentali)  # riga di nota sotto il prezzo
+    return righe + righe_quotazioni(config, valori[:3], fuso)
 
 
 def all_italiana(valore: str) -> str:
@@ -359,7 +384,8 @@ def anomalia(nuovo: dict, atteso: str, sigma: float) -> str:
 
 
 def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anomalia: str = "",
-                   mercati: str = "") -> str:
+                   mercati: list[tuple[str, str]] | None = None, periodo_mercati: str = "") -> str:
+    """mercati: righe di reazione(); periodo_mercati: da quando, es. "dalle 14:30" o "nell'ultima ora"."""
     ind, ultima, precedente = nuovo["indicatore"], nuovo["ultima"], nuovo["precedente"]
     unita, decimali = ind.get("unita", ""), ind.get("decimali", 1)
     righe = []
@@ -379,7 +405,7 @@ def messaggio_dato(nuovo: dict, atteso: str, etichetta_perche: str, motivo_anoma
     if ind.get("perche"):
         righe += ["", f"🎯 <i>{notifiche.esc(etichetta_perche)}:</i> {notifiche.esc(ind['perche'])}"]
     if mercati:
-        righe.append(f"📈 <i>Reazione dei mercati:</i> {notifiche.esc(mercati)}")
+        righe += ["", f"📈 <i>Reazione dei mercati {notifiche.esc(periodo_mercati)}</i>\n{notifiche.tabella(mercati)}"]
     righe += ["", f"🔗 <a href=\"{notifiche.esc(link_fonte(ind), virgolette=True)}\">{_nome_fonte(ind)}</a>"]
     return "\n".join(righe)
 

@@ -31,7 +31,7 @@ def main() -> None:
         "Tassi fermi più a lungo sostengono la parte obbligazionaria e riducono il costo della copertura "
         "del cambio, che dipende dal differenziale con i tassi USA.",
         "🇪🇺", "BCE", 9, ["Obbligazionario", "Macroeconomia", "Copertura"], "Perché conta per il PSP",
-        nota="messaggio di prova", impatto="Bund ↑ · BTP ↑ · euro ↑ · dollaro ↓", valori="Tasso BCE sui depositi 2,00% · EUR/USD 1,1720")
+        nota="messaggio di prova", impatto="Bund ↑ · BTP ↑ · euro ↑ · dollaro ↓", valori=[("Tasso BCE sui depositi", "2,00%", "", ""), ("EUR/USD", "1,1720", "+0,35%", "")])
     tastiera = feedback.tastiera("anteprima", fonti)
     if "--prova" in sys.argv:
         print(testo)

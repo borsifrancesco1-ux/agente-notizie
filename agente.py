@@ -186,7 +186,7 @@ class Giro:
         for s in scelte:
             g, originale = s["gruppo"], s.get("aggiorna")
             rispondi_a = (originale or {}).get("messaggio")
-            mercati = ""
+            mercati = []
             if (s["voto"] or 0) >= (self.config.get("reazione_mercati") or {}).get("voto_minimo_notizie", 9):
                 mercati = dati.reazione(self.config, "notizie", datetime.now(timezone.utc) - timedelta(hours=1))
             # prezzo attuale delle società citate e livello di tassi, cambi o materie prime toccati
@@ -221,7 +221,8 @@ class Giro:
                  "icona": self.icone.get(s["tema"], ICONA_PREDEFINITA), "fonti": s["gruppo"].fonti()}
                 for s in scelte]
         testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario,
-                                          dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1))
+                                          dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1),
+                                          dati.quadro_mercati(self.config, "apertura", self.fuso))
         if self.invia(testo):
             for s in scelte:
                 self.registra(s, chiave(s["gruppo"].principale.link))
@@ -240,9 +241,8 @@ class Giro:
             dal = uscita.quando if uscita else datetime.now(timezone.utc) - timedelta(hours=1)
             area = ind.get("area") or ("usa" if ind["fonte"] == "fred" else "euro")
             mercati = dati.reazione(self.config, area, dal)
-            if mercati:
-                mercati = (f"dalle {dal.astimezone(self.fuso):%H:%M}: " if uscita else "nell'ultima ora: ") + mercati
-            testo = dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo, mercati)
+            periodo = f"dalle {dal.astimezone(self.fuso):%H:%M}" if uscita else "nell'ultima ora"
+            testo = dati.messaggio_dato(nuovo, atteso, self.etichetta_perche, motivo, mercati, periodo)
             if self.invia(testo):
                 self.memoria.registra_dato(ind["nome"], dati.riassunto_dato(nuovo, atteso, motivo), ind.get("reparti") or [])
                 self.invia_iscritti(testo, ind.get("reparti") or [], silenzioso=False)
@@ -257,7 +257,8 @@ class Giro:
         """Fine delle comunicazioni, con il conto delle notizie del giorno per reparto."""
         inizio_giornata = self.adesso.replace(hour=0, minute=0, second=0, microsecond=0)
         inviate_oggi = self.memoria.inviate_dal(inizio_giornata)
-        testo = notifiche.chiusura(inviate_oggi, self.orari.get("apertura", "07:30"))
+        testo = notifiche.chiusura(inviate_oggi, self.orari.get("apertura", "07:30"),
+                                   dati.quadro_mercati(self.config, "chiusura", self.fuso))
         self.invia(testo, silenzioso=True)
         # chi è iscritto in modalità "sera" riceve in privato le notizie del giorno dei suoi reparti
         for iscritto in self.iscrizioni.values():
