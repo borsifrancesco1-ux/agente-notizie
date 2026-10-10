@@ -8390,7 +8390,55 @@
   "7704b793b6e4d20d": "2026-10-10T08:01:06+00:00",
   "bab598a3155e0c1d": "2026-10-10T08:01:06+00:00",
   "943f63da9fb7aee7": "2026-10-10T08:01:06+00:00",
-  "13e3185d140fd8d2": "2026-10-10T08:01:06+00:00"
+  "13e3185d140fd8d2": "2026-10-10T08:01:06+00:00",
+  "6f3e5a61c349b437": "2026-10-10T10:01:04+00:00",
+  "a88410711fa46fd2": "2026-10-10T10:01:04+00:00",
+  "328890bb641639a4": "2026-10-10T10:01:04+00:00",
+  "259f63c035033284": "2026-10-10T10:01:04+00:00",
+  "93a07fee181d34ed": "2026-10-10T10:01:04+00:00",
+  "d2e5b2e98c957daa": "2026-10-10T10:01:04+00:00",
+  "c10c45ba0ffa1f72": "2026-10-10T10:01:04+00:00",
+  "6ede32c81072c519": "2026-10-10T10:01:04+00:00",
+  "4bd35da941182738": "2026-10-10T10:01:04+00:00",
+  "f7e62a60a153a211": "2026-10-10T10:01:04+00:00",
+  "df086ddd26a085f7": "2026-10-10T10:01:04+00:00",
+  "720a1c28eef54f26": "2026-10-10T10:01:04+00:00",
+  "b77c638ea33a23ce": "2026-10-10T10:01:04+00:00",
+  "c2918e1b2bf439b8": "2026-10-10T10:01:04+00:00",
+  "7e6c5394e884ed05": "2026-10-10T10:01:04+00:00",
+  "1a9aacc2f958004f": "2026-10-10T10:01:04+00:00",
+  "42039eef4ac665aa": "2026-10-10T10:01:04+00:00",
+  "67d67ea03a942a44": "2026-10-10T10:01:04+00:00",
+  "401cf8a79c56d46b": "2026-10-10T10:01:04+00:00",
+  "f9f43ac09fd78078": "2026-10-10T10:01:04+00:00",
+  "35d8444e4fa10ec7": "2026-10-10T10:01:04+00:00",
+  "0133d4494312ceb5": "2026-10-10T10:01:04+00:00",
+  "95ee6f45ef1b7a5f": "2026-10-10T10:01:04+00:00",
+  "33615f8fa399281a": "2026-10-10T10:01:04+00:00",
+  "d91b2bcc814fa8e9": "2026-10-10T10:01:04+00:00",
+  "5d3752fea5dbe657": "2026-10-10T10:01:04+00:00",
+  "1c55d2a19daa0549": "2026-10-10T10:01:04+00:00",
+  "0f5f55b3ab71c01b": "2026-10-10T10:01:04+00:00",
+  "4b742619d9ce69d8": "2026-10-10T10:01:04+00:00",
+  "dae604596a531784": "2026-10-10T10:01:04+00:00",
+  "15224aa768f70c81": "2026-10-10T10:01:04+00:00",
+  "e345ac9ef7b0e792": "2026-10-10T10:01:04+00:00",
+  "f5912daca647bd27": "2026-10-10T10:01:04+00:00",
+  "7ad7e2ef9a694935": "2026-10-10T10:01:04+00:00",
+  "86e20d232f1f0934": "2026-10-10T10:01:04+00:00",
+  "74bfe235de640131": "2026-10-10T10:01:04+00:00",
+  "b8467874e19bf47b": "2026-10-10T10:01:04+00:00",
+  "30d0f5fa0867e9a3": "2026-10-10T10:01:04+00:00",
+  "94acd0f63aa452a4": "2026-10-10T10:01:04+00:00",
+  "39ea4c26a44fe06c": "2026-10-10T10:01:04+00:00",
+  "1942c15cab33194b": "2026-10-10T10:01:04+00:00",
+  "f83a0b51dd5c7a6d": "2026-10-10T10:01:04+00:00",
+  "e2fc58461ea46f5d": "2026-10-10T10:01:04+00:00",
+  "884a031ba9a6f298": "2026-10-10T10:01:04+00:00",
+  "5a49827cb0116496": "2026-10-10T10:01:04+00:00",
+  "9aa038a0647ec779": "2026-10-10T10:01:04+00:00",
+  "a2014450c1f5835d": "2026-10-10T10:01:04+00:00",
+  "32c88345f94bca55": "2026-10-10T10:01:04+00:00"
  },
  "inviate": [
   {
@@ -17774,6 +17822,80 @@
    "quando": "2026-10-10T08:01:08+00:00",
    "messaggio": 387,
    "riassunto": "Le autorità cinesi hanno annunciato la creazione di 10,52 milioni di nuovi posti di lavoro e presentato nuove misure di sostegno all'occupazione legate al settore dei servizi e dell'intelligenza artificiale. L'obiettivo è stimolare la crescita economica interna attraverso l'innovazione tecnologica. "
+  },
+  {
+   "id": "5d3752fea5dbe657",
+   "titolo": "Europe’s Indebted Nations Are Starting to Blink at Market Wrath",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "blink",
+    "europe",
+    "indebted",
+    "market",
+    "nations",
+    "starting",
+    "wrath"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-10/europe-s-indebted-nations-are-starting-to-blink-at-market-wrath",
+   "quando": "2026-10-10T10:01:06+00:00",
+   "messaggio": 388,
+   "riassunto": "La classe politica europea mostra i primi segni di cedimento di fronte alle pressioni inflessibili del mercato obbligazionario. I rendimenti elevati e la tensione sui conti pubblici stanno costringendo i governi a riconsiderare le proprie politiche di spesa. La situazione evidenzia la vulnerabilità "
+  },
+  {
+   "id": "e2fc58461ea46f5d",
+   "titolo": "Euro falls, set for fifth straight weekly drop as oil prices rise",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "drop",
+    "euro",
+    "falls",
+    "fifth",
+    "oil",
+    "prices",
+    "rise",
+    "set",
+    "straight",
+    "weekly"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNcDd4eUZva2FaUUpzT3BWbGdDM3V0eGwtbHFyWDNaRGhNb2U2Y0JkZ21WeGc1RUE2dHBuNTduNG9wU1pLR3NlZldEWjR4ZkFoN2Z2bW1UbVdQS2czNHRVbjdHbUEwRzQtdF85eFVYZlNwcmdUWHdmMjFZY1MzVXMza0pMd2FFSTlLUzVhWUZ6TklsM2dLNWR3SzBPS095VjVmZjZSa3I3NDVQYlp0NHY0MGVJRXFyNElfZVNlNVRfY2EwWVVJd1JBNmo0VlNfZ2Jn0gHWAUFVX3lxTE5FckNBZ3Q1TXFIT2pXb3ZKaUU1SFBlVWlkc1MyTUlyeC1tN1M4WWF6d3BZRkNTNlU4SGxSdlluRUY5UjN2SHJoRy1wUlV4OUZ5bmhnbEJQVTYxY1pCeEF5ZGljWGVsQkE3eDhJMWh1Q19MNHhKN21ieV9HYV9rQUZBcFptZ0pZTGc4UXh4bG9VdGZyWjFMTFZjX09EX2F5MEgxSVV2SUVsME1EWjF5UVV3T0QtM2pJZWNTSWJVSHVmQ1Rhd21USU5jZG1WdGZJMDhwS0VfSnc?oc=5",
+   "quando": "2026-10-10T10:01:06+00:00",
+   "messaggio": 389,
+   "riassunto": "La moneta unica europea registra una flessione e si avvia a completare la quinta settimana consecutiva di ribassi nei confronti del dollaro. La discesa è alimentata principalmente dalla forte risalita dei prezzi del petrolio e dalle tensioni geopolitiche globali. Questo scenario peggiorano i termini"
+  },
+  {
+   "id": "1942c15cab33194b",
+   "titolo": "European bank stocks slide as bond yields spark investor caution By Investing.com",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bank",
+    "bond",
+    "caution",
+    "com",
+    "european",
+    "investing",
+    "investor",
+    "slide",
+    "spark",
+    "stocks",
+    "yields"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNLUIwZU83TU90WHNvR0s0czhpZ1ZyUU1lcFRRZGNsWi0yMzVSM3JoVUxobWhBYzNLTFRNTUpkQjIyLWU1UU81Q1JpSHB1UE5ET2hpdVB4SE1tY1JFbDhNY2kyZHFjb2YxUXc5dHJYXzRXem4zLXBNSHhzbXQ5cTdrbnlCRi1HNGZQWkt5MWxNNlVtSmxYSTZ0VmpMZHhhdnVjZGRIVUhOQ0tuYW8yMkxubDdmNlpPMUg1UHpmbW4yQXR2RWYzX094czd0RlNwdUk?oc=5",
+   "quando": "2026-10-10T10:01:07+00:00",
+   "messaggio": 390,
+   "riassunto": "I listini azionari del settore bancario europeo registrano un calo marcato, condizionati dal recente balzo dei rendimenti obbligazionari che spinge gli investitori alla cautela. Il movimento dei tassi di mercato altera le valutazioni dei titoli finanziari e riduce l'appetito per il rischio azionario"
   }
  ],
  "feed_guasti": {},
@@ -17786,11 +17908,11 @@
   "2026-10-07": 12,
   "2026-10-08": 9,
   "2026-10-09": 9,
-  "2026-10-10": 1
+  "2026-10-10": 2
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-10 10",
+  "ora_notizie": "2026-10-10 12",
   "chiusura": "2026-10-09",
   "apertura": "2026-10-10",
   "settimanale": "2026-W40"
