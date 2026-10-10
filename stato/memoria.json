@@ -8679,7 +8679,52 @@
   "71417a25c7e757c3": "2026-10-10T18:01:09+00:00",
   "1c6552dcabcd170b": "2026-10-10T18:01:09+00:00",
   "e9df6a148d23c285": "2026-10-10T18:01:09+00:00",
-  "3a8c49b7ee365bf4": "2026-10-10T18:01:09+00:00"
+  "3a8c49b7ee365bf4": "2026-10-10T18:01:09+00:00",
+  "98b9b29c882336c8": "2026-10-10T20:01:01+00:00",
+  "d9761bb9564daa97": "2026-10-10T20:01:01+00:00",
+  "f02e7ecd12387c82": "2026-10-10T20:01:01+00:00",
+  "2b5081628aff5ac6": "2026-10-10T20:01:01+00:00",
+  "2104f797bd3cdf89": "2026-10-10T20:01:01+00:00",
+  "9701d53a68b51469": "2026-10-10T20:01:01+00:00",
+  "49ddf5c3bad9a6c0": "2026-10-10T20:01:01+00:00",
+  "591a14345763279e": "2026-10-10T20:01:01+00:00",
+  "6c15fd397826dfbc": "2026-10-10T20:01:01+00:00",
+  "8ce11f902332a154": "2026-10-10T20:01:01+00:00",
+  "2c41f85139e2e907": "2026-10-10T20:01:01+00:00",
+  "b3349689caadf5e2": "2026-10-10T20:01:01+00:00",
+  "82dafa0a3e2da12e": "2026-10-10T20:01:01+00:00",
+  "9fa5d8b5af3a3761": "2026-10-10T20:01:01+00:00",
+  "a7673e8dd366ad14": "2026-10-10T20:01:01+00:00",
+  "3a9a68ebba5d0b52": "2026-10-10T20:01:01+00:00",
+  "53d1af5e8dc08730": "2026-10-10T20:01:01+00:00",
+  "12ab42f20ce230d0": "2026-10-10T20:01:01+00:00",
+  "0a4d2a297593b5f4": "2026-10-10T20:01:01+00:00",
+  "06671f74cf8e1a55": "2026-10-10T20:01:01+00:00",
+  "97c99128143431ca": "2026-10-10T20:01:01+00:00",
+  "435678d3951cb58e": "2026-10-10T20:01:01+00:00",
+  "dc0045fe3bf502a6": "2026-10-10T20:01:01+00:00",
+  "99b261566541d1d6": "2026-10-10T20:01:01+00:00",
+  "db42576a15f7c6a4": "2026-10-10T20:01:01+00:00",
+  "4ce27be8424ebc53": "2026-10-10T20:01:01+00:00",
+  "a5520fbd6611de91": "2026-10-10T20:01:01+00:00",
+  "6a61cabf26480bb3": "2026-10-10T20:01:01+00:00",
+  "b9f4b40e8d415a1b": "2026-10-10T20:01:01+00:00",
+  "7f1a13d740c5e103": "2026-10-10T20:01:01+00:00",
+  "54b1ff81f059b65a": "2026-10-10T20:01:01+00:00",
+  "77ea68563062ffa5": "2026-10-10T20:01:01+00:00",
+  "9e882181fe1efe70": "2026-10-10T20:01:01+00:00",
+  "46f0c6bf36956233": "2026-10-10T20:01:01+00:00",
+  "36c54a1cfdc9d46e": "2026-10-10T20:01:01+00:00",
+  "28e4cbaf36d728c1": "2026-10-10T20:01:01+00:00",
+  "d0dcee578ace6136": "2026-10-10T20:01:01+00:00",
+  "d9d0ed90546bd0ac": "2026-10-10T20:01:01+00:00",
+  "e976634f630a6792": "2026-10-10T20:01:01+00:00",
+  "60d631166d7823bd": "2026-10-10T20:01:01+00:00",
+  "94c4f2d7b771d8b3": "2026-10-10T20:01:01+00:00",
+  "923cb7f2e5175ae8": "2026-10-10T20:01:01+00:00",
+  "622958485bb6b1b8": "2026-10-10T20:01:01+00:00",
+  "9d0fa7c4952b53bf": "2026-10-10T20:01:01+00:00",
+  "d358c302a22e53c1": "2026-10-10T20:01:01+00:00"
  },
  "inviate": [
   {
@@ -18419,6 +18464,115 @@
    "quando": "2026-10-10T18:01:11+00:00",
    "messaggio": 401,
    "riassunto": "Il rendimento prospettico degli utili dell'indice S&P 500 si attesta al 5,3%, confrontandosi con un rendimento reale dei Treasury a 10 anni al 3%. Questo differenziale di valutazione offre agli investitori spunti critici per la riallocazione degli asset tra azioni e reddito fisso. Il premio per il r"
+  },
+  {
+   "id": "82dafa0a3e2da12e",
+   "titolo": "AI Debt Issuance Defies Rising Yields as SpaceX, Broadcom Plan Major Deals",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management",
+    "Azionario"
+   ],
+   "impronta": [
+    "broadcom",
+    "deals",
+    "debt",
+    "defies",
+    "issuance",
+    "major",
+    "plan",
+    "rising",
+    "spacex",
+    "yields"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-10/ai-issuers-are-upending-longstanding-safety-valve-credit-weekly",
+   "quando": "2026-10-10T20:01:09+00:00",
+   "messaggio": 402,
+   "riassunto": "Le grandi aziende tecnologiche continuano a emettere massicci volumi di obbligazioni nonostante l'aumento dei rendimenti e l'inasprimento delle condizioni di finanziamento. I piani di maxi-finanziamento da parte di SpaceX e Broadcom accentuano i timori degli investitori per il forte indebitamento le"
+  },
+  {
+   "id": "dc0045fe3bf502a6",
+   "titolo": "Trump says he’s evaluating whether the U.S. should join Saudi Arabia’s fight against Iran-backed Houthi rebels in Yemen after fresh attacks on Riyadh",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "against",
+    "arabia",
+    "attacks",
+    "backed",
+    "evaluating",
+    "fight",
+    "fresh",
+    "houthi",
+    "iran",
+    "join",
+    "rebels",
+    "riyadh",
+    "saudi",
+    "should",
+    "trump",
+    "whether",
+    "yemen"
+   ],
+   "link": "https://fortune.com/2026/10/10/trump-us-forces-saudi-arabia-war-iran-houthi-rebels-yemen/",
+   "quando": "2026-10-10T20:01:09+00:00",
+   "messaggio": 403,
+   "riassunto": "Il presidente statunitense Donald Trump ha dichiarato di stare valutando un coinvolgimento diretto degli Stati Uniti a fianco dell'Arabia Saudita contro i ribelli Houthi nello Yemen, sostenuti dall'Iran. La decisione fa seguito a una serie di nuovi attacchi missilistici che hanno preso di mira Riyad"
+  },
+  {
+   "id": "8ce11f902332a154",
+   "titolo": "Analisti: 'La revoca delle sanzioni su diesel non risolve, il problema è il Medio Oriente'",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "analisti",
+    "diesel",
+    "medio",
+    "oriente",
+    "problema",
+    "revoca",
+    "risolve",
+    "sanzioni"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/10/analisti-la-revoca-delle-sanzioni-su-diesel-non-risolve-il-problema-e-il-medio-oriente_6f93021c-b53e-47c0-bee8-f232437e9145.html",
+   "quando": "2026-10-10T20:01:10+00:00",
+   "messaggio": 404,
+   "riassunto": "Gli esperti di mercato sottolineano che l'accordo per la fornitura di diesel russo e la potenziale revoca delle sanzioni avranno un impatto modesto sui prezzi alla pompa. Il consumo giornaliero degli Stati Uniti pari a 3,7 milioni di barili rende l'apporto marginale, mentre permangono i severi risch"
+  },
+  {
+   "id": "36c54a1cfdc9d46e",
+   "titolo": "Yen Falls Back in New York, Mid-158 Range as Rising U.S. Yields on Crude Oil Gains Weigh",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "158",
+    "back",
+    "crude",
+    "falls",
+    "gains",
+    "mid",
+    "oil",
+    "range",
+    "rising",
+    "weigh",
+    "yen",
+    "yields",
+    "york"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE54UlFIRjZWa2pOM0tuSEk1Z285TkotTFUwdXc5WFh5ME5JYWlCMHZja3JYX0FSMWhpMGhCNHljUElrWkh3eVlmNWFXenJkREM3c3prWDBSVjkzTnVyRWpLT2RmWkZ3MEVjWkowdTd6OXZmWXNnZlE?oc=5",
+   "quando": "2026-10-10T20:01:11+00:00",
+   "messaggio": 405,
+   "riassunto": "La valuta giapponese ha registrato una netta flessione nella sessione di New York, attestandosi nella fascia di metà 158 contro il dollaro. A pesare sullo yen sono il persistente rialzo dei rendimenti obbligazionari statunitensi e la forza dei prezzi del petrolio che penalizzano le valute dei Paesi "
   }
  ],
  "feed_guasti": {},
@@ -18431,12 +18585,12 @@
   "2026-10-07": 12,
   "2026-10-08": 9,
   "2026-10-09": 9,
-  "2026-10-10": 6
+  "2026-10-10": 7
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-10 20",
-  "chiusura": "2026-10-09",
+  "ora_notizie": "2026-10-10 22",
+  "chiusura": "2026-10-10",
   "apertura": "2026-10-10",
   "settimanale": "2026-W40"
  },
