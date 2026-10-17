@@ -1,39 +1,5 @@
 {
  "valutate": {
-  "d5459d10d1fed1db": "2026-10-03T17:01:42+00:00",
-  "88b8c169f88e9967": "2026-10-03T17:01:42+00:00",
-  "d011c088f94aa5b7": "2026-10-03T17:01:42+00:00",
-  "770a44e6f85e082f": "2026-10-03T17:01:42+00:00",
-  "f1fc8b3113a9963c": "2026-10-03T17:01:42+00:00",
-  "4e0772ace143daee": "2026-10-03T17:01:42+00:00",
-  "feb3f82e85386923": "2026-10-03T17:01:42+00:00",
-  "5e980b896ab51a72": "2026-10-03T17:01:42+00:00",
-  "487595b9c94e314c": "2026-10-03T17:01:42+00:00",
-  "632b5fca73355e0f": "2026-10-03T17:01:42+00:00",
-  "c3428e46bea38589": "2026-10-03T17:01:42+00:00",
-  "779ca7bf06625328": "2026-10-03T17:01:42+00:00",
-  "5be309b6f2e4f72f": "2026-10-03T17:01:42+00:00",
-  "327bde3466ca35b5": "2026-10-03T17:01:42+00:00",
-  "07f283c4101e049f": "2026-10-03T17:01:42+00:00",
-  "902b9bfd338e70b6": "2026-10-03T17:01:42+00:00",
-  "df39c7f5319543be": "2026-10-03T17:01:42+00:00",
-  "4eed005ef974bf69": "2026-10-03T17:01:42+00:00",
-  "25defc31ad8e23f0": "2026-10-03T17:01:42+00:00",
-  "4bb3a22076c5374c": "2026-10-03T17:01:42+00:00",
-  "6410c6618bf097ab": "2026-10-03T17:01:42+00:00",
-  "d8648751ec527a65": "2026-10-03T17:01:42+00:00",
-  "192daf0f1d3bbb0d": "2026-10-03T17:01:42+00:00",
-  "b015967a8b5abac2": "2026-10-03T17:01:42+00:00",
-  "6827b5c482472145": "2026-10-03T17:01:42+00:00",
-  "788f72090b984a13": "2026-10-03T17:01:42+00:00",
-  "1a3b9a4bade0f624": "2026-10-03T17:01:42+00:00",
-  "82e7bbe892ebda1d": "2026-10-03T17:01:42+00:00",
-  "23c2c146a700c208": "2026-10-03T17:01:42+00:00",
-  "b1d799aaf9542fec": "2026-10-03T17:01:42+00:00",
-  "dbb077a362bcbb17": "2026-10-03T17:01:42+00:00",
-  "a0709c2c4b3262ea": "2026-10-03T17:01:42+00:00",
-  "34e61444503e7825": "2026-10-03T17:01:42+00:00",
-  "c66a77b0503d1044": "2026-10-03T17:01:42+00:00",
   "21c60eb73a566666": "2026-10-03T18:01:30+00:00",
   "0ffe71c49baa1f0f": "2026-10-03T18:01:30+00:00",
   "2a255a4c9bb5575d": "2026-10-03T18:01:30+00:00",
@@ -15689,7 +15655,49 @@
   "1ea4567683399344": "2026-10-17T16:01:07+00:00",
   "753c2ef87a2b3cf7": "2026-10-17T16:01:07+00:00",
   "0f0f8868fd27bea9": "2026-10-17T16:01:07+00:00",
-  "c2c125320f228bf0": "2026-10-17T16:01:07+00:00"
+  "c2c125320f228bf0": "2026-10-17T16:01:07+00:00",
+  "d637c07c1f9aa4a3": "2026-10-17T18:01:12+00:00",
+  "1a533d7fa4a3d03d": "2026-10-17T18:01:12+00:00",
+  "c748ac73d0dc4adf": "2026-10-17T18:01:12+00:00",
+  "ac53375b2d9bbcc1": "2026-10-17T18:01:12+00:00",
+  "2c9f25c5e0a8c667": "2026-10-17T18:01:12+00:00",
+  "da1157992e09708b": "2026-10-17T18:01:12+00:00",
+  "ef5a558f7ef7cf23": "2026-10-17T18:01:12+00:00",
+  "3b535290a1684b36": "2026-10-17T18:01:12+00:00",
+  "30ba61ab23bce0b1": "2026-10-17T18:01:12+00:00",
+  "f0fcf371e8259254": "2026-10-17T18:01:12+00:00",
+  "1590add0e971b3b4": "2026-10-17T18:01:12+00:00",
+  "66302b9996133336": "2026-10-17T18:01:12+00:00",
+  "c0157caf64245afa": "2026-10-17T18:01:12+00:00",
+  "f1c5d9cfb51276e3": "2026-10-17T18:01:12+00:00",
+  "942e89d7e0dcf33f": "2026-10-17T18:01:12+00:00",
+  "a2f4937c447d0a7e": "2026-10-17T18:01:12+00:00",
+  "ed71bc01b26913f0": "2026-10-17T18:01:12+00:00",
+  "a606d71f6ff4e43b": "2026-10-17T18:01:12+00:00",
+  "76630ece8ad86301": "2026-10-17T18:01:12+00:00",
+  "0514b2216b876906": "2026-10-17T18:01:12+00:00",
+  "7849cd8aee86d863": "2026-10-17T18:01:12+00:00",
+  "cd41acc924f13ee0": "2026-10-17T18:01:12+00:00",
+  "defeda1aae083576": "2026-10-17T18:01:12+00:00",
+  "7c2988d832dc6230": "2026-10-17T18:01:12+00:00",
+  "1e943003fb302828": "2026-10-17T18:01:12+00:00",
+  "a640155c8304d19c": "2026-10-17T18:01:12+00:00",
+  "b6c83e9304135dfd": "2026-10-17T18:01:12+00:00",
+  "b2c9915a96df94c4": "2026-10-17T18:01:12+00:00",
+  "8cbef9ad1788e215": "2026-10-17T18:01:12+00:00",
+  "115ad586096022bc": "2026-10-17T18:01:12+00:00",
+  "b0e43f6f3a93e1b3": "2026-10-17T18:01:12+00:00",
+  "82965de14f044ad5": "2026-10-17T18:01:12+00:00",
+  "94c68bbcdcba848a": "2026-10-17T18:01:12+00:00",
+  "19fe68a19e1c9f12": "2026-10-17T18:01:12+00:00",
+  "9758113b98bbb9cb": "2026-10-17T18:01:12+00:00",
+  "39ee4d658fda56ce": "2026-10-17T18:01:12+00:00",
+  "e66a6e3c3f6af72f": "2026-10-17T18:01:12+00:00",
+  "b043d5264efadf46": "2026-10-17T18:01:12+00:00",
+  "b7fadf910651c672": "2026-10-17T18:01:12+00:00",
+  "ea7559ad68e5dc28": "2026-10-17T18:01:12+00:00",
+  "62f17f6225c7aacb": "2026-10-17T18:01:12+00:00",
+  "b8f69accc179a9d6": "2026-10-17T18:01:12+00:00"
  },
  "inviate": [
   {
@@ -15835,109 +15843,6 @@
    }
   },
   {
-   "id": "df39c7f5319543be",
-   "titolo": "G7 agrees 100m-barrel release as diesel squeeze grips markets",
-   "tema": "Geopolitica e commercio internazionale",
-   "reparti": [
-    "Geopolitica",
-    "Azionario",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "100m",
-    "agrees",
-    "barrel",
-    "diesel",
-    "grips",
-    "markets",
-    "release",
-    "squeeze"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPVWpETm50YlkxUEhFRzFaU05iZmFBMm9IUXZEb1NUZTU0VjQxVnowZElFWWdrRExWTFJuX3UxdTg3aFA4U1B4cUVnaldkaV9HTzBMRUwtbFV2UFpyRDZoeVdtLU1NOFVyMm05YlFwZnphQng0dlI0T3pWVVE4cWEzazBGSU1ReFpGNWxjWE56YjQ?oc=5",
-   "quando": "2026-10-03T17:01:42+00:00"
-  },
-  {
-   "id": "4bb3a22076c5374c",
-   "titolo": "High Government Debt Is Adding Fuel to the Global Bond-Market Selloff",
-   "tema": "Debito pubblico e spread BTP-Bund",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "adding",
-    "bond",
-    "debt",
-    "fuel",
-    "global",
-    "government",
-    "high",
-    "market",
-    "selloff"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQS1ktT2R4bUFqMXpIRDJWbGxpQ1hqLTFpUmFlMkpJNWRndWNraTZTXzZIT052MDFtTEctaXF6Tk9MYW1iTU54U0xqLXA2V3V0M3A1S3FrXzZpaHBBUEQxa1k1azNRRm5lazJUNTVqMzBfUWxWXzA3c2xuZ1BJcWgxbDVxNWJhaThKWnpXREpJd1NzQjN1R2NPYl9Db0FwbVVDdjU3V0lXZm5ndlFRc2dTTldyN1plRDQ?oc=5",
-   "quando": "2026-10-03T17:01:43+00:00"
-  },
-  {
-   "id": "34e61444503e7825",
-   "titolo": "Quando il Giappone alza i tassi: l’effetto domino da Tokyo a Milano",
-   "tema": "BCE",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Copertura"
-   ],
-   "impronta": [
-    "alza",
-    "domino",
-    "effetto",
-    "giappone",
-    "milano",
-    "quando",
-    "tassi",
-    "tokyo"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTjBCeEN6NGtBX1lpVzN4TTk3NHRVZGJoNGVHWmp3d1E3MnU0cDFHSjQxODB3d0lTRTNrdVpHSGVkMzNZbFF1VURQU2xzTFhtS1lJTGRmZ0R2YXVTSkhRWGtURzM1dXZVeWRtZzFyQ3dmbTY1NjRPWW5VSWVXVUV4ZFF0MExsQzRWc1EtX3BlZWJKbnhhLTluXzhhOUpZVWw1S0lTUFBNa0VIMkNQZmRPRA?oc=5",
-   "quando": "2026-10-03T17:01:43+00:00"
-  },
-  {
-   "id": "d8648751ec527a65",
-   "titolo": "Inflazione nell'Eurozona e Pressioni sulla BCE",
-   "tema": "BCE",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario"
-   ],
-   "impronta": [
-    "bce",
-    "eurozona",
-    "inflazione",
-    "nell",
-    "pressioni"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMXprY1VDZWo2N04yVXpRNVN5ajkzNGhxVzF2c0dqQ3JUMThvR1VqejlBeFd2dEVfQlh0Y2hrOXNraDM2S1dlUnowMmhQdDZBNTRqS0ZrLWFzV0xKbTF1c0Vfcl9ha1dvTFRBbHFjenpJQVZsdnRwcjVUQk9vbjFCNnhzRDQyeE43a0dtWW5Yc0RXNUFlajdyeVRkUFc5STlwQTFGNUpJcURRWkxFa3NwSnZR?oc=5",
-   "quando": "2026-10-03T17:01:44+00:00"
-  },
-  {
-   "id": "1a3b9a4bade0f624",
-   "titolo": "Trump’s tariffs face a fresh legal test in federal court",
-   "tema": "Geopolitica e commercio internazionale",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "against",
-    "canada",
-    "trade",
-    "trump",
-    "war"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NbzMxRmRsM2Nac2Q2UE5Od2UxeHNUMHF2dkNtX1dPc182bzBfSWR5MU16Z29SdmFaR2FvWVRHR2tQSV9oYWFoVHZMVVQ1YXpNVXRidjktOEhzcDc0YW9ERXd5TUFjV28yQ21xRTdQbGdUZkFIaFYw0gF3QVVfeXFMT01vMzFGZGwzY1pzZDZQTk53ZTF4c1QwcXZ2Q21fV09zXzZvMF9JZHkxTXpnb1J2YVpHYW9ZVEdHa1BJX2hhYWhUdkxVVDVhek1VdGJ2OS04SHNwNzRhb0RFd3lNQWNXbzJDbXFFN1BsZ1RmQUhoVjA?oc=5",
-   "quando": "2026-10-03T17:01:44+00:00"
-  },
-  {
    "id": "23c2c146a700c208",
    "titolo": "Scope Ratings warns US debt path is unsustainable, keeps rating at AA-",
    "tema": "Rating e merito di credito",
@@ -15961,30 +15866,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "327bde3466ca35b5",
-   "titolo": "India Relatively Insulated from Rising US Yields, Focus Must Be on Sustaining Growth: Economists",
-   "tema": "Cina ed economie emergenti",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "economists",
-    "focus",
-    "growth",
-    "india",
-    "insulated",
-    "must",
-    "relatively",
-    "rising",
-    "sustaining",
-    "yields"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVBOOVc4QVBYVGlhX1RvcWd3Wkt5d3B1cFp3OG9yUThCRmVwY3RGakhLZEJ0NkxWTzJVTFNuNU1mQ1hlNmJTT3dpcDNYS3V0bDl4M01aX0xjM0k4V2FKNDMwNXJyazdMSmh0U2pxXzZMcmFrTjA2Wkg2dlFPNUlYa0lkNUYzc0o4QmxhTE9VbmRZRlV3NkpXN3lWOGVzU3BUemFpTDcxaWlqalVSeVQwdWRvS3J1VUIxN0xvQnNTVy0?oc=5",
-   "quando": "2026-10-03T17:01:48+00:00"
   },
   {
    "id": "554acfd9e6057e83",
@@ -29394,10 +29275,70 @@
    "quando": "2026-10-17T16:01:14+00:00",
    "messaggio": 586,
    "riassunto": "Il presidente della Fed di Chicago, Austan Goolsbee, ha incontrato gli operatori agricoli nell'Illinois rurale per esaminare l'impatto dei prezzi dei raccolti in calo e dei rincari di carburante e fertilizzanti. Gli incontri offrono alla banca centrale una prospettiva concreta sulle pressioni sui co"
+  },
+  {
+   "id": "2c9f25c5e0a8c667",
+   "titolo": "U.S. debt interest payments hit $3 billion a day and jumped 8% in fiscal 2026 — faster than total federal spending, revenue and GDP growth",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "2026",
+    "billion",
+    "day",
+    "debt",
+    "faster",
+    "federal",
+    "fiscal",
+    "gdp",
+    "growth",
+    "hit",
+    "interest",
+    "jumped",
+    "payments",
+    "revenue",
+    "spending",
+    "than",
+    "total"
+   ],
+   "link": "https://fortune.com/2026/10/17/us-debt-interest-payments-fiscal-2026-1-trillion-federal-spending-revenue-gdp-growth-treasury-yields/",
+   "quando": "2026-10-17T18:01:13+00:00",
+   "messaggio": 587,
+   "riassunto": "I pagamenti netti per interessi sul debito federale degli Stati Uniti sono aumentati dell'8% raggiungendo quota 1,05 trilioni di dollari nell'anno fiscale 2026, toccando i 3 miliardi di dollari al giorno. La spesa per interessi è cresciuta più rapidamente della spesa totale (+6%), delle entrate (+3%"
+  },
+  {
+   "id": "da1157992e09708b",
+   "titolo": "Semiconductor market to remain solid ‘at least through next year,’ South Korea finance minister says",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "finance",
+    "korea",
+    "least",
+    "market",
+    "minister",
+    "next",
+    "remain",
+    "semiconductor",
+    "solid",
+    "south",
+    "through",
+    "year"
+   ],
+   "link": "https://www.cnbc.com/2026/10/17/south-korea-semiconductor-outlook-lee-hyoung-il.html",
+   "quando": "2026-10-17T18:01:14+00:00",
+   "messaggio": 588,
+   "riassunto": "Il ministro delle Finanze della Corea del Sud ha dichiarato che la crescita del settore dei semiconduttori rimarrà solida almeno per tutto il prossimo anno, sostenuta da un'offerta che si mantiene rigida nonostante il recente sell-off globale sui titoli dei chip. Gli analisti continuano a interrogar"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 31
+  "FXStreet": 32
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -29415,11 +29356,11 @@
   "2026-10-14": 9,
   "2026-10-15": 9,
   "2026-10-16": 10,
-  "2026-10-17": 5
+  "2026-10-17": 6
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-17 18",
+  "ora_notizie": "2026-10-17 20",
   "chiusura": "2026-10-16",
   "apertura": "2026-10-17",
   "settimanale": "2026-W41"
