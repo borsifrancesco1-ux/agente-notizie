@@ -1,28 +1,5 @@
 {
  "valutate": {
-  "5f6fbd8d536c6b73": "2026-10-03T14:01:13+00:00",
-  "23860bae99930de0": "2026-10-03T14:01:13+00:00",
-  "4d97d9294e45fad7": "2026-10-03T14:01:13+00:00",
-  "40f07497b3bd40f4": "2026-10-03T14:01:13+00:00",
-  "8f6b5db9bd47c08b": "2026-10-03T14:01:13+00:00",
-  "5f4b2d98025867a1": "2026-10-03T14:01:13+00:00",
-  "36d68e124a241fd5": "2026-10-03T14:01:13+00:00",
-  "e458da75ec2d4d6b": "2026-10-03T14:01:13+00:00",
-  "66a724d69e3dfa80": "2026-10-03T14:01:13+00:00",
-  "f346aa39209d2126": "2026-10-03T14:01:13+00:00",
-  "c89c35768c51ac23": "2026-10-03T14:01:13+00:00",
-  "8bf2a8bc7d2368d3": "2026-10-03T14:01:13+00:00",
-  "6ad44508ba4890e5": "2026-10-03T14:01:13+00:00",
-  "f174f7d86cd93495": "2026-10-03T14:01:13+00:00",
-  "271d5e954f25d046": "2026-10-03T14:01:13+00:00",
-  "b83c258fcea0ea44": "2026-10-03T14:01:13+00:00",
-  "2deb68b23bc96b4c": "2026-10-03T14:01:13+00:00",
-  "41c379e5126b3c30": "2026-10-03T14:01:13+00:00",
-  "8affc2b516cc886a": "2026-10-03T14:01:13+00:00",
-  "470fccfbfb119fae": "2026-10-03T14:01:13+00:00",
-  "6e27ede431f89e1c": "2026-10-03T14:01:13+00:00",
-  "7633bf07e366a121": "2026-10-03T14:01:13+00:00",
-  "8ede1012afd660ab": "2026-10-03T14:01:13+00:00",
   "566ea060bdf3de33": "2026-10-03T15:01:18+00:00",
   "bbe1b7abc069bb46": "2026-10-03T15:01:18+00:00",
   "2045ee10de091156": "2026-10-03T15:01:18+00:00",
@@ -15634,7 +15611,75 @@
   "3895f76c4139caab": "2026-10-17T12:01:34+00:00",
   "f87bac9101019335": "2026-10-17T12:01:34+00:00",
   "74ce34be52652e5f": "2026-10-17T12:01:34+00:00",
-  "303ec220ad5db07b": "2026-10-17T12:01:34+00:00"
+  "303ec220ad5db07b": "2026-10-17T12:01:34+00:00",
+  "fe2eba3290565b2a": "2026-10-17T14:01:17+00:00",
+  "7236f3e06fd0f852": "2026-10-17T14:01:17+00:00",
+  "b76b10df3a096f27": "2026-10-17T14:01:17+00:00",
+  "c46aefe68905bf52": "2026-10-17T14:01:17+00:00",
+  "df0c44f81277796b": "2026-10-17T14:01:17+00:00",
+  "0abd0a00e1c06544": "2026-10-17T14:01:17+00:00",
+  "0289c51961d7fc26": "2026-10-17T14:01:17+00:00",
+  "458b7b09038d01f4": "2026-10-17T14:01:17+00:00",
+  "087c45a09f0923d3": "2026-10-17T14:01:17+00:00",
+  "9ff31617e582eba0": "2026-10-17T14:01:17+00:00",
+  "17ecba1dd2982a55": "2026-10-17T14:01:17+00:00",
+  "014f0810c85ecf94": "2026-10-17T14:01:17+00:00",
+  "a8a16f475b088614": "2026-10-17T14:01:17+00:00",
+  "0800f7a1f8afe834": "2026-10-17T14:01:17+00:00",
+  "f4707d60fa6f1ad2": "2026-10-17T14:01:17+00:00",
+  "c65f8209d3b87b32": "2026-10-17T14:01:17+00:00",
+  "0de6eb5bed0bce64": "2026-10-17T14:01:17+00:00",
+  "bf8cddd61d5f4ce7": "2026-10-17T14:01:17+00:00",
+  "557ff72dba4c1a6f": "2026-10-17T14:01:17+00:00",
+  "021d01d95d619b9a": "2026-10-17T14:01:17+00:00",
+  "24f1cbdf73909697": "2026-10-17T14:01:17+00:00",
+  "e98f1dd4cbf54349": "2026-10-17T14:01:17+00:00",
+  "b0585803586becf6": "2026-10-17T14:01:17+00:00",
+  "da77d5275e720e6f": "2026-10-17T14:01:17+00:00",
+  "bff5a0e137e89b91": "2026-10-17T14:01:17+00:00",
+  "42a9b95e16698110": "2026-10-17T14:01:17+00:00",
+  "47058a8b7b6b0e07": "2026-10-17T14:01:17+00:00",
+  "a01117fa064bff30": "2026-10-17T14:01:17+00:00",
+  "1d77f074f35fc4e1": "2026-10-17T14:01:17+00:00",
+  "047746dab864a590": "2026-10-17T14:01:17+00:00",
+  "1da07935158bedc2": "2026-10-17T14:01:17+00:00",
+  "8f056a76e07608d1": "2026-10-17T14:01:17+00:00",
+  "ef5e73f2768e32a0": "2026-10-17T14:01:17+00:00",
+  "1b8948e46756c1f9": "2026-10-17T14:01:17+00:00",
+  "61cae8d261bcda56": "2026-10-17T14:01:17+00:00",
+  "f2d5f53c6ac1f4c8": "2026-10-17T14:01:17+00:00",
+  "d98bb09dc0ca09da": "2026-10-17T14:01:17+00:00",
+  "110b976866527dd6": "2026-10-17T14:01:17+00:00",
+  "05853b8797c01567": "2026-10-17T14:01:17+00:00",
+  "79bb0da23450b00b": "2026-10-17T14:01:17+00:00",
+  "b2b4c08ee839d67f": "2026-10-17T14:01:17+00:00",
+  "33e9b5a075304e3b": "2026-10-17T14:01:17+00:00",
+  "4ba616f2f651b758": "2026-10-17T14:01:17+00:00",
+  "c0da0a6ee0837c01": "2026-10-17T14:01:17+00:00",
+  "733cb2c0ce9526b3": "2026-10-17T14:01:17+00:00",
+  "1481d44740def132": "2026-10-17T14:01:17+00:00",
+  "3ba6bc26e4d0cdfa": "2026-10-17T14:01:17+00:00",
+  "fba415b71e175ad2": "2026-10-17T14:01:17+00:00",
+  "f975b420a6b6305d": "2026-10-17T14:01:17+00:00",
+  "981f743a3bec4c8e": "2026-10-17T14:01:17+00:00",
+  "c6af9267e87ad444": "2026-10-17T14:01:17+00:00",
+  "314e2ed8365987be": "2026-10-17T14:01:17+00:00",
+  "c3a513c7d0fe8bd2": "2026-10-17T14:01:17+00:00",
+  "8f6dd488e653d62f": "2026-10-17T14:01:17+00:00",
+  "75cd9154686c1dd0": "2026-10-17T14:01:17+00:00",
+  "7e5c94ea52605c84": "2026-10-17T14:01:17+00:00",
+  "6341cc9369e16cad": "2026-10-17T14:01:17+00:00",
+  "662a5fa5ab3e7e5f": "2026-10-17T14:01:17+00:00",
+  "24e5e76e6c961c93": "2026-10-17T14:01:17+00:00",
+  "036de66bb837a0ae": "2026-10-17T14:01:17+00:00",
+  "27b76b095291f169": "2026-10-17T14:01:17+00:00",
+  "a87713b1ddf4b3a0": "2026-10-17T14:01:17+00:00",
+  "292fcb423e9a4eb4": "2026-10-17T14:01:17+00:00",
+  "2608a37356472c07": "2026-10-17T14:01:17+00:00",
+  "9fcf2ab4e709c1ad": "2026-10-17T14:01:17+00:00",
+  "0396cfef214b7c66": "2026-10-17T14:01:17+00:00",
+  "7afe80268276261c": "2026-10-17T14:01:17+00:00",
+  "02701d2b9d43f00b": "2026-10-17T14:01:17+00:00"
  },
  "inviate": [
   {
@@ -15727,141 +15772,6 @@
    "voti": {
     "a945f4701b6d": 1
    }
-  },
-  {
-   "id": "7633bf07e366a121",
-   "titolo": "US Treasuries suffer worst month in years as sell-off feeds on itself",
-   "tema": "Curva dei rendimenti",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "feeds",
-    "itself",
-    "month",
-    "off",
-    "sell",
-    "suffer",
-    "treasuries",
-    "worst",
-    "years"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB5M1h4VWJnRHhzcGRMUzlZR3k2VXRRZ25ENmV3cmFQMjM4X0RBNjAxLUpCRTBoTDZQWFpIRFZ3cEV3QkI2eEFac0p2a1M1emo3RUlZMDM0OA?oc=5",
-   "quando": "2026-10-03T14:01:14+00:00"
-  },
-  {
-   "id": "f174f7d86cd93495",
-   "titolo": "Berkshire buys more Lennar shares, but pace of purchases slows",
-   "tema": "Borse, valutazioni e utili",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "berkshire",
-    "but",
-    "buys",
-    "lennar",
-    "more",
-    "pace",
-    "purchases",
-    "shares",
-    "slows"
-   ],
-   "link": "https://www.cnbc.com/2026/10/03/berkshire-buys-more-lennar-shares-but-pace-of-purchases-slows.html",
-   "quando": "2026-10-03T14:01:14+00:00"
-  },
-  {
-   "id": "36d68e124a241fd5",
-   "titolo": "Gli Stati Uniti prevedono di prestare 4,2 miliardi a Vistra per espandere il nucleare",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica",
-    "Azionario"
-   ],
-   "impronta": [
-    "espandere",
-    "gli",
-    "miliardi",
-    "nucleare",
-    "prestare",
-    "prevedono",
-    "stati",
-    "uniti",
-    "vistra"
-   ],
-   "link": "https://it.investing.com/news/stock-market-news/gli-stati-uniti-prevedono-di-prestare-42-miliardi-a-vistra-per-espandere-il-nucleare-3573199",
-   "quando": "2026-10-03T14:01:15+00:00"
-  },
-  {
-   "id": "c89c35768c51ac23",
-   "titolo": "Google cofounder Sergey Brin has spent $102 million to fight California’s proposed billionaire tax—he could owe $13 billion if he loses",
-   "tema": "Fiscalità e regole per i risparmiatori",
-   "reparti": [
-    "Risk management",
-    "Azionario"
-   ],
-   "impronta": [
-    "102",
-    "billion",
-    "billionaire",
-    "brin",
-    "california",
-    "cofounder",
-    "could",
-    "fight",
-    "google",
-    "loses",
-    "million",
-    "owe",
-    "proposed",
-    "sergey",
-    "spent",
-    "tax"
-   ],
-   "link": "https://fortune.com/article/how-much-has-google-cofounder-sergey-brin-spent-to-oppose-california-billionaire-tax-102-million-owe-13-billion-if-loses/",
-   "quando": "2026-10-03T14:01:15+00:00"
-  },
-  {
-   "id": "271d5e954f25d046",
-   "titolo": "BFF_Am Call 1.2, Sep 2027",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "2027",
-    "bff",
-    "call",
-    "sep"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQVNZY1lsUEdDdmVuaW01Y0J4OGtsU3prbDc2Y3k2emYyWDdOLUxrT3pFNEdtWDBCMHJuNnFZVlJtVVdyX215TVliUDJCblg0cDRwQk9Ka09qYU9lVmlMOHBMUG5JNGNQenBXWVNBNWxrZHZhaWIyS29tZk8zUjdNdzZ2VUk1eGxvN3c?oc=5",
-   "quando": "2026-10-03T14:01:16+00:00"
-  },
-  {
-   "id": "41c379e5126b3c30",
-   "titolo": "RBI Governor Sanjay Malhotra warns against complacency over financial risks",
-   "tema": "Rischi di mercato e volatilità",
-   "reparti": [
-    "Risk management",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "against",
-    "complacency",
-    "financial",
-    "governor",
-    "malhotra",
-    "rbi",
-    "risks",
-    "sanjay",
-    "warns"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVDIyR0VFM2JfeS1fLS1DcTRuTGJRSzV3NU5rREpCZnRzaEVnWW1Zbko4Slp6OE15QTEzYUt4ZTJJV05CRkZfb05IYVBtTkphUWxaSnRVWGk0Z3VFTkVSblpBYkFra2ktM0VKTHRqQzY1U3ZVdTZVTDU5RGZvQ19UWTZYWC1fQWctSklJWkpaZlNwa0lGREtzZzNNMGQzSDZabVVVbmQ0R3Rzbmd4VWhVVEpmOHNZaVRlb3c?oc=5",
-   "quando": "2026-10-03T14:01:20+00:00"
   },
   {
    "id": "e36ec6fc7813c392",
@@ -29602,10 +29512,89 @@
    "quando": "2026-10-17T12:01:36+00:00",
    "messaggio": 580,
    "riassunto": "Il boom degli investimenti e della spesa in infrastrutture per l'intelligenza artificiale rischia di alimentare pressioni inflazionistiche strutturali, costringendo la Federal Reserve a mantenere i tassi di interesse elevati più a lungo del previsto. L'enorme fabbisogno di capitale assorbe liquidità"
+  },
+  {
+   "id": "f2d5f53c6ac1f4c8",
+   "titolo": "US Interest Costs Hit Record $1 Trillion, Risking Debt Snowball",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "costs",
+    "debt",
+    "hit",
+    "interest",
+    "record",
+    "risking",
+    "snowball",
+    "trillion"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-17/us-interest-costs-hit-record-1-trillion-risking-debt-snowball",
+   "quando": "2026-10-17T14:01:18+00:00",
+   "messaggio": 581,
+   "riassunto": "Il costo del servizio del debito federale degli Stati Uniti ha raggiunto la soglia record di 1 trilione di dollari per l'anno fiscale 2026. Questa spesa assorbe una quota crescente delle entrate fiscali, aumentando i rischi di un effetto valanga nel debito e rendendo il paese più vulnerabile a futur"
+  },
+  {
+   "id": "047746dab864a590",
+   "titolo": "Chip index SOX posts longest losing streak since 2008 as AI worries deepen",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "2008",
+    "chip",
+    "deepen",
+    "index",
+    "longest",
+    "losing",
+    "posts",
+    "since",
+    "sox",
+    "streak",
+    "worries"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/chip-index-sox-posts-longest-losing-streak-since-2008-as-ai-worries-deepen-4955401",
+   "quando": "2026-10-17T14:01:19+00:00",
+   "messaggio": 582,
+   "riassunto": "L'indice dei semiconduttori SOX ha esteso la sua serie negativa, registrando la striscia di perdite settimanali più lunga dal 2008 a causa dei crescenti timori legati alle valutazioni del settore e alla sostenibilità della spesa in intelligenza artificiale. Il sell-off sta colpendo duramente i titol"
+  },
+  {
+   "id": "c6af9267e87ad444",
+   "titolo": "An earthquake is coming to Eurozone: After Greece, market dictatorship will crush France - At the mercy of debt for 5 reasons, ECB disarmed",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "coming",
+    "crush",
+    "debt",
+    "dictatorship",
+    "disarmed",
+    "earthquake",
+    "ecb",
+    "eurozone",
+    "france",
+    "greece",
+    "market",
+    "mercy",
+    "reasons"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxORGxFOThwaWJfcXVFMWFIdVJYaVJZY1cxcUJ4N0xkNm83dXo1WS03dF9wcmE1UHc4ZmZ0VmE0OVBraVhkRnU2Y29BSnltYjBXRGd0Q2ttcmFLMngzUUo5VWMwVzd2a2J6bHUxVlF5Z2tYUUFXMVZ2alBadHBRVWI1bDJRV0FrUFMwdGZXMlRhTi00Z3RacHVSMklhcDNVZ05VOEdBTHZ4Q0psemFYX0VsQnJQT1kxdlVtVUFRSmd5S0M2OUZiaERYRUFMSEV4bW5OWnRFR2xXbEE3aHJGRjNSSmVQMFBwY3Z1ZWtFQjl0alZYUFhzeTE5NTA1NzFRQTliVG9aNkR4NU9mcFlGaUlmdlN2T0RISVBFMy1seWJwbi0xN1U?oc=5",
+   "quando": "2026-10-17T14:01:20+00:00",
+   "messaggio": 583,
+   "riassunto": "Le analisi sui mercati evidenziano crescenti pressioni sulla Francia a causa della vulnerabilità dei conti pubblici e della rigidità del quadro politico, in un contesto in cui la Banca Centrale Europea appare limitata nei suoi interventi di supporto. Il deterioramento della situazione transalpina ri"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 29
+  "FXStreet": 30
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -29623,11 +29612,11 @@
   "2026-10-14": 9,
   "2026-10-15": 9,
   "2026-10-16": 10,
-  "2026-10-17": 3
+  "2026-10-17": 4
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-17 14",
+  "ora_notizie": "2026-10-17 16",
   "chiusura": "2026-10-16",
   "apertura": "2026-10-17",
   "settimanale": "2026-W41"
