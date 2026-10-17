@@ -1,30 +1,5 @@
 {
  "valutate": {
-  "566ea060bdf3de33": "2026-10-03T15:01:18+00:00",
-  "bbe1b7abc069bb46": "2026-10-03T15:01:18+00:00",
-  "2045ee10de091156": "2026-10-03T15:01:18+00:00",
-  "0e5b92bfd6a708f9": "2026-10-03T15:01:18+00:00",
-  "ad3fe31574df2d5f": "2026-10-03T15:01:18+00:00",
-  "297c9b5401e77b0d": "2026-10-03T15:01:18+00:00",
-  "28efa7877ef17afa": "2026-10-03T15:01:18+00:00",
-  "13fada2a7bdfe699": "2026-10-03T15:01:18+00:00",
-  "ddefc09987ade94f": "2026-10-03T15:01:18+00:00",
-  "7cd15a9d4657865e": "2026-10-03T15:01:18+00:00",
-  "3d5bcb1a55d7fba4": "2026-10-03T15:01:18+00:00",
-  "5348409b75b2e545": "2026-10-03T15:01:18+00:00",
-  "33541af94e876513": "2026-10-03T15:01:18+00:00",
-  "c50285b379ba61d0": "2026-10-03T15:01:18+00:00",
-  "dc95c60c6d746e75": "2026-10-03T15:01:18+00:00",
-  "18d9d15750a6e0b0": "2026-10-03T15:01:18+00:00",
-  "5b5dfc5f12ee72ae": "2026-10-03T15:01:18+00:00",
-  "3f233ba294c655c5": "2026-10-03T15:01:18+00:00",
-  "4d8990e2d6321969": "2026-10-03T15:01:18+00:00",
-  "ed9f604b341f54ca": "2026-10-03T15:01:18+00:00",
-  "709df2ecb7d7b1e1": "2026-10-03T15:01:18+00:00",
-  "d048bd1290a41c24": "2026-10-03T15:01:18+00:00",
-  "05a8055ac2e0b48d": "2026-10-03T15:01:18+00:00",
-  "9993609713fd9412": "2026-10-03T15:01:18+00:00",
-  "e36ec6fc7813c392": "2026-10-03T15:01:18+00:00",
   "bbef519972187154": "2026-10-03T16:01:17+00:00",
   "f008e4fb6e7f7277": "2026-10-03T16:01:17+00:00",
   "94d0aae4ee5da40d": "2026-10-03T16:01:17+00:00",
@@ -15679,7 +15654,69 @@
   "9fcf2ab4e709c1ad": "2026-10-17T14:01:17+00:00",
   "0396cfef214b7c66": "2026-10-17T14:01:17+00:00",
   "7afe80268276261c": "2026-10-17T14:01:17+00:00",
-  "02701d2b9d43f00b": "2026-10-17T14:01:17+00:00"
+  "02701d2b9d43f00b": "2026-10-17T14:01:17+00:00",
+  "35c09364c6fc5cc9": "2026-10-17T16:01:07+00:00",
+  "7edf1f5a10142bc4": "2026-10-17T16:01:07+00:00",
+  "038dcc52a311b1c9": "2026-10-17T16:01:07+00:00",
+  "813389978861d7f2": "2026-10-17T16:01:07+00:00",
+  "eeb73942b10aed2c": "2026-10-17T16:01:07+00:00",
+  "e25eec17327ead7d": "2026-10-17T16:01:07+00:00",
+  "b697c5a406663b3b": "2026-10-17T16:01:07+00:00",
+  "968e0072bb395e21": "2026-10-17T16:01:07+00:00",
+  "398d19b261f69b43": "2026-10-17T16:01:07+00:00",
+  "b2e07a4af0557388": "2026-10-17T16:01:07+00:00",
+  "c0fc42a68195cdbf": "2026-10-17T16:01:07+00:00",
+  "b95b4768fafa1188": "2026-10-17T16:01:07+00:00",
+  "d76ec89d58decbe1": "2026-10-17T16:01:07+00:00",
+  "c8fc234392773562": "2026-10-17T16:01:07+00:00",
+  "46f8ceb38e01297f": "2026-10-17T16:01:07+00:00",
+  "5ed337c43eacc665": "2026-10-17T16:01:07+00:00",
+  "4fb1015ce59b186b": "2026-10-17T16:01:07+00:00",
+  "32317f63d09c3371": "2026-10-17T16:01:07+00:00",
+  "bda51c97fd34bfe4": "2026-10-17T16:01:07+00:00",
+  "cad35f1e51cc3860": "2026-10-17T16:01:07+00:00",
+  "6215cda7e67b4cb8": "2026-10-17T16:01:07+00:00",
+  "2611a30094ee5cd8": "2026-10-17T16:01:07+00:00",
+  "a23d58278036576b": "2026-10-17T16:01:07+00:00",
+  "07aaa509169c3bda": "2026-10-17T16:01:07+00:00",
+  "4a08259ccb945073": "2026-10-17T16:01:07+00:00",
+  "6c776ac4d331cb6d": "2026-10-17T16:01:07+00:00",
+  "c92c0334825e1ed3": "2026-10-17T16:01:07+00:00",
+  "b1705e530d8cc45e": "2026-10-17T16:01:07+00:00",
+  "f6ce6fc61246d583": "2026-10-17T16:01:07+00:00",
+  "54f5edf0ae651d40": "2026-10-17T16:01:07+00:00",
+  "abec4b811f51a61e": "2026-10-17T16:01:07+00:00",
+  "215ef5127d2b28fc": "2026-10-17T16:01:07+00:00",
+  "f9bb37a6f7f3e0c1": "2026-10-17T16:01:07+00:00",
+  "1d9ad28691c343f5": "2026-10-17T16:01:07+00:00",
+  "8d157df6a4d03f6c": "2026-10-17T16:01:07+00:00",
+  "4c07bf1f6ec8bf9f": "2026-10-17T16:01:07+00:00",
+  "c619fcf4d969a7db": "2026-10-17T16:01:07+00:00",
+  "07fe650e86daac8e": "2026-10-17T16:01:07+00:00",
+  "dd1d0b1b4c2fac7f": "2026-10-17T16:01:07+00:00",
+  "fa2553d7cea52eb9": "2026-10-17T16:01:07+00:00",
+  "5693187b1e0082a0": "2026-10-17T16:01:07+00:00",
+  "d5a2cf7bc18570ae": "2026-10-17T16:01:07+00:00",
+  "95abbcb1efa47070": "2026-10-17T16:01:07+00:00",
+  "7459bd5329b893c2": "2026-10-17T16:01:07+00:00",
+  "f93a82256360adee": "2026-10-17T16:01:07+00:00",
+  "93794bc8f7a18976": "2026-10-17T16:01:07+00:00",
+  "14d00fc18ab356bc": "2026-10-17T16:01:07+00:00",
+  "3e5d9dd8212a654a": "2026-10-17T16:01:07+00:00",
+  "e228c3d48f4b3512": "2026-10-17T16:01:07+00:00",
+  "93729e0cf976cfdc": "2026-10-17T16:01:07+00:00",
+  "b6a236771dd0f131": "2026-10-17T16:01:07+00:00",
+  "d53b19cb5ad1486b": "2026-10-17T16:01:07+00:00",
+  "452e0b135f4b0e07": "2026-10-17T16:01:07+00:00",
+  "761466a10e0e56ed": "2026-10-17T16:01:07+00:00",
+  "8151b91c9c407f05": "2026-10-17T16:01:07+00:00",
+  "e8c9b633a2ff89f8": "2026-10-17T16:01:07+00:00",
+  "a94db11d218f6576": "2026-10-17T16:01:07+00:00",
+  "53b4e50a3eff67e1": "2026-10-17T16:01:07+00:00",
+  "1ea4567683399344": "2026-10-17T16:01:07+00:00",
+  "753c2ef87a2b3cf7": "2026-10-17T16:01:07+00:00",
+  "0f0f8868fd27bea9": "2026-10-17T16:01:07+00:00",
+  "c2c125320f228bf0": "2026-10-17T16:01:07+00:00"
  },
  "inviate": [
   {
@@ -15772,176 +15809,6 @@
    "voti": {
     "a945f4701b6d": 1
    }
-  },
-  {
-   "id": "e36ec6fc7813c392",
-   "titolo": "Nvidia Locks Up a Third of 2027 Memory Supply as Buyback Firepower Hits $235 Billion",
-   "tema": "Concentrazione dei grandi titoli tecnologici",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "2027",
-    "235",
-    "billion",
-    "buyback",
-    "firepower",
-    "hits",
-    "locks",
-    "memory",
-    "nvidia",
-    "supply",
-    "third"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNW1JbFhLeUViVmZsYzcwN1ZsM1ZQOXQwQU1Lc0JCRVNmRzRhdHRneTRGVGdwbEtZUktzQzhFNFRqcFFFWU9KZTdJdEpHZUJDMk4zall3QVBUU2VhY2N3YmE5Y0ZJZzFtdWxpYXc3NnV6SEJXeGo0NkhEOHFjVzc2Qm9JenhRR09aU1hYbU5rTTVhQUZTZ1RLbDZYWjQ0UXJTLXFPWGYwWkpQcFg3R24xVGtlME1rWkVvYXJ2Qk85UkNpY3BDcjVEd2VSYldVWV9vN2hGMWUxLXVIOWpqSnlTcjFxMzdzbklNaGVF?oc=5",
-   "quando": "2026-10-03T15:01:19+00:00"
-  },
-  {
-   "id": "566ea060bdf3de33",
-   "titolo": "Eni, Repsol Consider Selling Part of Top Venezuela Gas Field",
-   "tema": "Eni",
-   "reparti": [
-    "Azionario",
-    "Geopolitica",
-    "Risk management"
-   ],
-   "impronta": [
-    "consider",
-    "eni",
-    "field",
-    "gas",
-    "part",
-    "repsol",
-    "selling",
-    "top",
-    "venezuela"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNeElBeGtXWnUtcTFMU2pEblNfaTNJd0d6QzIyN1lKeWtGd1h1WlBiNEJ1RXh5VXZjM28yWkkwNjVsYWlQcy1ySXdCem1OZ2ZndzI2OFZlUVJzem9HQ09HMWM5SkZGdGdsUkFtUGhFbXJMcm1lQ0pjUkw4ZlE5NGp6ZTdvaW95SGdmVnZrSkxKZTBWbGtEdFEycFUtMU1IaVE5bWtLajB3VnNtN19rSnNqckJRYWJvdnJ4SzZIeVhXRFFkSWxzNUJkampn?oc=5",
-   "quando": "2026-10-03T15:01:19+00:00"
-  },
-  {
-   "id": "7cd15a9d4657865e",
-   "titolo": "You might be shocked by how many stocks are in a bear market right now",
-   "tema": "Borse, valutazioni e utili",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "bear",
-    "many",
-    "market",
-    "might",
-    "now",
-    "right",
-    "shocked",
-    "stocks",
-    "you"
-   ],
-   "link": "https://www.marketwatch.com/story/you-might-be-shocked-by-how-many-stocks-are-in-a-bear-market-right-now-017c9cd8?mod=mw_rss_topstories",
-   "quando": "2026-10-03T15:01:20+00:00"
-  },
-  {
-   "id": "ed9f604b341f54ca",
-   "titolo": "BMO High Yield US Corporate Bond Index ETF (TSX:ZJK): Credit Income Stays in Focus as Markets Reassess Rate Cuts and Default Risk",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "bmo",
-    "bond",
-    "corporate",
-    "credit",
-    "cuts",
-    "default",
-    "etf",
-    "focus",
-    "high",
-    "income",
-    "index",
-    "markets",
-    "rate",
-    "reassess",
-    "risk",
-    "stays",
-    "tsx",
-    "yield",
-    "zjk"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNTHhNR0o2dUxvNm1zSEZiZVQ5Yjg4Z1lKbWZpUHJtUUgzYmFsRHRxaHg3ZHR4ZjhFZkVPeWJRVVR5eEFMNk5zM1A4SDVSdndtTjR5SVF1MlN2bHNXcXBOQVZBTUZHR3JjS20xTmFTcG9HV1g4ZW52d2YzdFhCMDQ4eFJjZ3ctVi16YkJWc3B1cDBBNzlpU1pKSmJqREVqazV3bkV2UDRTbVdjdkUyMXNQdmFrSUVibS1BcGxHMm41d2lvbnhhbWVOV1o2Nk5SSnhlYzgzdFJwQ2ROQzZTMVRWU2sxa29TZ21wcGkwSTZpWVVYRFdBa2cwVUdTcWxUMjQ?oc=5",
-   "quando": "2026-10-03T15:01:20+00:00"
-  },
-  {
-   "id": "709df2ecb7d7b1e1",
-   "titolo": "Vanguard Canadian Aggregate Bond Index ETF (TSX:VAB) Returns to the Radar as Rate Expectations Drive Bond Positioning",
-   "tema": "Curva dei rendimenti",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "aggregate",
-    "bond",
-    "canadian",
-    "drive",
-    "etf",
-    "expectations",
-    "index",
-    "positioning",
-    "radar",
-    "rate",
-    "returns",
-    "tsx",
-    "vab",
-    "vanguard"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRXJmcjgxVXF3dkNTcGx2bzUxUlZMOWh4X1BTLTFtbGk1ZkltMUxRQUpzTHk2Wm1vcDRVTmJyR29fWnJXWkFPQVNORjU1Q0FZWXBTd0s4a0JmbG1sdlZ6UTl1bGNzc3NGR0t0enJuUkRTUWtrSXZranE1SUZIVUJOSG11LXc1LS0ydV9oVjdMZlA2LW9FTkJVR2dzakstemJBOXJMbm81TmM5cG9kXzNLTGR5TWZ6X0pyT0p6UEJfblkwRi15czdwNHdYZFZ6SmI3a1VzUXloaHJDYWJKX2Faa1JmS3BzQldKUmJwY2lnaFQ?oc=5",
-   "quando": "2026-10-03T15:01:21+00:00"
-  },
-  {
-   "id": "d048bd1290a41c24",
-   "titolo": "Diversification as we knew it is dead, SA fund managers warn",
-   "tema": "Rischi di mercato e volatilità",
-   "reparti": [
-    "Risk management",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "dead",
-    "diversification",
-    "fund",
-    "knew",
-    "managers",
-    "warn"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNWFfTF9lWGlBMkh6RVlOLWdSX3pWVnZYQmJES3kyTDg3WlNxVG0zSEhCTm9oOVBYdE1aTklpZlRQSVZFSXVhYzYwOGJNdUVlb2x2M3lOWVhNMFNQM2JEdTdPOU5lX0UzRzFRM3h1aVRsemR5TG50dm1UVGtGblljMHVoY1ZNQ1RJOUF0RFdZV2daZzBxdEs4aGV3b25LUDNWVzIwUXFudnFtNEQ2RE1CTHF2d1JrQQ?oc=5",
-   "quando": "2026-10-03T15:01:24+00:00"
-  },
-  {
-   "id": "05a8055ac2e0b48d",
-   "titolo": "To What Extent Can Global Oil Stocks Contain Disruptions in Hormuz and Bab el-Mandeb?",
-   "tema": "Geopolitica e commercio internazionale",
-   "reparti": [
-    "Geopolitica",
-    "Risk management"
-   ],
-   "impronta": [
-    "bab",
-    "can",
-    "contain",
-    "disruptions",
-    "extent",
-    "global",
-    "hormuz",
-    "mandeb",
-    "oil",
-    "stocks"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBZVlRxNWItemdJa21QX2xoejFuYmhjQzVOcGcxX0dZa0FrazV4dVlYSzdTZG83SUV1U0libndPOEZ6bUZCRHIwbUZFM0NCVU0?oc=5",
-   "quando": "2026-10-03T15:01:24+00:00"
   },
   {
    "id": "c0f0642cde732ef8",
@@ -29591,10 +29458,87 @@
    "quando": "2026-10-17T14:01:20+00:00",
    "messaggio": 583,
    "riassunto": "Le analisi sui mercati evidenziano crescenti pressioni sulla Francia a causa della vulnerabilità dei conti pubblici e della rigidità del quadro politico, in un contesto in cui la Banca Centrale Europea appare limitata nei suoi interventi di supporto. Il deterioramento della situazione transalpina ri"
+  },
+  {
+   "id": "6c776ac4d331cb6d",
+   "titolo": "Bank of Canada sees sharply higher inflation outlook as oil surges, Macklem says",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Risk management",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "bank",
+    "canada",
+    "higher",
+    "inflation",
+    "macklem",
+    "oil",
+    "outlook",
+    "sees",
+    "sharply",
+    "surges"
+   ],
+   "link": "https://www.investing.com/news/economy-news/bank-of-canada-sees-sharply-higher-inflation-outlook-as-oil-surges-macklem-says-4955437",
+   "quando": "2026-10-17T16:01:07+00:00",
+   "messaggio": 584,
+   "riassunto": "Le quotazioni del petrolio Brent hanno superato i 110 dollari al barile per la prima volta da maggio, spinte dall'escalation in Medio Oriente e dai rischi sulle forniture globali. Questo shock energetico alimenta i timori di inflazione persistente e tassi alti più a lungo. Sulle borse, l'indice dell"
+  },
+  {
+   "id": "6215cda7e67b4cb8",
+   "titolo": "The Iran war has cost the average U.S. household the equivalent of almost $2,000, and the energy portion goes up $50 a week, top economist says",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "000",
+    "almost",
+    "average",
+    "cost",
+    "economist",
+    "energy",
+    "equivalent",
+    "goes",
+    "household",
+    "iran",
+    "portion",
+    "top",
+    "war",
+    "week"
+   ],
+   "link": "https://fortune.com/2026/10/17/iran-war-cost-us-household-2000-energy-prices-interest-rates-military-spending/",
+   "quando": "2026-10-17T16:01:08+00:00",
+   "messaggio": 585,
+   "riassunto": "Secondo stime economiche di rilievo, il conflitto in Iran è costato a ogni famiglia statunitense in media circa 2.000 dollari. La cifra comprende 1.100 dollari legati al rincaro dell'energia, 540 dollari per tassi d'interesse più elevati e 360 dollari in spese militari. L'impatto si riflette diretta"
+  },
+  {
+   "id": "abec4b811f51a61e",
+   "titolo": "Can the Fed Fight Inflation Without Hurting Farmers?",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "can",
+    "farmers",
+    "fed",
+    "fight",
+    "hurting",
+    "inflation",
+    "without"
+   ],
+   "link": "https://www.bloomberg.com/news/videos/2026-10-17/can-the-fed-fight-inflation-without-hurting-farmers-video",
+   "quando": "2026-10-17T16:01:14+00:00",
+   "messaggio": 586,
+   "riassunto": "Il presidente della Fed di Chicago, Austan Goolsbee, ha incontrato gli operatori agricoli nell'Illinois rurale per esaminare l'impatto dei prezzi dei raccolti in calo e dei rincari di carburante e fertilizzanti. Gli incontri offrono alla banca centrale una prospettiva concreta sulle pressioni sui co"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 30
+  "FXStreet": 31
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -29612,11 +29556,11 @@
   "2026-10-14": 9,
   "2026-10-15": 9,
   "2026-10-16": 10,
-  "2026-10-17": 4
+  "2026-10-17": 5
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-17 16",
+  "ora_notizie": "2026-10-17 18",
   "chiusura": "2026-10-16",
   "apertura": "2026-10-17",
   "settimanale": "2026-W41"
