@@ -1,21 +1,5 @@
 {
  "valutate": {
-  "22885239bd50fb40": "2026-10-03T19:01:32+00:00",
-  "cc77ac69c3c1b979": "2026-10-03T19:01:32+00:00",
-  "cc3ecb3a0d07f2c3": "2026-10-03T19:01:32+00:00",
-  "5a7728b31a4a2589": "2026-10-03T19:01:32+00:00",
-  "f3efae0aa37f7de5": "2026-10-03T19:01:32+00:00",
-  "4167a89e2f0d76e9": "2026-10-03T19:01:32+00:00",
-  "120ce41757d745d2": "2026-10-03T19:01:32+00:00",
-  "f6698353a5a2a34c": "2026-10-03T19:01:32+00:00",
-  "8434a44884ef984d": "2026-10-03T19:01:32+00:00",
-  "49df8a17ab8fa327": "2026-10-03T19:01:32+00:00",
-  "194a25af2288976d": "2026-10-03T19:01:32+00:00",
-  "97eb48f853ef97d1": "2026-10-03T19:01:32+00:00",
-  "ca5da02b0952366b": "2026-10-03T19:01:32+00:00",
-  "8bb60433479572b5": "2026-10-03T19:01:32+00:00",
-  "8a7676217e300401": "2026-10-03T19:01:32+00:00",
-  "591ac57c93df64c2": "2026-10-03T19:01:32+00:00",
   "04eeddb5aaa084f2": "2026-10-03T20:01:06+00:00",
   "9eb51ef86e6d4dd1": "2026-10-03T20:01:06+00:00",
   "38276edf1df88248": "2026-10-03T20:01:06+00:00",
@@ -15932,82 +15916,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "4167a89e2f0d76e9",
-   "titolo": "Intesa aumenta di 0,25 euro il corrispettivo cash dell'Opas su Mps",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "azione",
-    "banca",
-    "banco",
-    "bpm",
-    "cash",
-    "decadra",
-    "euro",
-    "generali",
-    "intesa",
-    "mps",
-    "opas",
-    "ops",
-    "rilancio",
-    "sanpaolo",
-    "soci",
-    "voteranno"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNd3NSTWM1TmJ6aU9XQ2s3dTJrZFNlZndjUEhuTWoybHU2cXNnWlFtSWl3UnlHN3ZXUnExZ0p2R2VyRUFOR1Z1V0t5emdWNzhUWUFYYmdQV2Y1SWtBcERxejVpR0JET1hFdm1NV0FyVVozUUMzWUkwX1RPRnFNOFZrOE1zMkR3S3BWUWd0cFAtNjRFeF91V2VSWWp2aTlVTmtIMURILUZJQmFyRHNFYURtNUY0aGxNUFNhMkF0dU1Fb09kODViOU1WdnIyMDhDeUhGY2VUUUtINmpoMkJ6NjdETkJ6STdMN1M0Zk9Ocg?oc=5",
-   "quando": "2026-10-03T19:01:33+00:00"
-  },
-  {
-   "id": "cc3ecb3a0d07f2c3",
-   "titolo": "These bond strategies can help you get a safe 5% return on your cash",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "bond",
-    "can",
-    "cash",
-    "get",
-    "help",
-    "return",
-    "safe",
-    "strategies",
-    "these",
-    "you",
-    "your"
-   ],
-   "link": "https://www.marketwatch.com/story/these-bond-strategies-can-help-you-get-a-safe-5-return-on-your-cash-5fa45ccd?mod=mw_rss_topstories",
-   "quando": "2026-10-03T19:01:33+00:00"
-  },
-  {
-   "id": "8a7676217e300401",
-   "titolo": "Asian shares fall after wild swings in bonds, FX; US jobs data looms",
-   "tema": "Rischi di mercato e volatilità",
-   "reparti": [
-    "Risk management",
-    "Obbligazionario"
-   ],
-   "impronta": [
-    "asian",
-    "bonds",
-    "data",
-    "fall",
-    "jobs",
-    "looms",
-    "shares",
-    "swings",
-    "wild"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZmJtN1ZrZnlNM2s2QjJFTjhwazlVUDNWejN5SFJleGhEY3hSWS00S2NfVjdJQnhUaHBnUU9sYjI1MlJITTd3bmdMalBYbXJKRWRMQmtpQkZLSmpsV25wRXpYc3ROczlTZEppWTVXTHo4NjlNQ3U2azlCV1Y3TkwwNmpwdDM3MUNnOWRMbEh5aVluV0RVZzJR?oc=5",
-   "quando": "2026-10-03T19:01:34+00:00"
   },
   {
    "id": "e7b2d0d52baa8efd",
