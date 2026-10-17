@@ -15630,7 +15630,27 @@
   "4aa6c101ff1ce71b": "2026-10-17T05:30:36+00:00",
   "1a5db20e3dcdeb65": "2026-10-17T05:30:36+00:00",
   "e68e53bf79c2a829": "2026-10-17T05:30:36+00:00",
-  "b5848dca2058639b": "2026-10-17T05:30:36+00:00"
+  "b5848dca2058639b": "2026-10-17T05:30:36+00:00",
+  "797b88fd9adbd356": "2026-10-17T06:01:41+00:00",
+  "724c3ee42dca6f78": "2026-10-17T06:01:41+00:00",
+  "c705f53afff999da": "2026-10-17T06:01:41+00:00",
+  "92df1ab2cc1fb654": "2026-10-17T06:01:41+00:00",
+  "ea3014d1436d4d04": "2026-10-17T06:01:41+00:00",
+  "4756bd8ebc12810d": "2026-10-17T06:01:41+00:00",
+  "640f3c94090ab7b4": "2026-10-17T06:01:41+00:00",
+  "328f4bb667d9cdc3": "2026-10-17T06:01:41+00:00",
+  "411c93efb116e43d": "2026-10-17T06:01:41+00:00",
+  "257658d6f5bfb4c4": "2026-10-17T06:01:41+00:00",
+  "c122e77556cfe2fb": "2026-10-17T06:01:41+00:00",
+  "ee88c5d1d623c0d5": "2026-10-17T06:01:41+00:00",
+  "46b608fe78f9e116": "2026-10-17T06:01:41+00:00",
+  "0c39600118271806": "2026-10-17T06:01:41+00:00",
+  "8da17e79582f0be4": "2026-10-17T06:01:41+00:00",
+  "3a6651830dfaf947": "2026-10-17T06:01:41+00:00",
+  "feebadcf899a4f28": "2026-10-17T06:01:41+00:00",
+  "e5be8bcb617411d6": "2026-10-17T06:01:41+00:00",
+  "1e8b5144b9ebd48e": "2026-10-17T06:01:41+00:00",
+  "d37db9f87654a1ed": "2026-10-17T06:01:41+00:00"
  },
  "inviate": [
   {
@@ -29672,10 +29692,35 @@
    "link": "https://www.ansa.it/sito/notizie/economia/2026/10/16/duello-sulle-banche.-giorgetti-non-morira-nessuno.-maxi-arretrati-ai-magistrati_b6cd7128-3e6f-4c14-951d-d05be93b6389.html",
    "quando": "2026-10-17T05:30:39+00:00",
    "riassunto": "Prosegue il dibattito politico e istituzionale in Italia sulla manovra economica e sul contributo richiesto al settore bancario. Il ministro dell'Economia Giancarlo Giorgetti ha difeso le misure, mentre il presidente dell'Abi Antonio Patuelli ha ribadito la necessità di tutelare gli investitori e il"
+  },
+  {
+   "id": "4756bd8ebc12810d",
+   "titolo": "Lagarde: 'Impossibile ignorare lo shock energetico ma quella giusta è una risposta misurata '",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "energetico",
+    "giusta",
+    "ignorare",
+    "impossibile",
+    "lagarde",
+    "misurata",
+    "quella",
+    "risposta",
+    "shock"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/17/lagarde-impossibile-ignorare-shock-energetico-ma-serve-una-risposta-misurata-_e898eb82-ee13-41f2-beb1-1525ce781315.html",
+   "quando": "2026-10-17T06:01:43+00:00",
+   "messaggio": 573,
+   "riassunto": "La presidente della BCE Christine Lagarde ha dichiarato che è impossibile ignorare lo shock energetico in corso, sottolineando la necessità di una risposta politica ed economica misurata. L'aumento dei prezzi energetici e la risalita dei tassi di interesse a lungo termine stanno generando impatti ne"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 25
+  "FXStreet": 26
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -29692,11 +29737,11 @@
   "2026-10-13": 14,
   "2026-10-14": 9,
   "2026-10-15": 9,
-  "2026-10-16": 9
+  "2026-10-16": 10
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-16 22",
+  "ora_notizie": "2026-10-17 08",
   "chiusura": "2026-10-16",
   "apertura": "2026-10-17",
   "settimanale": "2026-W41"
