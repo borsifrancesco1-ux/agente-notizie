@@ -15655,7 +15655,58 @@
   "dfa365ff86c6e696": "2026-10-18T06:01:25+00:00",
   "48a571d92bc7d54a": "2026-10-18T06:01:25+00:00",
   "11b66e2fce5979f3": "2026-10-18T06:01:25+00:00",
-  "71e99b36491157f6": "2026-10-18T06:01:25+00:00"
+  "71e99b36491157f6": "2026-10-18T06:01:25+00:00",
+  "810c6a89c5e76701": "2026-10-18T08:01:05+00:00",
+  "713ef43395288de1": "2026-10-18T08:01:05+00:00",
+  "04d23dc87a2075dc": "2026-10-18T08:01:05+00:00",
+  "24d7e41b6a4a1f1b": "2026-10-18T08:01:05+00:00",
+  "2736adf24e5965f5": "2026-10-18T08:01:05+00:00",
+  "65b3a6ec81d7d52c": "2026-10-18T08:01:05+00:00",
+  "950e582227a69eb1": "2026-10-18T08:01:05+00:00",
+  "cc31ae48efe9215d": "2026-10-18T08:01:05+00:00",
+  "1a67427cbd134e44": "2026-10-18T08:01:05+00:00",
+  "b99fd8ca6ee2def4": "2026-10-18T08:01:05+00:00",
+  "f3e1d0406b6b16e5": "2026-10-18T08:01:05+00:00",
+  "c8f4181b218dbb27": "2026-10-18T08:01:05+00:00",
+  "824ffd8b4cfd0fde": "2026-10-18T08:01:05+00:00",
+  "07944f18f402bd8d": "2026-10-18T08:01:05+00:00",
+  "e91d3aa152ac869a": "2026-10-18T08:01:05+00:00",
+  "f7f69aedee33b2e8": "2026-10-18T08:01:05+00:00",
+  "0e29eca8c5a34be5": "2026-10-18T08:01:05+00:00",
+  "e88c35532eb63e59": "2026-10-18T08:01:05+00:00",
+  "42e563793e32584f": "2026-10-18T08:01:05+00:00",
+  "a5402c8e515a2893": "2026-10-18T08:01:05+00:00",
+  "01c738c49912101b": "2026-10-18T08:01:05+00:00",
+  "680d38defab2abc1": "2026-10-18T08:01:05+00:00",
+  "507bc2fb79baa6cf": "2026-10-18T08:01:05+00:00",
+  "2cc2b23c07dfe696": "2026-10-18T08:01:05+00:00",
+  "5956461bf468101d": "2026-10-18T08:01:05+00:00",
+  "df897e6c357aa542": "2026-10-18T08:01:05+00:00",
+  "e5a08113a064c34d": "2026-10-18T08:01:05+00:00",
+  "5c734d7d12e98668": "2026-10-18T08:01:05+00:00",
+  "dc7af6c4580f768f": "2026-10-18T08:01:05+00:00",
+  "fad65068fd88fda0": "2026-10-18T08:01:05+00:00",
+  "767ec657a9ecae8d": "2026-10-18T08:01:05+00:00",
+  "9246b89e7d00cdf1": "2026-10-18T08:01:05+00:00",
+  "e0a367c3abe0ac54": "2026-10-18T08:01:05+00:00",
+  "d30b14dfa6825002": "2026-10-18T08:01:05+00:00",
+  "4edf31ab01c815ab": "2026-10-18T08:01:05+00:00",
+  "0fe47849cec8f17d": "2026-10-18T08:01:05+00:00",
+  "9fa4289ae81ad418": "2026-10-18T08:01:05+00:00",
+  "c618484c0997ef0b": "2026-10-18T08:01:05+00:00",
+  "88f53a163695741e": "2026-10-18T08:01:05+00:00",
+  "9d52c884944a3b80": "2026-10-18T08:01:05+00:00",
+  "3b9d3ca5566f3bdd": "2026-10-18T08:01:05+00:00",
+  "26f21305de7336e1": "2026-10-18T08:01:05+00:00",
+  "bd1beaf8d0afeaf9": "2026-10-18T08:01:05+00:00",
+  "307770d972366ec5": "2026-10-18T08:01:05+00:00",
+  "e5c5e77b17412869": "2026-10-18T08:01:05+00:00",
+  "c707481f4fb501a7": "2026-10-18T08:01:05+00:00",
+  "c975fa4cedac34f2": "2026-10-18T08:01:05+00:00",
+  "ac019734a5aeaf55": "2026-10-18T08:01:05+00:00",
+  "b4a83af27a5ef5cb": "2026-10-18T08:01:05+00:00",
+  "332f8eaa998c499f": "2026-10-18T08:01:05+00:00",
+  "2b7af51e8914b9ad": "2026-10-18T08:01:05+00:00"
  },
  "inviate": [
   {
@@ -28778,10 +28829,35 @@
    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQM1pMSDRDRHJiQkc5LWdXbjZkT1M3SVptUjFBcExNX2d6cTA2bTlzUi1yVnktOG9zM0xKVUcwbWw3cjlOMUZDcDliZmpxLVVJeUtXSlVqeWd1M3A5eGVhamo2OE9QVzkxNjNCMU5MNHNBN0JvODdMZ2lJZFdYUkJnSjBpMDR6cHJqQ284ZVlZNHV5bW9zV0lWWVlRTTZENm8wRHZnT2FLQ2VGcWtpTXh4UWtEUmhFdk9jb3JCcDU2M29HWmI2eTZOWHFVMNIB1wFBVV95cUxObFdIS0ZuZHFIOVF3bjRnTWZSaUxmUko5WmdMWl9oU083R0hWU1pPbXRMZXZJRW9ESDhrOXRYZDNpcWlxc21Pal91WGFQWURqMGFuM1VKTkNsOTlyRDQ5TlRlMEhGMWFKUGpRVEhmSE42clI0c1JXOVYyenZuVWd2ckdYcTdqOVdBVUZIc0MzNlpRaURFR3Zuanh4WVl5bFdrN3QtQ1hrb29jYlJIV0lqcGF1TEFOYjNCQlVNNmxGN0VBbmo4OXp2c2FUNHBiaF8wTHBlb3prUQ?oc=5",
    "quando": "2026-10-18T05:37:33+00:00",
    "riassunto": "L'euro/dollar ha interrotto una sequenza di cinque settimane di ribasso trovando sostegno a un livello tecnico critico, secondo gli analisti di FOREX.com. Questo movimento suggerisce un potenziale rafforzamento dell'euro rispetto al dollaro nei prossimi giorni. Il cambiamento potrebbe influenzare le"
+  },
+  {
+   "id": "713ef43395288de1",
+   "titolo": "5 big analyst AI moves: Meta gets Street-high PT; Salesforce double upgraded",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "alto",
+    "analisti",
+    "doppio",
+    "meta",
+    "mosse",
+    "raggiunge",
+    "salesforce",
+    "sull",
+    "target",
+    "upgrade"
+   ],
+   "link": "https://it.investing.com/news/stock-market-news/5-mosse-degli-analisti-sullai-meta-raggiunge-il-target-piu-alto-salesforce-doppio-upgrade-3592943",
+   "quando": "2026-10-18T08:01:15+00:00",
+   "messaggio": 591,
+   "riassunto": "Gli analisti di Wall Street hanno rivisto al rialzo le valutazioni sui principali titoli tecnologici legati all'intelligenza artificiale. In particolare, Meta ha raggiunto il target price più alto di sempre, mentre Salesforce ha beneficiato di un doppio upgrade. Queste mosse confermano il dinamismo "
   }
  ],
  "feed_guasti": {
-  "FXStreet": 35
+  "FXStreet": 36
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -28798,11 +28874,12 @@
   "2026-10-14": 9,
   "2026-10-15": 9,
   "2026-10-16": 10,
-  "2026-10-17": 11
+  "2026-10-17": 11,
+  "2026-10-18": 1
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-18 08",
+  "ora_notizie": "2026-10-18 10",
   "chiusura": "2026-10-17",
   "apertura": "2026-10-18",
   "settimanale": "2026-W41"
