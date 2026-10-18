@@ -1,78 +1,5 @@
 {
  "valutate": {
-  "c4d375dd12b37a28": "2026-10-04T11:01:38+00:00",
-  "26488809f8b3c765": "2026-10-04T11:01:38+00:00",
-  "7b0dabf365589c5c": "2026-10-04T11:01:38+00:00",
-  "8752c86a35ca1ba1": "2026-10-04T11:01:38+00:00",
-  "8ad17239c937a3e0": "2026-10-04T11:01:38+00:00",
-  "93788372fb8f0b87": "2026-10-04T11:01:38+00:00",
-  "4a0010b36e836681": "2026-10-04T11:01:38+00:00",
-  "847fdcdc7fd4fc40": "2026-10-04T11:01:38+00:00",
-  "a195ec9d4fd46ecd": "2026-10-04T11:01:38+00:00",
-  "c64a92dda3424290": "2026-10-04T11:01:38+00:00",
-  "f7b3a2c1c830e693": "2026-10-04T11:01:38+00:00",
-  "0f4bd1ef71165f60": "2026-10-04T11:01:38+00:00",
-  "dcddff9399f8aa1e": "2026-10-04T11:01:38+00:00",
-  "73ba1369c947d622": "2026-10-04T11:01:38+00:00",
-  "64717c6b7f7f5af8": "2026-10-04T11:01:38+00:00",
-  "a82d84a8492de798": "2026-10-04T11:01:38+00:00",
-  "600b19ac780b3ccf": "2026-10-04T11:01:38+00:00",
-  "1db729ae733341df": "2026-10-04T11:01:38+00:00",
-  "3a5cb025ebe08b0d": "2026-10-04T11:01:38+00:00",
-  "ffe633cbd63d9ce3": "2026-10-04T11:01:38+00:00",
-  "fec584e4c3122879": "2026-10-04T11:01:38+00:00",
-  "894fe0385529b2a3": "2026-10-04T11:01:38+00:00",
-  "b7ffe00afed817a4": "2026-10-04T11:01:38+00:00",
-  "b9c46b86e6faf8a2": "2026-10-04T11:01:38+00:00",
-  "b72c7f453793cbfa": "2026-10-04T11:01:38+00:00",
-  "e55212105b6676c7": "2026-10-04T11:01:38+00:00",
-  "8b6a17e510313ce7": "2026-10-04T11:01:38+00:00",
-  "c0aac8091887621c": "2026-10-04T11:01:38+00:00",
-  "bc92b794d4e0917e": "2026-10-04T11:01:38+00:00",
-  "a64082ad52ea5aac": "2026-10-04T11:01:38+00:00",
-  "5188f81c66277f5e": "2026-10-04T11:01:38+00:00",
-  "708dd5eee3cf9ee0": "2026-10-04T11:01:38+00:00",
-  "6c98794b0c8c33df": "2026-10-04T11:01:38+00:00",
-  "9d7cc3d8c8e54978": "2026-10-04T11:01:38+00:00",
-  "30f08e0a98bda579": "2026-10-04T11:01:38+00:00",
-  "f7e57a3991a6435e": "2026-10-04T11:01:38+00:00",
-  "e00ac66c94efc631": "2026-10-04T11:01:38+00:00",
-  "323487a055f5e26c": "2026-10-04T11:01:38+00:00",
-  "44ec7c74c2a823d0": "2026-10-04T12:01:11+00:00",
-  "e8f89fa5a214227c": "2026-10-04T12:01:11+00:00",
-  "80e7e99c3e6701ff": "2026-10-04T12:01:11+00:00",
-  "faa62ceb00731a4b": "2026-10-04T12:01:11+00:00",
-  "6e1bf65bba73c0ec": "2026-10-04T12:01:11+00:00",
-  "7ec0a1fea5ed2825": "2026-10-04T12:01:11+00:00",
-  "12eff5b92d24fa8a": "2026-10-04T12:01:11+00:00",
-  "41fc9fb572f1222c": "2026-10-04T12:01:11+00:00",
-  "2a3e3616fedd181a": "2026-10-04T12:01:11+00:00",
-  "31ada0f787e492eb": "2026-10-04T12:01:11+00:00",
-  "ab58c9312aa3aa6e": "2026-10-04T12:01:11+00:00",
-  "8efbb360da09d415": "2026-10-04T12:01:11+00:00",
-  "46e3fb518e737ffc": "2026-10-04T12:01:11+00:00",
-  "cb9b78fedd98c4a5": "2026-10-04T12:01:11+00:00",
-  "b49ac5fbc6c5c363": "2026-10-04T12:01:11+00:00",
-  "924f48cf929272de": "2026-10-04T12:01:11+00:00",
-  "2280b887c836c03f": "2026-10-04T12:01:11+00:00",
-  "f077fa352a3d9842": "2026-10-04T12:01:11+00:00",
-  "04105cad996d9fd0": "2026-10-04T12:01:11+00:00",
-  "7dcd7da70c2ef7a3": "2026-10-04T12:01:11+00:00",
-  "fa5c3cc77ac35999": "2026-10-04T12:01:11+00:00",
-  "6f45e642ef91c7c3": "2026-10-04T12:01:11+00:00",
-  "f4180e97bd99fbc5": "2026-10-04T12:01:11+00:00",
-  "952b8f752aa83a79": "2026-10-04T12:01:11+00:00",
-  "187adac1fc9e6c8f": "2026-10-04T12:01:11+00:00",
-  "0471f8c922223377": "2026-10-04T12:01:11+00:00",
-  "e756ac9717bb9a1b": "2026-10-04T12:01:11+00:00",
-  "76e81f3df668172d": "2026-10-04T12:01:11+00:00",
-  "84d0bd778842adb0": "2026-10-04T12:01:11+00:00",
-  "111a8965ee31a688": "2026-10-04T12:01:11+00:00",
-  "84166aed87dc16d9": "2026-10-04T12:01:11+00:00",
-  "0c38f76178ccbc00": "2026-10-04T12:01:11+00:00",
-  "57ed63dda6daca29": "2026-10-04T12:01:11+00:00",
-  "1178c2d16266638c": "2026-10-04T12:01:11+00:00",
-  "9ff13447b8c85d37": "2026-10-04T12:01:11+00:00",
   "0a58cd723e757e82": "2026-10-04T13:01:43+00:00",
   "508c73f88c06b728": "2026-10-04T13:01:43+00:00",
   "454c20c9f169cfda": "2026-10-04T13:01:43+00:00",
@@ -15663,7 +15590,77 @@
   "af087fa9803ea4a1": "2026-10-18T10:01:20+00:00",
   "f90e96b409e4e0ad": "2026-10-18T10:01:20+00:00",
   "f82fecd647d0593c": "2026-10-18T10:01:20+00:00",
-  "036a714f1a58c1ab": "2026-10-18T10:01:20+00:00"
+  "036a714f1a58c1ab": "2026-10-18T10:01:20+00:00",
+  "a995b6839e2a5af0": "2026-10-18T12:01:21+00:00",
+  "3c5c8083ccec7372": "2026-10-18T12:01:21+00:00",
+  "08a0630cb4725dd6": "2026-10-18T12:01:21+00:00",
+  "43a3587de69b67ac": "2026-10-18T12:01:21+00:00",
+  "36ade6cb8f27e639": "2026-10-18T12:01:21+00:00",
+  "afa369a17af487aa": "2026-10-18T12:01:21+00:00",
+  "1468cab946d8b0a4": "2026-10-18T12:01:21+00:00",
+  "6de14dfdfe3c6e62": "2026-10-18T12:01:21+00:00",
+  "0c2de2fd9b325e94": "2026-10-18T12:01:21+00:00",
+  "01e342b0d238bb8c": "2026-10-18T12:01:21+00:00",
+  "f549e5b8332bb5da": "2026-10-18T12:01:21+00:00",
+  "6b18daeca6022293": "2026-10-18T12:01:21+00:00",
+  "90be9d97ad779e4a": "2026-10-18T12:01:21+00:00",
+  "a94ceaf11f1a500e": "2026-10-18T12:01:21+00:00",
+  "4a36b73981701d3b": "2026-10-18T12:01:21+00:00",
+  "5ef77e02801adf56": "2026-10-18T12:01:21+00:00",
+  "8f81c5a1ae464639": "2026-10-18T12:01:21+00:00",
+  "5796a9b7c5f98b93": "2026-10-18T12:01:21+00:00",
+  "b53e5602dc888418": "2026-10-18T12:01:21+00:00",
+  "5e7c7b955328deba": "2026-10-18T12:01:21+00:00",
+  "efa38f2813bf6f8b": "2026-10-18T12:01:21+00:00",
+  "a1c6c757a255eded": "2026-10-18T12:01:21+00:00",
+  "fd1a100ca0759b1d": "2026-10-18T12:01:21+00:00",
+  "c66239c4cd6ec1b2": "2026-10-18T12:01:21+00:00",
+  "10a79405ac7b70e3": "2026-10-18T12:01:21+00:00",
+  "0f013113f479d961": "2026-10-18T12:01:21+00:00",
+  "acaaca3437c70828": "2026-10-18T12:01:21+00:00",
+  "e7dce466f569b8b4": "2026-10-18T12:01:21+00:00",
+  "65d8124ebd5a9b5d": "2026-10-18T12:01:21+00:00",
+  "23f1815022ec202e": "2026-10-18T12:01:21+00:00",
+  "381b6dbfeecbeb55": "2026-10-18T12:01:21+00:00",
+  "50f22d754cd301db": "2026-10-18T12:01:21+00:00",
+  "7d93321a41221853": "2026-10-18T12:01:21+00:00",
+  "21fb686fb308500c": "2026-10-18T12:01:21+00:00",
+  "32bb0030bce51a89": "2026-10-18T12:01:21+00:00",
+  "0c2c27576233a311": "2026-10-18T12:01:21+00:00",
+  "78be204e9c51f0e0": "2026-10-18T12:01:21+00:00",
+  "ae45c0dc1ea3d62e": "2026-10-18T12:01:21+00:00",
+  "95a1b7b93f5bbc3a": "2026-10-18T12:01:21+00:00",
+  "5d5008173899d9ff": "2026-10-18T12:01:21+00:00",
+  "a6121be5687398bc": "2026-10-18T12:01:21+00:00",
+  "033022df59311a4a": "2026-10-18T12:01:21+00:00",
+  "626b58963f1115f3": "2026-10-18T12:01:21+00:00",
+  "f4ecbd3540bb8e45": "2026-10-18T12:01:21+00:00",
+  "27c0cb96d91d18ca": "2026-10-18T12:01:21+00:00",
+  "ba13e70d2d89097c": "2026-10-18T12:01:21+00:00",
+  "2f4c3f9611b63296": "2026-10-18T12:01:21+00:00",
+  "788dd085710534d6": "2026-10-18T12:01:21+00:00",
+  "b907aaa2ee58607b": "2026-10-18T12:01:21+00:00",
+  "4e0eaf8eca0ec189": "2026-10-18T12:01:21+00:00",
+  "b67099f6088ff8fc": "2026-10-18T12:01:21+00:00",
+  "b119caa820d63cc5": "2026-10-18T12:01:21+00:00",
+  "eb01d9c95372f310": "2026-10-18T12:01:21+00:00",
+  "061488777cb306e2": "2026-10-18T12:01:21+00:00",
+  "893d864b29cee004": "2026-10-18T12:01:21+00:00",
+  "6d63815b3b101b5a": "2026-10-18T12:01:21+00:00",
+  "318aa6e2afc90908": "2026-10-18T12:01:21+00:00",
+  "1c0f810b702c1e17": "2026-10-18T12:01:21+00:00",
+  "4366a0b2e455ecda": "2026-10-18T12:01:21+00:00",
+  "97df76816ddd2f6c": "2026-10-18T12:01:21+00:00",
+  "815277dbc132f373": "2026-10-18T12:01:21+00:00",
+  "ff15dea0112f8c62": "2026-10-18T12:01:21+00:00",
+  "9372b1bdb78228bd": "2026-10-18T12:01:21+00:00",
+  "a2ad5bfd8f349090": "2026-10-18T12:01:21+00:00",
+  "a9cac0d283bfad72": "2026-10-18T12:01:21+00:00",
+  "815069046f024763": "2026-10-18T12:01:21+00:00",
+  "6493cce1b5a80bae": "2026-10-18T12:01:21+00:00",
+  "c22a39ce6915790c": "2026-10-18T12:01:21+00:00",
+  "5932ca461580d5f5": "2026-10-18T12:01:21+00:00",
+  "2867c0223932c0a5": "2026-10-18T12:01:21+00:00"
  },
  "inviate": [
   {
@@ -16002,217 +15999,6 @@
    "voti": {
     "a945f4701b6d": 1
    }
-  },
-  {
-   "id": "f7b3a2c1c830e693",
-   "titolo": "Iraq Shifts Oil Strategy by Arranging Tanker to Move Past Hormuz",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "arranging",
-    "hormuz",
-    "iraq",
-    "move",
-    "oil",
-    "past",
-    "shifts",
-    "strategy",
-    "tanker"
-   ],
-   "link": "https://www.bloomberg.com/news/articles/2026-10-04/iraq-shifts-oil-strategy-by-arranging-tanker-to-move-past-hormuz",
-   "quando": "2026-10-04T11:01:38+00:00",
-   "messaggio": 93,
-   "riassunto": "La compagnia petrolifera statale irachena ha organizzato il trasporto di due milioni di barili di greggio oltre lo Stretto di Hormuz. Questa mossa strategica punta a offrire petrolio fuori dal Golfo Persico per mitigare i rischi logistici derivanti dalle tensioni nell'area. L'iniziativa rappresenta "
-  },
-  {
-   "id": "dcddff9399f8aa1e",
-   "titolo": "Brazilians head to polls in high-stakes, polarized election",
-   "tema": "Debito emergente e rischio Paese",
-   "reparti": [
-    "Geopolitica",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "brazilians",
-    "election",
-    "head",
-    "high",
-    "polarized",
-    "polls",
-    "stakes"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTzYxcENTQ3M0VnFWR3h0cVF2TkRtc2Rlci13bDE5dnZXMENGLWVPTzdKX3RpRXBvZGJFcEo3d2tmelg2QmN4Q1lkNGhnN1luQ3FCdnRMeUxlTHlTeGswVzNjWVBzdVI2ZWttdm5HR3REQ3lSd3JqSUltVTRuTTY2dWdVTFVsRUNyZGVTVDBkY2E1M3poNG8tNktZMjNtNWliR2dlRkxR?oc=5",
-   "quando": "2026-10-04T11:01:39+00:00",
-   "messaggio": 94,
-   "riassunto": "I cittadini brasiliani sono chiamati alle urne per elezioni generali altamente polarizzate e cruciali per il futuro economico del Paese. La consultazione si inserisce in un contesto di tensioni sui mercati emergenti e sulle valute locali dell'area latinoamericana. Gli investitori monitorano l'esito "
-  },
-  {
-   "id": "ab58c9312aa3aa6e",
-   "titolo": "Whispers of Contagion Risk Are Returning to Europe’s Bond Market",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "bond",
-    "contagion",
-    "europe",
-    "market",
-    "returning",
-    "risk",
-    "whispers"
-   ],
-   "link": "https://www.bloomberg.com/news/articles/2026-10-04/whispers-of-contagion-risk-are-returning-to-europe-s-bond-market",
-   "quando": "2026-10-04T12:01:12+00:00",
-   "messaggio": 95,
-   "riassunto": "Gli operatori dei mercati obbligazionari europei sono in allerta per segnali di contagio dopo il recente e violento sell-off dei titoli di Stato. La situazione attuale riporta alla memoria le tensioni vissute durante la crisi del debito sovrano della regione avvenuta quindici anni fa. La pressione s"
-  },
-  {
-   "id": "0471f8c922223377",
-   "titolo": "OPEC, Allies Hold Oil Output Steady Amid Middle East Tensions",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "allies",
-    "east",
-    "hold",
-    "middle",
-    "oil",
-    "opec",
-    "output",
-    "steady",
-    "tensions"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOYmFlX3pxTllubHhKWkgycEVOdlZ3c2F3TzA5OUU4RmFmWmQ2dWlaY3B1TlFfek85dHhZakt3aFJHZjlEUEJ2Zk9MVldfeTdUVkxoUzN1MU9wUWlUdGhFd3M4T3dNamMxbGprT1A3R3g4UGI0Q2RyU3hrczI0WExYWlpNa3N4RjlNRzFGN0U5d1NPN3p4VlN2R2MzRkc4WXlyV3Z4Z21ZZHVtY3FzYmc?oc=5",
-   "quando": "2026-10-04T12:01:13+00:00",
-   "messaggio": 96,
-   "riassunto": "L'alleanza OPEC+ ha deciso di mantenere stabili le quote di produzione di petrolio anche per il mese di novembre. La scelta riflette la volontà del cartel di gestire con prudenza l'offerta in un contesto segnato dalle persistenti tensioni in Medio Oriente che continuano a impattare la produzione glo"
-  },
-  {
-   "id": "44ec7c74c2a823d0",
-   "titolo": "Depositi Eni a Vibo Marina, Romeo annuncia un primo incontro con l’azienda il 15 ottobre: «Finalmente» · ilvibonese.it",
-   "tema": "Eni",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "annuncia",
-    "azienda",
-    "comune",
-    "dell",
-    "delocalizzazione",
-    "depositi",
-    "eni",
-    "incontro",
-    "magica",
-    "parolina",
-    "tavolo",
-    "vertici"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPNi15MFdURlpyQWNEVEJTd0U2RDhjVFVUN3hhUkxQMXVVdmw0Rk1ZU3hJNmw3dzJyb190U1FySF9XakE0YnRLZC1teE1IWjhtRHRaQTAxODM0Y0xJMGlhQmlxVjBoZDdwQ2s2VE5Zdi1LdC15Y1VwVHJLZVZ3Q0pKamJkampnTEczbzdrZC1Yb3ZpckhHMTB3cFFqblpJNk1OVFl5V2Q2NEhnLWNLWUJkNmo4bmpNZUZFenVSejgySFBGcFJQNm9qWkYwM0RuRk9XUm5qMmJvaw?oc=5",
-   "quando": "2026-10-04T12:01:13+00:00",
-   "messaggio": 97,
-   "riassunto": "Il Comune di Vibo Marina ha annunciato un primo incontro ufficiale con i vertici di Eni fissato per il 15 ottobre. Al centro del tavolo vi è la richiesta di delocalizzazione dei depositi costieri della società presenti sul territorio. La notizia è di rilievo per il monitoraggio del rischio di concen"
-  },
-  {
-   "id": "7ec0a1fea5ed2825",
-   "titolo": "Il prezzo del gas sale ancora, da inizio anno +38% ad Amsterdam",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Macroeconomia",
-    "Geopolitica",
-    "Risk management"
-   ],
-   "impronta": [
-    "amsterdam",
-    "ancora",
-    "anno",
-    "gas",
-    "inizio",
-    "prezzo",
-    "sale"
-   ],
-   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/04/il-prezzo-del-gas-sale-ancora-da-inizio-anno-38-ad-amsterdam_d4603b6a-1fea-4610-b0d8-45a00a15d37e.html",
-   "quando": "2026-10-04T12:01:14+00:00",
-   "messaggio": 98,
-   "riassunto": "Il prezzo del gas naturale ad Amsterdam registra un incremento del 38% dall'inizio dell'anno, spinto principalmente dai ritardi accumulati dalla Germania nel riempire i siti di stoccaggio. Nonostante le tensioni sui prezzi europei, le autorità confermano che l'Italia risulta al sicuro per la stagion"
-  },
-  {
-   "id": "84d0bd778842adb0",
-   "titolo": "Le accise fanno rumore, le tasse sul risparmio sono subdole e silenziose",
-   "tema": "Fiscalità e regole per i risparmiatori",
-   "reparti": [
-    "Risk management"
-   ],
-   "impronta": [
-    "accise",
-    "fanno",
-    "risparmio",
-    "rumore",
-    "silenziose",
-    "subdole",
-    "tasse"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTHo4NXdRdklSUE0yNldBRzhKdWY2UTV5ZTR1TmFHczg3LUJ0Z0NSZmwzTmxkT212N2RMWG85aG15Z2wybTdsLUk1QVQ3SHphZXJwMmNFcDJ6bTdsd294LWtQLVJfRk9PRlZUVnVYVVVSRkV2Wld4dzN1LXVhZnBITG9DUFZTOVpnN0VndXNJN21xRnVqUG9OZElsS2VmUGYxTjdpd1NvRFA?oc=5",
-   "quando": "2026-10-04T12:01:14+00:00",
-   "messaggio": 99,
-   "riassunto": "Il dibattito sulla fiscalità italiana evidenzia come le imposte che colpiscono i rendimenti del risparmio operino in modo silenzioso ma continuo sui patrimoni delle famiglie. Vengono analizzati gli effetti delle aliquote applicate alle diverse classi di attività finanziarie rispetto alla tassazione "
-  },
-  {
-   "id": "0c38f76178ccbc00",
-   "titolo": "Bond, la sorpresa dei mercati: gli emergenti resistono al sell-off globale",
-   "tema": "Debito emergente e rischio Paese",
-   "reparti": [
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "bond",
-    "emergenti",
-    "gli",
-    "globale",
-    "mercati",
-    "off",
-    "resistono",
-    "sell",
-    "sorpresa"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMlhkREJUbXRRbmpSVmdSQnRyUmZlWU9kc21tRGFmdXlTOVU3RFZWQzgwaUV5MHE3cG9qbjM2bWF0LVZ2OXhBOGJhQXBCUTN3TmpDZTZqYndRUzgySEd2TmZLZXJ4OV9MaWkxejN3aVZhT1h4Q1pSSWhibl91ZV9PcElaNUZmYk00aXc?oc=5",
-   "quando": "2026-10-04T12:01:18+00:00",
-   "messaggio": 100,
-   "riassunto": "Nonostante la forte ondata di vendite che ha colpito i mercati obbligazionari globali e i Treasury, il debito dei paesi emergenti sta mostrando una resilienza superiore alle attese. Gli investitori continuano a selezionare le emissioni locali e in valuta forte grazie a fondamentali macroeconomici mi"
-  },
-  {
-   "id": "cb9b78fedd98c4a5",
-   "titolo": "Euro-dollaro: il cambio prova un rimbalzo tecnico",
-   "tema": "Cambi e costo della copertura",
-   "reparti": [
-    "Copertura",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "cambio",
-    "dollaro",
-    "euro",
-    "prova",
-    "rimbalzo",
-    "tecnico"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTE1JS2FjTHJ1Qm9EWk10RVh4RFZldm05WUNWSk9yVjRzUERqUFJITXlNMkFrbjdCMW9vOFdWUktmSGJEbXlSNmFVdThPZDA1TXlkMUhxVGtjRTR4c2NRbTVNeWlUeHdScHlHME5VejRfeFZkTkNMbEpLLTBCVG9yYVdoTEd5WE5OMWItU2RTLWxOc1hVUDdrNGVrM2dqNm1RSWhScTVYUnFpaHhtbjBNcFJOWF9SekJO?oc=5",
-   "quando": "2026-10-04T12:01:18+00:00",
-   "messaggio": 101,
-   "riassunto": "Il tasso di cambio EUR/USD mostra segnali di stabilizzazione e tenta un rimbalzo tecnico dopo le recenti forti pressioni al ribasso. Gli analisti monitorano i livelli chiave per comprendere se il movimento possa consolidarsi in un'inversione di breve periodo o se persista la forza del dollaro."
   },
   {
    "id": "bfcb51914d456732",
@@ -28556,10 +28342,82 @@
    "quando": "2026-10-18T10:01:22+00:00",
    "messaggio": 594,
    "riassunto": "La Banca Centrale Europea ha lanciato un avvertimento sui rischi legati alle turbolenze nel mercato obbligazionario, che potrebbero aggravare il rallentamento economico nell'area euro. L'aumento dei rendimenti e la pressione sui conti pubblici di diversi Stati membri richiedono prudenza fiscale. Gli"
+  },
+  {
+   "id": "65d8124ebd5a9b5d",
+   "titolo": "U.S. Strikes Iranian Launchers Near Strait of Hormuz, Sending Oil Prices Higher",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "accept",
+    "hormuz",
+    "iran",
+    "proposal",
+    "reopen",
+    "strait",
+    "urges"
+   ],
+   "link": "https://www.investing.com/news/commodities-news/iran-urges-us-to-accept-proposal-to-reopen-strait-of-hormuz-4955871",
+   "quando": "2026-10-18T12:01:22+00:00",
+   "messaggio": 595,
+   "riassunto": "Forze statunitensi hanno colpito lanciatori iraniani vicino allo Stretto di Hormuz, spingendo al rialzo i prezzi del greggio e aggravando i rischi energetici globali. Nel frattempo, i pagamenti netti per interessi sul debito federale degli Stati Uniti hanno raggiunto 1,05 trilioni di dollari nell'an"
+  },
+  {
+   "id": "2f4c3f9611b63296",
+   "titolo": "Indonesia Stocks Log Worst Day Since 1998 on MSCI Downgrade Warning",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Risk management",
+    "Obbligazionario",
+    "Azionario"
+   ],
+   "impronta": [
+    "1998",
+    "day",
+    "downgrade",
+    "indonesia",
+    "log",
+    "msci",
+    "since",
+    "stocks",
+    "warning",
+    "worst"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRmY4bFlVY09zSkdQc0ItXzJqT2pmcFBSUkpwVVd6aUNuTU1waDNUcHY3UHJfYkRNby1kOTBPWHdEcklJLXlHVWpfMThubmtmU3JGZjNPWFdjNHJXZ29vVzJ6Z2tienRzc2d6V3pyVFNGQzdFZVphWTRNazZiRVRMeWpoSTE5ZEJ1aVRRUTZ6eC1XSE1scE9RNUx6MnhMbUxHRTc4ek9hOWlqTldkRlpxTzcxYjJQQQ?oc=5",
+   "quando": "2026-10-18T12:01:22+00:00",
+   "messaggio": 596,
+   "riassunto": "Le azioni indonesiane hanno registrato la peggiore seduta dal 1998 in seguito all'avvertimento di un possibile declassamento da parte di MSCI. Il timore di un'uscita dei flussi esteri e di un deterioramento delle valutazioni ha colpito duramente i listini locali, accentuando la pressione sulle econo"
+  },
+  {
+   "id": "0c2c27576233a311",
+   "titolo": "Iran's parliament approves Mehrdad Akhlaqi as minister of defence",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "difesa",
+    "gli",
+    "iran",
+    "ministro",
+    "nomina",
+    "nuovo",
+    "tensioni",
+    "usa"
+   ],
+   "link": "https://it.investing.com/news/economy-news/iran-nomina-nuovo-ministro-della-difesa-tra-tensioni-con-gli-usa-3592955",
+   "quando": "2026-10-18T12:01:23+00:00",
+   "messaggio": 597,
+   "riassunto": "Il parlamento iraniano ha approvato la nomina di Mehrdad Akhlaqi come nuovo ministro della Difesa, in un momento di acuta tensione diplomatica e militare con gli Stati Uniti. La mossa conferma la linea di fermezza di Teheran nella regione, mantenendo elevati i premi di rischio geopolitico sui mercat"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 37
+  "FXStreet": 38
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -28577,11 +28435,11 @@
   "2026-10-15": 9,
   "2026-10-16": 10,
   "2026-10-17": 11,
-  "2026-10-18": 2
+  "2026-10-18": 3
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-18 12",
+  "ora_notizie": "2026-10-18 14",
   "chiusura": "2026-10-17",
   "apertura": "2026-10-18",
   "settimanale": "2026-W41"
@@ -28612,7 +28470,7 @@
    "valore": 2.2
   },
   "Tasso Fed (limite superiore)": {
-   "periodo": "2026-10-17",
+   "periodo": "2026-10-18",
    "valore": 4.0
   },
   "Tasso BCE sui depositi": {
