@@ -1,60 +1,5 @@
 {
  "valutate": {
-  "e71da24b06b69092": "2026-10-04T19:00:58+00:00",
-  "59cebd21abbb0acd": "2026-10-04T19:00:58+00:00",
-  "d858e1fc9af2b9dc": "2026-10-04T19:00:58+00:00",
-  "7aff3edbdcc9cff2": "2026-10-04T19:00:58+00:00",
-  "8ec69fd2291e11dc": "2026-10-04T19:00:58+00:00",
-  "eeedc0667b0162b4": "2026-10-04T19:00:58+00:00",
-  "8f77dad7e0fe494c": "2026-10-04T19:00:58+00:00",
-  "732ab71e9fef2f96": "2026-10-04T19:00:58+00:00",
-  "4f4abb37761c779f": "2026-10-04T19:00:58+00:00",
-  "b8abae7bddf45117": "2026-10-04T19:00:58+00:00",
-  "1d0f11669e5399c5": "2026-10-04T19:00:58+00:00",
-  "2bdbf1e053fabb5a": "2026-10-04T19:00:58+00:00",
-  "769cd980640f1bca": "2026-10-04T19:00:58+00:00",
-  "ba929ae6f9a42499": "2026-10-04T19:00:58+00:00",
-  "1a2b7a0cd9cb916b": "2026-10-04T19:00:58+00:00",
-  "812cb89f705ac8d0": "2026-10-04T19:00:58+00:00",
-  "435d5d19cc98d38f": "2026-10-04T19:00:58+00:00",
-  "943aac51dda5cff1": "2026-10-04T19:00:58+00:00",
-  "a30eab2d84b5c68d": "2026-10-04T19:00:58+00:00",
-  "86263f9e69068281": "2026-10-04T19:00:58+00:00",
-  "d852d11c08a41c05": "2026-10-04T19:00:58+00:00",
-  "e6dcf37dc87aacbf": "2026-10-04T19:00:58+00:00",
-  "68972dbc5773e08a": "2026-10-04T19:00:58+00:00",
-  "72fafeaecc76a59e": "2026-10-04T19:00:58+00:00",
-  "768a7a614bca2904": "2026-10-04T19:00:58+00:00",
-  "768e6c00dba3a397": "2026-10-04T20:01:05+00:00",
-  "832150a3ba97f38c": "2026-10-04T20:01:05+00:00",
-  "dc00105630c3f36c": "2026-10-04T20:01:05+00:00",
-  "ea8eeb96553dec62": "2026-10-04T20:01:05+00:00",
-  "8b1151b8e35faed6": "2026-10-04T20:01:05+00:00",
-  "528c3627f83067f9": "2026-10-04T20:01:05+00:00",
-  "fba5a7a493146486": "2026-10-04T20:01:05+00:00",
-  "db0d4c4161baacbf": "2026-10-04T20:01:05+00:00",
-  "f41c8e4e13f21f15": "2026-10-04T20:01:05+00:00",
-  "01189de8aad6e049": "2026-10-04T20:01:05+00:00",
-  "3ef77ff7a05eb46a": "2026-10-04T20:01:05+00:00",
-  "289bae8fb70ef8d8": "2026-10-04T20:01:05+00:00",
-  "4f81cababcdc03aa": "2026-10-04T20:01:05+00:00",
-  "9193f0ef15c6f6a9": "2026-10-04T20:01:05+00:00",
-  "8bbf2f5ad7389ef9": "2026-10-04T20:01:05+00:00",
-  "f2ff39dc2e76a476": "2026-10-04T20:01:05+00:00",
-  "ec74d44c7fe4b2ca": "2026-10-04T20:01:05+00:00",
-  "17e8f9b21575c731": "2026-10-04T20:01:05+00:00",
-  "7d57db0db6040441": "2026-10-04T20:01:05+00:00",
-  "27f2cb9287ccaac0": "2026-10-04T20:01:05+00:00",
-  "a69c9dc9b4c69c7b": "2026-10-04T20:01:05+00:00",
-  "df1692593f0024e6": "2026-10-04T20:01:05+00:00",
-  "e8a9da706be9c864": "2026-10-04T20:01:05+00:00",
-  "66f07593c5f51386": "2026-10-04T20:01:05+00:00",
-  "86eb6f9a2ae4e14e": "2026-10-04T20:01:05+00:00",
-  "f30b3e1c066abcc7": "2026-10-04T20:01:05+00:00",
-  "b3fab242ed018bae": "2026-10-04T20:01:05+00:00",
-  "548a95165f60dfbd": "2026-10-04T20:01:05+00:00",
-  "f0d3adbe54143451": "2026-10-04T20:01:05+00:00",
-  "3ac0ba459c9a42e8": "2026-10-04T20:01:05+00:00",
   "f629f407345c6736": "2026-10-05T05:30:45+00:00",
   "3b233634732684d8": "2026-10-05T05:30:45+00:00",
   "ef749223eafc6968": "2026-10-05T05:30:45+00:00",
@@ -15637,7 +15582,47 @@
   "4053cd4ba22ca73c": "2026-10-18T18:01:19+00:00",
   "5125b373cee762fc": "2026-10-18T18:01:19+00:00",
   "89d777f2a80c710e": "2026-10-18T18:01:19+00:00",
-  "5d92f174d67af64b": "2026-10-18T18:01:19+00:00"
+  "5d92f174d67af64b": "2026-10-18T18:01:19+00:00",
+  "011ad1a087ccc5a8": "2026-10-18T20:01:18+00:00",
+  "41b3b8a750934754": "2026-10-18T20:01:18+00:00",
+  "28245646e8eafcfd": "2026-10-18T20:01:18+00:00",
+  "4f9e746f9dfe308a": "2026-10-18T20:01:18+00:00",
+  "f9dac620d7484310": "2026-10-18T20:01:18+00:00",
+  "e112128625b576b2": "2026-10-18T20:01:18+00:00",
+  "2d604bd846117519": "2026-10-18T20:01:18+00:00",
+  "6f7f16ddad3583a8": "2026-10-18T20:01:18+00:00",
+  "7d5fdcc5c8f5c36c": "2026-10-18T20:01:18+00:00",
+  "1ce299fbf6cf113d": "2026-10-18T20:01:18+00:00",
+  "0fed26c3071ba41d": "2026-10-18T20:01:18+00:00",
+  "12c42c1c875e37e6": "2026-10-18T20:01:18+00:00",
+  "95ffd367b43fdc24": "2026-10-18T20:01:18+00:00",
+  "ff932d4a50151f90": "2026-10-18T20:01:18+00:00",
+  "743f546bdc62d765": "2026-10-18T20:01:18+00:00",
+  "5a825ba18ed5244a": "2026-10-18T20:01:18+00:00",
+  "b7f08fc7263d167a": "2026-10-18T20:01:18+00:00",
+  "720d01418f271eea": "2026-10-18T20:01:18+00:00",
+  "0a506d143a536c81": "2026-10-18T20:01:18+00:00",
+  "2d7b5dbfed2c9eea": "2026-10-18T20:01:18+00:00",
+  "76eb6a13e2491c7b": "2026-10-18T20:01:18+00:00",
+  "b39733cfb9c38ca2": "2026-10-18T20:01:18+00:00",
+  "3ab0bbb27b60829d": "2026-10-18T20:01:18+00:00",
+  "f428308f9c59714a": "2026-10-18T20:01:18+00:00",
+  "597dec0e8a308784": "2026-10-18T20:01:18+00:00",
+  "dfbb0bbc69160e8d": "2026-10-18T20:01:18+00:00",
+  "e2f58e9cfd7b3478": "2026-10-18T20:01:18+00:00",
+  "0818f7cff15d2af2": "2026-10-18T20:01:18+00:00",
+  "bd2ed5ac09e5f612": "2026-10-18T20:01:18+00:00",
+  "5c52bf950b44c4b7": "2026-10-18T20:01:18+00:00",
+  "a797a784f7f2ce6b": "2026-10-18T20:01:18+00:00",
+  "3335cd29287fe168": "2026-10-18T20:01:18+00:00",
+  "79efd3c1e4ddd4f3": "2026-10-18T20:01:18+00:00",
+  "7e7913170d00db2d": "2026-10-18T20:01:18+00:00",
+  "9f472de953c1edb1": "2026-10-18T20:01:18+00:00",
+  "bd93225493135eb5": "2026-10-18T20:01:18+00:00",
+  "1a41d7e9e581e52f": "2026-10-18T20:01:18+00:00",
+  "7712735801f297bd": "2026-10-18T20:01:18+00:00",
+  "8d5eebe8492ea388": "2026-10-18T20:01:18+00:00",
+  "bdf8da7ac8ee1761": "2026-10-18T20:01:18+00:00"
  },
  "inviate": [
   {
@@ -15976,297 +15961,6 @@
    "voti": {
     "a945f4701b6d": 1
    }
-  },
-  {
-   "id": "7aff3edbdcc9cff2",
-   "titolo": "Delfin verso l'appoggio all'offerta di Intesa Sanpaolo per Mps",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Azionario",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "all",
-    "appoggio",
-    "delfin",
-    "intesa",
-    "mps",
-    "offerta",
-    "sanpaolo",
-    "verso"
-   ],
-   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/04/delfin-verso-lappoggio-allofferta-di-intesa-sanpaolo-per-mps_63e7a8d8-f00b-437c-a9b9-c5ab2f640684.html",
-   "quando": "2026-10-04T19:00:58+00:00",
-   "messaggio": 132,
-   "riassunto": "La holding Delfin si orienta a sostenere l'offerta promossa da Intesa Sanpaolo su Banca Monte dei Paschi di Siena. La decisione arriva dopo la riunione del board convocata in seguito alle mosse di Ca' de Sass, delineando nuovi equilibri nell'operazione di aggregazione bancaria."
-  },
-  {
-   "id": "e6dcf37dc87aacbf",
-   "titolo": "Major oil exporters agree to keep production steady in November",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "agree",
-    "exporters",
-    "keep",
-    "major",
-    "november",
-    "oil",
-    "production",
-    "steady"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMFIyQUl6ckU5bmV2TDV4V09FN3hNRlVTaDhZcXFPdDBRYndtMzRubklkdU5FSkZNZFFmMmlEZmdKQzVuM0hfYTVEejhldUQ2QVdsR0RaWjNiQTI1Vlhna094dGJLcV9leVM2a0tnenkyTmF1TnFDb3ZtWHhZaEZIRGlZekhKbGhmaTBJOHZYM2JCX2FFUWhfX3NzQ2p6bVdMcmg4cHc0eGRqRjJpSG03aVdB?oc=5",
-   "quando": "2026-10-04T19:00:59+00:00",
-   "messaggio": 133,
-   "riassunto": "I principali paesi esportatori di petrolio riuniti nell'alleanza OPEC+ hanno confermato l'accordo per mantenere invariati i livelli di produzione per il mese di novembre. La decisione riflette la linea di prudenza adottata per fronteggiare le tensioni geopolitiche e le interruzioni di fornitura in M"
-  },
-  {
-   "id": "e71da24b06b69092",
-   "titolo": "Oil Executives Rush to Complete Contract Migration in Venezuela, Sources Say",
-   "tema": "Eni",
-   "reparti": [
-    "Geopolitica",
-    "Azionario"
-   ],
-   "impronta": [
-    "complete",
-    "contract",
-    "executives",
-    "migration",
-    "oil",
-    "rush",
-    "say",
-    "sources",
-    "venezuela"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSUg0UWFGdjBrZXBYUGllNWd5eURBNHM2MGpYajJPY2ducXBlQU5LTERjcmJHbml3dWZFcU9VMGcydUJHZDdhSlMyUlBiQldfSGYtdTFSZmYwVnhhYW9heU9mV1FvTkNUclk3cGh1VGdNSjZsdkk0cm5VWUxfUVpLZkdpVzFYVzdITGpBMi1Oa1IxSWJUSTVrMUNSY1dva1k5Z2ZfeVRBa2txdw?oc=5",
-   "quando": "2026-10-04T19:01:00+00:00",
-   "messaggio": 134,
-   "riassunto": "I dirigenti del settore petrolifero stanno accelerando il completamento della migrazione dei contratti in Venezuela. L'iniziativa coinvolge i principali attori presenti nel Paese sudamericano per adeguarsi al nuovo quadro normativo locale. La mossa mira a tutolare le attività estrattive e la gestion"
-  },
-  {
-   "id": "2bdbf1e053fabb5a",
-   "titolo": "Iran's oil minister resigns, no reason given",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica"
-   ],
-   "impronta": [
-    "given",
-    "iran",
-    "minister",
-    "oil",
-    "reason",
-    "resigns"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdHdEN1VYYjFqdkJyRThRQ2ZheFQzeElqRHRBNVR2N1UwV2lWbi1CcDdQYk9IV0ZuSURnc29jZXNDM1hmV0YzMDNRN0xlR055WlhBS0M2SVNJVW9NNE0yYlUyc3F0YVJma1JhQ0RnX096YjlGMTRiUmhVSDE4VGlOZ2MwMjljcVhNZnhER2gtYWk4QUYxZGpzZ202dVJLUQ?oc=5",
-   "quando": "2026-10-04T19:01:00+00:00",
-   "messaggio": 135,
-   "riassunto": "Il ministro iraniano del petrolio ha rassegnato le dimissioni senza motivare ufficialmente la decisione. La notizia arriva in un momento di forte tensione geopolitica nel Golfo Persico e di criticità legate alla stabilità delle forniture globali di greggio."
-  },
-  {
-   "id": "732ab71e9fef2f96",
-   "titolo": "How Brazil’s election winner could reshape its institutions as vacancies mount",
-   "tema": "Debito emergente e rischio Paese",
-   "reparti": [
-    "Geopolitica",
-    "Obbligazionario"
-   ],
-   "impronta": [
-    "brazil",
-    "could",
-    "election",
-    "institutions",
-    "mount",
-    "reshape",
-    "vacancies",
-    "winner"
-   ],
-   "link": "https://www.investing.com/news/economy-news/how-brazils-election-winner-could-reshape-its-institutions-as-vacancies-mount-4930946",
-   "quando": "2026-10-04T19:01:01+00:00",
-   "messaggio": 136,
-   "riassunto": "Le elezioni in Brasile pongono le basi per una profonda riconfigurazione delle istituzioni locali, date le numerose cariche e nomine in scadenza. Il vincitore della consultazione avrà l'opportunità di influenzare in modo significativo la governance economica e regolatoria del Paese sudamericano."
-  },
-  {
-   "id": "4f4abb37761c779f",
-   "titolo": "Trump’s Ohio rally gets quiet after he defends data centers — a toxic political issue with bipartisan opposition. ‘You can’t just turn them off’",
-   "tema": "Concentrazione dei grandi titoli tecnologici",
-   "reparti": [
-    "Azionario",
-    "Geopolitica"
-   ],
-   "impronta": [
-    "bipartisan",
-    "can",
-    "centers",
-    "data",
-    "defends",
-    "gets",
-    "issue",
-    "just",
-    "off",
-    "ohio",
-    "opposition",
-    "political",
-    "quiet",
-    "rally",
-    "them",
-    "toxic",
-    "trump",
-    "turn",
-    "you"
-   ],
-   "link": "https://fortune.com/2026/10/04/trumps-ohio-rally-gets-quiet-after-he-defends-data-centers-a-toxic-political-issue-with-bipartisan-opposition-you-cant-just-turn-them-off/",
-   "quando": "2026-10-04T19:01:05+00:00",
-   "messaggio": 137,
-   "riassunto": "Nel corso di un comizio in Ohio, l'ex presidente Donald Trump ha difeso i data center necessari per alimentare i progetti di intelligenza artificiale. L'infrastruttura tecnologica è diventata un tema centrale e divisivo nel dibattito politico bipartisan in vista delle scadenze di medio termine."
-  },
-  {
-   "id": "a30eab2d84b5c68d",
-   "titolo": "ECONOMIC WEEK AHEAD: October 5-9",
-   "tema": "Crescita e lavoro",
-   "reparti": [
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "2026",
-    "fed",
-    "francia",
-    "mercati",
-    "ottobre",
-    "prime",
-    "trimestrali",
-    "usa",
-    "verbali"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeDNfdS1Wd1Bmb0RZM2RlbWxlUmNMc0xXcW5aUzBVYVB6cldmOERlUERNUVZxb2JSR1FTanZrdDFFWjQ1Zk5Daml2OWE2bjVaTlFxTjhOald5X09aUGwzUk5RVWxjYmUySkY4NjFnQklYMXlBWDBVOUczZl85SzBXUVZYd1ZLeVpWaGlJaWQ1cUEwdFFQUHNWN0tVVkdsbEla?oc=5",
-   "quando": "2026-10-04T19:01:06+00:00",
-   "messaggio": 138,
-   "riassunto": "La nuova settimana finanziaria si apre con l'attesa per la pubblicazione dei verbali della Federal Reserve, i dati sulla situazione economica in Francia e l'avvio della stagione delle prime trimestrali societarie negli Stati Uniti. Gli operatori monitorano gli indicatori alla ricerca di indicazioni "
-  },
-  {
-   "id": "27f2cb9287ccaac0",
-   "titolo": "UTEN: Bear Steepening Curve Opens A Bearish Thesis On Treasury (NASDAQ:UTEN)",
-   "tema": "Curva dei rendimenti",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "bear",
-    "bearish",
-    "curve",
-    "nasdaq",
-    "opens",
-    "steepening",
-    "thesis",
-    "treasury",
-    "uten"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS3lVY2JfUG83MkdIeHVyR3BGaDdtS2hLSUtFTVhQQmVPXy10c01rSzZOQTc1X1pQWmxhSFJHY3JuT0xxN21kYldrWGN5OU5YT0g4Q1dEN0FOdHhreDB0UFlaTkdoOVo4Yll5S0phSnBiUkRqU0R4aEx0OUdfNWI0T05OdTZxaG1JbEI3d2xRalBhdHl0SG56Qzh0eHF2T0lTN29ZTQ?oc=5",
-   "quando": "2026-10-04T20:01:05+00:00",
-   "messaggio": 139,
-   "riassunto": "Le analisi sul mercato obbligazionario evidenziano come la configurazione di 'bear steepening' della curva dei rendimenti apra a prospettive ribassiste per i titoli di Stato statunitensi. Il movimento riflette crescenti pressioni sul premio a termine e sulle scadenze lunghe della curva dei tassi. Gl"
-  },
-  {
-   "id": "a69c9dc9b4c69c7b",
-   "titolo": "BlackRock and Amundi Warn on Rising AI Concentration Risk",
-   "tema": "Concentrazione dei grandi titoli tecnologici",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "amundi",
-    "blackrock",
-    "concentration",
-    "rising",
-    "risk",
-    "warn"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPY09ha0ppc2liVnUzR2xUWVFrcFZpM2dmeF9IS2RvbTZ6NlFnVy1HYml3Rm9VbVF2ZXp0ci0xTXBRTzFhbHBGYzU5WlpmTmdvUVVnYzVzYmVjWFZNZlAyWVNxR182Vm5kajVKbkZfeGt0UmtRWXV0dFJIYjlKNW5XbzNNT3Z0am95TFRQY1dwX21YNjNr?oc=5",
-   "quando": "2026-10-04T20:01:06+00:00",
-   "messaggio": 140,
-   "riassunto": "I gestori patrimoniali BlackRock e Amundi hanno espresso preoccupazione per l'eccessiva concentrazione di mercato legata agli investimenti e ai titoli del settore intelligenza artificiale. La forte focalizzazione degli indici su pochi giganti tecnologici aumenta la vulnerabilità dei portafogli a eve"
-  },
-  {
-   "id": "768e6c00dba3a397",
-   "titolo": "ENI PER L’ITALIA: AL VIA LO SCONTO DEL 20% SUI CARBURANTI PER AGRICOLTURA E PESCA",
-   "tema": "Eni",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "agricoltura",
-    "carburanti",
-    "eni",
-    "italia",
-    "pesca",
-    "sconto",
-    "via"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMnZJbHlCVlNDRG9zSjlnT29FTG5VcFJ6TnY2TWIxWFA5a3Y5NXBrSjYyVml3RFlvRGNOTEVxQVkxeTFzM2RPaWFONmRaZTVCcnU5Q2c3UnlZZS1xNHJLTjc5aktlUWl0dmF3WmFfYm5hVmstVEt3SlBBb2U0Z1FjLTRIRW95SVRHel9HZTBnQzgtMzlQdklMclVldFQ2THcyMkhzbWVkb0FWVnJHRGgw?oc=5",
-   "quando": "2026-10-04T20:01:06+00:00",
-   "messaggio": 141,
-   "riassunto": "Eni ha annunciato il lancio di uno sconto del 20% dedicato ai settori dell'agricoltura e della pesca in Italia. L'iniziativa mira a sostenere le categorie colpite dai rincari dei costi energetici e operativi. La misura incide sulle dinamiche commerciali della società e sul contesto energetico domest"
-  },
-  {
-   "id": "e8a9da706be9c864",
-   "titolo": "Diesel, finisce il taglio accise. Lo sconto diventerà “mobile”",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "accise",
-    "automobilisti",
-    "carburanti",
-    "caro",
-    "costato",
-    "gasolio",
-    "mesi",
-    "miliardi",
-    "scade",
-    "sconto",
-    "sulle"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZkdxdHpFUThCOVY5NEY0SVc2aUZNMGZNaFo4dHlIU2d1V2FINzliS0IzSFZLbTRoT1duZjdqU1BLUFhCMndyTDdQY0cwTkRELUVjNkJtajVPMGpSUEtXSFJzdjk0VXFMWklMTFRmQ0NoMGM1bjd4bEJYUlJDaF91UXlYMA?oc=5",
-   "quando": "2026-10-04T20:01:07+00:00",
-   "messaggio": 142,
-   "riassunto": "Si conclude ufficialmente il regime di taglio delle accise sul gasolio in Italia, dopo un aggravio stimato in 4,7 miliardi di euro per gli automobilisti in sei mesi. Lo sconto statale si trasformerà in un meccanismo di tipo mobile per rispondere alle fluttuazioni dei corsi energetici. La misura si i"
-  },
-  {
-   "id": "8b1151b8e35faed6",
-   "titolo": "France’s Schneider Electric nears $20 billion deal to buy US software group PTC, FT reports",
-   "tema": "Altro",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "billion",
-    "buy",
-    "deal",
-    "electric",
-    "france",
-    "group",
-    "nears",
-    "ptc",
-    "reports",
-    "schneider",
-    "software"
-   ],
-   "link": "https://www.investing.com/news/stock-market-news/frances-schneider-electric-nears-20-billion-deal-to-buy-us-software-group-ptc-ft-reports-4930950",
-   "quando": "2026-10-04T20:01:07+00:00",
-   "messaggio": 143,
-   "riassunto": "Schneider Electric è vicina a concludere un accordo da 20 miliardi di dollari per l'acquisizione del gruppo software statunitense PTC. Contemporaneamente, AkzoNobel procede verso la cessione della propria divisione vernici nel Sud-Est asiatico a Nippon Paint per oltre un miliardo di dollari. Le oper"
   },
   {
    "id": "66f07593c5f51386",
@@ -27874,10 +27568,92 @@
    "quando": "2026-10-18T18:01:25+00:00",
    "messaggio": 606,
    "riassunto": "Il Fondo Monetario Internazionale ha acceso i riflettori sul circuito di finanziamento dell'intelligenza artificiale, caratterizzato da 650 miliardi di dollari di debito a fronte di 1,4 trilioni di ricavi futuri stimati. Analisti di mercato sottolineano come la combinazione di ingenti emissioni obbl"
+  },
+  {
+   "id": "dfbb0bbc69160e8d",
+   "titolo": "UBS Lifts Fed Call to Three Hikes, Adding December 2026 and March 2027",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "2026",
+    "2027",
+    "adding",
+    "call",
+    "december",
+    "fed",
+    "hikes",
+    "lifts",
+    "march",
+    "three",
+    "ubs"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAwM0pQOGVkRHJsQlBudGZLY0UycmdFRE03REdsNlg2RWFENHBtRGRwV2hZRTVzNHRta2R6ZENnTEFjRGV5Z0xNS3JHX3drREhGQ0JhU1pXODA2MTZMZ1F6NEI1MlR6bF9Wc3FlYVJER2F0anAta1E?oc=5",
+   "quando": "2026-10-18T20:01:20+00:00",
+   "messaggio": 607,
+   "riassunto": "UBS ha rivisto al rialzo le proprie previsioni di politica monetaria per la Federal Reserve, anticipando tre ulteriori aumenti dei tassi d'interesse. Tra questi spicca una stretta aggiuntiva prevista per dicembre 2026 e una successiva a marzo 2027. La decisione riflette le crescenti pressioni inflaz"
+  },
+  {
+   "id": "28245646e8eafcfd",
+   "titolo": "Ukraine Talks with Turkey, India, Egypt Over Grain Corridor",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "corridor",
+    "egypt",
+    "grain",
+    "india",
+    "talks",
+    "turkey",
+    "ukraine"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-18/ukraine-talks-with-turkey-india-egypt-over-grain-corridor",
+   "quando": "2026-10-18T20:01:20+00:00",
+   "messaggio": 608,
+   "riassunto": "Il presidente ucraino Volodymyr Zelenskyy ha annunciato che l'Ucraina è in colloqui con Turchia, Egitto e India per esplorare la riapertura della navigazione civile nel Mar Nero. L'obiettivo principale è ripristinare le rotte per le esportazioni agricole, cruciali per i mercati alimentari globali. L"
+  },
+  {
+   "id": "720d01418f271eea",
+   "titolo": "Official data show China is dumping more U.S. Treasury debt. But it may actually be a stealth buyer, with a big stash suspiciously piling up in Canada",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "actually",
+    "big",
+    "but",
+    "buyer",
+    "canada",
+    "china",
+    "data",
+    "debt",
+    "dumping",
+    "may",
+    "more",
+    "official",
+    "piling",
+    "show",
+    "stash",
+    "stealth",
+    "suspiciously",
+    "treasury"
+   ],
+   "link": "https://fortune.com/2026/10/18/china-dedollarization-us-treasury-debt-holdings-stealth-canada-belgium-custodians/",
+   "quando": "2026-10-18T20:01:21+00:00",
+   "messaggio": 609,
+   "riassunto": "I dati ufficiali evidenziano che la Cina sta riducendo la sua esposizione diretta in titoli di Stato statunitensi. Tuttavia, un'analisi dettagliata suggerisce la presenza di acquirenti occulti, con un sospetto e anomalo accumulo di Treasury in Canada, saliti a 465 miliardi di dollari in agosto. Ques"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 41
+  "FXStreet": 42
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -27895,12 +27671,12 @@
   "2026-10-15": 9,
   "2026-10-16": 10,
   "2026-10-17": 11,
-  "2026-10-18": 8
+  "2026-10-18": 9
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-18 20",
-  "chiusura": "2026-10-17",
+  "ora_notizie": "2026-10-18 22",
+  "chiusura": "2026-10-18",
   "apertura": "2026-10-18",
   "settimanale": "2026-W42"
  },
