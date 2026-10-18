@@ -15622,7 +15622,42 @@
   "0e461d8d01c813a1": "2026-10-18T16:01:10+00:00",
   "75f1834b24edcdba": "2026-10-18T16:01:10+00:00",
   "0788336f4b756e68": "2026-10-18T16:01:10+00:00",
-  "eac10723e9c197d4": "2026-10-18T16:01:10+00:00"
+  "eac10723e9c197d4": "2026-10-18T16:01:10+00:00",
+  "cec51ac71fba04db": "2026-10-18T18:01:19+00:00",
+  "14d93d1fbc3a2d7e": "2026-10-18T18:01:19+00:00",
+  "2a887034ba84435e": "2026-10-18T18:01:19+00:00",
+  "3bd9c430b497cbd0": "2026-10-18T18:01:19+00:00",
+  "40f50f492104ad1f": "2026-10-18T18:01:19+00:00",
+  "465a88c9c759833a": "2026-10-18T18:01:19+00:00",
+  "bd6d6b0417d96135": "2026-10-18T18:01:19+00:00",
+  "1f30258c2c5b7904": "2026-10-18T18:01:19+00:00",
+  "e8b1b0fd2ff6f8ea": "2026-10-18T18:01:19+00:00",
+  "ec192f733ba60e93": "2026-10-18T18:01:19+00:00",
+  "23df2b3ec104ec55": "2026-10-18T18:01:19+00:00",
+  "bdd8ce52b5ef17b0": "2026-10-18T18:01:19+00:00",
+  "c430de18424d148b": "2026-10-18T18:01:19+00:00",
+  "e16d33d13fb5ee29": "2026-10-18T18:01:19+00:00",
+  "1b6d623ae6f54423": "2026-10-18T18:01:19+00:00",
+  "79d926e03fb76218": "2026-10-18T18:01:19+00:00",
+  "29e0bf7a06adbfe0": "2026-10-18T18:01:19+00:00",
+  "949c70208cab1e98": "2026-10-18T18:01:19+00:00",
+  "e19f590fcd9eda02": "2026-10-18T18:01:19+00:00",
+  "e060b0f5c283d158": "2026-10-18T18:01:19+00:00",
+  "8e34df8b9c34e57a": "2026-10-18T18:01:19+00:00",
+  "84a5085fa156bbea": "2026-10-18T18:01:19+00:00",
+  "c810a66a6fbaa87b": "2026-10-18T18:01:19+00:00",
+  "fe998f0723c4d16d": "2026-10-18T18:01:19+00:00",
+  "115bf3796aaab125": "2026-10-18T18:01:19+00:00",
+  "f2d16657068d426e": "2026-10-18T18:01:19+00:00",
+  "6a8805bc511e6c6f": "2026-10-18T18:01:19+00:00",
+  "b27a31bb41fd9045": "2026-10-18T18:01:19+00:00",
+  "c0937315c2bff991": "2026-10-18T18:01:19+00:00",
+  "f893fdbe2e570edf": "2026-10-18T18:01:19+00:00",
+  "7d4086c02cf89884": "2026-10-18T18:01:19+00:00",
+  "4053cd4ba22ca73c": "2026-10-18T18:01:19+00:00",
+  "5125b373cee762fc": "2026-10-18T18:01:19+00:00",
+  "89d777f2a80c710e": "2026-10-18T18:01:19+00:00",
+  "5d92f174d67af64b": "2026-10-18T18:01:19+00:00"
  },
  "inviate": [
   {
@@ -27888,10 +27923,85 @@
    "quando": "2026-10-18T16:01:12+00:00",
    "messaggio": 601,
    "riassunto": "Le recenti turbolenze nei titoli legati all'intelligenza artificiale e l'inflazione Usa hanno spinto gli investitori a proteggersi da una maggiore volatilità. Gli operatori di opzioni si preparano a un'estensione dei movimenti di mercato. Alcuni analisti ritengono tuttavia che i ribassi recenti potr"
+  },
+  {
+   "id": "f2d16657068d426e",
+   "titolo": "10-Year Yield Breaches 5% for First Time Since 2007, Echoing a Painful Precedent for Stocks",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Azionario"
+   ],
+   "impronta": [
+    "2007",
+    "breaches",
+    "echoing",
+    "first",
+    "painful",
+    "precedent",
+    "since",
+    "stocks",
+    "time",
+    "year",
+    "yield"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1uQmZOaEhYdi1fSXFXZDFWVGhSWW9oY1ZLLUM0U21DU1hZYUFOcVlFaGg3UnluUmFxZ3JYREdpdllhdzJEaUl2WDFFaVBIMV9iN1dEZnFWZEYwS2lhTG5VTXEwcl9ZT3pYN3VXNHlvbmI4RkYwekE?oc=5",
+   "quando": "2026-10-18T18:01:21+00:00",
+   "messaggio": 604,
+   "riassunto": "Il rendimento del titolo di Stato americano a 10 anni ha superato la soglia psicologica del 5% per la prima volta dal 2007. Questo movimento riflette le crescenti pressioni inflazionistiche e l'aumento dei costi di indebitamento federale. Il mercato obbligazionario subisce forti tensioni, con impatt"
+  },
+  {
+   "id": "bd6d6b0417d96135",
+   "titolo": "Bollette, sconto dal 2027, un nuovo decreto per fissare il tetto al gas",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "2027",
+    "bollette",
+    "decreto",
+    "fissare",
+    "gas",
+    "nuovo",
+    "sconto",
+    "tetto"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/10/18/bollette-sconto-dal-2027-un-nuovo-decreto-per-fissare-il-tetto-al-gas_38f35727-60e4-4d21-b060-0f823a8c6eb2.html",
+   "quando": "2026-10-18T18:01:21+00:00",
+   "messaggio": 605,
+   "riassunto": "I tecnici governativi italiani sono al lavoro su un nuovo decreto per introdurre un tetto al prezzo del gas compreso tra 58 e 59 euro, puntando a una riduzione del 10% sulle bollette per le famiglie a partire dal 2027. La misura interviene nel contesto della volatilità energetica europea e dei recen"
+  },
+  {
+   "id": "84a5085fa156bbea",
+   "titolo": "$650 bn in debt, $1.4 tn in future revenue: Inside AI financing loop flagged by IMF",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "650",
+    "debt",
+    "financing",
+    "flagged",
+    "future",
+    "imf",
+    "inside",
+    "loop",
+    "revenue"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPT1dvTFNJNENaM0lpQmJ3RkhKRmRXSmdoUHFqa0hwTkttWnlKRl9EaVdHcVVPVkhsblhiay1DVldBa3FyMkhjc054SXpSZGszRXpHSTZvNkRpdXZidXE2a09PYkpXa3pINmxkLXVWcXhyLW95WE9mdlVsdGtxVm5rTDdlT014WEFaMHFhTHVjV2VPU1JNeEZYYXdPOXA3TE45bjYzVWFxU19IVHNPRzZwNEptektjYzdWZkR5TllR0gG-AUFVX3lxTE9PV29MU0k0Q1ozSWlCYndGSEpGZFdKZ2hQcWprSHBOS21aeUpGX0RpV0dxVU9WSGxuWGJrLUNWV0FrcXIySGNzTnhJelJkazNFekdJNm82RGl1dmJ1cTZrT09iSldrekg2bGQtdVZxeHItb3lYT2Z2VWx0a3FWbmtMN2VPTXhYQVowcWFMdWNXZU9TUk14Rlhhd085cDdMTjluNjNVYXFTX0hUc09HNnA0Sm16S2NjN1ZmRHlOWVE?oc=5",
+   "quando": "2026-10-18T18:01:25+00:00",
+   "messaggio": 606,
+   "riassunto": "Il Fondo Monetario Internazionale ha acceso i riflettori sul circuito di finanziamento dell'intelligenza artificiale, caratterizzato da 650 miliardi di dollari di debito a fronte di 1,4 trilioni di ricavi futuri stimati. Analisti di mercato sottolineano come la combinazione di ingenti emissioni obbl"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 40
+  "FXStreet": 41
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -27909,11 +28019,11 @@
   "2026-10-15": 9,
   "2026-10-16": 10,
   "2026-10-17": 11,
-  "2026-10-18": 7
+  "2026-10-18": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-18 18",
+  "ora_notizie": "2026-10-18 20",
   "chiusura": "2026-10-17",
   "apertura": "2026-10-18",
   "settimanale": "2026-W42"
