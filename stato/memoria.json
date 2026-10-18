@@ -1,20 +1,5 @@
 {
  "valutate": {
-  "9cdfedb2ffd2a11c": "2026-10-04T06:02:07+00:00",
-  "463c48bfed600faf": "2026-10-04T06:02:07+00:00",
-  "eff43f12926d414f": "2026-10-04T06:02:07+00:00",
-  "54f4ba1233030a40": "2026-10-04T06:02:07+00:00",
-  "96ee748939f8b4b9": "2026-10-04T06:02:07+00:00",
-  "efdbaacf71fa1921": "2026-10-04T06:02:07+00:00",
-  "0667073c218e2507": "2026-10-04T06:02:07+00:00",
-  "8e6dc289b999a317": "2026-10-04T06:02:07+00:00",
-  "3f713f5a3421cd5e": "2026-10-04T06:02:07+00:00",
-  "c3cfa91b80c42553": "2026-10-04T06:02:07+00:00",
-  "6534e190e110bf42": "2026-10-04T06:02:07+00:00",
-  "a6813e7883c57cff": "2026-10-04T06:02:07+00:00",
-  "db741359ee124b31": "2026-10-04T06:02:07+00:00",
-  "6ea7811ba634cf3e": "2026-10-04T06:02:07+00:00",
-  "0ab2c2074e40a68b": "2026-10-04T06:02:07+00:00",
   "7f6d1ba241bb971b": "2026-10-04T07:01:05+00:00",
   "9477d17701508129": "2026-10-04T07:01:05+00:00",
   "07b5d0091564fbe6": "2026-10-04T07:01:05+00:00",
@@ -15979,49 +15964,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "db741359ee124b31",
-   "titolo": "Se la Lagarde alza il costo del denaro ci rovina tutti",
-   "tema": "BCE",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "alza",
-    "costo",
-    "denaro",
-    "lagarde",
-    "rovina",
-    "tutti"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWlExeXZNdEVwZnhOT1NVTzVTd0JqYnk2NFBrbEpVdUs4OFd2YWIxcXo1X01VZnh6SVJ3NXZ4eWdBREUwMkNhVXNPdlJPYnVUQzE0VkYxQ010NFFXYjFHQWpUMndDSnh6b01mZXBBM1NWckMzZi1DemduM1NZNzd5d3ZhRXVKVE5uU3V5OHFXbHdjV0RPRU5tcmJkVzdEQQ?oc=5",
-   "quando": "2026-10-04T06:02:07+00:00"
-  },
-  {
-   "id": "6ea7811ba634cf3e",
-   "titolo": "Borsa: Milano azzera rialzo e scivola a -0,03%, spread verso 128 punti | La Gazzetta del Mezzogiorno",
-   "tema": "Debito pubblico e spread BTP-Bund",
-   "reparti": [
-    "Obbligazionario",
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "128",
-    "azzera",
-    "borsa",
-    "milano",
-    "punti",
-    "rialzo",
-    "scivola",
-    "spread",
-    "verso"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPNzY4NzltNi02SjA2YTlGdzFjR1dsS1U1N3RPVkNraG4xR0VDQnhTemZnVm9kOFpmRU40YzdUU0xGN3ctLTZVWVNhajg1STBBd01yU2piUkRvSUE3c09pZ3BXVzlOa3BYOFRWUDZJZG5rQ2x6aUQ2R3VSNlphN2hSa0hGMG1zdFR3a0l3VUthVTRyOTVUMEZHV05ud2lablBKaDZRXzBUdW82RlZ6R2JkZjhLT2dMbW91X0NrTkdnNFdLVF85VnBNWmk2MDB5QU9B0gHPAUFVX3lxTE9HLXpyYVZvLURyMTZxZndwcEpBZGZyb3VkOVVZbVFsYVp4QzlfakJQSFctU2hCSlVTZFdTVUxlY0pkdnpZTWFJZlo2U2RkY0o1eGdMNDVSMzdncFlidV9QRHNLVzlaWk5EaVdLY25aOW13cVFOWG9pWlFuckhoeDY3dzdKeTVwSHEzNTdBLXYxRHh3TWF4RWZLR2ZubmtlQm9PUG15Y0h6dVVLMmpzNl9UeE5LaGVqVXNVT2pVdExwUTB4cThoTENUMm1TWVRzSQ?oc=5",
-   "quando": "2026-10-04T06:02:08+00:00"
   },
   {
    "id": "be2d3be7544faf47",
