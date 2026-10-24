@@ -1,22 +1,5 @@
 {
  "valutate": {
-  "163c7b05c141749c": "2026-10-10T06:01:43+00:00",
-  "80d428e6261017b3": "2026-10-10T06:01:43+00:00",
-  "4f39533891b52085": "2026-10-10T06:01:43+00:00",
-  "aef632547ff908b4": "2026-10-10T06:01:43+00:00",
-  "9fff188eac2b6856": "2026-10-10T06:01:43+00:00",
-  "14b7d976f2cf6f41": "2026-10-10T06:01:43+00:00",
-  "5fe25e0ee47c6886": "2026-10-10T06:01:43+00:00",
-  "bfa4240e8d3ff25a": "2026-10-10T06:01:43+00:00",
-  "50bb01323f64fe4f": "2026-10-10T06:01:43+00:00",
-  "286300c1f5266710": "2026-10-10T06:01:43+00:00",
-  "96c5e3645536a141": "2026-10-10T06:01:43+00:00",
-  "c179442f8b23a2d2": "2026-10-10T06:01:43+00:00",
-  "368a538ec0d2126e": "2026-10-10T06:01:43+00:00",
-  "eea25b27fae299d0": "2026-10-10T06:01:43+00:00",
-  "e8c06c410a7c0535": "2026-10-10T06:01:43+00:00",
-  "2d04eee5d27cf448": "2026-10-10T06:01:43+00:00",
-  "90bfaf7215c63544": "2026-10-10T06:01:43+00:00",
   "349ed62ccb4c4bbb": "2026-10-10T08:01:06+00:00",
   "501751747b6ddc59": "2026-10-10T08:01:06+00:00",
   "58bd980378ade038": "2026-10-10T08:01:06+00:00",
@@ -14743,7 +14726,31 @@
   "487d80738e99982b": "2026-10-24T05:31:45+00:00",
   "fe07ea779a79b09a": "2026-10-24T05:31:45+00:00",
   "71f3969efaa2cba1": "2026-10-24T05:31:45+00:00",
-  "3c0eacc3e4d1f7c2": "2026-10-24T05:31:45+00:00"
+  "3c0eacc3e4d1f7c2": "2026-10-24T05:31:45+00:00",
+  "23d46987719eb79b": "2026-10-24T06:02:11+00:00",
+  "d7e0597c1bf22a91": "2026-10-24T06:02:11+00:00",
+  "0f68c05cb9e11a38": "2026-10-24T06:02:11+00:00",
+  "84b09e06d4c6c589": "2026-10-24T06:02:11+00:00",
+  "a6479351b7de337e": "2026-10-24T06:02:11+00:00",
+  "2098b002204e28ec": "2026-10-24T06:02:11+00:00",
+  "5efbca7c5199928a": "2026-10-24T06:02:11+00:00",
+  "7707f675ceb247ba": "2026-10-24T06:02:11+00:00",
+  "e0e237deb0602686": "2026-10-24T06:02:11+00:00",
+  "71a033de575ae4e8": "2026-10-24T06:02:11+00:00",
+  "e3e5bbecf9f4f070": "2026-10-24T06:02:11+00:00",
+  "ea59c58e69dc5b5c": "2026-10-24T06:02:11+00:00",
+  "269191c76b4636b4": "2026-10-24T06:02:11+00:00",
+  "95480e35257df5a8": "2026-10-24T06:02:11+00:00",
+  "1bd2e6f5c4fc1aff": "2026-10-24T06:02:11+00:00",
+  "9818de71483e93d4": "2026-10-24T06:02:11+00:00",
+  "02d5e97c74711d4e": "2026-10-24T06:02:11+00:00",
+  "f2aa2a95a7f36682": "2026-10-24T06:02:11+00:00",
+  "72f20e7afe1e1b10": "2026-10-24T06:02:11+00:00",
+  "950097a956bcf4e7": "2026-10-24T06:02:11+00:00",
+  "1df13343db0b7d9a": "2026-10-24T06:02:11+00:00",
+  "9cbbc46e402afbf8": "2026-10-24T06:02:11+00:00",
+  "f00f9259b244d1c6": "2026-10-24T06:02:11+00:00",
+  "70b0bfd019d75531": "2026-10-24T06:02:11+00:00"
  },
  "inviate": [
   {
@@ -15306,102 +15313,6 @@
    "voti": {
     "a8dfe03fd20a": 1
    }
-  },
-  {
-   "id": "14b7d976f2cf6f41",
-   "titolo": "Slowing deals are another flashing red sign for equity markets",
-   "tema": "Borse, valutazioni e utili",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "another",
-    "deals",
-    "equity",
-    "flashing",
-    "markets",
-    "red",
-    "sign",
-    "slowing"
-   ],
-   "link": "https://www.ft.com/content/a7532546-d9b2-4889-b2a6-ff68658a1782?syn-25a6b1a6=1",
-   "quando": "2026-10-10T06:01:44+00:00",
-   "messaggio": 382,
-   "riassunto": "Il rallentamento delle fusioni e acquisizioni rappresenta un ulteriore segnale di allerta per i mercati azionari. L'appetito per il rischio degli investitori risulta penalizzato dalla combinazione di rendimenti obbligazionari in rialzo e timori legati all'intelligenza artificiale."
-  },
-  {
-   "id": "286300c1f5266710",
-   "titolo": "Brent commands a war premium as Middle East supply risks keep oil on edge",
-   "tema": "Energia e materie prime",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "brent",
-    "commands",
-    "east",
-    "edge",
-    "keep",
-    "middle",
-    "oil",
-    "premium",
-    "risks",
-    "supply",
-    "war"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPUUI5d2RBb3FZajNnZ2ZnQy05TmF4azMtenFnZllzU09Xak5fYk95TFJPYTNLX2xRQXhpcjFpaWR1RDZkXzVvX2pCZXVSV1h3VnJqUUhveXpsV1RlRDRmTGtBdV9KOHB4TVhFMFY0S0Rucklyc1VHemRxZXFSRnRSbXNiNW9CSDFXT1JpY1BoYTJFQmx0REx0YWgxUWlqTm1RNGJ5Q2JsSXBQRS1IQW5obDhvdXBBSDVDd2lOZ2h0UW5BNUVzVDRvUXkzd2MwZ1ZzUVRib0laZktkV2N4cVFvOGpGWTdIS05uQmVhcdIB7AFBVV95cUxPUUI5d2RBb3FZajNnZ2ZnQy05TmF4azMtenFnZllzU09Xak5fYk95TFJPYTNLX2xRQXhpcjFpaWR1RDZkXzVvX2pCZXVSV1h3VnJqUUhveXpsV1RlRDRmTGtBdV9KOHB4TVhFMFY0S0Rucklyc1VHemRxZXFSRnRSbXNiNW9CSDFXT1JpY1BoYTJFQmx0REx0YWgxUWlqTm1RNGJ5Q2JsSXBQRS1IQW5obDhvdXBBSDVDd2lOZ2h0UW5BNUVzVDRvUXkzd2MwZ1ZzUVRib0laZktkV2N4cVFvOGpGWTdIS05uQmVhcQ?oc=5",
-   "quando": "2026-10-10T06:01:45+00:00",
-   "messaggio": 383,
-   "riassunto": "Le quotazioni del Brent continuano a riflettere un premio di rischio geopolitico legato alle tensioni in Medio Oriente, sebbene si registrino progressi nella produzione nigeriana verso il target OPEC di 1,5 milioni di barili al giorno. I mercati petroliferi rimangono estremamente sensibili agli svil"
-  },
-  {
-   "id": "368a538ec0d2126e",
-   "titolo": "AI Investment and Inflation Pressures... U.S. Rates to Rise Again? [Weekend Money]",
-   "tema": "Fed",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario"
-   ],
-   "impronta": [
-    "again",
-    "inflation",
-    "investment",
-    "money",
-    "pressures",
-    "rates",
-    "rise",
-    "weekend"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fTF9FM3ZldHJYMFU0RG1iaWk2b3g1U0pqMjh6QkstUWdLc0g0N1VNZGw4RjhHVHJ0TDVmM0RfamZkaVVua0lteU9JdzhqaGhKcGZDWkdpblNaTThRQWtsVG9pMTU?oc=5",
-   "quando": "2026-10-10T06:01:48+00:00",
-   "messaggio": 384,
-   "riassunto": "Gli investimenti massicci nelle infrastrutture di intelligenza artificiale continuano a generare pressioni sui costi e inflazione, alimentando le previsioni di nuovi interventi restrittivi sui tassi da parte della Federal Reserve. Il contesto obbligazionario globale risente della forte domanda di fi"
-  },
-  {
-   "id": "eea25b27fae299d0",
-   "titolo": "U.S. President Donald Trump posts on Truth Social that Russia will deliver 3 million tons of diesel in a short time depending on refinery conditions",
-   "tema": "Geopolitica e commercio internazionale",
-   "reparti": [
-    "Geopolitica",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "choices",
-    "costs",
-    "departments",
-    "diesel",
-    "face",
-    "fire",
-    "skyrocketing",
-    "tariffs",
-    "tough"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNLTVUN1BtaUJnekxURHgtSXk5aEVZZ29kVkRFT25ha3ZIX2tlMWpDSU5VdU1iMEZnOExrQlk2TmFOMlUxUmVoUVA0a2RkcEw4bFhYSDg2WEdQNkRjRWpPX0FpYUFuT01GR1hxWnBIZnh3SmNOdFJrWTNMNm5zdHM1NERaVlEzWTRlQnVWV2hwQTNnVVFEWXVKOWVVZk5UU3pRUzVoWV9ZVExBZXFnVEZTYg?oc=5",
-   "quando": "2026-10-10T06:01:49+00:00",
-   "messaggio": 385,
-   "riassunto": "Il presidente statunitense Donald Trump ha confermato che la Russia consegnerà tre milioni di tonnellate di diesel in tempi brevi in base alle condizioni delle raffinerie. L'accordo, volto a calmare i mercati energetici, genera tuttavia pressioni sui costi locali e sulle comunità alle prese con tari"
   },
   {
    "id": "474dc81e82d29ba1",
@@ -24534,11 +24445,121 @@
    "link": "https://www.bloomberg.com/news/articles/2026-10-24/growth-value-stocks-set-for-reshuffle-as-s-p-adopts-new-rules",
    "quando": "2026-10-24T05:31:48+00:00",
    "riassunto": "L'attività economica del settore privato nell'Eurozona ha registrato a ottobre un rallentamento superiore alle attese, scendendo ai minimi degli ultimi quattro mesi. La contrazione è guidata soprattutto dal deterioramento in Francia e dall'aumento dei costi operativi."
+  },
+  {
+   "id": "e3e5bbecf9f4f070",
+   "titolo": "Puri Flags Oil Price Risks As Hormuz Disruption Adds To Market Volatility",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "adds",
+    "disruption",
+    "flags",
+    "hormuz",
+    "market",
+    "oil",
+    "price",
+    "puri",
+    "risks",
+    "volatility"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZXotNTAxS1N6VXhaRnk4T19OXzR1U3pBVHN4WmRoczBnS056WVlfSW53MEZ1Z3hBR3dWaUpIRXlYT1o3bklPZEt0bHhPLXBkd3ZyTzRjVHVnMVdNMnI5SGtHR0RzeklvUl9aUWVEWlB6NDFIeUdVRmFVWmtFckxTRHFPZkpOUGVwRnplRkluQW1lSG5OaE11UkJYRjQ4aWlKdXJfWm85bDVWS05UMC1JWG5tOVNPalRE?oc=5",
+   "quando": "2026-10-24T06:02:12+00:00",
+   "messaggio": 746,
+   "riassunto": "I prezzi del petrolio registrano una forte spinta rialzista a causa dei persistenti timori di escalation in Medio Oriente e delle possibili interruzioni nel transitabile Stretto di Hormuz. Gli operatori evidenziano il ritorno del premio per il rischio geopolitico che spinge gli acquirenti ad anticip"
+  },
+  {
+   "id": "9cbbc46e402afbf8",
+   "titolo": "US Stock Market LIVE: Dow Jones Slips 600 Points, S&P 500 Falls 0.40% and Nasdaq Edges Lower as Oil Tops $117, Nvidia, Intel, Cisco, SpaceX & Tech Stocks Slide – Check Latest Wall Street Updates",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "117",
+    "500",
+    "600",
+    "check",
+    "cisco",
+    "dow",
+    "edges",
+    "falls",
+    "intel",
+    "jones",
+    "latest",
+    "live",
+    "lower",
+    "market",
+    "nasdaq",
+    "nvidia",
+    "oil",
+    "points",
+    "slide",
+    "slips",
+    "spacex",
+    "stock",
+    "stocks",
+    "street",
+    "tech",
+    "tops",
+    "updates",
+    "wall"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxOTXlGRm1nTDlNSWM5MXdWaFo1R2lXWUEzNmVrT0ZDWVhNZUNLM3RBdG80ZW1IWG1oTm5ZT2JGV3FXTktYOEVTbmQ2Nm9xYU8yTERwUGdCOWVWRzNtc3gzSk5QZlljbGd4RmhhRXI0bW84UVJkNEdnRTUtSE1WN05ydlkzSml4SXJBOFpCM01qY1FlRy0xWU1rM1FUSXdCQlFtbnFqVG1jdzhPUTRQdXptbTZhUk83dkIwb3B4eV84VjhYYlMyVG11YmRqN2h1ZkMzME4yY3pDcUEwc2tndWRibmg3djM1VUxHaHdkVWhLbDFYQlp2WEd0SGYtTDNlOWZxeVBKa0FmRXpURllFQzFIbHRiVlY0TUY4YTN5VUhGcXN3OEpEYWRHeVl5TE9wX3BuSlFMQ1c0YnBwM3RxOUNMaE91UXhwckxaR2hxbXRFU2UwZ9IB0gJBVV95cUxOTXlGRm1nTDlNSWM5MXdWaFo1R2lXWUEzNmVrT0ZDWVhNZUNLM3RBdG80ZW1IWG1oTm5ZT2JGV3FXTktYOEVTbmQ2Nm9xYU8yTERwUGdCOWVWRzNtc3gzSk5QZlljbGd4RmhhRXI0bW84UVJkNEdnRTUtSE1WN05ydlkzSml4SXJBOFpCM01qY1FlRy0xWU1rM1FUSXdCQlFtbnFqVG1jdzhPUTRQdXptbTZhUk83dkIwb3B4eV84VjhYYlMyVG11YmRqN2h1ZkMzME4yY3pDcUEwc2tndWRibmg3djM1VUxHaHdkVWhLbDFYQlp2WEd0SGYtTDNlOWZxeVBKa0FmRXpURllFQzFIbHRiVlY0TUY4YTN5VUhGcXN3OEpEYWRHeVl5TE9wX3BuSlFMQ1c0YnBwM3RxOUNMaE91UXhwckxaR2hxbXRFU2UwZw?oc=5",
+   "quando": "2026-10-24T06:02:13+00:00",
+   "messaggio": 747,
+   "riassunto": "I mercati azionari statunitensi hanno registrato una seduta di forti vendite, con il Dow Jones in calo di 600 punti e pressioni diffuse sui principali indici. Il sell-off è stato alimentato dall'impennata del petrolio oltre i 117 dollari e dai ribassi nel comparto dei titoli tecnologici e dei semico"
+  },
+  {
+   "id": "f00f9259b244d1c6",
+   "titolo": "Federal Reserve Preview: A Pause Before a December Hike",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "before",
+    "december",
+    "federal",
+    "hike",
+    "pause",
+    "preview",
+    "reserve"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZlFaVlNLVW4yVWV1TTNXYnpXVUVmai13c3R5RFo4QmpwbkczSlpUSmlmUUphWnl1WUhpbl8tRTI4MU9VQkQwQkViblROU1FxRjBSd0w5OENLcmMtLV8xR2tvbW9jN1BwdGdpMGljX2k4eVFSNlBHSnhCaFVFOW1GSnJFTnFDa0xfUTEycFY5NmlhMHhqNWxBQnBON0VReWsz?oc=5",
+   "quando": "2026-10-24T06:02:14+00:00",
+   "messaggio": 748,
+   "riassunto": "Gli analisti valutano le prospettive della politica monetaria statunitense in vista della prossima riunione della Federal Reserve, prezzando una pausa interlocutoria seguita da un possibile rialzo dei tassi a dicembre. Le indicazioni sull'inflazione persistente e sulla tenuta del mercato del lavoro "
+  },
+  {
+   "id": "23d46987719eb79b",
+   "titolo": "Piero Cipollone: Interview with Milano Finanza",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "cipollone",
+    "finanza",
+    "interview",
+    "milano",
+    "piero"
+   ],
+   "link": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261024~ee2ba73cf3.en.html",
+   "quando": "2026-10-24T06:02:17+00:00",
+   "messaggio": 749,
+   "riassunto": "Il membro del comitato esecutivo della BCE Piero Cipollone ha rilasciato un'intervista a Milano Finanza. L'esponente ha discusso la situazione economica dell'area euro e le prossime mosse di politica monetaria. L'intervista offre spunti chiave sulla traiettoria dei tassi di interesse e sul quadro ma"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 88,
-  "ESMA": 21
+  "FXStreet": 89,
+  "ESMA": 22
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24555,11 +24576,11 @@
   "2026-10-20": 10,
   "2026-10-21": 9,
   "2026-10-22": 9,
-  "2026-10-23": 9
+  "2026-10-23": 10
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-23 22",
+  "ora_notizie": "2026-10-24 08",
   "chiusura": "2026-10-23",
   "apertura": "2026-10-24",
   "settimanale": "2026-W42"
