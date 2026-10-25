@@ -14734,7 +14734,47 @@
   "82eaa9159c25b4b6": "2026-10-25T15:02:24+00:00",
   "c45daa181d121a7a": "2026-10-25T15:02:24+00:00",
   "30c8aae13b0b8171": "2026-10-25T15:02:24+00:00",
-  "c7019ae9df14aee9": "2026-10-25T15:02:24+00:00"
+  "c7019ae9df14aee9": "2026-10-25T15:02:24+00:00",
+  "b6d4d117f1925ae7": "2026-10-25T17:02:05+00:00",
+  "7caf84fb7a33c7c5": "2026-10-25T17:02:05+00:00",
+  "3e54b182f7912bf6": "2026-10-25T17:02:05+00:00",
+  "b9e5e137a0bcf452": "2026-10-25T17:02:05+00:00",
+  "5888c5be6e2345aa": "2026-10-25T17:02:05+00:00",
+  "31818429bacda6f0": "2026-10-25T17:02:05+00:00",
+  "60f2976ee1fe3fcf": "2026-10-25T17:02:05+00:00",
+  "dbfc7792d2b90319": "2026-10-25T17:02:05+00:00",
+  "52c6ea939b797ed6": "2026-10-25T17:02:05+00:00",
+  "92af60b96764cb87": "2026-10-25T17:02:05+00:00",
+  "74ad5e53b1fe169f": "2026-10-25T17:02:05+00:00",
+  "dc0f1dd9a22ee052": "2026-10-25T17:02:05+00:00",
+  "d0c66cbd4dab3412": "2026-10-25T17:02:05+00:00",
+  "fb83976eb530530e": "2026-10-25T17:02:05+00:00",
+  "1724156521982f58": "2026-10-25T17:02:05+00:00",
+  "ae8f8d51362e5982": "2026-10-25T17:02:05+00:00",
+  "fb6a1a32d144e632": "2026-10-25T17:02:05+00:00",
+  "d3bdf9761b383e9d": "2026-10-25T17:02:05+00:00",
+  "8ccf9a7a9712ed19": "2026-10-25T17:02:05+00:00",
+  "fbcd97292522ecc0": "2026-10-25T17:02:05+00:00",
+  "7fc7dcecec7d642e": "2026-10-25T17:02:05+00:00",
+  "eac3df5a1d9b0b04": "2026-10-25T17:02:05+00:00",
+  "36583a06e62385f7": "2026-10-25T17:02:05+00:00",
+  "ade6bb0284cd402e": "2026-10-25T17:02:05+00:00",
+  "323b211f88030de4": "2026-10-25T17:02:05+00:00",
+  "4c002bf4620ef7bc": "2026-10-25T17:02:05+00:00",
+  "7983cbac908e97c6": "2026-10-25T17:02:05+00:00",
+  "16a7ef6527780ab1": "2026-10-25T17:02:05+00:00",
+  "4ae3ab6b1c4a5cbb": "2026-10-25T17:02:05+00:00",
+  "f40808d5fe5558c6": "2026-10-25T17:02:05+00:00",
+  "e91a796242465c16": "2026-10-25T17:02:05+00:00",
+  "eec3e064d0118129": "2026-10-25T17:02:05+00:00",
+  "02aaca4c606967da": "2026-10-25T17:02:05+00:00",
+  "20c58cccc11f4140": "2026-10-25T17:02:05+00:00",
+  "50c66ac1740c1775": "2026-10-25T17:02:05+00:00",
+  "80e04fa996b9932b": "2026-10-25T17:02:05+00:00",
+  "3d76196baeb9de73": "2026-10-25T17:02:05+00:00",
+  "0043ab1dcfbd1275": "2026-10-25T17:02:05+00:00",
+  "059d978f50e88c38": "2026-10-25T17:02:05+00:00",
+  "44dbff3ea149f547": "2026-10-25T17:02:05+00:00"
  },
  "inviate": [
   {
@@ -24343,11 +24383,59 @@
    "quando": "2026-10-25T15:02:29+00:00",
    "messaggio": 782,
    "riassunto": "I rendimenti obbligazionari globali hanno registrato un incremento di circa 30 punti base nel corso del mese di ottobre, aumentando significativamente l'onere per gli interessi sul debito sovrano e comprimendo i margini di manovra fiscale dei governi. Gli esperti evidenziano che la rapida risalita d"
+  },
+  {
+   "id": "fbcd97292522ecc0",
+   "titolo": "Warsh Tells Traders to Watch the Data. They Still Follow the Fed",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "data",
+    "fed",
+    "follow",
+    "still",
+    "tells",
+    "they",
+    "traders",
+    "warsh",
+    "watch"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-25/warsh-tells-traders-to-watch-the-data-they-still-follow-the-fed",
+   "quando": "2026-10-25T17:02:07+00:00",
+   "messaggio": 783,
+   "riassunto": "Gli operatori di mercato restano focalizzati sulle indicazioni della Federal Reserve e sulla dipendenza dai dati macroeconomici per la traiettoria dei tassi d'interesse. Nonostante i richiami a seguire attentamente i dati sull'inflazione e sull'occupazione, il mercato continua a prezzare con attenzi"
+  },
+  {
+   "id": "f40808d5fe5558c6",
+   "titolo": "EUR/USD weekly outlook: FOMC and ECB to set the tone",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "ecb",
+    "eur",
+    "fomc",
+    "outlook",
+    "set",
+    "tone",
+    "usd",
+    "weekly"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTnZaMnFsbmMyVTFFVy1idGE5Ukh1aEg4aGlNalJTV3RNOTJYM1NiVnV0Y0wzbHl6WDVEU0hwUzlkaC1idlRldGpRdGJDdFJ4bldvLVdSbzg2eXNLMXJOM3hTVkl2SjNHNWgwSngtN0EwdG1DMU1CMUd2UUlFMHEyaWRXakVxWmpiQUV5NjZmbnBXbDNhcGJGeXF3YW9zMDFoYkpxN254NNIBpwFBVV95cUxPTnZaMnFsbmMyVTFFVy1idGE5Ukh1aEg4aGlNalJTV3RNOTJYM1NiVnV0Y0wzbHl6WDVEU0hwUzlkaC1idlRldGpRdGJDdFJ4bldvLVdSbzg2eXNLMXJOM3hTVkl2SjNHNWgwSngtN0EwdG1DMU1CMUd2UUlFMHEyaWRXakVxWmpiQUV5NjZmbnBXbDNhcGJGeXF3YW9zMDFoYkpxN254NA?oc=5",
+   "quando": "2026-10-25T17:02:07+00:00",
+   "messaggio": 784,
+   "riassunto": "L'andamento del tasso di cambio EUR/USD si prepara a registrare una settimana cruciale dominata dalle prossime decisioni di politica monetaria di Federal Reserve e Banca Centrale Europea. Gli analisti evidenziano come i differenziali di tasso e le divergenze nelle prospettive economiche tra Stati Un"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 102,
-  "ESMA": 35
+  "FXStreet": 103,
+  "ESMA": 36
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24365,14 +24453,14 @@
   "2026-10-22": 9,
   "2026-10-23": 10,
   "2026-10-24": 10,
-  "2026-10-25": 4
+  "2026-10-25": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-25 16",
+  "ora_notizie": "2026-10-25 18",
   "chiusura": "2026-10-24",
   "apertura": "2026-10-25",
-  "settimanale": "2026-W42"
+  "settimanale": "2026-W43"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
