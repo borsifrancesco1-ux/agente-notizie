@@ -14705,7 +14705,15 @@
   "3d76196baeb9de73": "2026-10-25T17:02:05+00:00",
   "0043ab1dcfbd1275": "2026-10-25T17:02:05+00:00",
   "059d978f50e88c38": "2026-10-25T17:02:05+00:00",
-  "44dbff3ea149f547": "2026-10-25T17:02:05+00:00"
+  "44dbff3ea149f547": "2026-10-25T17:02:05+00:00",
+  "c282f44e09213e4f": "2026-10-25T19:02:07+00:00",
+  "0b1b064111013d96": "2026-10-25T19:02:07+00:00",
+  "3f86a38ae62cc5ff": "2026-10-25T19:02:07+00:00",
+  "7dbce69597de8fc5": "2026-10-25T19:02:07+00:00",
+  "045d4e520083e65c": "2026-10-25T19:02:07+00:00",
+  "7dccb61d632b25e3": "2026-10-25T19:02:07+00:00",
+  "3feca3fa9fa6b90b": "2026-10-25T19:02:07+00:00",
+  "3701f6c4d4052acb": "2026-10-25T19:02:07+00:00"
  },
  "inviate": [
   {
@@ -24283,8 +24291,42 @@
   }
  ],
  "feed_guasti": {
-  "FXStreet": 103,
-  "ESMA": 36
+  "FXStreet": 104,
+  "ESMA": 37,
+  "Reuters": 1,
+  "Milano Finanza": 1,
+  "Consob": 1,
+  "Agenzia delle Entrate": 1,
+  "Nasdaq · Eni": 1,
+  "Google News IT · Eni": 1,
+  "Google News EN · Eni": 1,
+  "Google News IT · BCE tassi": 1,
+  "Google News EN · FOMC Fed rates": 1,
+  "Google News EN · Treasury yields term premium": 1,
+  "Google News EN · inflation expectations breakeven": 1,
+  "Google News EN · investment grade credit spreads": 1,
+  "Google News EN · emerging market sovereign bonds spreads": 1,
+  "Google News IT · rating Italia Moody's Fitch S&P": 1,
+  "Google News EN · sovereign credit rating downgrade": 1,
+  "Google News EN · S&P 500 concentration megacap tech": 1,
+  "Google News EN · China economy stimulus": 1,
+  "Google News IT · cambio euro dollaro": 1,
+  "Google News IT · valute emergenti": 1,
+  "Google News EN · currency hedging costs euro dollar": 1,
+  "Google News EN · EUR/USD dollar euro outlook": 1,
+  "Google News EN · emerging market currencies": 1,
+  "Google News EN · dollar index Fed ECB rate differential": 1,
+  "Google News IT · economia italiana PIL Istat": 1,
+  "Google News EN · eurozone economy PMI": 1,
+  "Google News IT · geopolitica mercati finanziari": 1,
+  "Google News EN · geopolitical risk markets": 1,
+  "Google News EN · tariffs trade war": 1,
+  "Google News EN · oil prices OPEC": 1,
+  "Google News IT · spread BTP Bund": 1,
+  "Google News IT · volatilità mercati rischio": 1,
+  "Google News EN · market volatility VIX risk-off": 1,
+  "Google News IT · tassazione rendite finanziarie": 1,
+  "Google News IT · Consob MiFID risparmiatori": 1
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24302,11 +24344,11 @@
   "2026-10-22": 9,
   "2026-10-23": 10,
   "2026-10-24": 10,
-  "2026-10-25": 8
+  "2026-10-25": 9
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-25 18",
+  "ora_notizie": "2026-10-25 20",
   "chiusura": "2026-10-24",
   "apertura": "2026-10-25",
   "settimanale": "2026-W43"
