@@ -24719,8 +24719,8 @@
    "valore": 4.2
   },
   "PIL USA (trimestre, annualizzato)": {
-   "periodo": "2026-04-01",
-   "valore": 2.2
+   "periodo": "2026-07-01",
+   "valore": 3.4
   },
   "Tasso Fed (limite superiore)": {
    "periodo": "2026-10-29",
@@ -24761,6 +24761,11 @@
    "nome": "Inflazione PCE di fondo USA (a/a)",
    "testo": "3,1% (settembre 2026; precedente 3,0%)",
    "quando": "2026-10-29T13:01:31+00:00"
+  },
+  {
+   "nome": "PIL USA (trimestre, annualizzato)",
+   "testo": "3,4% (3° trimestre 2026; precedente 2,2%; atteso 3,2%)",
+   "quando": "2026-10-29T14:01:34+00:00"
   }
  ],
  "pausa_fino": "",
