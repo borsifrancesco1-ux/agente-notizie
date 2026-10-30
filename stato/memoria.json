@@ -24814,20 +24814,20 @@
    "valore": 4.2
   },
   "Disoccupazione area euro": {
-   "periodo": "2026-08",
-   "valore": 6.4
+   "periodo": "2026-09",
+   "valore": 6.5
   },
   "Disoccupazione Italia": {
-   "periodo": "2026-08",
-   "valore": 6.2
+   "periodo": "2026-09",
+   "valore": 6.3
   },
   "PIL area euro (t/t)": {
-   "periodo": "2026-Q2",
-   "valore": 0.6
+   "periodo": "2026-Q3",
+   "valore": 0.4
   },
   "PIL Italia (t/t)": {
-   "periodo": "2026-Q2",
-   "valore": 0.2
+   "periodo": "2026-Q3",
+   "valore": 0.0
   }
  },
  "proposta": {},
@@ -24841,6 +24841,26 @@
    "nome": "PIL USA (trimestre, annualizzato)",
    "testo": "3,4% (3° trimestre 2026; precedente 2,2%; atteso 3,2%)",
    "quando": "2026-10-29T14:01:34+00:00"
+  },
+  {
+   "nome": "Disoccupazione area euro",
+   "testo": "6,5% (settembre 2026; precedente 6,5%; atteso 6,4%)",
+   "quando": "2026-10-30T10:01:33+00:00"
+  },
+  {
+   "nome": "Disoccupazione Italia",
+   "testo": "6,3% (settembre 2026; precedente 6,2%; atteso 6,2%)",
+   "quando": "2026-10-30T10:01:33+00:00"
+  },
+  {
+   "nome": "PIL area euro (t/t)",
+   "testo": "0,4% (3° trimestre 2026; precedente 0,6%; atteso 0,2%; DATO ANOMALO: +0,2 punti sopra le attese)",
+   "quando": "2026-10-30T10:01:34+00:00"
+  },
+  {
+   "nome": "PIL Italia (t/t)",
+   "testo": "0,0% (3° trimestre 2026; precedente 0,2%; atteso 0,1%)",
+   "quando": "2026-10-30T10:01:34+00:00"
   }
  ],
  "pausa_fino": "",
