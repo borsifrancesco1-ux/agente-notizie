@@ -14762,7 +14762,62 @@
   "54db0c4ebf355716": "2026-10-31T19:01:45+00:00",
   "8e44d0b91772a8f8": "2026-10-31T19:01:45+00:00",
   "ad60514abbc1d342": "2026-10-31T19:01:45+00:00",
-  "1829b42d709afb89": "2026-10-31T19:01:45+00:00"
+  "1829b42d709afb89": "2026-10-31T19:01:45+00:00",
+  "53c314e2923742af": "2026-10-31T21:01:47+00:00",
+  "1bbf7b23f7158235": "2026-10-31T21:01:47+00:00",
+  "06ea09f093687f43": "2026-10-31T21:01:47+00:00",
+  "73bd43592309dbd1": "2026-10-31T21:01:47+00:00",
+  "20d9626139bd835f": "2026-10-31T21:01:47+00:00",
+  "3044a8c1b5f6b28d": "2026-10-31T21:01:47+00:00",
+  "bb2e88199bc32777": "2026-10-31T21:01:47+00:00",
+  "efdbd4d8a8d8e9c5": "2026-10-31T21:01:47+00:00",
+  "db8706bfdae21869": "2026-10-31T21:01:47+00:00",
+  "c2c15f4953797c41": "2026-10-31T21:01:47+00:00",
+  "84879297defe017d": "2026-10-31T21:01:47+00:00",
+  "575b91a9921014a2": "2026-10-31T21:01:47+00:00",
+  "06acc40d81b495a2": "2026-10-31T21:01:47+00:00",
+  "700b87f47282f3de": "2026-10-31T21:01:47+00:00",
+  "f0c384e674baf50d": "2026-10-31T21:01:47+00:00",
+  "02920156a1a4a444": "2026-10-31T21:01:47+00:00",
+  "417053a38f706543": "2026-10-31T21:01:47+00:00",
+  "bbea0abddfabc292": "2026-10-31T21:01:47+00:00",
+  "c02cb42c8aa4fddc": "2026-10-31T21:01:47+00:00",
+  "00fad78ea967af32": "2026-10-31T21:01:47+00:00",
+  "b4c80241e1912129": "2026-10-31T21:01:47+00:00",
+  "c866eb3bb507d4bc": "2026-10-31T21:01:47+00:00",
+  "c7cddc1eede0bcef": "2026-10-31T21:01:47+00:00",
+  "fa31c434a57a1534": "2026-10-31T21:01:47+00:00",
+  "39179b4a3a16c331": "2026-10-31T21:01:47+00:00",
+  "877faf3e6a683731": "2026-10-31T21:01:47+00:00",
+  "0dbc16454d52c31e": "2026-10-31T21:01:47+00:00",
+  "6b8fe764b88a284d": "2026-10-31T21:01:47+00:00",
+  "f34e1cc3caf0a196": "2026-10-31T21:01:47+00:00",
+  "39dfcfa63f60a04c": "2026-10-31T21:01:47+00:00",
+  "a62caa2f41f8e57f": "2026-10-31T21:01:47+00:00",
+  "aa13d13afded8c6d": "2026-10-31T21:01:47+00:00",
+  "ad7e7cb997551956": "2026-10-31T21:01:47+00:00",
+  "6d05c09ccc6187e4": "2026-10-31T21:01:47+00:00",
+  "9eaf5481977cd034": "2026-10-31T21:01:47+00:00",
+  "e0b8adb340235d51": "2026-10-31T21:01:47+00:00",
+  "9f586f6101b30872": "2026-10-31T21:01:47+00:00",
+  "31fee1d5c84801f2": "2026-10-31T21:01:47+00:00",
+  "2165641ac05bbbdb": "2026-10-31T21:01:47+00:00",
+  "e0591ef4f98163f1": "2026-10-31T21:01:47+00:00",
+  "d9e495622b093825": "2026-10-31T21:01:47+00:00",
+  "854383149e2b2f25": "2026-10-31T21:01:47+00:00",
+  "14a408dc986a12fc": "2026-10-31T21:01:47+00:00",
+  "785b22919f249b65": "2026-10-31T21:01:47+00:00",
+  "eaadc59f21d8b1c8": "2026-10-31T21:01:47+00:00",
+  "6583f872fb525f49": "2026-10-31T21:01:47+00:00",
+  "9dcb1d9ec699ddd4": "2026-10-31T21:01:47+00:00",
+  "89b09fc1395f66e2": "2026-10-31T21:01:47+00:00",
+  "079b7ebb7ed2f79e": "2026-10-31T21:01:47+00:00",
+  "c3ae91f3695c53c2": "2026-10-31T21:01:47+00:00",
+  "6d964a54143d5722": "2026-10-31T21:01:47+00:00",
+  "04d6a17a57755b7e": "2026-10-31T21:01:47+00:00",
+  "51eee3610dc4e3b5": "2026-10-31T21:01:47+00:00",
+  "612be4472c45e205": "2026-10-31T21:01:47+00:00",
+  "dda2303d40a085c0": "2026-10-31T21:01:47+00:00"
  },
  "inviate": [
   {
@@ -24739,10 +24794,58 @@
    "quando": "2026-10-31T19:01:51+00:00",
    "messaggio": 955,
    "riassunto": "S&P Global Ratings ha rivisto l'outlook di Meta portandolo a negativo a causa dei crescenti investimenti e dei rischi legati alla monetizzazione dell'intelligenza artificiale. La decisione riflette le preoccupazioni sul deterioramento dei flussi di cassa dei giganti tecnologici impegnati nella corsa"
+  },
+  {
+   "id": "39179b4a3a16c331",
+   "titolo": "Why the sell-off in French bonds is a warning for global governments",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "bonds",
+    "french",
+    "global",
+    "governments",
+    "off",
+    "sell",
+    "warning"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/why-the-selloff-in-french-bonds-is-a-warning-for-global-governments-4989316",
+   "quando": "2026-10-31T21:01:48+00:00",
+   "messaggio": 956,
+   "riassunto": "Il recente e marcato sell-off registrato sui titoli di Stato francesi viene analizzato dagli esperti come un campanello d'allarme per l'intero panorama dei debiti sovrani globali. La crescente pressione sul mercato obbligazionario riflette i timori legati al deterioramento dei conti pubblici e alla "
+  },
+  {
+   "id": "bb2e88199bc32777",
+   "titolo": "US Jobs Pickup May Keep Fed on Track to Hike Rates Again",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario",
+    "Copertura"
+   ],
+   "impronta": [
+    "again",
+    "fed",
+    "hike",
+    "jobs",
+    "keep",
+    "may",
+    "pickup",
+    "rates",
+    "track"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-10-31/us-jobs-pickup-may-keep-fed-on-track-to-hike-rates-again",
+   "quando": "2026-10-31T21:01:49+00:00",
+   "messaggio": 957,
+   "riassunto": "La ripresa della crescita dell'occupazione negli Stati Uniti potrebbe mantenere la Federal Reserve sulla rotta di ulteriori strette monetarie. Gli operatori si preparano a una settimana densa di dati macroeconomici chiave, culminando con il rapporto mensile sull'impiego del Bureau of Labor Statistic"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 158
+  "FXStreet": 159
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24760,12 +24863,12 @@
   "2026-10-28": 9,
   "2026-10-29": 13,
   "2026-10-30": 9,
-  "2026-10-31": 7
+  "2026-10-31": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-31 20",
-  "chiusura": "2026-10-30",
+  "ora_notizie": "2026-10-31 22",
+  "chiusura": "2026-10-31",
   "apertura": "2026-10-31",
   "settimanale": "2026-W43"
  },
