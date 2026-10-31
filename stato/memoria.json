@@ -14757,7 +14757,52 @@
   "a1698a331a126a2f": "2026-10-31T17:02:07+00:00",
   "904484109f24f295": "2026-10-31T17:02:07+00:00",
   "4818bb1e705439b8": "2026-10-31T17:02:07+00:00",
-  "3fec86c4dcf16179": "2026-10-31T17:02:07+00:00"
+  "3fec86c4dcf16179": "2026-10-31T17:02:07+00:00",
+  "71a1d39d156a5ab5": "2026-10-31T19:01:45+00:00",
+  "2ddc65a35cd71fd8": "2026-10-31T19:01:45+00:00",
+  "8dc64d4f33313de4": "2026-10-31T19:01:45+00:00",
+  "80efc7ddb1707d4a": "2026-10-31T19:01:45+00:00",
+  "1c4039358c96a007": "2026-10-31T19:01:45+00:00",
+  "f45d0f87cb17419e": "2026-10-31T19:01:45+00:00",
+  "6b7e46b80210b015": "2026-10-31T19:01:45+00:00",
+  "cf4fddebc613f80e": "2026-10-31T19:01:45+00:00",
+  "2afe824bf684d485": "2026-10-31T19:01:45+00:00",
+  "378ed39b72cdd57e": "2026-10-31T19:01:45+00:00",
+  "c985b1a2cee00f0c": "2026-10-31T19:01:45+00:00",
+  "6d54af19053629d9": "2026-10-31T19:01:45+00:00",
+  "507f71bee3e6de5f": "2026-10-31T19:01:45+00:00",
+  "ecb5fd2aad4c6ec9": "2026-10-31T19:01:45+00:00",
+  "c67f21b740bb7b31": "2026-10-31T19:01:45+00:00",
+  "7da23a8150388097": "2026-10-31T19:01:45+00:00",
+  "49ccbf125ecaf35f": "2026-10-31T19:01:45+00:00",
+  "44e8d86d9bfa9454": "2026-10-31T19:01:45+00:00",
+  "6a0cef6bf5d692b1": "2026-10-31T19:01:45+00:00",
+  "f778010e068f29fa": "2026-10-31T19:01:45+00:00",
+  "4719c7c7db9103bc": "2026-10-31T19:01:45+00:00",
+  "8e90408b5fb65ebe": "2026-10-31T19:01:45+00:00",
+  "d22eeb27dc2fc7a7": "2026-10-31T19:01:45+00:00",
+  "9c52d65379d7a569": "2026-10-31T19:01:45+00:00",
+  "0c931fdc6d2b2a6a": "2026-10-31T19:01:45+00:00",
+  "85524382a4003227": "2026-10-31T19:01:45+00:00",
+  "789aff673603481d": "2026-10-31T19:01:45+00:00",
+  "1d5c3bd8a0b21265": "2026-10-31T19:01:45+00:00",
+  "afacdc4da2959c7b": "2026-10-31T19:01:45+00:00",
+  "928bf4935f0cf619": "2026-10-31T19:01:45+00:00",
+  "a4ad7fc5d1be7ce4": "2026-10-31T19:01:45+00:00",
+  "06c3586d8b2fdbf6": "2026-10-31T19:01:45+00:00",
+  "64a5dff262feba68": "2026-10-31T19:01:45+00:00",
+  "85a5c89fe71b960b": "2026-10-31T19:01:45+00:00",
+  "48b86dbc84c3403d": "2026-10-31T19:01:45+00:00",
+  "1b3a3aa07f4dc69b": "2026-10-31T19:01:45+00:00",
+  "dbcdf56744ccad5a": "2026-10-31T19:01:45+00:00",
+  "e3e3b5a083dad10c": "2026-10-31T19:01:45+00:00",
+  "4dcb163f67f048fb": "2026-10-31T19:01:45+00:00",
+  "74c7095f366727ba": "2026-10-31T19:01:45+00:00",
+  "7299bf57594b4895": "2026-10-31T19:01:45+00:00",
+  "54db0c4ebf355716": "2026-10-31T19:01:45+00:00",
+  "8e44d0b91772a8f8": "2026-10-31T19:01:45+00:00",
+  "ad60514abbc1d342": "2026-10-31T19:01:45+00:00",
+  "1829b42d709afb89": "2026-10-31T19:01:45+00:00"
  },
  "inviate": [
   {
@@ -24701,10 +24746,43 @@
    "quando": "2026-10-31T17:02:09+00:00",
    "messaggio": 954,
    "riassunto": "Il colosso indiano Reliance Industries ha chiuso il secondo trimestre 2026 superando le attese degli analisti e registrando un EBITDA record. La forte crescita è stata guidata dalla divisione petrolchimica e dell'energia (O2C) e dai progressi verso l'IPO di Jio. I risultati confermano la solidità de"
+  },
+  {
+   "id": "49ccbf125ecaf35f",
+   "titolo": "AI boom hits a wall on Wall Street as OpenAI cuts fundraising target while Meta gets a credit warning over its cash flow, spending and monetization",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Risk management",
+    "Obbligazionario",
+    "Azionario"
+   ],
+   "impronta": [
+    "boom",
+    "cash",
+    "credit",
+    "cuts",
+    "flow",
+    "fundraising",
+    "gets",
+    "hits",
+    "meta",
+    "monetization",
+    "openai",
+    "spending",
+    "street",
+    "target",
+    "wall",
+    "warning",
+    "while"
+   ],
+   "link": "https://fortune.com/2026/10/31/ai-boom-bust-openai-fundraising-target-meta-credit-warning-cash-flow-capex/",
+   "quando": "2026-10-31T19:01:51+00:00",
+   "messaggio": 955,
+   "riassunto": "S&P Global Ratings ha rivisto l'outlook di Meta portandolo a negativo a causa dei crescenti investimenti e dei rischi legati alla monetizzazione dell'intelligenza artificiale. La decisione riflette le preoccupazioni sul deterioramento dei flussi di cassa dei giganti tecnologici impegnati nella corsa"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 157
+  "FXStreet": 158
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24722,11 +24800,11 @@
   "2026-10-28": 9,
   "2026-10-29": 13,
   "2026-10-30": 9,
-  "2026-10-31": 6
+  "2026-10-31": 7
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-31 18",
+  "ora_notizie": "2026-10-31 20",
   "chiusura": "2026-10-30",
   "apertura": "2026-10-31",
   "settimanale": "2026-W43"
