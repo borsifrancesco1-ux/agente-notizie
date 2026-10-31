@@ -14755,7 +14755,55 @@
   "df708197411dc6d2": "2026-10-31T07:01:45+00:00",
   "f739e533233617f3": "2026-10-31T07:01:45+00:00",
   "b8f87c506750f95b": "2026-10-31T07:01:45+00:00",
-  "960f950b3e0c7f4c": "2026-10-31T07:01:45+00:00"
+  "960f950b3e0c7f4c": "2026-10-31T07:01:45+00:00",
+  "a4ce392ba9ff6eb9": "2026-10-31T09:01:59+00:00",
+  "0785bf7614c3f628": "2026-10-31T09:01:59+00:00",
+  "891b4b49b3ec9375": "2026-10-31T09:01:59+00:00",
+  "2f21550c843a97ef": "2026-10-31T09:01:59+00:00",
+  "d49f37e9a0b647e5": "2026-10-31T09:01:59+00:00",
+  "4fe85f1f360091a7": "2026-10-31T09:01:59+00:00",
+  "ab3fa8a137159be7": "2026-10-31T09:01:59+00:00",
+  "7a2ab55d5c8e3fb0": "2026-10-31T09:01:59+00:00",
+  "d14b8cc99617c039": "2026-10-31T09:01:59+00:00",
+  "79cc1d0245edcf0b": "2026-10-31T09:01:59+00:00",
+  "1a2b5dd4ae43c365": "2026-10-31T09:01:59+00:00",
+  "ac10c2fab64addf3": "2026-10-31T09:01:59+00:00",
+  "75eaf2b68fdc97ab": "2026-10-31T09:01:59+00:00",
+  "a287aee5a8dfdf47": "2026-10-31T09:01:59+00:00",
+  "05a0ef5e85eb534d": "2026-10-31T09:01:59+00:00",
+  "69b6b653c276d8df": "2026-10-31T09:01:59+00:00",
+  "1c39f18ed190edc5": "2026-10-31T09:01:59+00:00",
+  "5c63943fda49d958": "2026-10-31T09:01:59+00:00",
+  "0b786a49f470b6a4": "2026-10-31T09:01:59+00:00",
+  "87257105d6145855": "2026-10-31T09:01:59+00:00",
+  "8c9e7f61a5039841": "2026-10-31T09:01:59+00:00",
+  "3da595b59ac8ac3d": "2026-10-31T09:01:59+00:00",
+  "49ddfcbe2f0b67a7": "2026-10-31T09:01:59+00:00",
+  "e21c87be834ee587": "2026-10-31T09:01:59+00:00",
+  "6e7ce6feeabd72f1": "2026-10-31T09:01:59+00:00",
+  "5495e5984675f70d": "2026-10-31T09:01:59+00:00",
+  "119c127568e51b1f": "2026-10-31T09:01:59+00:00",
+  "233c3781e709e25c": "2026-10-31T09:01:59+00:00",
+  "9add86287b3e3cb2": "2026-10-31T09:01:59+00:00",
+  "88693f4323197049": "2026-10-31T09:01:59+00:00",
+  "306a8032969f4a95": "2026-10-31T09:01:59+00:00",
+  "37f09bbfb8b72b0b": "2026-10-31T09:01:59+00:00",
+  "905dfef3c3ad1fd3": "2026-10-31T09:01:59+00:00",
+  "288445813051f895": "2026-10-31T09:01:59+00:00",
+  "d6e86083096c6d97": "2026-10-31T09:01:59+00:00",
+  "90538c24700c1ee9": "2026-10-31T09:01:59+00:00",
+  "e0e2cd533b661d60": "2026-10-31T09:01:59+00:00",
+  "b19ccd0e9cd9a234": "2026-10-31T09:01:59+00:00",
+  "35766704d143e3ba": "2026-10-31T09:01:59+00:00",
+  "50e791b145d2a050": "2026-10-31T09:01:59+00:00",
+  "8dbdd525e21b57ec": "2026-10-31T09:01:59+00:00",
+  "cb865a3badb22c34": "2026-10-31T09:01:59+00:00",
+  "c341314a86654185": "2026-10-31T09:01:59+00:00",
+  "c2600717545792dd": "2026-10-31T09:01:59+00:00",
+  "c41a3d1fe456b139": "2026-10-31T09:01:59+00:00",
+  "3bbe6d2eaca68689": "2026-10-31T09:01:59+00:00",
+  "1cfce2474e5eeeb1": "2026-10-31T09:01:59+00:00",
+  "8974eacea598c7f7": "2026-10-31T09:01:59+00:00"
  },
  "inviate": [
   {
@@ -24610,10 +24658,86 @@
    "link": "https://www.investing.com/news/economy-news/oil-hits-sixmonth-highs-as-hormuz-attacks-threaten-iran-peace-efforts-4989133",
    "quando": "2026-10-31T06:31:46+00:00",
    "riassunto": "Le quotazioni del petrolio hanno raggiunto i massimi degli ultimi sei mesi, spinte dai timori legati agli attacchi nello Stretto di Hormuz che minacciano le rotte di fornitura energetica globale. Le critiche politiche agli utili record delle grandi compagnie petrolifere si scontrano con la realtà di"
+  },
+  {
+   "id": "69b6b653c276d8df",
+   "titolo": "OpenAI raises just $11bn of $30bn target as AI investor appetite cools - WSJ",
+   "tema": "Concentrazione dei grandi titoli tecnologici",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "11bn",
+    "30bn",
+    "appetite",
+    "cools",
+    "investor",
+    "just",
+    "openai",
+    "raises",
+    "target",
+    "wsj"
+   ],
+   "link": "https://www.investing.com/news/company-news/openai-raises-just-11bn-of-30bn-target-as-ai-investor-appetite-cools--wsj-4989165",
+   "quando": "2026-10-31T09:02:00+00:00",
+   "messaggio": 939,
+   "riassunto": "OpenAI ha raccolto solo 11 miliardi di dollari rispetto al target iniziale di 30 miliardi, evidenziando un raffreddamento dell'interesse degli investitori verso il settore dell'intelligenza artificiale. Questa frenata si inserisce in un contesto di crescenti tensioni sui costi infrastrutturali e sui"
+  },
+  {
+   "id": "c341314a86654185",
+   "titolo": "France pushes 'responsible' 2027 budget as Fitch cuts debt outlook to 'negative'",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "2027",
+    "budget",
+    "cuts",
+    "debt",
+    "fitch",
+    "france",
+    "negative",
+    "outlook",
+    "pushes",
+    "responsible"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcWtWUGprVGFFT1JZYU11YWZEdnFWaUwzaE5GX0VoS3hRRnNabVpQMDdHTDBMTFJQUkxHSjRQdlJKZUp5dWd4RXRYdGFUbnVUQ2NCUjVBLWp4UjRNaWMxQ244aE9EeXBmTm5zTkZqQm12WDZtbFNfY3hja3hQenpoUEtpcng1dVFyWTVma2xjR05TYnpxS0xHTjBoeXJCZ3Mtby1tQw?oc=5",
+   "quando": "2026-10-31T09:02:01+00:00",
+   "messaggio": 940,
+   "riassunto": "L'agenzia di rating Fitch ha rivisto a negativo l'outlook sul debito sovrano francese, evidenziando il rapido deterioramento dei conti pubblici e le difficoltà nell'implementare la manovra di bilancio. Il governo spinge per una manovra giudicata responsabile per il 2027 nel tentativo di rassicurare "
+  },
+  {
+   "id": "0785bf7614c3f628",
+   "titolo": "Swiss firms plan to expand China investments as trade deal deepens ties",
+   "tema": "Cina ed economie emergenti",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "china",
+    "deal",
+    "deepens",
+    "expand",
+    "firms",
+    "investments",
+    "plan",
+    "swiss",
+    "ties",
+    "trade"
+   ],
+   "link": "https://www.investing.com/news/economy-news/swiss-firms-plan-to-expand-china-investments-as-trade-deal-deepens-ties-4989188",
+   "quando": "2026-10-31T09:02:02+00:00",
+   "messaggio": 941,
+   "riassunto": "Le imprese svizzere stanno pianificando di ampliare la loro presenza e i loro investimenti in Cina, sostenute dal rafforzamento dei legami commerciali bilaterali. L'accordo commerciale in corso di sviluppo approfondisce la cooperazione economica tra le due aree. L'iniziativa evidenzia la ricerca di "
   }
  ],
  "feed_guasti": {
-  "FXStreet": 152
+  "FXStreet": 153
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24630,11 +24754,12 @@
   "2026-10-27": 9,
   "2026-10-28": 9,
   "2026-10-29": 13,
-  "2026-10-30": 9
+  "2026-10-30": 9,
+  "2026-10-31": 2
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-31 08",
+  "ora_notizie": "2026-10-31 10",
   "chiusura": "2026-10-30",
   "apertura": "2026-10-31",
   "settimanale": "2026-W43"
