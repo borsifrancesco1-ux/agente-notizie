@@ -14883,7 +14883,48 @@
   "63cd099c4a32a952": "2026-11-01T19:01:53+00:00",
   "df8079fd84258855": "2026-11-01T19:01:53+00:00",
   "59ebd6e33f9e33a4": "2026-11-01T19:01:53+00:00",
-  "7d5eddcd3c51dfa1": "2026-11-01T19:01:53+00:00"
+  "7d5eddcd3c51dfa1": "2026-11-01T19:01:53+00:00",
+  "e8a640fc25ef51ea": "2026-11-01T21:01:39+00:00",
+  "3ee6c02ad4417791": "2026-11-01T21:01:39+00:00",
+  "fe213f2800d9b909": "2026-11-01T21:01:39+00:00",
+  "c09b592c3a811a68": "2026-11-01T21:01:39+00:00",
+  "e21f94530b191840": "2026-11-01T21:01:39+00:00",
+  "1b03ecb3f8172861": "2026-11-01T21:01:39+00:00",
+  "14183ce54c934e18": "2026-11-01T21:01:39+00:00",
+  "0d2f1a9f8a8b3f27": "2026-11-01T21:01:39+00:00",
+  "7c4f6da857610289": "2026-11-01T21:01:39+00:00",
+  "f431b70298cd4dfe": "2026-11-01T21:01:39+00:00",
+  "36c88ea8a530a5d2": "2026-11-01T21:01:39+00:00",
+  "4e25cde52dda552e": "2026-11-01T21:01:39+00:00",
+  "b248aa03a1bd85a9": "2026-11-01T21:01:39+00:00",
+  "a1eec3144a5fef0b": "2026-11-01T21:01:39+00:00",
+  "26b417f959c4bf48": "2026-11-01T21:01:39+00:00",
+  "f69397c2bc4df571": "2026-11-01T21:01:39+00:00",
+  "639158490b1f62c2": "2026-11-01T21:01:39+00:00",
+  "e630747aaad9fcfa": "2026-11-01T21:01:39+00:00",
+  "2616d8a0ee7d9b38": "2026-11-01T21:01:39+00:00",
+  "873e83ea14e94296": "2026-11-01T21:01:39+00:00",
+  "7d89982f4985196d": "2026-11-01T21:01:39+00:00",
+  "df3e5a58f342e4d2": "2026-11-01T21:01:39+00:00",
+  "c3d468eeba4dfd12": "2026-11-01T21:01:39+00:00",
+  "29679ad42162818c": "2026-11-01T21:01:39+00:00",
+  "c262aa3bdccaeec4": "2026-11-01T21:01:39+00:00",
+  "dec3aa959a498fee": "2026-11-01T21:01:39+00:00",
+  "31b86b26740fa07d": "2026-11-01T21:01:39+00:00",
+  "da593cbbb96f320f": "2026-11-01T21:01:39+00:00",
+  "825e99330cbeba2e": "2026-11-01T21:01:39+00:00",
+  "42db36a2439e21d2": "2026-11-01T21:01:39+00:00",
+  "fc322cf19028a687": "2026-11-01T21:01:39+00:00",
+  "deab4c10b85ce75f": "2026-11-01T21:01:39+00:00",
+  "af47612d46da6878": "2026-11-01T21:01:39+00:00",
+  "92ea8d8b4a63c119": "2026-11-01T21:01:39+00:00",
+  "6ceda7d262cdf4bd": "2026-11-01T21:01:39+00:00",
+  "4a424e59827e1868": "2026-11-01T21:01:39+00:00",
+  "46fb49afac2e2807": "2026-11-01T21:01:39+00:00",
+  "449fc19b7191f391": "2026-11-01T21:01:39+00:00",
+  "41a43f7c40330ac6": "2026-11-01T21:01:39+00:00",
+  "6a17fc4aafb68b1c": "2026-11-01T21:01:39+00:00",
+  "fe7aaa4449768906": "2026-11-01T21:01:39+00:00"
  },
  "inviate": [
   {
@@ -24934,10 +24975,108 @@
    "quando": "2026-11-01T19:01:56+00:00",
    "messaggio": 979,
    "riassunto": "La banca centrale dell'Egitto ha optato per un deciso incremento dei tassi di interesse, anteponendo la stabilità del cambio e il controllo dell'inflazione alla crescita economica a breve termine. La mossa riflette le difficoltà dei mercati emergenti nel fronteggiare la fuga di capitali e la forza d"
+  },
+  {
+   "id": "e21f94530b191840",
+   "titolo": "As Trump eyes new attack, Iran vows to retaliate beyond the Mideast and target financial assets, while oil markets brace for generational damage",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Risk management",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "exploded",
+    "hitting",
+    "hormuz",
+    "iran",
+    "irgc",
+    "mines",
+    "navy",
+    "tankers",
+    "two"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmk2dmxjdk1sOW96UkZiaUlJVXhzc1pJMjZJUnY2WGtvaXd4aXRJY3d4UTNoUmFJdUVQQjlkb0JPSmxEc2YzS1JOZ2NSWmpTUnhzYzBiU1hfeXBvb2F2WEp2NHc5YkFfUUNKSHc2NW1PMUVKT0xqUTdOa0tfUmZpQWE2SDFtdzJ5TmZleWpLd0Zid1JWR2Z0d0dOeVMwekFzNTNTYndHMmMyV0poZ2h0UmFOVWc2M3o3Z2h6TUR2SQ?oc=5",
+   "quando": "2026-11-01T21:01:40+00:00",
+   "messaggio": 980,
+   "riassunto": "La tensione nello Stretto di Hormuz si aggrava ulteriormente dopo che due petroliere sono esplose in seguito a presunti impatti con mine. Le autorità iraniane hanno avvertito che la risposta sarà senza limiti geografici e mirerà anche ad asset finanziari internazionali. I mercati petroliferi e globa"
+  },
+  {
+   "id": "0d2f1a9f8a8b3f27",
+   "titolo": "Wall Street Braces for Biggest Treasury Sales Overhaul in Years",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "biggest",
+    "braces",
+    "overhaul",
+    "sales",
+    "street",
+    "treasury",
+    "wall",
+    "years"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-01/wall-street-braces-for-biggest-treasury-sales-overhaul-in-years",
+   "quando": "2026-11-01T21:01:41+00:00",
+   "messaggio": 981,
+   "riassunto": "Dopo i recenti interventi del Tesoro statunitense per calmare i rendimenti, Wall Street si appresta a gestire la più grande revisione delle linee guida per l'emissione di titoli di Stato da anni. La mossa arriva in un momento di forte tensione sulla curva dei rendimenti e sui costi di rifinanziament"
+  },
+  {
+   "id": "449fc19b7191f391",
+   "titolo": "L’euro crolla ai livelli di maggio 2025 rispetto al dollaro dopo l’uscita anticipata di Lagarde e la pausa della BCE",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "2025",
+    "anticipata",
+    "bce",
+    "crolla",
+    "dollaro",
+    "euro",
+    "lagarde",
+    "livelli",
+    "maggio",
+    "pausa",
+    "rispetto",
+    "uscita"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQdGtYTW9zTDA3aXhjUnBUMjV4SEhTdmJpb2NuanZBaU5qQzdvQkVOUUc2MmdxSTlPZXlwc1BNYzY1UEhmNUdvcWJaRkJlN2VpX3hpamhtTnBVWWtJTmZzajRNZG5BWVpGVVA3ZmsyN2piVS1xR2RoOGpkMHpEUTNDOEpOYzdqMHdmcHF5SlBVNE1WLWhlbXhKZjE2RVVIS0dMczJaVndVYjZ1dWFhb2hzcXBRTjkwbHUyRjh6SjQyVXprLTV0UFRuZXl1eGwydTRYdE16dEkzZUdQWGdqOXY5T0FteFVwMTMwVEHSAe8BQVVfeXFMTmt1cDc3QVpxbTBlQzdNcFBoMkpRMy1vSWlTVXVkUHVHMUFKbFBCcGs2TUFSWjhkZUc1OHloYjNmUWpQbDJfSjVPU1lQa2RtZGdxcUc0RW1KMWQ2RzJ0cUthV0VUMUVJTXBnSHdoUnNsNmxsN0JaUmFlaW1aN0NfZlFJWXRrR3FKVEM2bktrSm5tcjN5ZVowRHYwVHBjU29ySms1a3NiYUVqZmRJd1FWY2E3WWdGS3p4OHhmYWExRnFZUHpRR29vQ1ZlMFNGVXBicGJfeTYtekRGSDBSSmx1YVhId0FiOHp3cEtwWXg4TTQ?oc=5",
+   "quando": "2026-11-01T21:01:42+00:00",
+   "messaggio": 982,
+   "riassunto": "La moneta unica europea ha registrato un forte crollo toccando i minimi da maggio 2025 nei confronti del dollaro. La flessione è alimentata dalla combinazione tra l'annuncio dell'uscita anticipata di Christine Lagarde dalla BCE e la scelta di una pausa nella politica dei tassi."
+  },
+  {
+   "id": "7c4f6da857610289",
+   "titolo": "Australia Set for Fifth Rate Hike as Inflation Fight Intensifies",
+   "tema": "Crescita e lavoro",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "australia",
+    "fifth",
+    "fight",
+    "hike",
+    "inflation",
+    "intensifies",
+    "rate",
+    "set"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-01/australia-set-for-fifth-rate-hike-as-inflation-fight-intensifies",
+   "quando": "2026-11-01T21:01:42+00:00",
+   "messaggio": 983,
+   "riassunto": "La banca centrale australiana è pronta ad alzare i tassi d'interesse per la quinta volta quest'anno, intensificando la stretta per frenare un'inflazione tra le più persistenti nei paesi sviluppati. Il contesto macroeconomico conferma la linea dura globale delle banche centrali di fronte alle pressio"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 167
+  "FXStreet": 168
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24955,12 +25094,12 @@
   "2026-10-29": 13,
   "2026-10-30": 9,
   "2026-10-31": 10,
-  "2026-11-01": 11
+  "2026-11-01": 12
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-01 20",
-  "chiusura": "2026-10-31",
+  "ora_notizie": "2026-11-01 22",
+  "chiusura": "2026-11-01",
   "apertura": "2026-11-01",
   "settimanale": "2026-W44"
  },
