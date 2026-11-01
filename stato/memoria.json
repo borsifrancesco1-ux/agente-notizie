@@ -14813,7 +14813,37 @@
   "aeba62ea20e4ebfe": "2026-11-01T06:31:39+00:00",
   "bd7aedcf95fb3de8": "2026-11-01T06:31:39+00:00",
   "dcb08c62d6809fdd": "2026-11-01T06:31:39+00:00",
-  "3876db44e07bfc5a": "2026-11-01T06:31:39+00:00"
+  "3876db44e07bfc5a": "2026-11-01T06:31:39+00:00",
+  "6210520db09c7a15": "2026-11-01T07:03:23+00:00",
+  "1c697cc082ff7d87": "2026-11-01T07:03:23+00:00",
+  "29bba77787129fde": "2026-11-01T07:03:23+00:00",
+  "7caf3d4d57884c19": "2026-11-01T07:03:23+00:00",
+  "c049ce23ffc495da": "2026-11-01T07:03:23+00:00",
+  "7e7e35db78424d4f": "2026-11-01T07:03:23+00:00",
+  "4661b59f2f86ffa2": "2026-11-01T07:03:23+00:00",
+  "b6061f0de5041f93": "2026-11-01T07:03:23+00:00",
+  "1e08940360d116ac": "2026-11-01T07:03:23+00:00",
+  "8f4d891b54fe02ef": "2026-11-01T07:03:23+00:00",
+  "05814186c3781fc8": "2026-11-01T07:03:23+00:00",
+  "ce731280cca31fe6": "2026-11-01T07:03:23+00:00",
+  "dc960321566e7690": "2026-11-01T07:03:23+00:00",
+  "29f4cd44072b1952": "2026-11-01T07:03:23+00:00",
+  "a1ca5c69d26917c8": "2026-11-01T07:03:23+00:00",
+  "34eaf1ee9618cbf1": "2026-11-01T07:03:23+00:00",
+  "87bbfc4381f97f93": "2026-11-01T07:03:23+00:00",
+  "a7f61e7cb829ad4f": "2026-11-01T07:03:23+00:00",
+  "2f6320ca16b9d2e1": "2026-11-01T07:03:23+00:00",
+  "fddbdb4d227ddc18": "2026-11-01T07:03:23+00:00",
+  "9742bdc75f0ae302": "2026-11-01T07:03:23+00:00",
+  "6944ef7bb966531a": "2026-11-01T07:03:23+00:00",
+  "f1db0a15b7fa2cdc": "2026-11-01T07:03:23+00:00",
+  "95f74ce8739219d8": "2026-11-01T07:03:23+00:00",
+  "955eef5d09269680": "2026-11-01T07:03:23+00:00",
+  "a6aa4b85b5f1f7b6": "2026-11-01T07:03:23+00:00",
+  "7f614a7ccc45c13e": "2026-11-01T07:03:23+00:00",
+  "db20c0a18abb7cbc": "2026-11-01T07:03:23+00:00",
+  "972fabbce8186012": "2026-11-01T07:03:23+00:00",
+  "30ce264c215f37df": "2026-11-01T07:03:23+00:00"
  },
  "inviate": [
   {
@@ -24846,10 +24876,36 @@
    "link": "https://www.investing.com/news/stock-market-news/ai-investors-rush-to-hedge-against-potential-tech-market-downturn--wsj-4989371",
    "quando": "2026-11-01T06:31:41+00:00",
    "riassunto": "Gli investitori e i fondi stanno correndo ai ripari acquistando coperture e polizze contro il rischio di un crollo dei titoli tecnologici legati all'intelligenza artificiale, dopo la pesante correzione di ottobre. Segnali di anomalie nei derivati e nei CDS dei giganti tech riflettono crescenti timor"
+  },
+  {
+   "id": "a7f61e7cb829ad4f",
+   "titolo": "Lagarde Exit Won't Derail ECB Path, UBS Says, Backing Euro Recovery to 1.16",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Copertura",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "backing",
+    "derail",
+    "ecb",
+    "euro",
+    "exit",
+    "lagarde",
+    "path",
+    "recovery",
+    "ubs",
+    "won"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE02Vnk5alZMRC1aYkZyZkxJNHRFcmhSZ1pEOU90Y3ZlTnllOEd2bldmeV9lY0N6N2w3Q3NIYXZlUzNzZEs4cVdlbDhnbnprRU1BYUs1dkZvbmJpVXg2c2duVGNFVHlWNkQtZWIyZDhMWE9Vci04c3c?oc=5",
+   "quando": "2026-11-01T07:03:23+00:00",
+   "messaggio": 960,
+   "riassunto": "Secondo un'analisi di UBS, l'eventuale uscita di Christine Lagarde dalla BCE non devierà la banca centrale dal suo percorso di politica monetaria restrittiva. Gli esperti dell'istituto sostengono la ripresa della moneta unica verso quota 1,16 contro il dollaro. Il contesto vede mercati attenti alle "
   }
  ],
  "feed_guasti": {
-  "FXStreet": 160
+  "FXStreet": 161
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -24866,11 +24922,11 @@
   "2026-10-28": 9,
   "2026-10-29": 13,
   "2026-10-30": 9,
-  "2026-10-31": 9
+  "2026-10-31": 10
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-10-31 22",
+  "ora_notizie": "2026-11-01 08",
   "chiusura": "2026-10-31",
   "apertura": "2026-11-01",
   "settimanale": "2026-W43"
