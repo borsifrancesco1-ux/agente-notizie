@@ -25255,12 +25255,12 @@
    "valore": 2.5
   },
   "Inflazione area euro (HICP, a/a)": {
-   "periodo": "2026-09",
-   "valore": 3.8
+   "periodo": "2026-10",
+   "valore": 4.0
   },
   "Inflazione Italia (IPCA, a/a)": {
-   "periodo": "2026-09",
-   "valore": 4.2
+   "periodo": "2026-10",
+   "valore": 5.6
   },
   "Disoccupazione area euro": {
    "periodo": "2026-09",
@@ -25310,6 +25310,16 @@
    "nome": "PIL Italia (t/t)",
    "testo": "0,0% (3° trimestre 2026; precedente 0,2%; atteso 0,1%)",
    "quando": "2026-10-30T10:01:34+00:00"
+  },
+  {
+   "nome": "Inflazione area euro (HICP, a/a)",
+   "testo": "4,0% (ottobre 2026; precedente 3,8%; atteso 4,0%)",
+   "quando": "2026-11-04T10:01:28+00:00"
+  },
+  {
+   "nome": "Inflazione Italia (IPCA, a/a)",
+   "testo": "5,6% (ottobre 2026; precedente 4,2%; DATO ANOMALO: movimento 2,9 volte più ampio del solito rispetto agli ultimi 12 periodi)",
+   "quando": "2026-11-04T10:01:28+00:00"
   }
  ],
  "pausa_fino": "",
