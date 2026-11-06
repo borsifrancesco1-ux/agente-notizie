@@ -24225,12 +24225,12 @@
    "valore": 3.1211596029620203
   },
   "Nuovi occupati USA (non agricoli)": {
-   "periodo": "2026-09-01",
-   "valore": 29.0
+   "periodo": "2026-10-01",
+   "valore": 165.0
   },
   "Disoccupazione USA": {
-   "periodo": "2026-09-01",
-   "valore": 4.2
+   "periodo": "2026-10-01",
+   "valore": 4.1
   },
   "PIL USA (trimestre, annualizzato)": {
    "periodo": "2026-07-01",
@@ -24310,6 +24310,16 @@
    "nome": "Inflazione Italia (IPCA, a/a)",
    "testo": "5,6% (ottobre 2026; precedente 4,2%; DATO ANOMALO: movimento 2,9 volte più ampio del solito rispetto agli ultimi 12 periodi)",
    "quando": "2026-11-04T10:01:28+00:00"
+  },
+  {
+   "nome": "Nuovi occupati USA (non agricoli)",
+   "testo": "+165 mila (ottobre 2026; precedente +60 mila; atteso 65 mila; DATO ANOMALO: +100 mila sopra le attese)",
+   "quando": "2026-11-06T16:01:22+00:00"
+  },
+  {
+   "nome": "Disoccupazione USA",
+   "testo": "4,1% (ottobre 2026; precedente 4,2%; atteso 4,2%)",
+   "quando": "2026-11-06T16:01:23+00:00"
   }
  ],
  "pausa_fino": "",
