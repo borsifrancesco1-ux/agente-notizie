@@ -14314,7 +14314,19 @@
   "1eab9179b9af4852": "2026-11-07T06:31:25+00:00",
   "28bf6a90095d72b3": "2026-11-07T06:31:25+00:00",
   "898f9f7d43c43e02": "2026-11-07T06:31:25+00:00",
-  "386bcc5e6252d192": "2026-11-07T06:31:25+00:00"
+  "386bcc5e6252d192": "2026-11-07T06:31:25+00:00",
+  "bbc8a2f76bde9559": "2026-11-07T07:01:32+00:00",
+  "b6da69ead39ddf5d": "2026-11-07T07:01:32+00:00",
+  "de1a24ec1ad67eb9": "2026-11-07T07:01:32+00:00",
+  "ef62299e3b9fc6a4": "2026-11-07T07:01:32+00:00",
+  "3471849adb5811d0": "2026-11-07T07:01:32+00:00",
+  "1711556ac2f56573": "2026-11-07T07:01:32+00:00",
+  "d8611bebafb1d3d5": "2026-11-07T07:01:32+00:00",
+  "5b9be2c3d5487030": "2026-11-07T07:01:32+00:00",
+  "f23213a400cf2f9f": "2026-11-07T07:01:32+00:00",
+  "090bec736545ac30": "2026-11-07T07:01:32+00:00",
+  "2193d21d7aba6934": "2026-11-07T07:01:32+00:00",
+  "29339c8a306ab5cc": "2026-11-07T07:01:32+00:00"
  },
  "inviate": [
   {
@@ -23839,10 +23851,34 @@
    "link": "https://www.bbc.co.uk/news/articles/c617kjqjvk12o?at_medium=RSS&at_campaign=rss",
    "quando": "2026-11-07T06:31:31+00:00",
    "riassunto": "Con i tassi di interesse britannici avviati al rialzo, i costi per i mutui, le carte di credito e i prestiti si fanno più onerosi per milioni di consumatori. Le famiglie affrontano rincari significativi sulle rate mensili della casa, esercitando una forte pressione sul reddito disponibile. La situaz"
+  },
+  {
+   "id": "f23213a400cf2f9f",
+   "titolo": "US October CPI Expected Up 0.3% Month-on-Month; A Week That Will Shape the Fed's Rate Decision",
+   "tema": "Inflazione e aspettative",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "cpi",
+    "decision",
+    "expected",
+    "fed",
+    "month",
+    "october",
+    "rate",
+    "shape",
+    "week"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QQ2VTV0RZVHAtY3lCOXgwRDVfSm9taXpWNER5bGkxT0owSG1CZTlCdWUyajRIWmFoU21EM0dyZ2M4TnZ1cGF3V0tyVkFEZmhNVFZ1RGRxTktPc09uNjltUUNqeXdTRUhzaFBfdm56N3JTODZkMFE?oc=5",
+   "quando": "2026-11-07T07:01:33+00:00",
+   "messaggio": 1106,
+   "riassunto": "Gli analisti stimano un incremento dello 0,3% su base mensile per l'indice dei prezzi al consumo negli Stati Uniti a ottobre. Il dato rappresenta un passaggio cruciale per definire le prossime mosse della Federal Reserve sui tassi di interesse. Le aspettative di inflazione restano al centro del diba"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 214
+  "FXStreet": 215
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -23859,11 +23895,11 @@
   "2026-11-03": 9,
   "2026-11-04": 20,
   "2026-11-05": 34,
-  "2026-11-06": 14
+  "2026-11-06": 15
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-06 22",
+  "ora_notizie": "2026-11-07 08",
   "chiusura": "2026-11-06",
   "apertura": "2026-11-07",
   "settimanale": "2026-W44"
