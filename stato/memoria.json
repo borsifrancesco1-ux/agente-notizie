@@ -14267,7 +14267,52 @@
   "22619a7b41a1db21": "2026-11-08T17:01:08+00:00",
   "179b1209b2d81ac8": "2026-11-08T17:01:08+00:00",
   "81031915d05f8f89": "2026-11-08T17:01:08+00:00",
-  "7385aa5af0b693c5": "2026-11-08T17:01:08+00:00"
+  "7385aa5af0b693c5": "2026-11-08T17:01:08+00:00",
+  "91b4e1c35f35abd6": "2026-11-08T19:01:11+00:00",
+  "99c386f34b87da0f": "2026-11-08T19:01:11+00:00",
+  "fe44c7551816ef8f": "2026-11-08T19:01:11+00:00",
+  "b355c173e71ea146": "2026-11-08T19:01:11+00:00",
+  "7ee970694488e9dd": "2026-11-08T19:01:11+00:00",
+  "38fc9b11a00fb6a0": "2026-11-08T19:01:11+00:00",
+  "866316f2e8e0ffff": "2026-11-08T19:01:11+00:00",
+  "be8f809c1e4603e7": "2026-11-08T19:01:11+00:00",
+  "f084dc68eb80b0a5": "2026-11-08T19:01:11+00:00",
+  "a706a55f7d29c1da": "2026-11-08T19:01:11+00:00",
+  "bf4331800b20435f": "2026-11-08T19:01:11+00:00",
+  "d033aa1a56b66510": "2026-11-08T19:01:11+00:00",
+  "853bfddc13742ff0": "2026-11-08T19:01:11+00:00",
+  "78741d6114804d70": "2026-11-08T19:01:11+00:00",
+  "cf0ffd87ce41e419": "2026-11-08T19:01:11+00:00",
+  "28b921533bb84a16": "2026-11-08T19:01:11+00:00",
+  "b78be7e5681e9a8c": "2026-11-08T19:01:11+00:00",
+  "e3fd663e9b95e771": "2026-11-08T19:01:11+00:00",
+  "efd35d46e2b76451": "2026-11-08T19:01:11+00:00",
+  "70e8741a494e08e4": "2026-11-08T19:01:11+00:00",
+  "f782bf846f5838e3": "2026-11-08T19:01:11+00:00",
+  "810257538cf2286e": "2026-11-08T19:01:11+00:00",
+  "1d829d59cfa2c27b": "2026-11-08T19:01:11+00:00",
+  "7f2f8d5b2f8541cb": "2026-11-08T19:01:11+00:00",
+  "88a40ed33ef0c730": "2026-11-08T19:01:11+00:00",
+  "221e80597e10ac16": "2026-11-08T19:01:11+00:00",
+  "2dc0917910a7068b": "2026-11-08T19:01:11+00:00",
+  "56580bddbb239829": "2026-11-08T19:01:11+00:00",
+  "42adcef576adc302": "2026-11-08T19:01:11+00:00",
+  "c0d33a77af1e148b": "2026-11-08T19:01:11+00:00",
+  "baa159c6381ac281": "2026-11-08T19:01:11+00:00",
+  "004df2ea12e291cc": "2026-11-08T19:01:11+00:00",
+  "f2421bfab1540b1a": "2026-11-08T19:01:11+00:00",
+  "eed9097803c19be1": "2026-11-08T19:01:11+00:00",
+  "32b465123b3ea372": "2026-11-08T19:01:11+00:00",
+  "ceafa59eaea4644a": "2026-11-08T19:01:11+00:00",
+  "814516387afddee3": "2026-11-08T19:01:11+00:00",
+  "106ec2642bcb7de2": "2026-11-08T19:01:11+00:00",
+  "12ed0f9f79112e72": "2026-11-08T19:01:11+00:00",
+  "39c223335a705047": "2026-11-08T19:01:11+00:00",
+  "0626ed2dbb5df567": "2026-11-08T19:01:11+00:00",
+  "3bd59552e2cc71f4": "2026-11-08T19:01:11+00:00",
+  "de18c07bf278026b": "2026-11-08T19:01:11+00:00",
+  "7d7c280122f4300d": "2026-11-08T19:01:11+00:00",
+  "b19c9df7cfe68ea2": "2026-11-08T19:01:11+00:00"
  },
  "inviate": [
   {
@@ -23618,10 +23663,34 @@
    "quando": "2026-11-08T17:01:11+00:00",
    "messaggio": 1133,
    "riassunto": "In seguito al rallentamento del commercio legato all'intelligenza artificiale e alla correzione dei listini statunitensi, la società di analisi BCA Research consiglia agli investitori di orientarsi verso le azioni europee, ritenute in grado di sovraperformare Wall Street. Il contesto favorisce un ca"
+  },
+  {
+   "id": "28b921533bb84a16",
+   "titolo": "Saudi Aramco Tower Targeted in Rare Strike on Riyadh Finance Hub",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "aramco",
+    "finance",
+    "hub",
+    "rare",
+    "riyadh",
+    "saudi",
+    "strike",
+    "targeted",
+    "tower"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-08/saudi-aramco-tower-targeted-in-rare-strike-on-riyadh-finance-hub",
+   "quando": "2026-11-08T19:01:12+00:00",
+   "messaggio": 1136,
+   "riassunto": "Un attacco missilistico attribuito agli Houthi ha colpito una delle torri simbolo nel distretto finanziario della capitale saudita Riad, sede di uffici di Saudi Aramco. L'azione danneggia un punto di riferimento della capitale e scompiglia i piani di ritorno alla normalità dopo i precedenti attacchi"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 229
+  "FXStreet": 230
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -23639,11 +23708,11 @@
   "2026-11-05": 34,
   "2026-11-06": 15,
   "2026-11-07": 13,
-  "2026-11-08": 9
+  "2026-11-08": 10
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-08 18",
+  "ora_notizie": "2026-11-08 20",
   "chiusura": "2026-11-07",
   "apertura": "2026-11-08",
   "settimanale": "2026-W45"
