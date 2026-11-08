@@ -1,45 +1,5 @@
 {
  "valutate": {
-  "b6d4d117f1925ae7": "2026-10-25T17:02:05+00:00",
-  "7caf84fb7a33c7c5": "2026-10-25T17:02:05+00:00",
-  "3e54b182f7912bf6": "2026-10-25T17:02:05+00:00",
-  "b9e5e137a0bcf452": "2026-10-25T17:02:05+00:00",
-  "5888c5be6e2345aa": "2026-10-25T17:02:05+00:00",
-  "31818429bacda6f0": "2026-10-25T17:02:05+00:00",
-  "60f2976ee1fe3fcf": "2026-10-25T17:02:05+00:00",
-  "dbfc7792d2b90319": "2026-10-25T17:02:05+00:00",
-  "52c6ea939b797ed6": "2026-10-25T17:02:05+00:00",
-  "92af60b96764cb87": "2026-10-25T17:02:05+00:00",
-  "74ad5e53b1fe169f": "2026-10-25T17:02:05+00:00",
-  "dc0f1dd9a22ee052": "2026-10-25T17:02:05+00:00",
-  "d0c66cbd4dab3412": "2026-10-25T17:02:05+00:00",
-  "fb83976eb530530e": "2026-10-25T17:02:05+00:00",
-  "1724156521982f58": "2026-10-25T17:02:05+00:00",
-  "ae8f8d51362e5982": "2026-10-25T17:02:05+00:00",
-  "fb6a1a32d144e632": "2026-10-25T17:02:05+00:00",
-  "d3bdf9761b383e9d": "2026-10-25T17:02:05+00:00",
-  "8ccf9a7a9712ed19": "2026-10-25T17:02:05+00:00",
-  "fbcd97292522ecc0": "2026-10-25T17:02:05+00:00",
-  "7fc7dcecec7d642e": "2026-10-25T17:02:05+00:00",
-  "eac3df5a1d9b0b04": "2026-10-25T17:02:05+00:00",
-  "36583a06e62385f7": "2026-10-25T17:02:05+00:00",
-  "ade6bb0284cd402e": "2026-10-25T17:02:05+00:00",
-  "323b211f88030de4": "2026-10-25T17:02:05+00:00",
-  "4c002bf4620ef7bc": "2026-10-25T17:02:05+00:00",
-  "7983cbac908e97c6": "2026-10-25T17:02:05+00:00",
-  "16a7ef6527780ab1": "2026-10-25T17:02:05+00:00",
-  "4ae3ab6b1c4a5cbb": "2026-10-25T17:02:05+00:00",
-  "f40808d5fe5558c6": "2026-10-25T17:02:05+00:00",
-  "e91a796242465c16": "2026-10-25T17:02:05+00:00",
-  "eec3e064d0118129": "2026-10-25T17:02:05+00:00",
-  "02aaca4c606967da": "2026-10-25T17:02:05+00:00",
-  "20c58cccc11f4140": "2026-10-25T17:02:05+00:00",
-  "50c66ac1740c1775": "2026-10-25T17:02:05+00:00",
-  "80e04fa996b9932b": "2026-10-25T17:02:05+00:00",
-  "3d76196baeb9de73": "2026-10-25T17:02:05+00:00",
-  "0043ab1dcfbd1275": "2026-10-25T17:02:05+00:00",
-  "059d978f50e88c38": "2026-10-25T17:02:05+00:00",
-  "44dbff3ea149f547": "2026-10-25T17:02:05+00:00",
   "c282f44e09213e4f": "2026-10-25T19:02:07+00:00",
   "0b1b064111013d96": "2026-10-25T19:02:07+00:00",
   "3f86a38ae62cc5ff": "2026-10-25T19:02:07+00:00",
@@ -14243,7 +14203,71 @@
   "a0c078b12959191f": "2026-11-08T15:01:01+00:00",
   "8c8ac90e5b9f0a0c": "2026-11-08T15:01:01+00:00",
   "6acd0e7b65541f86": "2026-11-08T15:01:01+00:00",
-  "f12749e4e63f56dc": "2026-11-08T15:01:01+00:00"
+  "f12749e4e63f56dc": "2026-11-08T15:01:01+00:00",
+  "3443c94015a45388": "2026-11-08T17:01:08+00:00",
+  "8b090b0f476a33a3": "2026-11-08T17:01:08+00:00",
+  "31b0cb76f82ef494": "2026-11-08T17:01:08+00:00",
+  "0e5cc50888e55ee5": "2026-11-08T17:01:08+00:00",
+  "7313aac7ff32ce29": "2026-11-08T17:01:08+00:00",
+  "4caeb5f56d4c7dea": "2026-11-08T17:01:08+00:00",
+  "0094a092d933a61a": "2026-11-08T17:01:08+00:00",
+  "b6c8f2af26a2409c": "2026-11-08T17:01:08+00:00",
+  "9691594e7151a5aa": "2026-11-08T17:01:08+00:00",
+  "327e296403688dde": "2026-11-08T17:01:08+00:00",
+  "c0461dcfe4622f80": "2026-11-08T17:01:08+00:00",
+  "0f983b08c2a365e0": "2026-11-08T17:01:08+00:00",
+  "95678da8529efaf3": "2026-11-08T17:01:08+00:00",
+  "8a52f382686f3ead": "2026-11-08T17:01:08+00:00",
+  "3758664412c7c525": "2026-11-08T17:01:08+00:00",
+  "c6e2ae06c2b621d4": "2026-11-08T17:01:08+00:00",
+  "a20c6e6e599a278b": "2026-11-08T17:01:08+00:00",
+  "e8056e20b62e639d": "2026-11-08T17:01:08+00:00",
+  "f13d2daf0697cd9a": "2026-11-08T17:01:08+00:00",
+  "54bcb9be59fd1b39": "2026-11-08T17:01:08+00:00",
+  "02e6b607ab83a21f": "2026-11-08T17:01:08+00:00",
+  "25e7d0dbfc379e3e": "2026-11-08T17:01:08+00:00",
+  "d26738a12a1dcd10": "2026-11-08T17:01:08+00:00",
+  "53dfaa6490d35218": "2026-11-08T17:01:08+00:00",
+  "82769f92cb5cc26a": "2026-11-08T17:01:08+00:00",
+  "7bb4529cda007938": "2026-11-08T17:01:08+00:00",
+  "bef30cfbe0cccfcb": "2026-11-08T17:01:08+00:00",
+  "81deeb99662bdcb4": "2026-11-08T17:01:08+00:00",
+  "ff2d7e7b00891f81": "2026-11-08T17:01:08+00:00",
+  "44aa312eb86a5571": "2026-11-08T17:01:08+00:00",
+  "f75f8ade0fc5b320": "2026-11-08T17:01:08+00:00",
+  "13336bd189be4812": "2026-11-08T17:01:08+00:00",
+  "c37934a1fc6d6a54": "2026-11-08T17:01:08+00:00",
+  "22205520eaf1fefd": "2026-11-08T17:01:08+00:00",
+  "51dbcda8662c2474": "2026-11-08T17:01:08+00:00",
+  "fa97b17634047bed": "2026-11-08T17:01:08+00:00",
+  "6503521740953ecd": "2026-11-08T17:01:08+00:00",
+  "657bd7482cd3580a": "2026-11-08T17:01:08+00:00",
+  "42981ebfbd81ff79": "2026-11-08T17:01:08+00:00",
+  "55ba4b2019d2e3d7": "2026-11-08T17:01:08+00:00",
+  "907b894817eb4a3c": "2026-11-08T17:01:08+00:00",
+  "c30e5367c75b2aba": "2026-11-08T17:01:08+00:00",
+  "0f93e51f9c27522d": "2026-11-08T17:01:08+00:00",
+  "46e8abcc2c7bd7d0": "2026-11-08T17:01:08+00:00",
+  "64c406fd7e81193e": "2026-11-08T17:01:08+00:00",
+  "46a3f4474a49eef6": "2026-11-08T17:01:08+00:00",
+  "4d54749d9f595402": "2026-11-08T17:01:08+00:00",
+  "0e85eb5044cc1c27": "2026-11-08T17:01:08+00:00",
+  "2d1816f8ca35d2c2": "2026-11-08T17:01:08+00:00",
+  "5ac707f0cff795fd": "2026-11-08T17:01:08+00:00",
+  "9dec942789de146c": "2026-11-08T17:01:08+00:00",
+  "3ff209f6448ef22b": "2026-11-08T17:01:08+00:00",
+  "b58ebfb78c7e0da2": "2026-11-08T17:01:08+00:00",
+  "4879f5cb042b0c1b": "2026-11-08T17:01:08+00:00",
+  "af60200389fa9853": "2026-11-08T17:01:08+00:00",
+  "a8e0ec91505dc049": "2026-11-08T17:01:08+00:00",
+  "b83d22f79d5f9503": "2026-11-08T17:01:08+00:00",
+  "42327e74e843e8ef": "2026-11-08T17:01:08+00:00",
+  "5a1d2eec012cc2d0": "2026-11-08T17:01:08+00:00",
+  "01de4a934cf799f6": "2026-11-08T17:01:08+00:00",
+  "22619a7b41a1db21": "2026-11-08T17:01:08+00:00",
+  "179b1209b2d81ac8": "2026-11-08T17:01:08+00:00",
+  "81031915d05f8f89": "2026-11-08T17:01:08+00:00",
+  "7385aa5af0b693c5": "2026-11-08T17:01:08+00:00"
  },
  "inviate": [
   {
@@ -14885,54 +14909,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "fbcd97292522ecc0",
-   "titolo": "Warsh Tells Traders to Watch the Data. They Still Follow the Fed",
-   "tema": "Fed",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "data",
-    "fed",
-    "follow",
-    "still",
-    "tells",
-    "they",
-    "traders",
-    "warsh",
-    "watch"
-   ],
-   "link": "https://www.bloomberg.com/news/articles/2026-10-25/warsh-tells-traders-to-watch-the-data-they-still-follow-the-fed",
-   "quando": "2026-10-25T17:02:07+00:00",
-   "messaggio": 783,
-   "riassunto": "Gli operatori di mercato restano focalizzati sulle indicazioni della Federal Reserve e sulla dipendenza dai dati macroeconomici per la traiettoria dei tassi d'interesse. Nonostante i richiami a seguire attentamente i dati sull'inflazione e sull'occupazione, il mercato continua a prezzare con attenzi"
-  },
-  {
-   "id": "f40808d5fe5558c6",
-   "titolo": "EUR/USD weekly outlook: FOMC and ECB to set the tone",
-   "tema": "Cambi e costo della copertura",
-   "reparti": [
-    "Copertura",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "ecb",
-    "eur",
-    "fomc",
-    "outlook",
-    "set",
-    "tone",
-    "usd",
-    "weekly"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTnZaMnFsbmMyVTFFVy1idGE5Ukh1aEg4aGlNalJTV3RNOTJYM1NiVnV0Y0wzbHl6WDVEU0hwUzlkaC1idlRldGpRdGJDdFJ4bldvLVdSbzg2eXNLMXJOM3hTVkl2SjNHNWgwSngtN0EwdG1DMU1CMUd2UUlFMHEyaWRXakVxWmpiQUV5NjZmbnBXbDNhcGJGeXF3YW9zMDFoYkpxN254NNIBpwFBVV95cUxPTnZaMnFsbmMyVTFFVy1idGE5Ukh1aEg4aGlNalJTV3RNOTJYM1NiVnV0Y0wzbHl6WDVEU0hwUzlkaC1idlRldGpRdGJDdFJ4bldvLVdSbzg2eXNLMXJOM3hTVkl2SjNHNWgwSngtN0EwdG1DMU1CMUd2UUlFMHEyaWRXakVxWmpiQUV5NjZmbnBXbDNhcGJGeXF3YW9zMDFoYkpxN254NA?oc=5",
-   "quando": "2026-10-25T17:02:07+00:00",
-   "messaggio": 784,
-   "riassunto": "L'andamento del tasso di cambio EUR/USD si prepara a registrare una settimana cruciale dominata dalle prossime decisioni di politica monetaria di Federal Reserve e Banca Centrale Europea. Gli analisti evidenziano come i differenziali di tasso e le divergenze nelle prospettive economiche tra Stati Un"
   },
   {
    "id": "481d87c58856bb10",
@@ -23552,10 +23528,100 @@
    "quando": "2026-11-08T13:01:09+00:00",
    "messaggio": 1129,
    "riassunto": "Anthropic ha chiuso un accordo da 3,4 miliardi di dollari per la fornitura di generatori e energia a gas destinati ai data center per l'intelligenza artificiale. L'operazione evidenzia il fabbisogno massiccio di investimenti infrastrutturali e debito nel settore tecnologico. La notizia si inserisce "
+  },
+  {
+   "id": "9691594e7151a5aa",
+   "titolo": "How sustainable is the AI investment boom after Thursday’s selloff?",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "boom",
+    "investment",
+    "selloff",
+    "sustainable",
+    "thursday"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/how-sustainable-is-the-ai-investment-boom-after-thursdays-selloff-5010263",
+   "quando": "2026-11-08T17:01:09+00:00",
+   "messaggio": 1130,
+   "riassunto": "Dopo il pesante sell-off registrato dai titoli tecnologici legati all'intelligenza artificiale, analisti e gestori patrimoniali si interrogano sulla sostenibilità di lungo periodo del boom degli investimenti nel settore. Nonostante le valutazioni elevate e la volatilità, diversi operatori sottolinea"
+  },
+  {
+   "id": "7385aa5af0b693c5",
+   "titolo": "ECB Urged to Bail Out France as Debt Crisis Risks Grow",
+   "tema": "Debito pubblico e spread BTP-Bund",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "bail",
+    "crisis",
+    "debt",
+    "ecb",
+    "france",
+    "grow",
+    "out",
+    "risks",
+    "urged"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1sanpNNDhCSlB6R29ELVRta1hzRjEzNEFUWDQwVEo2ZWlXWVJISkFVcXVJc2NMNWhidFV0NWpJbUtqdVJFaHNnR05IM3g2VDg1SkpSNmxpd2dyTjdxWEFDZUpXREk4d0NxcTU0?oc=5",
+   "quando": "2026-11-08T17:01:10+00:00",
+   "messaggio": 1131,
+   "riassunto": "Con l'intensificarsi dei rischi legati alla crisi del debito sovrano in Europa, in particolare in Francia, si moltiplicano gli appelli affinché la Banca Centrale Europea intervenga per sostenere i mercati obbligazionari. L'aumento del debito pubblico e la crescente tensione sui titoli di Stato alime"
+  },
+  {
+   "id": "3443c94015a45388",
+   "titolo": "China AI bust threatens Xi’s ’Wall Street East’ ambitions",
+   "tema": "Cina ed economie emergenti",
+   "reparti": [
+    "Azionario",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "ambitions",
+    "bust",
+    "china",
+    "east",
+    "street",
+    "threatens",
+    "wall"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/china-ai-bust-threatens-xis-wall-street-east-ambitions-5010271",
+   "quando": "2026-11-08T17:01:10+00:00",
+   "messaggio": 1132,
+   "riassunto": "La recente correzione e il crollo dei titoli legati all'intelligenza artificiale in Cina stanno mettendo a repentaglio le ambizioni del presidente Xi Jinping di creare una piazza finanziaria paragonabile a Wall Street a Oriente. Il ridimensionamento del settore tecnologico spegne gli entusiasmi spec"
+  },
+  {
+   "id": "f75f8ade0fc5b320",
+   "titolo": "As AI trade tires, BCA calls for European stocks to beat Wall Street",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "bca",
+    "beat",
+    "calls",
+    "european",
+    "stocks",
+    "street",
+    "tires",
+    "trade",
+    "wall"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/as-ai-trade-tires-bca-calls-for-european-stocks-to-beat-wall-street-5010247",
+   "quando": "2026-11-08T17:01:11+00:00",
+   "messaggio": 1133,
+   "riassunto": "In seguito al rallentamento del commercio legato all'intelligenza artificiale e alla correzione dei listini statunitensi, la società di analisi BCA Research consiglia agli investitori di orientarsi verso le azioni europee, ritenute in grado di sovraperformare Wall Street. Il contesto favorisce un ca"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 228
+  "FXStreet": 229
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -23573,14 +23639,14 @@
   "2026-11-05": 34,
   "2026-11-06": 15,
   "2026-11-07": 13,
-  "2026-11-08": 5
+  "2026-11-08": 9
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-08 16",
+  "ora_notizie": "2026-11-08 18",
   "chiusura": "2026-11-07",
   "apertura": "2026-11-08",
-  "settimanale": "2026-W44"
+  "settimanale": "2026-W45"
  },
  "indicatori": {
   "Inflazione USA (CPI, a/a)": {
