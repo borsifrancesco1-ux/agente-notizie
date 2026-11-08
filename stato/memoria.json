@@ -14304,7 +14304,41 @@
   "3bd59552e2cc71f4": "2026-11-08T19:01:11+00:00",
   "de18c07bf278026b": "2026-11-08T19:01:11+00:00",
   "7d7c280122f4300d": "2026-11-08T19:01:11+00:00",
-  "b19c9df7cfe68ea2": "2026-11-08T19:01:11+00:00"
+  "b19c9df7cfe68ea2": "2026-11-08T19:01:11+00:00",
+  "bb845ba51cdeb8cf": "2026-11-08T21:01:10+00:00",
+  "26a78b8c98a3d9d9": "2026-11-08T21:01:10+00:00",
+  "d1af57d0406e74b3": "2026-11-08T21:01:10+00:00",
+  "a8d976796bae166f": "2026-11-08T21:01:10+00:00",
+  "3c63f09b92681ab4": "2026-11-08T21:01:10+00:00",
+  "8682ebab1c455096": "2026-11-08T21:01:10+00:00",
+  "337e08c6a37b9273": "2026-11-08T21:01:10+00:00",
+  "819f0df2d62651cc": "2026-11-08T21:01:10+00:00",
+  "f76e95b0f54dc5cd": "2026-11-08T21:01:10+00:00",
+  "4016f4eff46ddbd3": "2026-11-08T21:01:10+00:00",
+  "10f360046b16588d": "2026-11-08T21:01:10+00:00",
+  "3a291b8147c77d34": "2026-11-08T21:01:10+00:00",
+  "63316ba721f473cf": "2026-11-08T21:01:10+00:00",
+  "82fc4c5adc5519ec": "2026-11-08T21:01:10+00:00",
+  "9edbb6571eaca5a0": "2026-11-08T21:01:10+00:00",
+  "5e327e3a87ac6e77": "2026-11-08T21:01:10+00:00",
+  "88d6db75d67cc2ce": "2026-11-08T21:01:10+00:00",
+  "78c2ba885ebb825a": "2026-11-08T21:01:10+00:00",
+  "641b3ba681639035": "2026-11-08T21:01:10+00:00",
+  "522a67af5e809e9c": "2026-11-08T21:01:10+00:00",
+  "7cb7583bc402c46f": "2026-11-08T21:01:10+00:00",
+  "da9f27f2c37160b0": "2026-11-08T21:01:10+00:00",
+  "1aedc4b3bd2224bc": "2026-11-08T21:01:10+00:00",
+  "1b172aad4271dab4": "2026-11-08T21:01:10+00:00",
+  "872bf2409561e2b9": "2026-11-08T21:01:10+00:00",
+  "2814c02401508477": "2026-11-08T21:01:10+00:00",
+  "b9bcb0613cc08b56": "2026-11-08T21:01:10+00:00",
+  "2f3bcfa0f1ddbfbb": "2026-11-08T21:01:10+00:00",
+  "8dfc9dd9b51979b2": "2026-11-08T21:01:10+00:00",
+  "ad8b70a148150618": "2026-11-08T21:01:10+00:00",
+  "ecf54ce95b768506": "2026-11-08T21:01:10+00:00",
+  "6c7014edc489665e": "2026-11-08T21:01:10+00:00",
+  "a90385d2442228c1": "2026-11-08T21:01:10+00:00",
+  "607f48b6821fb2ae": "2026-11-08T21:01:10+00:00"
  },
  "inviate": [
   {
@@ -23679,10 +23713,114 @@
    "quando": "2026-11-08T19:01:12+00:00",
    "messaggio": 1136,
    "riassunto": "Un attacco missilistico attribuito agli Houthi ha colpito una delle torri simbolo nel distretto finanziario della capitale saudita Riad, sede di uffici di Saudi Aramco. L'azione danneggia un punto di riferimento della capitale e scompiglia i piani di ritorno alla normalità dopo i precedenti attacchi"
+  },
+  {
+   "id": "26a78b8c98a3d9d9",
+   "titolo": "Nvidia opens probe after report that CEO Huang was target of foreign intelligence",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "alleged",
+    "ceo",
+    "chinese",
+    "huang",
+    "investigates",
+    "jensen",
+    "nvidia",
+    "relationship",
+    "spy"
+   ],
+   "link": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html",
+   "quando": "2026-11-08T21:01:18+00:00",
+   "messaggio": 1137,
+   "riassunto": "Nvidia ha avviato un'indagine formale dopo che alcune notizie hanno rivelato che il CEO Jensen Huang è stato bersaglio di intelligence straniera e coinvolto in vicende personali. Il numero uno dell'azienda ha ammesso i fatti e si è scusato con i dipendenti. La notizia solleva interrogativi sulla gov"
+  },
+  {
+   "id": "5e327e3a87ac6e77",
+   "titolo": "Treasury Rally Gets New Boost as Election Hammers the AI Trade",
+   "tema": "Curva dei rendimenti",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "boost",
+    "election",
+    "gets",
+    "hammers",
+    "rally",
+    "trade",
+    "treasury"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-08/treasury-rally-gets-new-boost-as-election-hammers-the-ai-trade",
+   "quando": "2026-11-08T21:01:19+00:00",
+   "messaggio": 1138,
+   "riassunto": "Il mercato dei titoli di Stato americani ha registrato un nuovo rally grazie ai risultati delle elezioni di metà mandato negli Stati Uniti che hanno premiato i Democratici. Gli investitori stanno riposizionando i capitali dopo il recente e pesante sell-off, trovando riparo nei Treasury. La mossa rif"
+  },
+  {
+   "id": "337e08c6a37b9273",
+   "titolo": "Via libera della Consob all'offerta di Intesa per Mps, si parte il 24 novembre",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "all",
+    "consob",
+    "intesa",
+    "libera",
+    "mps",
+    "novembre",
+    "offerta",
+    "parte",
+    "via"
+   ],
+   "link": "https://www.ansa.it/sito/notizie/economia/2026/11/08/via-libera-della-consob-allofferta-di-intesa-per-mps-si-parte-il-24-novembre_15c55497-bc22-4473-aef0-930c9724f4f4.html",
+   "quando": "2026-11-08T21:01:20+00:00",
+   "messaggio": 1139,
+   "riassunto": "La Consob ha concesso il via libera definitivo all'offerta pubblica di scambio promossa da Intesa Sanpaolo su Banca Monte dei Paschi di Siena. L'operazione prenderà il via ufficialmente il prossimo 24 novembre, a seguito dell'approvazione del documento e del prospetto informativo. Il mercato valuta "
+  },
+  {
+   "id": "da9f27f2c37160b0",
+   "titolo": "Stocks will tumble much further as AI investment will slow next year then fall in 2028 and drag GDP down too, economist predicts",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia",
+    "Risk management"
+   ],
+   "impronta": [
+    "2028",
+    "down",
+    "drag",
+    "economist",
+    "fall",
+    "further",
+    "gdp",
+    "investment",
+    "much",
+    "next",
+    "predicts",
+    "slow",
+    "stocks",
+    "then",
+    "too",
+    "tumble",
+    "year"
+   ],
+   "link": "https://fortune.com/2026/11/08/stock-market-outlook-sp500-ai-capex-gdp-growth-productivity/",
+   "quando": "2026-11-08T21:01:20+00:00",
+   "messaggio": 1140,
+   "riassunto": "Secondo le stime di Capital Economics, le azioni statunitensi subiranno ulteriori correzioni a causa del progressivo rallentamento degli investimenti nell'intelligenza artificiale previsto per il prossimo anno e in calo nel 2028. L'indice S&P 500 potrebbe scendere del 12% rispetto ai livelli attuali"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 230
+  "FXStreet": 231
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -23700,12 +23838,12 @@
   "2026-11-05": 34,
   "2026-11-06": 15,
   "2026-11-07": 13,
-  "2026-11-08": 10
+  "2026-11-08": 11
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-08 20",
-  "chiusura": "2026-11-07",
+  "ora_notizie": "2026-11-08 22",
+  "chiusura": "2026-11-08",
   "apertura": "2026-11-08",
   "settimanale": "2026-W45"
  },
