@@ -13,6 +13,8 @@ ia:
   #   max_notizie (facoltativo): notizie al massimo per richiesta, per i servizi che
   #   accettano solo richieste piccole (a questi le notizie già inviate arrivano senza riassunto)
   #   alternative (facoltativo, solo OpenRouter): modelli da usare se il primo è occupato
+  # Per sapere se funzionano e per scegliere un sostituto: workflow "Prova motori IA" su GitHub
+  # (Actions → Prova motori IA → Run workflow), che prova ogni motore ed elenca i modelli disponibili.
   motori:
     # Gli alias "-latest" seguono l'ultima versione, così un modello ritirato non blocca l'agente.
     # Piano gratuito (3/10/2026): "gemini-flash-latest" concede solo 20 richieste al giorno;
@@ -20,26 +22,24 @@ ia:
     - tipo: gemini
       modello: gemini-flash-lite-latest
       chiave: GEMINI_API_KEY
-    # Seconda scelta: l'altro modello di Gemini, con una quota separata. Nel pomeriggio italiano
-    # (mattina negli USA) il flash-lite risponde spesso "sovraccarico" (HTTP 503).
+    # Seconda scelta: un altro flash-lite di Gemini, con quota e server separati da quelli del primo,
+    # che nel pomeriggio italiano (mattina negli USA) risponde spesso "sovraccarico" (HTTP 503).
+    # Prova del 13/11/2026: risponde in 5 secondi; gemini-flash-latest invece era sovraccarico e i
+    # modelli 2.5 sono stati ritirati. Un modello con il numero, prima o poi, viene ritirato:
+    # se la prova lo segnala, sostituiscilo con uno dei flash-lite più recenti dell'elenco.
     - tipo: gemini
-      modello: gemini-flash-latest
+      modello: gemini-3.1-flash-lite
       chiave: GEMINI_API_KEY
-    # Prima riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno.
+    # Riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno. Il primo dell'elenco
+    # che risponde fa il lavoro. Prova del 13/11/2026: ernie risponde (in circa un minuto e mezzo),
+    # i gemma avevano finito il limite gratuito; i nemotron rispondono ma impiegano più di 5 minuti.
     # I modelli gratuiti cambiano spesso: elenco su openrouter.ai/models?max_price=0
     - tipo: openai
       url: "https://openrouter.ai/api/v1/chat/completions"
-      modello: google/gemma-4-31b-it:free
-      alternative: ["nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-26b-a4b-it:free"]
+      modello: baidu/ernie-5.5-flash-preview:free
+      alternative: ["google/gemma-4-31b-it:free", "google/gemma-4-26b-a4b-it:free"]
       chiave: OPENROUTER_API_KEY
-    # Ultima riserva: GitHub Models. Su GitHub Actions usa il token automatico del
-    # repository; accetta solo richieste piccole (circa 8000 token in entrata e 4000 in uscita),
-    # da qui max_notizie: con 30 la richiesta era al limite e la risposta arrivava illeggibile.
-    - tipo: openai
-      url: "https://models.github.ai/inference/chat/completions"
-      modello: openai/gpt-4.1-mini
-      chiave: GITHUB_TOKEN
-      max_notizie: 20
+    # GitHub Models tolto il 13/11/2026: a ogni richiesta risponde solo "OK", con qualsiasi modello.
   # Per i testi della settimana (riepilogo PSP, proposta di profilo) si prova prima un modello più
   # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
   motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}

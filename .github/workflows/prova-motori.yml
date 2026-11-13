@@ -33,7 +33,7 @@ jobs:
         run: python strumenti/prova_motori.py --modelli
         env:
           PYTHONUNBUFFERED: "1"   # il registro si scrive subito: resta anche se il giro viene interrotto
-          PROVA_ANCHE: ${{ inputs.anche || 'gemini:gemini-2.5-flash-lite gemini:gemini-3.1-flash-lite gemini:gemini-3.5-flash-lite gemini:gemini-2.5-flash openrouter:nvidia/nemotron-3-ultra-550b-a55b:free openrouter:nvidia/nemotron-3.5-lightning:free openrouter:google/gemma-4-26b-a4b-it:free openrouter:baidu/ernie-5.5-flash-preview:free github:openai/gpt-4o-mini github:openai/gpt-4.1-nano' }}
+          PROVA_ANCHE: ${{ inputs.anche }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
