@@ -26,8 +26,11 @@ def _regola(parola: str) -> re.Pattern:
 
 class Filtro:
     def __init__(self, config: dict):
+        # i ticker di una o due lettere (IP, CL...) non si cercano nel testo: sono anche sigle comuni;
+        # se servono (es. GM) vanno tra i sinonimi
         self.titoli = {
-            t["nome"]: [_regola(p) for p in (t["nome"], t.get("ticker"), *(t.get("sinonimi") or [])) if p]
+            t["nome"]: [_regola(str(p)) for p in (t["nome"], t.get("ticker") if len(str(t.get("ticker") or "")) > 2
+                                                   else None, *(t.get("sinonimi") or [])) if p]
             for t in config.get("titoli") or []
         }
         self.temi = {

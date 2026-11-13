@@ -78,11 +78,17 @@ Scala dei voti:
 - 7-8: notizia nuova e specifica su un tema seguito; comunicati e discorsi di BCE, Fed
   e Banca d'Italia sull'economia e sui tassi;
 - 6: analisi, commento o notizia di contesto utile ad almeno uno dei reparti del team;
-I TITOLI SEGUITI (es. Eni) sono fuori dal portafoglio gestito: notizie di routine su di loro (contratti,
-scoperte, dichiarazioni, prezzi dei carburanti, controllate) valgono al massimo 5; solo eventi
-straordinari sul titolo (risultati molto sorprendenti, operazioni societarie, crolli) arrivano a 9.
 - 4-5: notizia marginale, ripetitiva o anteprima senza contenuti;
 - 1-3: irrilevante, generica, promozionale o acchiappaclic.
+Le AZIENDE IN PORTAFOGLIO (tra i TITOLI SEGUITI, quelle segnate «in portafoglio») sono le azioni che il
+team ha comprato: una notizia nuova e specifica su una di loro (risultati e previsioni, operazioni
+societarie, rating, cause e multe, cambi al vertice, dividendi e riacquisti di azioni, forti movimenti
+del titolo, fatti di settore che la toccano direttamente) vale 7-8, un evento che muove molto il titolo
+9; più alto il peso in portafoglio, più conta. Restano a 1-4 gli articoli promozionali o generici sul
+titolo ("conviene comprarlo?", "3 motivi per...", classifiche, previsioni di prezzo senza fatti nuovi).
+Gli altri TITOLI SEGUITI (es. Eni) sono fuori dal portafoglio gestito: notizie di routine su di loro
+(contratti, scoperte, dichiarazioni, prezzi dei carburanti, controllate) valgono al massimo 5; solo eventi
+straordinari sul titolo (risultati molto sorprendenti, operazioni societarie, crolli) arrivano a 9.
 Tipi di fonte: (istituzione) banca centrale o autorità; (testata) testata giornalistica principale;
 (ricerca web) sito trovato con una ricerca. A parità di contenuto preferisci istituzioni e testate;
 dai voti bassi ai fatti riportati solo da siti poco autorevoli e alle previsioni generiche senza fatti
@@ -200,9 +206,30 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
                        "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna,
                        "aziende": [a for a in v.get("aziende") or [] if isinstance(a, dict) and a.get("simbolo")][:3],
                        "valori": [x for x in v.get("valori") or [] if x in valori][:3]})
-        if len(scelte) == massimo:
-            break
-    return scelte
+    return con_spazio_al_resto(scelte, config, massimo)
+
+
+def con_spazio_al_resto(scelte: list[dict], config: dict, massimo: int) -> list[dict]:
+    """Le prime "massimo" scelte, con al massimo notifiche.max_aziende_per_giro notizie su singole
+    aziende (titoli seguiti), perché non tolgano spazio a mercati, macro e cambi. I fatti da 9-10
+    passano sempre; le notizie sulle aziende messe da parte prendono i posti rimasti liberi."""
+    tetto = (config.get("notifiche") or {}).get("max_aziende_per_giro")
+    if tetto is None:
+        return scelte[:massimo]
+    aziende = {t["nome"] for t in config.get("titoli") or []}
+    prima, dopo, contate = [], [], 0
+    for s in scelte:  # già dalla più rilevante
+        su_azienda = s["tema"] in aziende
+        if su_azienda and contate >= tetto and (s["voto"] or 0) < 9:
+            dopo.append(s)
+            continue
+        contate += su_azienda
+        prima.append(s)
+    tenute = (prima + dopo)[:massimo]
+    for s in dopo:
+        if s not in tenute:
+            print(f"  lasciata per dare spazio ad altri temi (già {tetto} su singole aziende): {s['titolo'][:70]}")
+    return sorted(tenute, key=lambda s: -(s["voto"] or 0))
 
 
 def titolo_originale(proposto: str, gruppo: Gruppo) -> str:
@@ -250,7 +277,7 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
     for tentativo in range(len(ATTESE_SOVRACCARICO) + 1):
         richieste_fatte += 1
         try:
-            r = requests.post(URL.format(modello=modello), json=corpo, timeout=120,
+            r = requests.post(URL.format(modello=modello), json=corpo, timeout=180,
                               headers={"x-goog-api-key": chiave})
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
@@ -288,7 +315,7 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
     for tentativo in range(2):
         richieste_fatte += 1
         try:
-            r = requests.post(url, json=corpo, timeout=120, headers={"Authorization": f"Bearer {chiave}"})
+            r = requests.post(url, json=corpo, timeout=180, headers={"Authorization": f"Bearer {chiave}"})
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
         else:
@@ -298,10 +325,7 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
                     scelta = r.json()["choices"][0]
                     return leggi_json(scelta["message"]["content"], lista)
                 except (KeyError, IndexError, TypeError, ValueError, AttributeError):
-                    # il motivo (es. "length" = risposta troncata, "content_filter") aiuta a capire il guasto
-                    motivo = scelta.get("finish_reason") if isinstance(scelta, dict) else None
-                    raise ErroreIA(f"{modello}: risposta non valida"
-                                   + (f" (finish_reason: {motivo})" if motivo else "")) from None
+                    raise ErroreIA(f"{modello}: risposta non valida ({_diagnosi(r, scelta)})") from None
             if r.status_code == 429:
                 if tentativo > 0:
                     raise QuotaEsaurita(f"{modello}: limite di richieste raggiunto ({_messaggio(r)})")
@@ -362,6 +386,19 @@ def leggi_json(testo: str | None, lista: str | None = None) -> dict:
     return {lista: elementi}
 
 
+def _diagnosi(r: requests.Response, scelta) -> str:
+    """Com'era fatta una risposta illeggibile, per capire il guasto dal registro: il motivo della fine
+    (es. "length" = troncata, "content_filter" = bloccata), la lunghezza, l'inizio e la fine del testo."""
+    motivo = scelta.get("finish_reason") if isinstance(scelta, dict) else None
+    messaggio = scelta.get("message") if isinstance(scelta, dict) else None
+    testo = messaggio.get("content") if isinstance(messaggio, dict) else r.text
+    testo = " ".join(str(testo or "").split())
+    pezzi = [f"finish_reason {motivo or '-'}", f"{len(testo)} caratteri"]
+    if testo:
+        pezzi.append(f"«{testo[:70]}»" + (f" … «{testo[-70:]}»" if len(testo) > 140 else ""))
+    return ", ".join(pezzi)
+
+
 def _messaggio(r: requests.Response) -> str:
     try:
         errore = r.json()["error"]
@@ -379,7 +416,9 @@ def _riga(i: int, g: Gruppo) -> str:
 
 
 def _contesto(profilo: str, config: dict) -> str:
-    titoli = "\n".join(f"- {t['nome']} ({t.get('ticker', '')}): {t.get('perche', '')}"
+    titoli = "\n".join(f"- {t['nome']} ({t.get('ticker', '')})"
+                       + (f" — in portafoglio: {t['portafoglio']} del portafoglio" if t.get("portafoglio") else "")
+                       + (f": {t['perche']}" if t.get("perche") else "")
                        for t in config.get("titoli") or [])
     temi = "\n".join(f"- {t['nome']}" for t in config.get("temi") or [])
     reparti = "\n".join(f"- {r['nome']}: {r.get('descrizione', '')}" for r in config.get("reparti") or [])

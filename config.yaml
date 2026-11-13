@@ -73,6 +73,9 @@ calendario:
 
 notifiche:
   max_per_giro: 4        # tetto di notifiche per ogni giro (con un giro ogni 2 ore: al massimo 32 al giorno)
+  # di cui al massimo queste su singole aziende (titoli seguiti), per lasciare spazio a mercati, macro
+  # e cambi; i fatti da 9-10 passano sempre, e se mancano altre notizie i posti liberi tornano alle aziende
+  max_aziende_per_giro: 2
   con_suono_da: 9        # soglia di rilevanza per il suono: solo da questo voto il telefono suona
                          # (al massimo una volta per giro); sotto arriva in silenzio, ma resta nel canale
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore
@@ -123,6 +126,44 @@ titoli:
     sinonimi: ["ENI", "Eni SpA", "Descalzi", "Plenitude", "Enilive"]
     perche: "La cliente del PSP lavora in Eni e ne ha le RSU, ma Eni è fuori dal portafoglio gestito: solo eventi straordinari"
     soglia: 9              # voto minimo per le notizie su questo titolo (più alto della soglia generale)
+
+  # --- Aziende in portafoglio ---
+  # Le azioni comprate nel PSP (WhiteRock_Ponderazioni_azionario.xlsx, dati al 10/11/2026), solo
+  # S&P 500 e STOXX 600: le aziende dell'MSCI EM non si seguono una per una ma come area
+  # (tema "Cina ed economie emergenti"). Le loro notizie specifiche valgono più di quelle sui
+  # titoli fuori portafoglio, ma non tolgono spazio al resto: al massimo
+  # notifiche.max_aziende_per_giro notizie su singole aziende per giro, salvo i fatti da 9-10.
+  #   portafoglio: indice · strategia · peso sul portafoglio totale (lo legge l'IA)
+  #   feed: i feed dedicati (sotto, feed_per_titolo) da leggere per l'azienda; senza, tutti.
+  #   Per le americane basta Yahoo Finance (le coprono bene anche i siti generali); per le europee
+  #   anche Google News, senza esagerare con le ricerche (Google blocca chi ne fa troppe)
+  #   ricerca: la ricerca su Google News, se il nome da solo è troppo lungo o ambiguo
+  #   (i ticker di una o due lettere, come IP o CL, non si cercano nel testo: troppi falsi allarmi)
+  # S&P 500
+  - {nome: International Paper, ticker: IP, portafoglio: "S&P 500 · Ou-Penman · 0,4%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: AbbVie, ticker: ABBV, sinonimi: [Abbvie, Skyrizi, Rinvoq], portafoglio: "S&P 500 · Ou-Penman · 9,9%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Autodesk, ticker: ADSK, portafoglio: "S&P 500 · Ou-Penman · 1,1%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Colgate-Palmolive, ticker: CL, sinonimi: [Colgate, Colgate Palmolive], portafoglio: "S&P 500 · Ou-Penman · 1,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Veeva Systems, ticker: VEEV, sinonimi: [Veeva], ricerca: '"Veeva"', portafoglio: "S&P 500 · Ou-Penman · 1,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Hewlett Packard Enterprise, ticker: HPE, sinonimi: [Hewlett-Packard Enterprise, HP Enterprise], portafoglio: "S&P 500 · Ou-Penman · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: HP Inc, ticker: HPQ, sinonimi: [HP Inc., HP], portafoglio: "S&P 500 · LSV · 0,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: General Motors, ticker: GM, sinonimi: [GM, Mary Barra], portafoglio: "S&P 500 · LSV · 1,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Healthpeak Properties, ticker: DOC, sinonimi: [Healthpeak], ricerca: '"Healthpeak"', portafoglio: "S&P 500 · LSV · 0,3%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Zoetis, ticker: ZTS, portafoglio: "S&P 500 · De Bondt-Thaler · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Adobe, ticker: ADBE, portafoglio: "S&P 500 · De Bondt-Thaler · 1,8%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Intuit, ticker: INTU, sinonimi: [TurboTax, QuickBooks], portafoglio: "S&P 500 · De Bondt-Thaler · 1,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Accenture, ticker: ACN, portafoglio: "S&P 500 · De Bondt-Thaler · 2,9%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Crown Castle, ticker: CCI, portafoglio: "S&P 500 · De Bondt-Thaler · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  # STOXX 600
+  - {nome: Holcim, ticker: HOLN.SW, portafoglio: "STOXX 600 · Ou-Penman · 3,1%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: RELX, ticker: REL.L, sinonimi: [Relx, LexisNexis], portafoglio: "STOXX 600 · Ou-Penman · 4,3%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Amadeus IT Group, ticker: AMS.MC, sinonimi: [Amadeus IT, Amadeus], ricerca: '"Amadeus IT"', portafoglio: "STOXX 600 · Ou-Penman · 1,8%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Wolters Kluwer, ticker: WKL.AS, portafoglio: "STOXX 600 · Ou-Penman · 1,4%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: VAT Group, ticker: VACN.SW, ricerca: '"VAT Group" vacuum', portafoglio: "STOXX 600 · Ou-Penman · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Kongsberg Gruppen, ticker: KOG.OL, sinonimi: [Kongsberg], ricerca: '"Kongsberg"', portafoglio: "STOXX 600 · Ou-Penman · 2,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Eiffage, ticker: FGR.PA, portafoglio: "STOXX 600 · LSV · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: A.P. Møller-Maersk, ticker: MAERSK-B.CO, sinonimi: [Maersk, Moller-Maersk, Møller-Maersk], ricerca: '"Maersk"', portafoglio: "STOXX 600 · LSV · 3,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Bouygues, ticker: EN.PA, portafoglio: "STOXX 600 · LSV · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
 
 # Temi seguiti, nell'ordine della mappa del PSP.
 # icona: compare davanti al titolo della notifica (titoli e temi; senza icona: 📰).

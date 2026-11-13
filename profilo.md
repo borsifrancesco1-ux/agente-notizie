@@ -14,6 +14,7 @@ Le notizie arrivano a tutto il team WhiteRock su un canale Telegram. Il team è 
 - Asset class: titoli di Stato, obbligazioni societarie, debito dei paesi emergenti, monetario, azioni (S&P 500, STOXX 600, MSCI Emerging Markets). I pesi sono in fase di ricalibrazione sulle linee guida di BNP Paribas.
 - La parte obbligazionaria è la più grande: tassi, curve e spread contano più di tutto il resto.
 - Il rischio di cambio va coperto con derivati: mi serve capire quanto costa la copertura e perché.
+- Le azioni comprate (dati al 10/11/2026): nell'S&P 500 International Paper, AbbVie (la posizione più grande, circa il 10% del portafoglio), Autodesk, Colgate-Palmolive, Veeva Systems, Hewlett Packard Enterprise, HP Inc, General Motors, Healthpeak Properties, Zoetis, Adobe, Intuit, Accenture e Crown Castle; nello STOXX 600 Holcim, RELX, Amadeus IT Group, Wolters Kluwer, VAT Group, Kongsberg Gruppen, Eiffage, A.P. Møller-Maersk e Bouygues. Su queste aziende voglio le notizie specifiche e nuove (risultati, previsioni, operazioni, rating, forti movimenti del titolo), con più attenzione di prima, ma senza togliere spazio alle notizie su mercati, tassi, cambi e macro. Le aziende dell'MSCI Emerging Markets le seguo come area, non una per una.
 - La cliente lavora in ENI e ne ha le RSU, ma Eni resta fuori dalla gestione del portafoglio. Segnala Eni solo per eventi straordinari (risultati molto sorprendenti, operazioni societarie, crolli del titolo): niente notizie di routine su Eni, Plenitude o Enilive.
 
 ## Cosa mi interessa, in ordine di importanza

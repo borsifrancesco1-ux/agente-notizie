@@ -43,7 +43,10 @@ from fonti import Notizia
 from memoria import ERRORI_PRIMA_DI_AVVISARE, Memoria, chiave, giorno_quota
 
 CARTELLA = Path(__file__).resolve().parent
-MAX_CANDIDATI = 150        # fatti al massimo passati all'IA in un giro
+MAX_CANDIDATI = 200        # fatti al massimo passati all'IA in un giro
+# fatti al massimo per ogni titolo seguito trovati solo dai suoi feed dedicati (i più autorevoli e recenti):
+# un giorno di trimestrali non deve riempire l'elenco e lasciare fuori le ricerche sui temi
+MAX_PER_TITOLO = 3
 GIRI_SENZA_IA_PRIMA_DI_AVVISARE = 2   # un giro senza IA ogni tanto si recupera da solo un'ora dopo
 ICONA_PREDEFINITA = "📰"
 APERTURA_ENTRO = "12:00"   # se il buongiorno non è partito entro quest'ora (es. GitHub fermo), si salta
@@ -433,7 +436,7 @@ class Giro:
         gruppi = sorted((g for g in raggruppa(pertinenti) if not self.memoria.gia_inviata(g.impronta)),
                         key=Gruppo.priorita)
         print(f"Nuove: {len(nuove)} · pertinenti: {len(pertinenti)} · fatti distinti: {len(gruppi)}")
-        return gruppi[:MAX_CANDIDATI]
+        return limita_per_titolo(gruppi)[:MAX_CANDIDATI]
 
     def motori(self) -> list[dict]:
         return (self.config.get("ia") or {}).get("motori") or []
@@ -523,6 +526,23 @@ class Giro:
             return True
         return notifiche.invia_file(percorso, self.token, self.chat_id if privato else self.canale,
                                     notifiche.esc(didascalia))
+
+
+def limita_per_titolo(gruppi: list[Gruppo]) -> list[Gruppo]:
+    """Al massimo MAX_PER_TITOLO fatti per titolo seguito tra quelli trovati solo dai suoi feed dedicati
+    (non ufficiali, non dai siti principali, senza temi). gruppi: già in ordine di priorità."""
+    contati: dict[str, int] = {}
+    tenuti = []
+    for g in gruppi:
+        dedicato = (g.titoli and not g.temi and not g.ufficiale
+                    and not any(n.feed and n.feed.principale for n in g.notizie))
+        if dedicato:
+            nome = min(g.titoli)
+            contati[nome] = contati.get(nome, 0) + 1
+            if contati[nome] > MAX_PER_TITOLO:
+                continue
+        tenuti.append(g)
+    return tenuti
 
 
 def controlla_feed(config: dict) -> None:

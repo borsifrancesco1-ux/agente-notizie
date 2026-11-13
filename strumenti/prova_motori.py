@@ -10,7 +10,10 @@ Uso, dalla cartella del progetto (chiavi nel file .env; su GitHub arrivano dai S
   python strumenti/prova_motori.py --modelli  elenca anche i modelli disponibili su Gemini,
                                               OpenRouter (gratuiti) e GitHub Models, per scegliere
                                               un sostituto quando un motore smette di funzionare
-Esce con errore se nessun motore risponde.
+  python strumenti/prova_motori.py --anche gemini:gemini-2.5-flash-lite openrouter:nvidia/x:free github:openai/gpt-4o-mini
+                                              prova anche altri modelli, prima di metterli in config.yaml
+                                              (stesso elenco nella variabile PROVA_ANCHE, separato da spazi)
+Esce con errore se nessun motore di config.yaml risponde.
 """
 from __future__ import annotations
 
@@ -33,6 +36,28 @@ import ia  # noqa: E402
 from memoria import Memoria  # noqa: E402
 
 SU_GITHUB = bool(os.environ.get("GITHUB_ACTIONS"))
+SERVIZI = {  # per --anche: servizio -> come si chiama
+    "gemini": {"tipo": "gemini", "chiave": "GEMINI_API_KEY"},
+    "openrouter": {"tipo": "openai", "url": "https://openrouter.ai/api/v1/chat/completions",
+                   "chiave": "OPENROUTER_API_KEY"},
+    "github": {"tipo": "openai", "url": "https://models.github.ai/inference/chat/completions",
+               "chiave": "GITHUB_TOKEN", "max_notizie": 20},
+}
+
+
+def motori_in_piu() -> list[dict]:
+    """I modelli da provare oltre a quelli di config.yaml: dopo --anche e nella variabile PROVA_ANCHE."""
+    voci = os.environ.get("PROVA_ANCHE", "").split()
+    if "--anche" in sys.argv:
+        voci += [a for a in sys.argv[sys.argv.index("--anche") + 1:] if not a.startswith("--")]
+    motori = []
+    for voce in voci:
+        servizio, _, modello = voce.partition(":")
+        if servizio not in SERVIZI or not modello:
+            print(f"«{voce}» non valido: scrivi servizio:modello, con servizio tra {', '.join(SERVIZI)}")
+            continue
+        motori.append({**SERVIZI[servizio], "modello": modello})
+    return motori
 
 
 def main() -> None:
@@ -53,9 +78,11 @@ def main() -> None:
     settimanale = (config.get("ia") or {}).get("motore_settimanale")
     if settimanale and settimanale not in motori:
         motori.append(settimanale)
+    in_config = len(motori)
+    motori += [m for m in motori_in_piu() if m not in motori]
     esiti = []
-    for motore in motori:
-        nome = f"{motore['tipo']} · {motore['modello']}"
+    for posizione, motore in enumerate(motori):
+        nome = f"{motore['tipo']} · {motore['modello']}" + ("" if posizione < in_config else " (prova)")
         print(f"\n===== {nome} =====")
         chiave = os.environ.get(motore["chiave"])
         if not chiave:
@@ -79,13 +106,13 @@ def main() -> None:
                                   f"fatti valutati, {len(scelte)} notizie scelte"))
 
     print("\n===== RISULTATO =====")
-    for nome, ok, dettaglio in esiti:
+    for posizione, (nome, ok, dettaglio) in enumerate(esiti):
         print(f"{'✓' if ok else '✗'} {nome}: {dettaglio}")
-        if SU_GITHUB and not ok:
+        if SU_GITHUB and not ok and posizione < in_config:
             print(f"::warning title=Motore IA non disponibile::{nome}: {dettaglio}")
     if "--modelli" in sys.argv:
         elenca_modelli()
-    if not any(ok for _, ok, _ in esiti):
+    if not any(ok for _, ok, _ in esiti[:in_config]):
         print("Nessun motore ha risposto")
         sys.exit(1)
 
@@ -113,6 +140,7 @@ def elenca_modelli() -> None:
         print(f"OpenRouter: elenco non disponibile ({type(e).__name__})")
     chiave = os.environ.get("GITHUB_TOKEN")
     if chiave:
+        r = None
         try:
             r = requests.get("https://models.github.ai/catalog/models", timeout=30,
                              headers={"Authorization": f"Bearer {chiave}", "Accept": "application/vnd.github+json"})
@@ -121,7 +149,8 @@ def elenca_modelli() -> None:
                   ", ".join(f"{m['id']} ({m.get('rate_limit_tier', '?')})" for m in modelli
                             if isinstance(m, dict) and m.get("id")) or f"HTTP {r.status_code}")
         except (requests.RequestException, ValueError) as e:
-            print(f"GitHub Models: elenco non disponibile ({type(e).__name__})")
+            stato = f"HTTP {r.status_code}, " if r is not None else ""
+            print(f"GitHub Models: elenco non disponibile ({stato}{type(e).__name__})")
 
 
 if __name__ == "__main__":
