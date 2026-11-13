@@ -26,6 +26,9 @@ richieste_fatte = 0  # richieste inviate a Gemini in questa esecuzione, per il c
 # Gemini "sovraccarico" (HTTP 5xx) spesso si libera in meno di un minuto: secondi di attesa prima
 # di ogni nuovo tentativo (due tentativi in più, invece di passare subito al motore di riserva)
 ATTESE_SOVRACCARICO = (15, 45)
+# secondi di attesa per una risposta: chi non risponde in tempo non si riprova (un modello lento lo resta,
+# e i giri di GitHub hanno 15 minuti in tutto), si passa al motore successivo
+ATTESA_RISPOSTA = 150
 
 
 class QuotaEsaurita(Exception):
@@ -69,7 +72,9 @@ nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
    - "valori": da 0 a 3 valori di mercato toccati dal fatto, scelti tra VALORI DI MERCATO: un tasso per
      le notizie su banche centrali e titoli di Stato, un cambio per quelle sulle valute, una materia prima
      per quelle su petrolio, gas o metalli, un indice per quelle sulle borse; vuoto se nessuno è pertinente.
-   Per gli altri gruppi lascia questi campi vuoti.
+   Per i gruppi già inviati senza novità lascia questi campi vuoti.
+5. nella risposta metti SOLO i gruppi con voto almeno {soglia}: tutti gli altri valutali ma lasciali fuori,
+   così la risposta resta breve.
 
 Scala dei voti:
 - 9-10: evento che muove i mercati o il portafoglio seguito (decisione di una banca centrale,
@@ -277,8 +282,10 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
     for tentativo in range(len(ATTESE_SOVRACCARICO) + 1):
         richieste_fatte += 1
         try:
-            r = requests.post(URL.format(modello=modello), json=corpo, timeout=180,
+            r = requests.post(URL.format(modello=modello), json=corpo, timeout=ATTESA_RISPOSTA,
                               headers={"x-goog-api-key": chiave})
+        except requests.Timeout:
+            raise ErroreIA(f"{modello}: nessuna risposta in {ATTESA_RISPOSTA} secondi") from None
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
         else:
@@ -315,7 +322,10 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
     for tentativo in range(2):
         richieste_fatte += 1
         try:
-            r = requests.post(url, json=corpo, timeout=180, headers={"Authorization": f"Bearer {chiave}"})
+            r = requests.post(url, json=corpo, timeout=ATTESA_RISPOSTA,
+                              headers={"Authorization": f"Bearer {chiave}"})
+        except requests.Timeout:
+            raise ErroreIA(f"{modello}: nessuna risposta in {ATTESA_RISPOSTA} secondi") from None
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
         else:
