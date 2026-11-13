@@ -7,10 +7,11 @@
 ia:
   # Motori provati in ordine, una richiesta per giro (voti, reparti, raggruppamento e riassunti).
   # Se uno non risponde o ha finito la quota si passa al successivo; se falliscono tutti
-  # si usa il filtro a parole chiave. Senza motori: solo parole chiave.
+  # nessuna notifica parte con il solo titolo: le notizie restano in attesa e il giro dell'ora
+  # dopo le riprova (dopo due giri a vuoto arriva un avviso in privato). Senza motori: solo parole chiave.
   #   chiave: nome della variabile nel file .env (su GitHub: nome del Secret)
   #   max_notizie (facoltativo): notizie al massimo per richiesta, per i servizi che
-  #   accettano solo richieste piccole
+  #   accettano solo richieste piccole (a questi le notizie già inviate arrivano senza riassunto)
   #   alternative (facoltativo, solo OpenRouter): modelli da usare se il primo è occupato
   motori:
     # Gli alias "-latest" seguono l'ultima versione, così un modello ritirato non blocca l'agente.
@@ -18,6 +19,11 @@ ia:
     # il "flash-lite" ne concede di più.
     - tipo: gemini
       modello: gemini-flash-lite-latest
+      chiave: GEMINI_API_KEY
+    # Seconda scelta: l'altro modello di Gemini, con una quota separata. Nel pomeriggio italiano
+    # (mattina negli USA) il flash-lite risponde spesso "sovraccarico" (HTTP 503).
+    - tipo: gemini
+      modello: gemini-flash-latest
       chiave: GEMINI_API_KEY
     # Prima riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno.
     # I modelli gratuiti cambiano spesso: elenco su openrouter.ai/models?max_price=0
@@ -27,12 +33,13 @@ ia:
       alternative: ["nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-26b-a4b-it:free"]
       chiave: OPENROUTER_API_KEY
     # Ultima riserva: GitHub Models. Su GitHub Actions usa il token automatico del
-    # repository; accetta solo richieste piccole, da qui max_notizie.
+    # repository; accetta solo richieste piccole (circa 8000 token in entrata e 4000 in uscita),
+    # da qui max_notizie: con 30 la richiesta era al limite e la risposta arrivava illeggibile.
     - tipo: openai
       url: "https://models.github.ai/inference/chat/completions"
       modello: openai/gpt-4.1-mini
       chiave: GITHUB_TOKEN
-      max_notizie: 30
+      max_notizie: 20
   # Per i testi della settimana (riepilogo PSP, proposta di profilo) si prova prima un modello più
   # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
   motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}
@@ -243,7 +250,8 @@ feed_generali:
   # Cambi
   - {nome: Investing.com Forex, url: "https://www.investing.com/rss/news_1.rss"}
   - {nome: Investing.com Italia Forex, url: "https://it.investing.com/rss/news_1.rss"}
-  - {nome: FXStreet, url: "https://www.fxstreet.com/rss/news", filtra: true}
+  # FXStreet rifiuta il suo feed ai server di GitHub (HTTP 403): lo leggo con una ricerca su Google News
+  - {nome: FXStreet, url: "https://news.google.com/rss/search?q=site:fxstreet.com+when:1d&hl=en-US&gl=US&ceid=US:en", filtra: true}
   # Geopolitica
   - {nome: BBC World, url: "https://feeds.bbci.co.uk/news/world/rss.xml", filtra: true}
   # Italia

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import difflib
 import json
+import re
 import time
 
 import requests
@@ -22,6 +23,9 @@ from filtro import Gruppo, autorevolezza
 
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent"
 richieste_fatte = 0  # richieste inviate a Gemini in questa esecuzione, per il contatore giornaliero
+# Gemini "sovraccarico" (HTTP 5xx) spesso si libera in meno di un minuto: secondi di attesa prima
+# di ogni nuovo tentativo (due tentativi in più, invece di passare subito al motore di riserva)
+ATTESE_SOVRACCARICO = (15, 45)
 
 
 class QuotaEsaurita(Exception):
@@ -149,16 +153,21 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
     temi = [t["nome"] for t in (config.get("titoli") or []) + (config.get("temi") or [])]
     reparti = [r["nome"] for r in config.get("reparti") or []]
     valori = list(config.get("quotazioni") or {})
-    gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]  # alcuni servizi accettano richieste piccole
+    # alcuni servizi (es. GitHub Models) accettano solo richieste piccole: meno notizie e, per quelle
+    # già inviate, solo il titolo senza il riassunto
+    piccola = bool(motore.get("max_notizie"))
+    gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]
 
     elenco = "\n".join(_riga(i, g) for i, g in enumerate(gruppi, 1))
-    gia = "\n".join(f"[A{k}] {r['titolo']}" + (f" — {r['riassunto'][:150]}" if r.get("riassunto") else "")
+    gia = "\n".join(f"[A{k}] {r['titolo']}"
+                    + (f" — {r['riassunto'][:150]}" if r.get("riassunto") and not piccola else "")
                     for k, r in enumerate(recenti, 1)) or "(nessuna)"
     testo = f"NOTIZIE GIÀ INVIATE (ultime 48 ore):\n{gia}\n\nNUOVE NOTIZIE:\n{elenco}"
     istruzioni += (f"\nValori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
                    f"Valori ammessi per \"reparti\": {', '.join(reparti)}.\n"
                    f"VALORI DI MERCATO (valori ammessi per \"valori\"): {', '.join(valori)}.")
-    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti, valori), ESEMPIO_RISPOSTA)
+    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti, valori), ESEMPIO_RISPOSTA,
+                      lista="gruppi")
 
     scelte, usati = [], set()
     for v in sorted(risposta.get("gruppi", []), key=lambda v: -v.get("voto", 0)):
@@ -213,17 +222,21 @@ def titolo_originale(proposto: str, gruppo: Gruppo) -> str:
     return migliore if somiglianza(migliore) >= 0.6 else gruppo.principale.titolo
 
 
-def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict) -> dict:
+def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict,
+           lista: str | None = None) -> dict:
     """Una richiesta a un motore che risponde in JSON.
-    schema: struttura per Gemini; esempio: la stessa struttura mostrata agli altri servizi."""
+    schema: struttura per Gemini; esempio: la stessa struttura mostrata agli altri servizi;
+    lista: se la risposta è troncata, si tengono gli elementi completi di questa lista (es. "gruppi")."""
     if motore["tipo"] == "gemini":
-        return _chiedi(chiave, motore["modello"], istruzioni, testo, schema)
+        return _chiedi(chiave, motore["modello"], istruzioni, testo, schema, lista)
     istruzioni += (f"\nRispondi solo con un oggetto JSON con questa struttura: "
                    f"{json.dumps(esempio, ensure_ascii=False)}")
-    return _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo, motore.get("alternative") or [])
+    return _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo,
+                          motore.get("alternative") or [], lista)
 
 
-def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict) -> dict:
+def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict,
+            lista: str | None = None) -> dict:
     global richieste_fatte
     corpo = {
         "system_instruction": {"parts": [{"text": istruzioni}]},
@@ -232,7 +245,9 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
                              "responseSchema": schema},
     }
     errore = "nessuna risposta"
-    for tentativo in range(2):  # pochi tentativi: anche le richieste fallite consumano quota
+    # pochi tentativi per il limite al minuto (anche le richieste rifiutate consumano quota),
+    # qualcuno in più se il server è sovraccarico
+    for tentativo in range(len(ATTESE_SOVRACCARICO) + 1):
         richieste_fatte += 1
         try:
             r = requests.post(URL.format(modello=modello), json=corpo, timeout=120,
@@ -241,7 +256,7 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
             errore = f"connessione: {type(e).__name__}"
         else:
             if r.status_code == 200:
-                return _json(r.json())
+                return _json(r.json(), lista)
             if r.status_code == 429:
                 if "PerDay" in r.text or tentativo > 0:
                     raise QuotaEsaurita(f"{modello}: quota giornaliera finita" if "PerDay" in r.text
@@ -251,13 +266,13 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
             if r.status_code < 500:
                 raise ErroreIA(f"HTTP {r.status_code}: {_messaggio(r)}")
             errore = f"HTTP {r.status_code} (server sovraccarico)"
-        if tentativo == 0:
-            time.sleep(10)
+        if tentativo < len(ATTESE_SOVRACCARICO):
+            time.sleep(ATTESE_SOVRACCARICO[tentativo])
     raise ErroreIA(errore)
 
 
 def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: str,
-                   alternative: list[str]) -> dict:
+                   alternative: list[str], lista: str | None = None) -> dict:
     """Richiesta nel formato di OpenAI, usato da Mistral, GitHub Models, OpenRouter, Groq...
     alternative: modelli da provare se il primo è occupato (solo OpenRouter)."""
     global richieste_fatte
@@ -278,10 +293,15 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
             errore = f"connessione: {type(e).__name__}"
         else:
             if r.status_code == 200:
+                scelta: dict = {}
                 try:
-                    return json.loads(r.json()["choices"][0]["message"]["content"])
-                except (KeyError, IndexError, TypeError, ValueError):
-                    raise ErroreIA(f"{modello}: risposta non valida") from None
+                    scelta = r.json()["choices"][0]
+                    return leggi_json(scelta["message"]["content"], lista)
+                except (KeyError, IndexError, TypeError, ValueError, AttributeError):
+                    # il motivo (es. "length" = risposta troncata, "content_filter") aiuta a capire il guasto
+                    motivo = scelta.get("finish_reason") if isinstance(scelta, dict) else None
+                    raise ErroreIA(f"{modello}: risposta non valida"
+                                   + (f" (finish_reason: {motivo})" if motivo else "")) from None
             if r.status_code == 429:
                 if tentativo > 0:
                     raise QuotaEsaurita(f"{modello}: limite di richieste raggiunto ({_messaggio(r)})")
@@ -295,14 +315,51 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
     raise ErroreIA(f"{modello}: {errore}")
 
 
-def _json(dati: dict) -> dict:
+def _json(dati: dict, lista: str | None = None) -> dict:
     try:
         parti = dati["candidates"][0]["content"]["parts"]
-        return json.loads("".join(p.get("text", "") for p in parti if not p.get("thought")))
-    except (KeyError, IndexError, json.JSONDecodeError) as e:
+        return leggi_json("".join(p.get("text", "") for p in parti if not p.get("thought")), lista)
+    except (KeyError, IndexError, TypeError, ValueError) as e:
         candidati = dati.get("candidates") or [{}]
         motivo = dati.get("promptFeedback", {}).get("blockReason") or candidati[0].get("finishReason")
         raise ErroreIA(f"risposta non valida ({motivo or type(e).__name__})") from None
+
+
+def leggi_json(testo: str | None, lista: str | None = None) -> dict:
+    """L'oggetto JSON della risposta di un modello, anche se è racchiuso tra ```json e ``` o ha
+    del testo intorno. Se è troncato (risposta oltre la lunghezza massima del servizio) e c'è
+    "lista", si tengono gli elementi completi di quella lista: meglio qualche notizia che nessuna.
+    ValueError se non se ne ricava nulla."""
+    testo = (testo or "").strip()
+    try:
+        return json.loads(testo)
+    except ValueError:
+        pass
+    inizio = testo.find("{")
+    if inizio < 0:
+        raise ValueError("nessun oggetto JSON nella risposta")
+    lettore = json.JSONDecoder()
+    try:
+        return lettore.raw_decode(testo, inizio)[0]
+    except ValueError:
+        if not lista:
+            raise
+    apertura = re.search(rf'"{re.escape(lista)}"\s*:\s*\[', testo[inizio:])
+    if not apertura:
+        raise ValueError(f"risposta troncata senza «{lista}»")
+    elementi, posizione = [], inizio + apertura.end()
+    while True:
+        while posizione < len(testo) and testo[posizione] in " \t\r\n,":
+            posizione += 1
+        try:
+            elemento, posizione = lettore.raw_decode(testo, posizione)
+        except ValueError:
+            break  # qui la risposta è stata troncata
+        elementi.append(elemento)
+    if not elementi:
+        raise ValueError("risposta troncata prima del primo elemento")
+    print(f"  risposta troncata: tengo i {len(elementi)} elementi completi di «{lista}»")
+    return {lista: elementi}
 
 
 def _messaggio(r: requests.Response) -> str:

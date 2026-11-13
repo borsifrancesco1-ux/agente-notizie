@@ -44,6 +44,7 @@ from memoria import ERRORI_PRIMA_DI_AVVISARE, Memoria, chiave, giorno_quota
 
 CARTELLA = Path(__file__).resolve().parent
 MAX_CANDIDATI = 150        # fatti al massimo passati all'IA in un giro
+GIRI_SENZA_IA_PRIMA_DI_AVVISARE = 2   # un giro senza IA ogni tanto si recupera da solo un'ora dopo
 ICONA_PREDEFINITA = "📰"
 APERTURA_ENTRO = "12:00"   # se il buongiorno non è partito entro quest'ora (es. GitHub fermo), si salta
 
@@ -162,6 +163,8 @@ class Giro:
         self.azioni_extra: list[str] = []  # azioni chieste dai comandi (es. /notizie)
         self.iscrizioni: dict[str, dict] = {}  # /iscrivimi: chi riceve le notizie in privato (dal Worker)
         self._scaricate: list[Notizia] | None = None
+        self.ia_assente = False            # nessun motore ha risposto alla scelta delle notizie in questo giro
+        self.errori_ia: list[str] = []     # perché, motore per motore, nell'ultima richiesta fallita
         self.aggiorna_da_config()
 
     def aggiorna_da_config(self) -> None:
@@ -181,6 +184,10 @@ class Giro:
         """Un giro di notizie: una notifica per ogni fatto scelto, con i pulsanti di voto.
         Le novità su un fatto già inviato arrivano come aggiornamento, in risposta al messaggio originale."""
         scelte = self.scegli(self.opzioni.get("max_per_giro", 5))
+        if scelte is None:
+            # senza IA la fascia resta da fare: il giro dell'ora dopo riprova con le stesse notizie
+            print("Giro di notizie rimandato all'ora successiva")
+            return
         print(f"Notifiche da inviare: {len(scelte)}")
         suonato = False  # il telefono suona al massimo una volta per giro, solo per le notizie sopra la soglia
         for s in scelte:
@@ -217,14 +224,17 @@ class Giro:
         """Buongiorno in un unico messaggio: calendario del giorno e riepilogo della notte."""
         calendario = dati.calendario(self.config, self.adesso.date(), self.adesso.date(), self.fuso)
         scelte = self.scegli(self.orari.get("max_riepilogo_notte", 6))
+        # senza IA il buongiorno parte lo stesso (calendario e mercati); le notizie della notte
+        # restano da valutare e arrivano con il primo giro di notizie
         voci = [{"titolo": s["titolo"], "riassunto": s["riassunto"], "reparti": s["reparti"],
                  "icona": self.icone.get(s["tema"], ICONA_PREDEFINITA), "fonti": s["gruppo"].fonti()}
-                for s in scelte]
+                for s in scelte or []]
         testo = notifiche.riepilogo_notte(voci, self.adesso, self.orari.get("prima_notizia", "08:00"), calendario,
                                           dati.cambio_del_giorno(self.config), self.orari.get("ogni_ore", 1),
-                                          dati.quadro_mercati(self.config, "apertura", self.fuso))
+                                          dati.quadro_mercati(self.config, "apertura", self.fuso),
+                                          notte_in_attesa=scelte is None)
         if self.invia(testo):
-            for s in scelte:
+            for s in scelte or []:
                 self.registra(s, chiave(s["gruppo"].principale.link))
         self.memoria.giornata["apertura"] = self.oggi
 
@@ -349,19 +359,31 @@ class Giro:
 
     # ---------- passaggi comuni ----------
 
-    def scegli(self, massimo: int) -> list[dict]:
-        """Raccoglie le notizie nuove e sceglie quelle da inviare, completando tema e reparti."""
+    def scegli(self, massimo: int) -> list[dict] | None:
+        """Raccoglie le notizie nuove e sceglie quelle da inviare, completando tema e reparti.
+        None se nessun motore di IA ha risposto: le notizie non si segnano come valutate e il giro
+        successivo le riprova. Prima partivano con il filtro a parole chiave, cioè con il solo titolo
+        e senza riassunto, e intanto le altre notizie del giro andavano perse."""
+        if self.ia_assente:  # già fallita in questo giro (es. buongiorno e notizie insieme): inutile riprovare
+            return None
         candidati = self.candidati()
         if not candidati:
             return []
-        scelte = self.con_motori(
-            lambda m, k: ia.seleziona(candidati, self.memoria.recenti(48), self.profilo, self.config,
-                                      m, k, massimo, feedback.esempi_per_ia(self.memoria)), self.motori())
-        if scelte is None:
-            print("Nessun motore disponibile: uso il filtro a parole chiave")
+        if self.motori():
+            scelte = self.con_motori(
+                lambda m, k: ia.seleziona(candidati, self.memoria.recenti(48), self.profilo, self.config,
+                                          m, k, massimo, feedback.esempi_per_ia(self.memoria)), self.motori())
+            if scelte is None:
+                self.ia_assente = True
+                self.memoria.giri_senza_ia += 1
+                print(f"Nessun motore di IA ha risposto: {len(candidati)} fatti restano per il prossimo giro")
+                self.avvisa_ia_assente()
+                return None
+            self.memoria.giri_senza_ia = 0
+        else:  # nessun motore in config.yaml: si sceglie solo con le parole chiave
             scelte = [{"gruppo": g, "voto": None, "tema": min(g.titoli or g.temi or {""}), "reparti": [],
-                       "titolo": g.principale.titolo, "riassunto": "", "perche_conta": "", "impatto": "",
-                       "aggiorna": None, "nota": "filtro a parole chiave"}
+                       "titolo": g.principale.titolo, "riassunto": g.principale.descrizione,
+                       "perche_conta": "", "impatto": "", "aggiorna": None, "nota": "filtro a parole chiave"}
                       for g in scelta_senza_ia(candidati, massimo)]
         for s in scelte:
             g = s["gruppo"]
@@ -371,6 +393,18 @@ class Giro:
                 s["reparti"] = self.reparti_da_temi([s["tema"], *sorted(g.titoli), *sorted(g.temi)])
         self.memoria.segna_valutate(n.link for g in candidati for n in g.notizie)
         return scelte
+
+    def avvisa_ia_assente(self) -> None:
+        """Avviso in privato, al massimo una volta al giorno, quando l'IA manca da più giri di fila."""
+        giri = self.memoria.giri_senza_ia
+        if giri < GIRI_SENZA_IA_PRIMA_DI_AVVISARE or self.memoria.avviso_ia == self.oggi:
+            return
+        self.memoria.avviso_ia = self.oggi
+        motivi = "\n".join(f"• {notifiche.esc(e)}" for e in self.errori_ia) or "• nessun motore configurato"
+        self.invia(f"⚠️ Nessun motore di IA risponde da {giri} giri:\n{motivi}\n"
+                   "Le notizie non vanno perse: le riprovo a ogni giro, ogni ora, finché un motore risponde. "
+                   "Se continua, controlla chiavi e modelli in config.yaml (sezione ia).",
+                   silenzioso=True, privato=True)
 
     def candidati(self) -> list[Gruppo]:
         """Le notizie nuove e pertinenti, raggruppate per fatto e messe in ordine di priorità."""
@@ -412,12 +446,13 @@ class Giro:
     def con_motori(self, lavoro, motori: list[dict], avvisa_quota: bool = True):
         """Prova i motori in ordine finché uno risponde: lavoro(motore, chiave) -> risultato.
         Restituisce None se falliscono tutti. Conta le richieste e avvisa se finisce la quota."""
-        risultato, quota_finita = None, False
+        risultato, quota_finita, errori = None, False, []
         for posizione, motore in enumerate(motori):
             nome = f"{motore['tipo']} · {motore['modello']}"
             chiave_ia = os.environ.get(motore["chiave"])
             if not chiave_ia:
                 print(f"{nome}: manca {motore['chiave']}, passo al successivo")
+                errori.append(f"{motore['modello']}: manca la chiave {motore['chiave']}")
                 continue
             try:
                 risultato = lavoro(motore, chiave_ia)
@@ -425,9 +460,13 @@ class Giro:
                 break
             except ia.QuotaEsaurita as e:
                 print(f"Quota esaurita ({e}), passo al successivo")
+                errori.append(f"quota esaurita ({e})")
                 quota_finita = quota_finita or posizione == 0
             except ia.ErroreIA as e:
                 print(f"{nome} non disponibile ({e}), passo al successivo")
+                errori.append(f"{motore['modello']}: {e}")
+        if risultato is None:
+            self.errori_ia = errori
 
         if ia.richieste_fatte:
             totale = self.memoria.conta_richieste(ia.richieste_fatte)
@@ -436,8 +475,8 @@ class Giro:
             if avvisa_quota and quota_finita and self.memoria.avviso_quota != giorno_quota():
                 self.memoria.avviso_quota = giorno_quota()
                 self.invia(f"⚠️ Quota gratuita del motore principale finita per oggi ({totale} richieste). "
-                           "Fino al rinnovo, verso le 9 del mattino, uso i motori di riserva "
-                           "o, se mancano anche quelli, il filtro a parole chiave.", silenzioso=True, privato=True)
+                           "Fino al rinnovo, verso le 9 del mattino, uso i motori di riserva; se non "
+                           "risponde nessuno, le notizie aspettano il giro successivo.", silenzioso=True, privato=True)
         return risultato
 
     def reparti_da_temi(self, nomi: list[str]) -> list[str]:

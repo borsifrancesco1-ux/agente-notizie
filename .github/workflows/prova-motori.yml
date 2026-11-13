@@ -1,0 +1,32 @@
+# Prova i motori di IA uno per uno con una vera scelta delle notizie: non invia e non salva nulla.
+# Si avvia a mano ("Run workflow") e da sola quando qualcuno cambia ia.py, config.yaml o la prova stessa
+# (le modifiche fatte dal bot Telegram non la fanno partire). Il risultato è in fondo al registro;
+# un motore che non risponde compare anche come avviso giallo nel riepilogo del giro.
+name: Prova motori IA
+
+on:
+  workflow_dispatch:
+  push:
+    paths: [ia.py, config.yaml, strumenti/prova_motori.py, .github/workflows/prova-motori.yml]
+
+permissions:
+  contents: read
+  models: read      # per GitHub Models
+
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Prova dei motori
+        run: python strumenti/prova_motori.py --modelli
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
