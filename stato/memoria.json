@@ -13557,7 +13557,46 @@
   "cbdc4e73c6b69624": "2026-11-14T17:00:57+00:00",
   "ddaed6630641a053": "2026-11-14T17:00:57+00:00",
   "0fb8dd0ca1e5e935": "2026-11-14T17:00:57+00:00",
-  "b2f4f32c66ca07a3": "2026-11-14T17:00:57+00:00"
+  "b2f4f32c66ca07a3": "2026-11-14T17:00:57+00:00",
+  "ef23c026f0b7fad9": "2026-11-14T19:01:08+00:00",
+  "10ab3d931d5ff5e4": "2026-11-14T19:01:08+00:00",
+  "5814d941640b3842": "2026-11-14T19:01:08+00:00",
+  "fd8d25dacdc513a0": "2026-11-14T19:01:08+00:00",
+  "a9aee904ca04330b": "2026-11-14T19:01:08+00:00",
+  "1a13bb5a6cd38b99": "2026-11-14T19:01:08+00:00",
+  "49d8a105360aa275": "2026-11-14T19:01:08+00:00",
+  "2c8568b5b68fbb10": "2026-11-14T19:01:08+00:00",
+  "ccbac8f595f30d7a": "2026-11-14T19:01:08+00:00",
+  "c693dc434434ff94": "2026-11-14T19:01:08+00:00",
+  "33d469f475bdc238": "2026-11-14T19:01:08+00:00",
+  "01bde54536bc451d": "2026-11-14T19:01:08+00:00",
+  "856f2bb1a4d49630": "2026-11-14T19:01:08+00:00",
+  "0282b1c34f6db208": "2026-11-14T19:01:08+00:00",
+  "1212686295068283": "2026-11-14T19:01:08+00:00",
+  "2391bacde3ca4dc6": "2026-11-14T19:01:08+00:00",
+  "b76dbbe4f1e6bbac": "2026-11-14T19:01:08+00:00",
+  "2360fd635e12f1ca": "2026-11-14T19:01:08+00:00",
+  "9f39887bc94c8ee1": "2026-11-14T19:01:08+00:00",
+  "13b7dafc32455e02": "2026-11-14T19:01:08+00:00",
+  "3a104c6fb40f0b09": "2026-11-14T19:01:08+00:00",
+  "9d653831610f8597": "2026-11-14T19:01:08+00:00",
+  "d964c4cd4e72aca6": "2026-11-14T19:01:08+00:00",
+  "9a2034b630808d91": "2026-11-14T19:01:08+00:00",
+  "a6b4ce581ba45d73": "2026-11-14T19:01:08+00:00",
+  "7a30129434702b46": "2026-11-14T19:01:08+00:00",
+  "a34f168e066d36e1": "2026-11-14T19:01:08+00:00",
+  "fba81ed597911a3f": "2026-11-14T19:01:08+00:00",
+  "36d6404694e0877e": "2026-11-14T19:01:08+00:00",
+  "ec090f4b6f62b400": "2026-11-14T19:01:08+00:00",
+  "44db20f9f9af4744": "2026-11-14T19:01:08+00:00",
+  "4ed9a72568054685": "2026-11-14T19:01:08+00:00",
+  "50a9ebf1ba1499d6": "2026-11-14T19:01:08+00:00",
+  "dd9ee2129582c3ad": "2026-11-14T19:01:08+00:00",
+  "d59093c34e6c03c4": "2026-11-14T19:01:08+00:00",
+  "41ad35e209d565d1": "2026-11-14T19:01:08+00:00",
+  "dd06fdc1e97db04d": "2026-11-14T19:01:08+00:00",
+  "84e0c3d4a4e1650d": "2026-11-14T19:01:08+00:00",
+  "f321e011965e1ee7": "2026-11-14T19:01:08+00:00"
  },
  "inviate": [
   {
@@ -22162,10 +22201,58 @@
    "quando": "2026-11-14T17:00:59+00:00",
    "messaggio": 1276,
    "riassunto": "La presidente della Fed di Boston Susan Collins ha dichiarato che un percorso costante e graduale di rialzi dei tassi di interesse risulterà appropriato per abbassare l'inflazione. Secondo la banchiera centrale, i rischi sul mercato del lavoro e sull'inflazione appaiono bilanciati, consentendo di ge"
+  },
+  {
+   "id": "10ab3d931d5ff5e4",
+   "titolo": "Nvidia board urged to consider 'potential return of Jensen Huang' by two major investors",
+   "tema": "Concentrazione dei grandi titoli tecnologici",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "adjusting",
+    "crisis",
+    "here",
+    "leadership",
+    "nvidia",
+    "our",
+    "portfolio",
+    "rattles",
+    "trade"
+   ],
+   "link": "https://www.cnbc.com/investingclub/2026/11/14/nvidias-leadership-crisis-rattles-wall-street-how-were-adjusting.html",
+   "quando": "2026-11-14T19:01:16+00:00",
+   "messaggio": 1277,
+   "riassunto": "La crisi di leadership in Nvidia si approfondisce dopo le dimissioni del CEO Jensen Huang, spingendo due grandi investitori a sollecitare il consiglio d'amministrazione a valutare il suo potenziale ritorno. Nonostante la turbolenza sui mercati e le forti pressioni sul titolo, l'S&P 500 ha chiuso la "
+  },
+  {
+   "id": "4ed9a72568054685",
+   "titolo": "Fed's Collins says gradual rate hikes best to manage economic risks",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "best",
+    "collins",
+    "economic",
+    "fed",
+    "gradual",
+    "hikes",
+    "manage",
+    "rate",
+    "risks"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPbHZfX3JqempNenlnSUpVcTd4dXY4djdJU1c2VkZ2Um5fYXkyVTMtYUxBZlBrcXVqQXJkQ0RjejZRQTdBLWxPYzcyRDBfTGxmdUVTekN0TFFWdHNfZFh6ckt0c1RCTVBwZzZjZ3NacWJWSDhvMVRGVDNpR0o2YTBwdmJILTE4eWs2SlQ5YnVHN0ctMFM3bWJsQkhtblRUMjI0amRHcFZLaXNaWWJz?oc=5",
+   "quando": "2026-11-14T19:01:18+00:00",
+   "messaggio": 1278,
+   "riassunto": "La presidente della Fed di Boston, Susan Collins, ha dichiarato che un percorso di rialzi graduali dei tassi di interesse rappresenta la strategia migliore per gestire i rischi economici attuali. Collins ha evidenziato che i rischi relativi all'inflazione e all'occupazione sono ormai bilaterali. Le "
   }
  ],
  "feed_guasti": {
-  "FXStreet": 283
+  "FXStreet": 284
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22183,11 +22270,11 @@
   "2026-11-11": 19,
   "2026-11-12": 30,
   "2026-11-13": 17,
-  "2026-11-14": 6
+  "2026-11-14": 7
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-14 18",
+  "ora_notizie": "2026-11-14 20",
   "chiusura": "2026-11-13",
   "apertura": "2026-11-14",
   "settimanale": "2026-W45"
