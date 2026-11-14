@@ -13551,7 +13551,44 @@
   "41ad35e209d565d1": "2026-11-14T19:01:08+00:00",
   "dd06fdc1e97db04d": "2026-11-14T19:01:08+00:00",
   "84e0c3d4a4e1650d": "2026-11-14T19:01:08+00:00",
-  "f321e011965e1ee7": "2026-11-14T19:01:08+00:00"
+  "f321e011965e1ee7": "2026-11-14T19:01:08+00:00",
+  "dcaddf7262020c83": "2026-11-14T21:00:58+00:00",
+  "718d49bab29408ad": "2026-11-14T21:00:58+00:00",
+  "72d7c07168e508a2": "2026-11-14T21:00:58+00:00",
+  "71ee0f1b4a9b9caa": "2026-11-14T21:00:58+00:00",
+  "191dbeb7a85c27ca": "2026-11-14T21:00:58+00:00",
+  "cd0ed57542b02e60": "2026-11-14T21:00:58+00:00",
+  "b1eadc8813f78f95": "2026-11-14T21:00:58+00:00",
+  "2225cbac2609bb2e": "2026-11-14T21:00:58+00:00",
+  "8a46d1498e4ca7ee": "2026-11-14T21:00:58+00:00",
+  "d8ec8acf7f713c9e": "2026-11-14T21:00:58+00:00",
+  "ee3e6b4ccc023acd": "2026-11-14T21:00:58+00:00",
+  "77b8252bd69a9de6": "2026-11-14T21:00:58+00:00",
+  "219a574a6e399d5a": "2026-11-14T21:00:58+00:00",
+  "21303ac8b81aff18": "2026-11-14T21:00:58+00:00",
+  "6462fc739a812a96": "2026-11-14T21:00:58+00:00",
+  "be45296fb3d11081": "2026-11-14T21:00:58+00:00",
+  "bbf797b161f7111f": "2026-11-14T21:00:58+00:00",
+  "8fa520db4288e5a9": "2026-11-14T21:00:58+00:00",
+  "fb9303c76708ab02": "2026-11-14T21:00:58+00:00",
+  "99892725955d150f": "2026-11-14T21:00:58+00:00",
+  "6c758272f6783035": "2026-11-14T21:00:58+00:00",
+  "c46323b118363760": "2026-11-14T21:00:58+00:00",
+  "5f9cf2ea0ff0376f": "2026-11-14T21:00:58+00:00",
+  "b3b937b825996809": "2026-11-14T21:00:58+00:00",
+  "4653d0e8f562e5be": "2026-11-14T21:00:58+00:00",
+  "11cbae4ec8f56294": "2026-11-14T21:00:58+00:00",
+  "d00414fb9dd1191f": "2026-11-14T21:00:58+00:00",
+  "8e6989cb3c682439": "2026-11-14T21:00:58+00:00",
+  "a1bd731ea28cebb9": "2026-11-14T21:00:58+00:00",
+  "6cc8ac8afa1e3c0c": "2026-11-14T21:00:58+00:00",
+  "681c24614e9e4180": "2026-11-14T21:00:58+00:00",
+  "d35ff489c35a8e69": "2026-11-14T21:00:58+00:00",
+  "c8f8ea8f8742cb0b": "2026-11-14T21:00:58+00:00",
+  "f279763ed8925183": "2026-11-14T21:00:58+00:00",
+  "dedb59be6488098c": "2026-11-14T21:00:58+00:00",
+  "55c315644414d2e6": "2026-11-14T21:00:58+00:00",
+  "4ad5aa5172bfa13f": "2026-11-14T21:00:58+00:00"
  },
  "inviate": [
   {
@@ -22171,10 +22208,53 @@
    "quando": "2026-11-14T19:01:18+00:00",
    "messaggio": 1278,
    "riassunto": "La presidente della Fed di Boston, Susan Collins, ha dichiarato che un percorso di rialzi graduali dei tassi di interesse rappresenta la strategia migliore per gestire i rischi economici attuali. Collins ha evidenziato che i rischi relativi all'inflazione e all'occupazione sono ormai bilaterali. Le "
+  },
+  {
+   "id": "99892725955d150f",
+   "titolo": "Juicy 6% Yields Gain Appeal After Nvidia Drama: Credit Weekly",
+   "tema": "Obbligazioni societarie e default",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "appeal",
+    "credit",
+    "drama",
+    "gain",
+    "juicy",
+    "nvidia",
+    "weekly",
+    "yields"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-14/juicy-6-yields-gain-appeal-after-nvidia-drama-credit-weekly",
+   "quando": "2026-11-14T21:00:59+00:00",
+   "messaggio": 1279,
+   "riassunto": "Le obbligazioni societarie statunitensi registrano forti riussi recenti offrendo rendimenti succosi del 6%. Questa dinamica attira i gestori di portafoglio in cerca di un rifugio sicuro contro la forte turbolenza registrata sui mercati azionari. Il credito corporate si conferma un'alternativa solida"
+  },
+  {
+   "id": "f279763ed8925183",
+   "titolo": "mBank Forecasts Euro at $1.16–$1.18, Polish Rates at 4.25%",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "euro",
+    "forecasts",
+    "mbank",
+    "polish",
+    "rates"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1LR29IUndaTG0wZ0NQTWh1V2EwTFg4TUZwN0JiaDd3U24yX3VZcUhCRkNTcGxWazhIdFhEMzJieENVWDNFR29ZRi0tVW1LTlUzQURtcVZzY2I5U2g5aWRJTVdva2lXczJvVzR0V282NXNQNWVH?oc=5",
+   "quando": "2026-11-14T21:01:00+00:00",
+   "messaggio": 1280,
+   "riassunto": "mBank ha pubblicato le nuove stime macroeconomiche posizionando il cambio EUR/USD nella forchetta tra 1,16 e 1,18. Contestualmente, la banca fissa i tassi di riferimento polacchi al 4,25% in base alle attese di inflazione. Le previsioni offrono un quadro utile per le strategie valutarie e l'area eme"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 284
+  "FXStreet": 285
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22192,12 +22272,12 @@
   "2026-11-11": 19,
   "2026-11-12": 30,
   "2026-11-13": 17,
-  "2026-11-14": 7
+  "2026-11-14": 8
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-14 20",
-  "chiusura": "2026-11-13",
+  "ora_notizie": "2026-11-14 22",
+  "chiusura": "2026-11-14",
   "apertura": "2026-11-14",
   "settimanale": "2026-W45"
  },
