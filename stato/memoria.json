@@ -13573,7 +13573,57 @@
   "7803a1f5c5bb24cf": "2026-11-14T07:01:20+00:00",
   "a154f18a4af5fb11": "2026-11-14T07:01:20+00:00",
   "e0e32d664695f02a": "2026-11-14T07:01:20+00:00",
-  "8c91cc3c135dc7c2": "2026-11-14T07:01:20+00:00"
+  "8c91cc3c135dc7c2": "2026-11-14T07:01:20+00:00",
+  "479dabc088695ffb": "2026-11-14T09:00:58+00:00",
+  "13815af9e3185f46": "2026-11-14T09:00:58+00:00",
+  "cafa43dba656906f": "2026-11-14T09:00:58+00:00",
+  "6f4f9e4d0bf7f672": "2026-11-14T09:00:58+00:00",
+  "4c6d25dbd27957ef": "2026-11-14T09:00:58+00:00",
+  "05c38fdee745de89": "2026-11-14T09:00:58+00:00",
+  "0299bc5ec1858d95": "2026-11-14T09:00:58+00:00",
+  "fa6341e18fb712a0": "2026-11-14T09:00:58+00:00",
+  "63333f8515c95382": "2026-11-14T09:00:58+00:00",
+  "72cf80cc4bef3f30": "2026-11-14T09:00:58+00:00",
+  "8fd9902280d97b77": "2026-11-14T09:00:58+00:00",
+  "49b3d98db8e595f4": "2026-11-14T09:00:58+00:00",
+  "f105d066c1f1123b": "2026-11-14T09:00:58+00:00",
+  "d89a5cb038017e5c": "2026-11-14T09:00:58+00:00",
+  "a5c1d976110ed8ea": "2026-11-14T09:00:58+00:00",
+  "d87c00d8bca07aae": "2026-11-14T09:00:58+00:00",
+  "2f30b91751d4d94d": "2026-11-14T09:00:58+00:00",
+  "61f33a6f35ae6424": "2026-11-14T09:00:58+00:00",
+  "12cf95ca738e0928": "2026-11-14T09:00:58+00:00",
+  "7f4c55f907b08521": "2026-11-14T09:00:58+00:00",
+  "35980f280aa8d6be": "2026-11-14T09:00:58+00:00",
+  "079c81e285327abd": "2026-11-14T09:00:58+00:00",
+  "e63ccc24d65ff6ea": "2026-11-14T09:00:58+00:00",
+  "efa6c6dfd54f7a63": "2026-11-14T09:00:58+00:00",
+  "712dfc40b27d3b80": "2026-11-14T09:00:58+00:00",
+  "b19cbcaa696f92a6": "2026-11-14T09:00:58+00:00",
+  "2cd7ae85d4a49c0a": "2026-11-14T09:00:58+00:00",
+  "ef3d0be53534bf4a": "2026-11-14T09:00:58+00:00",
+  "cab14e08b34bd042": "2026-11-14T09:00:58+00:00",
+  "03fb1e7bfff14497": "2026-11-14T09:00:58+00:00",
+  "19acf69c938f8cf1": "2026-11-14T09:00:58+00:00",
+  "01b091f87e7459bc": "2026-11-14T09:00:58+00:00",
+  "1467c24602825af2": "2026-11-14T09:00:58+00:00",
+  "b777df82a2fc519c": "2026-11-14T09:00:58+00:00",
+  "2e909fc71b782af3": "2026-11-14T09:00:58+00:00",
+  "10d72f42d99b4864": "2026-11-14T09:00:58+00:00",
+  "22fcb45df1219414": "2026-11-14T09:00:58+00:00",
+  "d6d7f4c154f23357": "2026-11-14T09:00:58+00:00",
+  "3eb6fffaab970205": "2026-11-14T09:00:58+00:00",
+  "2442c275304d6179": "2026-11-14T09:00:58+00:00",
+  "95ea7004a25c3202": "2026-11-14T09:00:58+00:00",
+  "94dc8b32dbe711e0": "2026-11-14T09:00:58+00:00",
+  "c63faf6e10cec02a": "2026-11-14T09:00:58+00:00",
+  "30604162c0d2be77": "2026-11-14T09:00:58+00:00",
+  "f2731bdf323f288f": "2026-11-14T09:00:58+00:00",
+  "d7236593ed481479": "2026-11-14T09:00:58+00:00",
+  "7f96732a961323a8": "2026-11-14T09:00:58+00:00",
+  "5ece14b9569c64c0": "2026-11-14T09:00:58+00:00",
+  "013d0b21d908b7f4": "2026-11-14T09:00:58+00:00",
+  "1b6b9cf256c581a8": "2026-11-14T09:00:58+00:00"
  },
  "inviate": [
   {
@@ -22303,10 +22353,81 @@
    "quando": "2026-11-14T07:01:21+00:00",
    "messaggio": 1265,
    "riassunto": "Il vicepresidente della Federal Reserve, Philip Jefferson, ha dichiarato che l'inflazione rappresenta la metrica più critica per i banchieri centrali nel valutare eventuali ulteriori rialzi dei tassi di interesse. Le sue parole sottolineano come la traiettoria dei prezzi resti il fattore dominante p"
+  },
+  {
+   "id": "13815af9e3185f46",
+   "titolo": "China, US Discuss Tariffs in First Meeting of Trade Council",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia",
+    "Azionario"
+   ],
+   "impronta": [
+    "ahead",
+    "china",
+    "cuts",
+    "discuss",
+    "meeting",
+    "next",
+    "tariff",
+    "trump",
+    "week"
+   ],
+   "link": "https://www.investing.com/news/economy-news/china-us-discuss-tariff-cuts-ahead-of-trumpxi-meeting-next-week-5027233",
+   "quando": "2026-11-14T09:00:59+00:00",
+   "messaggio": 1266,
+   "riassunto": "Cina e Stati Uniti hanno tenuto il primo incontro del nuovo consiglio economico e commerciale tramite videochiamata. Le discussioni si concentrano su possibili tagli ai dazi in vista del prossimo vertice tra Trump e Xi. Il dialogo mira a ridurre le tensioni commerciali bilaterali."
+  },
+  {
+   "id": "2f30b91751d4d94d",
+   "titolo": "Bank of England likely to raise rates further in 2027, Huw Pill says - FT",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "2027",
+    "bank",
+    "england",
+    "further",
+    "huw",
+    "likely",
+    "pill",
+    "raise",
+    "rates"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/bank-of-england-likely-to-raise-rates-further-in-2027-huw-pill-says--ft-5027218",
+   "quando": "2026-11-14T09:00:59+00:00",
+   "messaggio": 1267,
+   "riassunto": "Secondo quanto dichiarato dal capo economista della Banca d'Inghilterra Huw Pill, l'istituto centrale potrebbe trovarsi nella necessità di alzare ulteriormente i tassi di interesse nel corso del 2027. L'annuncio evidenzia la persistenza delle pressioni inflazionistiche nel Regno Unito. I mercati mon"
+  },
+  {
+   "id": "f105d066c1f1123b",
+   "titolo": "The Oil Market Is Brimming With Crude Despite Tanker Attacks",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Macroeconomia",
+    "Geopolitica"
+   ],
+   "impronta": [
+    "attacks",
+    "brimming",
+    "crude",
+    "despite",
+    "market",
+    "oil",
+    "tanker"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-14/the-oil-market-is-brimming-with-crude-despite-tanker-attacks",
+   "quando": "2026-11-14T09:01:00+00:00",
+   "messaggio": 1268,
+   "riassunto": "I prezzi del petrolio scendono sotto i 90 dollari al barile mentre Trump segnala un ridotto rischio di nuovi attacchi iraniani. Nonostante le persistenti tensioni vicino allo Stretto di Hormuz e gli attacchi alle petroliere dopo otto mesi di conflitto, l'Agenzia Internazionale per l'Energia evidenzi"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 278
+  "FXStreet": 279
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22323,11 +22444,12 @@
   "2026-11-10": 17,
   "2026-11-11": 19,
   "2026-11-12": 30,
-  "2026-11-13": 17
+  "2026-11-13": 17,
+  "2026-11-14": 1
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-14 08",
+  "ora_notizie": "2026-11-14 10",
   "chiusura": "2026-11-13",
   "apertura": "2026-11-14",
   "settimanale": "2026-W45"
