@@ -13437,7 +13437,45 @@
   "0588ebaf2e513a86": "2026-11-15T17:00:56+00:00",
   "2f84555279771ea6": "2026-11-15T17:00:56+00:00",
   "395c798971cfb1e0": "2026-11-15T17:00:56+00:00",
-  "319a691fe7016ec9": "2026-11-15T17:00:56+00:00"
+  "319a691fe7016ec9": "2026-11-15T17:00:56+00:00",
+  "6f05d6266443476f": "2026-11-15T19:00:54+00:00",
+  "17de516cdcd303b2": "2026-11-15T19:00:54+00:00",
+  "d6e39b0cbcd0a213": "2026-11-15T19:00:54+00:00",
+  "d1e6e041c3e6876b": "2026-11-15T19:00:54+00:00",
+  "882bb95c1dbc3b91": "2026-11-15T19:00:54+00:00",
+  "2502fb004c76846b": "2026-11-15T19:00:54+00:00",
+  "089c21a1fe189e30": "2026-11-15T19:00:54+00:00",
+  "7cc560bfdb015f5f": "2026-11-15T19:00:54+00:00",
+  "19c11e4d1f5ebb46": "2026-11-15T19:00:54+00:00",
+  "348dcd209aebc7c6": "2026-11-15T19:00:54+00:00",
+  "0b153ae82a1041b3": "2026-11-15T19:00:54+00:00",
+  "c4fac4a28c251fc1": "2026-11-15T19:00:54+00:00",
+  "6461ba956f1c54ed": "2026-11-15T19:00:54+00:00",
+  "15a1069891b50aa3": "2026-11-15T19:00:54+00:00",
+  "a435e645f7487c90": "2026-11-15T19:00:54+00:00",
+  "c9abbb9b8e2a68fa": "2026-11-15T19:00:54+00:00",
+  "ef05bc342f7e203e": "2026-11-15T19:00:54+00:00",
+  "1255b5ef9ae58e42": "2026-11-15T19:00:54+00:00",
+  "5f02a96d421dac94": "2026-11-15T19:00:54+00:00",
+  "6a5eb6498a83ebd1": "2026-11-15T19:00:54+00:00",
+  "b24cb5cd11d48531": "2026-11-15T19:00:54+00:00",
+  "ead6782502a47857": "2026-11-15T19:00:54+00:00",
+  "741ca41b38fceb8a": "2026-11-15T19:00:54+00:00",
+  "634c91caf1b4c040": "2026-11-15T19:00:54+00:00",
+  "573cbf3097adb2dd": "2026-11-15T19:00:54+00:00",
+  "c750fddbe0fcae71": "2026-11-15T19:00:54+00:00",
+  "c2bd5c36b8cf0e69": "2026-11-15T19:00:54+00:00",
+  "126cf9e085399ed1": "2026-11-15T19:00:54+00:00",
+  "4ad11bf32bc29fea": "2026-11-15T19:00:54+00:00",
+  "afbf5b5513fac923": "2026-11-15T19:00:54+00:00",
+  "06f0bcfef517b762": "2026-11-15T19:00:54+00:00",
+  "a1eb5350bd419135": "2026-11-15T19:00:54+00:00",
+  "28df388e758295b3": "2026-11-15T19:00:54+00:00",
+  "ce401c2c35f7a9a0": "2026-11-15T19:00:54+00:00",
+  "84479bbf06956a4b": "2026-11-15T19:00:54+00:00",
+  "651dd21fb1af0e58": "2026-11-15T19:00:54+00:00",
+  "4c9a81ce00bdf4f6": "2026-11-15T19:00:54+00:00",
+  "66c801aa75528dd9": "2026-11-15T19:00:54+00:00"
  },
  "inviate": [
   {
@@ -22011,10 +22049,30 @@
    "quando": "2026-11-15T17:01:01+00:00",
    "messaggio": 1294,
    "riassunto": "Scott Bessent ha chiesto un cambiamento drastico nella leadership di Nvidia, sollecitando la nomina di un amministratore delegato esterno dopo l'uscita di Jensen Huang. La crisi di governance rende l'imminente conference call sugli utili un evento cruciale per le valutazioni del settore tecnologico."
+  },
+  {
+   "id": "6f05d6266443476f",
+   "titolo": "Schmid Says Fed Has More Work To Do to Bring Down Inflation",
+   "tema": "Fed",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "chief",
+    "fed",
+    "inflation",
+    "some",
+    "work"
+   ],
+   "link": "https://www.investing.com/news/economy-news/fed-has-some-work-to-do-on-inflation-kc-fed-chief-says-5028048",
+   "quando": "2026-11-15T19:00:55+00:00",
+   "messaggio": 1297,
+   "riassunto": "Il presidente della Federal Reserve Bank di Kansas City, Jeff Schmid, ha ribadito che l'inflazione rimane troppo elevata e che i banchieri centrali hanno ancora del lavoro da compiere. Le dichiarazioni confermano la linea di cautela e la possibile necessità di ulteriori strette monetarie. Il contest"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 292
+  "FXStreet": 293
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22032,11 +22090,11 @@
   "2026-11-12": 30,
   "2026-11-13": 17,
   "2026-11-14": 10,
-  "2026-11-15": 11
+  "2026-11-15": 12
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-15 18",
+  "ora_notizie": "2026-11-15 20",
   "chiusura": "2026-11-14",
   "apertura": "2026-11-15",
   "settimanale": "2026-W46"
