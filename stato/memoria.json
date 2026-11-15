@@ -13499,7 +13499,57 @@
   "56892c5a08541d9c": "2026-11-15T07:00:54+00:00",
   "66ca0349af9c37e6": "2026-11-15T07:00:54+00:00",
   "12406481f24d3063": "2026-11-15T07:00:54+00:00",
-  "5cb3778fc4c0d7b2": "2026-11-15T07:00:54+00:00"
+  "5cb3778fc4c0d7b2": "2026-11-15T07:00:54+00:00",
+  "70a49b44b1e98a5e": "2026-11-15T09:01:09+00:00",
+  "58d502e7f41002cb": "2026-11-15T09:01:09+00:00",
+  "47ac6c59bda58b5a": "2026-11-15T09:01:09+00:00",
+  "22a3c46690f396e6": "2026-11-15T09:01:09+00:00",
+  "4aad316ddcd8c5ba": "2026-11-15T09:01:09+00:00",
+  "004a147523fc9095": "2026-11-15T09:01:09+00:00",
+  "9a8a0a7e51482beb": "2026-11-15T09:01:09+00:00",
+  "74f7040781aa7c2d": "2026-11-15T09:01:09+00:00",
+  "3062dc1d4cd538d3": "2026-11-15T09:01:09+00:00",
+  "9818e47919a4be6a": "2026-11-15T09:01:09+00:00",
+  "96e3b3873fda3826": "2026-11-15T09:01:09+00:00",
+  "3e38c1c8b5756fc4": "2026-11-15T09:01:09+00:00",
+  "b7e72a199a675e74": "2026-11-15T09:01:09+00:00",
+  "a5eb2cef96c9a181": "2026-11-15T09:01:09+00:00",
+  "c0a52aba862f9951": "2026-11-15T09:01:09+00:00",
+  "ac90d34bff9bad55": "2026-11-15T09:01:09+00:00",
+  "8c06123f964653de": "2026-11-15T09:01:09+00:00",
+  "4ef1ee58dd5585ad": "2026-11-15T09:01:09+00:00",
+  "6f6ecb8d95cb513b": "2026-11-15T09:01:09+00:00",
+  "9a4db80a31f2197d": "2026-11-15T09:01:09+00:00",
+  "ea47a0a3a2474a98": "2026-11-15T09:01:09+00:00",
+  "f7ae47a9d85f5dc4": "2026-11-15T09:01:09+00:00",
+  "9dcd06ff56a9c5e9": "2026-11-15T09:01:09+00:00",
+  "f44147210102a9e4": "2026-11-15T09:01:09+00:00",
+  "a66438d53c885adf": "2026-11-15T09:01:09+00:00",
+  "d1eb659787e7973e": "2026-11-15T09:01:09+00:00",
+  "1b9de291ad2906c4": "2026-11-15T09:01:09+00:00",
+  "b3d3ac6e634dd293": "2026-11-15T09:01:09+00:00",
+  "1e17a359140c9c78": "2026-11-15T09:01:09+00:00",
+  "dd99a415a39fd65c": "2026-11-15T09:01:09+00:00",
+  "99879245e2373b12": "2026-11-15T09:01:09+00:00",
+  "631a33a2f1236424": "2026-11-15T09:01:09+00:00",
+  "ef5dc6f11758a064": "2026-11-15T09:01:09+00:00",
+  "d4b390d36330d2e0": "2026-11-15T09:01:09+00:00",
+  "a4b009baf194a7e1": "2026-11-15T09:01:09+00:00",
+  "abaa077164b9985a": "2026-11-15T09:01:09+00:00",
+  "f376edfa1d591c1a": "2026-11-15T09:01:09+00:00",
+  "56429ab215b1ff99": "2026-11-15T09:01:09+00:00",
+  "787b5ce5dbd032fc": "2026-11-15T09:01:09+00:00",
+  "43b70da51a3599cc": "2026-11-15T09:01:09+00:00",
+  "06c1507029d57a4e": "2026-11-15T09:01:09+00:00",
+  "bbd359099b54e272": "2026-11-15T09:01:09+00:00",
+  "6d14275a8b78ffb4": "2026-11-15T09:01:09+00:00",
+  "e8f863f6c1f3798a": "2026-11-15T09:01:09+00:00",
+  "ae1d50cb774ed523": "2026-11-15T09:01:09+00:00",
+  "a93b24eae68adf5a": "2026-11-15T09:01:09+00:00",
+  "26764d81ac42540a": "2026-11-15T09:01:09+00:00",
+  "0b1620786d6c76e4": "2026-11-15T09:01:09+00:00",
+  "e5f50aa240d3b37c": "2026-11-15T09:01:09+00:00",
+  "6d25e2d482c6d744": "2026-11-15T09:01:09+00:00"
  },
  "inviate": [
   {
@@ -22143,10 +22193,58 @@
    "quando": "2026-11-15T07:00:55+00:00",
    "messaggio": 1284,
    "riassunto": "Un'analisi recente esamina le prospettive del cambio EUR/USD alla luce dei rischi legati al debito sovrano francese e delle future mosse sui tassi da parte della Banca Centrale Europea. Il differenziale di politica monetaria e le tensioni fiscali europee continuano a condizionare la stabilità della "
+  },
+  {
+   "id": "a66438d53c885adf",
+   "titolo": "State Street, Pictet Call Time on Europe’s Stock Market Rally",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "call",
+    "europe",
+    "market",
+    "pictet",
+    "rally",
+    "state",
+    "stock",
+    "street",
+    "time"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-15/state-street-pictet-call-time-on-europe-s-stock-market-rally",
+   "quando": "2026-11-15T09:01:10+00:00",
+   "messaggio": 1285,
+   "riassunto": "Grandi gestori come State Street e Pictet ritengono che la fase di eccezionale sovraperformance dei listini azionari europei sia giunta al termine. Dopo aver resistito alle turbolenze legate all'intelligenza artificiale che hanno colpito altri mercati, le azioni europee affrontano ora pressioni e va"
+  },
+  {
+   "id": "1e17a359140c9c78",
+   "titolo": "ECB Can’t Substitute Sound Fiscal Policy, Knot Tells Corriere",
+   "tema": "BCE",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "can",
+    "corriere",
+    "ecb",
+    "fiscal",
+    "knot",
+    "policy",
+    "sound",
+    "substitute",
+    "tells"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-15/ecb-can-t-substitute-sound-fiscal-policy-knot-tells-corriere",
+   "quando": "2026-11-15T09:01:15+00:00",
+   "messaggio": 1286,
+   "riassunto": "Klaas Knot, membro del Consiglio direttivo della BCE e candidato alla successione alla presidenza, ha dichiarato che gli strumenti della banca centrale per stabilizzare i mercati del debito sovrano non possono sostituire una gestione responsabile delle finanze pubbliche da parte dei governi. L'inter"
   }
  ],
  "feed_guasti": {
-  "FXStreet": 287
+  "FXStreet": 288
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22163,11 +22261,12 @@
   "2026-11-11": 19,
   "2026-11-12": 30,
   "2026-11-13": 17,
-  "2026-11-14": 10
+  "2026-11-14": 10,
+  "2026-11-15": 1
  },
  "avviso_quota": "",
  "giornata": {
-  "ora_notizie": "2026-11-15 08",
+  "ora_notizie": "2026-11-15 10",
   "chiusura": "2026-11-14",
   "apertura": "2026-11-15",
   "settimanale": "2026-W45"
