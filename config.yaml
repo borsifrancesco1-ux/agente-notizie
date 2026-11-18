@@ -7,11 +7,14 @@
 ia:
   # Motori provati in ordine, una richiesta per giro (voti, reparti, raggruppamento e riassunti).
   # Se uno non risponde o ha finito la quota si passa al successivo; se falliscono tutti
-  # si usa il filtro a parole chiave. Senza motori: solo parole chiave.
+  # nessuna notifica parte con il solo titolo: le notizie restano in attesa e il giro dell'ora
+  # dopo le riprova (dopo due giri a vuoto arriva un avviso in privato). Senza motori: solo parole chiave.
   #   chiave: nome della variabile nel file .env (su GitHub: nome del Secret)
   #   max_notizie (facoltativo): notizie al massimo per richiesta, per i servizi che
-  #   accettano solo richieste piccole
+  #   accettano solo richieste piccole (a questi le notizie già inviate arrivano senza riassunto)
   #   alternative (facoltativo, solo OpenRouter): modelli da usare se il primo è occupato
+  # Per sapere se funzionano e per scegliere un sostituto: workflow "Prova motori IA" su GitHub
+  # (Actions → Prova motori IA → Run workflow), che prova ogni motore ed elenca i modelli disponibili.
   motori:
     # Gli alias "-latest" seguono l'ultima versione, così un modello ritirato non blocca l'agente.
     # Piano gratuito (3/10/2026): "gemini-flash-latest" concede solo 20 richieste al giorno;
@@ -19,20 +22,24 @@ ia:
     - tipo: gemini
       modello: gemini-flash-lite-latest
       chiave: GEMINI_API_KEY
-    # Prima riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno.
+    # Seconda scelta: un altro flash-lite di Gemini, con quota e server separati da quelli del primo,
+    # che nel pomeriggio italiano (mattina negli USA) risponde spesso "sovraccarico" (HTTP 503).
+    # Prova del 13/11/2026: risponde in 5 secondi; gemini-flash-latest invece era sovraccarico e i
+    # modelli 2.5 sono stati ritirati. Un modello con il numero, prima o poi, viene ritirato:
+    # se la prova lo segnala, sostituiscilo con uno dei flash-lite più recenti dell'elenco.
+    - tipo: gemini
+      modello: gemini-3.1-flash-lite
+      chiave: GEMINI_API_KEY
+    # Riserva: OpenRouter, modelli gratuiti (":free"), 50 richieste al giorno. Il primo dell'elenco
+    # che risponde fa il lavoro. Prova del 13/11/2026: ernie risponde (in circa un minuto e mezzo),
+    # i gemma avevano finito il limite gratuito; i nemotron rispondono ma impiegano più di 5 minuti.
     # I modelli gratuiti cambiano spesso: elenco su openrouter.ai/models?max_price=0
     - tipo: openai
       url: "https://openrouter.ai/api/v1/chat/completions"
-      modello: google/gemma-4-31b-it:free
-      alternative: ["nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-26b-a4b-it:free"]
+      modello: baidu/ernie-5.5-flash-preview:free
+      alternative: ["google/gemma-4-31b-it:free", "google/gemma-4-26b-a4b-it:free"]
       chiave: OPENROUTER_API_KEY
-    # Ultima riserva: GitHub Models. Su GitHub Actions usa il token automatico del
-    # repository; accetta solo richieste piccole, da qui max_notizie.
-    - tipo: openai
-      url: "https://models.github.ai/inference/chat/completions"
-      modello: openai/gpt-4.1-mini
-      chiave: GITHUB_TOKEN
-      max_notizie: 30
+    # GitHub Models tolto il 13/11/2026: a ogni richiesta risponde solo "OK", con qualsiasi modello.
   # Per i testi della settimana (riepilogo PSP, proposta di profilo) si prova prima un modello più
   # accurato: bastano due richieste a settimana. Se non risponde, si usano i motori qui sopra.
   motore_settimanale: {tipo: gemini, modello: gemini-flash-latest, chiave: GEMINI_API_KEY}
@@ -66,6 +73,9 @@ calendario:
 
 notifiche:
   max_per_giro: 4        # tetto di notifiche per ogni giro (con un giro ogni 2 ore: al massimo 32 al giorno)
+  # di cui al massimo queste su singole aziende (titoli seguiti), per lasciare spazio a mercati, macro
+  # e cambi; i fatti da 9-10 passano sempre, e se mancano altre notizie i posti liberi tornano alle aziende
+  max_aziende_per_giro: 2
   con_suono_da: 9        # soglia di rilevanza per il suono: solo da questo voto il telefono suona
                          # (al massimo una volta per giro); sotto arriva in silenzio, ma resta nel canale
   finestra_ore: 12       # ignora le notizie pubblicate da più di queste ore
@@ -116,6 +126,44 @@ titoli:
     sinonimi: ["ENI", "Eni SpA", "Descalzi", "Plenitude", "Enilive"]
     perche: "La cliente del PSP lavora in Eni e ne ha le RSU, ma Eni è fuori dal portafoglio gestito: solo eventi straordinari"
     soglia: 9              # voto minimo per le notizie su questo titolo (più alto della soglia generale)
+
+  # --- Aziende in portafoglio ---
+  # Le azioni comprate nel PSP (WhiteRock_Ponderazioni_azionario.xlsx, dati al 10/11/2026), solo
+  # S&P 500 e STOXX 600: le aziende dell'MSCI EM non si seguono una per una ma come area
+  # (tema "Cina ed economie emergenti"). Le loro notizie specifiche valgono più di quelle sui
+  # titoli fuori portafoglio, ma non tolgono spazio al resto: al massimo
+  # notifiche.max_aziende_per_giro notizie su singole aziende per giro, salvo i fatti da 9-10.
+  #   portafoglio: indice · strategia · peso sul portafoglio totale (lo legge l'IA)
+  #   feed: i feed dedicati (sotto, feed_per_titolo) da leggere per l'azienda; senza, tutti.
+  #   Per le americane basta Yahoo Finance (le coprono bene anche i siti generali); per le europee
+  #   anche Google News, senza esagerare con le ricerche (Google blocca chi ne fa troppe)
+  #   ricerca: la ricerca su Google News, se il nome da solo è troppo lungo o ambiguo
+  #   (i ticker di una o due lettere, come IP o CL, non si cercano nel testo: troppi falsi allarmi)
+  # S&P 500
+  - {nome: International Paper, ticker: IP, portafoglio: "S&P 500 · Ou-Penman · 0,4%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: AbbVie, ticker: ABBV, sinonimi: [Abbvie, Skyrizi, Rinvoq], portafoglio: "S&P 500 · Ou-Penman · 9,9%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Autodesk, ticker: ADSK, portafoglio: "S&P 500 · Ou-Penman · 1,1%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Colgate-Palmolive, ticker: CL, sinonimi: [Colgate, Colgate Palmolive], portafoglio: "S&P 500 · Ou-Penman · 1,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Veeva Systems, ticker: VEEV, sinonimi: [Veeva], ricerca: '"Veeva"', portafoglio: "S&P 500 · Ou-Penman · 1,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Hewlett Packard Enterprise, ticker: HPE, sinonimi: [Hewlett-Packard Enterprise, HP Enterprise], portafoglio: "S&P 500 · Ou-Penman · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: HP Inc, ticker: HPQ, sinonimi: [HP Inc., HP], portafoglio: "S&P 500 · LSV · 0,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: General Motors, ticker: GM, sinonimi: [GM, Mary Barra], portafoglio: "S&P 500 · LSV · 1,5%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Healthpeak Properties, ticker: DOC, sinonimi: [Healthpeak], ricerca: '"Healthpeak"', portafoglio: "S&P 500 · LSV · 0,3%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Zoetis, ticker: ZTS, portafoglio: "S&P 500 · De Bondt-Thaler · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Adobe, ticker: ADBE, portafoglio: "S&P 500 · De Bondt-Thaler · 1,8%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Intuit, ticker: INTU, sinonimi: [TurboTax, QuickBooks], portafoglio: "S&P 500 · De Bondt-Thaler · 1,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Accenture, ticker: ACN, portafoglio: "S&P 500 · De Bondt-Thaler · 2,9%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  - {nome: Crown Castle, ticker: CCI, portafoglio: "S&P 500 · De Bondt-Thaler · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance]}
+  # STOXX 600
+  - {nome: Holcim, ticker: HOLN.SW, portafoglio: "STOXX 600 · Ou-Penman · 3,1%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: RELX, ticker: REL.L, sinonimi: [Relx, LexisNexis], portafoglio: "STOXX 600 · Ou-Penman · 4,3%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Amadeus IT Group, ticker: AMS.MC, sinonimi: [Amadeus IT, Amadeus], ricerca: '"Amadeus IT"', portafoglio: "STOXX 600 · Ou-Penman · 1,8%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Wolters Kluwer, ticker: WKL.AS, portafoglio: "STOXX 600 · Ou-Penman · 1,4%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: VAT Group, ticker: VACN.SW, ricerca: '"VAT Group" vacuum', portafoglio: "STOXX 600 · Ou-Penman · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Kongsberg Gruppen, ticker: KOG.OL, sinonimi: [Kongsberg], ricerca: '"Kongsberg"', portafoglio: "STOXX 600 · Ou-Penman · 2,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Eiffage, ticker: FGR.PA, portafoglio: "STOXX 600 · LSV · 0,7%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: A.P. Møller-Maersk, ticker: MAERSK-B.CO, sinonimi: [Maersk, Moller-Maersk, Møller-Maersk], ricerca: '"Maersk"', portafoglio: "STOXX 600 · LSV · 3,0%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
+  - {nome: Bouygues, ticker: EN.PA, portafoglio: "STOXX 600 · LSV · 1,2%", icona: "💼", reparti: [Azionario], feed: [Yahoo Finance, Google News EN]}
 
 # Temi seguiti, nell'ordine della mappa del PSP.
 # icona: compare davanti al titolo della notifica (titoli e temi; senza icona: 📰).
@@ -243,7 +291,8 @@ feed_generali:
   # Cambi
   - {nome: Investing.com Forex, url: "https://www.investing.com/rss/news_1.rss"}
   - {nome: Investing.com Italia Forex, url: "https://it.investing.com/rss/news_1.rss"}
-  - {nome: FXStreet, url: "https://www.fxstreet.com/rss/news", filtra: true}
+  # FXStreet rifiuta il suo feed ai server di GitHub (HTTP 403): lo leggo con una ricerca su Google News
+  - {nome: FXStreet, url: "https://news.google.com/rss/search?q=site:fxstreet.com+when:1d&hl=en-US&gl=US&ceid=US:en", filtra: true}
   # Geopolitica
   - {nome: BBC World, url: "https://feeds.bbci.co.uk/news/world/rss.xml", filtra: true}
   # Italia

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import difflib
 import json
+import re
 import time
 
 import requests
@@ -22,6 +23,12 @@ from filtro import Gruppo, autorevolezza
 
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent"
 richieste_fatte = 0  # richieste inviate a Gemini in questa esecuzione, per il contatore giornaliero
+# Gemini "sovraccarico" (HTTP 5xx) spesso si libera in meno di un minuto: secondi di attesa prima
+# di ogni nuovo tentativo (due tentativi in più, invece di passare subito al motore di riserva)
+ATTESE_SOVRACCARICO = (15, 45)
+# secondi di attesa per una risposta: chi non risponde in tempo non si riprova (un modello lento lo resta,
+# e i giri di GitHub hanno 15 minuti in tutto), si passa al motore successivo
+ATTESA_RISPOSTA = 150
 
 
 class QuotaEsaurita(Exception):
@@ -65,7 +72,9 @@ nuove (titolo, testata con il tipo di fonte, data, breve descrizione). Devi:
    - "valori": da 0 a 3 valori di mercato toccati dal fatto, scelti tra VALORI DI MERCATO: un tasso per
      le notizie su banche centrali e titoli di Stato, un cambio per quelle sulle valute, una materia prima
      per quelle su petrolio, gas o metalli, un indice per quelle sulle borse; vuoto se nessuno è pertinente.
-   Per gli altri gruppi lascia questi campi vuoti.
+   Per i gruppi già inviati senza novità lascia questi campi vuoti.
+5. nella risposta metti SOLO i gruppi con voto almeno {soglia}: tutti gli altri valutali ma lasciali fuori,
+   così la risposta resta breve.
 
 Scala dei voti:
 - 9-10: evento che muove i mercati o il portafoglio seguito (decisione di una banca centrale,
@@ -74,11 +83,17 @@ Scala dei voti:
 - 7-8: notizia nuova e specifica su un tema seguito; comunicati e discorsi di BCE, Fed
   e Banca d'Italia sull'economia e sui tassi;
 - 6: analisi, commento o notizia di contesto utile ad almeno uno dei reparti del team;
-I TITOLI SEGUITI (es. Eni) sono fuori dal portafoglio gestito: notizie di routine su di loro (contratti,
-scoperte, dichiarazioni, prezzi dei carburanti, controllate) valgono al massimo 5; solo eventi
-straordinari sul titolo (risultati molto sorprendenti, operazioni societarie, crolli) arrivano a 9.
 - 4-5: notizia marginale, ripetitiva o anteprima senza contenuti;
 - 1-3: irrilevante, generica, promozionale o acchiappaclic.
+Le AZIENDE IN PORTAFOGLIO (tra i TITOLI SEGUITI, quelle segnate «in portafoglio») sono le azioni che il
+team ha comprato: una notizia nuova e specifica su una di loro (risultati e previsioni, operazioni
+societarie, rating, cause e multe, cambi al vertice, dividendi e riacquisti di azioni, forti movimenti
+del titolo, fatti di settore che la toccano direttamente) vale 7-8, un evento che muove molto il titolo
+9; più alto il peso in portafoglio, più conta. Restano a 1-4 gli articoli promozionali o generici sul
+titolo ("conviene comprarlo?", "3 motivi per...", classifiche, previsioni di prezzo senza fatti nuovi).
+Gli altri TITOLI SEGUITI (es. Eni) sono fuori dal portafoglio gestito: notizie di routine su di loro
+(contratti, scoperte, dichiarazioni, prezzi dei carburanti, controllate) valgono al massimo 5; solo eventi
+straordinari sul titolo (risultati molto sorprendenti, operazioni societarie, crolli) arrivano a 9.
 Tipi di fonte: (istituzione) banca centrale o autorità; (testata) testata giornalistica principale;
 (ricerca web) sito trovato con una ricerca. A parità di contenuto preferisci istituzioni e testate;
 dai voti bassi ai fatti riportati solo da siti poco autorevoli e alle previsioni generiche senza fatti
@@ -149,16 +164,21 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
     temi = [t["nome"] for t in (config.get("titoli") or []) + (config.get("temi") or [])]
     reparti = [r["nome"] for r in config.get("reparti") or []]
     valori = list(config.get("quotazioni") or {})
-    gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]  # alcuni servizi accettano richieste piccole
+    # alcuni servizi (es. GitHub Models) accettano solo richieste piccole: meno notizie e, per quelle
+    # già inviate, solo il titolo senza il riassunto
+    piccola = bool(motore.get("max_notizie"))
+    gruppi = gruppi[:motore.get("max_notizie") or len(gruppi)]
 
     elenco = "\n".join(_riga(i, g) for i, g in enumerate(gruppi, 1))
-    gia = "\n".join(f"[A{k}] {r['titolo']}" + (f" — {r['riassunto'][:150]}" if r.get("riassunto") else "")
+    gia = "\n".join(f"[A{k}] {r['titolo']}"
+                    + (f" — {r['riassunto'][:150]}" if r.get("riassunto") and not piccola else "")
                     for k, r in enumerate(recenti, 1)) or "(nessuna)"
     testo = f"NOTIZIE GIÀ INVIATE (ultime 48 ore):\n{gia}\n\nNUOVE NOTIZIE:\n{elenco}"
     istruzioni += (f"\nValori ammessi per \"tema\": {', '.join(temi)}, Altro.\n"
                    f"Valori ammessi per \"reparti\": {', '.join(reparti)}.\n"
                    f"VALORI DI MERCATO (valori ammessi per \"valori\"): {', '.join(valori)}.")
-    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti, valori), ESEMPIO_RISPOSTA)
+    risposta = genera(motore, chiave, istruzioni, testo, _schema(temi, reparti, valori), ESEMPIO_RISPOSTA,
+                      lista="gruppi")
 
     scelte, usati = [], set()
     for v in sorted(risposta.get("gruppi", []), key=lambda v: -v.get("voto", 0)):
@@ -191,9 +211,30 @@ def seleziona(gruppi: list[Gruppo], recenti: list[dict], profilo: str, config: d
                        "impatto": v.get("impatto", ""), "reparti": reparti_gruppo, "aggiorna": aggiorna,
                        "aziende": [a for a in v.get("aziende") or [] if isinstance(a, dict) and a.get("simbolo")][:3],
                        "valori": [x for x in v.get("valori") or [] if x in valori][:3]})
-        if len(scelte) == massimo:
-            break
-    return scelte
+    return con_spazio_al_resto(scelte, config, massimo)
+
+
+def con_spazio_al_resto(scelte: list[dict], config: dict, massimo: int) -> list[dict]:
+    """Le prime "massimo" scelte, con al massimo notifiche.max_aziende_per_giro notizie su singole
+    aziende (titoli seguiti), perché non tolgano spazio a mercati, macro e cambi. I fatti da 9-10
+    passano sempre; le notizie sulle aziende messe da parte prendono i posti rimasti liberi."""
+    tetto = (config.get("notifiche") or {}).get("max_aziende_per_giro")
+    if tetto is None:
+        return scelte[:massimo]
+    aziende = {t["nome"] for t in config.get("titoli") or []}
+    prima, dopo, contate = [], [], 0
+    for s in scelte:  # già dalla più rilevante
+        su_azienda = s["tema"] in aziende
+        if su_azienda and contate >= tetto and (s["voto"] or 0) < 9:
+            dopo.append(s)
+            continue
+        contate += su_azienda
+        prima.append(s)
+    tenute = (prima + dopo)[:massimo]
+    for s in dopo:
+        if s not in tenute:
+            print(f"  lasciata per dare spazio ad altri temi (già {tetto} su singole aziende): {s['titolo'][:70]}")
+    return sorted(tenute, key=lambda s: -(s["voto"] or 0))
 
 
 def titolo_originale(proposto: str, gruppo: Gruppo) -> str:
@@ -213,17 +254,21 @@ def titolo_originale(proposto: str, gruppo: Gruppo) -> str:
     return migliore if somiglianza(migliore) >= 0.6 else gruppo.principale.titolo
 
 
-def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict) -> dict:
+def genera(motore: dict, chiave: str, istruzioni: str, testo: str, schema: dict, esempio: dict,
+           lista: str | None = None) -> dict:
     """Una richiesta a un motore che risponde in JSON.
-    schema: struttura per Gemini; esempio: la stessa struttura mostrata agli altri servizi."""
+    schema: struttura per Gemini; esempio: la stessa struttura mostrata agli altri servizi;
+    lista: se la risposta è troncata, si tengono gli elementi completi di questa lista (es. "gruppi")."""
     if motore["tipo"] == "gemini":
-        return _chiedi(chiave, motore["modello"], istruzioni, testo, schema)
+        return _chiedi(chiave, motore["modello"], istruzioni, testo, schema, lista)
     istruzioni += (f"\nRispondi solo con un oggetto JSON con questa struttura: "
                    f"{json.dumps(esempio, ensure_ascii=False)}")
-    return _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo, motore.get("alternative") or [])
+    return _chiedi_openai(motore["url"], chiave, motore["modello"], istruzioni, testo,
+                          motore.get("alternative") or [], lista)
 
 
-def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict) -> dict:
+def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict,
+            lista: str | None = None) -> dict:
     global richieste_fatte
     corpo = {
         "system_instruction": {"parts": [{"text": istruzioni}]},
@@ -232,16 +277,20 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
                              "responseSchema": schema},
     }
     errore = "nessuna risposta"
-    for tentativo in range(2):  # pochi tentativi: anche le richieste fallite consumano quota
+    # pochi tentativi per il limite al minuto (anche le richieste rifiutate consumano quota),
+    # qualcuno in più se il server è sovraccarico
+    for tentativo in range(len(ATTESE_SOVRACCARICO) + 1):
         richieste_fatte += 1
         try:
-            r = requests.post(URL.format(modello=modello), json=corpo, timeout=120,
+            r = requests.post(URL.format(modello=modello), json=corpo, timeout=ATTESA_RISPOSTA,
                               headers={"x-goog-api-key": chiave})
+        except requests.Timeout:
+            raise ErroreIA(f"{modello}: nessuna risposta in {ATTESA_RISPOSTA} secondi") from None
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
         else:
             if r.status_code == 200:
-                return _json(r.json())
+                return _json(r.json(), lista)
             if r.status_code == 429:
                 if "PerDay" in r.text or tentativo > 0:
                     raise QuotaEsaurita(f"{modello}: quota giornaliera finita" if "PerDay" in r.text
@@ -251,13 +300,13 @@ def _chiedi(chiave: str, modello: str, istruzioni: str, testo: str, schema: dict
             if r.status_code < 500:
                 raise ErroreIA(f"HTTP {r.status_code}: {_messaggio(r)}")
             errore = f"HTTP {r.status_code} (server sovraccarico)"
-        if tentativo == 0:
-            time.sleep(10)
+        if tentativo < len(ATTESE_SOVRACCARICO):
+            time.sleep(ATTESE_SOVRACCARICO[tentativo])
     raise ErroreIA(errore)
 
 
 def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: str,
-                   alternative: list[str]) -> dict:
+                   alternative: list[str], lista: str | None = None) -> dict:
     """Richiesta nel formato di OpenAI, usato da Mistral, GitHub Models, OpenRouter, Groq...
     alternative: modelli da provare se il primo è occupato (solo OpenRouter)."""
     global richieste_fatte
@@ -273,15 +322,20 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
     for tentativo in range(2):
         richieste_fatte += 1
         try:
-            r = requests.post(url, json=corpo, timeout=120, headers={"Authorization": f"Bearer {chiave}"})
+            r = requests.post(url, json=corpo, timeout=ATTESA_RISPOSTA,
+                              headers={"Authorization": f"Bearer {chiave}"})
+        except requests.Timeout:
+            raise ErroreIA(f"{modello}: nessuna risposta in {ATTESA_RISPOSTA} secondi") from None
         except requests.RequestException as e:
             errore = f"connessione: {type(e).__name__}"
         else:
             if r.status_code == 200:
+                scelta: dict = {}
                 try:
-                    return json.loads(r.json()["choices"][0]["message"]["content"])
-                except (KeyError, IndexError, TypeError, ValueError):
-                    raise ErroreIA(f"{modello}: risposta non valida") from None
+                    scelta = r.json()["choices"][0]
+                    return leggi_json(scelta["message"]["content"], lista)
+                except (KeyError, IndexError, TypeError, ValueError, AttributeError):
+                    raise ErroreIA(f"{modello}: risposta non valida ({_diagnosi(r, scelta)})") from None
             if r.status_code == 429:
                 if tentativo > 0:
                     raise QuotaEsaurita(f"{modello}: limite di richieste raggiunto ({_messaggio(r)})")
@@ -295,14 +349,64 @@ def _chiedi_openai(url: str, chiave: str, modello: str, istruzioni: str, testo: 
     raise ErroreIA(f"{modello}: {errore}")
 
 
-def _json(dati: dict) -> dict:
+def _json(dati: dict, lista: str | None = None) -> dict:
     try:
         parti = dati["candidates"][0]["content"]["parts"]
-        return json.loads("".join(p.get("text", "") for p in parti if not p.get("thought")))
-    except (KeyError, IndexError, json.JSONDecodeError) as e:
+        return leggi_json("".join(p.get("text", "") for p in parti if not p.get("thought")), lista)
+    except (KeyError, IndexError, TypeError, ValueError) as e:
         candidati = dati.get("candidates") or [{}]
         motivo = dati.get("promptFeedback", {}).get("blockReason") or candidati[0].get("finishReason")
         raise ErroreIA(f"risposta non valida ({motivo or type(e).__name__})") from None
+
+
+def leggi_json(testo: str | None, lista: str | None = None) -> dict:
+    """L'oggetto JSON della risposta di un modello, anche se è racchiuso tra ```json e ``` o ha
+    del testo intorno. Se è troncato (risposta oltre la lunghezza massima del servizio) e c'è
+    "lista", si tengono gli elementi completi di quella lista: meglio qualche notizia che nessuna.
+    ValueError se non se ne ricava nulla."""
+    testo = (testo or "").strip()
+    try:
+        return json.loads(testo)
+    except ValueError:
+        pass
+    inizio = testo.find("{")
+    if inizio < 0:
+        raise ValueError("nessun oggetto JSON nella risposta")
+    lettore = json.JSONDecoder()
+    try:
+        return lettore.raw_decode(testo, inizio)[0]
+    except ValueError:
+        if not lista:
+            raise
+    apertura = re.search(rf'"{re.escape(lista)}"\s*:\s*\[', testo[inizio:])
+    if not apertura:
+        raise ValueError(f"risposta troncata senza «{lista}»")
+    elementi, posizione = [], inizio + apertura.end()
+    while True:
+        while posizione < len(testo) and testo[posizione] in " \t\r\n,":
+            posizione += 1
+        try:
+            elemento, posizione = lettore.raw_decode(testo, posizione)
+        except ValueError:
+            break  # qui la risposta è stata troncata
+        elementi.append(elemento)
+    if not elementi:
+        raise ValueError("risposta troncata prima del primo elemento")
+    print(f"  risposta troncata: tengo i {len(elementi)} elementi completi di «{lista}»")
+    return {lista: elementi}
+
+
+def _diagnosi(r: requests.Response, scelta) -> str:
+    """Com'era fatta una risposta illeggibile, per capire il guasto dal registro: il motivo della fine
+    (es. "length" = troncata, "content_filter" = bloccata), la lunghezza, l'inizio e la fine del testo."""
+    motivo = scelta.get("finish_reason") if isinstance(scelta, dict) else None
+    messaggio = scelta.get("message") if isinstance(scelta, dict) else None
+    testo = messaggio.get("content") if isinstance(messaggio, dict) else r.text
+    testo = " ".join(str(testo or "").split())
+    pezzi = [f"finish_reason {motivo or '-'}", f"{len(testo)} caratteri"]
+    if testo:
+        pezzi.append(f"«{testo[:70]}»" + (f" … «{testo[-70:]}»" if len(testo) > 140 else ""))
+    return ", ".join(pezzi)
 
 
 def _messaggio(r: requests.Response) -> str:
@@ -322,7 +426,9 @@ def _riga(i: int, g: Gruppo) -> str:
 
 
 def _contesto(profilo: str, config: dict) -> str:
-    titoli = "\n".join(f"- {t['nome']} ({t.get('ticker', '')}): {t.get('perche', '')}"
+    titoli = "\n".join(f"- {t['nome']} ({t.get('ticker', '')})"
+                       + (f" — in portafoglio: {t['portafoglio']} del portafoglio" if t.get("portafoglio") else "")
+                       + (f": {t['perche']}" if t.get("perche") else "")
                        for t in config.get("titoli") or [])
     temi = "\n".join(f"- {t['nome']}" for t in config.get("temi") or [])
     reparti = "\n".join(f"- {r['nome']}: {r.get('descrizione', '')}" for r in config.get("reparti") or [])

@@ -91,11 +91,14 @@ def frecce(impatto: str) -> str:
 
 
 def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, calendario: list[str],
-                    cambio: str = "", ogni_ore: int = 1, mercati: list | None = None) -> str:
+                    cambio: str = "", ogni_ore: int = 1, mercati: list | None = None,
+                    notte_in_attesa: bool = False) -> str:
     """Buongiorno in un unico messaggio: cambio del giorno, mercati, calendario e riepilogo della notte.
     voci: dict con titolo, riassunto, icona, reparti, fonti; calendario e cambio: testo già pronto;
     mercati: righe per tabella;
-    ogni_ore: ogni quante ore arriva un giro di notizie."""
+    ogni_ore: ogni quante ore arriva un giro di notizie;
+    notte_in_attesa: le notizie della notte non sono ancora state scelte (IA non disponibile)
+    e arriveranno con i giri di notizie, quindi non si scrive "notte tranquilla"."""
     data = f"{GIORNI[giorno.weekday()]} {giorno.day} {MESI[giorno.month - 1]}"
     fine = f"\n\nDalle {prima_notizia.lstrip('0')} gli aggiornamenti {cadenza(ogni_ore)}."
     testo = f"☀️ <b>Buongiorno!</b>\n<i>{data}</i>"
@@ -107,6 +110,8 @@ def riepilogo_notte(voci: list[dict], giorno: datetime, prima_notizia: str, cale
         testo += "\n\n📅 <b>Oggi in calendario</b> (ora italiana)\n" + "\n".join(calendario[:15])
     else:
         testo += "\n\n📅 Nessun appuntamento importante in calendario oggi."
+    if not voci and notte_in_attesa:
+        return testo + f"\n\n🌙 Le notizie della notte arrivano con i primi aggiornamenti della giornata.{fine}"
     if not voci:
         return testo + f"\n\n🌙 Notte tranquilla: nessuna notizia rilevante per il PSP.{fine}"
 
