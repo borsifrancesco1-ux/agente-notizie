@@ -20868,6 +20868,8 @@
   "2026-11-18": 13
  },
  "avviso_quota": "",
+ "giri_senza_ia": 0,
+ "avviso_ia": "",
  "giornata": {
   "ora_notizie": "2026-11-18 16",
   "chiusura": "2026-11-17",
