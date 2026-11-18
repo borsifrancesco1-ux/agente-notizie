@@ -55,6 +55,7 @@ jobs:
 
       - name: Giro dell'agente
         env:
+          PYTHONUNBUFFERED: "1"   # il registro si scrive subito: resta anche se il giro viene interrotto
           AZIONE: ${{ inputs.azione || 'automatico' }}
           COMANDO: ${{ inputs.comando }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

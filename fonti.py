@@ -60,7 +60,10 @@ def elenco_feed(config: dict) -> list[Feed]:
             "ticker_usa": t.get("ticker_usa"),
             "query": urllib.parse.quote_plus(t.get("ricerca") or f'"{t["nome"]}"'),
         }
+        scelti = t.get("feed")  # facoltativo: solo alcuni feed dedicati (es. per le aziende in portafoglio)
         for modello in config.get("feed_per_titolo") or []:
+            if scelti and modello["nome"] not in scelti:
+                continue
             segnaposti = re.findall(r"{(\w+)}", modello["url"])
             if all(valori.get(s) for s in segnaposti):
                 elenco.append(Feed(f'{modello["nome"]} · {t["nome"]}',

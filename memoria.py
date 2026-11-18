@@ -39,6 +39,9 @@ class Memoria:
         self.offset_telegram: int = dati.get("offset_telegram", 0)  # ultimo aggiornamento letto
         self.richieste_ia: dict[str, int] = dati.get("richieste_ia", {})  # giorno di quota -> richieste
         self.avviso_quota: str = dati.get("avviso_quota", "")   # giorno dell'ultimo avviso di quota finita
+        # giri di notizie consecutivi in cui nessun motore di IA ha risposto, e giorno dell'ultimo avviso
+        self.giri_senza_ia: int = dati.get("giri_senza_ia", 0)
+        self.avviso_ia: str = dati.get("avviso_ia", "")
         # cosa è già stato fatto nella giornata: {"apertura": data, "ora_notizie": "data ora", "chiusura": data}
         self.giornata: dict[str, str] = dati.get("giornata", {})
         # ultimo valore visto di ogni indicatore ufficiale, per riconoscere i dati nuovi
@@ -149,7 +152,8 @@ class Memoria:
         self.percorso.parent.mkdir(parents=True, exist_ok=True)
         dati = {"valutate": self.valutate, "inviate": self.inviate, "feed_guasti": self.feed_guasti,
                 "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
-                "avviso_quota": self.avviso_quota, "giornata": self.giornata,
+                "avviso_quota": self.avviso_quota, "giri_senza_ia": self.giri_senza_ia,
+                "avviso_ia": self.avviso_ia, "giornata": self.giornata,
                 "indicatori": self.indicatori, "proposta": self.proposta,
                 "dati_usciti": [d for d in self.dati_usciti if d["quando"] >= limite],
                 "pausa_fino": self.pausa_fino, "ultima_modifica": self.ultima_modifica}
