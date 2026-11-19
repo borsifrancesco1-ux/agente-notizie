@@ -13,10 +13,14 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 import archivio
 from filtro import simili
+from fonti import limitato
 
 GIORNI_DA_RICORDARE = 14
 GIORNI_NOTIFICHE_VOTATE = 90   # le notizie votate servono più a lungo, come esempi per l'IA
 ERRORI_PRIMA_DI_AVVISARE = 5   # giri consecutivi senza risposta prima di segnalare un feed
+# giri consecutivi con le richieste limitate (HTTP 429, quasi sempre Google News) prima di segnalarlo:
+# l'indirizzo è giusto e di solito passa da solo, quindi si avvisa solo se dura più di un giorno
+LIMITI_PRIMA_DI_AVVISARE = 20
 PARAMETRI_DI_TRACCIAMENTO = ("utm_", ".tsrc", "ncid", "cmpid", "mod")
 
 
@@ -36,6 +40,7 @@ class Memoria:
         self.valutate: dict[str, str] = dati.get("valutate", {})   # chiave link -> quando
         self.inviate: list[dict] = dati.get("inviate", [])         # notifiche già mandate, con i voti
         self.feed_guasti: dict[str, int] = dati.get("feed_guasti", {})
+        self.feed_limitati: dict[str, int] = dati.get("feed_limitati", {})  # giri di fila con HTTP 429
         self.offset_telegram: int = dati.get("offset_telegram", 0)  # ultimo aggiornamento letto
         self.richieste_ia: dict[str, int] = dati.get("richieste_ia", {})  # giorno di quota -> richieste
         self.avviso_quota: str = dati.get("avviso_quota", "")   # giorno dell'ultimo avviso di quota finita
@@ -126,20 +131,30 @@ class Memoria:
         self.richieste_ia[giorno] = self.richieste_ia.get(giorno, 0) + n
         return self.richieste_ia[giorno]
 
-    def aggiorna_feed(self, nomi: list[str], errori: dict[str, str]) -> list[str]:
-        """Conta i giri consecutivi senza risposta. Restituisce i feed appena diventati guasti."""
-        appena_guasti = []
+    def aggiorna_feed(self, nomi: list[str], errori: dict[str, str]) -> tuple[list[str], list[str]]:
+        """Conta i giri consecutivi senza risposta. Restituisce i feed appena diventati guasti e quelli
+        con le richieste limitate (HTTP 429) da LIMITI_PRIMA_DI_AVVISARE giri. Un 429 non conta come
+        guasto: l'indirizzo è giusto, è il sito che rallenta chi fa troppe richieste."""
+        appena_guasti, appena_limitati = [], []
         for nome in nomi:
-            if nome in errori:
+            errore = errori.get(nome)
+            if errore is None:
+                self.feed_guasti.pop(nome, None)
+                self.feed_limitati.pop(nome, None)
+            elif limitato(errore):
+                self.feed_limitati[nome] = self.feed_limitati.get(nome, 0) + 1
+                if self.feed_limitati[nome] == LIMITI_PRIMA_DI_AVVISARE:
+                    appena_limitati.append(nome)
+            else:
+                self.feed_limitati.pop(nome, None)
                 self.feed_guasti[nome] = self.feed_guasti.get(nome, 0) + 1
                 if self.feed_guasti[nome] == ERRORI_PRIMA_DI_AVVISARE:
                     appena_guasti.append(nome)
-            else:
-                self.feed_guasti.pop(nome, None)
-        for nome in list(self.feed_guasti):  # feed tolti da config.yaml
-            if nome not in nomi:
-                del self.feed_guasti[nome]
-        return appena_guasti
+        for conteggi in (self.feed_guasti, self.feed_limitati):
+            for nome in list(conteggi):  # feed tolti da config.yaml
+                if nome not in nomi:
+                    del conteggi[nome]
+        return appena_guasti, appena_limitati
 
     def salva(self) -> None:
         adesso = datetime.now(timezone.utc)
@@ -151,7 +166,7 @@ class Memoria:
         self.richieste_ia = {g: n for g, n in self.richieste_ia.items() if g >= limite[:10]}
         self.percorso.parent.mkdir(parents=True, exist_ok=True)
         dati = {"valutate": self.valutate, "inviate": self.inviate, "feed_guasti": self.feed_guasti,
-                "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
+                "feed_limitati": self.feed_limitati, "offset_telegram": self.offset_telegram, "richieste_ia": self.richieste_ia,
                 "avviso_quota": self.avviso_quota, "giri_senza_ia": self.giri_senza_ia,
                 "avviso_ia": self.avviso_ia, "giornata": self.giornata,
                 "indicatori": self.indicatori, "proposta": self.proposta,
