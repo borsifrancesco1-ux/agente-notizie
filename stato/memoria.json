@@ -13897,29 +13897,6 @@
    }
   },
   {
-   "id": "aa7a2f10da27ae9c",
-   "titolo": "L'utile di Bper sale a 2 miliardi (+16,4%), acconto sulla cedola di 0,33 euro",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "acconto",
-    "bper",
-    "cedola",
-    "euro",
-    "miliardi",
-    "sale",
-    "utile"
-   ],
-   "link": "https://www.ansa.it/sito/notizie/economia/2026/11/05/lutile-di-bper-sale-a-2-miliardi-164-acconto-sulla-cedola-di-033-euro_9176ffed-3926-4382-8c88-083a9fbd3144.html",
-   "quando": "2026-11-05T09:01:28+00:00",
-   "messaggio": 1078,
-   "riassunto": "Bper Banca ha chiuso i conti con un utile netto in salita a 2 miliardi di euro (+16,4%) e ricavi a 5,38 miliardi, deliberando un acconto sul dividendo di 0,33 euro. L'istituto ha inoltre migliorato la guidance per il 2026 sul costo del rischio e sul coefficiente patrimoniale Cet1."
-  },
-  {
    "id": "dd4b1a6a9e022d58",
    "titolo": "Japan’s Nikkei Poised to Enter Bear Market as AI Selloff Deepens",
    "tema": "Borse, valutazioni e utili",
@@ -21188,6 +21165,7 @@
   "Google News EN · dollar index Fed ECB rate differential": 1,
   "Google News EN · tariffs trade war": 1
  },
+ "feed_limitati": {},
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-11-05": 34,
