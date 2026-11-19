@@ -4,6 +4,7 @@ from __future__ import annotations
 import calendar
 import html
 import re
+import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
@@ -16,6 +17,9 @@ USER_AGENT = "agente-notizie/0.1 (lettore RSS personale; github.com/borsifrances
 TIMEOUT = 20
 MASSIMO_PER_RICERCA = 10   # risultati più recenti tenuti per ogni ricerca su Google News
                            # (pochi: altrimenti i siti minori trovati con le ricerche prevalgono)
+PAUSA_GOOGLE = 1.0         # secondi tra due ricerche su Google News (circa un minuto per tutte)
+ATTESA_DOPO_LIMITE = 20    # secondi di attesa dopo un HTTP 429 di Google, prima di riprovare
+LIMITI_PRIMA_DI_RIMANDARE = 3  # ricerche di fila ancora limitate dopo l'attesa: le altre al giro dopo
 
 
 @dataclass
@@ -99,14 +103,56 @@ def scarica(feed: Feed) -> tuple[list[Notizia], str | None]:
 
 
 def scarica_tutti(elenco: list[Feed]) -> tuple[list[Notizia], dict[str, str]]:
-    """Legge tutti i feed in parallelo. Restituisce le notizie e gli errori per feed."""
-    notizie, errori = [], {}
+    """Legge tutti i feed: in parallelo, tranne quelli di Google News, letti uno alla volta mentre
+    gli altri scaricano. Restituisce le notizie e gli errori per feed."""
+    google = [f for f in elenco if su_google(f)]
+    altri = [f for f in elenco if not su_google(f)]
+    esiti: dict[int, tuple[list[Notizia], str | None]] = {}
     with ThreadPoolExecutor(max_workers=12) as pool:
-        for feed, (trovate, errore) in zip(elenco, pool.map(scarica, elenco)):
-            if errore:
-                errori[feed.nome] = errore
-            notizie.extend(trovate)
+        in_fila = pool.submit(_scarica_in_fila, google)
+        for feed, esito in zip(altri, pool.map(scarica, altri)):
+            esiti[id(feed)] = esito
+        esiti.update(in_fila.result())
+    notizie, errori = [], {}
+    for feed in elenco:  # nell'ordine di config.yaml
+        trovate, errore = esiti[id(feed)]
+        if errore:
+            errori[feed.nome] = errore
+        notizie.extend(trovate)
     return notizie, errori
+
+
+def su_google(feed: Feed) -> bool:
+    return "news.google.com" in feed.url
+
+
+def limitato(errore: str | None) -> bool:
+    """Il sito ha limitato le richieste (HTTP 429): l'indirizzo è giusto, di solito passa da solo."""
+    return bool(errore) and errore.startswith("HTTP 429")
+
+
+def _scarica_in_fila(elenco: list[Feed]) -> dict[int, tuple[list[Notizia], str | None]]:
+    """Le ricerche su Google News una alla volta, con una pausa tra l'una e l'altra: tutte insieme
+    (oltre 40 per giro) facevano scattare il limite di Google (HTTP 429). Dopo un 429 si aspetta e si
+    riprova una volta; se Google continua a limitare, le ricerche rimaste si rimandano al giro dopo,
+    così il giro non si allunga oltre il tempo concesso da GitHub."""
+    esiti, limiti_di_fila = {}, 0
+    if elenco:  # ogni ora si parte da un punto diverso: se Google blocca, non restano fuori sempre le stesse
+        inizio = int(time.time() // 3600) % len(elenco)
+        elenco = elenco[inizio:] + elenco[:inizio]
+    for posizione, feed in enumerate(elenco):
+        if limiti_di_fila >= LIMITI_PRIMA_DI_RIMANDARE:
+            esiti[id(feed)] = ([], "HTTP 429 (rimandata: Google limita le richieste)")
+            continue
+        if posizione:
+            time.sleep(PAUSA_GOOGLE)
+        esito = scarica(feed)
+        if limitato(esito[1]):
+            time.sleep(ATTESA_DOPO_LIMITE)
+            esito = scarica(feed)
+        limiti_di_fila = limiti_di_fila + 1 if limitato(esito[1]) else 0
+        esiti[id(feed)] = esito
+    return esiti
 
 
 def _notizia(voce, feed: Feed) -> Notizia | None:

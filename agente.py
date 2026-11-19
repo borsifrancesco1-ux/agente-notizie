@@ -23,7 +23,6 @@ from __future__ import annotations
 import argparse
 import os
 import sys
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -40,7 +39,7 @@ import notifiche
 import settimana
 from filtro import Filtro, Gruppo, raggruppa, scelta_senza_ia
 from fonti import Notizia
-from memoria import ERRORI_PRIMA_DI_AVVISARE, Memoria, chiave, giorno_quota
+from memoria import ERRORI_PRIMA_DI_AVVISARE, LIMITI_PRIMA_DI_AVVISARE, Memoria, chiave, giorno_quota
 
 CARTELLA = Path(__file__).resolve().parent
 MAX_CANDIDATI = 200        # fatti al massimo passati all'IA in un giro
@@ -417,11 +416,17 @@ class Giro:
             print(f"Feed: {len(elenco) - len(errori)}/{len(elenco)} ok, {len(notizie)} notizie lette")
             for nome, errore in errori.items():
                 print(f"  ✗ {nome}: {errore}")
-            guasti = self.memoria.aggiorna_feed([f.nome for f in elenco], errori)
+            guasti, limitati = self.memoria.aggiorna_feed([f.nome for f in elenco], errori)
             if guasti:
                 elenco_guasti = "\n".join(f"• {notifiche.esc(nome)}: {errori[nome]}" for nome in guasti)
                 self.invia(f"⚠️ Questi feed non rispondono da {ERRORI_PRIMA_DI_AVVISARE} giri:\n"
                            f"{elenco_guasti}\nControlla config.yaml.", silenzioso=True, privato=True)
+            if limitati:
+                elenco_limitati = "\n".join(f"• {notifiche.esc(nome)}" for nome in limitati)
+                self.invia(f"⚠️ Da {LIMITI_PRIMA_DI_AVVISARE} giri il sito limita le richieste (HTTP 429) per:\n"
+                           f"{elenco_limitati}\nGli indirizzi sono giusti e le riprovo a ogni giro. Se continua, "
+                           "togli qualche ricerca su Google News da config.yaml: di solito il limite scatta "
+                           "per il numero di ricerche.", silenzioso=True, privato=True)
             escluse = {f.lower() for f in self.config.get("fonti_escluse") or []}
             self._scaricate = [n for n in notizie if n.fonte.lower() not in escluse]
 
@@ -547,15 +552,15 @@ def limita_per_titolo(gruppi: list[Gruppo]) -> list[Gruppo]:
 
 def controlla_feed(config: dict) -> None:
     elenco = fonti.elenco_feed(config)
-    with ThreadPoolExecutor(max_workers=12) as pool:
-        risultati = list(pool.map(fonti.scarica, elenco))
-    for feed, (notizie, errore) in zip(elenco, risultati):
-        if errore:
-            print(f"✗ {feed.nome}: {errore}")
+    notizie, errori = fonti.scarica_tutti(elenco)  # come nei giri: Google News una ricerca alla volta
+    for feed in elenco:
+        if feed.nome in errori:
+            print(f"✗ {feed.nome}: {errori[feed.nome]}")
             continue
-        date = [n.pubblicata for n in notizie if n.pubblicata]
+        date = [n.pubblicata for n in notizie if n.feed is feed and n.pubblicata]
+        trovate = sum(n.feed is feed for n in notizie)
         ultima = max(date).strftime("%d/%m %H:%M UTC") if date else "senza date"
-        print(f"✓ {feed.nome}: {len(notizie)} notizie, la più recente {ultima}")
+        print(f"✓ {feed.nome}: {trovate} notizie, la più recente {ultima}")
 
 
 if __name__ == "__main__":

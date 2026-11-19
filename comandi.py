@@ -413,6 +413,7 @@ def stato(giro: Giro, _argomento: str) -> str:
     oggi = m.inviate_dal(giro.adesso.replace(hour=0, minute=0, second=0, microsecond=0))
     richieste = m.richieste_ia.get(max(m.richieste_ia), 0) if m.richieste_ia else 0
     guasti = [f"{nome} ({n} giri)" for nome, n in m.feed_guasti.items()]
+    guasti += [f"{nome} (limitato da {n} giri)" for nome, n in m.feed_limitati.items()]
     ultimi_dati = [d["nome"] for d in m.dati_usciti[-3:]]
     return (f"📋 Stato dell'agente ({giro.adesso:%d/%m %H:%M})\n"
             f"Notizie inviate oggi: {len(oggi)}\nRichieste all'IA oggi: {richieste}\n"
