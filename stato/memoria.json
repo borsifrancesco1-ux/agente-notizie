@@ -21924,16 +21924,6 @@
  "proposta": {},
  "dati_usciti": [
   {
-   "nome": "Nuovi occupati USA (non agricoli)",
-   "testo": "+165 mila (ottobre 2026; precedente +60 mila; atteso 65 mila; DATO ANOMALO: +100 mila sopra le attese)",
-   "quando": "2026-11-06T16:01:22+00:00"
-  },
-  {
-   "nome": "Disoccupazione USA",
-   "testo": "4,1% (ottobre 2026; precedente 4,2%; atteso 4,2%)",
-   "quando": "2026-11-06T16:01:23+00:00"
-  },
-  {
    "nome": "Inflazione USA (CPI, a/a)",
    "testo": "4,1% (ottobre 2026; precedente 4,0%)",
    "quando": "2026-11-10T15:02:06+00:00"
