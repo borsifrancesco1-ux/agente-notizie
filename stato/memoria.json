@@ -1,17 +1,5 @@
 {
  "valutate": {
-  "bbc8a2f76bde9559": "2026-11-07T07:01:32+00:00",
-  "b6da69ead39ddf5d": "2026-11-07T07:01:32+00:00",
-  "de1a24ec1ad67eb9": "2026-11-07T07:01:32+00:00",
-  "ef62299e3b9fc6a4": "2026-11-07T07:01:32+00:00",
-  "3471849adb5811d0": "2026-11-07T07:01:32+00:00",
-  "1711556ac2f56573": "2026-11-07T07:01:32+00:00",
-  "d8611bebafb1d3d5": "2026-11-07T07:01:32+00:00",
-  "5b9be2c3d5487030": "2026-11-07T07:01:32+00:00",
-  "f23213a400cf2f9f": "2026-11-07T07:01:32+00:00",
-  "090bec736545ac30": "2026-11-07T07:01:32+00:00",
-  "2193d21d7aba6934": "2026-11-07T07:01:32+00:00",
-  "29339c8a306ab5cc": "2026-11-07T07:01:32+00:00",
   "b2a34a42951638a9": "2026-11-07T09:01:37+00:00",
   "c6e72f19d2202c63": "2026-11-07T09:01:37+00:00",
   "684f882361e51435": "2026-11-07T09:01:37+00:00",
@@ -13583,7 +13571,34 @@
   "13dcc8ace973998c": "2026-11-21T06:32:31+00:00",
   "2b3f1c47e2cf9d81": "2026-11-21T06:32:31+00:00",
   "ca073585d8bf49c7": "2026-11-21T06:32:31+00:00",
-  "18ac29be72c5a27d": "2026-11-21T06:32:31+00:00"
+  "18ac29be72c5a27d": "2026-11-21T06:32:31+00:00",
+  "86bdc7c67ad048f3": "2026-11-21T07:03:04+00:00",
+  "6023f65d2844cbbd": "2026-11-21T07:03:04+00:00",
+  "9df233805fe26ce3": "2026-11-21T07:03:04+00:00",
+  "bfbe997cd4a2b6c7": "2026-11-21T07:03:04+00:00",
+  "63dd9741ec817b84": "2026-11-21T07:03:04+00:00",
+  "d3a4f00e5b926e05": "2026-11-21T07:03:04+00:00",
+  "b722ec22ed1bdf9d": "2026-11-21T07:03:04+00:00",
+  "9dd3fa0e3b3c4af2": "2026-11-21T07:03:04+00:00",
+  "fd61b477c4cce06c": "2026-11-21T07:03:04+00:00",
+  "9a4e0994f2448020": "2026-11-21T07:03:04+00:00",
+  "a7bf14f2c2ff788a": "2026-11-21T07:03:04+00:00",
+  "2949fef60ee2fef4": "2026-11-21T07:03:04+00:00",
+  "12fe575d21c427c4": "2026-11-21T07:03:04+00:00",
+  "e8aaf2a764076d30": "2026-11-21T07:03:04+00:00",
+  "d2ef14e6431d9b4a": "2026-11-21T07:03:04+00:00",
+  "3625e16f7bd375e7": "2026-11-21T07:03:04+00:00",
+  "9db7b9b768e2abdf": "2026-11-21T07:03:04+00:00",
+  "a55ce17496475909": "2026-11-21T07:03:04+00:00",
+  "05a441cd55b9e9ba": "2026-11-21T07:03:04+00:00",
+  "b70658dca9479aa7": "2026-11-21T07:03:04+00:00",
+  "4a0f2ea4c381e174": "2026-11-21T07:03:04+00:00",
+  "d9787d4f122989a1": "2026-11-21T07:03:04+00:00",
+  "740bb7178138ce8c": "2026-11-21T07:03:04+00:00",
+  "9d62e0d98d65dfb9": "2026-11-21T07:03:04+00:00",
+  "1c2b42448cf53a94": "2026-11-21T07:03:04+00:00",
+  "81df100157c2ebf3": "2026-11-21T07:03:04+00:00",
+  "9ce5a492f2e93ad9": "2026-11-21T07:03:04+00:00"
  },
  "inviate": [
   {
@@ -14225,30 +14240,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "f23213a400cf2f9f",
-   "titolo": "US October CPI Expected Up 0.3% Month-on-Month; A Week That Will Shape the Fed's Rate Decision",
-   "tema": "Inflazione e aspettative",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario"
-   ],
-   "impronta": [
-    "cpi",
-    "decision",
-    "expected",
-    "fed",
-    "month",
-    "october",
-    "rate",
-    "shape",
-    "week"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QQ2VTV0RZVHAtY3lCOXgwRDVfSm9taXpWNER5bGkxT0owSG1CZTlCdWUyajRIWmFoU21EM0dyZ2M4TnZ1cGF3V0tyVkFEZmhNVFZ1RGRxTktPc09uNjltUUNqeXdTRUhzaFBfdm56N3JTODZkMFE?oc=5",
-   "quando": "2026-11-07T07:01:33+00:00",
-   "messaggio": 1106,
-   "riassunto": "Gli analisti stimano un incremento dello 0,3% su base mensile per l'indice dei prezzi al consumo negli Stati Uniti a ottobre. Il dato rappresenta un passaggio cruciale per definire le prossime mosse della Federal Reserve sui tassi di interesse. Le aspettative di inflazione restano al centro del diba"
   },
   {
    "id": "66ab985923100284",
@@ -22054,6 +22045,105 @@
    "link": "https://www.marketwatch.com/story/chip-stocks-see-2-3-trillion-weekly-wipeout-as-panic-grips-the-ai-trade-371f2f03?mod=mw_rss_topstories",
    "quando": "2026-11-21T06:32:36+00:00",
    "riassunto": "Il titolo Nvidia ha subito un crollo pesante, registrando la peggiore serie di ribassi settimanali dal 2008, mentre si approfondisce l'indagine formale avviata dalla SEC. L'indice di riferimento dei semiconduttori ha archiviato la peggiore performance settimanale degli ultimi 25 anni, con perdite co"
+  },
+  {
+   "id": "d2ef14e6431d9b4a",
+   "titolo": "Oil shipped through Hormuz falls as Iranian strikes increase",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "falls",
+    "hormuz",
+    "increase",
+    "iranian",
+    "oil",
+    "shipped",
+    "strikes",
+    "through"
+   ],
+   "link": "https://www.ft.com/content/5fbc2b9d-0360-4a1f-9e4a-3e86168cbbc5?syn-25a6b1a6=1",
+   "quando": "2026-11-21T07:03:04+00:00",
+   "messaggio": 1418,
+   "riassunto": "I flussi di petrolio spediti attraverso lo Stretto di Hormuz registrano un calo a causa dell'intensificarsi degli attacchi iraniani alle petroliere. Gli analisti descrivono la ripresa delle esportazioni di greggio mediorientale come sempre più fragile. La situazione mantiene elevata la tensione geop"
+  },
+  {
+   "id": "d9787d4f122989a1",
+   "titolo": "Chilean peso suffers one of its steepest weekly declines of 2026 as copper drops below $6 and the dollar surges",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "2026",
+    "below",
+    "chilean",
+    "copper",
+    "declines",
+    "dollar",
+    "drops",
+    "one",
+    "peso",
+    "steepest",
+    "suffers",
+    "surges",
+    "weekly"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOME9aUW5vTi1KOFA5NlRhZ2VLUC1pY2hNYkRZdTQwYThNRzRaVjNDMUhyT2w2cnB1VzJ2RTVBUmM2b0pvUkdYaXg0T0JIZ3A0dHFYOFNTR0xCQVJncDFacTJNeHZOTld1X2t4akNZVlVKWW5kYmEtVTVuaDdKUVF6Xw?oc=5",
+   "quando": "2026-11-21T07:03:05+00:00",
+   "messaggio": 1419,
+   "riassunto": "Il peso cileno ha registrato uno dei cali settimanali più ripidi del 2026, penalizzato dal crollo dei prezzi del rame sotto la soglia dei 6 dollari e dal contestuale rafforzamento globale del dollaro. La combinazione di debolezza delle materie prime e pressione valutaria accentua la vulnerabilità de"
+  },
+  {
+   "id": "740bb7178138ce8c",
+   "titolo": "S&P upgrades Uzbekistan's credit rating to BB+ for first time",
+   "tema": "Rating e merito di credito",
+   "reparti": [
+    "Obbligazionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "credit",
+    "first",
+    "rating",
+    "time",
+    "upgrades",
+    "uzbekistan"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9sb3BzUGVlcjdMTGtVSWFFRlVTbHRlWWlDb3hVdl8wRko5ODZjOGIxQzFqb29PTDl3WUxER0V1SVk3b3hNZk1uWGdDd0M3OHNVLXN0ZlVIbkN2QmRmdXJB?oc=5",
+   "quando": "2026-11-21T07:03:06+00:00",
+   "messaggio": 1420,
+   "riassunto": "L'agenzia di rating S&P ha migliorato il merito di credito dell'Uzbekistan portandolo a BB+, segnando il primo traguardo di questo livello per il Paese. La promozione riflette i progressi nelle riforme economiche e la stabilità macroeconomica nonostante il contesto internazionale complesso. La decis"
+  },
+  {
+   "id": "1c2b42448cf53a94",
+   "titolo": "U.S. Dollar Moves Lower Amid Profit-Taking: Analysis For EUR/USD, GBP/USD, USD/CAD, USD/JPY",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "analysis",
+    "cad",
+    "dollar",
+    "eur",
+    "gbp",
+    "jpy",
+    "lower",
+    "moves",
+    "profit",
+    "taking",
+    "usd"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOTjRhTUlSMHRMaDMtZi1pcnJCS0Y4emVZY29QWmR0RGVVMnZTZml5LVBWQVp3eHY1ZFZFdTRQXzNDT2tRLTRDRFl3cklIQjBOQmUtSFBYaWlUVVREdkQ3djZybUZTNkxSRVpMUjEwb091c2tHVFRnWWJYb3hlRHp3WktJMjZ6Z29VNlhOXy1BOTZOVWdYdDFFMUlLM0xac2VfRm9lNzFndjF3RDJIOFdXcEJwY1I1SDdNeFc4WG02VkI1SUl1TlRZLV9EdFBNNVBXUHU0?oc=5",
+   "quando": "2026-11-21T07:03:07+00:00",
+   "messaggio": 1421,
+   "riassunto": "Il dollaro statunitense ha registrato un movimento al ribasso a causa di operazioni generalizzate di presa di beneficio dopo i recenti massimi. Le analisi tecniche sui principali cambi come EUR/USD, GBP/USD e USD/JPY evidenziano una fase di consolidamento dei corsi. Gli operatori valutano la sosteni"
   }
  ],
  "feed_guasti": {},
@@ -22073,13 +22163,13 @@
   "2026-11-17": 27,
   "2026-11-18": 26,
   "2026-11-19": 20,
-  "2026-11-20": 15
+  "2026-11-20": 16
  },
  "avviso_quota": "",
  "giri_senza_ia": 0,
  "avviso_ia": "",
  "giornata": {
-  "ora_notizie": "2026-11-20 22",
+  "ora_notizie": "2026-11-21 08",
   "chiusura": "2026-11-20",
   "apertura": "2026-11-21",
   "settimanale": "2026-W46"
