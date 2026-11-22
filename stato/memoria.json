@@ -1,45 +1,5 @@
 {
  "valutate": {
-  "d7c84c0021c55f33": "2026-11-08T09:01:11+00:00",
-  "012f123af38cac48": "2026-11-08T09:01:11+00:00",
-  "d50fa8e178d58322": "2026-11-08T09:01:11+00:00",
-  "a0cd7005b1bcd44a": "2026-11-08T09:01:11+00:00",
-  "430f6a32838afb39": "2026-11-08T09:01:11+00:00",
-  "ae626e5bbef20b46": "2026-11-08T09:01:11+00:00",
-  "02c4477bb9492364": "2026-11-08T09:01:11+00:00",
-  "970a256d00637318": "2026-11-08T09:01:11+00:00",
-  "b51acb0434ca0bf9": "2026-11-08T09:01:11+00:00",
-  "4a03640553733391": "2026-11-08T09:01:11+00:00",
-  "8a427e2e448fb738": "2026-11-08T09:01:11+00:00",
-  "2af1da27ac18f336": "2026-11-08T09:01:11+00:00",
-  "662df754b5b3d707": "2026-11-08T09:01:11+00:00",
-  "123fa166d699691e": "2026-11-08T09:01:11+00:00",
-  "48839ef80307052d": "2026-11-08T09:01:11+00:00",
-  "45d281a3955d7447": "2026-11-08T09:01:11+00:00",
-  "61622845a49d4c4a": "2026-11-08T09:01:11+00:00",
-  "c814cb67e7936ed4": "2026-11-08T09:01:11+00:00",
-  "71e25ac2bb1994c9": "2026-11-08T09:01:11+00:00",
-  "d373341e7dbea21a": "2026-11-08T09:01:11+00:00",
-  "1816e9174f651b9d": "2026-11-08T09:01:11+00:00",
-  "5d11827593170145": "2026-11-08T09:01:11+00:00",
-  "e797fa8e00335138": "2026-11-08T09:01:11+00:00",
-  "e73af307cee270f1": "2026-11-08T09:01:11+00:00",
-  "516828dcb5ba3b0e": "2026-11-08T09:01:11+00:00",
-  "170248050346cb54": "2026-11-08T09:01:11+00:00",
-  "58543e29337fcdce": "2026-11-08T09:01:11+00:00",
-  "38e2119d5eb317ee": "2026-11-08T09:01:11+00:00",
-  "16883e6d0c6fee3e": "2026-11-08T09:01:11+00:00",
-  "fe5977e3f5514428": "2026-11-08T09:01:11+00:00",
-  "9ed96707894d8d58": "2026-11-08T09:01:11+00:00",
-  "f7a38f6af768cfff": "2026-11-08T09:01:11+00:00",
-  "aa97bd2e800bc54d": "2026-11-08T09:01:11+00:00",
-  "9c4e95d6a3968433": "2026-11-08T09:01:11+00:00",
-  "c8df85c04593cc1c": "2026-11-08T09:01:11+00:00",
-  "dafcb92e80cdeda8": "2026-11-08T09:01:11+00:00",
-  "a16d3d9309eec872": "2026-11-08T09:01:11+00:00",
-  "f79c4aee8d873ba4": "2026-11-08T09:01:11+00:00",
-  "beda244886e2bf80": "2026-11-08T09:01:11+00:00",
-  "9c2eaf555305fd81": "2026-11-08T09:01:11+00:00",
   "cacb72515a3c8c34": "2026-11-08T11:01:24+00:00",
   "b628553be477c651": "2026-11-08T11:01:24+00:00",
   "cc457eb10432fa88": "2026-11-08T11:01:24+00:00",
@@ -13622,7 +13582,61 @@
   "80a745454fc2950c": "2026-11-22T07:03:17+00:00",
   "423b16c5d159d053": "2026-11-22T07:03:17+00:00",
   "66b04858e79ff69f": "2026-11-22T07:03:17+00:00",
-  "67cb7447bff5f90c": "2026-11-22T07:03:17+00:00"
+  "67cb7447bff5f90c": "2026-11-22T07:03:17+00:00",
+  "363be724f1d53d1d": "2026-11-22T09:02:35+00:00",
+  "c17696e4128fd562": "2026-11-22T09:02:35+00:00",
+  "238f6ee00978abdb": "2026-11-22T09:02:35+00:00",
+  "de1b04f6ecd48767": "2026-11-22T09:02:35+00:00",
+  "7e2f133d41486e81": "2026-11-22T09:02:35+00:00",
+  "c1488bb9b36b2e50": "2026-11-22T09:02:35+00:00",
+  "f4666502ac5db5d8": "2026-11-22T09:02:35+00:00",
+  "9bf8331101038938": "2026-11-22T09:02:35+00:00",
+  "a668134d1ec78d62": "2026-11-22T09:02:35+00:00",
+  "4565d551fe18f03c": "2026-11-22T09:02:35+00:00",
+  "494cc74a9fdd94c5": "2026-11-22T09:02:35+00:00",
+  "85506eadbcfe68ff": "2026-11-22T09:02:35+00:00",
+  "c2e840d7dcc882e8": "2026-11-22T09:02:35+00:00",
+  "479e5e1f44faf688": "2026-11-22T09:02:35+00:00",
+  "87d35b682d18a78a": "2026-11-22T09:02:35+00:00",
+  "ee934b6c250c2e47": "2026-11-22T09:02:35+00:00",
+  "7f26c3876a7893b5": "2026-11-22T09:02:35+00:00",
+  "5562726751ef7887": "2026-11-22T09:02:35+00:00",
+  "379d15dffc8fc104": "2026-11-22T09:02:35+00:00",
+  "6dc09d6652363608": "2026-11-22T09:02:35+00:00",
+  "99d5ad479e92d23f": "2026-11-22T09:02:35+00:00",
+  "335dbdf46b31db5a": "2026-11-22T09:02:35+00:00",
+  "8b9217c105c8721b": "2026-11-22T09:02:35+00:00",
+  "a7215c17b58f1bac": "2026-11-22T09:02:35+00:00",
+  "a4cd5e256b15b6ec": "2026-11-22T09:02:35+00:00",
+  "1cf3fd093f22143d": "2026-11-22T09:02:35+00:00",
+  "d1c55379d573cd0e": "2026-11-22T09:02:35+00:00",
+  "4bfbe4afbf98f6ea": "2026-11-22T09:02:35+00:00",
+  "2aaec3b9a9e8aa91": "2026-11-22T09:02:35+00:00",
+  "6bc6938e2ca51318": "2026-11-22T09:02:35+00:00",
+  "89d4967d603065c1": "2026-11-22T09:02:35+00:00",
+  "2d11ec42cab6645f": "2026-11-22T09:02:35+00:00",
+  "46f59929729d8c9a": "2026-11-22T09:02:35+00:00",
+  "2338b4329255d3a2": "2026-11-22T09:02:35+00:00",
+  "de52b8c34b5ad720": "2026-11-22T09:02:35+00:00",
+  "e1f65c79f3bbe386": "2026-11-22T09:02:35+00:00",
+  "0bd80189ace3c276": "2026-11-22T09:02:35+00:00",
+  "f5c75ff8a84cfae0": "2026-11-22T09:02:35+00:00",
+  "d203df094bcd16d6": "2026-11-22T09:02:35+00:00",
+  "2c61f83f69c60167": "2026-11-22T09:02:35+00:00",
+  "af183a57ddbd2857": "2026-11-22T09:02:35+00:00",
+  "0a54c63dcd141438": "2026-11-22T09:02:35+00:00",
+  "6c1e53428ef48050": "2026-11-22T09:02:35+00:00",
+  "26a2ecf973fd5138": "2026-11-22T09:02:35+00:00",
+  "4ccf4902c9e58b9d": "2026-11-22T09:02:35+00:00",
+  "a07a2cbcd1fdbe49": "2026-11-22T09:02:35+00:00",
+  "55331ae2eb989bb4": "2026-11-22T09:02:35+00:00",
+  "7eedde24fd667708": "2026-11-22T09:02:35+00:00",
+  "4b3fee69cf2de610": "2026-11-22T09:02:35+00:00",
+  "284926bbc74beb14": "2026-11-22T09:02:35+00:00",
+  "255e1ce01a23b10f": "2026-11-22T09:02:35+00:00",
+  "59d0e77eea4fa8ce": "2026-11-22T09:02:35+00:00",
+  "44110cd1213b2672": "2026-11-22T09:02:35+00:00",
+  "c7ef36b4f24d41f1": "2026-11-22T09:02:35+00:00"
  },
  "inviate": [
   {
@@ -14264,60 +14278,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "dafcb92e80cdeda8",
-   "titolo": "Eurozone Inflation Returns to 4% as French Bond Market Stirs, ECB Leadership Selection Enters Critical Window",
-   "tema": "BCE",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "bond",
-    "critical",
-    "ecb",
-    "enters",
-    "eurozone",
-    "french",
-    "inflation",
-    "leadership",
-    "market",
-    "returns",
-    "selection",
-    "stirs",
-    "window"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBiVVFUSUlWZlZqWlFCclFQbC1CNWJCZ0lOLTBmY1VMNUxfcjhZT3ZkeUNCaWZucmV1VDJvcG45bE9sa1BQRjVDLW1PRnJvSzc3TldfYkJNUVlXRkxUOXdwZUZkdlgwOFdDZlNoUDRPdVRZamM4MHc?oc=5",
-   "quando": "2026-11-08T09:01:12+00:00",
-   "messaggio": 1124,
-   "riassunto": "L'inflazione nell'Eurozona è tornata a toccare il 4%, alimentando le pressioni sulla Banca Centrale Europea affinché mantenga una linea rigida. Nel frattempo, il mercato obbligazionario francese mostra segnali di tensione e la selezione per la successione ai vertici della BCE entra in una fase criti"
-  },
-  {
-   "id": "516828dcb5ba3b0e",
-   "titolo": "Morgan Stanley Says Leveraged ETF Selling Hit $57 Billion on Nov. 5 US Stock Rout",
-   "tema": "Rischi di mercato e volatilità",
-   "reparti": [
-    "Risk management",
-    "Azionario"
-   ],
-   "impronta": [
-    "billion",
-    "etf",
-    "hit",
-    "leveraged",
-    "morgan",
-    "nov",
-    "rout",
-    "selling",
-    "stanley",
-    "stock"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdWhKNG5ERF8za2dzU0I1bEJYY29FWXN2andTVHE4MjQwZkRjSUxtTzBGZEVzSUZtUkVtWVF5TEJ3bDJvT1UwamkzU29LRU1RXzhKNw?oc=5",
-   "quando": "2026-11-08T09:01:13+00:00",
-   "messaggio": 1125,
-   "riassunto": "Secondo i dati diffusi da Morgan Stanley, le vendite forzate sugli ETF a leva hanno raggiunto l'impressionante cifra di 57 miliardi di dollari in coincidenza con il crollo azionario statunitense del 5 novembre. Questo massiccio smobilizzo ha amplificato la volatilità sui listini, costringendo gli op"
   },
   {
    "id": "7f2e3f443e7a6868",
@@ -22110,11 +22070,86 @@
    "quando": "2026-11-22T07:03:18+00:00",
    "messaggio": 1439,
    "riassunto": "I prezzi del petrolio Brent si mantengono stabili intorno a quota 92,57 dollari al barile mentre il mercato attende le decisioni dell'OPEC+ in merito alle quote di produzione per il 2027. L'attesa per le prossime mosse del cartello petrolifero alimenta l'incertezza sull'offerta globale di energia. G"
+  },
+  {
+   "id": "363be724f1d53d1d",
+   "titolo": "Swiss Inflation Has Been Accelerating, SNB Vice President Martin Says",
+   "tema": "Inflazione e aspettative",
+   "reparti": [
+    "Macroeconomia",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "accelerates",
+    "broader",
+    "concern",
+    "inflation",
+    "pressures",
+    "price",
+    "signals",
+    "snb",
+    "swiss"
+   ],
+   "link": "https://www.investing.com/news/stock-market-news/swiss-inflation-accelerates-as-snb-signals-concern-over-broader-price-pressures-5043822",
+   "quando": "2026-11-22T09:02:35+00:00",
+   "messaggio": 1440,
+   "riassunto": "La crescita dei prezzi al consumo in Svizzera ha accelerato dopo l'ultima decisione sui tassi di interesse della banca centrale di settembre. Il vicepresidente della Swiss National Bank, Antoine Martin, ha avvertito che l'istituto sta monitorando attentamente i potenziali effetti di secondo round su"
+  },
+  {
+   "id": "85506eadbcfe68ff",
+   "titolo": "Iran asserts control over Hormuz as strikes on Bahrain, Saudi Arabia escalate",
+   "tema": "Geopolitica e commercio internazionale",
+   "reparti": [
+    "Geopolitica",
+    "Risk management"
+   ],
+   "impronta": [
+    "arabia",
+    "asserts",
+    "bahrain",
+    "control",
+    "escalate",
+    "hormuz",
+    "iran",
+    "saudi",
+    "strikes"
+   ],
+   "link": "https://www.investing.com/news/economy-news/iran-asserts-control-over-hormuz-as-strikes-on-bahrain-and-saudi-arabia-escalate-5043802",
+   "quando": "2026-11-22T09:02:36+00:00",
+   "messaggio": 1441,
+   "riassunto": "L'Iran ha dichiarato di aver assunto il pieno controllo dello Stretto di Hormuz mentre gli attacchi missilistici e di droni contro infrastrutture in Bahrein e Arabia Saudita subiscono una forte escalation. Questa situazione di tensione estrema mette a repentaglio i flussi globali di petrolio e gas c"
+  },
+  {
+   "id": "379d15dffc8fc104",
+   "titolo": "Dollaro in rally verso quota 104, i tre segnali da seguire per cavalcare il biglietto verde",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "104",
+    "biglietto",
+    "cavalcare",
+    "dollaro",
+    "quota",
+    "rally",
+    "segnali",
+    "seguire",
+    "tre",
+    "verde",
+    "verso"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQX2lWaWpYajVETGcxQUllMkY0ejBwdWh1SnZhem1CRFJXZThJdV9RT2x6VmZVOFlGLV9JclkzRWN5bVd5X2VKbmJSdUlUbkxTQktDX19VU0NSSXBKTDlOWWdaTHZ6WWRZN0ZNUnVienN0TWszV2licUxaS2hmZEhXZmhTeklGS2ZWRTRYanU2Y2VxcFFhc0tETWlmU21oZUZfdGwxZDJiY25HNHRZbTV3WUFwX0hxaG1WNE8zT1hHdFM1ZDVOaFFnQkZrY1BvSEx3SzNNektmc1pYWENkM2otSg?oc=5",
+   "quando": "2026-11-22T09:02:37+00:00",
+   "messaggio": 1442,
+   "riassunto": "Il dollaro statunitense prosegue la sua corsa al rialzo avvicinandosi alla soglia psicologica di 104 punti, sostenuto da dinamiche macroeconomiche favorevoli e tassi elevati. Gli analisti evidenziano tre indicatori chiave da seguire attentamente per valutare la sostenibilità del trend della valuta a"
   }
  ],
  "feed_guasti": {},
  "feed_limitati": {
-  "Google News EN · FOMC Fed rates": 1
+  "Google News EN · Eni": 1,
+  "Google News EN · currency hedging costs euro dollar": 1
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22131,13 +22166,14 @@
   "2026-11-18": 26,
   "2026-11-19": 20,
   "2026-11-20": 16,
-  "2026-11-21": 15
+  "2026-11-21": 15,
+  "2026-11-22": 1
  },
  "avviso_quota": "",
  "giri_senza_ia": 0,
  "avviso_ia": "",
  "giornata": {
-  "ora_notizie": "2026-11-22 08",
+  "ora_notizie": "2026-11-22 10",
   "chiusura": "2026-11-21",
   "apertura": "2026-11-22",
   "settimanale": "2026-W46"
