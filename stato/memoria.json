@@ -1,39 +1,5 @@
 {
  "valutate": {
-  "bb845ba51cdeb8cf": "2026-11-08T21:01:10+00:00",
-  "26a78b8c98a3d9d9": "2026-11-08T21:01:10+00:00",
-  "d1af57d0406e74b3": "2026-11-08T21:01:10+00:00",
-  "a8d976796bae166f": "2026-11-08T21:01:10+00:00",
-  "3c63f09b92681ab4": "2026-11-08T21:01:10+00:00",
-  "8682ebab1c455096": "2026-11-08T21:01:10+00:00",
-  "337e08c6a37b9273": "2026-11-08T21:01:10+00:00",
-  "819f0df2d62651cc": "2026-11-08T21:01:10+00:00",
-  "f76e95b0f54dc5cd": "2026-11-08T21:01:10+00:00",
-  "4016f4eff46ddbd3": "2026-11-08T21:01:10+00:00",
-  "10f360046b16588d": "2026-11-08T21:01:10+00:00",
-  "3a291b8147c77d34": "2026-11-08T21:01:10+00:00",
-  "63316ba721f473cf": "2026-11-08T21:01:10+00:00",
-  "82fc4c5adc5519ec": "2026-11-08T21:01:10+00:00",
-  "9edbb6571eaca5a0": "2026-11-08T21:01:10+00:00",
-  "5e327e3a87ac6e77": "2026-11-08T21:01:10+00:00",
-  "88d6db75d67cc2ce": "2026-11-08T21:01:10+00:00",
-  "78c2ba885ebb825a": "2026-11-08T21:01:10+00:00",
-  "641b3ba681639035": "2026-11-08T21:01:10+00:00",
-  "522a67af5e809e9c": "2026-11-08T21:01:10+00:00",
-  "7cb7583bc402c46f": "2026-11-08T21:01:10+00:00",
-  "da9f27f2c37160b0": "2026-11-08T21:01:10+00:00",
-  "1aedc4b3bd2224bc": "2026-11-08T21:01:10+00:00",
-  "1b172aad4271dab4": "2026-11-08T21:01:10+00:00",
-  "872bf2409561e2b9": "2026-11-08T21:01:10+00:00",
-  "2814c02401508477": "2026-11-08T21:01:10+00:00",
-  "b9bcb0613cc08b56": "2026-11-08T21:01:10+00:00",
-  "2f3bcfa0f1ddbfbb": "2026-11-08T21:01:10+00:00",
-  "8dfc9dd9b51979b2": "2026-11-08T21:01:10+00:00",
-  "ad8b70a148150618": "2026-11-08T21:01:10+00:00",
-  "ecf54ce95b768506": "2026-11-08T21:01:10+00:00",
-  "6c7014edc489665e": "2026-11-08T21:01:10+00:00",
-  "a90385d2442228c1": "2026-11-08T21:01:10+00:00",
-  "607f48b6821fb2ae": "2026-11-08T21:01:10+00:00",
   "4ac18eab5fbeca79": "2026-11-09T06:30:59+00:00",
   "443091db8f3ea757": "2026-11-09T06:30:59+00:00",
   "4265ec95f5ade7b9": "2026-11-09T06:30:59+00:00",
@@ -13642,7 +13608,64 @@
   "1f17fdb6212ed5b9": "2026-11-22T19:03:45+00:00",
   "e21db9269f1704b2": "2026-11-22T19:03:45+00:00",
   "4db5b20f8fa1d5ea": "2026-11-22T19:03:45+00:00",
-  "b7411a70139e1e23": "2026-11-22T19:03:45+00:00"
+  "b7411a70139e1e23": "2026-11-22T19:03:45+00:00",
+  "760c1656953ccf54": "2026-11-22T21:04:11+00:00",
+  "4f09c6090260280f": "2026-11-22T21:04:11+00:00",
+  "041064977c8f8517": "2026-11-22T21:04:11+00:00",
+  "b3e950109089be16": "2026-11-22T21:04:11+00:00",
+  "7ef2671ba68b0d20": "2026-11-22T21:04:11+00:00",
+  "3e879bcc062055bb": "2026-11-22T21:04:11+00:00",
+  "af2866f24e52cfbb": "2026-11-22T21:04:11+00:00",
+  "78518b7dcf59bec4": "2026-11-22T21:04:11+00:00",
+  "5e6b124072a81e3e": "2026-11-22T21:04:11+00:00",
+  "353d529b69e48cdb": "2026-11-22T21:04:11+00:00",
+  "819fa7a219904ef9": "2026-11-22T21:04:11+00:00",
+  "29387677a4f17b0a": "2026-11-22T21:04:11+00:00",
+  "5980fef579035dd9": "2026-11-22T21:04:11+00:00",
+  "4cdead3f9d9890d5": "2026-11-22T21:04:11+00:00",
+  "5982b999cda65237": "2026-11-22T21:04:11+00:00",
+  "fc1d095158467128": "2026-11-22T21:04:11+00:00",
+  "c29ac3b26881c97e": "2026-11-22T21:04:11+00:00",
+  "2107e71f2b754e86": "2026-11-22T21:04:11+00:00",
+  "f8897c23e01bd9ee": "2026-11-22T21:04:11+00:00",
+  "ce80e7e41575ab88": "2026-11-22T21:04:11+00:00",
+  "85a85a4942fa98d2": "2026-11-22T21:04:11+00:00",
+  "4ed3335f5f913211": "2026-11-22T21:04:11+00:00",
+  "a933325b85f66509": "2026-11-22T21:04:11+00:00",
+  "bb031ac9d17a4342": "2026-11-22T21:04:11+00:00",
+  "0e982352881ae34c": "2026-11-22T21:04:11+00:00",
+  "fad890bbd03a6a1b": "2026-11-22T21:04:11+00:00",
+  "83e2a7468093e404": "2026-11-22T21:04:11+00:00",
+  "6632a3e14fa5e908": "2026-11-22T21:04:11+00:00",
+  "423d6f5e827f8f63": "2026-11-22T21:04:11+00:00",
+  "aaa426a34e8aa21a": "2026-11-22T21:04:11+00:00",
+  "e31430dea850c734": "2026-11-22T21:04:11+00:00",
+  "a045ccc94f646a8c": "2026-11-22T21:04:11+00:00",
+  "28a98ab4de80a2f4": "2026-11-22T21:04:11+00:00",
+  "78674dafb1655bce": "2026-11-22T21:04:11+00:00",
+  "6359007001231991": "2026-11-22T21:04:11+00:00",
+  "19661d1e36e12ad7": "2026-11-22T21:04:11+00:00",
+  "3e843c4d02e1f315": "2026-11-22T21:04:11+00:00",
+  "5bcbe57c36c52bc3": "2026-11-22T21:04:11+00:00",
+  "97acd85350ed19b2": "2026-11-22T21:04:11+00:00",
+  "d1f938ddc75d53c8": "2026-11-22T21:04:11+00:00",
+  "00e011f539b06063": "2026-11-22T21:04:11+00:00",
+  "03ef196f5f205db0": "2026-11-22T21:04:11+00:00",
+  "c25b36e048e828fd": "2026-11-22T21:04:11+00:00",
+  "54e2470111484127": "2026-11-22T21:04:11+00:00",
+  "2a32e28b8c437da2": "2026-11-22T21:04:11+00:00",
+  "d0ca90b061e24f27": "2026-11-22T21:04:11+00:00",
+  "f00480b9251e9652": "2026-11-22T21:04:11+00:00",
+  "a96923dec424a441": "2026-11-22T21:04:11+00:00",
+  "ea7b71c13b3d64cb": "2026-11-22T21:04:11+00:00",
+  "beb940d52fe3f972": "2026-11-22T21:04:11+00:00",
+  "e54b32cea9e01850": "2026-11-22T21:04:11+00:00",
+  "acb47fa0dc6286a4": "2026-11-22T21:04:11+00:00",
+  "be6438714b84e0e2": "2026-11-22T21:04:11+00:00",
+  "e41851f866a3a497": "2026-11-22T21:04:11+00:00",
+  "b559c10b956cf696": "2026-11-22T21:04:11+00:00",
+  "b9b5b295a10fd253": "2026-11-22T21:04:11+00:00",
+  "599ea412cb47a2db": "2026-11-22T21:04:11+00:00"
  },
  "inviate": [
   {
@@ -14284,110 +14307,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "26a78b8c98a3d9d9",
-   "titolo": "Nvidia opens probe after report that CEO Huang was target of foreign intelligence",
-   "tema": "Borse, valutazioni e utili",
-   "reparti": [
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "alleged",
-    "ceo",
-    "chinese",
-    "huang",
-    "investigates",
-    "jensen",
-    "nvidia",
-    "relationship",
-    "spy"
-   ],
-   "link": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html",
-   "quando": "2026-11-08T21:01:18+00:00",
-   "messaggio": 1137,
-   "riassunto": "Nvidia ha avviato un'indagine formale dopo che alcune notizie hanno rivelato che il CEO Jensen Huang è stato bersaglio di intelligence straniera e coinvolto in vicende personali. Il numero uno dell'azienda ha ammesso i fatti e si è scusato con i dipendenti. La notizia solleva interrogativi sulla gov"
-  },
-  {
-   "id": "5e327e3a87ac6e77",
-   "titolo": "Treasury Rally Gets New Boost as Election Hammers the AI Trade",
-   "tema": "Curva dei rendimenti",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia"
-   ],
-   "impronta": [
-    "boost",
-    "election",
-    "gets",
-    "hammers",
-    "rally",
-    "trade",
-    "treasury"
-   ],
-   "link": "https://www.bloomberg.com/news/articles/2026-11-08/treasury-rally-gets-new-boost-as-election-hammers-the-ai-trade",
-   "quando": "2026-11-08T21:01:19+00:00",
-   "messaggio": 1138,
-   "riassunto": "Il mercato dei titoli di Stato americani ha registrato un nuovo rally grazie ai risultati delle elezioni di metà mandato negli Stati Uniti che hanno premiato i Democratici. Gli investitori stanno riposizionando i capitali dopo il recente e pesante sell-off, trovando riparo nei Treasury. La mossa rif"
-  },
-  {
-   "id": "337e08c6a37b9273",
-   "titolo": "Via libera della Consob all'offerta di Intesa per Mps, si parte il 24 novembre",
-   "tema": "Obbligazioni societarie e default",
-   "reparti": [
-    "Obbligazionario",
-    "Azionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "all",
-    "consob",
-    "intesa",
-    "libera",
-    "mps",
-    "novembre",
-    "offerta",
-    "parte",
-    "via"
-   ],
-   "link": "https://www.ansa.it/sito/notizie/economia/2026/11/08/via-libera-della-consob-allofferta-di-intesa-per-mps-si-parte-il-24-novembre_15c55497-bc22-4473-aef0-930c9724f4f4.html",
-   "quando": "2026-11-08T21:01:20+00:00",
-   "messaggio": 1139,
-   "riassunto": "La Consob ha concesso il via libera definitivo all'offerta pubblica di scambio promossa da Intesa Sanpaolo su Banca Monte dei Paschi di Siena. L'operazione prenderà il via ufficialmente il prossimo 24 novembre, a seguito dell'approvazione del documento e del prospetto informativo. Il mercato valuta "
-  },
-  {
-   "id": "da9f27f2c37160b0",
-   "titolo": "Stocks will tumble much further as AI investment will slow next year then fall in 2028 and drag GDP down too, economist predicts",
-   "tema": "Borse, valutazioni e utili",
-   "reparti": [
-    "Azionario",
-    "Macroeconomia",
-    "Risk management"
-   ],
-   "impronta": [
-    "2028",
-    "down",
-    "drag",
-    "economist",
-    "fall",
-    "further",
-    "gdp",
-    "investment",
-    "much",
-    "next",
-    "predicts",
-    "slow",
-    "stocks",
-    "then",
-    "too",
-    "tumble",
-    "year"
-   ],
-   "link": "https://fortune.com/2026/11/08/stock-market-outlook-sp500-ai-capex-gdp-growth-productivity/",
-   "quando": "2026-11-08T21:01:20+00:00",
-   "messaggio": 1140,
-   "riassunto": "Secondo le stime di Capital Economics, le azioni statunitensi subiranno ulteriori correzioni a causa del progressivo rallentamento degli investimenti nell'intelligenza artificiale previsto per il prossimo anno e in calo nel 2028. L'indice S&P 500 potrebbe scendere del 12% rispetto ai livelli attuali"
   },
   {
    "id": "412776b59939dfaa",
@@ -22243,10 +22162,103 @@
    "quando": "2026-11-22T19:03:55+00:00",
    "messaggio": 1457,
    "riassunto": "Un'analisi di Howden rileva che la domanda energetica dei data center cresce al ritmo del 19% annuo, superando di dieci volte l'espansione della rete elettrica ferma al 2%. Con l'inasprirsi dei vincoli normativi locali, i colossi tecnologici si stanno orientando verso la costruzione di centrali a ga"
+  },
+  {
+   "id": "6632a3e14fa5e908",
+   "titolo": "Bessent says Trump administration needs answers from Nvidia",
+   "tema": "Fed",
+   "reparti": [
+    "Geopolitica",
+    "Azionario"
+   ],
+   "impronta": [
+    "administration",
+    "answers",
+    "bessent",
+    "needs",
+    "nvidia",
+    "trump"
+   ],
+   "link": "https://www.investing.com/news/company-news/bessent-says-trump-administration-needs-answers-from-nvidia-5044096",
+   "quando": "2026-11-22T21:04:12+00:00",
+   "messaggio": 1458,
+   "riassunto": "Il segretario al Tesoro statunitense Scott Bessent ha dichiarato che l'amministrazione Trump attende risposte ufficiali da parte di Nvidia in merito alla vendita di chip avanzati destinati alla Cina. La vicenda si inserisce in un contesto di crescenti tensioni geopolitiche e commerciali legate al se"
+  },
+  {
+   "id": "819fa7a219904ef9",
+   "titolo": "Bond Market’s Go-To Trade for Fed Hikes Roiled by Stocks Retreat",
+   "tema": "Fed",
+   "reparti": [
+    "Obbligazionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "bond",
+    "fed",
+    "hikes",
+    "market",
+    "retreat",
+    "roiled",
+    "stocks",
+    "trade"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-22/bond-market-s-go-to-trade-for-fed-hikes-roiled-by-stocks-retreat",
+   "quando": "2026-11-22T21:04:12+00:00",
+   "messaggio": 1459,
+   "riassunto": "Gli operatori obbligazionari stanno facendo i conti con la correzione dei mercati azionari, che sta modificando le tradizionali strategie di scommessa sui prossimi rialzi dei tassi da parte della Federal Reserve. Nonostante il sentiment macroeconomico sia appesantito dal ribasso delle borse, permane"
+  },
+  {
+   "id": "3e879bcc062055bb",
+   "titolo": "Dip Buyers Hesitate to Step In as Nasdaq 100 Nears a Bear Market",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Risk management"
+   ],
+   "impronta": [
+    "100",
+    "bear",
+    "buyers",
+    "dip",
+    "hesitate",
+    "market",
+    "nasdaq",
+    "nears",
+    "step"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-22/dip-buyers-hesitate-to-step-in-as-nasdaq-100-nears-a-bear-market",
+   "quando": "2026-11-22T21:04:13+00:00",
+   "messaggio": 1460,
+   "riassunto": "Mentre il Nasdaq 100 si avvicina a un mercato orso e la scorsa settimana ha registrato pesanti ribassi, i segnali di acquisto sui minimi faticano a concretizzarsi. Secondo i desk di trading di Goldman Sachs, la forte correzione offre opportunità d'ingresso interessanti sulle azioni statunitensi, ma "
+  },
+  {
+   "id": "ce80e7e41575ab88",
+   "titolo": "Dollar up as Bitcoin, Gold and stocks fall on Fed rate worries",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "bitcoin",
+    "dollar",
+    "fall",
+    "fed",
+    "gold",
+    "rate",
+    "stocks",
+    "worries"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPM3Y2dk1WRVJCbFFMM0RKNFRjVmFhMTdWd2hienIyZFo5ZTRBdlh1bUN3UXp6OEgyUF9nZ1JNQm53VE90Uk9NUDVWUUJYOHhuUDB4ZlUzWExaOG82MWxJVVpjckt3YlJVWFZndTE1cWdTdkE3aURGRWR4dmhGTzdwbnhaRVVpTWNNQ3NNSkQtSERBdktVZ1RWMHozZHNQWDJ0YUViUXNtVjhsS1FN?oc=5",
+   "quando": "2026-11-22T21:04:14+00:00",
+   "messaggio": 1461,
+   "riassunto": "Il dollaro statunitense registra nuovi rialzi spinto dalle preoccupazioni persistenti sulle future mosse della Federal Reserve in materia di tassi di interesse. Nel contempo, asset tradizionalmente correlati alla liquidità come l'oro e il Bitcoin subiscono pressioni al ribasso, in tandem con la debo"
   }
  ],
  "feed_guasti": {},
- "feed_limitati": {},
+ "feed_limitati": {
+  "Google News EN · oil prices OPEC": 1
+ },
  "offset_telegram": 146280066,
  "richieste_ia": {
   "2026-11-08": 13,
@@ -22263,14 +22275,14 @@
   "2026-11-19": 20,
   "2026-11-20": 16,
   "2026-11-21": 15,
-  "2026-11-22": 12
+  "2026-11-22": 15
  },
  "avviso_quota": "",
  "giri_senza_ia": 0,
  "avviso_ia": "",
  "giornata": {
-  "ora_notizie": "2026-11-22 20",
-  "chiusura": "2026-11-21",
+  "ora_notizie": "2026-11-22 22",
+  "chiusura": "2026-11-22",
   "apertura": "2026-11-22",
   "settimanale": "2026-W47"
  },
