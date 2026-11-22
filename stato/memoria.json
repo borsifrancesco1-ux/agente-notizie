@@ -1,20 +1,5 @@
 {
  "valutate": {
-  "0d6a2782c786e45a": "2026-11-08T07:01:11+00:00",
-  "688d0e84b7e2f14c": "2026-11-08T07:01:11+00:00",
-  "fdadc03fa01c0c9f": "2026-11-08T07:01:11+00:00",
-  "b82ff070da9bd6b2": "2026-11-08T07:01:11+00:00",
-  "ee6ea75919cd2765": "2026-11-08T07:01:11+00:00",
-  "d9b89ebe47fc020c": "2026-11-08T07:01:11+00:00",
-  "9c1a60497a9f575d": "2026-11-08T07:01:11+00:00",
-  "5e1a4a4bdcc9ed12": "2026-11-08T07:01:11+00:00",
-  "44bfd0ad621c3de3": "2026-11-08T07:01:11+00:00",
-  "6326915cbdda5114": "2026-11-08T07:01:11+00:00",
-  "0fa3ba769dadab70": "2026-11-08T07:01:11+00:00",
-  "31cf42045e4488ba": "2026-11-08T07:01:11+00:00",
-  "4ef2cff8ec5bc955": "2026-11-08T07:01:11+00:00",
-  "8d865b498a535431": "2026-11-08T07:01:11+00:00",
-  "ef92d56d40e314a2": "2026-11-08T07:01:11+00:00",
   "d7c84c0021c55f33": "2026-11-08T09:01:11+00:00",
   "012f123af38cac48": "2026-11-08T09:01:11+00:00",
   "d50fa8e178d58322": "2026-11-08T09:01:11+00:00",
@@ -13618,7 +13603,26 @@
   "ad059bdc30e390e2": "2026-11-22T06:33:09+00:00",
   "647ae5d93f740693": "2026-11-22T06:33:09+00:00",
   "1ef43f7bcb7c7ac3": "2026-11-22T06:33:09+00:00",
-  "7489b5bd41d63fb1": "2026-11-22T06:33:09+00:00"
+  "7489b5bd41d63fb1": "2026-11-22T06:33:09+00:00",
+  "cfb621ac215688c0": "2026-11-22T07:03:17+00:00",
+  "6955b4d3a284a20c": "2026-11-22T07:03:17+00:00",
+  "dfb4527a2d4d2c34": "2026-11-22T07:03:17+00:00",
+  "2ab64b3ca514a8c0": "2026-11-22T07:03:17+00:00",
+  "6d8359abdb7ea4f8": "2026-11-22T07:03:17+00:00",
+  "88f9e8452353b3e8": "2026-11-22T07:03:17+00:00",
+  "a89df149985467ea": "2026-11-22T07:03:17+00:00",
+  "f517e7ee2f9c04e7": "2026-11-22T07:03:17+00:00",
+  "e1a800843e3c0bda": "2026-11-22T07:03:17+00:00",
+  "5e45645d49f20e12": "2026-11-22T07:03:17+00:00",
+  "e54cafe1a4104ce4": "2026-11-22T07:03:17+00:00",
+  "97ab1182f2205ad0": "2026-11-22T07:03:17+00:00",
+  "48c17d161b1a8f99": "2026-11-22T07:03:17+00:00",
+  "fafd5562dca7b3f3": "2026-11-22T07:03:17+00:00",
+  "36bc2e522dafadc3": "2026-11-22T07:03:17+00:00",
+  "80a745454fc2950c": "2026-11-22T07:03:17+00:00",
+  "423b16c5d159d053": "2026-11-22T07:03:17+00:00",
+  "66b04858e79ff69f": "2026-11-22T07:03:17+00:00",
+  "67cb7447bff5f90c": "2026-11-22T07:03:17+00:00"
  },
  "inviate": [
   {
@@ -14260,32 +14264,6 @@
    "voti": {
     "aa41df448206": 1
    }
-  },
-  {
-   "id": "ef92d56d40e314a2",
-   "titolo": "Emerging market central banks turn hawkish as inflation pressures mount, Citi says",
-   "tema": "Debito emergente e rischio Paese",
-   "reparti": [
-    "Obbligazionario",
-    "Macroeconomia",
-    "Copertura"
-   ],
-   "impronta": [
-    "banks",
-    "central",
-    "citi",
-    "emerging",
-    "hawkish",
-    "inflation",
-    "market",
-    "mount",
-    "pressures",
-    "turn"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUTNIV3o3dkNNQWVQSWh3UmlyLUFJS21RUWtvMDJWRnk0YVBONmN6YnduN3BvS1dlYTBIc1VpSmtlTjl0VEZoMnlPY3RSQmRQVW8yX3dRNThDeHVGc0NfczhBUm1mRFBXSE5vUjVlc3p6YjNiRFVnYnpINU5JQ2paemU2alFNZ29xcS1uUzZUZ2dmZE9mc0FZQmFxZUwtWTlFbUZNTEZrTFdmckVoaHJEY0JlQzJuZ2NaNnN4ZG9xTDFyUVpobmEzZHZhUFM?oc=5",
-   "quando": "2026-11-08T07:01:17+00:00",
-   "messaggio": 1123,
-   "riassunto": "Secondo un'analisi di Citi, diverse banche centrali dei mercati emergenti stanno assumendo toni e posizioni più restrittive (hawkish) per contrastare le crescenti pressioni inflazionistiche. La stretta monetaria si rende necessaria per difendere le valute locali e contenere il costo del debito ester"
   },
   {
    "id": "dafcb92e80cdeda8",
@@ -22084,11 +22062,59 @@
    "link": "https://www.investing.com/news/stock-market-news/is-the-ai-boom-losing-its-grip-on-emerging-markets-jefferies-flags-risks-5043771",
    "quando": "2026-11-22T06:33:20+00:00",
    "riassunto": "La banca d'affari Jefferies ha evidenziato i rischi crescenti per le economie emergenti derivanti dal rallentamento del boom globale dell'intelligenza artificiale. La correzione nei mercati tecnologici sta riducendo i flussi di capitale verso tali aree, mettendo sotto pressione le valutazioni locali"
+  },
+  {
+   "id": "a89df149985467ea",
+   "titolo": "Argentina’s borrowing costs jump as Milei’s falling popularity rattles investors",
+   "tema": "Debito emergente e rischio Paese",
+   "reparti": [
+    "Obbligazionario",
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "argentina",
+    "borrowing",
+    "costs",
+    "falling",
+    "investors",
+    "jump",
+    "milei",
+    "popularity",
+    "rattles"
+   ],
+   "link": "https://www.ft.com/content/f3ecede4-74a3-431a-89c5-a06fcd30812a?syn-25a6b1a6=1",
+   "quando": "2026-11-22T07:03:18+00:00",
+   "messaggio": 1438,
+   "riassunto": "I costi di indebitamento dell'Argentina sono balzati a causa del calo di popolarità del presidente Javier Milei e dei crescenti timori sui rischi legati al debito per il 2027. Gli investitori appaiono preoccupati per i piani di finanziamento del governo e per la tenuta del consenso in vista delle el"
+  },
+  {
+   "id": "fafd5562dca7b3f3",
+   "titolo": "Brent Crude Price $92.57 Before OPEC+ Sets 2027 Quotas",
+   "tema": "Energia e materie prime",
+   "reparti": [
+    "Geopolitica",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "2027",
+    "before",
+    "brent",
+    "crude",
+    "opec",
+    "price",
+    "quotas",
+    "sets"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUllmakI5SmM0MHdIRTZHSVZvWU5vZ0RrYmpJZUQ1R0xTS2R3YzF1dEdQdlp4bldUaUphUnhUYU56LTQycEJjc25YenpTMXI2ZEZPQmZlRXctMmdLekN0QVBOT0lMbHhwS1BpU2p2ZXp5c1BidjEtNjB6LTZ4RUZSMmZXUUYzcDNmQ2JxOUtyYkt1Wlh4SlQxSngwejNqcURVZG9XM3laREdRSmFLVklCMG5zUUxib2t6OVQxa1ln?oc=5",
+   "quando": "2026-11-22T07:03:18+00:00",
+   "messaggio": 1439,
+   "riassunto": "I prezzi del petrolio Brent si mantengono stabili intorno a quota 92,57 dollari al barile mentre il mercato attende le decisioni dell'OPEC+ in merito alle quote di produzione per il 2027. L'attesa per le prossime mosse del cartello petrolifero alimenta l'incertezza sull'offerta globale di energia. G"
   }
  ],
  "feed_guasti": {},
  "feed_limitati": {
-  "Google News EN · Bouygues": 1
+  "Google News EN · FOMC Fed rates": 1
  },
  "offset_telegram": 146280066,
  "richieste_ia": {
@@ -22105,13 +22131,13 @@
   "2026-11-18": 26,
   "2026-11-19": 20,
   "2026-11-20": 16,
-  "2026-11-21": 14
+  "2026-11-21": 15
  },
  "avviso_quota": "",
  "giri_senza_ia": 0,
  "avviso_ia": "",
  "giornata": {
-  "ora_notizie": "2026-11-21 22",
+  "ora_notizie": "2026-11-22 08",
   "chiusura": "2026-11-21",
   "apertura": "2026-11-22",
   "settimanale": "2026-W46"
