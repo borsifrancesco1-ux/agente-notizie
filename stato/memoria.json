@@ -23163,8 +23163,8 @@
    "valore": 2.8696983820494015
   },
   "Inflazione PCE di fondo USA (a/a)": {
-   "periodo": "2026-09-01",
-   "valore": 3.1211596029620203
+   "periodo": "2026-10-01",
+   "valore": 3.26111744583808
   },
   "Nuovi occupati USA (non agricoli)": {
    "periodo": "2026-10-01",
@@ -23176,10 +23176,10 @@
   },
   "PIL USA (trimestre, annualizzato)": {
    "periodo": "2026-07-01",
-   "valore": 3.4
+   "valore": 4.3
   },
   "Tasso Fed (limite superiore)": {
-   "periodo": "2026-11-24",
+   "periodo": "2026-11-25",
    "valore": 4.0
   },
   "Tasso BCE sui depositi": {
@@ -23212,7 +23212,13 @@
   }
  },
  "proposta": {},
- "dati_usciti": [],
+ "dati_usciti": [
+  {
+   "nome": "Inflazione PCE di fondo USA (a/a)",
+   "testo": "3,3% (ottobre 2026; precedente 3,1%)",
+   "quando": "2026-11-25T14:01:42+00:00"
+  }
+ ],
  "pausa_fino": "",
  "ultima_modifica": {}
 }
