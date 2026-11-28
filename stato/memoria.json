@@ -1,39 +1,5 @@
 {
  "valutate": {
-  "b7cd6a2dd3478450": "2026-11-14T07:01:20+00:00",
-  "81bf68f6d42fd023": "2026-11-14T07:01:20+00:00",
-  "275ec9d93e9a70ff": "2026-11-14T07:01:20+00:00",
-  "faa08aba70394618": "2026-11-14T07:01:20+00:00",
-  "a05fc8b76055f18b": "2026-11-14T07:01:20+00:00",
-  "45dac3834728c2c5": "2026-11-14T07:01:20+00:00",
-  "d2778fa50f465cbf": "2026-11-14T07:01:20+00:00",
-  "c23fb0dc179efa47": "2026-11-14T07:01:20+00:00",
-  "046b17b33a6b3d35": "2026-11-14T07:01:20+00:00",
-  "78800a3eb72ee81d": "2026-11-14T07:01:20+00:00",
-  "dacf9fe2e63785fa": "2026-11-14T07:01:20+00:00",
-  "f3d6e4b586200dff": "2026-11-14T07:01:20+00:00",
-  "b6a44b458850054f": "2026-11-14T07:01:20+00:00",
-  "cb09a844aa2e6087": "2026-11-14T07:01:20+00:00",
-  "36d65e3a15611b98": "2026-11-14T07:01:20+00:00",
-  "312d47cf4d9b1f12": "2026-11-14T07:01:20+00:00",
-  "04b71a2bc519d7cc": "2026-11-14T07:01:20+00:00",
-  "ff57dedca606e483": "2026-11-14T07:01:20+00:00",
-  "8e5989fc9080c013": "2026-11-14T07:01:20+00:00",
-  "24aeb4f23d329d88": "2026-11-14T07:01:20+00:00",
-  "31403dea4b6902c8": "2026-11-14T07:01:20+00:00",
-  "34f271cc9fb616d6": "2026-11-14T07:01:20+00:00",
-  "7d5e6e081b7aefe3": "2026-11-14T07:01:20+00:00",
-  "ee3e6d88d4223fcd": "2026-11-14T07:01:20+00:00",
-  "c5d52b9e3e5f04a4": "2026-11-14T07:01:20+00:00",
-  "74b55e8c260c6d46": "2026-11-14T07:01:20+00:00",
-  "fcd79e95d45cbe07": "2026-11-14T07:01:20+00:00",
-  "90c5e3a980a34c6e": "2026-11-14T07:01:20+00:00",
-  "10add8d397d1b6b4": "2026-11-14T07:01:20+00:00",
-  "a1416e05a74a6476": "2026-11-14T07:01:20+00:00",
-  "7803a1f5c5bb24cf": "2026-11-14T07:01:20+00:00",
-  "a154f18a4af5fb11": "2026-11-14T07:01:20+00:00",
-  "e0e32d664695f02a": "2026-11-14T07:01:20+00:00",
-  "8c91cc3c135dc7c2": "2026-11-14T07:01:20+00:00",
   "479dabc088695ffb": "2026-11-14T09:00:58+00:00",
   "13815af9e3185f46": "2026-11-14T09:00:58+00:00",
   "cafa43dba656906f": "2026-11-14T09:00:58+00:00",
@@ -14587,7 +14553,39 @@
   "34ba8170460fb874": "2026-11-28T06:31:46+00:00",
   "4b58e7560b446854": "2026-11-28T06:31:46+00:00",
   "743421023c72e091": "2026-11-28T06:31:46+00:00",
-  "ebdbcbddb92e277e": "2026-11-28T06:31:46+00:00"
+  "ebdbcbddb92e277e": "2026-11-28T06:31:46+00:00",
+  "71011ea758ec2fb2": "2026-11-28T07:01:49+00:00",
+  "936f3fc63d8a0402": "2026-11-28T07:01:49+00:00",
+  "fd2fa9204da027b3": "2026-11-28T07:01:49+00:00",
+  "31f85e42c706635f": "2026-11-28T07:01:49+00:00",
+  "fc755867608b8596": "2026-11-28T07:01:49+00:00",
+  "7e7658a2d8582c9b": "2026-11-28T07:01:49+00:00",
+  "31f6b208de500f9f": "2026-11-28T07:01:49+00:00",
+  "2bd500f439d70877": "2026-11-28T07:01:49+00:00",
+  "797e5bca1218bf83": "2026-11-28T07:01:49+00:00",
+  "bd700830850c478d": "2026-11-28T07:01:49+00:00",
+  "b4a1c278959e6ca9": "2026-11-28T07:01:49+00:00",
+  "5107280dfe64476f": "2026-11-28T07:01:49+00:00",
+  "f4ec28b5ee406a9d": "2026-11-28T07:01:49+00:00",
+  "029260e38c79a654": "2026-11-28T07:01:49+00:00",
+  "75559f31716cf13a": "2026-11-28T07:01:49+00:00",
+  "9a09c2b74762c081": "2026-11-28T07:01:49+00:00",
+  "b5d2d00b97193d7d": "2026-11-28T07:01:49+00:00",
+  "bb134507fc3af3bf": "2026-11-28T07:01:49+00:00",
+  "dddf14c4754e082e": "2026-11-28T07:01:49+00:00",
+  "0593fc1f7c44a4a6": "2026-11-28T07:01:49+00:00",
+  "5c8b89b3f2c642d7": "2026-11-28T07:01:49+00:00",
+  "d0eb041f03d234bf": "2026-11-28T07:01:49+00:00",
+  "bb568649142c1d73": "2026-11-28T07:01:49+00:00",
+  "b8dd202936146af0": "2026-11-28T07:01:49+00:00",
+  "f6ae576aee341538": "2026-11-28T07:01:49+00:00",
+  "f5ef7f935dc8514a": "2026-11-28T07:01:49+00:00",
+  "51fa1403a566b25b": "2026-11-28T07:01:49+00:00",
+  "168f1846b4a7f9a7": "2026-11-28T07:01:49+00:00",
+  "1af4e743087dc14f": "2026-11-28T07:01:49+00:00",
+  "3e82712b85105d69": "2026-11-28T07:01:49+00:00",
+  "e5f203a9f0ff9ace": "2026-11-28T07:01:49+00:00",
+  "906ae3c1aaae8794": "2026-11-28T07:01:49+00:00"
  },
  "inviate": [
   {
@@ -15302,28 +15300,6 @@
    "voti": {
     "a8dfe03fd20a": 1
    }
-  },
-  {
-   "id": "74b55e8c260c6d46",
-   "titolo": "Fed’s Jefferson Says Inflation Will Determine Rate Decisions",
-   "tema": "Fed",
-   "reparti": [
-    "Macroeconomia",
-    "Obbligazionario",
-    "Risk management"
-   ],
-   "impronta": [
-    "decisions",
-    "determine",
-    "fed",
-    "inflation",
-    "jefferson",
-    "rate"
-   ],
-   "link": "https://www.bloomberg.com/news/articles/2026-11-14/fed-s-jefferson-says-inflation-will-determine-rate-decisions",
-   "quando": "2026-11-14T07:01:21+00:00",
-   "messaggio": 1265,
-   "riassunto": "Il vicepresidente della Federal Reserve, Philip Jefferson, ha dichiarato che l'inflazione rappresenta la metrica più critica per i banchieri centrali nel valutare eventuali ulteriori rialzi dei tassi di interesse. Le sue parole sottolineano come la traiettoria dei prezzi resti il fattore dominante p"
   },
   {
    "id": "13815af9e3185f46",
@@ -24025,6 +24001,59 @@
    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb29pMmlnSFlpamFIdi03RF9oVEI5QXpRVmV4Z25NUU82TGNpU2dMSVZvUHc3RHlmZGZYMENaZHpJOGd6WUhueUJ5R185ZmwzZDBHb3cxaVNTd0ZlUWUyZzEwa21sY3VOZ1h3aGlTd0R5ei1hcFhpc21xcTcwSFpzLWcyNllWS3pwRTVFLTZPNTl5SW05ak1ONC0zY2tSZlFCRGt5Z01UcHk5aTR0ZHc5cVlBLXJuS3lYUW1ETnVVZ3N1dFM4?oc=5",
    "quando": "2026-11-28T06:31:51+00:00",
    "riassunto": "Il vicepresidente della BCE Boris Vujcic e il membro del Consiglio direttivo Martin Kocher hanno dichiarato che la politica monetaria dovrà probabilmente subire un ulteriore inasprimento. L'inflazione persistente e le prospettive economiche richiedono prudenza e possibili interventi restrittivi aggi"
+  },
+  {
+   "id": "31f85e42c706635f",
+   "titolo": "US Black Friday Online Sales To Top $13B, Says Adobe, As Consumers Look Past Inflation And Elevated Gas Prices",
+   "tema": "Borse, valutazioni e utili",
+   "reparti": [
+    "Azionario",
+    "Macroeconomia"
+   ],
+   "impronta": [
+    "13b",
+    "adobe",
+    "black",
+    "consumers",
+    "elevated",
+    "friday",
+    "gas",
+    "inflation",
+    "look",
+    "online",
+    "past",
+    "prices",
+    "sales",
+    "top"
+   ],
+   "link": "https://stocktwits.com/news-articles/markets/equity/us-black-friday-online-sales-2026-13b-adobe-report-inflation/cNRRA2QR9Vr?.tsrc=rss",
+   "quando": "2026-11-28T07:01:56+00:00",
+   "messaggio": 1613,
+   "riassunto": "Nuove stime diffuse da Adobe Analytics indicano che le vendite online del Black Friday negli Stati Uniti supereranno i 13 miliardi di dollari. I consumatori continuano a spendere nonostante l'inflazione persistente e il caro carburante, premiando le aggressive promozioni dei rivenditori durante la C"
+  },
+  {
+   "id": "bb568649142c1d73",
+   "titolo": "Rupee Falls to 92.99 Against US Dollar on Higher Oil Prices, Strong Dollar Demand",
+   "tema": "Cambi e costo della copertura",
+   "reparti": [
+    "Copertura",
+    "Obbligazionario"
+   ],
+   "impronta": [
+    "against",
+    "demand",
+    "dollar",
+    "falls",
+    "higher",
+    "oil",
+    "prices",
+    "rupee",
+    "strong"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeW00QlozZVlBSW9GT2ZNckhWX3BvUHhrM3FTVThmQ3BuU0l1OUo5WHRJbmxsd2hZeERzWGhWLUVwbExkVzViaDlNcGI3dW5aeTQ3aG0zekM2Ym9Jb3lTcGg2bkVvVlpzbVJVRWRxLXphaFoyUVZXc3c1N2dpeDBJcFpYVVJDWFU?oc=5",
+   "quando": "2026-11-28T07:01:57+00:00",
+   "messaggio": 1614,
+   "riassunto": "La rupia indiana ha registrato un forte calo toccando quota 92,99 contro il dollaro statunitense. La pressione sulla valuta è alimentata dalla risalita dei prezzi del petrolio e da una vigorosa domanda di dollari sui mercati dei cambi, accentuando le tensioni per le economie emergenti."
   }
  ],
  "feed_guasti": {},
@@ -24044,13 +24073,13 @@
   "2026-11-24": 43,
   "2026-11-25": 36,
   "2026-11-26": 14,
-  "2026-11-27": 8
+  "2026-11-27": 9
  },
  "avviso_quota": "",
  "giri_senza_ia": 0,
  "avviso_ia": "",
  "giornata": {
-  "ora_notizie": "2026-11-27 22",
+  "ora_notizie": "2026-11-28 08",
   "chiusura": "2026-11-27",
   "apertura": "2026-11-28",
   "settimanale": "2026-W47"
